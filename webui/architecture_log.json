@@ -166,5 +166,17 @@
   "area": "저작",
   "title": "단계 연쇄 초기화와 재생성 위치 이동",
   "detail": "1단계 이벤트 문장을 바꾸면(입력 완료 시) 2단계 타임라인과 3단계 결과를 비움, 되돌리기로 복구 가능. 2단계 타임라인을 바꾸면 3단계 결과 파형을 비움(sub-event별 샘플은 유지해 다시 합성 시 바뀐 것만 생성). sub-event별 다시 생성과 개별 재생은 3단계 'Sub-event별 샘플' 목록으로 옮기고 2단계 목록은 편집 전용으로 둠."
+ },
+ {
+  "date": "2026-10-26",
+  "area": "평가",
+  "title": "저작 실험 로그",
+  "detail": "/editor?p=참가자&task=과제로 열면 실험 모드: 상단에 경과 시간과 '과제 완료' 버튼, 참가자·과제별로 빈 상태에서 시작. 분해, 블록 생성(클릭/드래그), 이동, 길이, 세기, 설명 수정, 복제, 삭제, 붙이기, 되돌리기, 생성(새로 생성/재사용 수), 부분 재생성, 재생, 설정 변경을 시각과 함께 out/study/<참가자>/<과제>_<세션>.jsonl에 기록(/api/study/log, 2초마다 일괄 전송, 페이지를 떠날 때 beacon). scripts/analyze_study_logs.py가 세션별 과제 시간, 첫 합성까지 시간, 편집·생성·재생 횟수를 summary.csv로 요약. 로그는 git 제외."
+ },
+ {
+  "date": "2026-10-26",
+  "area": "재생",
+  "title": "원격 재생 (Tailscale)",
+  "detail": "생성 PC가 서버(--host 0.0.0.0, 127.0.0.1과 Tailscale 100.64.0.0/10만 허용, 그 외 403), 노트북이 scripts/remote_player.py로 /ws/player 웹소켓에 접속. 에이전트가 연결돼 있으면 /api/play·/api/stop을 노트북으로 보내고, 노트북이 서버에서 wav를 받아 자기 Quest(OpenXR)로 재생. 서버 이름은 IPv4로 한 번 해석해 재생 지연 2초 → 15 ms. start_server.bat, start_player.bat, requirements-player.txt."
  }
 ]

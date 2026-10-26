@@ -1,5 +1,6 @@
 # Environment / secrets
 .venv/
+.venv-player/
 .env
 __pycache__/
 *.pyc
@@ -17,3 +18,6 @@ out/**/*.npy
 .idea/
 .DS_Store
 Thumbs.db
+
+# Authoring-study logs (participant data): keep local, never publish
+out/study/

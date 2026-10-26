@@ -1,0 +1,5 @@
+# Playback-only machine (laptop with the Quest): scripts/remote_player.py
+numpy==2.2.6
+soundfile==0.14.0
+pyopenxr==1.1.6302
+websockets==16.1.1

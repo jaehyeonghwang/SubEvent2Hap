@@ -56,3 +56,41 @@ $env:HF_HUB_OFFLINE='0'; .\.venv\Scripts\python -c "import sys; sys.path.insert(
 | Tests | `cd scripts; ..\.venv\Scripts\python -m unittest discover -p "test_*.py"` |
 
 The rendered gallery wavs are excluded from git. Rebuild them with `build_gallery.py` before using `/gallery`. Votes are stored in `out/gallery/votes.json`.
+
+## Authoring study logs
+
+Open the editor with a participant and task id to turn on study mode, e.g.
+`http://127.0.0.1:7860/editor?p=P01&task=T1`. A bar shows the elapsed time and a **과제 완료** button;
+every action is logged with timestamps to `out/study/<participant>/<task>_<session>.jsonl`. These include decompose, create, move, resize,
+intensity and description edits, undo and redo, compose with generated and reused counts, regenerate, and play.
+Each participant/task starts with an empty editor; reloading the page resumes the same session.
+Logs are participant data and are git-ignored.
+
+```powershell
+.\.venv\Scripts\python scripts\analyze_study_logs.py   # per-session summary -> out/study/summary.csv
+```
+
+## Generate on one PC, play on another (Tailscale)
+
+The GPU PC runs the server; a laptop with the Quest opens the editor in a browser and runs a small
+playback agent. Both machines are on the same Tailscale network (account kuaxislab@gmail.com).
+
+**GPU PC** (`desktop-nst9a4u`):
+
+```powershell
+start_server.bat          # = webui\server.py --host 0.0.0.0; only 127.0.0.1 and Tailscale (100.64.0.0/10) clients are served, others get 403
+# once, in an admin PowerShell: allow Tailscale peers through Windows Firewall
+netsh advfirewall firewall add rule name="SubEvent2Hap 7860 (Tailscale only)" dir=in action=allow protocol=TCP localport=7860 remoteip=100.64.0.0/10
+```
+
+**Laptop** (Tailscale logged in to the same account, Meta Quest Link installed, Python 3.10+):
+
+```powershell
+git clone https://github.com/jaehyeonghwang/SubEvent2Hap.git   # submodules are not needed here
+cd SubEvent2Hap
+start_player.bat          # first run creates .venv-player with requirements-player.txt
+```
+
+Then open `http://desktop-nst9a4u:7860/editor` in the laptop browser, start Quest Link, and put on the headset.
+While the agent is connected the Quest pill shows the laptop's name. Every play/stop goes to the laptop's
+Quest, which fetches the wav from the server. Without an agent, playback falls back to a Quest on the GPU PC.

@@ -128,6 +128,13 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
 .adv label { font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; }
 .adv input[type=range] { width: 100%; }
 .keys { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 6px 22px; margin-top: 10px; font-size: 13px; color: var(--muted); }
+.studybar { display: flex; align-items: center; gap: 14px; padding: 8px 28px; background: var(--accent-soft); border-bottom: 1px solid var(--line);
+  position: sticky; top: 53px; z-index: 4; font-size: 14px; flex-wrap: wrap; }
+.studybar b { font-variant-numeric: tabular-nums; }
+.studybar .rec { width: 9px; height: 9px; border-radius: 50%; background: var(--err); animation: pulse 1.2s infinite; }
+.studybar.done .rec { animation: none; background: var(--ok); }
+.cover { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: grid; place-items: center; z-index: 20; }
+.cover div { background: var(--panel); border-radius: 14px; padding: 28px 34px; text-align: center; font-size: 16px; max-width: 420px; }
 #toast { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; transition: .25s;
   background: var(--text); color: var(--bg); padding: 10px 18px; border-radius: 9px; font-size: 14px; pointer-events: none; max-width: 90vw; z-index: 10; }
 #toast.show { opacity: 1; transform: translateX(-50%); }
@@ -143,6 +150,12 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
     <div class="pill" title="Quest 컨트롤러 (OpenXR / Link)"><span class="dot" id="qdot"></span><b>Quest</b><span class="txt" id="qtxt">확인 중</span></div>
   </div>
 </header>
+<div class="studybar" id="studybar" hidden>
+  <span class="rec"></span><span>실험 기록 중</span>
+  <span>참가자 <b id="sbP"></b></span><span>과제 <b id="sbT"></b></span><span>경과 <b id="sbTime">00:00</b></span>
+  <span class="grow"></span>
+  <button id="doneBtn" class="accent">과제 완료</button>
+</div>
 
 <main>
   <!-- 1. event -->
@@ -247,7 +260,8 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
 const $ = (s) => document.querySelector(s);
 const COLORS = ["#4f46e5", "#0ea5e9", "#10b981", "#f59e0b", "#ef4444", "#a855f7", "#14b8a6", "#f97316"];
 const TL = { lane: 54, axis: 22, pad: 6, edge: 9, minDur: 0.15, maxEnd: 10, newDur: 0.5 };
-const KEY = "s2h_editor";
+const _qs = new URLSearchParams(location.search);
+const KEY = _qs.get("p") && _qs.get("task") ? `s2h_editor:${_qs.get("p")}:${_qs.get("task")}` : "s2h_editor";
 
 let subs = [], sel = null, drag = null, hover = null, ghost = null;
 let result = null;            // {item, subs (as generated), regions}
@@ -262,6 +276,53 @@ async function api(path, opts = {}) {
   const j = await r.json().catch(() => ({}));
   if (!r.ok) throw new Error(typeof j.detail === "string" ? j.detail : JSON.stringify(j.detail || r.statusText));
   return j;
+}
+
+// ---------- study log: only with ?p=<participant>&task=<task>. Events are batched to the server.
+const QS = new URLSearchParams(location.search);
+const STUDY = QS.get("p") && QS.get("task") ? { p: QS.get("p"), task: QS.get("task") } : null;
+let logQ = [], logState = null;   // {session, t0, ended}
+const L = (uid) => { const i = subs.findIndex(x => x.uid === uid); return i >= 0 ? letter(i) : null; };
+const coreU = (s) => ({ uid: s.uid, letter: L(s.uid), ...core(s) });
+function log(type, data = {}) {
+  if (!STUDY || !logState || logState.ended) return;
+  logQ.push({ t: Date.now(), el_ms: Date.now() - logState.t0, type, ...data });
+}
+function flushLog(beacon = false) {
+  if (!STUDY || !logState || !logQ.length) return;
+  const body = JSON.stringify({ participant: STUDY.p, task: STUDY.task, session: logState.session, events: logQ });
+  logQ = [];
+  if (beacon) navigator.sendBeacon("/api/study/log", new Blob([body], { type: "application/json" }));
+  else fetch("/api/study/log", { method: "POST", headers: { "Content-Type": "application/json" }, body }).catch(() => {});
+}
+function startStudy() {
+  if (!STUDY) return;
+  const key = `s2h_study:${STUDY.p}:${STUDY.task}`;
+  try { logState = JSON.parse(localStorage.getItem(key) || "null"); } catch {}
+  const fresh = !logState;
+  if (fresh) logState = { session: new Date().toISOString().replace(/[-:T]/g, "").slice(0, 14), t0: Date.now(), ended: false };
+  const persist = () => { try { localStorage.setItem(key, JSON.stringify(logState)); } catch {} };
+  persist();
+  $("#studybar").hidden = false; $("#sbP").textContent = STUDY.p; $("#sbT").textContent = STUDY.task;
+  const clock = () => { const ms = (logState.ended ? logState.ended : Date.now()) - logState.t0, m = Math.floor(ms / 60000), sec = Math.floor(ms / 1000) % 60;
+    $("#sbTime").textContent = `${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`; };
+  setInterval(clock, 500); clock();
+  if (fresh) log("task_start", { url: location.search, viewport: [innerWidth, innerHeight] });
+  else log("page_reload");
+  if (logState.ended) showDone();
+  $("#doneBtn").onclick = () => {
+    if (logState.ended) return;
+    log("task_end", { duration_s: (Date.now() - logState.t0) / 1000, event: $("#event").value.trim(),
+      subs: subs.map(coreU), result: result ? result.item.name : null });
+    flushLog(); logState.ended = Date.now(); persist(); showDone();
+  };
+  setInterval(flushLog, 2000);
+  addEventListener("pagehide", () => flushLog(true));
+}
+function showDone() {
+  $("#studybar").classList.add("done"); $("#doneBtn").disabled = true; $("#doneBtn").textContent = "완료됨";
+  const c = document.createElement("div"); c.className = "cover";
+  c.innerHTML = "<div><b>과제를 완료했습니다.</b><br>실험 진행자에게 알려 주세요.</div>"; document.body.appendChild(c);
 }
 
 // ---------- state, persistence, undo
@@ -281,7 +342,7 @@ function clearResult() {
 }
 function load() {
   try {
-    const s = JSON.parse(localStorage.getItem(KEY) || "null") || JSON.parse(localStorage.getItem("hg_compose") || "null");
+    const s = JSON.parse(localStorage.getItem(KEY) || "null") || (KEY === "s2h_editor" ? JSON.parse(localStorage.getItem("hg_compose") || "null") : null);
     if (s) { $("#event").value = s.event || ""; subs = (s.subs || []).map(clean); result = s.result || null; planEvent = s.planEvent ?? null; }
   } catch {}
 }
@@ -293,6 +354,7 @@ const clean = (s) => ({ uid: s.uid || newUid(), src: s.src || null, srcPrompt: s
 function checkpoint(before = snap()) { undo.push(before); if (undo.length > 200) undo.shift(); redo = []; updateUndo(); }
 function restore(stack, other) {
   if (!stack.length) return;
+  log(stack === undo ? "undo" : "redo");
   other.push(snap()); subs = JSON.parse(stack.pop());
   if (sel !== null && sel >= subs.length) sel = null;
   refresh(); save(); updateUndo();
@@ -422,7 +484,7 @@ function listRow(i) {
   r.addEventListener("pointerdown", () => { if (sel !== i) { sel = i; drawTimeline(); markSel(); } });
   r.querySelector(".del").onclick = (ev) => { ev.stopPropagation(); sel = i; remove(); };
   for (const el of r.querySelectorAll("[data-k]")) {
-    el.addEventListener("focus", () => { editBase = snap(); if (sel !== i) { sel = i; drawTimeline(); markSel(); } });
+    el.addEventListener("focus", () => { editBase = snap(); el._from = subs[i] && subs[i][el.dataset.k]; if (sel !== i) { sel = i; log("select", { uid: subs[i].uid, letter: letter(i), via: "list" }); drawTimeline(); markSel(); } });
     el.addEventListener("input", () => {
       const s = subs[i]; if (!s) return;
       if (editBase === null) editBase = snap();
@@ -433,7 +495,9 @@ function listRow(i) {
       r.querySelector(".range span").textContent = pct(s.intensity);
       drawTimeline(); drawWave(); save();
     });
-    el.addEventListener("change", () => { if (editBase !== null && editBase !== snap()) checkpoint(editBase); editBase = el === document.activeElement ? snap() : null; syncList(); });
+    el.addEventListener("change", () => {
+      const s = subs[i]; if (s && el._from !== s[el.dataset.k]) { log("field_edit", { uid: s.uid, letter: letter(i), field: el.dataset.k, from: el._from, to: s[el.dataset.k] }); el._from = s[el.dataset.k]; }
+      if (editBase !== null && editBase !== snap()) checkpoint(editBase); editBase = el === document.activeElement ? snap() : null; syncList(); });
     el.addEventListener("blur", () => { editBase = null; });
   }
   r.querySelector('[data-k="prompt"]').addEventListener("keydown", ev => { if (ev.key === "Enter" && !ev.ctrlKey) { ev.target.blur(); $("#tl").focus(); } });
@@ -506,6 +570,7 @@ function applyDrag(dt, fine) {
     cv.focus();
     const h = hit(ev), T = scale(), before = snap();
     if (h) {
+      if (sel !== h.i) log("select", { uid: subs[h.i].uid, letter: letter(h.i), via: "timeline" });
       sel = h.i; const s = subs[h.i];
       drag = { ...h, x0: ev.clientX, start0: s.start, dur0: s.duration, T, moved: false, before };
     } else {
@@ -531,13 +596,21 @@ function applyDrag(dt, fine) {
   const end = () => {
     if (!drag) return;
     const d = drag; drag = null;
-    if (d.mode === "create") { checkpoint(d.before); save(); refresh(); focusPrompt(d.i); return; }
-    if (d.moved) { checkpoint(d.before); save(); }
+    const s = subs[d.i];
+    if (d.mode === "create") {
+      log("create", { uid: s.uid, letter: letter(d.i), how: d.moved ? "drag" : "click", start: s.start, duration: s.duration });
+      checkpoint(d.before); save(); refresh(); focusPrompt(d.i); return;
+    }
+    if (d.moved) {
+      log(d.mode === "move" ? "move" : "resize", { uid: s.uid, letter: letter(d.i), edge: d.mode === "move" ? undefined : d.mode,
+        from: { start: d.start0, duration: d.dur0 }, to: { start: s.start, duration: s.duration } });
+      checkpoint(d.before); save();
+    }
     refresh();
   };
   cv.addEventListener("pointerup", end); cv.addEventListener("pointercancel", end);
   cv.addEventListener("pointerleave", () => { if (!drag && (hover !== null || ghost)) { hover = null; ghost = null; drawTimeline(); } });
-  cv.addEventListener("dblclick", ev => { const h = hit(ev); if (h) { select(h.i); focusPrompt(h.i); } });
+  cv.addEventListener("dblclick", ev => { const h = hit(ev); if (h) { log("dblclick", { uid: subs[h.i].uid, letter: letter(h.i) }); select(h.i); focusPrompt(h.i); } });
   cv.addEventListener("keydown", ev => {
     if (ev.key === "Escape") { select(null); return; }
     if (sel === null || !subs[sel]) return;
@@ -545,12 +618,16 @@ function applyDrag(dt, fine) {
     if (ev.key === "ArrowLeft" || ev.key === "ArrowRight") {
       checkpoint();
       const dir = ev.key === "ArrowRight" ? 1 : -1;
+      const from = { start: s.start, duration: s.duration };
       if (ev.altKey) s.duration = +Math.min(Math.max(TL.minDur, s.duration + dir * step), TL.maxEnd - s.start).toFixed(3);
       else s.start = +Math.min(Math.max(0, s.start + dir * step), TL.maxEnd - s.duration).toFixed(3);
+      log(ev.altKey ? "key_resize" : "key_move", { uid: s.uid, letter: letter(sel), from, to: { start: s.start, duration: s.duration } });
       refresh(); save(); ev.preventDefault();
     } else if (ev.key === "ArrowUp" || ev.key === "ArrowDown") {
       checkpoint();
+      const from = s.intensity;
       s.intensity = +Math.min(1, Math.max(0, s.intensity + (ev.key === "ArrowUp" ? 0.05 : -0.05))).toFixed(2);
+      log("key_intensity", { uid: s.uid, letter: letter(sel), from, to: s.intensity });
       refresh(); save(); ev.preventDefault();
     } else if (ev.key === "Delete" || ev.key === "Backspace") { remove(); ev.preventDefault(); }
     else if (ev.key.toLowerCase() === "r" && !ev.ctrlKey && !ev.metaKey) { regenerate([s.uid]); ev.preventDefault(); }
@@ -562,16 +639,16 @@ function add() {
   const t = Math.min(total(), TL.maxEnd - TL.minDur);
   checkpoint();
   subs.push({ prompt: "", start: +t.toFixed(2), duration: +Math.min(TL.newDur, TL.maxEnd - t).toFixed(2), intensity: 0.7, uid: newUid() });
-  sel = subs.length - 1; refresh(); save(); focusPrompt(sel);
+  sel = subs.length - 1; log("add", { uid: subs[sel].uid, letter: letter(sel) }); refresh(); save(); focusPrompt(sel);
 }
 function duplicate() {
   if (sel === null) return; checkpoint();
   const s = subs[sel], c = { ...s, uid: newUid(), start: +Math.min(s.start + s.duration, TL.maxEnd - s.duration).toFixed(3) };
-  subs.splice(sel + 1, 0, c); sel = sel + 1; refresh(); save();
+  subs.splice(sel + 1, 0, c); log("duplicate", { from: s.uid, uid: c.uid }); sel = sel + 1; refresh(); save();
 }
-function remove() { if (sel === null) return; checkpoint(); subs.splice(sel, 1); sel = null; refresh(); save(); }
+function remove() { if (sel === null) return; log("delete", coreU(subs[sel])); checkpoint(); subs.splice(sel, 1); sel = null; refresh(); save(); }
 function pack() {
-  if (!subs.length) return; checkpoint();
+  if (!subs.length) return; log("pack"); checkpoint();
   const order = subs.map((s, i) => [s, i]).sort((a, b) => a[0].start - b[0].start || a[1] - b[1]);
   let t = 0; const was = subs[sel];
   subs = order.map(([s]) => { const c = { ...s, start: +t.toFixed(3) }; t += s.duration; return c; });
@@ -588,13 +665,14 @@ document.addEventListener("keydown", ev => {
   if (mod && ev.key.toLowerCase() === "z") { ev.shiftKey ? restore(redo, undo) : restore(undo, redo); ev.preventDefault(); }
   else if (mod && ev.key.toLowerCase() === "y") { restore(redo, undo); ev.preventDefault(); }
   else if (mod && ev.key.toLowerCase() === "d") { duplicate(); ev.preventDefault(); }
-  else if (ev.key === " " && result) { playQuest(); ev.preventDefault(); }
+  else if (ev.key === " " && result) { log("play", { what: "composite", via: "quest", from: "space" }); playQuest(); ev.preventDefault(); }
 });
 
 // ---------- decompose (local LM, 4-stage planner)
 $("#event").addEventListener("input", save);
 $("#event").addEventListener("change", () => {   // step 1 edited: the timeline no longer matches it
   if (!subs.length || planEvent === null || $("#event").value.trim() === planEvent) return;
+  log("event_reset", { from: planEvent, to: $("#event").value.trim(), cleared: subs.length });
   checkpoint(); subs = []; sel = null; clearResult(); refresh(); save();
   $("#decInfo").textContent = "";
   toast("이벤트가 바뀌어 타임라인과 결과를 비웠습니다. 되돌리기로 복구할 수 있습니다", 4000);
@@ -606,11 +684,13 @@ $("#decBtn").onclick = async () => {
   const btn = $("#decBtn"), t0 = performance.now(); btn.disabled = true;
   const tick = setInterval(() => btn.innerHTML = `<span class="spinner"></span> 분해 중 ${((performance.now() - t0) / 1000).toFixed(0)}초`, 250);
   try {
+    log("decompose_start", { event, replaced: subs.length });
     const r = await api("/api/decompose", { method: "POST", body: JSON.stringify({ event, planner: "staged", llm: "local" }) });
     checkpoint();
     subs = r.sub_events.map(clean); sel = null; planEvent = event; clearResult(); refresh(); save();
+    log("decompose", { event, model: r.model, elapsed_s: r.elapsed, subs: subs.map(coreU) });
     $("#decInfo").textContent = `${r.model}가 ${r.elapsed.toFixed(1)}초 만에 sub-event ${subs.length}개로 나눴습니다. 아래 타임라인에서 고칠 수 있습니다.`;
-  } catch (e) { toast("분해 실패: " + e.message, 4500); }
+  } catch (e) { log("decompose_fail", { error: e.message }); toast("분해 실패: " + e.message, 4500); }
   finally { clearInterval(tick); btn.disabled = false; btn.textContent = "분해하기"; }
 };
 
@@ -632,6 +712,9 @@ async function generate(fresh = null) {
     const seed = $("#seed").value.trim();
     const regen = (s) => fresh === "all" || (fresh && fresh.includes(s.uid)) || !hasSample(s);
     const body = ready.map(s => ({ ...core(s), uid: s.uid, source_wav: regen(s) ? null : s.src }));
+    const mode = fresh === "all" ? "all" : fresh ? "regen" : "auto";
+    log("generate_start", { mode, regen: fresh && fresh !== "all" ? fresh.map(u => ({ uid: u, letter: L(u) })) : undefined,
+      generator: $("#generator").value, n: ready.length, to_generate: body.filter(b => !b.source_wav).map(b => L(b.uid)) });
     const r = await api("/api/compose", { method: "POST", body: JSON.stringify({
       event, sub_events: body, baseline: false, generator: $("#generator").value,
       candidates: +$("#cand").value, cfg: +$("#cfg").value, temperature: +$("#temp").value, gamma: +$("#gamma").value,
@@ -645,15 +728,19 @@ async function generate(fresh = null) {
     result = { item: r.composite_item, subs: ready.map(core), regions: r.sub_events.map(s => ({ uid: s.uid, prompt: s.prompt, file: s.file })) };
     save(); refresh(); updatePlay();
     const made = r.sub_events.filter(x => !x.reused).length;
+    log("generate", { mode, elapsed_s: r.elapsed, generated: made, reused: r.sub_events.length - made, composite: r.composite,
+      subs: ready.map(coreU), samples: r.sub_events.map(x => ({ uid: x.uid, letter: L(x.uid), reused: x.reused, source_wav: x.source_wav })) });
     toast(made ? `${made}개 새로 생성, ${r.sub_events.length - made}개 샘플 유지 (${r.elapsed.toFixed(1)}초)` : `생성 없이 다시 합성 (${r.elapsed.toFixed(1)}초)`);
     if (questReady) playQuest();
-  } catch (e) { toast("생성 실패: " + e.message, 4500); }
+  } catch (e) { log("generate_fail", { error: e.message }); toast("생성 실패: " + e.message, 4500); }
   finally { clearInterval(tick); busy = false; btn.textContent = "생성 & 합성"; $("#allBtn").disabled = false; parts(); poll(); }
 }
 const regenerate = (uids) => generate(uids);
 $("#genBtn").onclick = () => generate();
 $("#allBtn").onclick = () => generate("all");
 $("#generator").addEventListener("change", parts);
+for (const id of ["generator", "seed", "cand", "cfg", "temp", "gamma", "gain"])
+  $("#" + id).addEventListener("change", () => log("setting", { name: id, value: $("#" + id).value }));
 
 function parts() {
   const box = $("#samples"); box.innerHTML = "";
@@ -668,7 +755,7 @@ function parts() {
       <button class="regen" title="이 sub-event만 새로 생성하고 다시 합성 (타임라인에서 선택 후 R)"><span class="ic">↻</span>다시 생성</button>`;
     row.querySelector(".txt").textContent = x.prompt;
     const play = row.querySelector(".play"), regen = row.querySelector(".regen");
-    play.disabled = !region; play.onclick = () => playQuest(region.file);
+    play.disabled = !region; play.onclick = () => { log("play", { what: "sub", uid: x.uid, letter: letter(i), via: "quest" }); playQuest(region.file); };
     regen.disabled = busy || !modelReady; regen.onclick = () => regenerate([x.uid]);
     box.appendChild(row);
   }
@@ -677,7 +764,7 @@ function parts() {
 // ---------- playback
 let hand = "both";
 try { hand = localStorage.getItem("hg_hand") || "both"; } catch {}
-const setHand = (v) => { hand = v; document.querySelectorAll("#hand button").forEach(b => b.classList.toggle("on", b.dataset.v === v)); try { localStorage.setItem("hg_hand", v); } catch {} };
+const setHand = (v) => { if (v !== hand) log("setting", { name: "hand", value: v }); hand = v; document.querySelectorAll("#hand button").forEach(b => b.classList.toggle("on", b.dataset.v === v)); try { localStorage.setItem("hg_hand", v); } catch {} };
 document.querySelectorAll("#hand button").forEach(b => b.onclick = () => setHand(b.dataset.v)); setHand(hand);
 const gainUpd = () => $("#gainV").textContent = "×" + (+$("#gain").value).toFixed(2);
 $("#gain").addEventListener("input", gainUpd); gainUpd();
@@ -700,15 +787,15 @@ function animate() {
   if (performance.now() - play.t0 >= play.dur) { play = null; drawWave(); return; }
   drawWave(); requestAnimationFrame(animate);
 }
-$("#playBtn").onclick = () => playQuest();
-$("#wave").onclick = () => result && playQuest();
+$("#playBtn").onclick = () => { log("play", { what: "composite", via: "quest", from: "button" }); playQuest(); };
+$("#wave").onclick = () => { if (!result) return; log("play", { what: "composite", via: "quest", from: "waveform" }); playQuest(); };
 $("#listenBtn").onclick = () => {
-  if (!result) return; if (audioEl) audioEl.pause();
+  if (!result) return; log("play", { what: "composite", via: "pc" }); if (audioEl) audioEl.pause();
   audioEl = new Audio(`/audio/${encodeURIComponent(result.item.name)}?gain=${$("#gain").value}`);
   audioEl.play().catch(e => toast("미리듣기 실패: " + e.message));
   play = { name: result.item.name, t0: performance.now(), dur: result.item.duration * 1000 }; animate();
 };
-$("#stopBtn").onclick = async () => { try { await api("/api/stop", { method: "POST" }); } catch {} if (audioEl) audioEl.pause(); play = null; drawWave(); };
+$("#stopBtn").onclick = async () => { log("stop"); try { await api("/api/stop", { method: "POST" }); } catch {} if (audioEl) audioEl.pause(); play = null; drawWave(); };
 
 // ---------- status polling
 async function poll() {
@@ -733,7 +820,7 @@ async function pollLlm() {
 }
 setInterval(poll, 1000); setInterval(pollLlm, 5000);
 
-load(); updateUndo(); refresh(); updatePlay(); poll(); pollLlm();
+load(); startStudy(); updateUndo(); refresh(); updatePlay(); poll(); pollLlm();
 let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(refresh, 120); });
 </script>
 </body>

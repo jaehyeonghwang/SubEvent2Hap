@@ -3,7 +3,10 @@
 Run:
     .venv\\Scripts\\python.exe webui\\server.py   ->  http://127.0.0.1:7860
 """
+import argparse
+import asyncio
 import io
+import ipaddress
 import json
 import os
 import pathlib
@@ -15,7 +18,7 @@ import urllib.request
 import numpy as np
 import soundfile as sf
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel, Field, field_validator
 
@@ -42,6 +45,75 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 app = FastAPI(title="SubEvent2Hap Studio")
 player = QuestHapticPlayer().start()
+
+# Only this machine and Tailscale peers may connect, even when bound to 0.0.0.0 (the campus LAN
+# must not reach the generator, the OpenAI key or the files).
+ALLOWED_NETS = [ipaddress.ip_network(n) for n in ("127.0.0.0/8", "::1/128", "100.64.0.0/10", "fd7a:115c:a1e0::/48")]
+
+
+class _ClientAllowlist:
+    def __init__(self, app):
+        self.app = app
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] in ("http", "websocket"):
+            host = (scope.get("client") or ("", 0))[0]
+            try:
+                ok = any(ipaddress.ip_address(host) in n for n in ALLOWED_NETS)
+            except ValueError:
+                ok = False
+            if not ok:
+                if scope["type"] == "websocket":
+                    await send({"type": "websocket.close", "code": 1008})
+                else:
+                    await send({"type": "http.response.start", "status": 403, "headers": [(b"content-type", b"text/plain")]})
+                    await send({"type": "http.response.body", "body": b"forbidden"})
+                return
+        await self.app(scope, receive, send)
+
+
+app.add_middleware(_ClientAllowlist)
+
+
+class RemotePlayer:
+    """A playback agent on another machine (scripts/remote_player.py), connected over a websocket.
+    While one is connected, playback goes there instead of to a Quest on this machine."""
+
+    def __init__(self):
+        self.ws, self.loop, self.name, self.state = None, None, None, {}
+
+    @property
+    def connected(self):
+        return self.ws is not None
+
+    def send(self, msg):
+        if not self.ws:
+            raise HTTPException(503, "원격 재생 장치가 연결되어 있지 않습니다")
+        asyncio.run_coroutine_threadsafe(self.ws.send_json(msg), self.loop).result(timeout=5)
+
+
+remote = RemotePlayer()
+
+
+@app.websocket("/ws/player")
+async def player_socket(ws: WebSocket, name: str = "remote"):
+    await ws.accept()
+    if remote.ws is not None:   # newest agent wins
+        try:
+            await remote.ws.close()
+        except Exception:  # noqa: BLE001
+            pass
+    remote.ws, remote.loop, remote.name, remote.state = ws, asyncio.get_running_loop(), name[:40], {}
+    try:
+        while True:
+            msg = await ws.receive_json()
+            if msg.get("type") == "status":
+                remote.state = msg
+    except WebSocketDisconnect:
+        pass
+    finally:
+        if remote.ws is ws:
+            remote.ws, remote.state = None, {}
 
 _model = None
 _model_name = None   # which generator is on the GPU (only one fits next to the LM)
@@ -171,9 +243,12 @@ def status():
         "generator": _model_name,
         "model_error": _model_error,
         "generating": _gen_busy,
-        "quest": {"status": player.status, "connected": player.connected,
-                  "ready": player.status.startswith("준비됨") or player.status == "재생 중",
-                  "playing": player.is_playing},
+        "quest": ({"status": f"{remote.name}: {remote.state.get('status', '연결됨')}", "remote": remote.name,
+                   "connected": bool(remote.state.get("connected")), "ready": bool(remote.state.get("ready")),
+                   "playing": bool(remote.state.get("playing"))} if remote.connected else
+                  {"status": player.status, "connected": player.connected,
+                   "ready": player.status.startswith("준비됨") or player.status == "재생 중",
+                   "playing": player.is_playing}),
     }
 
 
@@ -224,6 +299,11 @@ def audio(name: str, gain: float = 1.0, normalize: bool = False):
 
 @app.post("/api/play")
 def play(req: PlayReq):
+    if remote.connected:
+        _wav_path(req.name)
+        remote.send({"cmd": "play", "path": f"/audio/{req.name}?normalize={str(req.normalize).lower()}",
+                     "hand": req.hand, "gain": req.gain, "loop": req.loop})
+        return {"ok": True, "status": "원격 재생"}
     if not player.connected:
         raise HTTPException(503, player.status)
     w, sr = _load(req.name, req.normalize)
@@ -442,6 +522,31 @@ def editor_page():
     return FileResponse(pathlib.Path(__file__).with_name("editor.html"))
 
 
+# ---------------------------------------------------------------- authoring-study logs
+STUDY_DIR = OUT_DIR / "study"
+_study_lock = threading.Lock()
+ID = r"^[A-Za-z0-9_-]{1,40}$"
+
+
+class StudyLog(BaseModel):
+    participant: str = Field(pattern=ID)
+    task: str = Field(pattern=ID)
+    session: str = Field(pattern=ID)
+    events: list[dict] = Field(max_length=500)
+
+
+@app.post("/api/study/log")
+def study_log(req: StudyLog):
+    """Append editor interaction events (one JSON object per line) to
+    out/study/<participant>/<task>_<session>.jsonl. Only written in study mode (?p=...&task=...)."""
+    path = STUDY_DIR / req.participant / f"{req.task}_{req.session}.jsonl"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with _study_lock, path.open("a", encoding="utf-8") as f:
+        for e in req.events:
+            f.write(json.dumps(e, ensure_ascii=False) + "\n")
+    return {"ok": True, "written": len(req.events)}
+
+
 @app.get("/gallery")
 def gallery_page():
     """Listening page: every eval sentence under each condition."""
@@ -562,9 +667,16 @@ def architecture_data():
 
 @app.post("/api/stop")
 def stop():
+    if remote.connected:
+        remote.send({"cmd": "stop"})
     player.stop()
     return {"ok": True}
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=7860, log_level="warning")
+    ap = argparse.ArgumentParser()
+    # --host 0.0.0.0 to serve Tailscale peers (other clients are refused by _ClientAllowlist)
+    ap.add_argument("--host", default="127.0.0.1")
+    ap.add_argument("--port", type=int, default=7860)
+    a = ap.parse_args()
+    uvicorn.run(app, host=a.host, port=a.port, log_level="warning")
