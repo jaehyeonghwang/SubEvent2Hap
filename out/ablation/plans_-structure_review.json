@@ -1,0 +1,811 @@
+{
+ "c01": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "basketball dribble forcefully once",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 15.55989384651184
+ },
+ "c02": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "gun shoots at the enemy once",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 11.343702554702759
+ },
+ "c03": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A single sharp impact of tree against unspecified surface",
+    "start": 0.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of tree against unspecified surface",
+    "start": 0.35,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of tree against unspecified surface",
+    "start": 0.7,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 2,
+  "leaf_models": [
+   "rhythmic_action"
+  ],
+  "seconds": 2.3998756408691406
+ },
+ "c04": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "hand clap loudly once",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 4.343400001525879
+ },
+ "c05": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "wooden stick break by bending twice, then snap with strong impact",
+    "start": 0.0,
+    "duration": 1.8,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 4.221814393997192
+ },
+ "c06": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "paper crumpled and slammed forcefully three times",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 4.082366943359375
+ },
+ "c07": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "typing a document quickly on my keyboard slowly click my mouse once",
+    "start": 0.0,
+    "duration": 2.5,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 3.468013048171997
+ },
+ "c08": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "keyboard type and click",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 3.8346316814422607
+ },
+ "c09": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A single sharp impact of soccer ball against unspecified surface",
+    "start": 0.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of soccer ball against unspecified surface",
+    "start": 0.35,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of soccer ball against unspecified surface",
+    "start": 0.7,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 2,
+  "leaf_models": [
+   "rhythmic_action"
+  ],
+  "seconds": 2.5622594356536865
+ },
+ "c10": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "water bomb makes contact with enemy surface, resulting in one impact event and immediate fluid dispersion (splash)",
+    "start": 0.0,
+    "duration": 0.3,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "splash striking fixed_surface with a single impact",
+    "start": 0.3,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 8,
+  "leaf_models": [
+   "single_impact",
+   "lm_atomic"
+  ],
+  "seconds": 10.476470947265625
+ },
+ "c11": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "mosquito bites caused itchy sensation on right hand",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.6,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "skin remains itchy due to the bites",
+    "start": 0.8,
+    "duration": 0.8,
+    "intensity": 0.6,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 10,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 11.671812295913696
+ },
+ "c12": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "I have to do CPR heavily and strongly pressing his chest constantly with the speed of pressing than 100 times in a minute",
+    "start": 0.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 4.763550758361816
+ },
+ "s01": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "racing car driving on rainy road with reduced traction, maintaining surface contact and active steering input",
+    "start": 0.0,
+    "duration": 3.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "car sliding against wet pavement",
+    "start": 3.2,
+    "duration": 0.2719243234607809,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The car collides with a tree resulting in significant impact force while still under surface contact; the collision is governed by the same wet road conditions and prior driving",
+    "start": 3.4719243234607813,
+    "duration": 1.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 13,
+  "leaf_models": [
+   "lm_atomic",
+   "sliding",
+   "lm_atomic"
+  ],
+  "seconds": 16.371774196624756
+ },
+ "s02": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "bike riding on smooth track, then transitioning to gravel field",
+    "start": 0.0,
+    "duration": 3.2,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "smooth track transitioning to gravel field",
+    "start": 3.2,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "gravel field sliding with reduced friction",
+    "start": 3.2,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "surface geometry shift contact mode changes from sliding on smooth surface to frictional interaction with rough gravel",
+    "start": 4.0,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 13,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 17.436089277267456
+ },
+ "s03": {
+  "ok": false,
+  "error": "ValueError: Plan exceeds 10 seconds; it is not silently compressed",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 23.485026121139526
+ },
+ "s04": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "ambulance sliding against outside window",
+    "start": 0.0,
+    "duration": 0.2719243234607809,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 2,
+  "leaf_models": [
+   "sliding"
+  ],
+  "seconds": 2.162337064743042
+ },
+ "s05": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "person applies continuous force to tightly shut pickle jar, gradually increasing pressure until seal ruptures with loud pop due to internal pressure release, sustained surface接触",
+    "start": 0.0,
+    "duration": 4.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "jar opens with a loud pop due to internal pressure release under sustained force",
+    "start": 4.2,
+    "duration": 0.8,
+    "intensity": 1.0,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 10,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 12.571808576583862
+ },
+ "s06": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "arrow penetrates, moves continuously into, evolves surface contact from hard shell to soft flesh, maintains continuous motion",
+    "start": 0.0,
+    "duration": 1.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "arrow continues through soft flesh, maintaining continuous motion under sustained driving force and evolving surface contact (soft flesh), with no change in driving or contact",
+    "start": 1.8,
+    "duration": 1.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The arrow penetrates and continues through with sustained driving force, maintaining continuous contact and evolving surface interaction (hard shell → soft flesh)",
+    "start": 3.0,
+    "duration": 1.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "arrow continues through soft flesh with sustained driving force and evolving surface contact (hard shell → soft flesh)",
+    "start": 4.8,
+    "duration": 1.2,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "arrow continues through soft flesh of melon under unchanged driving conditions, maintaining continuous motion and no external interference",
+    "start": 6.0,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "arrow exits melon shell and emerges into air, continuing trajectory under passive coasting",
+    "start": 6.8,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 20,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 31.728958129882812
+ },
+ "s07": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "graduate student rigorously typing computer keyboard and hitting enter key after each paragraph, then pause",
+    "start": 0.0,
+    "duration": 2.5,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 4.48034405708313
+ },
+ "s08": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "swimmer performs full butterfly stroke cycle: coming out of water with both arms fully extended in air, then moving back into water with controlled submersion, maintaining human-",
+    "start": 0.0,
+    "duration": 2.5,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "swimmer moves back into the water with controlled submersion, maintaining continuous human-driven propulsion and sustained arm-water contact throughout the motion",
+    "start": 2.5,
+    "duration": 1.2,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "swimmer moves back into the water with controlled arm-water contact and sustained human-driven propulsion, maintaining consistent contact and motion throughout submersion",
+    "start": 3.7,
+    "duration": 1.2,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "swimmer's arms generate continuous propulsion through water, maintaining consistent contact and motion during submersion",
+    "start": 3.7,
+    "duration": 1.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "swimmer continues butterfly stroke cycle with both arms",
+    "start": 4.9,
+    "duration": 1.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 16,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 29.23123550415039
+ },
+ "s09": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "basketball dribbling with consistent taps, then opponent slaps it out of hand with a large splat",
+    "start": 0.0,
+    "duration": 2.1,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "ball forcibly impacted and ejected from hand due to external force application; contact mode shifts from controlled surface interaction to violent impact with no prior deceler",
+    "start": 2.1,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 10,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 12.530607223510742
+ },
+ "s10": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "basketball dribbling then slaps out of hand",
+    "start": 0.0,
+    "duration": 2.5,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 4.6631834506988525
+ },
+ "s11": {
+  "ok": false,
+  "error": "ValueError: Plan exceeds 10 seconds; it is not silently compressed",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 15.666444301605225
+ },
+ "s12": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "stomach rumbles softly, then contracts with a louder growl, almost like a burp",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "stomach rumbling begins as a soft internal sound",
+    "start": 1.2,
+    "duration": 0.3,
+    "intensity": 0.4,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 7,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 10.417358636856079
+ },
+ "s13": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "pencil zipping and opening",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "pencil open",
+    "start": 0.8,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "pencil case open",
+    "start": 1.6,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "pencil case stirring looking for the pencil",
+    "start": 2.4000000000000004,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "pencil case zip back to close it",
+    "start": 3.2,
+    "duration": 0.8,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 20,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 26.66772174835205
+ },
+ "s14": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "car crash impact and sound emission",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "unspecified surface sliding against unspecified surface",
+    "start": 1.2,
+    "duration": 0.2719243234607809,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 8,
+  "leaf_models": [
+   "sliding",
+   "lm_atomic"
+  ],
+  "seconds": 11.05033802986145
+ },
+ "s15": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "bowstring pulled back and released with full strength, sending arrow flying",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 8,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 10.367305278778076
+ },
+ "s16": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "I pulled back the extremely tense bowstring with all my strength to the fullest and then released it. pulled back and released the bowstring",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 3.998147487640381
+ },
+ "s17": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The badminton rally continued at a fast and steady pace until the game ended with a powerful smash. continued at a fast and steady pace until the game ended with a powerful smash",
+    "start": 0.0,
+    "duration": 3.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 4.416066646575928
+ },
+ "s18": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "crinkly vinyl snack package tears open with a sharp, crisp rip",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "package tears apart with a sharp, crisp rip under sustained surface contact and applied force",
+    "start": 1.2,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 10,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 12.055880784988403
+ },
+ "s19": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "vinyl snack package tearing open with a sharp sound",
+    "start": 0.0,
+    "duration": 2.1,
+    "intensity": 0.95,
+    "transition": "cut"
+   },
+   {
+    "prompt": "vinyl snack package tearing with a sharp sound",
+    "start": 2.1,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 7,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 7.854855060577393
+ },
+ "s20": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "pickle container turned slowly with increasing external torque, maintaining continuous rotational motion until it opens under strong pressure, resulting in a sudden release of contents",
+    "start": 0.0,
+    "duration": 3.2,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "cheer observed as a behavioral response to the sudden release of contents",
+    "start": 3.2,
+    "duration": 0.8,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "container opens suddenly due to structural failure under sustained torque and pressure, releasing its contents as a physical event",
+    "start": 4.0,
+    "duration": 1.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "container opens under strong external pressure, resulting in a sudden release of contents and a 'cheerful puff' as a behavioral response",
+    "start": 5.2,
+    "duration": 0.8,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "container remains closed until turning reaches sufficient force, then opens with sudden release due to sustained torque and material yielding",
+    "start": 6.0,
+    "duration": 1.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 17,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 26.2363018989563
+ },
+ "s21": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "bunjee jump slice through the wind making a very large noise",
+    "start": 0.0,
+    "duration": 4.5,
+    "intensity": 0.95,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 4,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 4.020599365234375
+ }
+}

@@ -1,0 +1,19 @@
+# Environment / secrets
+.venv/
+.env
+__pycache__/
+*.pyc
+
+# Model weights (download per README)
+weights/
+
+# Rendered audio and logs: regenerate from the JSON plans/manifests
+*.wav
+*.log
+out/**/*.npy
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,70 @@
+{
+  "event": "I pulled back the extremely taut bowstring with all my strength and then released it, sending the arrow flying.",
+  "sub_events": [
+    {
+      "prompt": "Simulate the tension of pulling back a bowstring with increasing resistance",
+      "start": 0.0,
+      "duration": 2.0,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_pulled_back_the_extremely_taut_bow_1026_001817/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0023,
+        0.0122
+      ],
+      "offset": 1.0,
+      "shared": false
+    },
+    {
+      "prompt": "Sudden release of tension as the bowstring is let go",
+      "start": 2.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_pulled_back_the_extremely_taut_bow_1026_001817/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0465,
+        0.0119
+      ],
+      "offset": 0.101,
+      "shared": false
+    },
+    {
+      "prompt": "Simulate the vibration of the arrow flying through the air",
+      "start": 2.5,
+      "duration": 1.0,
+      "intensity": 0.5,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_I_pulled_back_the_extremely_taut_bow_1026_001817/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0121,
+        0.0038
+      ],
+      "offset": 1.828,
+      "shared": false
+    }
+  ],
+  "total": 3.5,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_pulled_back_the_extremely_taut_bow_1026_001817_composite.wav",
+  "baseline": null,
+  "gen_duration": 3.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.3401501178741455,
+  "elapsed": 3.3523898124694824
+}

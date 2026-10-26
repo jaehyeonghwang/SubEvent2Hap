@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] clap loudly once.", "params": {"generator": "audiogen", "candidates": 2, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": 1, "gamma": 1.6, "share_repeats": true, "sub_events": 1}, "created": 1792943337.7595289, "kind": "composite", "event": "clap loudly once.", "run": "compose_clap_loudly_once_1026_004857"}

@@ -1,0 +1,85 @@
+{
+  "event": "Both fencers engaged in a tense blade battle, neither willing to give an inch",
+  "sub_events": [
+    {
+      "prompt": "Two steel blades meeting with a sharp metallic snap",
+      "start": 0.0,
+      "duration": 0.3,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "blades",
+      "file": "compose/compose_Both_fencers_engaged_in_a_tense_blad_1025_191730/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0714,
+        0.1755
+      ],
+      "offset": 2.009,
+      "shared": false
+    },
+    {
+      "prompt": "Steel blades sliding against each other with a gritty scraping texture",
+      "start": 0.4,
+      "duration": 0.6,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "blades",
+      "file": "compose/compose_Both_fencers_engaged_in_a_tense_blad_1025_191730/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0155,
+        0.0046
+      ],
+      "offset": 0.075,
+      "shared": false
+    },
+    {
+      "prompt": "Blades pressing firmly together with a steady dull hum",
+      "start": 1.0,
+      "duration": 0.7,
+      "intensity": 0.6,
+      "transition": "crossfade",
+      "source": "blades",
+      "file": "compose/compose_Both_fencers_engaged_in_a_tense_blad_1025_191730/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0001,
+        0.0
+      ],
+      "offset": 1.44,
+      "shared": false
+    },
+    {
+      "prompt": "Fencers shifting slightly with a low rumbling pressure on the blades",
+      "start": 1.7,
+      "duration": 0.5,
+      "intensity": 0.4,
+      "transition": "cut",
+      "source": "fencers",
+      "file": "compose/compose_Both_fencers_engaged_in_a_tense_blad_1025_191730/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0015,
+        0.2633
+      ],
+      "offset": 1.381,
+      "shared": false
+    }
+  ],
+  "total": 2.2,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Both_fencers_engaged_in_a_tense_blad_1025_191730_composite.wav",
+  "baseline": "compose_Both_fencers_engaged_in_a_tense_blad_1025_191730_baseline.wav",
+  "gen_duration": 2.2,
+  "prompts": 10,
+  "elapsed_gen": 5.120527505874634,
+  "elapsed": 5.13836669921875
+}

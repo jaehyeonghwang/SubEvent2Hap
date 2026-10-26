@@ -1,0 +1,71 @@
+{
+  "event": "Driving a racing car on a rainy day then suddenly losing control of the car and crash into a tree.",
+  "sub_events": [
+    {
+      "prompt": "The racing car is driving on a wet road.",
+      "start": 0.0,
+      "duration": 3.0,
+      "intensity": 0.5,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_010926/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.2393,
+        0.1928
+      ],
+      "offset": 0.219,
+      "shared": false
+    },
+    {
+      "prompt": "The racing car is losing control.",
+      "start": 3.0,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_010926/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.2536,
+        0.5625
+      ],
+      "offset": 4.448,
+      "shared": false
+    },
+    {
+      "prompt": "The racing car is crashing into a tree.",
+      "start": 4.0,
+      "duration": 1.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_010926/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.2224,
+        0.3049
+      ],
+      "offset": 3.98,
+      "shared": false
+    }
+  ],
+  "total": 5.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Driving_a_racing_car_on_a_rainy_day__1026_010926_composite.wav",
+  "baseline": "compose_Driving_a_racing_car_on_a_rainy_day__1026_010926_baseline.wav",
+  "gen_duration": 5.5,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 9.92529582977295,
+  "elapsed": 9.94623327255249
+}

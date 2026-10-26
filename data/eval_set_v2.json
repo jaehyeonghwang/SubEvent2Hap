@@ -1,0 +1,705 @@
+{
+ "version": "eval_set_v2.2",
+ "status": "development/regression set. Prompts, plans and scores were inspected while building it, so it must not be reported as a held-out test set. A final test set needs new prompts and action combinations, frozen before evaluation.",
+ "source": "https://github.com/HapticGen/hapticgen-dataset (user_prompt). The source provides prompts and A/B votes only; every structural annotation below is ours. expertvoted prompts were used to train/fine-tune HapticGen.",
+ "selection": "Rule: unique prompts (case/whitespace-normalised) of <= 40 words with an explicit count (once|twice|thrice|<number> times/taps/knocks/steps/shots/beats/clicks/hits) or a sequence connective (then|followed by|and finally|until|after that|afterwards); excluded non-contact audio captions (speech, animal calls, music) and 'once' meaning 'at once'. Items marked selection=manual were kept outside that rule; the reason is given.",
+ "annotation_status": "Revised draft (v2) following the eval_set_v1 review. Explicit conditions only; interpretive conditions and rendering conventions are not scored. Still requires researcher confirmation and ideally a second independent annotator.",
+ "scoring": {
+  "unit": "Conditions apply to the sub-events matched by an event pattern, never to the global number of short segments. A sub-event matches an event if its prompt matches `pattern` (case-insensitive regex) and not `exclude`. Object+verb alternatives use lookaheads, so word order does not matter; an object name alone never matches an action.",
+  "count": "number of sub-events matching the event equals `count` (only where the text states the count of that action and one occurrence maps to one sub-event).",
+  "order": "events listed in `order` match distinct sub-events in strictly increasing start order (greedy). order_strength=weak is reported but not scored.",
+  "period": "all consecutive gaps between matched sub-events within target_s * (1 +- tol_rel); requires >= 3 matched sub-events. tol_rel fixed a priori at 0.2.",
+  "relative": "intensity of the first sub-event matching `stronger` exceeds that of the first matching `weaker`.",
+  "forbid": "no sub-event matches any forbid pattern (content not stated in the text).",
+  "last_event": "the last sub-event by start time matches this event (nothing vibrates after it).",
+  "renderable": "reported separately as feasibility; never averaged with semantic checks."
+ },
+ "items": [
+  {
+   "id": "c01",
+   "source_split": "expertvoted",
+   "family": "basketball_dribble",
+   "selection": "rule",
+   "prompt": "To dribble a basketball forcefully once",
+   "events": [
+    {
+     "id": "dribble",
+     "pattern": "dribbl|bounc|(?=.*(ball))(?=.*(impact|strik|hit|contact))",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "c02",
+   "source_split": "uservoted",
+   "family": "gun",
+   "selection": "rule",
+   "prompt": "After sticking and aiming the gun, he shoots at the enemy once.",
+   "events": [
+    {
+     "id": "shot",
+     "pattern": "shoot|shot|firing|fires?\b|recoil|(?=.*(gun))(?=.*(impact|strik|blast|kick))",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "c03",
+   "source_split": "uservoted",
+   "family": "tree_apple",
+   "selection": "rule",
+   "prompt": "A situation where I shake a tree 3 times and an apple falls on my head",
+   "events": [
+    {
+     "id": "shake",
+     "pattern": "shak|sway|rustl|(?=.*(tree))(?=.*(impact|strik|hit|contact))"
+    },
+    {
+     "id": "apple",
+     "pattern": "(?=.*(apple))(?=.*(head|land|hit|impact|strik|fall|drop|contact))|(?=.*(head))(?=.*(impact|strik|hit|contact))"
+    }
+   ],
+   "order": [
+    "shake",
+    "apple"
+   ],
+   "notes": "Shake count (3) is explicit but one shake need not be one sub-event; not scored."
+  },
+  {
+   "id": "c04",
+   "source_split": "uservoted",
+   "family": "clap",
+   "selection": "rule",
+   "prompt": "clap loudly once.",
+   "events": [
+    {
+     "id": "clap",
+     "pattern": "clap|(?=.*(hand|palm))(?=.*(impact|strik|hit|contact))",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "c05",
+   "source_split": "uservoted",
+   "family": "stick",
+   "selection": "rule",
+   "prompt": "He tries to break the rough wooden stick by bending it twice, but to no avail. On the third attempt, with a strong impact, the stick finally snaps.",
+   "events": [
+    {
+     "id": "bend",
+     "pattern": "bend|bent|flex|strain"
+    },
+    {
+     "id": "snap",
+     "pattern": "snap|break|broke|crack|split"
+    }
+   ],
+   "order": [
+    "bend",
+    "snap"
+   ],
+   "notes": "Two failed bends + third attempt with snap. Bend count and global strongest-last not scored."
+  },
+  {
+   "id": "c06",
+   "source_split": "uservoted",
+   "family": "paper",
+   "selection": "rule",
+   "prompt": "He was feeling so upset that he crumpled the paper forcefully three times and slammed it to the ground.",
+   "events": [
+    {
+     "id": "crumple",
+     "pattern": "crumpl|crush|scrunch|wad"
+    },
+    {
+     "id": "slam",
+     "pattern": "slam|throw|thrown|hurl|(?=.*(ground|floor))(?=.*(impact|strik|hit|contact))"
+    }
+   ],
+   "order": [
+    "crumple",
+    "slam"
+   ],
+   "notes": "Crumple count (3) explicit but one crumple may be several waveform peaks or one sub-event; not scored."
+  },
+  {
+   "id": "c07",
+   "source_split": "uservoted",
+   "family": "typing_click",
+   "selection": "rule",
+   "prompt": "I'm typing a document quickly on my keyboard, and then I slowly click my mouse once",
+   "events": [
+    {
+     "id": "typing",
+     "pattern": "typ|keystroke|key ?press|(?=.*(key))(?=.*(tap|press|strik|impact|click))",
+     "exclude": "mouse"
+    },
+    {
+     "id": "click",
+     "pattern": "click|mouse",
+     "exclude": "keyboard|typ",
+     "count": 1
+    }
+   ],
+   "order": [
+    "typing",
+    "click"
+   ]
+  },
+  {
+   "id": "c08",
+   "source_split": "uservoted",
+   "family": "typing_click",
+   "selection": "rule",
+   "prompt": "I type a document on my keyboard and click my mouse once",
+   "events": [
+    {
+     "id": "typing",
+     "pattern": "typ|keystroke|key ?press|(?=.*(key))(?=.*(tap|press|strik|impact|click))",
+     "exclude": "mouse"
+    },
+    {
+     "id": "click",
+     "pattern": "click|mouse",
+     "exclude": "keyboard|typ",
+     "count": 1
+    }
+   ],
+   "order": [
+    "typing",
+    "click"
+   ],
+   "order_strength": "weak",
+   "notes": "'and' does not fix strict order; order reported but not scored."
+  },
+  {
+   "id": "c09",
+   "source_split": "uservoted",
+   "family": "soccer_dribble",
+   "selection": "rule",
+   "prompt": "the sound of dribbling a soccer ball in three steps",
+   "events": [
+    {
+     "id": "dribble",
+     "pattern": "dribbl|kick|touch|tap|bounc|(?=.*(ball))(?=.*(impact|strik|hit|contact))"
+    }
+   ],
+   "notes": "'three steps' may describe footsteps or progression, not three ball contacts; count not scored."
+  },
+  {
+   "id": "c10",
+   "source_split": "uservoted",
+   "family": "water_bomb",
+   "selection": "rule",
+   "prompt": "water bomb pops and splashes once as I hit the enemy",
+   "events": [
+    {
+     "id": "pop",
+     "pattern": "pop|burst|explod|rupture",
+     "count": 1
+    }
+   ],
+   "notes": "Splash may be part of the same event or a sustained tail; not required as a separate contact."
+  },
+  {
+   "id": "c11",
+   "source_split": "uservoted",
+   "family": "mosquito",
+   "selection": "rule",
+   "prompt": "I have been bitten twice by mosquitoes on my right hand and it's itchy",
+   "events": [
+    {
+     "id": "bite",
+     "pattern": "\\bbit(e|es|ten|ing)?\\b|sting|prick|pierc|puncture",
+     "exclude": "itch",
+     "count": 2
+    }
+   ],
+   "notes": "Itch is a separate sensation and is not counted."
+  },
+  {
+   "id": "c12",
+   "source_split": "uservoted",
+   "family": "cpr",
+   "selection": "rule",
+   "prompt": "I have to do CPR. heavily and strongly pressing his chest constantly with the speed of pressing 100 times in a minute",
+   "events": [
+    {
+     "id": "press",
+     "pattern": "press|compress|push|pump|(?=.*(chest))(?=.*(impact|strik|hit|contact))"
+    }
+   ],
+   "period": {
+    "event": "press",
+    "target_s": 0.6,
+    "tol_rel": 0.2
+   },
+   "notes": "Total number of presses and duration are not stated."
+  },
+  {
+   "id": "s01",
+   "source_split": "expertvoted",
+   "family": "vehicle_crash",
+   "selection": "rule",
+   "prompt": "Driving a racing car on a rainy day then suddenly losing control of the car and crash into a tree.",
+   "events": [
+    {
+     "id": "drive",
+     "pattern": "driv|engine|rolling|tire|tyre|road|skid|slid",
+     "exclude": "crash|collid"
+    },
+    {
+     "id": "crash",
+     "pattern": "crash|collid|collision|smash|(?=.*(tree))(?=.*(impact|strik|hit|contact))"
+    }
+   ],
+   "order": [
+    "drive",
+    "crash"
+   ],
+   "notes": "Rendering driving as a sustained segment is a design convention; not scored."
+  },
+  {
+   "id": "s02",
+   "source_split": "expertvoted",
+   "family": "bike_surface",
+   "selection": "rule",
+   "prompt": "riding a bike on a smooth track and then ride on a gravel field",
+   "events": [
+    {
+     "id": "smooth",
+     "pattern": "smooth"
+    },
+    {
+     "id": "gravel",
+     "pattern": "gravel"
+    }
+   ],
+   "order": [
+    "smooth",
+    "gravel"
+   ]
+  },
+  {
+   "id": "s03",
+   "source_split": "expertvoted",
+   "family": "bike_surface",
+   "selection": "rule",
+   "prompt": "riding a bike on a smooth track and then ride on a bumpy road",
+   "events": [
+    {
+     "id": "smooth",
+     "pattern": "smooth"
+    },
+    {
+     "id": "bumpy",
+     "pattern": "bump|uneven|rough|jolt"
+    }
+   ],
+   "order": [
+    "smooth",
+    "bumpy"
+   ]
+  },
+  {
+   "id": "s04",
+   "source_split": "expertvoted",
+   "family": "ambulance",
+   "selection": "rule",
+   "prompt": "The ambulance passing outside the window approaches and then moves away.",
+   "events": [],
+   "notes": "Approach then recede would need an envelope check under stated observer/rendering assumptions; no semantic check scored (feasibility only)."
+  },
+  {
+   "id": "s05",
+   "source_split": "expertvoted",
+   "family": "jar_open",
+   "selection": "rule",
+   "prompt": "Trying to open a tightly shut pickle jar and then finally opening it with a loud pop.",
+   "events": [
+    {
+     "id": "attempt",
+     "pattern": "twist|turn|strain|grip|struggl|tighten|wrench|lid",
+     "exclude": "pop|puff"
+    },
+    {
+     "id": "pop",
+     "pattern": "pop|puff|burst"
+    }
+   ],
+   "order": [
+    "attempt",
+    "pop"
+   ],
+   "notes": "'loud' does not establish the pop as globally strongest; not scored."
+  },
+  {
+   "id": "s06",
+   "source_split": "uservoted",
+   "family": "arrow_melon",
+   "selection": "rule",
+   "prompt": "an arrow that is penetrating a melon in slow motion, starting from its hard shell into the soft fruit within and then coming out of the outer shell again",
+   "events": [
+    {
+     "id": "entry",
+     "pattern": "pierc|penetrat|enter|punctur|(hard|outer) (shell|rind)",
+     "exclude": "exit|emerg|out of|leav|coming out"
+    },
+    {
+     "id": "flesh",
+     "pattern": "soft|flesh|pulp|juic|inner fruit"
+    },
+    {
+     "id": "exit",
+     "pattern": "exit|emerg|out of|leav|coming out|breaks? out|through the (other|far|opposite)"
+    }
+   ],
+   "order": [
+    "entry",
+    "flesh",
+    "exit"
+   ]
+  },
+  {
+   "id": "s07",
+   "source_split": "uservoted",
+   "family": "typing_enter",
+   "selection": "rule",
+   "prompt": "A graduate student rigorously typing their computer keyboard to write a research draft and then hitting the enter key after each paragraph, then pause..",
+   "events": [
+    {
+     "id": "typing",
+     "pattern": "typ|keystroke|key ?press|(?=.*(key))(?=.*(tap|press|strik|impact|click))",
+     "exclude": "enter"
+    },
+    {
+     "id": "enter",
+     "pattern": "enter|return key"
+    }
+   ],
+   "order": [
+    "typing",
+    "enter"
+   ],
+   "last_event": "enter",
+   "notes": "Number of paragraphs/Enter presses not stated. Final pause: nothing vibrates after the last Enter."
+  },
+  {
+   "id": "s08",
+   "source_split": "uservoted",
+   "family": "swim",
+   "selection": "rule",
+   "prompt": "A swimmer swims in butterfly stroke. The swimmer repeats the process of strongly coming out of the water with both of his arms, then going back into the water.",
+   "events": [
+    {
+     "id": "out",
+     "pattern": "out of (the )?water|emerg|rise|rising|lift|surfac",
+     "exclude": "back into|enter"
+    },
+    {
+     "id": "in",
+     "pattern": "into (the )?water|back into|enter|plunge|dive|re-?enter|splash"
+    }
+   ],
+   "order": [
+    "out",
+    "in"
+   ],
+   "notes": "Repetition count not stated; two arms are not two separate contacts."
+  },
+  {
+   "id": "s09",
+   "source_split": "uservoted",
+   "family": "dribble_slap",
+   "selection": "rule",
+   "prompt": "Dribbling a basketball then an opponent forcefully slaps the ball out of your hand with a large splat",
+   "events": [
+    {
+     "id": "dribble",
+     "pattern": "dribbl|bounc|(?=.*(ball))(?=.*(impact|strik|hit|contact))",
+     "exclude": "slap|swat|smack"
+    },
+    {
+     "id": "slap",
+     "pattern": "slap|smack|swat|splat|knock"
+    }
+   ],
+   "order": [
+    "dribble",
+    "slap"
+   ]
+  },
+  {
+   "id": "s10",
+   "source_split": "uservoted",
+   "family": "dribble_slap",
+   "selection": "rule",
+   "prompt": "Dribbling a basketball then an opponent slaps the ball out of your hand",
+   "events": [
+    {
+     "id": "dribble",
+     "pattern": "dribbl|bounc|(?=.*(ball))(?=.*(impact|strik|hit|contact))",
+     "exclude": "slap|swat|smack"
+    },
+    {
+     "id": "slap",
+     "pattern": "slap|smack|swat|knock"
+    }
+   ],
+   "order": [
+    "dribble",
+    "slap"
+   ]
+  },
+  {
+   "id": "s11",
+   "source_split": "uservoted",
+   "family": "vehicle_crash",
+   "selection": "rule",
+   "prompt": "Driving a truck really fast on a highway during a heavy snowfall and then crashing into a huge moose.",
+   "events": [
+    {
+     "id": "drive",
+     "pattern": "driv|engine|rolling|tire|tyre|road|highway|speed",
+     "exclude": "crash|collid"
+    },
+    {
+     "id": "crash",
+     "pattern": "crash|collid|collision|smash|(?=.*(moose))(?=.*(impact|strik|hit|contact))"
+    }
+   ],
+   "order": [
+    "drive",
+    "crash"
+   ]
+  },
+  {
+   "id": "s12",
+   "source_split": "uservoted",
+   "family": "stomach",
+   "selection": "rule",
+   "prompt": "Feeling hungry as my stomach first rumbles softly, then contracts with a louder growl, almost like a burp.",
+   "events": [
+    {
+     "id": "rumble",
+     "pattern": "rumbl",
+     "exclude": "growl"
+    },
+    {
+     "id": "growl",
+     "pattern": "growl|contract|burp"
+    }
+   ],
+   "order": [
+    "rumble",
+    "growl"
+   ],
+   "relative": [
+    {
+     "stronger": "growl",
+     "weaker": "rumble"
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "source_split": "uservoted",
+   "family": "pencil_case",
+   "selection": "rule",
+   "prompt": "First, I'm zipping and opening the pencil case. Then I am stirring the pencil case looking for the pencil. Then I found it and zipped the pencil case back to close it.",
+   "events": [
+    {
+     "id": "open",
+     "pattern": "unzip|open",
+     "exclude": "clos|shut"
+    },
+    {
+     "id": "rummage",
+     "pattern": "stir|rummag|search|shuffl|rattl|dig|sift"
+    },
+    {
+     "id": "close",
+     "pattern": "clos|shut|zipped (back|up)|zip(ping|s)? (it )?(back|up)",
+     "exclude": "open"
+    }
+   ],
+   "order": [
+    "open",
+    "rummage",
+    "close"
+   ]
+  },
+  {
+   "id": "s14",
+   "source_split": "uservoted",
+   "family": "game_crash",
+   "selection": "rule",
+   "prompt": "In a very competitive car racing game, you crash into another car, making a very large sound. Then, there is only silence.",
+   "events": [
+    {
+     "id": "crash",
+     "pattern": "crash|collid|collision|smash|(?=.*(car))(?=.*(impact|strik|hit|contact))",
+     "count": 1
+    }
+   ],
+   "last_event": "crash",
+   "notes": "One crash event; silence after it (no later engine, driving or contacts). Silence length not stated."
+  },
+  {
+   "id": "s15",
+   "source_split": "uservoted",
+   "family": "bow",
+   "selection": "rule",
+   "prompt": "I pulled back the extremely taut bowstring with all my strength and then released it, sending the arrow flying.",
+   "events": [
+    {
+     "id": "draw",
+     "pattern": "pull|draw|tension|taut|stretch",
+     "exclude": "releas"
+    },
+    {
+     "id": "release",
+     "pattern": "releas|twang|snap|let go|loos"
+    }
+   ],
+   "order": [
+    "draw",
+    "release"
+   ],
+   "forbid": [
+    "target|bullseye|hits? (a|the)|embed|strikes? (a|the)"
+   ],
+   "notes": "Arrow flight may exist as a physical stage without vibration. Hitting a target is not stated."
+  },
+  {
+   "id": "s16",
+   "source_split": "uservoted",
+   "family": "bow",
+   "selection": "rule",
+   "prompt": "I pulled back the extremely tense bowstring with all my strength to the fullest and then released it.",
+   "events": [
+    {
+     "id": "draw",
+     "pattern": "pull|draw|tension|tense|stretch",
+     "exclude": "releas"
+    },
+    {
+     "id": "release",
+     "pattern": "releas|twang|snap|let go|loos"
+    }
+   ],
+   "order": [
+    "draw",
+    "release"
+   ],
+   "forbid": [
+    "target|bullseye|hits? (a|the)|embed|strikes? (a|the)"
+   ]
+  },
+  {
+   "id": "s17",
+   "source_split": "uservoted",
+   "family": "badminton",
+   "selection": "rule",
+   "prompt": "The badminton rally continued at a fast and steady pace until the game ended with a powerful smash.",
+   "events": [
+    {
+     "id": "rally",
+     "pattern": "rally|shuttle|racket|hit|strik|impact",
+     "exclude": "smash"
+    },
+    {
+     "id": "smash",
+     "pattern": "smash"
+    }
+   ],
+   "order": [
+    "rally",
+    "smash"
+   ],
+   "last_event": "smash",
+   "notes": "Number of rally hits not stated; 'powerful' is not scored as globally strongest."
+  },
+  {
+   "id": "s18",
+   "source_split": "uservoted",
+   "family": "snack_package",
+   "selection": "rule",
+   "prompt": "Trying to open a crinkly vinyl snack package, then finally tearing it open with a sharp, crisp rip.",
+   "events": [
+    {
+     "id": "attempt",
+     "pattern": "attempt|trying|try to|crinkl|pull|tug|squeez|struggl|twist|stretch|rustl",
+     "exclude": "rip|tear"
+    },
+    {
+     "id": "rip",
+     "pattern": "\\brip|tear|torn"
+    }
+   ],
+   "order": [
+    "attempt",
+    "rip"
+   ]
+  },
+  {
+   "id": "s19",
+   "source_split": "uservoted",
+   "family": "snack_package",
+   "selection": "rule",
+   "prompt": "Trying to open a vinyl snack package, then finally tearing it open with a sharp sound.",
+   "events": [
+    {
+     "id": "attempt",
+     "pattern": "attempt|trying|try to|crinkl|pull|tug|squeez|struggl|twist|stretch|rustl",
+     "exclude": "rip|tear"
+    },
+    {
+     "id": "rip",
+     "pattern": "\\brip|tear|torn"
+    }
+   ],
+   "order": [
+    "attempt",
+    "rip"
+   ]
+  },
+  {
+   "id": "s20",
+   "source_split": "uservoted",
+   "family": "jar_open",
+   "selection": "manual: no rule connective ('at once' excluded as a count); kept as a near-variant of s05",
+   "prompt": "When a well-compressed and packed new pickle container is turned, it does not open even with a strong force, but when it opens at once with a cheerful puff",
+   "events": [
+    {
+     "id": "attempt",
+     "pattern": "turn|twist|strain|grip|struggl|force|wrench",
+     "exclude": "puff|pop"
+    },
+    {
+     "id": "puff",
+     "pattern": "puff|pop|hiss|burst|(?=.*releas)(?=.*air)"
+    }
+   ],
+   "order": [
+    "attempt",
+    "puff"
+   ]
+  },
+  {
+   "id": "s21",
+   "source_split": "uservoted",
+   "family": "bungee",
+   "selection": "manual: 'Once you fall' is a temporal conjunction, which the exclusion rule would remove; kept as a no-contact case",
+   "prompt": "You are about to bunjee jump. Once you fall, you slice through the wind which makes a very large noise. The jump ends, and there is no more wind.",
+   "events": [
+    {
+     "id": "wind",
+     "pattern": "wind|rush|air|whoosh|whistl"
+    }
+   ],
+   "notes": "Whether no-contact flight is rendered as vibration is a project policy; only presence of the wind event is scored."
+  }
+ ]
+}

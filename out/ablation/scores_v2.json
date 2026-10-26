@@ -1,0 +1,2318 @@
+[
+ {
+  "variant": "full",
+  "n": 33,
+  "renderable": 0.6666666666666666,
+  "items_all_pass": 0.28125,
+  "items_all_pass_given_rendered": 0.42857142857142855,
+  "present": 0.34375,
+  "count": 0.625,
+  "order": 0.13636363636363635,
+  "period": 0.0,
+  "relative": 0.0,
+  "forbid": 0.0,
+  "last_event": 0.6666666666666666,
+  "n_present": 32,
+  "n_count": 8,
+  "n_order": 22,
+  "n_period": 1,
+  "n_relative": 1,
+  "n_forbid": 2,
+  "n_last_event": 3,
+  "lm_calls": 6.7272727272727275,
+  "seconds": 7.842975276889223,
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c02": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c03": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "c04": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c05": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "c06": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "c07": {
+    "renderable": true,
+    "present": false,
+    "count": true,
+    "order": false
+   },
+   "c08": {
+    "renderable": false,
+    "present": false,
+    "count": false
+   },
+   "c09": {
+    "renderable": true,
+    "present": true
+   },
+   "c10": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c11": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c12": {
+    "renderable": true,
+    "present": true,
+    "period": false
+   },
+   "s01": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s02": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s03": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s04": {
+    "renderable": true
+   },
+   "s05": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s06": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s07": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s08": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s09": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s10": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s11": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s12": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "relative": false
+   },
+   "s13": {
+    "renderable": true,
+    "present": true,
+    "order": false
+   },
+   "s14": {
+    "renderable": false,
+    "present": false,
+    "count": false,
+    "last_event": false
+   },
+   "s15": {
+    "renderable": false,
+    "present": false,
+    "order": false,
+    "forbid": false
+   },
+   "s16": {
+    "renderable": false,
+    "present": false,
+    "order": false,
+    "forbid": false
+   },
+   "s17": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s18": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s19": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s20": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s21": {
+    "renderable": true,
+    "present": true
+   }
+  }
+ },
+ {
+  "variant": "-models",
+  "n": 33,
+  "renderable": 0.7272727272727273,
+  "items_all_pass": 0.3125,
+  "items_all_pass_given_rendered": 0.43478260869565216,
+  "present": 0.40625,
+  "count": 0.625,
+  "order": 0.18181818181818182,
+  "period": 0.0,
+  "relative": 0.0,
+  "forbid": 0.5,
+  "last_event": 0.6666666666666666,
+  "n_present": 32,
+  "n_count": 8,
+  "n_order": 22,
+  "n_period": 1,
+  "n_relative": 1,
+  "n_forbid": 2,
+  "n_last_event": 3,
+  "lm_calls": 3.75,
+  "seconds": 5.044455708879413,
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c02": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c03": {
+    "renderable": true,
+    "present": true,
+    "order": false
+   },
+   "c04": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c05": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "c06": {
+    "renderable": true,
+    "present": true,
+    "order": false
+   },
+   "c07": {
+    "renderable": true,
+    "present": true,
+    "count": true,
+    "order": true
+   },
+   "c08": {
+    "renderable": false,
+    "present": false,
+    "count": false
+   },
+   "c09": {
+    "renderable": true,
+    "present": true
+   },
+   "c10": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c11": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c12": {
+    "renderable": true,
+    "present": true,
+    "period": false
+   },
+   "s01": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s02": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s03": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s04": {
+    "renderable": true
+   },
+   "s05": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s06": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s07": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s08": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s09": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s10": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s11": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s12": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "relative": false
+   },
+   "s13": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s14": {
+    "renderable": false,
+    "present": false,
+    "count": false,
+    "last_event": false
+   },
+   "s15": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "forbid": true
+   },
+   "s16": {
+    "renderable": false,
+    "present": false,
+    "order": false,
+    "forbid": false
+   },
+   "s17": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s18": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s19": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s20": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s21": {
+    "renderable": true,
+    "present": true
+   }
+  }
+ },
+ {
+  "variant": "-structure_review",
+  "n": 33,
+  "renderable": 0.9393939393939394,
+  "items_all_pass": 0.3125,
+  "items_all_pass_given_rendered": 0.3333333333333333,
+  "present": 0.5,
+  "count": 0.5,
+  "order": 0.22727272727272727,
+  "period": 0.0,
+  "relative": 1.0,
+  "forbid": 1.0,
+  "last_event": 0.6666666666666666,
+  "n_present": 32,
+  "n_count": 8,
+  "n_order": 22,
+  "n_period": 1,
+  "n_relative": 1,
+  "n_forbid": 2,
+  "n_last_event": 3,
+  "lm_calls": 7.580645161290323,
+  "seconds": 11.095156799663197,
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c02": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c03": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "c04": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c05": {
+    "renderable": true,
+    "present": true,
+    "order": false
+   },
+   "c06": {
+    "renderable": true,
+    "present": true,
+    "order": false
+   },
+   "c07": {
+    "renderable": true,
+    "present": false,
+    "count": false,
+    "order": false
+   },
+   "c08": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c09": {
+    "renderable": true,
+    "present": true
+   },
+   "c10": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c11": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c12": {
+    "renderable": true,
+    "present": true,
+    "period": false
+   },
+   "s01": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s02": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s03": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s04": {
+    "renderable": true
+   },
+   "s05": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s06": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s07": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s08": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s09": {
+    "renderable": true,
+    "present": true,
+    "order": false
+   },
+   "s10": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s11": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s12": {
+    "renderable": true,
+    "present": true,
+    "order": false,
+    "relative": true
+   },
+   "s13": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s14": {
+    "renderable": true,
+    "present": true,
+    "count": true,
+    "last_event": false
+   },
+   "s15": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "forbid": true
+   },
+   "s16": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "forbid": true
+   },
+   "s17": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s18": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s19": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s20": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s21": {
+    "renderable": true,
+    "present": true
+   }
+  }
+ },
+ {
+  "variant": "-split_review",
+  "n": 33,
+  "renderable": 0.7272727272727273,
+  "items_all_pass": 0.34375,
+  "items_all_pass_given_rendered": 0.4782608695652174,
+  "present": 0.40625,
+  "count": 0.625,
+  "order": 0.22727272727272727,
+  "period": 0.0,
+  "relative": 0.0,
+  "forbid": 0.0,
+  "last_event": 0.6666666666666666,
+  "n_present": 32,
+  "n_count": 8,
+  "n_order": 22,
+  "n_period": 1,
+  "n_relative": 1,
+  "n_forbid": 2,
+  "n_last_event": 3,
+  "lm_calls": 6.166666666666667,
+  "seconds": 7.252637285174745,
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c02": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c03": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "c04": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c05": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "c06": {
+    "renderable": true,
+    "present": true,
+    "order": false
+   },
+   "c07": {
+    "renderable": true,
+    "present": true,
+    "count": true,
+    "order": true
+   },
+   "c08": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c09": {
+    "renderable": true,
+    "present": true
+   },
+   "c10": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c11": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c12": {
+    "renderable": true,
+    "present": true,
+    "period": false
+   },
+   "s01": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s02": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s03": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s04": {
+    "renderable": true
+   },
+   "s05": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s06": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s07": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s08": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s09": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s10": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s11": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s12": {
+    "renderable": false,
+    "present": false,
+    "order": false,
+    "relative": false
+   },
+   "s13": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s14": {
+    "renderable": false,
+    "present": false,
+    "count": false,
+    "last_event": false
+   },
+   "s15": {
+    "renderable": false,
+    "present": false,
+    "order": false,
+    "forbid": false
+   },
+   "s16": {
+    "renderable": false,
+    "present": false,
+    "order": false,
+    "forbid": false
+   },
+   "s17": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s18": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s19": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s20": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s21": {
+    "renderable": true,
+    "present": true
+   }
+  }
+ },
+ {
+  "variant": "-state_binding",
+  "n": 33,
+  "renderable": 0.7878787878787878,
+  "items_all_pass": 0.3125,
+  "items_all_pass_given_rendered": 0.4,
+  "present": 0.40625,
+  "count": 0.625,
+  "order": 0.18181818181818182,
+  "period": 0.0,
+  "relative": 0.0,
+  "forbid": 0.0,
+  "last_event": 0.6666666666666666,
+  "n_present": 32,
+  "n_count": 8,
+  "n_order": 22,
+  "n_period": 1,
+  "n_relative": 1,
+  "n_forbid": 2,
+  "n_last_event": 3,
+  "lm_calls": 7.038461538461538,
+  "seconds": 11.734024726983273,
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c02": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c03": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "c04": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c05": {
+    "renderable": true,
+    "present": true,
+    "order": false
+   },
+   "c06": {
+    "renderable": true,
+    "present": true,
+    "order": false
+   },
+   "c07": {
+    "renderable": true,
+    "present": true,
+    "count": true,
+    "order": true
+   },
+   "c08": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c09": {
+    "renderable": true,
+    "present": true
+   },
+   "c10": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c11": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c12": {
+    "renderable": true,
+    "present": true,
+    "period": false
+   },
+   "s01": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s02": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s03": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s04": {
+    "renderable": true
+   },
+   "s05": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s06": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s07": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s08": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s09": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s10": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s11": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s12": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "relative": false
+   },
+   "s13": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s14": {
+    "renderable": false,
+    "present": false,
+    "count": false,
+    "last_event": false
+   },
+   "s15": {
+    "renderable": false,
+    "present": false,
+    "order": false,
+    "forbid": false
+   },
+   "s16": {
+    "renderable": false,
+    "present": false,
+    "order": false,
+    "forbid": false
+   },
+   "s17": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s18": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s19": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s20": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s21": {
+    "renderable": true,
+    "present": true
+   }
+  }
+ },
+ {
+  "variant": "-alternative_selection",
+  "n": 33,
+  "renderable": 0.7272727272727273,
+  "items_all_pass": 0.28125,
+  "items_all_pass_given_rendered": 0.391304347826087,
+  "present": 0.34375,
+  "count": 0.625,
+  "order": 0.13636363636363635,
+  "period": 0.0,
+  "relative": 0.0,
+  "forbid": 0.0,
+  "last_event": 0.6666666666666666,
+  "n_present": 32,
+  "n_count": 8,
+  "n_order": 22,
+  "n_period": 1,
+  "n_relative": 1,
+  "n_forbid": 2,
+  "n_last_event": 3,
+  "lm_calls": 5.125,
+  "seconds": 6.6643502495505595,
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c02": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c03": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "c04": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c05": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c06": {
+    "renderable": true,
+    "present": true,
+    "order": false
+   },
+   "c07": {
+    "renderable": true,
+    "present": true,
+    "count": true,
+    "order": true
+   },
+   "c08": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c09": {
+    "renderable": true,
+    "present": true
+   },
+   "c10": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c11": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c12": {
+    "renderable": true,
+    "present": true,
+    "period": false
+   },
+   "s01": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s02": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s03": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s04": {
+    "renderable": true
+   },
+   "s05": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s06": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s07": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s08": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s09": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s10": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s11": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s12": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "relative": false
+   },
+   "s13": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s14": {
+    "renderable": false,
+    "present": false,
+    "count": false,
+    "last_event": false
+   },
+   "s15": {
+    "renderable": false,
+    "present": false,
+    "order": false,
+    "forbid": false
+   },
+   "s16": {
+    "renderable": false,
+    "present": false,
+    "order": false,
+    "forbid": false
+   },
+   "s17": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s18": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s19": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s20": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s21": {
+    "renderable": true,
+    "present": true
+   }
+  }
+ },
+ {
+  "variant": "+estimate",
+  "n": 33,
+  "renderable": 0.7272727272727273,
+  "items_all_pass": 0.25,
+  "items_all_pass_given_rendered": 0.3333333333333333,
+  "present": 0.3125,
+  "count": 0.625,
+  "order": 0.09090909090909091,
+  "period": 0.0,
+  "relative": 0.0,
+  "forbid": 0.0,
+  "last_event": 0.6666666666666666,
+  "n_present": 32,
+  "n_count": 8,
+  "n_order": 22,
+  "n_period": 1,
+  "n_relative": 1,
+  "n_forbid": 2,
+  "n_last_event": 3,
+  "lm_calls": 7.375,
+  "seconds": 11.570321083068848,
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c02": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c03": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "c04": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c05": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "c06": {
+    "renderable": true,
+    "present": true,
+    "order": false
+   },
+   "c07": {
+    "renderable": true,
+    "present": true,
+    "count": true,
+    "order": true
+   },
+   "c08": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c09": {
+    "renderable": true,
+    "present": true
+   },
+   "c10": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c11": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c12": {
+    "renderable": true,
+    "present": true,
+    "period": false
+   },
+   "s01": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s02": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s03": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s04": {
+    "renderable": false
+   },
+   "s05": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s06": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s07": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s08": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s09": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s10": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s11": {
+    "renderable": false,
+    "present": false,
+    "order": false
+   },
+   "s12": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "relative": false
+   },
+   "s13": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s14": {
+    "renderable": false,
+    "present": false,
+    "count": false,
+    "last_event": false
+   },
+   "s15": {
+    "renderable": false,
+    "present": false,
+    "order": false,
+    "forbid": false
+   },
+   "s16": {
+    "renderable": false,
+    "present": false,
+    "order": false,
+    "forbid": false
+   },
+   "s17": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": true
+   },
+   "s18": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s19": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s20": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s21": {
+    "renderable": true,
+    "present": true
+   }
+  }
+ },
+ {
+  "variant": "staged",
+  "n": 33,
+  "renderable": 1.0,
+  "items_all_pass": 0.84375,
+  "items_all_pass_given_rendered": 0.84375,
+  "present": 0.9375,
+  "count": 1.0,
+  "order": 0.9090909090909091,
+  "period": 0.0,
+  "relative": 1.0,
+  "forbid": 1.0,
+  "last_event": 0.0,
+  "n_present": 32,
+  "n_count": 8,
+  "n_order": 22,
+  "n_period": 1,
+  "n_relative": 1,
+  "n_forbid": 2,
+  "n_last_event": 3,
+  "lm_calls": 4,
+  "seconds": 5.166132833018447,
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c02": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c03": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c04": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c05": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c06": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c07": {
+    "renderable": true,
+    "present": true,
+    "count": true,
+    "order": true
+   },
+   "c08": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c09": {
+    "renderable": true,
+    "present": true
+   },
+   "c10": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c11": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c12": {
+    "renderable": true,
+    "present": true,
+    "period": false
+   },
+   "s01": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s02": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s03": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s04": {
+    "renderable": true
+   },
+   "s05": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s06": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s07": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "last_event": false
+   },
+   "s08": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s09": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s10": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s11": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s12": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "relative": true
+   },
+   "s13": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s14": {
+    "renderable": true,
+    "present": true,
+    "count": true,
+    "last_event": false
+   },
+   "s15": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "forbid": true
+   },
+   "s16": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "forbid": true
+   },
+   "s17": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": false
+   },
+   "s18": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s19": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s20": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s21": {
+    "renderable": true,
+    "present": true
+   }
+  }
+ },
+ {
+  "variant": "staged-review",
+  "n": 33,
+  "renderable": 1.0,
+  "items_all_pass": 0.8125,
+  "items_all_pass_given_rendered": 0.8125,
+  "present": 0.875,
+  "count": 0.75,
+  "order": 0.8636363636363636,
+  "period": 0.0,
+  "relative": 1.0,
+  "forbid": 1.0,
+  "last_event": 0.6666666666666666,
+  "n_present": 32,
+  "n_count": 8,
+  "n_order": 22,
+  "n_period": 1,
+  "n_relative": 1,
+  "n_forbid": 2,
+  "n_last_event": 3,
+  "lm_calls": 3,
+  "seconds": 6.262497164986351,
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c02": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c03": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c04": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c05": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c06": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c07": {
+    "renderable": true,
+    "present": true,
+    "count": true,
+    "order": true
+   },
+   "c08": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c09": {
+    "renderable": true,
+    "present": true
+   },
+   "c10": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c11": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c12": {
+    "renderable": true,
+    "present": true,
+    "period": false
+   },
+   "s01": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s02": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s03": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s04": {
+    "renderable": true
+   },
+   "s05": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s06": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s07": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": false
+   },
+   "s08": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s09": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s10": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s11": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s12": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "relative": true
+   },
+   "s13": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s14": {
+    "renderable": true,
+    "present": true,
+    "count": false,
+    "last_event": true
+   },
+   "s15": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "forbid": true
+   },
+   "s16": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "forbid": true
+   },
+   "s17": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "last_event": true
+   },
+   "s18": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s19": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s20": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s21": {
+    "renderable": true,
+    "present": true
+   }
+  }
+ },
+ {
+  "variant": "staged@gpt-4o",
+  "n": 33,
+  "renderable": 1.0,
+  "items_all_pass": 0.84375,
+  "items_all_pass_given_rendered": 0.84375,
+  "present": 0.875,
+  "count": 0.625,
+  "order": 0.8636363636363636,
+  "period": 1.0,
+  "relative": 1.0,
+  "forbid": 1.0,
+  "last_event": 0.3333333333333333,
+  "n_present": 32,
+  "n_count": 8,
+  "n_order": 22,
+  "n_period": 1,
+  "n_relative": 1,
+  "n_forbid": 2,
+  "n_last_event": 3,
+  "lm_calls": 4,
+  "seconds": 4.310935453935103,
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c02": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c03": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c04": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c05": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c06": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c07": {
+    "renderable": true,
+    "present": false,
+    "count": false,
+    "order": false
+   },
+   "c08": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c09": {
+    "renderable": true,
+    "present": true
+   },
+   "c10": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c11": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c12": {
+    "renderable": true,
+    "present": true,
+    "period": true
+   },
+   "s01": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s02": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s03": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s04": {
+    "renderable": true
+   },
+   "s05": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s06": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s07": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": false
+   },
+   "s08": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s09": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s10": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s11": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s12": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "relative": true
+   },
+   "s13": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s14": {
+    "renderable": true,
+    "present": true,
+    "count": false,
+    "last_event": true
+   },
+   "s15": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "forbid": true
+   },
+   "s16": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "forbid": true
+   },
+   "s17": {
+    "renderable": true,
+    "present": false,
+    "order": false,
+    "last_event": false
+   },
+   "s18": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s19": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s20": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s21": {
+    "renderable": true,
+    "present": true
+   }
+  }
+ },
+ {
+  "variant": "oneshot@gpt-4o",
+  "n": 33,
+  "renderable": 1.0,
+  "items_all_pass": 0.8125,
+  "items_all_pass_given_rendered": 0.8125,
+  "present": 0.96875,
+  "count": 0.75,
+  "order": 0.9545454545454546,
+  "period": 0.0,
+  "relative": 1.0,
+  "forbid": 1.0,
+  "last_event": 0.3333333333333333,
+  "n_present": 32,
+  "n_count": 8,
+  "n_order": 22,
+  "n_period": 1,
+  "n_relative": 1,
+  "n_forbid": 2,
+  "n_last_event": 3,
+  "lm_calls": 1,
+  "seconds": 1.7685106161868933,
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "present": true,
+    "count": false
+   },
+   "c02": {
+    "renderable": true,
+    "present": false,
+    "count": false
+   },
+   "c03": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c04": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c05": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c06": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c07": {
+    "renderable": true,
+    "present": true,
+    "count": true,
+    "order": true
+   },
+   "c08": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c09": {
+    "renderable": true,
+    "present": true
+   },
+   "c10": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c11": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c12": {
+    "renderable": true,
+    "present": true,
+    "period": false
+   },
+   "s01": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s02": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s03": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s04": {
+    "renderable": true
+   },
+   "s05": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s06": {
+    "renderable": true,
+    "present": true,
+    "order": false
+   },
+   "s07": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "last_event": false
+   },
+   "s08": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s09": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s10": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s11": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s12": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "relative": true
+   },
+   "s13": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s14": {
+    "renderable": true,
+    "present": true,
+    "count": true,
+    "last_event": false
+   },
+   "s15": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "forbid": true
+   },
+   "s16": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "forbid": true
+   },
+   "s17": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "last_event": true
+   },
+   "s18": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s19": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s20": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s21": {
+    "renderable": true,
+    "present": true
+   }
+  }
+ },
+ {
+  "variant": "oneshot@local",
+  "n": 33,
+  "renderable": 1.0,
+  "items_all_pass": 0.75,
+  "items_all_pass_given_rendered": 0.75,
+  "present": 0.96875,
+  "count": 0.5,
+  "order": 0.9545454545454546,
+  "period": 0.0,
+  "relative": 1.0,
+  "forbid": 1.0,
+  "last_event": 0.3333333333333333,
+  "n_present": 32,
+  "n_count": 8,
+  "n_order": 22,
+  "n_period": 1,
+  "n_relative": 1,
+  "n_forbid": 2,
+  "n_last_event": 3,
+  "lm_calls": 1,
+  "seconds": 1.9235852992895879,
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "present": true,
+    "count": false
+   },
+   "c02": {
+    "renderable": true,
+    "present": true,
+    "count": false
+   },
+   "c03": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c04": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c05": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c06": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "c07": {
+    "renderable": true,
+    "present": true,
+    "count": true,
+    "order": true
+   },
+   "c08": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c09": {
+    "renderable": true,
+    "present": true
+   },
+   "c10": {
+    "renderable": true,
+    "present": true,
+    "count": false
+   },
+   "c11": {
+    "renderable": true,
+    "present": true,
+    "count": true
+   },
+   "c12": {
+    "renderable": true,
+    "present": true,
+    "period": false
+   },
+   "s01": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s02": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s03": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s04": {
+    "renderable": true
+   },
+   "s05": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s06": {
+    "renderable": true,
+    "present": false,
+    "order": false
+   },
+   "s07": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "last_event": false
+   },
+   "s08": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s09": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s10": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s11": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s12": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "relative": true
+   },
+   "s13": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s14": {
+    "renderable": true,
+    "present": true,
+    "count": false,
+    "last_event": true
+   },
+   "s15": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "forbid": true
+   },
+   "s16": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "forbid": true
+   },
+   "s17": {
+    "renderable": true,
+    "present": true,
+    "order": true,
+    "last_event": false
+   },
+   "s18": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s19": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s20": {
+    "renderable": true,
+    "present": true,
+    "order": true
+   },
+   "s21": {
+    "renderable": true,
+    "present": true
+   }
+  }
+ }
+]

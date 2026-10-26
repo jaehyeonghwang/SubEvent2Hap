@@ -1,0 +1,55 @@
+{
+  "event": "A swimmer swims in butterfly stroke. The swimmer repeats the process of strongly coming out of the water with both of his arms, then going back into the water.",
+  "sub_events": [
+    {
+      "prompt": "swimmer's arms come out of the water",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.9,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_013148/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0476,
+        0.0269
+      ],
+      "offset": 0.114,
+      "shared": false
+    },
+    {
+      "prompt": "swimmer's arms go back into the water",
+      "start": 1.3,
+      "duration": 0.7,
+      "intensity": 0.9,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_013148/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0383,
+        0.0722
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 2.0,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_swimmer_swims_in_butterfly_stroke__1026_013148_composite.wav",
+  "baseline": "compose_A_swimmer_swims_in_butterfly_stroke__1026_013148_baseline.wav",
+  "gen_duration": 2.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.34159517288208,
+  "elapsed": 2.352611780166626
+}

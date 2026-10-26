@@ -1,0 +1,87 @@
+{
+  "event": "A situation where I shake a tree 3 times and an apple falls on my head",
+  "sub_events": [
+    {
+      "prompt": "The tree shakes.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_004407/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0176,
+        0.0062
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The tree shakes.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_004407/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0176,
+        0.0062
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The tree shakes.",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_004407/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0176,
+        0.0062
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The apple falls on head.",
+      "start": 2.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_004407/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.001,
+        0.2114
+      ],
+      "offset": 0.2,
+      "shared": false
+    }
+  ],
+  "total": 2.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_situation_where_I_shake_a_tree_3_t_1026_004407_composite.wav",
+  "baseline": "compose_A_situation_where_I_shake_a_tree_3_t_1026_004407_baseline.wav",
+  "gen_duration": 2.5,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.5824813842773438,
+  "elapsed": 2.596482753753662
+}

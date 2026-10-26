@@ -1,0 +1,101 @@
+{
+  "event": "A rubber ball is dropped onto a hard floor, bouncing four times with decreasing height before coming to rest.",
+  "sub_events": [
+    {
+      "prompt": "rubber ball drops onto hard floor",
+      "start": 0.1,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_200937/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0099,
+        0.3023
+      ],
+      "offset": 0.369,
+      "shared": false
+    },
+    {
+      "prompt": "rubber ball bounces off hard floor",
+      "start": 1.5,
+      "duration": 0.4,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_200937/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.1048,
+        0.0316
+      ],
+      "offset": 0.2,
+      "shared": true
+    },
+    {
+      "prompt": "rubber ball bounces off hard floor",
+      "start": 3.0,
+      "duration": 0.3,
+      "intensity": 0.4,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_200937/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.1048,
+        0.0316
+      ],
+      "offset": 0.2,
+      "shared": true
+    },
+    {
+      "prompt": "rubber ball bounces off hard floor",
+      "start": 5.0,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "rubber  ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_200937/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.1048,
+        0.0316
+      ],
+      "offset": 0.2,
+      "shared": true
+    },
+    {
+      "prompt": "rubber ball comes to rest on hard floor",
+      "start": 7.0,
+      "duration": 0.15,
+      "intensity": 0.1,
+      "transition": "crossfade",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_200937/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.0624,
+        0.008
+      ],
+      "offset": 1.471,
+      "shared": false
+    }
+  ],
+  "total": 7.15,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_rubber_ball_is_dropped_onto_a_hard_1025_200937_composite.wav",
+  "baseline": "compose_A_rubber_ball_is_dropped_onto_a_hard_1025_200937_baseline.wav",
+  "gen_duration": 7.15,
+  "prompts": 8,
+  "elapsed_gen": 16.846874475479126,
+  "elapsed": 16.877909183502197
+}

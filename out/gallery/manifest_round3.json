@@ -1,0 +1,3518 @@
+{
+ "round": 3,
+ "seed": 1,
+ "design": "ag_vs_hg",
+ "label": "AudioGen+분해 vs HapticGen · seed 1",
+ "conditions": [
+  {
+   "key": "hg_single",
+   "label": "HapticGen 단일 생성"
+  },
+  {
+   "key": "ag_plan",
+   "label": "AudioGen + GPT-4o 분해"
+  }
+ ],
+ "items": {
+  "c01": {
+   "id": "c01",
+   "prompt": "To dribble a basketball forcefully once",
+   "ko": "농구공을 힘차게 한 번 드리블한다",
+   "renders": {
+    "hg_single": {
+     "file": "compose_To_dribble_a_basketball_forcefully_o_1026_004403_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_To_dribble_a_basketball_forcefully_o_1026_004849_composite.wav",
+     "regions": [
+      {
+       "prompt": "The basketball impacts the ground.",
+       "start": 0.5,
+       "duration": 0.2,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_To_dribble_a_basketball_forcefully_o_1026_004849/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.1402,
+        0.3049
+       ],
+       "offset": 1.266,
+       "shared": false
+      },
+      {
+       "prompt": "The basketball rebounds off the ground.",
+       "start": 0.8,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_To_dribble_a_basketball_forcefully_o_1026_004849/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.0178,
+        0.0068
+       ],
+       "offset": 0.387,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The basketball impacts the ground.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The basketball rebounds off the ground.",
+      "start": 0.8,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "crossfade"
+     }
+    ]
+   }
+  },
+  "c02": {
+   "id": "c02",
+   "prompt": "After sticking and aiming the gun, he shoots at the enemy once.",
+   "ko": "총을 겨누고 조준한 뒤, 적을 향해 한 발 쏜다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_After_sticking_and_aiming_the_gun_he_1026_004404_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_After_sticking_and_aiming_the_gun_he_1026_004851_composite.wav",
+     "regions": [
+      {
+       "prompt": "The gun shoots a bullet.",
+       "start": 0.5,
+       "duration": 0.2,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_After_sticking_and_aiming_the_gun_he_1026_004851/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.0339,
+        0.1083
+       ],
+       "offset": 0.082,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The gun shoots a bullet.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "c03": {
+   "id": "c03",
+   "prompt": "A situation where I shake a tree 3 times and an apple falls on my head",
+   "ko": "내가 나무를 세 번 흔들자 사과가 떨어져 내 머리에 맞는 상황",
+   "renders": {
+    "hg_single": {
+     "file": "compose_A_situation_where_I_shake_a_tree_3_t_1026_004407_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_A_situation_where_I_shake_a_tree_3_t_1026_004854_composite.wav",
+     "regions": [
+      {
+       "prompt": "The tree shakes.",
+       "start": 0.5,
+       "duration": 0.3,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_004854/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.197,
+        0.0251
+       ],
+       "offset": 0.0,
+       "shared": true
+      },
+      {
+       "prompt": "The tree shakes.",
+       "start": 1.0,
+       "duration": 0.3,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_004854/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.197,
+        0.0251
+       ],
+       "offset": 0.0,
+       "shared": true
+      },
+      {
+       "prompt": "The tree shakes.",
+       "start": 1.5,
+       "duration": 0.3,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_004854/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.197,
+        0.0251
+       ],
+       "offset": 0.0,
+       "shared": true
+      },
+      {
+       "prompt": "The apple falls on head.",
+       "start": 2.0,
+       "duration": 0.5,
+       "intensity": 1.0,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_004854/sub_04.wav",
+       "candidate": 1,
+       "scores": [
+        0.0739,
+        0.2234
+       ],
+       "offset": 0.145,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The tree shakes.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The tree shakes.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The tree shakes.",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The apple falls on head.",
+      "start": 2.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "c04": {
+   "id": "c04",
+   "prompt": "clap loudly once.",
+   "ko": "크게 한 번 손뼉을 친다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_clap_loudly_once_1026_004408_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_clap_loudly_once_1026_004857_composite.wav",
+     "regions": [
+      {
+       "prompt": "Hands clap loudly.",
+       "start": 0.5,
+       "duration": 0.2,
+       "intensity": 1.0,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_clap_loudly_once_1026_004857/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.5944,
+        0.4947
+       ],
+       "offset": 0.0,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "Hands clap loudly.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 1.0,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "c05": {
+   "id": "c05",
+   "prompt": "He tries to break the rough wooden stick by bending it twice, but to no avail. On the third attempt, with a strong impact, the stick finally snaps.",
+   "ko": "그는 거친 나무 막대를 두 번 구부려 부러뜨리려 하지만 실패한다. 세 번째 시도에서 강한 충격과 함께 막대가 마침내 부러진다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_He_tries_to_break_the_rough_wooden_s_1026_004412_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_He_tries_to_break_the_rough_wooden_s_1026_004900_composite.wav",
+     "regions": [
+      {
+       "prompt": "The rough wooden stick is bending.",
+       "start": 0.5,
+       "duration": 0.3,
+       "intensity": 0.4,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_He_tries_to_break_the_rough_wooden_s_1026_004900/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.0144,
+        0.1667
+       ],
+       "offset": 0.11,
+       "shared": true
+      },
+      {
+       "prompt": "The rough wooden stick is bending.",
+       "start": 1.0,
+       "duration": 0.3,
+       "intensity": 0.4,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_He_tries_to_break_the_rough_wooden_s_1026_004900/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.0144,
+        0.1667
+       ],
+       "offset": 0.11,
+       "shared": true
+      },
+      {
+       "prompt": "The rough wooden stick experiences a strong impact.",
+       "start": 1.5,
+       "duration": 0.2,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_He_tries_to_break_the_rough_wooden_s_1026_004900/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.6177,
+        0.5021
+       ],
+       "offset": 0.041,
+       "shared": false
+      },
+      {
+       "prompt": "The rough wooden stick is snapping.",
+       "start": 1.8,
+       "duration": 0.25,
+       "intensity": 0.6,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_He_tries_to_break_the_rough_wooden_s_1026_004900/sub_04.wav",
+       "candidate": 1,
+       "scores": [
+        0.0341,
+        0.0655
+       ],
+       "offset": 0.053,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The rough wooden stick is bending.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.4,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The rough wooden stick is bending.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.4,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The rough wooden stick experiences a strong impact.",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The rough wooden stick is snapping.",
+      "start": 1.8,
+      "duration": 0.25,
+      "intensity": 0.6,
+      "transition": "crossfade"
+     }
+    ]
+   }
+  },
+  "c06": {
+   "id": "c06",
+   "prompt": "He was feeling so upset that he crumpled the paper forcefully three times and slammed it to the ground.",
+   "ko": "그는 너무 화가 나서 종이를 세게 세 번 구기고 바닥에 내리쳤다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_He_was_feeling_so_upset_that_he_crum_1026_004414_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_He_was_feeling_so_upset_that_he_crum_1026_004902_composite.wav",
+     "regions": [
+      {
+       "prompt": "The paper is crumpling.",
+       "start": 0.5,
+       "duration": 0.3,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_He_was_feeling_so_upset_that_he_crum_1026_004902/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.0183,
+        0.0051
+       ],
+       "offset": 0.066,
+       "shared": true
+      },
+      {
+       "prompt": "The paper is crumpling.",
+       "start": 1.0,
+       "duration": 0.3,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_He_was_feeling_so_upset_that_he_crum_1026_004902/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.0183,
+        0.0051
+       ],
+       "offset": 0.066,
+       "shared": true
+      },
+      {
+       "prompt": "The paper is crumpling.",
+       "start": 1.5,
+       "duration": 0.3,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_He_was_feeling_so_upset_that_he_crum_1026_004902/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.0183,
+        0.0051
+       ],
+       "offset": 0.066,
+       "shared": true
+      },
+      {
+       "prompt": "The paper is slamming to the ground.",
+       "start": 2.0,
+       "duration": 0.5,
+       "intensity": 1.0,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_He_was_feeling_so_upset_that_he_crum_1026_004902/sub_04.wav",
+       "candidate": 0,
+       "scores": [
+        0.0122,
+        0.0035
+       ],
+       "offset": 0.047,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The paper is crumpling.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The paper is crumpling.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The paper is crumpling.",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The paper is slamming to the ground.",
+      "start": 2.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "c07": {
+   "id": "c07",
+   "prompt": "I'm typing a document quickly on my keyboard, and then I slowly click my mouse once",
+   "ko": "키보드로 문서를 빠르게 타이핑하다가, 마우스를 천천히 한 번 클릭한다",
+   "renders": {
+    "hg_single": {
+     "file": "compose_I_m_typing_a_document_quickly_on_my__1026_004417_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_I_m_typing_a_document_quickly_on_my__1026_004905_composite.wav",
+     "regions": [
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 0.0,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_004905/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.0487,
+        0.0172
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 0.3,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_004905/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.0487,
+        0.0172
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 0.6,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_004905/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.0487,
+        0.0172
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 0.9,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_004905/sub_04.wav",
+       "candidate": 0,
+       "scores": [
+        0.0487,
+        0.0172
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 1.2,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_004905/sub_05.wav",
+       "candidate": 0,
+       "scores": [
+        0.0487,
+        0.0172
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 1.5,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_004905/sub_06.wav",
+       "candidate": 0,
+       "scores": [
+        0.0487,
+        0.0172
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 1.8,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_004905/sub_07.wav",
+       "candidate": 0,
+       "scores": [
+        0.0487,
+        0.0172
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 2.1,
+       "duration": 0.5,
+       "intensity": 0.5,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_004905/sub_08.wav",
+       "candidate": 0,
+       "scores": [
+        0.0487,
+        0.0172
+       ],
+       "offset": 0.857,
+       "shared": true
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.0,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.3,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.6,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.9,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.2,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.8,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 2.1,
+      "duration": 0.5,
+      "intensity": 0.5,
+      "transition": "crossfade"
+     }
+    ]
+   }
+  },
+  "c08": {
+   "id": "c08",
+   "prompt": "I type a document on my keyboard and click my mouse once",
+   "ko": "키보드로 문서를 타이핑하고 마우스를 한 번 클릭한다",
+   "renders": {
+    "hg_single": {
+     "file": "compose_I_type_a_document_on_my_keyboard_and_1026_004419_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_I_type_a_document_on_my_keyboard_and_1026_004908_composite.wav",
+     "regions": [
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 0.5,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_004908/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 0.8,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_004908/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 1.1,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_004908/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 1.4,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_004908/sub_04.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 1.7,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_004908/sub_05.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 2.0,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_004908/sub_06.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 2.3,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_004908/sub_07.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 2.6,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_004908/sub_08.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.8,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.1,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.4,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.7,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 2.0,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 2.3,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 2.6,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "c09": {
+   "id": "c09",
+   "prompt": "the sound of dribbling a soccer ball in three steps",
+   "ko": "축구공을 세 걸음에 걸쳐 드리블하는 소리",
+   "renders": {
+    "hg_single": {
+     "file": "compose_the_sound_of_dribbling_a_soccer_ball_1026_004421_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_the_sound_of_dribbling_a_soccer_ball_1026_004911_composite.wav",
+     "regions": [
+      {
+       "prompt": "The soccer ball bounces on the ground.",
+       "start": 0.5,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_the_sound_of_dribbling_a_soccer_ball_1026_004911/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.2149,
+        0.141
+       ],
+       "offset": 0.096,
+       "shared": true
+      },
+      {
+       "prompt": "The soccer ball bounces on the ground.",
+       "start": 1.0,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_the_sound_of_dribbling_a_soccer_ball_1026_004911/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.2149,
+        0.141
+       ],
+       "offset": 0.096,
+       "shared": true
+      },
+      {
+       "prompt": "The soccer ball bounces on the ground.",
+       "start": 1.5,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_the_sound_of_dribbling_a_soccer_ball_1026_004911/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.2149,
+        0.141
+       ],
+       "offset": 0.096,
+       "shared": true
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The soccer ball bounces on the ground.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The soccer ball bounces on the ground.",
+      "start": 1.0,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The soccer ball bounces on the ground.",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "c10": {
+   "id": "c10",
+   "prompt": "water bomb pops and splashes once as I hit the enemy",
+   "ko": "적을 맞히자 물풍선이 한 번 터지며 물이 튄다",
+   "renders": {
+    "hg_single": {
+     "file": "compose_water_bomb_pops_and_splashes_once_as_1026_004422_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_water_bomb_pops_and_splashes_once_as_1026_004913_composite.wav",
+     "regions": [
+      {
+       "prompt": "The water bomb pops.",
+       "start": 0.5,
+       "duration": 0.2,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_water_bomb_pops_and_splashes_once_as_1026_004913/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.0856,
+        0.007
+       ],
+       "offset": 0.057,
+       "shared": false
+      },
+      {
+       "prompt": "The water bomb splashes.",
+       "start": 0.7,
+       "duration": 0.5,
+       "intensity": 0.8,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_water_bomb_pops_and_splashes_once_as_1026_004913/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.0675,
+        0.1898
+       ],
+       "offset": 0.409,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The water bomb pops.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The water bomb splashes.",
+      "start": 0.7,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "crossfade"
+     }
+    ]
+   }
+  },
+  "c11": {
+   "id": "c11",
+   "prompt": "I have been bitten twice by mosquitoes on my right hand and it's itchy",
+   "ko": "오른손을 모기에게 두 번 물려서 가렵다",
+   "renders": {
+    "hg_single": {
+     "file": "compose_I_have_been_bitten_twice_by_mosquito_1026_004424_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_I_have_been_bitten_twice_by_mosquito_1026_004916_composite.wav",
+     "regions": [
+      {
+       "prompt": "The mosquito bites the skin.",
+       "start": 0.5,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_have_been_bitten_twice_by_mosquito_1026_004916/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.0112,
+        0.1259
+       ],
+       "offset": 0.109,
+       "shared": true
+      },
+      {
+       "prompt": "The mosquito bites the skin.",
+       "start": 1.0,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_have_been_bitten_twice_by_mosquito_1026_004916/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.0112,
+        0.1259
+       ],
+       "offset": 0.109,
+       "shared": true
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The mosquito bites the skin.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The mosquito bites the skin.",
+      "start": 1.0,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "c12": {
+   "id": "c12",
+   "prompt": "I have to do CPR. heavily and strongly pressing his chest constantly with the speed of pressing 100 times in a minute",
+   "ko": "심폐소생술을 해야 한다. 1분에 100번의 속도로 가슴을 계속 세고 강하게 누른다",
+   "renders": {
+    "hg_single": {
+     "file": "compose_I_have_to_do_CPR_heavily_and_strongl_1026_004428_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_I_have_to_do_CPR_heavily_and_strongl_1026_004919_composite.wav",
+     "regions": [
+      {
+       "prompt": "The chest is pressing.",
+       "start": 0.0,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1026_004919/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.1363,
+        0.7053
+       ],
+       "offset": 0.079,
+       "shared": true
+      },
+      {
+       "prompt": "The chest is pressing.",
+       "start": 0.6,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1026_004919/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.1363,
+        0.7053
+       ],
+       "offset": 0.079,
+       "shared": true
+      },
+      {
+       "prompt": "The chest is pressing.",
+       "start": 1.2,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1026_004919/sub_03.wav",
+       "candidate": 1,
+       "scores": [
+        0.1363,
+        0.7053
+       ],
+       "offset": 0.079,
+       "shared": true
+      },
+      {
+       "prompt": "The chest is pressing.",
+       "start": 1.8,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1026_004919/sub_04.wav",
+       "candidate": 1,
+       "scores": [
+        0.1363,
+        0.7053
+       ],
+       "offset": 0.079,
+       "shared": true
+      },
+      {
+       "prompt": "The chest is pressing.",
+       "start": 2.4,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1026_004919/sub_05.wav",
+       "candidate": 1,
+       "scores": [
+        0.1363,
+        0.7053
+       ],
+       "offset": 0.079,
+       "shared": true
+      },
+      {
+       "prompt": "The chest is pressing.",
+       "start": 3.0,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1026_004919/sub_06.wav",
+       "candidate": 1,
+       "scores": [
+        0.1363,
+        0.7053
+       ],
+       "offset": 0.079,
+       "shared": true
+      },
+      {
+       "prompt": "The chest is pressing.",
+       "start": 3.6,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1026_004919/sub_07.wav",
+       "candidate": 1,
+       "scores": [
+        0.1363,
+        0.7053
+       ],
+       "offset": 0.079,
+       "shared": true
+      },
+      {
+       "prompt": "The chest is pressing.",
+       "start": 4.2,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1026_004919/sub_08.wav",
+       "candidate": 1,
+       "scores": [
+        0.1363,
+        0.7053
+       ],
+       "offset": 0.079,
+       "shared": true
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The chest is pressing.",
+      "start": 0.0,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The chest is pressing.",
+      "start": 0.6,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The chest is pressing.",
+      "start": 1.2,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The chest is pressing.",
+      "start": 1.8,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The chest is pressing.",
+      "start": 2.4,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The chest is pressing.",
+      "start": 3.0,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The chest is pressing.",
+      "start": 3.6,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The chest is pressing.",
+      "start": 4.2,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s01": {
+   "id": "s01",
+   "prompt": "Driving a racing car on a rainy day then suddenly losing control of the car and crash into a tree.",
+   "ko": "비 오는 날 경주용 차를 몰다가 갑자기 차가 통제를 잃고 나무에 부딪힌다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_Driving_a_racing_car_on_a_rainy_day__1026_004440_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_Driving_a_racing_car_on_a_rainy_day__1026_004926_composite.wav",
+     "regions": [
+      {
+       "prompt": "The racing car is driving on a wet road.",
+       "start": 0.0,
+       "duration": 3.0,
+       "intensity": 0.5,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_004926/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.4331,
+        0.0729
+       ],
+       "offset": 1.0,
+       "shared": false
+      },
+      {
+       "prompt": "The racing car is losing control.",
+       "start": 3.0,
+       "duration": 1.0,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_004926/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.3798,
+        0.4117
+       ],
+       "offset": 0.039,
+       "shared": false
+      },
+      {
+       "prompt": "The racing car is crashing into a tree.",
+       "start": 4.0,
+       "duration": 1.5,
+       "intensity": 1.0,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_004926/sub_03.wav",
+       "candidate": 1,
+       "scores": [
+        0.1764,
+        0.2947
+       ],
+       "offset": 2.5,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The racing car is driving on a wet road.",
+      "start": 0.0,
+      "duration": 3.0,
+      "intensity": 0.5,
+      "transition": "crossfade"
+     },
+     {
+      "prompt": "The racing car is losing control.",
+      "start": 3.0,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The racing car is crashing into a tree.",
+      "start": 4.0,
+      "duration": 1.5,
+      "intensity": 1.0,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s02": {
+   "id": "s02",
+   "prompt": "riding a bike on a smooth track and then ride on a gravel field",
+   "ko": "매끄러운 트랙에서 자전거를 타다가 자갈밭으로 들어간다",
+   "renders": {
+    "hg_single": {
+     "file": "compose_riding_a_bike_on_a_smooth_track_and__1026_004458_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_riding_a_bike_on_a_smooth_track_and__1026_004940_composite.wav",
+     "regions": [
+      {
+       "prompt": "The smooth track allows for continuous rolling.",
+       "start": 0.0,
+       "duration": 3.0,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_004940/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.186,
+        0.1507
+       ],
+       "offset": 1.272,
+       "shared": false
+      },
+      {
+       "prompt": "The gravel field experiences initial contact with gravel.",
+       "start": 3.0,
+       "duration": 0.5,
+       "intensity": 0.7,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_004940/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.2724,
+        0.0375
+       ],
+       "offset": 2.453,
+       "shared": false
+      },
+      {
+       "prompt": "The gravel field allows for continuous rolling on gravel.",
+       "start": 3.5,
+       "duration": 6.5,
+       "intensity": 0.6,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_004940/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.2654,
+        0.0393
+       ],
+       "offset": 0.986,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The smooth track allows for continuous rolling.",
+      "start": 0.0,
+      "duration": 3.0,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The gravel field experiences initial contact with gravel.",
+      "start": 3.0,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "transition": "crossfade"
+     },
+     {
+      "prompt": "The gravel field allows for continuous rolling on gravel.",
+      "start": 3.5,
+      "duration": 6.5,
+      "intensity": 0.6,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s03": {
+   "id": "s03",
+   "prompt": "riding a bike on a smooth track and then ride on a bumpy road",
+   "ko": "매끄러운 트랙에서 자전거를 타다가 울퉁불퉁한 길로 들어간다",
+   "renders": {
+    "hg_single": {
+     "file": "compose_riding_a_bike_on_a_smooth_track_and__1026_004505_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_riding_a_bike_on_a_smooth_track_and__1026_004949_composite.wav",
+     "regions": [
+      {
+       "prompt": "The smooth track allows for continuous riding.",
+       "start": 0.5,
+       "duration": 3.0,
+       "intensity": 0.3,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_004949/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.0347,
+        0.2491
+       ],
+       "offset": 0.013,
+       "shared": false
+      },
+      {
+       "prompt": "The bumpy road creates a continuous riding experience.",
+       "start": 3.5,
+       "duration": 4.0,
+       "intensity": 0.7,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_004949/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.4564,
+        0.1902
+       ],
+       "offset": 0.94,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The smooth track allows for continuous riding.",
+      "start": 0.5,
+      "duration": 3.0,
+      "intensity": 0.3,
+      "transition": "crossfade"
+     },
+     {
+      "prompt": "The bumpy road creates a continuous riding experience.",
+      "start": 3.5,
+      "duration": 4.0,
+      "intensity": 0.7,
+      "transition": "crossfade"
+     }
+    ]
+   }
+  },
+  "s04": {
+   "id": "s04",
+   "prompt": "The ambulance passing outside the window approaches and then moves away.",
+   "ko": "창밖을 지나가는 구급차가 다가왔다가 멀어진다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_The_ambulance_passing_outside_the_wi_1026_004508_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_The_ambulance_passing_outside_the_wi_1026_004954_composite.wav",
+     "regions": [
+      {
+       "prompt": "The ambulance approaches with increasing speed.",
+       "start": 0.5,
+       "duration": 1.5,
+       "intensity": 0.8,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_The_ambulance_passing_outside_the_wi_1026_004954/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.4087,
+        0.0466
+       ],
+       "offset": 0.987,
+       "shared": false
+      },
+      {
+       "prompt": "The ambulance moves away into the distance.",
+       "start": 2.0,
+       "duration": 1.5,
+       "intensity": 0.8,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_The_ambulance_passing_outside_the_wi_1026_004954/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.1952,
+        0.0564
+       ],
+       "offset": 0.375,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The ambulance approaches with increasing speed.",
+      "start": 0.5,
+      "duration": 1.5,
+      "intensity": 0.8,
+      "transition": "crossfade"
+     },
+     {
+      "prompt": "The ambulance moves away into the distance.",
+      "start": 2.0,
+      "duration": 1.5,
+      "intensity": 0.8,
+      "transition": "crossfade"
+     }
+    ]
+   }
+  },
+  "s05": {
+   "id": "s05",
+   "prompt": "Trying to open a tightly shut pickle jar and then finally opening it with a loud pop.",
+   "ko": "꽉 닫힌 피클 병을 열려고 애쓰다가, 마침내 '펑' 하는 큰 소리와 함께 열린다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_Trying_to_open_a_tightly_shut_pickle_1026_004511_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_Trying_to_open_a_tightly_shut_pickle_1026_004958_composite.wav",
+     "regions": [
+      {
+       "prompt": "The pickle jar is being twisted.",
+       "start": 0.5,
+       "duration": 0.2,
+       "intensity": 0.3,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_004958/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.0105,
+        0.0257
+       ],
+       "offset": 0.076,
+       "shared": true
+      },
+      {
+       "prompt": "The pickle jar is being twisted.",
+       "start": 0.8,
+       "duration": 0.2,
+       "intensity": 0.3,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_004958/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.0105,
+        0.0257
+       ],
+       "offset": 0.076,
+       "shared": true
+      },
+      {
+       "prompt": "The pickle jar is being twisted.",
+       "start": 1.1,
+       "duration": 0.2,
+       "intensity": 0.3,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_004958/sub_03.wav",
+       "candidate": 1,
+       "scores": [
+        0.0105,
+        0.0257
+       ],
+       "offset": 0.076,
+       "shared": true
+      },
+      {
+       "prompt": "The pickle jar is being twisted.",
+       "start": 1.4,
+       "duration": 0.2,
+       "intensity": 0.3,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_004958/sub_04.wav",
+       "candidate": 1,
+       "scores": [
+        0.0105,
+        0.0257
+       ],
+       "offset": 0.076,
+       "shared": true
+      },
+      {
+       "prompt": "The pickle jar is being twisted.",
+       "start": 1.7,
+       "duration": 0.2,
+       "intensity": 0.3,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_004958/sub_05.wav",
+       "candidate": 1,
+       "scores": [
+        0.0105,
+        0.0257
+       ],
+       "offset": 0.076,
+       "shared": true
+      },
+      {
+       "prompt": "The pickle jar is being twisted.",
+       "start": 2.0,
+       "duration": 0.2,
+       "intensity": 0.3,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_004958/sub_06.wav",
+       "candidate": 1,
+       "scores": [
+        0.0105,
+        0.0257
+       ],
+       "offset": 0.076,
+       "shared": true
+      },
+      {
+       "prompt": "The pickle jar is being twisted.",
+       "start": 2.3,
+       "duration": 0.2,
+       "intensity": 0.3,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_004958/sub_07.wav",
+       "candidate": 1,
+       "scores": [
+        0.0105,
+        0.0257
+       ],
+       "offset": 0.076,
+       "shared": true
+      },
+      {
+       "prompt": "The pickle jar is being twisted with a pop.",
+       "start": 2.6,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_004958/sub_08.wav",
+       "candidate": 1,
+       "scores": [
+        0.0146,
+        0.06
+       ],
+       "offset": 0.154,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 0.8,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 1.1,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 1.4,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 1.7,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 2.0,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 2.3,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The pickle jar is being twisted with a pop.",
+      "start": 2.6,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s06": {
+   "id": "s06",
+   "prompt": "an arrow that is penetrating a melon in slow motion, starting from its hard shell into the soft fruit within and then coming out of the outer shell again",
+   "ko": "화살이 슬로모션으로 멜론을 관통한다. 단단한 껍질을 뚫고 부드러운 과육을 지나, 다시 바깥 껍질 밖으로 빠져나온다",
+   "renders": {
+    "hg_single": {
+     "file": "compose_an_arrow_that_is_penetrating_a_melon_1026_004514_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_an_arrow_that_is_penetrating_a_melon_1026_005001_composite.wav",
+     "regions": [
+      {
+       "prompt": "The arrow penetrates the hard shell.",
+       "start": 0.5,
+       "duration": 0.3,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_an_arrow_that_is_penetrating_a_melon_1026_005001/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.0338,
+        0.0508
+       ],
+       "offset": 0.074,
+       "shared": false
+      },
+      {
+       "prompt": "The arrow penetrates the soft fruit.",
+       "start": 0.9,
+       "duration": 0.5,
+       "intensity": 0.7,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_an_arrow_that_is_penetrating_a_melon_1026_005001/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.0994,
+        0.0349
+       ],
+       "offset": 0.007,
+       "shared": false
+      },
+      {
+       "prompt": "The arrow exits the hard shell.",
+       "start": 1.5,
+       "duration": 0.3,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_an_arrow_that_is_penetrating_a_melon_1026_005001/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.087,
+        0.0007
+       ],
+       "offset": 0.0,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The arrow penetrates the hard shell.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The arrow penetrates the soft fruit.",
+      "start": 0.9,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "transition": "crossfade"
+     },
+     {
+      "prompt": "The arrow exits the hard shell.",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s07": {
+   "id": "s07",
+   "prompt": "A graduate student rigorously typing their computer keyboard to write a research draft and then hitting the enter key after each paragraph, then pause..",
+   "ko": "대학원생이 연구 초안을 쓰며 키보드를 열심히 두드리고, 문단이 끝날 때마다 엔터 키를 누른 뒤, 잠시 멈춘다..",
+   "renders": {
+    "hg_single": {
+     "file": "compose_A_graduate_student_rigorously_typing_1026_004516_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_A_graduate_student_rigorously_typing_1026_005003_composite.wav",
+     "regions": [
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 0.0,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_graduate_student_rigorously_typing_1026_005003/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 0.3,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_graduate_student_rigorously_typing_1026_005003/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 0.6,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_graduate_student_rigorously_typing_1026_005003/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 0.9,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_graduate_student_rigorously_typing_1026_005003/sub_04.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 1.2,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_graduate_student_rigorously_typing_1026_005003/sub_05.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 1.5,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_graduate_student_rigorously_typing_1026_005003/sub_06.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 1.8,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_graduate_student_rigorously_typing_1026_005003/sub_07.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      },
+      {
+       "prompt": "The keyboard registers a key press.",
+       "start": 2.1,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_graduate_student_rigorously_typing_1026_005003/sub_08.wav",
+       "candidate": 0,
+       "scores": [
+        0.0121,
+        0.008
+       ],
+       "offset": 0.236,
+       "shared": true
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.0,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.3,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.6,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.9,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.2,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.8,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The keyboard registers a key press.",
+      "start": 2.1,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s08": {
+   "id": "s08",
+   "prompt": "A swimmer swims in butterfly stroke. The swimmer repeats the process of strongly coming out of the water with both of his arms, then going back into the water.",
+   "ko": "수영 선수가 접영을 한다. 두 팔로 물 밖으로 힘차게 솟아올랐다가 다시 물속으로 들어가는 동작을 반복한다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_A_swimmer_swims_in_butterfly_stroke__1026_004518_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_A_swimmer_swims_in_butterfly_stroke__1026_005007_composite.wav",
+     "regions": [
+      {
+       "prompt": "Arms emerge from the water.",
+       "start": 0.5,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_005007/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.209,
+        0.0701
+       ],
+       "offset": 0.178,
+       "shared": true
+      },
+      {
+       "prompt": "Arms submerge into the water.",
+       "start": 1.0,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_005007/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.0931,
+        0.0115
+       ],
+       "offset": 0.023,
+       "shared": true
+      },
+      {
+       "prompt": "Arms emerge from the water.",
+       "start": 1.5,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_005007/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.209,
+        0.0701
+       ],
+       "offset": 0.178,
+       "shared": true
+      },
+      {
+       "prompt": "Arms submerge into the water.",
+       "start": 2.0,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_005007/sub_04.wav",
+       "candidate": 0,
+       "scores": [
+        0.0931,
+        0.0115
+       ],
+       "offset": 0.023,
+       "shared": true
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "Arms emerge from the water.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "Arms submerge into the water.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "Arms emerge from the water.",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "Arms submerge into the water.",
+      "start": 2.0,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s09": {
+   "id": "s09",
+   "prompt": "Dribbling a basketball then an opponent forcefully slaps the ball out of your hand with a large splat",
+   "ko": "농구공을 드리블하는데, 상대가 '철썩' 하고 손에서 공을 세게 쳐낸다",
+   "renders": {
+    "hg_single": {
+     "file": "compose_Dribbling_a_basketball_then_an_oppon_1026_004520_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_Dribbling_a_basketball_then_an_oppon_1026_005011_composite.wav",
+     "regions": [
+      {
+       "prompt": "The basketball is bouncing on the ground.",
+       "start": 0.5,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_005011/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.1731,
+        0.059
+       ],
+       "offset": 0.474,
+       "shared": true
+      },
+      {
+       "prompt": "The basketball is bouncing on the ground.",
+       "start": 1.0,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_005011/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.1731,
+        0.059
+       ],
+       "offset": 0.474,
+       "shared": true
+      },
+      {
+       "prompt": "The basketball is bouncing on the ground.",
+       "start": 1.5,
+       "duration": 0.2,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_005011/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.1731,
+        0.059
+       ],
+       "offset": 0.474,
+       "shared": true
+      },
+      {
+       "prompt": "The opponent's hand is slapping the basketball.",
+       "start": 2.0,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_005011/sub_04.wav",
+       "candidate": 0,
+       "scores": [
+        0.276,
+        0.1831
+       ],
+       "offset": 0.396,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The basketball is bouncing on the ground.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The basketball is bouncing on the ground.",
+      "start": 1.0,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The basketball is bouncing on the ground.",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The opponent's hand is slapping the basketball.",
+      "start": 2.0,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s10": {
+   "id": "s10",
+   "prompt": "Dribbling a basketball then an opponent slaps the ball out of your hand",
+   "ko": "농구공을 드리블하는데, 상대가 손에서 공을 쳐낸다",
+   "renders": {
+    "hg_single": {
+     "file": "compose_Dribbling_a_basketball_then_an_oppon_1026_004522_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_Dribbling_a_basketball_then_an_oppon_1026_005014_composite.wav",
+     "regions": [
+      {
+       "prompt": "The basketball bounces on the court.",
+       "start": 0.5,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_005014/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.1579,
+        0.3575
+       ],
+       "offset": 1.163,
+       "shared": true
+      },
+      {
+       "prompt": "The basketball bounces on the court.",
+       "start": 1.0,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_005014/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.1579,
+        0.3575
+       ],
+       "offset": 1.163,
+       "shared": true
+      },
+      {
+       "prompt": "The basketball bounces on the court.",
+       "start": 1.5,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_005014/sub_03.wav",
+       "candidate": 1,
+       "scores": [
+        0.1579,
+        0.3575
+       ],
+       "offset": 1.163,
+       "shared": true
+      },
+      {
+       "prompt": "The opponent's hand slaps the ball.",
+       "start": 2.0,
+       "duration": 0.15,
+       "intensity": 0.9,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_005014/sub_04.wav",
+       "candidate": 0,
+       "scores": [
+        0.1969,
+        0.0868
+       ],
+       "offset": 0.039,
+       "shared": false
+      },
+      {
+       "prompt": "The basketball bounces on the court.",
+       "start": 2.3,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_005014/sub_05.wav",
+       "candidate": 1,
+       "scores": [
+        0.1579,
+        0.3575
+       ],
+       "offset": 1.163,
+       "shared": true
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The basketball bounces on the court.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The basketball bounces on the court.",
+      "start": 1.0,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The basketball bounces on the court.",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The opponent's hand slaps the ball.",
+      "start": 2.0,
+      "duration": 0.15,
+      "intensity": 0.9,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The basketball bounces on the court.",
+      "start": 2.3,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s11": {
+   "id": "s11",
+   "prompt": "Driving a truck really fast on a highway during a heavy snowfall and then crashing into a huge moose.",
+   "ko": "폭설 속 고속도로에서 트럭을 아주 빠르게 몰다가 거대한 무스와 충돌한다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_Driving_a_truck_really_fast_on_a_hig_1026_004530_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_Driving_a_truck_really_fast_on_a_hig_1026_005019_composite.wav",
+     "regions": [
+      {
+       "prompt": "The highway is being driven on at high speed.",
+       "start": 0.0,
+       "duration": 1.5,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1026_005019/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.3952,
+        0.1699
+       ],
+       "offset": 1.5,
+       "shared": false
+      },
+      {
+       "prompt": "Heavy snow is hitting the truck during the snowfall.",
+       "start": 1.5,
+       "duration": 2.0,
+       "intensity": 0.7,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1026_005019/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.048,
+        0.1486
+       ],
+       "offset": 0.7,
+       "shared": false
+      },
+      {
+       "prompt": "The truck is crashing into a moose.",
+       "start": 3.5,
+       "duration": 1.0,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1026_005019/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.2833,
+        0.1244
+       ],
+       "offset": 1.986,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The highway is being driven on at high speed.",
+      "start": 0.0,
+      "duration": 1.5,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "Heavy snow is hitting the truck during the snowfall.",
+      "start": 1.5,
+      "duration": 2.0,
+      "intensity": 0.7,
+      "transition": "crossfade"
+     },
+     {
+      "prompt": "The truck is crashing into a moose.",
+      "start": 3.5,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s12": {
+   "id": "s12",
+   "prompt": "Feeling hungry as my stomach first rumbles softly, then contracts with a louder growl, almost like a burp.",
+   "ko": "배가 고파서 처음엔 배가 작게 꼬르륵거리다가, 트림처럼 더 크게 꾸르륵 수축한다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_Feeling_hungry_as_my_stomach_first_r_1026_004532_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_Feeling_hungry_as_my_stomach_first_r_1026_005022_composite.wav",
+     "regions": [
+      {
+       "prompt": "The stomach is rumbling softly.",
+       "start": 0.5,
+       "duration": 0.5,
+       "intensity": 0.3,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_Feeling_hungry_as_my_stomach_first_r_1026_005022/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.0343,
+        0.1119
+       ],
+       "offset": 0.882,
+       "shared": false
+      },
+      {
+       "prompt": "The stomach is contracting with a louder growl.",
+       "start": 1.0,
+       "duration": 0.7,
+       "intensity": 0.6,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Feeling_hungry_as_my_stomach_first_r_1026_005022/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.1641,
+        0.0166
+       ],
+       "offset": 0.117,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The stomach is rumbling softly.",
+      "start": 0.5,
+      "duration": 0.5,
+      "intensity": 0.3,
+      "transition": "crossfade"
+     },
+     {
+      "prompt": "The stomach is contracting with a louder growl.",
+      "start": 1.0,
+      "duration": 0.7,
+      "intensity": 0.6,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s13": {
+   "id": "s13",
+   "prompt": "First, I'm zipping and opening the pencil case. Then I am stirring the pencil case looking for the pencil. Then I found it and zipped the pencil case back to close it.",
+   "ko": "먼저 필통 지퍼를 열고, 연필을 찾으려고 필통 안을 뒤적인다. 연필을 찾은 뒤 다시 지퍼를 닫는다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_First_I_m_zipping_and_opening_the_pe_1026_004539_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_First_I_m_zipping_and_opening_the_pe_1026_005027_composite.wav",
+     "regions": [
+      {
+       "prompt": "The pencil case is being zipped closed.",
+       "start": 0.5,
+       "duration": 0.5,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_First_I_m_zipping_and_opening_the_pe_1026_005027/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.1178,
+        0.0239
+       ],
+       "offset": 0.34,
+       "shared": true
+      },
+      {
+       "prompt": "The pencil case is being opened.",
+       "start": 1.0,
+       "duration": 0.3,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_First_I_m_zipping_and_opening_the_pe_1026_005027/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.0449,
+        0.061
+       ],
+       "offset": 0.111,
+       "shared": false
+      },
+      {
+       "prompt": "The pencil case is being stirred.",
+       "start": 1.5,
+       "duration": 1.0,
+       "intensity": 0.6,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_First_I_m_zipping_and_opening_the_pe_1026_005027/sub_03.wav",
+       "candidate": 0,
+       "scores": [
+        0.0709,
+        0.0193
+       ],
+       "offset": 0.639,
+       "shared": false
+      },
+      {
+       "prompt": "The pencil case is being zipped closed.",
+       "start": 3.0,
+       "duration": 0.5,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_First_I_m_zipping_and_opening_the_pe_1026_005027/sub_04.wav",
+       "candidate": 0,
+       "scores": [
+        0.1178,
+        0.0239
+       ],
+       "offset": 0.34,
+       "shared": true
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The pencil case is being zipped closed.",
+      "start": 0.5,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The pencil case is being opened.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The pencil case is being stirred.",
+      "start": 1.5,
+      "duration": 1.0,
+      "intensity": 0.6,
+      "transition": "crossfade"
+     },
+     {
+      "prompt": "The pencil case is being zipped closed.",
+      "start": 3.0,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s14": {
+   "id": "s14",
+   "prompt": "In a very competitive car racing game, you crash into another car, making a very large sound. Then, there is only silence.",
+   "ko": "치열한 레이싱 게임에서 다른 차와 아주 큰 소리를 내며 충돌한다. 그 뒤로는 정적만 남는다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_In_a_very_competitive_car_racing_gam_1026_004540_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_In_a_very_competitive_car_racing_gam_1026_005030_composite.wav",
+     "regions": [
+      {
+       "prompt": "The car crashes into another car.",
+       "start": 0.0,
+       "duration": 0.5,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_In_a_very_competitive_car_racing_gam_1026_005030/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.1726,
+        0.1352
+       ],
+       "offset": 0.006,
+       "shared": false
+      },
+      {
+       "prompt": "The crash makes a very large sound.",
+       "start": 0.5,
+       "duration": 0.5,
+       "intensity": 0.8,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_In_a_very_competitive_car_racing_gam_1026_005030/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.3312,
+        0.3632
+       ],
+       "offset": 0.0,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The car crashes into another car.",
+      "start": 0.0,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The crash makes a very large sound.",
+      "start": 0.5,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "crossfade"
+     }
+    ]
+   }
+  },
+  "s15": {
+   "id": "s15",
+   "prompt": "I pulled back the extremely taut bowstring with all my strength and then released it, sending the arrow flying.",
+   "ko": "팽팽한 활시위를 온 힘을 다해 당겼다가 놓아, 화살을 날려 보낸다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_I_pulled_back_the_extremely_taut_bow_1026_004544_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_I_pulled_back_the_extremely_taut_bow_1026_005033_composite.wav",
+     "regions": [
+      {
+       "prompt": "The bowstring is pulled back.",
+       "start": 0.5,
+       "duration": 0.5,
+       "intensity": 0.8,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_I_pulled_back_the_extremely_taut_bow_1026_005033/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.0999,
+        0.0364
+       ],
+       "offset": 0.0,
+       "shared": false
+      },
+      {
+       "prompt": "The bowstring is released.",
+       "start": 1.0,
+       "duration": 0.2,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_pulled_back_the_extremely_taut_bow_1026_005033/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.015,
+        0.4812
+       ],
+       "offset": 0.13,
+       "shared": false
+      },
+      {
+       "prompt": "The arrow is flying.",
+       "start": 1.2,
+       "duration": 0.8,
+       "intensity": 0.8,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_I_pulled_back_the_extremely_taut_bow_1026_005033/sub_03.wav",
+       "candidate": 1,
+       "scores": [
+        0.0345,
+        0.0448
+       ],
+       "offset": 0.226,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The bowstring is pulled back.",
+      "start": 0.5,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "crossfade"
+     },
+     {
+      "prompt": "The bowstring is released.",
+      "start": 1.0,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The arrow is flying.",
+      "start": 1.2,
+      "duration": 0.8,
+      "intensity": 0.8,
+      "transition": "crossfade"
+     }
+    ]
+   }
+  },
+  "s16": {
+   "id": "s16",
+   "prompt": "I pulled back the extremely tense bowstring with all my strength to the fullest and then released it.",
+   "ko": "팽팽한 활시위를 온 힘을 다해 끝까지 당겼다가 놓는다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_I_pulled_back_the_extremely_tense_bo_1026_004547_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_I_pulled_back_the_extremely_tense_bo_1026_005038_composite.wav",
+     "regions": [
+      {
+       "prompt": "The bowstring is pulled back.",
+       "start": 0.5,
+       "duration": 1.5,
+       "intensity": 0.8,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_I_pulled_back_the_extremely_tense_bo_1026_005038/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.0577,
+        0.0317
+       ],
+       "offset": 0.0,
+       "shared": false
+      },
+      {
+       "prompt": "The bowstring is released.",
+       "start": 2.0,
+       "duration": 0.5,
+       "intensity": 1.0,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_I_pulled_back_the_extremely_tense_bo_1026_005038/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.0051,
+        0.2406
+       ],
+       "offset": 0.13,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The bowstring is pulled back.",
+      "start": 0.5,
+      "duration": 1.5,
+      "intensity": 0.8,
+      "transition": "crossfade"
+     },
+     {
+      "prompt": "The bowstring is released.",
+      "start": 2.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s17": {
+   "id": "s17",
+   "prompt": "The badminton rally continued at a fast and steady pace until the game ended with a powerful smash.",
+   "ko": "배드민턴 랠리가 빠르고 일정한 속도로 이어지다가, 강력한 스매시로 경기가 끝난다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_The_badminton_rally_continued_at_a_f_1026_004550_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_The_badminton_rally_continued_at_a_f_1026_005041_composite.wav",
+     "regions": [
+      {
+       "prompt": "The shuttlecock makes fast contact.",
+       "start": 0.5,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_005041/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.0052,
+        0.0988
+       ],
+       "offset": 0.315,
+       "shared": true
+      },
+      {
+       "prompt": "The shuttlecock makes fast contact.",
+       "start": 0.8,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_005041/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.0052,
+        0.0988
+       ],
+       "offset": 0.315,
+       "shared": true
+      },
+      {
+       "prompt": "The shuttlecock makes fast contact.",
+       "start": 1.1,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_005041/sub_03.wav",
+       "candidate": 1,
+       "scores": [
+        0.0052,
+        0.0988
+       ],
+       "offset": 0.315,
+       "shared": true
+      },
+      {
+       "prompt": "The shuttlecock makes fast contact.",
+       "start": 1.4,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_005041/sub_04.wav",
+       "candidate": 1,
+       "scores": [
+        0.0052,
+        0.0988
+       ],
+       "offset": 0.315,
+       "shared": true
+      },
+      {
+       "prompt": "The shuttlecock makes fast contact.",
+       "start": 1.7,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_005041/sub_05.wav",
+       "candidate": 1,
+       "scores": [
+        0.0052,
+        0.0988
+       ],
+       "offset": 0.315,
+       "shared": true
+      },
+      {
+       "prompt": "The shuttlecock makes fast contact.",
+       "start": 2.0,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_005041/sub_06.wav",
+       "candidate": 1,
+       "scores": [
+        0.0052,
+        0.0988
+       ],
+       "offset": 0.315,
+       "shared": true
+      },
+      {
+       "prompt": "The shuttlecock makes fast contact.",
+       "start": 2.3,
+       "duration": 0.2,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_005041/sub_07.wav",
+       "candidate": 1,
+       "scores": [
+        0.0052,
+        0.0988
+       ],
+       "offset": 0.315,
+       "shared": true
+      },
+      {
+       "prompt": "The shuttlecock makes fast contact.",
+       "start": 2.6,
+       "duration": 0.3,
+       "intensity": 0.9,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_005041/sub_08.wav",
+       "candidate": 1,
+       "scores": [
+        0.0052,
+        0.0988
+       ],
+       "offset": 0.315,
+       "shared": true
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 0.8,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 1.1,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 1.4,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 1.7,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 2.0,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 2.3,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 2.6,
+      "duration": 0.3,
+      "intensity": 0.9,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s18": {
+   "id": "s18",
+   "prompt": "Trying to open a crinkly vinyl snack package, then finally tearing it open with a sharp, crisp rip.",
+   "ko": "바스락거리는 비닐 과자 봉지를 열려고 애쓰다가, 마침내 날카롭고 경쾌한 소리와 함께 찢어서 연다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_Trying_to_open_a_crinkly_vinyl_snack_1026_004552_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_Trying_to_open_a_crinkly_vinyl_snack_1026_005045_composite.wav",
+     "regions": [
+      {
+       "prompt": "The vinyl snack package is crinkling.",
+       "start": 0.5,
+       "duration": 0.3,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1026_005045/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.0009,
+        0.0012
+       ],
+       "offset": 0.0,
+       "shared": true
+      },
+      {
+       "prompt": "The vinyl snack package is crinkling.",
+       "start": 1.0,
+       "duration": 0.3,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1026_005045/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.0009,
+        0.0012
+       ],
+       "offset": 0.0,
+       "shared": true
+      },
+      {
+       "prompt": "The vinyl snack package is crinkling.",
+       "start": 1.5,
+       "duration": 0.3,
+       "intensity": 0.5,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1026_005045/sub_03.wav",
+       "candidate": 1,
+       "scores": [
+        0.0009,
+        0.0012
+       ],
+       "offset": 0.0,
+       "shared": true
+      },
+      {
+       "prompt": "The vinyl snack package is tearing.",
+       "start": 2.0,
+       "duration": 0.2,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1026_005045/sub_04.wav",
+       "candidate": 0,
+       "scores": [
+        0.038,
+        0.0035
+       ],
+       "offset": 0.38,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The vinyl snack package is crinkling.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The vinyl snack package is crinkling.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The vinyl snack package is crinkling.",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The vinyl snack package is tearing.",
+      "start": 2.0,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s19": {
+   "id": "s19",
+   "prompt": "Trying to open a vinyl snack package, then finally tearing it open with a sharp sound.",
+   "ko": "비닐 과자 봉지를 열려고 애쓰다가, 마침내 날카로운 소리와 함께 찢어서 연다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_Trying_to_open_a_vinyl_snack_package_1026_004554_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_Trying_to_open_a_vinyl_snack_package_1026_005050_composite.wav",
+     "regions": [
+      {
+       "prompt": "The vinyl snack package is being attempted to open.",
+       "start": 0.5,
+       "duration": 1.5,
+       "intensity": 0.3,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_vinyl_snack_package_1026_005050/sub_01.wav",
+       "candidate": 1,
+       "scores": [
+        0.018,
+        0.0236
+       ],
+       "offset": 0.715,
+       "shared": false
+      },
+      {
+       "prompt": "The vinyl snack package is tearing open with a sharp sound.",
+       "start": 2.2,
+       "duration": 0.3,
+       "intensity": 0.8,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_Trying_to_open_a_vinyl_snack_package_1026_005050/sub_02.wav",
+       "candidate": 1,
+       "scores": [
+        0.1293,
+        0.5885
+       ],
+       "offset": 0.304,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The vinyl snack package is being attempted to open.",
+      "start": 0.5,
+      "duration": 1.5,
+      "intensity": 0.3,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The vinyl snack package is tearing open with a sharp sound.",
+      "start": 2.2,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s20": {
+   "id": "s20",
+   "prompt": "When a well-compressed and packed new pickle container is turned, it does not open even with a strong force, but when it opens at once with a cheerful puff",
+   "ko": "꽉 눌러 담은 새 피클 통을 돌려도 힘을 세게 줘도 열리지 않다가, 단번에 '퍽' 하는 경쾌한 소리와 함께 열린다",
+   "renders": {
+    "hg_single": {
+     "file": "compose_When_a_well_compressed_and_packed_ne_1026_004557_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_When_a_well_compressed_and_packed_ne_1026_005056_composite.wav",
+     "regions": [
+      {
+       "prompt": "The pickle container resists turning.",
+       "start": 0.0,
+       "duration": 2.0,
+       "intensity": 0.7,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_When_a_well_compressed_and_packed_ne_1026_005056/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.0449,
+        0.0132
+       ],
+       "offset": 0.103,
+       "shared": false
+      },
+      {
+       "prompt": "The pickle container releases a puff of air.",
+       "start": 2.2,
+       "duration": 0.5,
+       "intensity": 0.9,
+       "transition": "cut",
+       "source": "",
+       "file": "compose/compose_When_a_well_compressed_and_packed_ne_1026_005056/sub_02.wav",
+       "candidate": 0,
+       "scores": [
+        0.0055,
+        0.0026
+       ],
+       "offset": 0.097,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The pickle container resists turning.",
+      "start": 0.0,
+      "duration": 2.0,
+      "intensity": 0.7,
+      "transition": "cut"
+     },
+     {
+      "prompt": "The pickle container releases a puff of air.",
+      "start": 2.2,
+      "duration": 0.5,
+      "intensity": 0.9,
+      "transition": "cut"
+     }
+    ]
+   }
+  },
+  "s21": {
+   "id": "s21",
+   "prompt": "You are about to bunjee jump. Once you fall, you slice through the wind which makes a very large noise. The jump ends, and there is no more wind.",
+   "ko": "번지점프를 하려 한다. 떨어지는 순간 바람을 가르며 아주 큰 소리가 난다. 점프가 끝나면 더 이상 바람이 없다.",
+   "renders": {
+    "hg_single": {
+     "file": "compose_You_are_about_to_bunjee_jump_Once_yo_1026_004602_baseline.wav",
+     "generator": "hapticgen"
+    },
+    "ag_plan": {
+     "file": "compose_You_are_about_to_bunjee_jump_Once_yo_1026_005104_composite.wav",
+     "regions": [
+      {
+       "prompt": "The wind is slicing through the air.",
+       "start": 2.5,
+       "duration": 3.5,
+       "intensity": 0.8,
+       "transition": "crossfade",
+       "source": "",
+       "file": "compose/compose_You_are_about_to_bunjee_jump_Once_yo_1026_005104/sub_01.wav",
+       "candidate": 0,
+       "scores": [
+        0.3834,
+        0.3113
+       ],
+       "offset": 0.033,
+       "shared": false
+      }
+     ],
+     "generator": "audiogen"
+    }
+   },
+   "plans": {
+    "ag_plan": [
+     {
+      "prompt": "The wind is slicing through the air.",
+      "start": 2.5,
+      "duration": 3.5,
+      "intensity": 0.8,
+      "transition": "crossfade"
+     }
+    ]
+   }
+  }
+ },
+ "updated": 1792943464.2039711
+}

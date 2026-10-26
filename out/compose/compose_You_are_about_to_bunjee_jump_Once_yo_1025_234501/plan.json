@@ -1,0 +1,54 @@
+{
+  "event": "You are about to bunjee jump. Once you fall, you slice through the wind which makes a very large noise. The jump ends, and there is no more wind.",
+  "sub_events": [
+    {
+      "prompt": "The jumper's body slices through the wind",
+      "start": 0.5,
+      "duration": 3.0,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_You_are_about_to_bunjee_jump_Once_yo_1025_234501/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0324,
+        0.045
+      ],
+      "offset": 0.683,
+      "shared": false
+    },
+    {
+      "prompt": "Air makes a very large noise",
+      "start": 3.5,
+      "duration": 2.0,
+      "intensity": 0.9,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_You_are_about_to_bunjee_jump_Once_yo_1025_234501/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.2578,
+        0.0672
+      ],
+      "offset": 2.977,
+      "shared": false
+    }
+  ],
+  "total": 5.5,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_You_are_about_to_bunjee_jump_Once_yo_1025_234501_composite.wav",
+  "baseline": "compose_You_are_about_to_bunjee_jump_Once_yo_1025_234501_baseline.wav",
+  "gen_duration": 5.5,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.808828115463257,
+  "elapsed": 4.820450067520142
+}

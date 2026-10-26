@@ -1,0 +1,54 @@
+{
+  "event": "In a very competitive car racing game, you crash into another car, making a very large sound. Then, there is only silence.",
+  "sub_events": [
+    {
+      "prompt": "Simulate a sudden, intense crash impact with vibrations",
+      "start": 0.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_In_a_very_competitive_car_racing_gam_1025_234346/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.5291,
+        0.5437
+      ],
+      "offset": 1.888,
+      "shared": false
+    },
+    {
+      "prompt": "Simulate silence with no vibrations",
+      "start": 0.5,
+      "duration": 9.5,
+      "intensity": 0.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_In_a_very_competitive_car_racing_gam_1025_234346/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.8128,
+        0.6289
+      ],
+      "offset": 0.434,
+      "shared": false
+    }
+  ],
+  "total": 10.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_In_a_very_competitive_car_racing_gam_1025_234346_composite.wav",
+  "baseline": null,
+  "gen_duration": 10.0,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 10.518852472305298,
+  "elapsed": 10.534528255462646
+}

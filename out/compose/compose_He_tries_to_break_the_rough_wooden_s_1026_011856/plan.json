@@ -1,0 +1,71 @@
+{
+  "event": "He tries to break the rough wooden stick by bending it twice, but to no avail. On the third attempt, with a strong impact, the stick finally snaps.",
+  "sub_events": [
+    {
+      "prompt": "the wooden stick is bent",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.4,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_tries_to_break_the_rough_wooden_s_1026_011856/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0195,
+        0.0554
+      ],
+      "offset": 1.071,
+      "shared": true
+    },
+    {
+      "prompt": "the wooden stick is bent",
+      "start": 1.3,
+      "duration": 0.7,
+      "intensity": 0.4,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_tries_to_break_the_rough_wooden_s_1026_011856/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0195,
+        0.0554
+      ],
+      "offset": 1.073,
+      "shared": true
+    },
+    {
+      "prompt": "the wooden stick snaps",
+      "start": 2.0,
+      "duration": 0.6,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_He_tries_to_break_the_rough_wooden_s_1026_011856/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0241,
+        0.0334
+      ],
+      "offset": 0.336,
+      "shared": false
+    }
+  ],
+  "total": 2.6,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_tries_to_break_the_rough_wooden_s_1026_011856_composite.wav",
+  "baseline": "compose_He_tries_to_break_the_rough_wooden_s_1026_011856_baseline.wav",
+  "gen_duration": 2.6,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.421899318695068,
+  "elapsed": 4.43291163444519
+}

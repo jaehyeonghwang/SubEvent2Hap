@@ -1,0 +1,86 @@
+{
+  "event": "Someone knocks on a door three times and the door creaks open",
+  "sub_events": [
+    {
+      "prompt": "The knocker knocks on door",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_232943/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.2908,
+        0.089
+      ],
+      "offset": 0.314,
+      "shared": true
+    },
+    {
+      "prompt": "The knocker knocks on door",
+      "start": 1.8,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_232943/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.2908,
+        0.089
+      ],
+      "offset": 0.314,
+      "shared": true
+    },
+    {
+      "prompt": "The knocker knocks on door",
+      "start": 3.1,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_232943/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.2908,
+        0.089
+      ],
+      "offset": 0.314,
+      "shared": true
+    },
+    {
+      "prompt": "The door creaks open",
+      "start": 4.4,
+      "duration": 0.6,
+      "intensity": 0.5,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_232943/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0437,
+        0.0499
+      ],
+      "offset": 0.269,
+      "shared": false
+    }
+  ],
+  "total": 5.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 7,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Someone_knocks_on_a_door_three_times_1025_232943_composite.wav",
+  "baseline": "compose_Someone_knocks_on_a_door_three_times_1025_232943_baseline.wav",
+  "gen_duration": 5.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.239574432373047,
+  "elapsed": 6.264879465103149
+}

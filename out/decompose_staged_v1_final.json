@@ -1,0 +1,1294 @@
+[
+  {
+    "event": "A ball bounces three times on a wooden floor and then rolls away",
+    "phases": [
+      "Initial contact and bounce of the ball on the wooden floor",
+      "Second bounce of the ball on the wooden floor",
+      "Third bounce of the ball on the wooden floor",
+      "Rolling motion of the ball after the third bounce"
+    ],
+    "sub_events": [
+      {
+        "source": "ball",
+        "prompt": "ball makes initial contact with wooden floor and bounces",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "ball",
+        "prompt": "ball bounces on the wooden floor for the second time",
+        "start": 1.5,
+        "duration": 0.4,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "ball",
+        "prompt": "ball bounces on the wooden floor for the third time",
+        "start": 2.9,
+        "duration": 0.4,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "source": "ball",
+        "prompt": "ball begins rolling away after the third bounce",
+        "start": 4.2,
+        "duration": 1.5,
+        "intensity": 0.5,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 5.723374128341675,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 1.8489940166473389,
+        "output": {
+          "phases": [
+            "Initial contact and bounce of the ball on the wooden floor",
+            "Second bounce of the ball on the wooden floor",
+            "Third bounce of the ball on the wooden floor",
+            "Rolling motion of the ball after the third bounce"
+          ],
+          "actions": [
+            {
+              "action_id": 1,
+              "source": "ball",
+              "action": "makes initial contact with wooden floor and bounces"
+            },
+            {
+              "action_id": 2,
+              "source": "ball",
+              "action": "bounces on the wooden floor for the second time"
+            },
+            {
+              "action_id": 3,
+              "source": "ball",
+              "action": "bounces on the wooden floor for the third time"
+            },
+            {
+              "action_id": 4,
+              "source": "ball",
+              "action": "begins rolling away after the third bounce"
+            }
+          ],
+          "events": [
+            {
+              "action_id": 1
+            },
+            {
+              "action_id": 2
+            },
+            {
+              "action_id": 3
+            },
+            {
+              "action_id": 4
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.8851947784423828,
+        "output": {
+          "outline": {
+            "phases": [
+              "Initial contact and bounce of the ball on the wooden floor",
+              "Second bounce of the ball on the wooden floor",
+              "Third bounce of the ball on the wooden floor",
+              "Rolling motion of the ball after the third bounce"
+            ],
+            "actions": [
+              {
+                "action_id": 1,
+                "source": "ball",
+                "action": "makes initial contact with wooden floor and bounces"
+              },
+              {
+                "action_id": 2,
+                "source": "ball",
+                "action": "bounces on the wooden floor for the second time"
+              },
+              {
+                "action_id": 3,
+                "source": "ball",
+                "action": "bounces on the wooden floor for the third time"
+              },
+              {
+                "action_id": 4,
+                "source": "ball",
+                "action": "begins rolling away after the third bounce"
+              }
+            ],
+            "events": [
+              {
+                "action_id": 1
+              },
+              {
+                "action_id": 2
+              },
+              {
+                "action_id": 3
+              },
+              {
+                "action_id": 4
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.3710150718688965,
+        "output": {
+          "event_1": {
+            "start": 0.1,
+            "duration": 0.3,
+            "intensity": 0.8,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 1.5,
+            "duration": 0.4,
+            "intensity": 0.7,
+            "transition": "cut"
+          },
+          "event_3": {
+            "start": 2.9,
+            "duration": 0.4,
+            "intensity": 0.6,
+            "transition": "cut"
+          },
+          "event_4": {
+            "start": 4.2,
+            "duration": 1.5,
+            "intensity": 0.5,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.6171729564666748,
+        "output": {
+          "action_1": "ball makes initial contact with wooden floor and bounces",
+          "action_2": "ball bounces on the wooden floor for the second time",
+          "action_3": "ball bounces on the wooden floor for the third time",
+          "action_4": "ball begins rolling away after the third bounce"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "A sword clashes against a shield, then scrapes off",
+    "phases": [
+      "Initial contact and impact",
+      "Sliding scrape"
+    ],
+    "sub_events": [
+      {
+        "source": "sword tip",
+        "prompt": "sword tip makes direct physical contact with shield surface",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "sword edge",
+        "prompt": "sword edge slides along the shield's outer surface, causing friction and material displacement",
+        "start": 0.45,
+        "duration": 0.6,
+        "intensity": 0.7,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 3.3478593826293945,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 1.0551092624664307,
+        "output": {
+          "phases": [
+            "Initial contact and impact",
+            "Sliding scrape"
+          ],
+          "actions": [
+            {
+              "action_id": 1,
+              "source": "sword tip",
+              "action": "makes direct physical contact with shield surface"
+            },
+            {
+              "action_id": 2,
+              "source": "sword edge",
+              "action": "slides along the shield's outer surface, causing friction and material displacement"
+            }
+          ],
+          "events": [
+            {
+              "action_id": 1
+            },
+            {
+              "action_id": 2
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.1300287246704102,
+        "output": {
+          "outline": {
+            "phases": [
+              "Initial contact and impact",
+              "Sliding scrape"
+            ],
+            "actions": [
+              {
+                "action_id": 1,
+                "source": "sword tip",
+                "action": "makes direct physical contact with shield surface"
+              },
+              {
+                "action_id": 2,
+                "source": "sword edge",
+                "action": "slides along the shield's outer surface, causing friction and material displacement"
+              }
+            ],
+            "events": [
+              {
+                "action_id": 1
+              },
+              {
+                "action_id": 2
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 0.7543160915374756,
+        "output": {
+          "event_1": {
+            "start": 0.1,
+            "duration": 0.3,
+            "intensity": 0.8,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 0.45,
+            "duration": 0.6,
+            "intensity": 0.7,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.40740418434143066,
+        "output": {
+          "action_1": "sword tip makes direct physical contact with shield surface",
+          "action_2": "sword edge slides along the shield's outer surface, causing friction and material displacement"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "Heavy rain starts, a thunder strikes nearby, then the rain fades",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "review stage returned invalid output: 1 validation error for Review\noutline\n  Value error, events must reference the provided actions, with none unused [type=value_error, input_value={'phases': ['Rain begins ...: 2}, {'action_id': 3}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error"
+  },
+  {
+    "event": "Opening a soda can and pouring it into a glass",
+    "phases": [
+      "Initiating the action of opening the soda can",
+      "Pouring the soda from the can into a glass"
+    ],
+    "sub_events": [
+      {
+        "source": "fingers",
+        "prompt": "fingers apply pressure to the can's top to initiate opening",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.4,
+        "transition": "cut"
+      },
+      {
+        "source": "hands",
+        "prompt": "hands rotate the can counterclockwise to unscrew the lid",
+        "start": 0.4,
+        "duration": 0.5,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "source": "fingers",
+        "prompt": "fingers remove the lid from the can",
+        "start": 1.0,
+        "duration": 0.4,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "hand and arm",
+        "prompt": "hand and arm hold the opened can steady while positioning it above the glass",
+        "start": 1.5,
+        "duration": 0.6,
+        "intensity": 0.5,
+        "transition": "crossfade"
+      },
+      {
+        "source": "arm and hand",
+        "prompt": "arm and hand tilt the can to allow soda to flow into the glass",
+        "start": 2.2,
+        "duration": 0.8,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "source": "hand",
+        "prompt": "hand guide the stream of soda as it enters the glass",
+        "start": 3.1,
+        "duration": 0.7,
+        "intensity": 0.5,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 7.733659029006958,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 2.3229382038116455,
+        "output": {
+          "phases": [
+            "Initiating the action of opening the soda can",
+            "Pouring the soda from the can into a glass"
+          ],
+          "actions": [
+            {
+              "action_id": 1,
+              "source": "fingers",
+              "action": "apply pressure to the can's top to initiate opening"
+            },
+            {
+              "action_id": 2,
+              "source": "hands",
+              "action": "rotate the can counterclockwise to unscrew the lid"
+            },
+            {
+              "action_id": 3,
+              "source": "fingers",
+              "action": "remove the lid from the can"
+            },
+            {
+              "action_id": 4,
+              "source": "hand and arm",
+              "action": "hold the opened can steady while positioning it above the glass"
+            },
+            {
+              "action_id": 5,
+              "source": "arm and hand",
+              "action": "tilt the can to allow soda to flow into the glass"
+            },
+            {
+              "action_id": 6,
+              "source": "hand",
+              "action": "guide the stream of soda as it enters the glass"
+            }
+          ],
+          "events": [
+            {
+              "action_id": 1
+            },
+            {
+              "action_id": 2
+            },
+            {
+              "action_id": 3
+            },
+            {
+              "action_id": 4
+            },
+            {
+              "action_id": 5
+            },
+            {
+              "action_id": 6
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 2.411384105682373,
+        "output": {
+          "outline": {
+            "phases": [
+              "Initiating the action of opening the soda can",
+              "Pouring the soda from the can into a glass"
+            ],
+            "actions": [
+              {
+                "action_id": 1,
+                "source": "fingers",
+                "action": "apply pressure to the can's top to initiate opening"
+              },
+              {
+                "action_id": 2,
+                "source": "hands",
+                "action": "rotate the can counterclockwise to unscrew the lid"
+              },
+              {
+                "action_id": 3,
+                "source": "fingers",
+                "action": "remove the lid from the can"
+              },
+              {
+                "action_id": 4,
+                "source": "hand and arm",
+                "action": "hold the opened can steady while positioning it above the glass"
+              },
+              {
+                "action_id": 5,
+                "source": "arm and hand",
+                "action": "tilt the can to allow soda to flow into the glass"
+              },
+              {
+                "action_id": 6,
+                "source": "hand",
+                "action": "guide the stream of soda as it enters the glass"
+              }
+            ],
+            "events": [
+              {
+                "action_id": 1
+              },
+              {
+                "action_id": 2
+              },
+              {
+                "action_id": 3
+              },
+              {
+                "action_id": 4
+              },
+              {
+                "action_id": 5
+              },
+              {
+                "action_id": 6
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 2.033949851989746,
+        "output": {
+          "event_1": {
+            "start": 0.1,
+            "duration": 0.3,
+            "intensity": 0.4,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 0.4,
+            "duration": 0.5,
+            "intensity": 0.6,
+            "transition": "cut"
+          },
+          "event_3": {
+            "start": 1.0,
+            "duration": 0.4,
+            "intensity": 0.7,
+            "transition": "cut"
+          },
+          "event_4": {
+            "start": 1.5,
+            "duration": 0.6,
+            "intensity": 0.5,
+            "transition": "crossfade"
+          },
+          "event_5": {
+            "start": 2.2,
+            "duration": 0.8,
+            "intensity": 0.6,
+            "transition": "cut"
+          },
+          "event_6": {
+            "start": 3.1,
+            "duration": 0.7,
+            "intensity": 0.5,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.963376522064209,
+        "output": {
+          "action_1": "fingers apply pressure to the can's top to initiate opening",
+          "action_2": "hands rotate the can counterclockwise to unscrew the lid",
+          "action_3": "fingers remove the lid from the can",
+          "action_4": "hand and arm hold the opened can steady while positioning it above the glass",
+          "action_5": "arm and hand tilt the can to allow soda to flow into the glass",
+          "action_6": "hand guide the stream of soda as it enters the glass"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "Someone knocks on a door three times and the door creaks open",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "review stage returned invalid output: 1 validation error for Review\noutline\n  Value error, events must reference the provided actions, with none unused [type=value_error, input_value={'phases': ['Initial cont...: 2}, {'action_id': 3}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error"
+  },
+  {
+    "event": "A car engine starts, revs twice, and the car drives away",
+    "phases": [
+      "Engine startup and initial operation",
+      "Engine revving",
+      "Vehicle movement initiation"
+    ],
+    "sub_events": [
+      {
+        "source": "engine ignition system",
+        "prompt": "The engine ignition system initiates combustion sequence in engine cylinders.",
+        "start": 0.1,
+        "duration": 0.5,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "source": "engine internal components",
+        "prompt": "The engine internal components increase rotational speed of crankshaft through repeated fuel injection and spark timing adjustments.",
+        "start": 0.8,
+        "duration": 0.4,
+        "intensity": 0.7,
+        "transition": "crossfade"
+      },
+      {
+        "source": "engine internal components",
+        "prompt": "The engine internal components increase rotational speed of crankshaft through repeated fuel injection and spark timing adjustments.",
+        "start": 1.5,
+        "duration": 0.6,
+        "intensity": 0.7,
+        "transition": "crossfade"
+      },
+      {
+        "source": "vehicle transmission and drivetrain",
+        "prompt": "The vehicle transmission and drivetrain transfers mechanical power from engine to wheels, initiating forward motion.",
+        "start": 2.3,
+        "duration": 0.8,
+        "intensity": 0.6,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 5.080801486968994,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 1.5524935722351074,
+        "output": {
+          "phases": [
+            "Engine startup and initial operation",
+            "Engine revving",
+            "Vehicle movement initiation"
+          ],
+          "actions": [
+            {
+              "action_id": 1,
+              "source": "engine ignition system",
+              "action": "Initiates combustion sequence in engine cylinders"
+            },
+            {
+              "action_id": 2,
+              "source": "engine internal components",
+              "action": "Increases rotational speed of crankshaft through repeated fuel injection and spark timing adjustments"
+            },
+            {
+              "action_id": 3,
+              "source": "vehicle transmission and drivetrain",
+              "action": "Transfers mechanical power from engine to wheels, initiating forward motion"
+            }
+          ],
+          "events": [
+            {
+              "action_id": 1
+            },
+            {
+              "action_id": 2
+            },
+            {
+              "action_id": 2
+            },
+            {
+              "action_id": 3
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.522695779800415,
+        "output": {
+          "outline": {
+            "phases": [
+              "Engine startup and initial operation",
+              "Engine revving",
+              "Vehicle movement initiation"
+            ],
+            "actions": [
+              {
+                "action_id": 1,
+                "source": "engine ignition system",
+                "action": "Initiates combustion sequence in engine cylinders"
+              },
+              {
+                "action_id": 2,
+                "source": "engine internal components",
+                "action": "Increases rotational speed of crankshaft through repeated fuel injection and spark timing adjustments"
+              },
+              {
+                "action_id": 3,
+                "source": "vehicle transmission and drivetrain",
+                "action": "Transfers mechanical power from engine to wheels, initiating forward motion"
+              }
+            ],
+            "events": [
+              {
+                "action_id": 1
+              },
+              {
+                "action_id": 2
+              },
+              {
+                "action_id": 2
+              },
+              {
+                "action_id": 3
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.3872227668762207,
+        "output": {
+          "event_1": {
+            "start": 0.1,
+            "duration": 0.5,
+            "intensity": 0.6,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 0.8,
+            "duration": 0.4,
+            "intensity": 0.7,
+            "transition": "crossfade"
+          },
+          "event_3": {
+            "start": 1.5,
+            "duration": 0.6,
+            "intensity": 0.7,
+            "transition": "crossfade"
+          },
+          "event_4": {
+            "start": 2.3,
+            "duration": 0.8,
+            "intensity": 0.6,
+            "transition": "cut"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.6173899173736572,
+        "output": {
+          "action_1": "The engine ignition system initiates combustion sequence in engine cylinders.",
+          "action_2": "The engine internal components increase rotational speed of crankshaft through repeated fuel injection and spark timing adjustments.",
+          "action_3": "The vehicle transmission and drivetrain transfers mechanical power from engine to wheels, initiating forward motion."
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "Running footsteps, then a jump and a heavy landing",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "review stage returned invalid output: 1 validation error for Review\noutline\n  Value error, events must reference the provided actions, with none unused [type=value_error, input_value={'phases': ['Footsteps wh...: 2}, {'action_id': 3}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error"
+  },
+  {
+    "event": "Typing quickly on a keyboard and slamming the enter key",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "review stage returned invalid output: 1 validation error for Review\noutline\n  Value error, events must reference the provided actions, with none unused [type=value_error, input_value={'phases': ['Initial typi... -1}, {'action_id': 2}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error"
+  },
+  {
+    "event": "An archer draws a bow, releases the arrow, and it hits a target",
+    "phases": [
+      "Bow drawing",
+      "Arrow release",
+      "Arrow impact"
+    ],
+    "sub_events": [
+      {
+        "source": "bowstring and bow limbs",
+        "prompt": "bowstring and bow limbs pull the bowstring back with force, creating tension in the bow",
+        "start": 0.5,
+        "duration": 1.0,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "archer's fingers and arm",
+        "prompt": "archer's fingers and arm release the arrow by letting go of the bowstring",
+        "start": 1.6,
+        "duration": 0.3,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "arrow and target materials",
+        "prompt": "arrow and target materials the arrow strikes the target surface, causing physical contact and penetration",
+        "start": 2.0,
+        "duration": 0.4,
+        "intensity": 0.9,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 5.080026865005493,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 1.432142972946167,
+        "output": {
+          "phases": [
+            "Bow drawing",
+            "Arrow release",
+            "Arrow impact"
+          ],
+          "actions": [
+            {
+              "action_id": 1,
+              "source": "archer's muscles",
+              "action": "pulling the bowstring back with force, creating tension in the bow"
+            },
+            {
+              "action_id": 2,
+              "source": "archer's fingers and arm",
+              "action": "releasing the arrow by letting go of the bowstring"
+            },
+            {
+              "action_id": 3,
+              "source": "arrow and target materials",
+              "action": "the arrow strikes the target surface, causing physical contact and penetration"
+            }
+          ],
+          "events": [
+            {
+              "action_id": 1
+            },
+            {
+              "action_id": 2
+            },
+            {
+              "action_id": 3
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.974628210067749,
+        "output": {
+          "outline": {
+            "phases": [
+              "Bow drawing",
+              "Arrow release",
+              "Arrow impact"
+            ],
+            "actions": [
+              {
+                "action_id": 1,
+                "source": "bowstring and bow limbs",
+                "action": "pulling the bowstring back with force, creating tension in the bow"
+              },
+              {
+                "action_id": 2,
+                "source": "archer's fingers and arm",
+                "action": "releasing the arrow by letting go of the bowstring"
+              },
+              {
+                "action_id": 3,
+                "source": "arrow and target materials",
+                "action": "the arrow strikes the target surface, causing physical contact and penetration"
+              }
+            ],
+            "events": [
+              {
+                "action_id": 1
+              },
+              {
+                "action_id": 2
+              },
+              {
+                "action_id": 3
+              }
+            ]
+          },
+          "changes": [
+            "Corrected source of 'Bow drawing' action from 'archer's muscles' to 'bowstring and bow limbs', as the physical object being acted upon is the bow, not the archer's body parts.",
+            "Preserved original sequence and structure; only corrected source references to match actual physical components in the event."
+          ]
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.0390746593475342,
+        "output": {
+          "event_1": {
+            "start": 0.5,
+            "duration": 1.0,
+            "intensity": 0.8,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 1.6,
+            "duration": 0.3,
+            "intensity": 0.7,
+            "transition": "cut"
+          },
+          "event_3": {
+            "start": 2.0,
+            "duration": 0.4,
+            "intensity": 0.9,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.6321732997894287,
+        "output": {
+          "action_1": "bowstring and bow limbs pull the bowstring back with force, creating tension in the bow",
+          "action_2": "archer's fingers and arm release the arrow by letting go of the bowstring",
+          "action_3": "arrow and target materials the arrow strikes the target surface, causing physical contact and penetration"
+        }
+      }
+    ],
+    "review_changes": [
+      "Corrected source of 'Bow drawing' action from 'archer's muscles' to 'bowstring and bow limbs', as the physical object being acted upon is the bow, not the archer's body parts.",
+      "Preserved original sequence and structure; only corrected source references to match actual physical components in the event."
+    ]
+  },
+  {
+    "event": "A cat jumps onto your lap and starts purring",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "events stage returned invalid output: 1 validation error for EventOutline\n  Value error, events must reference the provided actions, with none unused [type=value_error, input_value={'phases': [\"Initial cont... 2}, {'action_id': -1}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error"
+  },
+  {
+    "event": "A balloon is inflated until it pops",
+    "phases": [
+      "Inflation begins: air is introduced into the balloon through a nozzle.",
+      "Balloon expands continuously as more air is added, stretching its material.",
+      "Tension in the balloon's surface increases with each additional breath or pump.",
+      "The balloon reaches maximum stretch and begins to show signs of rupture.",
+      "The balloon finally ruptures due to internal pressure exceeding structural integrity."
+    ],
+    "sub_events": [
+      {
+        "source": "pump",
+        "prompt": "air is introduced into the balloon through a nozzle by the pump",
+        "start": 0.1,
+        "duration": 0.8,
+        "intensity": 0.2,
+        "transition": "cut"
+      },
+      {
+        "source": "balloon material",
+        "prompt": "the balloon material expands continuously as more air is added, stretching its surface",
+        "start": 1.5,
+        "duration": 1.5,
+        "intensity": 0.3,
+        "transition": "crossfade"
+      },
+      {
+        "source": "balloon material",
+        "prompt": "the balloon material increases tension due to continuous inflation",
+        "start": 3.0,
+        "duration": 1.0,
+        "intensity": 0.4,
+        "transition": "crossfade"
+      },
+      {
+        "source": "balloon structure",
+        "prompt": "the balloon structure reaches maximum stretch and shows signs of rupture",
+        "start": 5.0,
+        "duration": 0.8,
+        "intensity": 0.5,
+        "transition": "cut"
+      },
+      {
+        "source": "balloon material",
+        "prompt": "the balloon material ruptures due to internal pressure exceeding structural integrity",
+        "start": 6.0,
+        "duration": 1.2,
+        "intensity": 0.6,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 7.326842784881592,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 2.337594509124756,
+        "output": {
+          "phases": [
+            "Inflation begins: air is introduced into the balloon through a nozzle.",
+            "Balloon expands continuously as more air is added, stretching its material.",
+            "Tension in the balloon's surface increases with each additional breath or pump.",
+            "The balloon reaches maximum stretch and begins to show signs of rupture.",
+            "The balloon finally ruptures due to internal pressure exceeding structural integrity."
+          ],
+          "actions": [
+            {
+              "action_id": 1,
+              "source": "pump",
+              "action": "air is introduced into the balloon through a nozzle"
+            },
+            {
+              "action_id": 2,
+              "source": "balloon material",
+              "action": "expands continuously as more air is added, stretching its surface"
+            },
+            {
+              "action_id": 3,
+              "source": "balloon material",
+              "action": "increases tension due to continuous inflation"
+            },
+            {
+              "action_id": 4,
+              "source": "balloon structure",
+              "action": "reaches maximum stretch and shows signs of rupture"
+            },
+            {
+              "action_id": 5,
+              "source": "balloon material",
+              "action": "ruptures due to internal pressure exceeding structural integrity"
+            }
+          ],
+          "events": [
+            {
+              "action_id": 1
+            },
+            {
+              "action_id": 2
+            },
+            {
+              "action_id": 3
+            },
+            {
+              "action_id": 4
+            },
+            {
+              "action_id": 5
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 2.44270396232605,
+        "output": {
+          "outline": {
+            "phases": [
+              "Inflation begins: air is introduced into the balloon through a nozzle.",
+              "Balloon expands continuously as more air is added, stretching its material.",
+              "Tension in the balloon's surface increases with each additional breath or pump.",
+              "The balloon reaches maximum stretch and begins to show signs of rupture.",
+              "The balloon finally ruptures due to internal pressure exceeding structural integrity."
+            ],
+            "actions": [
+              {
+                "action_id": 1,
+                "source": "pump",
+                "action": "air is introduced into the balloon through a nozzle"
+              },
+              {
+                "action_id": 2,
+                "source": "balloon material",
+                "action": "expands continuously as more air is added, stretching its surface"
+              },
+              {
+                "action_id": 3,
+                "source": "balloon material",
+                "action": "increases tension due to continuous inflation"
+              },
+              {
+                "action_id": 4,
+                "source": "balloon structure",
+                "action": "reaches maximum stretch and shows signs of rupture"
+              },
+              {
+                "action_id": 5,
+                "source": "balloon material",
+                "action": "ruptures due to internal pressure exceeding structural integrity"
+              }
+            ],
+            "events": [
+              {
+                "action_id": 1
+              },
+              {
+                "action_id": 2
+              },
+              {
+                "action_id": 3
+              },
+              {
+                "action_id": 4
+              },
+              {
+                "action_id": 5
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.7317869663238525,
+        "output": {
+          "event_1": {
+            "start": 0.1,
+            "duration": 0.8,
+            "intensity": 0.2,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 1.5,
+            "duration": 1.5,
+            "intensity": 0.3,
+            "transition": "crossfade"
+          },
+          "event_3": {
+            "start": 3.0,
+            "duration": 1.0,
+            "intensity": 0.4,
+            "transition": "crossfade"
+          },
+          "event_4": {
+            "start": 5.0,
+            "duration": 0.8,
+            "intensity": 0.5,
+            "transition": "cut"
+          },
+          "event_5": {
+            "start": 6.0,
+            "duration": 1.2,
+            "intensity": 0.6,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.8128914833068848,
+        "output": {
+          "action_1": "air is introduced into the balloon through a nozzle by the pump",
+          "action_2": "the balloon material expands continuously as more air is added, stretching its surface",
+          "action_3": "the balloon material increases tension due to continuous inflation",
+          "action_4": "the balloon structure reaches maximum stretch and shows signs of rupture",
+          "action_5": "the balloon material ruptures due to internal pressure exceeding structural integrity"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "A train approaches, passes by, and fades into the distance",
+    "phases": [
+      "Approach",
+      "Passing",
+      "Fading"
+    ],
+    "sub_events": [
+      {
+        "source": "train wheels",
+        "prompt": "train wheels approaching the observer, generating low-frequency vibration through proximity and motion",
+        "start": 0.5,
+        "duration": 2.0,
+        "intensity": 0.4,
+        "transition": "cut"
+      },
+      {
+        "source": "train body and axles",
+        "prompt": "train body and axles passing by the observer, producing a sustained mid-range vibration as physical contact is established",
+        "start": 2.5,
+        "duration": 3.0,
+        "intensity": 0.6,
+        "transition": "crossfade"
+      },
+      {
+        "source": "train engine and trailing components",
+        "prompt": "train engine and trailing components fading into distance, emitting a decaying vibration that diminishes in intensity",
+        "start": 5.5,
+        "duration": 2.5,
+        "intensity": 0.3,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 4.959826231002808,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 1.5533838272094727,
+        "output": {
+          "phases": [
+            "Approach",
+            "Passing",
+            "Fading"
+          ],
+          "actions": [
+            {
+              "action_id": 1,
+              "source": "train wheels",
+              "action": "approaching the observer, generating low-frequency vibration through proximity and motion"
+            },
+            {
+              "action_id": 2,
+              "source": "train body and axles",
+              "action": "passing by the observer, producing a sustained mid-range vibration as physical contact is established"
+            },
+            {
+              "action_id": 3,
+              "source": "train engine and trailing components",
+              "action": "fading into distance, emitting a decaying vibration that diminishes in intensity"
+            }
+          ],
+          "events": [
+            {
+              "action_id": 1
+            },
+            {
+              "action_id": 2
+            },
+            {
+              "action_id": 3
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.6575350761413574,
+        "output": {
+          "outline": {
+            "phases": [
+              "Approach",
+              "Passing",
+              "Fading"
+            ],
+            "actions": [
+              {
+                "action_id": 1,
+                "source": "train wheels",
+                "action": "approaching the observer, generating low-frequency vibration through proximity and motion"
+              },
+              {
+                "action_id": 2,
+                "source": "train body and axles",
+                "action": "passing by the observer, producing a sustained mid-range vibration as physical contact is established"
+              },
+              {
+                "action_id": 3,
+                "source": "train engine and trailing components",
+                "action": "fading into distance, emitting a decaying vibration that diminishes in intensity"
+              }
+            ],
+            "events": [
+              {
+                "action_id": 1
+              },
+              {
+                "action_id": 2
+              },
+              {
+                "action_id": 3
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.068730354309082,
+        "output": {
+          "event_1": {
+            "start": 0.5,
+            "duration": 2.0,
+            "intensity": 0.4,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 2.5,
+            "duration": 3.0,
+            "intensity": 0.6,
+            "transition": "crossfade"
+          },
+          "event_3": {
+            "start": 5.5,
+            "duration": 2.5,
+            "intensity": 0.3,
+            "transition": "cut"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.6771695613861084,
+        "output": {
+          "action_1": "train wheels approaching the observer, generating low-frequency vibration through proximity and motion",
+          "action_2": "train body and axles passing by the observer, producing a sustained mid-range vibration as physical contact is established",
+          "action_3": "train engine and trailing components fading into distance, emitting a decaying vibration that diminishes in intensity"
+        }
+      }
+    ],
+    "review_changes": []
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "event": "Dribbling a basketball then an opponent forcefully slaps the ball out of your hand with a large splat",
+  "sub_events": [
+    {
+      "prompt": "Simulate the feeling of dribbling a basketball, with regular rhythmic vibrations",
+      "start": 0.0,
+      "duration": 3.0,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_001637/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.028,
+        0.019
+      ],
+      "offset": 0.274,
+      "shared": false
+    },
+    {
+      "prompt": "Sudden intense vibration to simulate the ball being slapped out of hand",
+      "start": 3.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_001637/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.7908,
+        0.7801
+      ],
+      "offset": 0.091,
+      "shared": false
+    }
+  ],
+  "total": 3.5,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Dribbling_a_basketball_then_an_oppon_1026_001637_composite.wav",
+  "baseline": null,
+  "gen_duration": 4.0,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.833037376403809,
+  "elapsed": 4.84318470954895
+}

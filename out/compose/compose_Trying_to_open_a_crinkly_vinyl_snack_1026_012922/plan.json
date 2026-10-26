@@ -1,0 +1,55 @@
+{
+  "event": "Trying to open a crinkly vinyl snack package, then finally tearing it open with a sharp, crisp rip.",
+  "sub_events": [
+    {
+      "prompt": "The vinyl snack package is being pulled on at the seal.",
+      "start": 0.5,
+      "duration": 2.0,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1026_012922/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0287,
+        0.0075
+      ],
+      "offset": 1.778,
+      "shared": false
+    },
+    {
+      "prompt": "The vinyl snack package undergoes a sharp, crisp rip.",
+      "start": 3.0,
+      "duration": 4.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1026_012922/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0171,
+        0.1141
+      ],
+      "offset": 0.085,
+      "shared": false
+    }
+  ],
+  "total": 7.5,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Trying_to_open_a_crinkly_vinyl_snack_1026_012922_composite.wav",
+  "baseline": "compose_Trying_to_open_a_crinkly_vinyl_snack_1026_012922_baseline.wav",
+  "gen_duration": 7.5,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 15.860377311706543,
+  "elapsed": 15.87655782699585
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "threshold": 0.08,
+    "method": "composite",
+    "f1": 0.8475524475524474
+  },
+  {
+    "threshold": 0.08,
+    "method": "baseline",
+    "f1": 0.25656767474949294
+  },
+  {
+    "threshold": 0.12,
+    "method": "composite",
+    "f1": 0.799134199134199
+  },
+  {
+    "threshold": 0.12,
+    "method": "baseline",
+    "f1": 0.2292929292929293
+  },
+  {
+    "threshold": 0.2,
+    "method": "composite",
+    "f1": 0.7293978748524204
+  },
+  {
+    "threshold": 0.2,
+    "method": "baseline",
+    "f1": 0.21587301587301588
+  }
+]

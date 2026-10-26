@@ -1,0 +1,55 @@
+{
+  "event": "I pulled back the extremely tense bowstring with all my strength to the fullest and then released it.",
+  "sub_events": [
+    {
+      "prompt": "The bowstring is pulled back.",
+      "start": 0.5,
+      "duration": 1.5,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_I_pulled_back_the_extremely_tense_bo_1026_004547/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.002,
+        0.0051
+      ],
+      "offset": 0.145,
+      "shared": false
+    },
+    {
+      "prompt": "The bowstring is released.",
+      "start": 2.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_pulled_back_the_extremely_tense_bo_1026_004547/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.002,
+        0.2618
+      ],
+      "offset": 0.239,
+      "shared": false
+    }
+  ],
+  "total": 2.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_pulled_back_the_extremely_tense_bo_1026_004547_composite.wav",
+  "baseline": "compose_I_pulled_back_the_extremely_tense_bo_1026_004547_baseline.wav",
+  "gen_duration": 2.5,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.6594038009643555,
+  "elapsed": 2.6704070568084717
+}

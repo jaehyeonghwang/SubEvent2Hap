@@ -1,0 +1,38 @@
+{
+  "event": "I have to do CPR. heavily and strongly pressing his chest constantly with the speed of pressing 100 times in a minute",
+  "sub_events": [
+    {
+      "prompt": "Strong, rhythmic chest compressions at 100 beats per minute",
+      "start": 0.0,
+      "duration": 10.0,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1026_001400/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0115,
+        0.0263
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 10.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_have_to_do_CPR_heavily_and_strongl_1026_001400_composite.wav",
+  "baseline": null,
+  "gen_duration": 10.0,
+  "prompts": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 11.326833963394165,
+  "elapsed": 11.33694863319397
+}

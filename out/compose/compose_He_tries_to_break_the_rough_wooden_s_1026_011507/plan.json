@@ -1,0 +1,87 @@
+{
+  "event": "He tries to break the rough wooden stick by bending it twice, but to no avail. On the third attempt, with a strong impact, the stick finally snaps.",
+  "sub_events": [
+    {
+      "prompt": "The rough wooden stick is bending.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.4,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_tries_to_break_the_rough_wooden_s_1026_011507/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0323,
+        0.0614
+      ],
+      "offset": 0.171,
+      "shared": true
+    },
+    {
+      "prompt": "The rough wooden stick is bending.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.4,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_tries_to_break_the_rough_wooden_s_1026_011507/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0323,
+        0.0614
+      ],
+      "offset": 0.171,
+      "shared": true
+    },
+    {
+      "prompt": "The rough wooden stick experiences a strong impact.",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_tries_to_break_the_rough_wooden_s_1026_011507/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.4347,
+        0.4611
+      ],
+      "offset": 0.003,
+      "shared": false
+    },
+    {
+      "prompt": "The rough wooden stick is snapping.",
+      "start": 1.8,
+      "duration": 0.25,
+      "intensity": 0.6,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_He_tries_to_break_the_rough_wooden_s_1026_011507/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0137,
+        0.0435
+      ],
+      "offset": 0.78,
+      "shared": false
+    }
+  ],
+  "total": 2.05,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_tries_to_break_the_rough_wooden_s_1026_011507_composite.wav",
+  "baseline": "compose_He_tries_to_break_the_rough_wooden_s_1026_011507_baseline.wav",
+  "gen_duration": 2.05,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 7.2330286502838135,
+  "elapsed": 7.2540318965911865
+}

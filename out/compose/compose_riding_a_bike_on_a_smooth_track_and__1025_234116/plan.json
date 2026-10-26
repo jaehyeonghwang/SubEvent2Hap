@@ -1,0 +1,70 @@
+{
+  "event": "riding a bike on a smooth track and then ride on a bumpy road",
+  "sub_events": [
+    {
+      "prompt": "Smooth and steady vibration to simulate riding on a smooth track",
+      "start": 0.0,
+      "duration": 4.0,
+      "intensity": 0.2,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1025_234116/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.3453,
+        0.1878
+      ],
+      "offset": 1.994,
+      "shared": false
+    },
+    {
+      "prompt": "Gradual increase in vibration intensity to simulate transition from smooth track to bumpy road",
+      "start": 4.0,
+      "duration": 1.0,
+      "intensity": 0.5,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1025_234116/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.296,
+        0.5541
+      ],
+      "offset": 2.09,
+      "shared": false
+    },
+    {
+      "prompt": "Irregular and intense vibrations to simulate riding on a bumpy road",
+      "start": 5.0,
+      "duration": 5.0,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1025_234116/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.3542,
+        0.0219
+      ],
+      "offset": 0.998,
+      "shared": false
+    }
+  ],
+  "total": 10.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_riding_a_bike_on_a_smooth_track_and__1025_234116_composite.wav",
+  "baseline": null,
+  "gen_duration": 6.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.7300333976745605,
+  "elapsed": 6.7467381954193115
+}

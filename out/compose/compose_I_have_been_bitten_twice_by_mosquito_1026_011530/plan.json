@@ -1,0 +1,55 @@
+{
+  "event": "I have been bitten twice by mosquitoes on my right hand and it's itchy",
+  "sub_events": [
+    {
+      "prompt": "The mosquito bites the skin.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_have_been_bitten_twice_by_mosquito_1026_011530/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.525,
+        0.0034
+      ],
+      "offset": 0.228,
+      "shared": true
+    },
+    {
+      "prompt": "The mosquito bites the skin.",
+      "start": 1.0,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_have_been_bitten_twice_by_mosquito_1026_011530/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.525,
+        0.0034
+      ],
+      "offset": 0.228,
+      "shared": true
+    }
+  ],
+  "total": 1.2,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_have_been_bitten_twice_by_mosquito_1026_011530_composite.wav",
+  "baseline": "compose_I_have_been_bitten_twice_by_mosquito_1026_011530_baseline.wav",
+  "gen_duration": 1.5,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.799657106399536,
+  "elapsed": 2.813661813735962
+}

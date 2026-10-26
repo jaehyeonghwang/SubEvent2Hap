@@ -1,0 +1,103 @@
+{
+  "event": "Driving a truck really fast on a highway during a heavy snowfall and then crashing into a huge moose.",
+  "sub_events": [
+    {
+      "prompt": "truck chassis collides with moose antlers",
+      "start": 2.0,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1026_012157/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0072,
+        0.0186
+      ],
+      "offset": 0.097,
+      "shared": false
+    },
+    {
+      "prompt": "truck tires make contact with snow-covered ground",
+      "start": 2.15,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1026_012157/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0423,
+        0.0253
+      ],
+      "offset": 2.718,
+      "shared": false
+    },
+    {
+      "prompt": "moose body bump into truck front grille",
+      "start": 2.6,
+      "duration": 0.35,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1026_012157/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0272,
+        0.2491
+      ],
+      "offset": 0.269,
+      "shared": false
+    },
+    {
+      "prompt": "moose legs press against truck side panel",
+      "start": 2.95,
+      "duration": 0.25,
+      "intensity": 0.65,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1026_012157/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0797,
+        0.0192
+      ],
+      "offset": 1.936,
+      "shared": false
+    },
+    {
+      "prompt": "truck windshield strike moose head",
+      "start": 3.2,
+      "duration": 0.4,
+      "intensity": 0.9,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1026_012157/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.0526,
+        0.027
+      ],
+      "offset": 0.859,
+      "shared": false
+    }
+  ],
+  "total": 3.6,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Driving_a_truck_really_fast_on_a_hig_1026_012157_composite.wav",
+  "baseline": "compose_Driving_a_truck_really_fast_on_a_hig_1026_012157_baseline.wav",
+  "gen_duration": 3.6,
+  "prompts": 12,
+  "analytic_segments": 0,
+  "elapsed_gen": 12.825782775878906,
+  "elapsed": 12.844783782958984
+}

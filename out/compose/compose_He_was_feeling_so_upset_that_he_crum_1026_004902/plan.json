@@ -1,0 +1,87 @@
+{
+  "event": "He was feeling so upset that he crumpled the paper forcefully three times and slammed it to the ground.",
+  "sub_events": [
+    {
+      "prompt": "The paper is crumpling.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_was_feeling_so_upset_that_he_crum_1026_004902/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0183,
+        0.0051
+      ],
+      "offset": 0.066,
+      "shared": true
+    },
+    {
+      "prompt": "The paper is crumpling.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_was_feeling_so_upset_that_he_crum_1026_004902/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0183,
+        0.0051
+      ],
+      "offset": 0.066,
+      "shared": true
+    },
+    {
+      "prompt": "The paper is crumpling.",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_was_feeling_so_upset_that_he_crum_1026_004902/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0183,
+        0.0051
+      ],
+      "offset": 0.066,
+      "shared": true
+    },
+    {
+      "prompt": "The paper is slamming to the ground.",
+      "start": 2.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_was_feeling_so_upset_that_he_crum_1026_004902/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0122,
+        0.0035
+      ],
+      "offset": 0.047,
+      "shared": false
+    }
+  ],
+  "total": 2.5,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_was_feeling_so_upset_that_he_crum_1026_004902_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.5724260807037354,
+  "elapsed": 2.582472324371338
+}

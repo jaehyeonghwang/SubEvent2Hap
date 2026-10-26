@@ -1,0 +1,150 @@
+{
+  "event": "A graduate student rigorously typing their computer keyboard to write a research draft and then hitting the enter key after each paragraph, then pause..",
+  "sub_events": [
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.0,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_graduate_student_rigorously_typing_1026_001612/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0805,
+        0.0026
+      ],
+      "offset": 0.074,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.3,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_graduate_student_rigorously_typing_1026_001612/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0805,
+        0.0026
+      ],
+      "offset": 0.074,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.6,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_graduate_student_rigorously_typing_1026_001612/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0805,
+        0.0026
+      ],
+      "offset": 0.074,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.9,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_graduate_student_rigorously_typing_1026_001612/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0805,
+        0.0026
+      ],
+      "offset": 0.074,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.2,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_graduate_student_rigorously_typing_1026_001612/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.0805,
+        0.0026
+      ],
+      "offset": 0.074,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_graduate_student_rigorously_typing_1026_001612/sub_06.wav",
+      "candidate": 0,
+      "scores": [
+        0.0805,
+        0.0026
+      ],
+      "offset": 0.074,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.8,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_graduate_student_rigorously_typing_1026_001612/sub_07.wav",
+      "candidate": 0,
+      "scores": [
+        0.0805,
+        0.0026
+      ],
+      "offset": 0.074,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 2.1,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_graduate_student_rigorously_typing_1026_001612/sub_08.wav",
+      "candidate": 0,
+      "scores": [
+        0.0805,
+        0.0026
+      ],
+      "offset": 0.074,
+      "shared": true
+    }
+  ],
+  "total": 2.3000000000000003,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_graduate_student_rigorously_typing_1026_001612_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.0068323612213135,
+  "elapsed": 2.0257339477539062
+}

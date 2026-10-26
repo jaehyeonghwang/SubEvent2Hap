@@ -1,0 +1,70 @@
+{
+  "event": "After sticking and aiming the gun, he shoots at the enemy once.",
+  "sub_events": [
+    {
+      "prompt": "A subtle vibration as the player sticks the gun to their hand.",
+      "start": 0.0,
+      "duration": 0.5,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_After_sticking_and_aiming_the_gun_he_1026_001228/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0133,
+        0.4111
+      ],
+      "offset": 1.113,
+      "shared": false
+    },
+    {
+      "prompt": "A steady vibration as the player aims the gun.",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_After_sticking_and_aiming_the_gun_he_1026_001228/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.3724,
+        0.2009
+      ],
+      "offset": 0.0,
+      "shared": false
+    },
+    {
+      "prompt": "A sharp, intense vibration as the gun is fired.",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_After_sticking_and_aiming_the_gun_he_1026_001228/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        1.0697,
+        1.0512
+      ],
+      "offset": 0.042,
+      "shared": false
+    }
+  ],
+  "total": 1.7,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_After_sticking_and_aiming_the_gun_he_1026_001228_composite.wav",
+  "baseline": null,
+  "gen_duration": 2.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.3104612827301025,
+  "elapsed": 2.322622060775757
+}

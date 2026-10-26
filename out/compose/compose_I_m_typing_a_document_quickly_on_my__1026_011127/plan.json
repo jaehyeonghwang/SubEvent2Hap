@@ -1,0 +1,151 @@
+{
+  "event": "I'm typing a document quickly on my keyboard, and then I slowly click my mouse once",
+  "sub_events": [
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.0,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_011127/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0054,
+        0.0103
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.3,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_011127/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0054,
+        0.0103
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.6,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_011127/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0054,
+        0.0103
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 0.9,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_011127/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0054,
+        0.0103
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.2,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_011127/sub_05.wav",
+      "candidate": 1,
+      "scores": [
+        0.0054,
+        0.0103
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_011127/sub_06.wav",
+      "candidate": 1,
+      "scores": [
+        0.0054,
+        0.0103
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 1.8,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_011127/sub_07.wav",
+      "candidate": 1,
+      "scores": [
+        0.0054,
+        0.0103
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The keyboard registers a key press.",
+      "start": 2.1,
+      "duration": 0.5,
+      "intensity": 0.5,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_011127/sub_08.wav",
+      "candidate": 1,
+      "scores": [
+        0.0054,
+        0.0103
+      ],
+      "offset": 1.908,
+      "shared": true
+    }
+  ],
+  "total": 2.6,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_m_typing_a_document_quickly_on_my__1026_011127_composite.wav",
+  "baseline": "compose_I_m_typing_a_document_quickly_on_my__1026_011127_baseline.wav",
+  "gen_duration": 2.6,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.62203311920166,
+  "elapsed": 4.654348373413086
+}

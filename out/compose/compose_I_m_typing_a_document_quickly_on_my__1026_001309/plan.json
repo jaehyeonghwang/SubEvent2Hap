@@ -1,0 +1,54 @@
+{
+  "event": "I'm typing a document quickly on my keyboard, and then I slowly click my mouse once",
+  "sub_events": [
+    {
+      "prompt": "Rapid typing on a keyboard",
+      "start": 0.0,
+      "duration": 4.0,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_001309/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0087,
+        0.0044
+      ],
+      "offset": 1.0,
+      "shared": false
+    },
+    {
+      "prompt": "Slow single mouse click",
+      "start": 4.5,
+      "duration": 1.5,
+      "intensity": 0.3,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_001309/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0113,
+        0.0291
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 6.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_m_typing_a_document_quickly_on_my__1026_001309_composite.wav",
+  "baseline": null,
+  "gen_duration": 5.0,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.435235023498535,
+  "elapsed": 5.445899486541748
+}

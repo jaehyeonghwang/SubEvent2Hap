@@ -1,0 +1,71 @@
+{
+  "event": "the sound of dribbling a soccer ball in three steps",
+  "sub_events": [
+    {
+      "prompt": "The soccer ball bounces on the ground.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_the_sound_of_dribbling_a_soccer_ball_1026_004911/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.2149,
+        0.141
+      ],
+      "offset": 0.096,
+      "shared": true
+    },
+    {
+      "prompt": "The soccer ball bounces on the ground.",
+      "start": 1.0,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_the_sound_of_dribbling_a_soccer_ball_1026_004911/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.2149,
+        0.141
+      ],
+      "offset": 0.096,
+      "shared": true
+    },
+    {
+      "prompt": "The soccer ball bounces on the ground.",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_the_sound_of_dribbling_a_soccer_ball_1026_004911/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.2149,
+        0.141
+      ],
+      "offset": 0.096,
+      "shared": true
+    }
+  ],
+  "total": 1.7,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_the_sound_of_dribbling_a_soccer_ball_1026_004911_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.5451884269714355,
+  "elapsed": 2.5521891117095947
+}

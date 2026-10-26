@@ -1,0 +1,194 @@
+[
+ {
+  "case": "rubber ball / hard floor",
+  "restitution": {
+   "value": 0.8,
+   "low": 0.6,
+   "high": 0.95,
+   "basis": "Material properties of rubber and hard surface"
+  },
+  "observed": {
+   "rebound_height_cm": 85.0,
+   "bounciness": "well",
+   "visible_bounces": 5,
+   "basis": "The rubber ball's elastic properties and the hard floor's rigidity allow for a significant rebound, with energy loss over time reducing each subsequent bounce."
+  },
+  "e_from_height": 0.9219544457292888,
+  "seconds": [
+   4.445275068283081,
+   6.644860744476318
+  ],
+  "reasoning_chars": [
+   1694,
+   2156
+  ]
+ },
+ {
+  "case": "steel ball / hard floor",
+  "restitution": {
+   "value": 0.75,
+   "low": 0.6,
+   "high": 0.9,
+   "basis": "steel ball and hard floor materials"
+  },
+  "observed": {
+   "rebound_height_cm": 85.0,
+   "bounciness": "very_well",
+   "visible_bounces": 3,
+   "basis": "Steel ball and hard floor are rigid materials with high elasticity, leading to minimal energy loss during collision and multiple visible bounces."
+  },
+  "e_from_height": 0.9219544457292888,
+  "seconds": [
+   6.078621864318848,
+   6.707900285720825
+  ],
+  "reasoning_chars": [
+   2284,
+   2493
+  ]
+ },
+ {
+  "case": "steel ball / wooden floor",
+  "restitution": {
+   "value": 0.6,
+   "low": 0.4,
+   "high": 0.7,
+   "basis": "Depends on steel's rigidity and wooden floor's hardness; typical values for rigid vs moderately elastic surfaces."
+  },
+  "observed": {
+   "rebound_height_cm": 85.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Steel's high elasticity and the wooden floor's rigid surface conserve most kinetic energy, resulting in a high rebound and multiple bounces before energy dissipation."
+  },
+  "e_from_height": 0.9219544457292888,
+  "seconds": [
+   4.768347263336182,
+   3.8772823810577393
+  ],
+  "reasoning_chars": [
+   1712,
+   1271
+  ]
+ },
+ {
+  "case": "steel ball / thick steel plate",
+  "restitution": {
+   "value": 0.8,
+   "low": 0.6,
+   "high": 0.9,
+   "basis": "steel on steel collision, rigid surfaces with minimal deformation"
+  },
+  "observed": {
+   "rebound_height_cm": 90.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Steel's rigidity and elasticity cause efficient energy transfer, resulting in high rebounds and multiple visible bounces before energy dissipation."
+  },
+  "e_from_height": 0.9486832980505138,
+  "seconds": [
+   6.304639101028442,
+   10.867082118988037
+  ],
+  "reasoning_chars": [
+   2451,
+   4118
+  ]
+ },
+ {
+  "case": "tennis ball / concrete",
+  "restitution": {
+   "value": 0.65,
+   "low": 0.5,
+   "high": 0.8,
+   "basis": "Tennis balls are rubber with felt covering, which provides moderate elasticity; concrete is a hard surface, leading to intermediate restitution values."
+  },
+  "observed": {
+   "rebound_height_cm": 70.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Tennis balls are elastic and concrete is a hard surface, allowing for efficient energy transfer and multiple visible bounces."
+  },
+  "e_from_height": 0.8366600265340756,
+  "seconds": [
+   28.010897874832153,
+   6.515510559082031
+  ],
+  "reasoning_chars": [
+   10446,
+   2383
+  ]
+ },
+ {
+  "case": "glass marble / tile floor",
+  "restitution": {
+   "value": 0.85,
+   "low": 0.7,
+   "high": 0.95,
+   "basis": "Glass marbles (hard, smooth) and tile floors (rigid, hard surfaces) typically yield high restitution coefficients due to minimal energy loss in collisions."
+  },
+  "observed": {
+   "rebound_height_cm": 85.0,
+   "bounciness": "very_well",
+   "visible_bounces": 5,
+   "basis": "The glass marble's hardness and the tile floor's rigidity minimize energy loss, allowing for a high rebound and multiple bounces."
+  },
+  "e_from_height": 0.9219544457292888,
+  "seconds": [
+   4.804614543914795,
+   10.15584135055542
+  ],
+  "reasoning_chars": [
+   1702,
+   3394
+  ]
+ },
+ {
+  "case": "soft clay ball / floor",
+  "restitution": {
+   "value": 0.15,
+   "low": 0.05,
+   "high": 0.3,
+   "basis": "Depends on soft clay's deformation and energy dissipation characteristics."
+  },
+  "observed": {
+   "rebound_height_cm": 0.0,
+   "bounciness": "does_not_bounce",
+   "visible_bounces": 0,
+   "basis": "The soft clay ball lacks elasticity and deforms upon impact, absorbing energy instead of rebounding. The rigid floor further prevents any bounce."
+  },
+  "e_from_height": 0.0,
+  "seconds": [
+   5.9934468269348145,
+   3.7002668380737305
+  ],
+  "reasoning_chars": [
+   2196,
+   1174
+  ]
+ },
+ {
+  "case": "ping-pong ball / table",
+  "restitution": {
+   "value": 0.85,
+   "low": 0.7,
+   "high": 0.95,
+   "basis": "Ping-pong ball (celluloid/plastic) and table surface (wood/rubber coating) material properties affecting energy retention during collision."
+  },
+  "observed": {
+   "rebound_height_cm": 90.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Ping-pong ball's elastic material and the rigid table surface allow for a high rebound with multiple visible bounces."
+  },
+  "e_from_height": 0.9486832980505138,
+  "seconds": [
+   10.3416006565094,
+   9.999749183654785
+  ],
+  "reasoning_chars": [
+   3849,
+   3419
+  ]
+ }
+]

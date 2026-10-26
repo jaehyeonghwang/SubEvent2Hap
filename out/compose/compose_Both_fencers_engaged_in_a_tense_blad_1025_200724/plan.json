@@ -1,0 +1,133 @@
+{
+  "event": "Both fencers engaged in a tense blade battle, neither willing to give an inch",
+  "sub_events": [
+    {
+      "prompt": "Fencer A's blade makes contact with Fencer B's guard",
+      "start": 0.1,
+      "duration": 0.3,
+      "intensity": 0.4,
+      "transition": "cut",
+      "source": "Fencer A's blade",
+      "file": "compose/compose_Both_fencers_engaged_in_a_tense_blad_1025_200724/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.2296,
+        0.0938
+      ],
+      "offset": 0.16,
+      "shared": false
+    },
+    {
+      "prompt": "Fencer A's blade presses against Fencer B's blade",
+      "start": 0.5,
+      "duration": 0.6,
+      "intensity": 0.6,
+      "transition": "crossfade",
+      "source": "Fencer A's blade",
+      "file": "compose/compose_Both_fencers_engaged_in_a_tense_blad_1025_200724/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0209,
+        0.0129
+      ],
+      "offset": 1.209,
+      "shared": true
+    },
+    {
+      "prompt": "Fencer B's blade applies equal force to Fencer A's blade",
+      "start": 1.0,
+      "duration": 0.4,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "Fencer B's blade",
+      "file": "compose/compose_Both_fencers_engaged_in_a_tense_blad_1025_200724/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0071,
+        0.4508
+      ],
+      "offset": 0.027,
+      "shared": false
+    },
+    {
+      "prompt": "Fencer A's blade presses against Fencer B's blade",
+      "start": 1.5,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "transition": "crossfade",
+      "source": "Fencer A's blade",
+      "file": "compose/compose_Both_fencers_engaged_in_a_tense_blad_1025_200724/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0209,
+        0.0129
+      ],
+      "offset": 1.373,
+      "shared": true
+    },
+    {
+      "prompt": "Fencer B's blade presses against Fencer A's blade",
+      "start": 2.0,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "Fencer B's blade",
+      "file": "compose/compose_Both_fencers_engaged_in_a_tense_blad_1025_200724/sub_05.wav",
+      "candidate": 1,
+      "scores": [
+        0.0647,
+        0.1506
+      ],
+      "offset": 0.07,
+      "shared": true
+    },
+    {
+      "prompt": "Fencer A's blade presses against Fencer B's blade",
+      "start": 2.5,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "Fencer A's blade",
+      "file": "compose/compose_Both_fencers_engaged_in_a_tense_blad_1025_200724/sub_06.wav",
+      "candidate": 0,
+      "scores": [
+        0.0209,
+        0.0129
+      ],
+      "offset": 1.373,
+      "shared": true
+    },
+    {
+      "prompt": "Fencer B's blade presses against Fencer A's blade",
+      "start": 3.0,
+      "duration": 0.4,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "Fencer B's blade",
+      "file": "compose/compose_Both_fencers_engaged_in_a_tense_blad_1025_200724/sub_07.wav",
+      "candidate": 1,
+      "scores": [
+        0.0647,
+        0.1506
+      ],
+      "offset": 0.07,
+      "shared": true
+    }
+  ],
+  "total": 3.4,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Both_fencers_engaged_in_a_tense_blad_1025_200724_composite.wav",
+  "baseline": "compose_Both_fencers_engaged_in_a_tense_blad_1025_200724_baseline.wav",
+  "gen_duration": 3.4,
+  "prompts": 10,
+  "elapsed_gen": 8.899682998657227,
+  "elapsed": 8.94107174873352
+}

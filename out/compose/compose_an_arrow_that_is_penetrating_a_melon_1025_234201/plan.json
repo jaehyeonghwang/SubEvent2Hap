@@ -1,0 +1,70 @@
+{
+  "event": "an arrow that is penetrating a melon in slow motion, starting from its hard shell into the soft fruit within and then coming out of the outer shell again",
+  "sub_events": [
+    {
+      "prompt": "arrow penetrates melon shell",
+      "start": 0.5,
+      "duration": 1.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_an_arrow_that_is_penetrating_a_melon_1025_234201/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0278,
+        0.0028
+      ],
+      "offset": 0.026,
+      "shared": false
+    },
+    {
+      "prompt": "arrow moves through soft flesh of melon",
+      "start": 1.7,
+      "duration": 3.0,
+      "intensity": 0.7,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_an_arrow_that_is_penetrating_a_melon_1025_234201/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0044,
+        0.001
+      ],
+      "offset": 0.0,
+      "shared": false
+    },
+    {
+      "prompt": "arrow emerges from melon shell",
+      "start": 4.7,
+      "duration": 1.5,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_an_arrow_that_is_penetrating_a_melon_1025_234201/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0158,
+        0.0343
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 6.2,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_an_arrow_that_is_penetrating_a_melon_1025_234201_composite.wav",
+  "baseline": "compose_an_arrow_that_is_penetrating_a_melon_1025_234201_baseline.wav",
+  "gen_duration": 6.2,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 13.316052198410034,
+  "elapsed": 13.337363719940186
+}

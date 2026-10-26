@@ -1,0 +1,87 @@
+{
+  "event": "A situation where I shake a tree 3 times and an apple falls on my head",
+  "sub_events": [
+    {
+      "prompt": "The tree shakes.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_004854/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.197,
+        0.0251
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The tree shakes.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_004854/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.197,
+        0.0251
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The tree shakes.",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_004854/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.197,
+        0.0251
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The apple falls on head.",
+      "start": 2.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_004854/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0739,
+        0.2234
+      ],
+      "offset": 0.145,
+      "shared": false
+    }
+  ],
+  "total": 2.5,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_situation_where_I_shake_a_tree_3_t_1026_004854_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.742405891418457,
+  "elapsed": 2.7504069805145264
+}

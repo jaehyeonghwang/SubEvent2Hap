@@ -1,0 +1,39 @@
+{
+  "event": "clap loudly once.",
+  "sub_events": [
+    {
+      "prompt": "Hands clap loudly.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_clap_loudly_once_1026_011111/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.5944,
+        0.4948
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 0.7,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_clap_loudly_once_1026_011111_composite.wav",
+  "baseline": "compose_clap_loudly_once_1026_011111_baseline.wav",
+  "gen_duration": 1.5,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.5514438152313232,
+  "elapsed": 2.5614497661590576
+}

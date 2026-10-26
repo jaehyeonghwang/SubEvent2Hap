@@ -1,0 +1,38 @@
+{
+  "event": "clap loudly once.",
+  "sub_events": [
+    {
+      "prompt": "hands come together and strike",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_clap_loudly_once_1026_001239/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0457,
+        0.5089
+      ],
+      "offset": 1.114,
+      "shared": false
+    }
+  ],
+  "total": 0.8,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_clap_loudly_once_1026_001239_composite.wav",
+  "baseline": "compose_clap_loudly_once_1026_001239_baseline.wav",
+  "gen_duration": 1.5,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.4492931365966797,
+  "elapsed": 1.4553821086883545
+}

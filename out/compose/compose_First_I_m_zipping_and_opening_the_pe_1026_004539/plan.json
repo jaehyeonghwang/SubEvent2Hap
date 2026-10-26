@@ -1,0 +1,87 @@
+{
+  "event": "First, I'm zipping and opening the pencil case. Then I am stirring the pencil case looking for the pencil. Then I found it and zipped the pencil case back to close it.",
+  "sub_events": [
+    {
+      "prompt": "The pencil case is being zipped closed.",
+      "start": 0.5,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_First_I_m_zipping_and_opening_the_pe_1026_004539/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0004,
+        0.2302
+      ],
+      "offset": 0.322,
+      "shared": true
+    },
+    {
+      "prompt": "The pencil case is being opened.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_First_I_m_zipping_and_opening_the_pe_1026_004539/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0598,
+        0.0179
+      ],
+      "offset": 2.75,
+      "shared": false
+    },
+    {
+      "prompt": "The pencil case is being stirred.",
+      "start": 1.5,
+      "duration": 1.0,
+      "intensity": 0.6,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_First_I_m_zipping_and_opening_the_pe_1026_004539/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0178,
+        0.0053
+      ],
+      "offset": 1.24,
+      "shared": false
+    },
+    {
+      "prompt": "The pencil case is being zipped closed.",
+      "start": 3.0,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_First_I_m_zipping_and_opening_the_pe_1026_004539/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0004,
+        0.2302
+      ],
+      "offset": 0.322,
+      "shared": true
+    }
+  ],
+  "total": 3.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_First_I_m_zipping_and_opening_the_pe_1026_004539_composite.wav",
+  "baseline": "compose_First_I_m_zipping_and_opening_the_pe_1026_004539_baseline.wav",
+  "gen_duration": 3.5,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.203239679336548,
+  "elapsed": 6.219254493713379
+}

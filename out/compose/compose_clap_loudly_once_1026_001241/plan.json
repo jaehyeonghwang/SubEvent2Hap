@@ -1,0 +1,38 @@
+{
+  "event": "clap loudly once.",
+  "sub_events": [
+    {
+      "prompt": "A single loud clap vibration.",
+      "start": 0.0,
+      "duration": 0.2,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_clap_loudly_once_1026_001241/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.9515,
+        0.3144
+      ],
+      "offset": 0.557,
+      "shared": false
+    }
+  ],
+  "total": 0.2,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_clap_loudly_once_1026_001241_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.3760521411895752,
+  "elapsed": 1.3805921077728271
+}

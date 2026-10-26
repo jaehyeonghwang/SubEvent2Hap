@@ -1,0 +1,71 @@
+{
+  "event": "I pulled back the extremely taut bowstring with all my strength and then released it, sending the arrow flying.",
+  "sub_events": [
+    {
+      "prompt": "The bowstring is pulled back.",
+      "start": 0.5,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_I_pulled_back_the_extremely_taut_bow_1026_011802/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0593,
+        0.0139
+      ],
+      "offset": 1.441,
+      "shared": false
+    },
+    {
+      "prompt": "The bowstring is released.",
+      "start": 1.0,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_pulled_back_the_extremely_taut_bow_1026_011802/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.1458,
+        0.1604
+      ],
+      "offset": 1.924,
+      "shared": false
+    },
+    {
+      "prompt": "The arrow is flying.",
+      "start": 1.2,
+      "duration": 0.8,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_I_pulled_back_the_extremely_taut_bow_1026_011802/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0666,
+        0.1071
+      ],
+      "offset": 0.016,
+      "shared": false
+    }
+  ],
+  "total": 2.0,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_pulled_back_the_extremely_taut_bow_1026_011802_composite.wav",
+  "baseline": "compose_I_pulled_back_the_extremely_taut_bow_1026_011802_baseline.wav",
+  "gen_duration": 2.0,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 7.023334264755249,
+  "elapsed": 7.0333335399627686
+}

@@ -1,0 +1,70 @@
+{
+  "event": "water bomb pops and splashes once as I hit the enemy",
+  "sub_events": [
+    {
+      "prompt": "A water bomb pops with a quick burst",
+      "start": 0.0,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_water_bomb_pops_and_splashes_once_as_1025_233938/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.6009,
+        0.4114
+      ],
+      "offset": 0.014,
+      "shared": false
+    },
+    {
+      "prompt": "Water splashes outward with a gentle ripple",
+      "start": 0.3,
+      "duration": 0.5,
+      "intensity": 0.5,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_water_bomb_pops_and_splashes_once_as_1025_233938/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0142,
+        0.0066
+      ],
+      "offset": 0.464,
+      "shared": false
+    },
+    {
+      "prompt": "The impact of water hitting the enemy with a forceful thud",
+      "start": 0.8,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_water_bomb_pops_and_splashes_once_as_1025_233938/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.3407,
+        0.3638
+      ],
+      "offset": 0.009,
+      "shared": false
+    }
+  ],
+  "total": 1.2000000000000002,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_water_bomb_pops_and_splashes_once_as_1025_233938_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.7169501781463623,
+  "elapsed": 1.7260522842407227
+}

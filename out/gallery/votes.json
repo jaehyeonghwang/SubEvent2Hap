@@ -1,0 +1,1301 @@
+[
+ {
+  "item": "c01",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o",
+   "gpt4o_oneshot",
+   "baseline",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939584.2418065
+ },
+ {
+  "item": "c02",
+  "choice": "gpt4o",
+  "order": [
+   "baseline",
+   "local",
+   "gpt4o_oneshot",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939598.959487
+ },
+ {
+  "item": "c03",
+  "choice": "gpt4o",
+  "order": [
+   "local",
+   "gpt4o_oneshot",
+   "baseline",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939617.6973267
+ },
+ {
+  "item": "c04",
+  "choice": "gpt4o",
+  "order": [
+   "gpt4o_oneshot",
+   "gpt4o",
+   "baseline",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939634.6682231
+ },
+ {
+  "item": "c05",
+  "choice": "gpt4o",
+  "order": [
+   "gpt4o",
+   "baseline",
+   "gpt4o_oneshot",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939662.5357819
+ },
+ {
+  "item": "c06",
+  "choice": "local",
+  "order": [
+   "gpt4o_oneshot",
+   "local",
+   "gpt4o",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939693.617284
+ },
+ {
+  "item": "c07",
+  "choice": "local",
+  "order": [
+   "baseline",
+   "gpt4o",
+   "local",
+   "gpt4o_oneshot"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939721.9409628
+ },
+ {
+  "item": "c08",
+  "choice": "baseline",
+  "order": [
+   "local",
+   "baseline",
+   "gpt4o_oneshot",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939748.2646108
+ },
+ {
+  "item": "c09",
+  "choice": "gpt4o",
+  "order": [
+   "local",
+   "gpt4o_oneshot",
+   "gpt4o",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939778.0826247
+ },
+ {
+  "item": "c10",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o_oneshot",
+   "gpt4o",
+   "local",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939811.1824403
+ },
+ {
+  "item": "c11",
+  "choice": "local",
+  "order": [
+   "local",
+   "gpt4o",
+   "gpt4o_oneshot",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939838.2257397
+ },
+ {
+  "item": "c12",
+  "choice": "gpt4o",
+  "order": [
+   "local",
+   "gpt4o_oneshot",
+   "gpt4o",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939861.7534633
+ },
+ {
+  "item": "s01",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "local",
+   "gpt4o_oneshot",
+   "gpt4o",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939874.0256305
+ },
+ {
+  "item": "s02",
+  "choice": "gpt4o",
+  "order": [
+   "gpt4o_oneshot",
+   "gpt4o",
+   "local",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939962.436564
+ },
+ {
+  "item": "s03",
+  "choice": "gpt4o",
+  "order": [
+   "local",
+   "gpt4o_oneshot",
+   "baseline",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792939987.5535936
+ },
+ {
+  "item": "s04",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "baseline",
+   "gpt4o_oneshot",
+   "local",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940011.9704766
+ },
+ {
+  "item": "s05",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "baseline",
+   "gpt4o_oneshot",
+   "local",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940027.6607966
+ },
+ {
+  "item": "s06",
+  "choice": "gpt4o",
+  "order": [
+   "gpt4o_oneshot",
+   "local",
+   "gpt4o",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940088.9503913
+ },
+ {
+  "item": "s07",
+  "choice": "local",
+  "order": [
+   "baseline",
+   "gpt4o_oneshot",
+   "local",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940154.9655592
+ },
+ {
+  "item": "s08",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o_oneshot",
+   "baseline",
+   "local",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940168.248558
+ },
+ {
+  "item": "s09",
+  "choice": "gpt4o",
+  "order": [
+   "baseline",
+   "gpt4o_oneshot",
+   "gpt4o",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940180.938573
+ },
+ {
+  "item": "s10",
+  "choice": "gpt4o",
+  "order": [
+   "local",
+   "baseline",
+   "gpt4o_oneshot",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940208.0859177
+ },
+ {
+  "item": "s11",
+  "choice": "gpt4o",
+  "order": [
+   "baseline",
+   "gpt4o_oneshot",
+   "local",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940246.6374664
+ },
+ {
+  "item": "s12",
+  "choice": "gpt4o",
+  "order": [
+   "baseline",
+   "local",
+   "gpt4o",
+   "gpt4o_oneshot"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940263.2304702
+ },
+ {
+  "item": "s13",
+  "choice": "local",
+  "order": [
+   "baseline",
+   "gpt4o",
+   "gpt4o_oneshot",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940283.131809
+ },
+ {
+  "item": "s14",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "local",
+   "baseline",
+   "gpt4o",
+   "gpt4o_oneshot"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940321.397152
+ },
+ {
+  "item": "s15",
+  "choice": "local",
+  "order": [
+   "gpt4o",
+   "gpt4o_oneshot",
+   "baseline",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940337.9735131
+ },
+ {
+  "item": "s16",
+  "choice": "local",
+  "order": [
+   "gpt4o",
+   "gpt4o_oneshot",
+   "local",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940356.9334712
+ },
+ {
+  "item": "s17",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "baseline",
+   "gpt4o",
+   "gpt4o_oneshot",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940398.1133823
+ },
+ {
+  "item": "s18",
+  "choice": "tie",
+  "order": [
+   "local",
+   "gpt4o",
+   "baseline",
+   "gpt4o_oneshot"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940445.5894728
+ },
+ {
+  "item": "s19",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o_oneshot",
+   "gpt4o",
+   "local",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940450.6832023
+ },
+ {
+  "item": "s20",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "local",
+   "gpt4o_oneshot",
+   "baseline",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940479.1520452
+ },
+ {
+  "item": "s21",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "local",
+   "baseline",
+   "gpt4o_oneshot",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "time": 1792940548.4358196
+ },
+ {
+  "item": "c01",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o",
+   "gpt4o_oneshot",
+   "local",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941739.6631386
+ },
+ {
+  "item": "c02",
+  "choice": "gpt4o",
+  "order": [
+   "baseline",
+   "gpt4o_oneshot",
+   "local",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941750.8140914
+ },
+ {
+  "item": "c03",
+  "choice": "gpt4o",
+  "order": [
+   "gpt4o_oneshot",
+   "baseline",
+   "gpt4o",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941764.0966053
+ },
+ {
+  "item": "c04",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o_oneshot",
+   "baseline",
+   "local",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941780.7986786
+ },
+ {
+  "item": "c05",
+  "choice": "local",
+  "order": [
+   "gpt4o_oneshot",
+   "local",
+   "gpt4o",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941800.7858968
+ },
+ {
+  "item": "c06",
+  "choice": "local",
+  "order": [
+   "gpt4o_oneshot",
+   "local",
+   "gpt4o",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941813.6643918
+ },
+ {
+  "item": "c07",
+  "choice": "gpt4o",
+  "order": [
+   "gpt4o",
+   "baseline",
+   "local",
+   "gpt4o_oneshot"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941840.4849217
+ },
+ {
+  "item": "c08",
+  "choice": "baseline",
+  "order": [
+   "baseline",
+   "gpt4o_oneshot",
+   "gpt4o",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941876.6410105
+ },
+ {
+  "item": "c09",
+  "choice": "gpt4o",
+  "order": [
+   "baseline",
+   "gpt4o",
+   "local",
+   "gpt4o_oneshot"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941890.8310387
+ },
+ {
+  "item": "c10",
+  "choice": "gpt4o",
+  "order": [
+   "gpt4o",
+   "gpt4o_oneshot",
+   "baseline",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941903.6485832
+ },
+ {
+  "item": "c11",
+  "choice": "gpt4o",
+  "order": [
+   "local",
+   "baseline",
+   "gpt4o_oneshot",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941929.22561
+ },
+ {
+  "item": "c12",
+  "choice": "local",
+  "order": [
+   "baseline",
+   "local",
+   "gpt4o",
+   "gpt4o_oneshot"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941938.1494327
+ },
+ {
+  "item": "s01",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "baseline",
+   "gpt4o_oneshot",
+   "local",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941968.779206
+ },
+ {
+  "item": "s02",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "local",
+   "gpt4o_oneshot",
+   "baseline",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792941990.0316188
+ },
+ {
+  "item": "s03",
+  "choice": "local",
+  "order": [
+   "local",
+   "gpt4o",
+   "baseline",
+   "gpt4o_oneshot"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942016.1549008
+ },
+ {
+  "item": "s04",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "baseline",
+   "local",
+   "gpt4o_oneshot",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942037.3288536
+ },
+ {
+  "item": "s05",
+  "choice": "local",
+  "order": [
+   "gpt4o_oneshot",
+   "local",
+   "gpt4o",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942058.1502807
+ },
+ {
+  "item": "s06",
+  "choice": "gpt4o",
+  "order": [
+   "baseline",
+   "gpt4o_oneshot",
+   "local",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942081.1431296
+ },
+ {
+  "item": "s07",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o_oneshot",
+   "gpt4o",
+   "local",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942124.4554794
+ },
+ {
+  "item": "s08",
+  "choice": "baseline",
+  "order": [
+   "local",
+   "gpt4o_oneshot",
+   "gpt4o",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942151.747375
+ },
+ {
+  "item": "s09",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o_oneshot",
+   "gpt4o",
+   "local",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942157.4411085
+ },
+ {
+  "item": "s10",
+  "choice": "gpt4o",
+  "order": [
+   "gpt4o_oneshot",
+   "baseline",
+   "gpt4o",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942202.686789
+ },
+ {
+  "item": "s11",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o",
+   "local",
+   "gpt4o_oneshot",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942224.8718843
+ },
+ {
+  "item": "s12",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "local",
+   "gpt4o_oneshot",
+   "gpt4o",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942241.417245
+ },
+ {
+  "item": "s13",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o",
+   "baseline",
+   "local",
+   "gpt4o_oneshot"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942274.1201732
+ },
+ {
+  "item": "s14",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "local",
+   "gpt4o_oneshot",
+   "baseline",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942310.4118254
+ },
+ {
+  "item": "s15",
+  "choice": "tie",
+  "order": [
+   "gpt4o",
+   "baseline",
+   "gpt4o_oneshot",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942348.3010025
+ },
+ {
+  "item": "s16",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o",
+   "local",
+   "baseline",
+   "gpt4o_oneshot"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942383.428894
+ },
+ {
+  "item": "s17",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "local",
+   "gpt4o",
+   "baseline",
+   "gpt4o_oneshot"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942412.6871073
+ },
+ {
+  "item": "s18",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o",
+   "gpt4o_oneshot",
+   "local",
+   "baseline"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942428.2055914
+ },
+ {
+  "item": "s19",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "gpt4o",
+   "baseline",
+   "gpt4o_oneshot",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942477.690137
+ },
+ {
+  "item": "s20",
+  "choice": "local",
+  "order": [
+   "gpt4o",
+   "gpt4o_oneshot",
+   "baseline",
+   "local"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942495.9521897
+ },
+ {
+  "item": "s21",
+  "choice": "gpt4o_oneshot",
+  "order": [
+   "local",
+   "gpt4o_oneshot",
+   "baseline",
+   "gpt4o"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 2,
+  "time": 1792942524.126289
+ },
+ {
+  "item": "c01",
+  "choice": "hg_single",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943695.3183062
+ },
+ {
+  "item": "c02",
+  "choice": "ag_plan",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943703.3538666
+ },
+ {
+  "item": "c03",
+  "choice": "ag_plan",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943716.4575982
+ },
+ {
+  "item": "c04",
+  "choice": "ag_plan",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943721.2484887
+ },
+ {
+  "item": "c05",
+  "choice": "ag_plan",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943727.7448015
+ },
+ {
+  "item": "c06",
+  "choice": "ag_plan",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943734.529945
+ },
+ {
+  "item": "c07",
+  "choice": "ag_plan",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943746.539643
+ },
+ {
+  "item": "c08",
+  "choice": "tie",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943756.2274332
+ },
+ {
+  "item": "c09",
+  "choice": "ag_plan",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943766.6217656
+ },
+ {
+  "item": "c10",
+  "choice": "hg_single",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943780.632967
+ },
+ {
+  "item": "c11",
+  "choice": "ag_plan",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943785.8669212
+ },
+ {
+  "item": "c12",
+  "choice": "ag_plan",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943797.5368373
+ },
+ {
+  "item": "s01",
+  "choice": "ag_plan",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943823.2490568
+ },
+ {
+  "item": "s02",
+  "choice": "hg_single",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943853.1728804
+ },
+ {
+  "item": "s03",
+  "choice": "ag_plan",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943883.1807845
+ },
+ {
+  "item": "s03",
+  "choice": "hg_single",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943893.0337183
+ },
+ {
+  "item": "s04",
+  "choice": "hg_single",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943902.7399888
+ },
+ {
+  "item": "s05",
+  "choice": "ag_plan",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943929.0347638
+ },
+ {
+  "item": "s06",
+  "choice": "ag_plan",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943937.4628599
+ },
+ {
+  "item": "s07",
+  "choice": "ag_plan",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943943.720511
+ },
+ {
+  "item": "s08",
+  "choice": "ag_plan",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943949.8154345
+ },
+ {
+  "item": "s09",
+  "choice": "ag_plan",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943956.5807424
+ },
+ {
+  "item": "s10",
+  "choice": "ag_plan",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943969.6084619
+ },
+ {
+  "item": "s11",
+  "choice": "tie",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943991.0960674
+ },
+ {
+  "item": "s12",
+  "choice": "hg_single",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792943998.72208
+ },
+ {
+  "item": "s13",
+  "choice": "ag_plan",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792944007.3120704
+ },
+ {
+  "item": "s14",
+  "choice": "hg_single",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792944015.5012429
+ },
+ {
+  "item": "s15",
+  "choice": "ag_plan",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792944029.420187
+ },
+ {
+  "item": "s16",
+  "choice": "ag_plan",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792944050.152313
+ },
+ {
+  "item": "s17",
+  "choice": "ag_plan",
+  "order": [
+   "ag_plan",
+   "hg_single"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792944058.5735607
+ },
+ {
+  "item": "s18",
+  "choice": "hg_single",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792944065.2414997
+ },
+ {
+  "item": "s19",
+  "choice": "ag_plan",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792944075.2768898
+ },
+ {
+  "item": "s20",
+  "choice": "tie",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792944095.2482986
+ },
+ {
+  "item": "s21",
+  "choice": "hg_single",
+  "order": [
+   "hg_single",
+   "ag_plan"
+  ],
+  "blind": true,
+  "rater": "me",
+  "round": 3,
+  "time": 1792944127.476684
+ }
+]

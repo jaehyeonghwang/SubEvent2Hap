@@ -1,0 +1,55 @@
+{
+  "event": "The badminton rally continued at a fast and steady pace until the game ended with a powerful smash.",
+  "sub_events": [
+    {
+      "prompt": "the shuttlecock is in motion",
+      "start": 0.15,
+      "duration": 4.85,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_013244/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0022,
+        0.1892
+      ],
+      "offset": 0.0,
+      "shared": false
+    },
+    {
+      "prompt": "the racket strikes the shuttlecock and continuously struck by the racket",
+      "start": 5.0,
+      "duration": 0.9,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_013244/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0,
+        0.0512
+      ],
+      "offset": 1.612,
+      "shared": false
+    }
+  ],
+  "total": 5.9,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_badminton_rally_continued_at_a_f_1026_013244_composite.wav",
+  "baseline": "compose_The_badminton_rally_continued_at_a_f_1026_013244_baseline.wav",
+  "gen_duration": 5.9,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.031433582305908,
+  "elapsed": 6.046942472457886
+}

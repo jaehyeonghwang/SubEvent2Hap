@@ -1,0 +1,70 @@
+{
+  "event": "Trying to open a crinkly vinyl snack package, then finally tearing it open with a sharp, crisp rip.",
+  "sub_events": [
+    {
+      "prompt": "Initial attempt to open a crinkly vinyl snack package, gentle vibrations as fingers touch the package.",
+      "start": 0.0,
+      "duration": 1.0,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1025_234435/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.019,
+        0.0255
+      ],
+      "offset": 0.605,
+      "shared": false
+    },
+    {
+      "prompt": "Struggling with the package, vibrations become more intense and erratic as the user tries to open it.",
+      "start": 1.0,
+      "duration": 2.0,
+      "intensity": 0.5,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1025_234435/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0056,
+        0.0147
+      ],
+      "offset": 0.94,
+      "shared": false
+    },
+    {
+      "prompt": "The package is finally torn open with a sharp, crisp rip, a sudden and strong vibration.",
+      "start": 3.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1025_234435/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.1718,
+        0.0554
+      ],
+      "offset": 0.379,
+      "shared": false
+    }
+  ],
+  "total": 3.5,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Trying_to_open_a_crinkly_vinyl_snack_1025_234435_composite.wav",
+  "baseline": null,
+  "gen_duration": 3.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.1490652561187744,
+  "elapsed": 3.1606674194335938
+}

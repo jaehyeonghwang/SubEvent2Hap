@@ -1,0 +1,106 @@
+{
+  "event": "A rubber ball is dropped onto a hard floor, bouncing four times with decreasing height before coming to rest.",
+  "sub_events": [
+    {
+      "prompt": "A rubber ball hitting a hard floor with a sharp, springy rebound",
+      "start": 0.0,
+      "duration": 0.3,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190740/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.1716,
+        0.1547,
+        0.128
+      ],
+      "offset": 0.194,
+      "shared": true
+    },
+    {
+      "prompt": "A rubber ball hitting a hard floor with a sharp, springy rebound",
+      "start": 0.45,
+      "duration": 0.25,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190740/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.1716,
+        0.1547,
+        0.128
+      ],
+      "offset": 0.194,
+      "shared": true
+    },
+    {
+      "prompt": "A rubber ball hitting a hard floor with a sharp, springy rebound",
+      "start": 0.68,
+      "duration": 0.2,
+      "intensity": 0.49,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190740/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.1716,
+        0.1547,
+        0.128
+      ],
+      "offset": 0.194,
+      "shared": true
+    },
+    {
+      "prompt": "A rubber ball hitting a hard floor with a sharp, springy rebound",
+      "start": 0.85,
+      "duration": 0.18,
+      "intensity": 0.34,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190740/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.1716,
+        0.1547,
+        0.128
+      ],
+      "offset": 0.194,
+      "shared": true
+    },
+    {
+      "prompt": "A rubber ball slowly settling on the floor with fading vibrations",
+      "start": 0.97,
+      "duration": 1.2,
+      "intensity": 0.15,
+      "transition": "crossfade",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190740/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.0266,
+        0.0112,
+        0.0187
+      ],
+      "offset": 0.181,
+      "shared": false
+    }
+  ],
+  "total": 2.17,
+  "params": {
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190740_composite.wav",
+  "baseline": "compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190740_baseline.wav",
+  "gen_duration": 2.2,
+  "prompts": 9,
+  "elapsed_gen": 5.09302282333374,
+  "elapsed": 5.111803293228149
+}

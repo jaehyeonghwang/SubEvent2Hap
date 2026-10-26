@@ -1,0 +1,41 @@
+{
+  "event": "Integration test: sliding",
+  "sub_events": [
+    {
+      "prompt": "block sliding against floor",
+      "start": 0.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "block / floor",
+      "envelope": {
+        "kind": "linear",
+        "end_ratio": 0.5096674999999999
+      },
+      "file": "compose/compose_Integration_test_sliding_1025_211415/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.4425
+      ],
+      "offset": 0.478,
+      "shared": false
+    }
+  ],
+  "total": 0.5,
+  "params": {
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 42,
+    "gamma": 1.0,
+    "share_repeats": true
+  },
+  "composite": "compose_Integration_test_sliding_1025_211415_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.3807365894317627,
+  "elapsed": 2.3877363204956055
+}

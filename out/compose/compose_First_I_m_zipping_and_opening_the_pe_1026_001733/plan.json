@@ -1,0 +1,70 @@
+{
+  "event": "First, I'm zipping and opening the pencil case. Then I am stirring the pencil case looking for the pencil. Then I found it and zipped the pencil case back to close it.",
+  "sub_events": [
+    {
+      "prompt": "The pencil case zips open.",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_First_I_m_zipping_and_opening_the_pe_1026_001733/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0102,
+        0.0016
+      ],
+      "offset": 3.316,
+      "shared": false
+    },
+    {
+      "prompt": "The pencil-than-case stirs.",
+      "start": 1.8,
+      "duration": 1.5,
+      "intensity": 0.6,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_First_I_m_zipping_and_opening_the_pe_1026_001733/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0028,
+        0.0557
+      ],
+      "offset": 0.075,
+      "shared": false
+    },
+    {
+      "prompt": "The pencil case zips closed.",
+      "start": 3.4,
+      "duration": 1.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_First_I_m_zipping_and_opening_the_pe_1026_001733/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.005,
+        0.0041
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 4.6,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_First_I_m_zipping_and_opening_the_pe_1026_001733_composite.wav",
+  "baseline": "compose_First_I_m_zipping_and_opening_the_pe_1026_001733_baseline.wav",
+  "gen_duration": 4.6,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 10.413421154022217,
+  "elapsed": 10.431221008300781
+}

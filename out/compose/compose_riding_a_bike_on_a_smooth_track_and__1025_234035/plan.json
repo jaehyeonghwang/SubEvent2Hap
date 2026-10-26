@@ -1,0 +1,118 @@
+{
+  "event": "riding a bike on a smooth track and then ride on a gravel field",
+  "sub_events": [
+    {
+      "prompt": "bike tires contact with smooth track surface",
+      "start": 0.1,
+      "duration": 0.3,
+      "intensity": 0.4,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1025_234035/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.1065,
+        1.4557
+      ],
+      "offset": 0.044,
+      "shared": false
+    },
+    {
+      "prompt": "bike wheels rotate continuously",
+      "start": 0.15,
+      "duration": 0.9,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1025_234035/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.1245,
+        0.0728
+      ],
+      "offset": 0.131,
+      "shared": true
+    },
+    {
+      "prompt": "bike frame move forward along the track",
+      "start": 0.2,
+      "duration": 0.8,
+      "intensity": 0.6,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1025_234035/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0804,
+        0.0074
+      ],
+      "offset": 1.986,
+      "shared": false
+    },
+    {
+      "prompt": "bike tires contact with gravel field surface",
+      "start": 2.0,
+      "duration": 0.4,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1025_234035/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0024,
+        0.0063
+      ],
+      "offset": 0.016,
+      "shared": false
+    },
+    {
+      "prompt": "bike wheels rotate continuously",
+      "start": 2.05,
+      "duration": 0.9,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1025_234035/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.1245,
+        0.0728
+      ],
+      "offset": 0.131,
+      "shared": true
+    },
+    {
+      "prompt": "bike frame move forward on gravel field",
+      "start": 2.1,
+      "duration": 0.8,
+      "intensity": 0.6,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1025_234035/sub_06.wav",
+      "candidate": 1,
+      "scores": [
+        0.0108,
+        0.0312
+      ],
+      "offset": 0.205,
+      "shared": false
+    }
+  ],
+  "total": 2.9499999999999997,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_riding_a_bike_on_a_smooth_track_and__1025_234035_composite.wav",
+  "baseline": "compose_riding_a_bike_on_a_smooth_track_and__1025_234035_baseline.wav",
+  "gen_duration": 2.9499999999999997,
+  "prompts": 12,
+  "analytic_segments": 0,
+  "elapsed_gen": 7.255929946899414,
+  "elapsed": 7.282919645309448
+}

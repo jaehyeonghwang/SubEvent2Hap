@@ -1,0 +1,55 @@
+{
+  "event": "Dribbling a basketball then an opponent forcefully slaps the ball out of your hand with a large splat",
+  "sub_events": [
+    {
+      "prompt": "basketball contacts the ground",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_012134/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0196,
+        0.0567
+      ],
+      "offset": 2.8,
+      "shared": false
+    },
+    {
+      "prompt": "opponent's hand makes direct contact with the basketball while it is in mid-air",
+      "start": 3.0,
+      "duration": 0.8,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_012134/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0116,
+        0.0407
+      ],
+      "offset": 0.471,
+      "shared": false
+    }
+  ],
+  "total": 3.8,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Dribbling_a_basketball_then_an_oppon_1026_012134_composite.wav",
+  "baseline": "compose_Dribbling_a_basketball_then_an_oppon_1026_012134_baseline.wav",
+  "gen_duration": 3.8,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.4628424644470215,
+  "elapsed": 6.475852966308594
+}

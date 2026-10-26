@@ -1,0 +1,38 @@
+{
+  "event": "A plastic ball is dropped onto a hard floor.",
+  "sub_events": [
+    {
+      "prompt": "plastic ball drops onto hard floor",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_plastic_ball_is_dropped_onto_a_har_1025_233017/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.014,
+        0.1236
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 1.5,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 38614,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_plastic_ball_is_dropped_onto_a_har_1025_233017_composite.wav",
+  "baseline": "compose_A_plastic_ball_is_dropped_onto_a_har_1025_233017_baseline.wav",
+  "gen_duration": 2.0,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.305875301361084,
+  "elapsed": 2.3168771266937256
+}

@@ -1,0 +1,550 @@
+[
+ {
+  "variant": "full",
+  "n": 33,
+  "score": 0.47474747474747475,
+  "renderable": 0.6666666666666666,
+  "contacts": 0.3333333333333333,
+  "phases": 0.48484848484848486,
+  "continuous": 0.16666666666666666,
+  "intensity": 0.16666666666666666,
+  "interval": 0.0,
+  "n_renderable": 33,
+  "n_contacts": 15,
+  "n_phases": 33,
+  "n_continuous": 6,
+  "n_intensity": 6,
+  "n_interval": 1,
+  "lm_calls": 6.7272727272727275,
+  "seconds": 7.842975276889223,
+  "failures": [
+   "c05",
+   "c08",
+   "s01",
+   "s02",
+   "s03",
+   "s06",
+   "s11",
+   "s14",
+   "s15",
+   "s16",
+   "s20"
+  ],
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c02": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c03": {
+    "renderable": true,
+    "contacts": true,
+    "phases": false
+   },
+   "c04": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c05": {
+    "renderable": false,
+    "contacts": false,
+    "phases": false,
+    "intensity": false
+   },
+   "c06": {
+    "renderable": true,
+    "contacts": true,
+    "phases": true
+   },
+   "c07": {
+    "renderable": true,
+    "phases": true
+   },
+   "c08": {
+    "renderable": false,
+    "phases": false
+   },
+   "c09": {
+    "renderable": true,
+    "contacts": true,
+    "phases": true
+   },
+   "c10": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c11": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c12": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true,
+    "interval": false
+   },
+   "s01": {
+    "renderable": false,
+    "continuous": false,
+    "phases": false
+   },
+   "s02": {
+    "renderable": false,
+    "continuous": false,
+    "phases": false
+   },
+   "s03": {
+    "renderable": false,
+    "continuous": false,
+    "phases": false
+   },
+   "s04": {
+    "renderable": true,
+    "continuous": false,
+    "phases": true
+   },
+   "s05": {
+    "renderable": true,
+    "phases": true,
+    "intensity": true
+   },
+   "s06": {
+    "renderable": false,
+    "phases": false
+   },
+   "s07": {
+    "renderable": true,
+    "phases": false
+   },
+   "s08": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "s09": {
+    "renderable": true,
+    "contacts": true,
+    "phases": true,
+    "intensity": false
+   },
+   "s10": {
+    "renderable": true,
+    "contacts": true,
+    "phases": true
+   },
+   "s11": {
+    "renderable": false,
+    "continuous": false,
+    "phases": false
+   },
+   "s12": {
+    "renderable": true,
+    "phases": false,
+    "intensity": false
+   },
+   "s13": {
+    "renderable": true,
+    "phases": false
+   },
+   "s14": {
+    "renderable": false,
+    "contacts": false,
+    "phases": false
+   },
+   "s15": {
+    "renderable": false,
+    "phases": false
+   },
+   "s16": {
+    "renderable": false,
+    "phases": false
+   },
+   "s17": {
+    "renderable": true,
+    "contacts": false,
+    "phases": false,
+    "intensity": false
+   },
+   "s18": {
+    "renderable": true,
+    "phases": true
+   },
+   "s19": {
+    "renderable": true,
+    "phases": false
+   },
+   "s20": {
+    "renderable": false,
+    "phases": false,
+    "intensity": false
+   },
+   "s21": {
+    "renderable": true,
+    "continuous": true,
+    "phases": true
+   }
+  }
+ },
+ {
+  "variant": "-models",
+  "n": 33,
+  "score": 0.4444444444444444,
+  "renderable": 0.696969696969697,
+  "contacts": 0.0,
+  "phases": 0.45454545454545453,
+  "continuous": 0.3333333333333333,
+  "intensity": 0.3333333333333333,
+  "interval": 0.0,
+  "n_renderable": 33,
+  "n_contacts": 15,
+  "n_phases": 33,
+  "n_continuous": 6,
+  "n_intensity": 6,
+  "n_interval": 1,
+  "lm_calls": 3.608695652173913,
+  "seconds": 4.95333210627238,
+  "failures": [
+   "c05",
+   "c08",
+   "s01",
+   "s02",
+   "s03",
+   "s06",
+   "s11",
+   "s14",
+   "s16",
+   "s18"
+  ],
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c02": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c03": {
+    "renderable": true,
+    "contacts": false,
+    "phases": false
+   },
+   "c04": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c05": {
+    "renderable": false,
+    "contacts": false,
+    "phases": false,
+    "intensity": false
+   },
+   "c06": {
+    "renderable": true,
+    "contacts": false,
+    "phases": false
+   },
+   "c07": {
+    "renderable": true,
+    "phases": true
+   },
+   "c08": {
+    "renderable": false,
+    "phases": false
+   },
+   "c09": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c10": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c11": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c12": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true,
+    "interval": false
+   },
+   "s01": {
+    "renderable": false,
+    "continuous": false,
+    "phases": false
+   },
+   "s02": {
+    "renderable": false,
+    "continuous": false,
+    "phases": false
+   },
+   "s03": {
+    "renderable": false,
+    "continuous": false,
+    "phases": false
+   },
+   "s04": {
+    "renderable": true,
+    "continuous": true,
+    "phases": true
+   },
+   "s05": {
+    "renderable": true,
+    "phases": true,
+    "intensity": true
+   },
+   "s06": {
+    "renderable": false,
+    "phases": false
+   },
+   "s07": {
+    "renderable": true,
+    "phases": false
+   },
+   "s08": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "s09": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true,
+    "intensity": true
+   },
+   "s10": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "s11": {
+    "renderable": false,
+    "continuous": false,
+    "phases": false
+   },
+   "s12": {
+    "renderable": true,
+    "phases": false,
+    "intensity": false
+   },
+   "s13": {
+    "renderable": true,
+    "phases": true
+   },
+   "s14": {
+    "renderable": false,
+    "contacts": false,
+    "phases": false
+   },
+   "s15": {
+    "renderable": true,
+    "phases": false
+   },
+   "s16": {
+    "renderable": false,
+    "phases": false
+   },
+   "s17": {
+    "renderable": true,
+    "contacts": false,
+    "phases": false,
+    "intensity": false
+   },
+   "s18": {
+    "renderable": false,
+    "phases": false
+   },
+   "s19": {
+    "renderable": true,
+    "phases": false
+   },
+   "s20": {
+    "renderable": true,
+    "phases": false,
+    "intensity": false
+   },
+   "s21": {
+    "renderable": true,
+    "continuous": true,
+    "phases": true
+   }
+  }
+ },
+ {
+  "variant": "-split_review",
+  "n": 4,
+  "score": 0.5,
+  "renderable": 0.75,
+  "contacts": 0.25,
+  "phases": 0.5,
+  "continuous": null,
+  "intensity": null,
+  "interval": null,
+  "n_renderable": 4,
+  "n_contacts": 4,
+  "n_phases": 4,
+  "n_continuous": 0,
+  "n_intensity": 0,
+  "n_interval": 0,
+  "lm_calls": 4,
+  "seconds": 11.030490398406982,
+  "failures": [
+   "c01"
+  ],
+  "per_item": {
+   "c01": {
+    "renderable": false,
+    "contacts": false,
+    "phases": false
+   },
+   "c02": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c03": {
+    "renderable": true,
+    "contacts": true,
+    "phases": false
+   },
+   "c04": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   }
+  }
+ },
+ {
+  "variant": "-alternative_selection",
+  "n": 4,
+  "score": 0.5,
+  "renderable": 0.75,
+  "contacts": 0.25,
+  "phases": 0.5,
+  "continuous": null,
+  "intensity": null,
+  "interval": null,
+  "n_renderable": 4,
+  "n_contacts": 4,
+  "n_phases": 4,
+  "n_continuous": 0,
+  "n_intensity": 0,
+  "n_interval": 0,
+  "lm_calls": 3.3333333333333335,
+  "seconds": 8.937457144260406,
+  "failures": [
+   "c01"
+  ],
+  "per_item": {
+   "c01": {
+    "renderable": false,
+    "contacts": false,
+    "phases": false
+   },
+   "c02": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c03": {
+    "renderable": true,
+    "contacts": true,
+    "phases": false
+   },
+   "c04": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   }
+  }
+ },
+ {
+  "variant": "staged",
+  "n": 10,
+  "score": 0.7833333333333333,
+  "renderable": 0.9,
+  "contacts": 0.5,
+  "phases": 0.8,
+  "continuous": null,
+  "intensity": 1.0,
+  "interval": null,
+  "n_renderable": 10,
+  "n_contacts": 8,
+  "n_phases": 10,
+  "n_continuous": 0,
+  "n_intensity": 1,
+  "n_interval": 0,
+  "lm_calls": 4,
+  "seconds": 7.709191346168518,
+  "failures": [
+   "c06"
+  ],
+  "per_item": {
+   "c01": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c02": {
+    "renderable": true,
+    "contacts": false,
+    "phases": true
+   },
+   "c03": {
+    "renderable": true,
+    "contacts": true,
+    "phases": true
+   },
+   "c04": {
+    "renderable": true,
+    "contacts": true,
+    "phases": true
+   },
+   "c05": {
+    "renderable": true,
+    "contacts": false,
+    "phases": false,
+    "intensity": true
+   },
+   "c06": {
+    "renderable": false,
+    "contacts": false,
+    "phases": false
+   },
+   "c07": {
+    "renderable": true,
+    "phases": true
+   },
+   "c08": {
+    "renderable": true,
+    "phases": true
+   },
+   "c09": {
+    "renderable": true,
+    "contacts": true,
+    "phases": true
+   },
+   "c10": {
+    "renderable": true,
+    "contacts": true,
+    "phases": true
+   }
+  }
+ }
+]

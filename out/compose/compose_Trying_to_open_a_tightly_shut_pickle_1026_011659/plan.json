@@ -1,0 +1,151 @@
+{
+  "event": "Trying to open a tightly shut pickle jar and then finally opening it with a loud pop.",
+  "sub_events": [
+    {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_011659/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0471,
+        0.1336
+      ],
+      "offset": 0.171,
+      "shared": true
+    },
+    {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 0.8,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_011659/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0471,
+        0.1336
+      ],
+      "offset": 0.171,
+      "shared": true
+    },
+    {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 1.1,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_011659/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0471,
+        0.1336
+      ],
+      "offset": 0.171,
+      "shared": true
+    },
+    {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 1.4,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_011659/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0471,
+        0.1336
+      ],
+      "offset": 0.171,
+      "shared": true
+    },
+    {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 1.7,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_011659/sub_05.wav",
+      "candidate": 1,
+      "scores": [
+        0.0471,
+        0.1336
+      ],
+      "offset": 0.171,
+      "shared": true
+    },
+    {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 2.0,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_011659/sub_06.wav",
+      "candidate": 1,
+      "scores": [
+        0.0471,
+        0.1336
+      ],
+      "offset": 0.171,
+      "shared": true
+    },
+    {
+      "prompt": "The pickle jar is being twisted.",
+      "start": 2.3,
+      "duration": 0.2,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_011659/sub_07.wav",
+      "candidate": 1,
+      "scores": [
+        0.0471,
+        0.1336
+      ],
+      "offset": 0.171,
+      "shared": true
+    },
+    {
+      "prompt": "The pickle jar is being twisted with a pop.",
+      "start": 2.6,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_011659/sub_08.wav",
+      "candidate": 0,
+      "scores": [
+        0.2579,
+        0.0492
+      ],
+      "offset": 0.301,
+      "shared": false
+    }
+  ],
+  "total": 2.9,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Trying_to_open_a_tightly_shut_pickle_1026_011659_composite.wav",
+  "baseline": "compose_Trying_to_open_a_tightly_shut_pickle_1026_011659_baseline.wav",
+  "gen_duration": 2.9,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.214464902877808,
+  "elapsed": 5.232650995254517
+}

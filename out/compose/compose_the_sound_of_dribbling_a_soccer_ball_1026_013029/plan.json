@@ -1,0 +1,71 @@
+{
+  "event": "the sound of dribbling a soccer ball in three steps",
+  "sub_events": [
+    {
+      "prompt": "soccer ball makes contact with the player's foot",
+      "start": 0.5,
+      "duration": 0.4,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_the_sound_of_dribbling_a_soccer_ball_1026_013029/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0669,
+        0.415
+      ],
+      "offset": 0.521,
+      "shared": true
+    },
+    {
+      "prompt": "soccer ball makes contact with the player's foot",
+      "start": 1.8,
+      "duration": 0.35,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_the_sound_of_dribbling_a_soccer_ball_1026_013029/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0669,
+        0.415
+      ],
+      "offset": 0.521,
+      "shared": true
+    },
+    {
+      "prompt": "soccer ball makes contact with the player's foot",
+      "start": 3.1,
+      "duration": 0.4,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_the_sound_of_dribbling_a_soccer_ball_1026_013029/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0669,
+        0.415
+      ],
+      "offset": 0.521,
+      "shared": true
+    }
+  ],
+  "total": 3.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_the_sound_of_dribbling_a_soccer_ball_1026_013029_composite.wav",
+  "baseline": "compose_the_sound_of_dribbling_a_soccer_ball_1026_013029_baseline.wav",
+  "gen_duration": 3.5,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.9961013793945312,
+  "elapsed": 4.008612871170044
+}

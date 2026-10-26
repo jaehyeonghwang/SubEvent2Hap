@@ -1,0 +1,1043 @@
+{
+ "c10": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The water bomb pops.",
+    "start": 0.5,
+    "duration": 0.3,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The water bomb splashes.",
+    "start": 0.85,
+    "duration": 0.4,
+    "intensity": 0.6,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 3.450146436691284
+ },
+ "c11": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "mosquito bit right hand",
+    "start": 0.5,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "cut"
+   },
+   {
+    "prompt": "mosquito bit right hand",
+    "start": 3.0,
+    "duration": 0.9,
+    "intensity": 0.7,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 4.639400243759155
+ },
+ "c12": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The patient's chest is heavily and strongly pressed.",
+    "start": 0.15,
+    "duration": 0.3,
+    "intensity": 0.9,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The patient's chest is heavily and strongly pressed.",
+    "start": 0.45,
+    "duration": 0.3,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The patient's chest is heavily and strongly pressed.",
+    "start": 0.75,
+    "duration": 0.3,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The patient's chest is heavily and strongly pressed.",
+    "start": 1.05,
+    "duration": 0.3,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The patient's chest is heavily and strongly pressed.",
+    "start": 1.35,
+    "duration": 0.3,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The patient's chest is heavily and tqdm pressed.",
+    "start": 1.65,
+    "duration": 0.3,
+    "intensity": 0.85,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The patient's chest is heavily and strongly pressed.",
+    "start": 1.95,
+    "duration": 0.3,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The patient's chest is heavily and strongly pressed.",
+    "start": 2.25,
+    "duration": 0.3,
+    "intensity": 0.9,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 13.91532015800476
+ },
+ "s01": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "the road surface becomes wet and slick",
+    "start": 0.1,
+    "duration": 0.8,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "the racing car tires lose grip on the road surface",
+    "start": 1.5,
+    "duration": 0.6,
+    "intensity": 0.4,
+    "transition": "cut"
+   },
+   {
+    "prompt": "the racing car steering system fails to maintain directional control",
+    "start": 2.3,
+    "duration": 0.7,
+    "intensity": 0.5,
+    "transition": "cut"
+   },
+   {
+    "prompt": "the racing car body moves laterally off course",
+    "start": 3.1,
+    "duration": 0.9,
+    "intensity": 0.6,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "the racing car front end makes direct contact with tree trunk",
+    "start": 4.2,
+    "duration": 0.5,
+    "intensity": 0.7,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 10.231151580810547
+ },
+ "s02": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "bike tires contact with smooth track surface",
+    "start": 0.1,
+    "duration": 0.3,
+    "intensity": 0.4,
+    "transition": "cut"
+   },
+   {
+    "prompt": "bike frame move forward over smooth track",
+    "start": 0.4,
+    "duration": 0.6,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "bike wheels rotate continuously on smooth track",
+    "start": 0.4,
+    "duration": 0.8,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "bike tires contact with gravel surface",
+    "start": 1.9,
+    "duration": 0.4,
+    "intensity": 0.4,
+    "transition": "cut"
+   },
+   {
+    "prompt": "bike frame move forward over gravel field",
+    "start": 2.3,
+    "duration": 0.7,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "bike wheels rotate continuously on gravel field",
+    "start": 2.3,
+    "duration": 1.0,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 14.346693277359009
+ },
+ "s04": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The ambulance front surface approaches the window.",
+    "start": 0.5,
+    "duration": 1.2,
+    "intensity": 0.7,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The ambulance body moves past the window.",
+    "start": 1.7,
+    "duration": 3.0,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The ambulance rear surface moves away from the window.",
+    "start": 4.7,
+    "duration": 1.8,
+    "intensity": 0.7,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 6.913708686828613
+ },
+ "s05": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The lid of pickle jar rotates counterclockwise under applied force.",
+    "start": 0.1,
+    "duration": 1.2,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The lid of pickle jar resists rotation due to tight seal.",
+    "start": 1.3,
+    "duration": 1.5,
+    "intensity": 0.4,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The jar lid and sealing surface experiences mechanical deformation as pressure is applied.",
+    "start": 2.8,
+    "duration": 0.9,
+    "intensity": 0.5,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The sealed interior of pickle jar releases internal pressure suddenly.",
+    "start": 3.7,
+    "duration": 0.3,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The lid of pickle jar moves freely after the pop.",
+    "start": 4.0,
+    "duration": 1.8,
+    "intensity": 0.6,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 13.680897951126099
+ },
+ "s06": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The arrow penetrates the hard shell of the melon.",
+    "start": 0.5,
+    "duration": 1.2,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The arrow moves through the soft flesh of the melon.",
+    "start": 1.7,
+    "duration": 3.0,
+    "intensity": 0.6,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The arrow emerges from the outer shell of the melon.",
+    "start": 4.7,
+    "duration": 1.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 6.776881456375122
+ },
+ "s07": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "computer keyboard hit with finger",
+    "start": 0.1,
+    "duration": 0.15,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "computer keyboard hit with finger",
+    "start": 0.3,
+    "duration": 0.15,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "computer keyboard hit with finger",
+    "start": 0.5,
+    "duration": 0.15,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "computer keyboard hit with finger",
+    "start": 0.7,
+    "duration": 0.15,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "computer keyboard hit with finger",
+    "start": 0.9,
+    "duration": 0.15,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "computer keyboard hit with finger",
+    "start": 1.1,
+    "duration": 0.15,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "computer keyboard hit with finger",
+    "start": 1.3,
+    "duration": 0.15,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "computer keyboard hit with finger",
+    "start": 1.5,
+    "duration": 0.15,
+    "intensity": 0.6,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 13.506185293197632
+ },
+ "s08": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "swimmer's arms come out of the water",
+    "start": 0.5,
+    "duration": 0.3,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "swimmer's arms come out of the water",
+    "start": 1.8,
+    "duration": 0.3,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "swimmer's body go back into the water",
+    "start": 2.5,
+    "duration": 0.4,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "swimmer's body go back into the water",
+    "start": 3.9,
+    "duration": 0.4,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 9.321828842163086
+ },
+ "s09": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "basketball contacts the ground",
+    "start": 0.5,
+    "duration": 0.8,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "opponent's hand makes direct contact with the basketball",
+    "start": 3.0,
+    "duration": 0.4,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "basketball is forcefully ejected from the player's grasp",
+    "start": 3.5,
+    "duration": 0.6,
+    "intensity": 0.8,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 6.743015289306641
+ },
+ "s10": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "basketball is dribbled against the ground",
+    "start": 0.5,
+    "duration": 3.0,
+    "intensity": 0.7,
+    "transition": "cut"
+   },
+   {
+    "prompt": "opponent's hand slaps the basketball",
+    "start": 4.0,
+    "duration": 1.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 5.110805988311768
+ },
+ "s11": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "truck chassis collides with moose antlers",
+    "start": 0.5,
+    "duration": 0.3,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "truck tires scrape against snow-covered ground",
+    "start": 0.9,
+    "duration": 0.4,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "moose body bump into truck front grille",
+    "start": 1.5,
+    "duration": 0.6,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "truck hood strike moose head",
+    "start": 2.2,
+    "duration": 0.5,
+    "intensity": 0.9,
+    "transition": "cut"
+   },
+   {
+    "prompt": "truck frame deform upon impact with moose torso",
+    "start": 2.8,
+    "duration": 0.7,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 9.089247941970825
+ },
+ "s12": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The stomach rumbles softly.",
+    "start": 0.5,
+    "duration": 0.8,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The stomach contracts with a louder growl.",
+    "start": 1.3,
+    "duration": 0.9,
+    "intensity": 0.6,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 4.96131706237793
+ },
+ "s13": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The pencil case zips open.",
+    "start": 0.5,
+    "duration": 1.0,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The pencil case stirs.",
+    "start": 1.6,
+    "duration": 1.5,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The pencil case zips closed.",
+    "start": 3.2,
+    "duration": 1.3,
+    "intensity": 0.8,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 7.190729141235352
+ },
+ "s14": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "the car chassis collides with another car",
+    "start": 0.5,
+    "duration": 0.3,
+    "intensity": 0.9,
+    "transition": "cut"
+   },
+   {
+    "prompt": "the crash site produces a loud sound",
+    "start": 0.8,
+    "duration": 0.4,
+    "intensity": 1.0,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 5.5234291553497314
+ },
+ "s15": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "bowstring pulled back with all my strength",
+    "start": 0.5,
+    "duration": 1.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "bowstring released",
+    "start": 2.0,
+    "duration": 0.3,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "arrow flew forward from the bow's release point",
+    "start": 2.3,
+    "duration": 1.8,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 7.106201171875
+ },
+ "s16": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "the bowstring was pulled back with all strength to the fullest extent",
+    "start": 0.5,
+    "duration": 3.0,
+    "intensity": 0.9,
+    "transition": "cut"
+   },
+   {
+    "prompt": "the bowstring was released",
+    "start": 3.5,
+    "duration": 2.0,
+    "intensity": 0.8,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 5.993837833404541
+ },
+ "s17": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "shuttlecock in motion",
+    "start": 0.15,
+    "duration": 2.0,
+    "intensity": 0.4,
+    "transition": "cut"
+   },
+   {
+    "prompt": "racket strikes shuttlecock",
+    "start": 3.0,
+    "duration": 1.5,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "racket delivers powerful smash to shuttlecock",
+    "start": 7.0,
+    "duration": 1.8,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 6.714908123016357
+ },
+ "s18": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The vinyl snack package resists initial pull.",
+    "start": 0.5,
+    "duration": 1.0,
+    "intensity": 0.4,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The vinyl snack package tears along the edge.",
+    "start": 3.0,
+    "duration": 0.8,
+    "intensity": 0.6,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 5.88728928565979
+ },
+ "s19": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The vinyl snack package resists opening under applied force.",
+    "start": 0.5,
+    "duration": 1.5,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The vinyl snack package tears open with a sharp sound.",
+    "start": 3.0,
+    "duration": 0.8,
+    "intensity": 0.9,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 4.910252094268799
+ },
+ "s20": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "the pickle container is turned",
+    "start": 0.5,
+    "duration": 0.8,
+    "intensity": 0.2,
+    "transition": "cut"
+   },
+   {
+    "prompt": "the pickle container resists opening under strong force",
+    "start": 1.3,
+    "duration": 2.0,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "the pickle container opens abruptly with a cheerful puff of air escaping",
+    "start": 4.5,
+    "duration": 0.6,
+    "intensity": 0.8,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 7.6624228954315186
+ },
+ "s21": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "you falls",
+    "start": 0.1,
+    "duration": 0.3,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "wind is sliced through",
+    "start": 0.4,
+    "duration": 1.5,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "air makes a large noise",
+    "start": 1.9,
+    "duration": 0.4,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "jump ends",
+    "start": 2.3,
+    "duration": 0.5,
+    "intensity": 0.7,
+    "transition": "cut"
+   },
+   {
+    "prompt": "wind disappears",
+    "start": 2.8,
+    "duration": 0.6,
+    "intensity": 0.0,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 10.237910270690918
+ },
+ "c01": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "basketball is forcefully tapped against the ground once",
+    "start": 0.5,
+    "duration": 0.3,
+    "intensity": 0.8,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 1.1013271808624268
+ },
+ "c02": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "gun shoots at the enemy",
+    "start": 0.5,
+    "duration": 0.3,
+    "intensity": 0.8,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 1.0579922199249268
+ },
+ "c03": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The tree is shaken.",
+    "start": 0.5,
+    "duration": 0.2,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The tree is shaken.",
+    "start": 1.7,
+    "duration": 0.2,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The tree is shaken.",
+    "start": 2.9,
+    "duration": 0.2,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "The apple falls on the head.",
+    "start": 4.1,
+    "duration": 0.5,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 2.810250759124756
+ },
+ "c04": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "hands come together and strike together",
+    "start": 0.5,
+    "duration": 0.3,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 1.120091199874878
+ },
+ "c05": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "the wooden stick bent",
+    "start": 0.15,
+    "duration": 0.4,
+    "intensity": 0.2,
+    "transition": "cut"
+   },
+   {
+    "prompt": "the wooden stick bent",
+    "start": 0.6,
+    "duration": 0.4,
+    "intensity": 0.2,
+    "transition": "cut"
+   },
+   {
+    "prompt": "the wooden stick snapped",
+    "start": 1.8,
+    "duration": 0.5,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 2.4215312004089355
+ },
+ "c06": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "paper crumpled forcefully",
+    "start": 0.1,
+    "duration": 0.3,
+    "intensity": 0.4,
+    "transition": "cut"
+   },
+   {
+    "prompt": "paper crumpled forcefully",
+    "start": 0.5,
+    "duration": 0.3,
+    "intensity": 0.4,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "paper crumpled forcefully",
+    "start": 0.9,
+    "duration": 0.3,
+    "intensity": 0.4,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "crumpled paper slammed to the ground",
+    "start": 2.1,
+    "duration": 0.8,
+    "intensity": 0.6,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 2.957371950149536
+ },
+ "c07": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "a keystroke occurs on the keyboard",
+    "start": 0.5,
+    "duration": 2.0,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "a click occurs on the mouse",
+    "start": 7.0,
+    "duration": 0.3,
+    "intensity": 0.6,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 1.7573187351226807
+ },
+ "c08": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "keyboard key pressed",
+    "start": 0.5,
+    "duration": 0.3,
+    "intensity": 0.7,
+    "transition": "cut"
+   },
+   {
+    "prompt": "mouse clicked once",
+    "start": 1.8,
+    "duration": 0.4,
+    "intensity": 0.6,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 1.6359782218933105
+ },
+ "c09": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "soccer ball contacts ground",
+    "start": 0.1,
+    "duration": 0.3,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "foot makes contact with soccer ball",
+    "start": 1.5,
+    "duration": 0.4,
+    "intensity": 0.7,
+    "transition": "cut"
+   },
+   {
+    "prompt": "foot makes contact with soccer ball",
+    "start": 2.8,
+    "duration": 0.4,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "foot makes contact with soccer as it rolls forward",
+    "start": 4.1,
+    "duration": 0.5,
+    "intensity": 0.6,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 3.3527913093566895
+ },
+ "s03": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "bike tires contact with smooth track surface",
+    "start": 0.1,
+    "duration": 0.5,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "bike frame vibrate slightly due to consistent motion on smooth track",
+    "start": 0.15,
+    "duration": 0.8,
+    "intensity": 0.4,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "bike wheels make continuous contact with the road surface",
+    "start": 0.2,
+    "duration": 0.7,
+    "intensity": 0.4,
+    "transition": "cut"
+   },
+   {
+    "prompt": "bike tires contact with bumpy road surface",
+    "start": 2.5,
+    "duration": 0.6,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "bike frame vibrate due to irregular impacts from bumps",
+    "start": 2.7,
+    "duration": 1.0,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "bike wheels make intermittent contact with uneven road surface",
+    "start": 3.0,
+    "duration": 0.9,
+    "intensity": 0.4,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [],
+  "seconds": 4.534173488616943
+ }
+}

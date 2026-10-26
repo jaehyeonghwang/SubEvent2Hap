@@ -1,0 +1,87 @@
+{
+  "event": "Trying to open a tightly shut pickle jar and then finally opening it with a loud pop.",
+  "sub_events": [
+    {
+      "prompt": "the pickle jar lid resists manual force",
+      "start": 0.1,
+      "duration": 0.5,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_012047/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0531,
+        0.0634
+      ],
+      "offset": 0.224,
+      "shared": false
+    },
+    {
+      "prompt": "the jar seal exerts resistance against opening attempt",
+      "start": 0.6,
+      "duration": 0.4,
+      "intensity": 0.4,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_012047/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0823,
+        0.0486
+      ],
+      "offset": 0.456,
+      "shared": false
+    },
+    {
+      "prompt": "the pickle jar lid moves under applied pressure",
+      "start": 1.5,
+      "duration": 0.7,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_012047/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0252,
+        0.0243
+      ],
+      "offset": 1.114,
+      "shared": false
+    },
+    {
+      "prompt": "the internal contents of pickle jar release pressurized air with a loud pop",
+      "start": 2.2,
+      "duration": 0.15,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_tightly_shut_pickle_1026_012047/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0608,
+        0.1686
+      ],
+      "offset": 0.121,
+      "shared": false
+    }
+  ],
+  "total": 2.35,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Trying_to_open_a_tightly_shut_pickle_1026_012047_composite.wav",
+  "baseline": "compose_Trying_to_open_a_tightly_shut_pickle_1026_012047_baseline.wav",
+  "gen_duration": 2.35,
+  "prompts": 10,
+  "analytic_segments": 0,
+  "elapsed_gen": 8.216042757034302,
+  "elapsed": 8.227043628692627
+}

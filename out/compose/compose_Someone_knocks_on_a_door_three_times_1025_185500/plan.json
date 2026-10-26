@@ -1,0 +1,79 @@
+{
+  "event": "Someone knocks on a door three times and the door creaks open",
+  "sub_events": [
+    {
+      "prompt": "A sharp knock on a wooden door with firm pressure",
+      "start": 0.0,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "hand",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_185500/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.7871,
+        0.892
+      ],
+      "offset": 0.329
+    },
+    {
+      "prompt": "A sharp knock on a wooden door with firm pressure",
+      "start": 0.35,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "hand",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_185500/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.4797,
+        0.7582
+      ],
+      "offset": 0.141
+    },
+    {
+      "prompt": "A sharp knock on a wooden door with firm pressure",
+      "start": 0.7,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "hand",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_185500/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.003,
+        0.7531
+      ],
+      "offset": 0.327
+    },
+    {
+      "prompt": "A slow creaking groan as a door opens on its hinges",
+      "start": 1.05,
+      "duration": 1.2,
+      "intensity": 0.6,
+      "transition": "crossfade",
+      "source": "door hinge",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_185500/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0867,
+        0.0126
+      ],
+      "offset": 0.241
+    }
+  ],
+  "total": 2.25,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null
+  },
+  "composite": "compose_Someone_knocks_on_a_door_three_times_1025_185500_composite.wav",
+  "baseline": "compose_Someone_knocks_on_a_door_three_times_1025_185500_baseline.wav",
+  "gen_duration": 2.25,
+  "prompts": 10,
+  "elapsed_gen": 3.819199323654175,
+  "elapsed": 3.829136371612549
+}

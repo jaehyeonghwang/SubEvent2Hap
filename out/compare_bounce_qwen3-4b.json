@@ -1,0 +1,194 @@
+[
+ {
+  "case": "rubber ball / hard floor",
+  "restitution": {
+   "value": 0.85,
+   "low": 0.75,
+   "high": 0.95,
+   "basis": "material properties of rubber and surface hardness; energy recovery during impact"
+  },
+  "observed": {
+   "rebound_height_cm": 75.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Rubber is elastic and the hard floor provides a rigid, flat surface that allows efficient energy transfer, resulting in high rebound and multiple visible bounces."
+  },
+  "e_from_height": 0.8660254037844386,
+  "seconds": [
+   0.6124007701873779,
+   0.7370641231536865
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "steel ball / hard floor",
+  "restitution": {
+   "value": 0.85,
+   "low": 0.75,
+   "high": 0.95,
+   "basis": "material properties of steel and surface hardness; energy loss during impact due to deformation and friction"
+  },
+  "observed": {
+   "rebound_height_cm": 75.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Steel is a rigid, dense material and the hard floor provides a stiff, non-compressible surface, resulting in efficient energy transfer and high rebound."
+  },
+  "e_from_height": 0.8660254037844386,
+  "seconds": [
+   0.599830150604248,
+   0.650395393371582
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "steel ball / wooden floor",
+  "restitution": {
+   "value": 0.75,
+   "low": 0.65,
+   "high": 0.85,
+   "basis": "material properties of steel and wood, surface roughness, and energy dissipation during impact"
+  },
+  "observed": {
+   "rebound_height_cm": 60.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Steel is a hard, elastic material and wood provides a moderately soft yet stable surface; this combination allows for significant energy return and multiple visible bounces before the ball eventually stops."
+  },
+  "e_from_height": 0.7745966692414834,
+  "seconds": [
+   0.5572834014892578,
+   0.667304515838623
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "steel ball / thick steel plate",
+  "restitution": {
+   "value": 0.85,
+   "low": 0.75,
+   "high": 0.95,
+   "basis": "material properties of steel-to-steel contact, surface smoothness, and energy dissipation during impact"
+  },
+  "observed": {
+   "rebound_height_cm": 90.0,
+   "bounciness": "very_well",
+   "visible_bounces": 3,
+   "basis": "Steel is a hard, rigid material with high elasticity; when a steel ball hits a thick steel plate, energy is efficiently transferred and rebounded due to minimal deformation and strong intermolecular forces in both materials."
+  },
+  "e_from_height": 0.9486832980505138,
+  "seconds": [
+   0.5749528408050537,
+   0.725719690322876
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "tennis ball / concrete",
+  "restitution": {
+   "value": 0.75,
+   "low": 0.65,
+   "high": 0.85,
+   "basis": "material properties of tennis ball rubber and concrete surface, including elasticity and energy dissipation during impact"
+  },
+  "observed": {
+   "rebound_height_cm": 60.0,
+   "bounciness": "very_well",
+   "visible_bounces": 5,
+   "basis": "Tennis balls have a rubber core and are designed to bounce well on hard surfaces like concrete, which provides a firm and flat surface that transfers energy efficiently."
+  },
+  "e_from_height": 0.7745966692414834,
+  "seconds": [
+   0.572070837020874,
+   0.6623356342315674
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "glass marble / tile floor",
+  "restitution": {
+   "value": 0.6,
+   "low": 0.4,
+   "high": 0.8,
+   "basis": "material properties of glass and tile, surface roughness, and impact dynamics"
+  },
+  "observed": {
+   "rebound_height_cm": 60.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Glass marbles are hard and smooth, and tile floors are rigid and flat, creating an efficient energy transfer that allows a high rebound with minimal energy loss."
+  },
+  "e_from_height": 0.7745966692414834,
+  "seconds": [
+   0.527559757232666,
+   0.6675992012023926
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "soft clay ball / floor",
+  "restitution": {
+   "value": 0.3,
+   "low": 0.15,
+   "high": 0.45,
+   "basis": "material properties of soft clay and floor interaction; soft clays deform significantly upon impact, leading to low energy recovery"
+  },
+  "observed": {
+   "rebound_height_cm": 0.0,
+   "bounciness": "very_well",
+   "visible_bounces": 0,
+   "basis": "The soft clay ball deforms upon impact and does not regain shape or energy, so it does not bounce at all. The material's high plasticity and lack of elasticity cause complete energy dissipation on contact with the hard floor."
+  },
+  "e_from_height": 0.0,
+  "seconds": [
+   0.6348297595977783,
+   0.7872192859649658
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "ping-pong ball / table",
+  "restitution": {
+   "value": 0.85,
+   "low": 0.75,
+   "high": 0.95,
+   "basis": "material properties of ping-pong ball and table surface, including elasticity and energy loss upon impact"
+  },
+  "observed": {
+   "rebound_height_cm": 75.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Ping-pong balls are made of lightweight, elastic material that deforms and rebounds efficiently when hitting a hard surface like a table, resulting in high bounciness and multiple visible bounces before coming to rest."
+  },
+  "e_from_height": 0.8660254037844386,
+  "seconds": [
+   0.5741152763366699,
+   0.681950569152832
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ }
+]

@@ -1,0 +1,242 @@
+[
+ {
+  "case": "rubber ball / hard floor",
+  "param": "restitution",
+  "old": {
+   "value": 0.85,
+   "low": 0.75,
+   "high": 0.95,
+   "basis": "material properties of rubber and surface hardness; energy loss during impact"
+  },
+  "new": {
+   "value": 0.85,
+   "low": 0.75,
+   "high": 0.95,
+   "basis": "Depends on the rubber composition and surface contact; typical for a well-made rubber ball bouncing on a hard floor, with energy recovery due to elastic deformation in the rubber material."
+  }
+ },
+ {
+  "case": "steel ball / hard floor",
+  "param": "restitution",
+  "old": {
+   "value": 0.85,
+   "low": 0.75,
+   "high": 0.95,
+   "basis": "material properties of steel and surface hardness; energy loss during impact due to deformation and friction"
+  },
+  "new": {
+   "value": 0.85,
+   "low": 0.75,
+   "high": 0.95,
+   "basis": "Steel ball-to-hard floor contact; steel deforms less than the floor, energy is stored in elastic deformation and released upon rebound; high restitution due to stiffness of both materials and minimal energy loss through heat or sound."
+  }
+ },
+ {
+  "case": "steel ball / wooden floor",
+  "param": "restitution",
+  "old": {
+   "value": 0.75,
+   "low": 0.65,
+   "high": 0.85,
+   "basis": "material properties of steel and wood, surface roughness, and energy dissipation during impact"
+  },
+  "new": {
+   "value": 0.85,
+   "low": 0.75,
+   "high": 0.95,
+   "basis": "Depends on the material properties of steel and wood, with steel's elasticity and the surface roughness/texture of wood affecting energy retention; typical for a steel ball on a dry wooden floor where most kinetic energy is returned."
+  }
+ },
+ {
+  "case": "steel ball / thick steel plate",
+  "param": "restitution",
+  "old": {
+   "value": 0.85,
+   "low": 0.75,
+   "high": 0.95,
+   "basis": "material properties of steel-to-steel contact, surface smoothness, and energy dissipation during impact"
+  },
+  "new": {
+   "value": 0.9,
+   "low": 0.85,
+   "high": 0.95,
+   "basis": "Steel-on-steel contact with high stiffness and low energy dissipation; restitution depends on surface smoothness, material elasticity, and the degree of deformation at impact. A thick steel plate provides a rigid, nearly inelastic surface, while a steel ball deforms minimally, leading to high energy"
+  }
+ },
+ {
+  "case": "tennis ball / concrete",
+  "param": "restitution",
+  "old": {
+   "value": 0.75,
+   "low": 0.65,
+   "high": 0.85,
+   "basis": "material properties of tennis ball rubber and concrete surface, including elasticity and energy dissipation during impact"
+  },
+  "new": {
+   "value": 0.75,
+   "low": 0.65,
+   "high": 0.85,
+   "basis": "Depends on the material properties of the tennis ball (rubber core and felt cover) and the rigid, hard surface of concrete; energy is stored elastically in the ball during compression and released upon rebound, with typical values for a standard tennis ball on concrete being around 0.75."
+  }
+ },
+ {
+  "case": "glass marble / tile floor",
+  "param": "restitution",
+  "old": {
+   "value": 0.6,
+   "low": 0.4,
+   "high": 0.8,
+   "basis": "material properties of glass and tile, surface roughness, and impact dynamics"
+  },
+  "new": {
+   "value": 0.75,
+   "low": 0.65,
+   "high": 0.85,
+   "basis": "Depends on the elastic properties of the glass marble and the rigid, hard surface of the tile floor; glass is brittle but moderately elastic under impact, and tile floors are typically hard and non-deformable, leading to high energy return with moderate damping."
+  }
+ },
+ {
+  "case": "soft clay ball / floor",
+  "param": "restitution",
+  "old": {
+   "value": 0.1,
+   "low": 0.05,
+   "high": 0.2,
+   "basis": "material properties of soft clay and floor interaction; soft clay deforms significantly upon impact, leading to low energy recovery"
+  },
+  "new": {
+   "value": 0.1,
+   "low": 0.05,
+   "high": 0.2,
+   "basis": "Soft clay is highly deformable and dissipates most kinetic energy upon impact; the material undergoes large plastic deformation, leading to minimal rebound. Restitution depends on the degree of energy dissipation in the clay-floor contact, which is dominated by internal friction and irreversible she"
+  }
+ },
+ {
+  "case": "ping-pong ball / table",
+  "param": "restitution",
+  "old": {
+   "value": 0.85,
+   "low": 0.75,
+   "high": 0.95,
+   "basis": "material properties of ping-pong ball and table surface, including elasticity and energy loss upon impact"
+  },
+  "new": {
+   "value": 0.85,
+   "low": 0.75,
+   "high": 0.95,
+   "basis": "The ping-pong ball is made of celluloid or plastic with a thin, elastic shell that deforms upon impact and returns most of the energy; the table surface (wooden or synthetic) provides minimal energy loss due to its rigidity and smoothness. Restitution depends on material elasticity and contact point"
+  }
+ },
+ {
+  "case": "rubber block / dry concrete",
+  "param": "friction_coefficient",
+  "old": {
+   "value": 0.8,
+   "low": 0.6,
+   "high": 1.0,
+   "basis": "material pair properties of rubber on dry concrete, including surface roughness and adhesion"
+  },
+  "new": {
+   "value": 0.8,
+   "low": 0.6,
+   "high": 1.0,
+   "basis": "Dry concrete surface with rubber block contact; rubber has high grip on dry concrete, and the coefficient depends on surface roughness and material deformation at interface. Rubber deforms more than concrete, increasing interlocking and friction."
+  }
+ },
+ {
+  "case": "steel block / ice",
+  "param": "friction_coefficient",
+  "old": {
+   "value": 0.02,
+   "low": 0.01,
+   "high": 0.03,
+   "basis": "Coefficient of kinetic friction between steel and ice, depending on surface smoothness and temperature"
+  },
+  "new": {
+   "value": 0.02,
+   "low": 0.01,
+   "high": 0.03,
+   "basis": "Depends on the surface roughness and temperature of ice; steel-on-ice has very low friction due to melting at contact points under load, with typical values in the range of 0.01–0.03 for dry ice conditions."
+  }
+ },
+ {
+  "case": "wooden box / carpet",
+  "param": "friction_coefficient",
+  "old": {
+   "value": 0.25,
+   "low": 0.15,
+   "high": 0.4,
+   "basis": "roughness of carpet and surface texture of wood"
+  },
+  "new": {
+   "value": 0.25,
+   "low": 0.15,
+   "high": 0.4,
+   "basis": "depends on the roughness of the carpet fibers and the surface texture of the wooden box; typical for a dry, medium-roughness carpet interacting with a smooth wood surface"
+  }
+ },
+ {
+  "case": "wine glass / unspecified surface",
+  "param": "frequency_hz",
+  "old": {
+   "value": 250.0,
+   "low": 200.0,
+   "high": 300.0,
+   "basis": "natural resonant frequency of a typical wine glass, depending on thickness and material"
+  },
+  "new": {
+   "value": 250.0,
+   "low": 180.0,
+   "high": 350.0,
+   "basis": "The natural resonant frequency of a typical wine glass depends on its thickness, material (glass type), and shape; thin, tall glasses have higher frequencies due to less mass and stiffness."
+  }
+ },
+ {
+  "case": "wine glass / unspecified surface",
+  "param": "damping_ratio",
+  "old": {
+   "value": 0.01,
+   "low": 0.005,
+   "high": 0.02,
+   "basis": "energy dissipation due to air resistance and internal friction in the glass material"
+  },
+  "new": {
+   "value": 0.01,
+   "low": 0.005,
+   "high": 0.02,
+   "basis": "Wine glass vibrations are highly damped due to air resistance, internal friction in the glass structure, and energy dissipation through sound radiation; a low damping ratio is typical for such delicate structures with minimal internal losses."
+  }
+ },
+ {
+  "case": "plastic ruler / desk",
+  "param": "frequency_hz",
+  "old": {
+   "value": 300.0,
+   "low": 250.0,
+   "high": 350.0,
+   "basis": "material stiffness and mass of plastic ruler, mode shape"
+  },
+  "new": {
+   "value": 200.0,
+   "low": 150.0,
+   "high": 300.0,
+   "basis": "The natural frequency of a plastic ruler clamped at one end and plucked depends on its length, thickness, and material stiffness. For a typical school ruler (about 30 cm long), bending modes occur in the range of 150–300 Hz; the dominant mode is usually around 200 Hz."
+  }
+ },
+ {
+  "case": "plastic ruler / desk",
+  "param": "damping_ratio",
+  "old": {
+   "value": 0.15,
+   "low": 0.1,
+   "high": 0.25,
+   "basis": "air resistance and internal material losses in plastic"
+  },
+  "new": {
+   "value": 0.1,
+   "low": 0.05,
+   "high": 0.2,
+   "basis": "The damping ratio for a plastic ruler vibrating on a desk arises from air resistance, internal material losses (hysteresis), and contact with the surface. Plastic materials have moderate energy dissipation; typical values for such simple beams are between 0.05 and 0.2, with 0.1 being representative."
+  }
+ }
+]

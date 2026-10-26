@@ -1,0 +1,70 @@
+{
+  "event": "Dribbling a basketball then an opponent slaps the ball out of your hand",
+  "sub_events": [
+    {
+      "prompt": "Start dribbling a basketball with a steady rhythm",
+      "start": 0.0,
+      "duration": 2.0,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1025_234245/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0014,
+        0.025
+      ],
+      "offset": 0.144,
+      "shared": false
+    },
+    {
+      "prompt": "Continue dribbling the basketball with a steady rhythm",
+      "start": 2.0,
+      "duration": 3.0,
+      "intensity": 0.3,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1025_234245/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0175,
+        0.0094
+      ],
+      "offset": 0.274,
+      "shared": false
+    },
+    {
+      "prompt": "Opponent slaps the basketball out of your hand with a sudden impact",
+      "start": 5.0,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1025_234245/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.5111,
+        0.4951
+      ],
+      "offset": 0.539,
+      "shared": false
+    }
+  ],
+  "total": 5.5,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Dribbling_a_basketball_then_an_oppon_1025_234245_composite.wav",
+  "baseline": null,
+  "gen_duration": 4.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.556788921356201,
+  "elapsed": 3.5684566497802734
+}

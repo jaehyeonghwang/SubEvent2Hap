@@ -1,0 +1,87 @@
+{
+  "event": "A swimmer swims in butterfly stroke. The swimmer repeats the process of strongly coming out of the water with both of his arms, then going back into the water.",
+  "sub_events": [
+    {
+      "prompt": "Arms emerge from the water.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_005007/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.209,
+        0.0701
+      ],
+      "offset": 0.178,
+      "shared": true
+    },
+    {
+      "prompt": "Arms submerge into the water.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_005007/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0931,
+        0.0115
+      ],
+      "offset": 0.023,
+      "shared": true
+    },
+    {
+      "prompt": "Arms emerge from the water.",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_005007/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.209,
+        0.0701
+      ],
+      "offset": 0.178,
+      "shared": true
+    },
+    {
+      "prompt": "Arms submerge into the water.",
+      "start": 2.0,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_005007/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0931,
+        0.0115
+      ],
+      "offset": 0.023,
+      "shared": true
+    }
+  ],
+  "total": 2.3,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_swimmer_swims_in_butterfly_stroke__1026_005007_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.6795451641082764,
+  "elapsed": 3.690950870513916
+}

@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SubEvent2Hap · 전체 재생</title>
+<style>
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --line: #e3e6eb; --text: #1b1f24; --muted: #667080;
+  --accent: #4f46e5; --accent-soft: #eef0ff; --ok: #138a4b; --warn: #b26a00; --err: #c62a2a;
+  --wave: #4f46e5; --wave-bg: #f1f2f6; --playhead: #e5484d; --radius: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111317; --panel: #191c21; --line: #2a2f37; --text: #e8eaee; --muted: #9099a8;
+    --accent: #8b85ff; --accent-soft: #24234a; --ok: #3ccf7e; --warn: #f0a63a; --err: #ff6b6b;
+    --wave: #8b85ff; --wave-bg: #20242b; --playhead: #ff6b6b;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 14px/1.55 "Pretendard", "Malgun Gothic", system-ui, -apple-system, "Segoe UI", sans-serif; }
+header { position: sticky; top: 0; z-index: 5; background: var(--panel); border-bottom: 1px solid var(--line);
+  padding: 12px 24px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+header h1 { font-size: 17px; margin: 0; }
+header a { color: var(--accent); text-decoration: none; font-size: 13px; }
+.pill { display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px; border: 1px solid var(--line);
+  border-radius: 999px; font-size: 12.5px; color: var(--muted); background: var(--bg); max-width: 460px; }
+.pill .txt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
+.dot.ok { background: var(--ok); } .dot.warn { background: var(--warn); } .dot.err { background: var(--err); }
+.controls { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; width: 100%; font-size: 13px; color: var(--muted); }
+.controls label { display: inline-flex; align-items: center; gap: 6px; }
+.controls input[type=range] { width: 110px; accent-color: var(--accent); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; border-radius: 0; padding: 5px 10px; background: var(--bg); color: var(--muted); }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button.on { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--line); background: var(--panel);
+  color: var(--text); padding: 6px 12px; }
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+.stop { color: var(--err); border-color: var(--err); font-weight: 600; }
+main { max-width: 1400px; margin: 0 auto; padding: 18px 24px 80px; display: flex; flex-direction: column; gap: 14px; }
+@media (max-width: 700px) { main { padding: 14px 16px 60px; } header { padding: 10px 16px; } }
+.note { color: var(--muted); font-size: 12.5px; }
+.item { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.item.current { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+.item .head { display: flex; gap: 12px; align-items: flex-start; }
+.item .id { font: 600 12px ui-monospace, Consolas, monospace; color: var(--muted); padding-top: 2px; flex: none; width: 34px; }
+.item .text { flex: 1; min-width: 0; }
+.item .en { font-weight: 600; }
+.item .ko { color: var(--muted); font-size: 13px; margin-top: 2px; }
+.item .head button { flex: none; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+@media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+.tile { border: 1px solid var(--line); border-radius: 10px; padding: 9px 10px; display: flex; flex-direction: column; gap: 7px; }
+.tile.playing { border-color: var(--playhead); }
+.tile .lab { font-size: 12.5px; font-weight: 600; display: flex; gap: 6px; align-items: center; }
+.tile .lab .tag { font: 600 11px ui-monospace, Consolas, monospace; background: var(--accent-soft); color: var(--accent);
+  border-radius: 5px; padding: 0 6px; }
+.tile .meta { font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tile canvas { width: 100%; height: 54px; display: block; background: var(--wave-bg); border-radius: 6px; cursor: pointer; }
+.tile .acts { display: flex; gap: 6px; }
+.tile .acts .q { flex: 1; }
+.tile.pending, .tile.failed { color: var(--muted); font-size: 12.5px; justify-content: center; min-height: 120px; }
+.tile.failed { color: var(--err); }
+.reveal { font-size: 12px; }
+.vote { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 10px; font-size: 12.5px; color: var(--muted); }
+.vote button { padding: 4px 11px; font-size: 12.5px; }
+.vote button.on { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+.vote .done { color: var(--ok); font-weight: 600; }
+.tile.voted { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+table.res { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+table.res th { text-align: left; font-weight: 500; color: var(--muted); font-size: 12px; padding: 5px 8px; border-bottom: 1px solid var(--line); }
+table.res td { padding: 6px 8px; border-bottom: 1px solid var(--line); }
+table.res .bar { display: inline-block; height: 8px; background: var(--accent); border-radius: 4px; vertical-align: middle; margin-right: 8px; }
+#toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; transition: .25s;
+  background: var(--text); color: var(--bg); padding: 9px 16px; border-radius: 8px; font-size: 13px; pointer-events: none; z-index: 10; }
+#toast.show { opacity: 1; transform: translateX(-50%); }
+</style>
+</head>
+<body>
+<header>
+  <h1>전체 재생</h1>
+  <a href="/">← 스튜디오</a> <a href="/architecture">구조 보기</a>
+  <span class="pill"><span class="dot" id="qdot"></span><span class="txt" id="qtxt">Quest 확인 중…</span></span>
+  <span class="pill"><span class="txt" id="progress">불러오는 중…</span></span>
+  <label class="pill" title="라운드마다 같은 계획을 다른 HapticGen seed로 생성했습니다. 투표와 순서는 라운드별로 따로입니다">라운드 <select id="round" style="border:0;background:transparent;color:var(--text);font:inherit"><option value="1">1</option></select></label>
+  <div class="controls">
+    <span>컨트롤러</span>
+    <span class="seg" id="hand"><button data-v="left">왼손</button><button data-v="both" class="on">양손</button><button data-v="right">오른손</button></span>
+    <label>세기 <input type="range" id="gain" min="0" max="3" step="0.05" value="1"><span id="gainV">×1.00</span></label>
+    <label><input type="checkbox" id="normalize" checked> 피크 정규화</label>
+    <label title="조건 이름을 숨기고 문장마다 순서를 섞습니다. 이 모드에서 투표할 수 있습니다"><input type="checkbox" id="blind"> 블라인드 모드 (투표)</label>
+    <label>평가자 <input type="text" id="rater" value="me" maxlength="40" style="width:90px;padding:4px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--text);font:inherit"></label>
+    <span class="pill"><span class="txt" id="voteProgress">투표 0/33</span></span>
+    <button id="resultsBtn">결과 보기</button>
+    <label>간격 <input type="range" id="gap" min="0.5" max="4" step="0.5" value="1.5"><span id="gapV">1.5초</span></label>
+    <button class="primary" id="playAll">▶ 전체 연속 재생</button>
+    <button class="stop" id="stopBtn">■ 정지</button>
+  </div>
+</header>
+
+<main>
+  <p class="note">HapticGen 공개 데이터셋에서 고른 33문장입니다. <b>라운드</b>마다 비교하는 조건과 seed가 다릅니다 (라운드 1·2: LM 비교 네 조건, 라운드 3·4: AudioGen + GPT-4o 분해 vs HapticGen 단일 생성). 같은 라운드 안에서는 모든 조건이 같은 seed입니다. 모든 시스템에는 영어 문장이 입력되며 한국어는 보기용 번역입니다. 생성이 끝난 문장부터 나타나고 10초마다 갱신됩니다. 단축키: <b>Esc</b> 정지.</p>
+  <section class="item" id="results" hidden>
+    <div class="head"><div class="text"><div class="en">투표 결과 (블라인드 투표만 · 문장마다 마지막 투표)</div>
+      <div class="ko" id="resultsSub"></div></div><button id="resultsClose">닫기</button></div>
+    <div class="tablewrap"><table class="res"><thead><tr><th>조건</th><th>최고로 뽑힌 횟수</th><th>비율</th></tr></thead><tbody id="resultsBody"></tbody></table></div>
+    <p class="note" id="resultsPos"></p>
+  </section>
+  <div id="list"></div>
+</main>
+<div id="toast"></div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const mk = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; };
+const COLORS = ["#4f46e5", "#0ea5e9", "#10b981", "#f59e0b", "#ef4444", "#a855f7", "#14b8a6", "#f97316"];
+let data = null, questReady = false, hand = "both", order = {}, revealed = new Set(), seqTimer = null, playing = null;
+
+function toast(m, ms = 2600) { const t = $("#toast"); t.textContent = m; t.classList.add("show"); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), ms); }
+async function api(path, opts = {}) {
+  const r = await fetch(path, { headers: { "Content-Type": "application/json" }, ...opts });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(typeof j.detail === "string" ? j.detail : r.statusText);
+  return j;
+}
+
+// ---------- controls (remembered per browser)
+const store = (k, v) => { try { localStorage.setItem("gal_" + k, v); } catch {} };
+const recall = (k) => { try { return localStorage.getItem("gal_" + k); } catch { return null; } };
+for (const [id, fmt] of [["gain", v => "×" + Number(v).toFixed(2)], ["gap", v => v + "초"]]) {
+  const el = $("#" + id), out = $("#" + id + "V");
+  if (recall(id)) el.value = recall(id);
+  const upd = () => { out.textContent = fmt(el.value); store(id, el.value); };
+  el.addEventListener("input", upd); upd();
+}
+const setHand = (v) => { hand = v; document.querySelectorAll("#hand button").forEach(b => b.classList.toggle("on", b.dataset.v === v)); store("hand", v); };
+document.querySelectorAll("#hand button").forEach(b => b.onclick = () => setHand(b.dataset.v));
+setHand(recall("hand") || "both");
+if (recall("blind") === "1") $("#blind").checked = true;
+$("#blind").onchange = () => { store("blind", $("#blind").checked ? "1" : "0"); revealed.clear(); render(); };
+
+// ---------- status
+async function pollStatus() {
+  try {
+    const q = (await api("/api/status")).quest; questReady = q.ready;
+    $("#qdot").className = "dot " + (q.playing ? "ok" : q.ready ? "ok" : q.connected ? "warn" : "err");
+    $("#qtxt").textContent = "Quest · " + q.status;
+  } catch { $("#qdot").className = "dot err"; $("#qtxt").textContent = "서버 연결 끊김"; }
+}
+setInterval(pollStatus, 2000); pollStatus();
+
+// ---------- rounds (round N = renders made with HapticGen seed N)
+let round = +(recall("round") || 1);
+function syncRounds(rounds) {
+  // rounds: [{round, label}] (label = condition design · seed)
+  const sel = $("#round");
+  const want = rounds.map(r => typeof r === "object" ? r : { round: r, label: `seed ${r}` });
+  const sig = JSON.stringify(want);
+  if (sel.dataset.sig !== sig) {
+    sel.innerHTML = "";
+    for (const r of want) { const o = mk("option", null, `${r.round} · ${r.label}`); o.value = r.round; sel.appendChild(o); }
+    sel.dataset.sig = sig;
+  }
+  sel.value = String(round);
+}
+$("#round").onchange = async () => {
+  await stopAll(); round = +$("#round").value; store("round", round); revealed.clear();
+  data = null; $("#results").hidden = true; await loadVotes(); await load(); render();
+};
+
+// ---------- data
+async function load() {
+  try {
+    const d = await api("/api/gallery?round=" + round);
+    const before = data ? JSON.stringify(data.items.map(i => Object.keys(i.renders))) : "";
+    data = d;
+    const keys = d.conditions.map(c => c.key);
+    const done = d.items.filter(i => keys.every(k => i.renders[k])).length;
+    $("#progress").textContent = d.items.length ? `라운드 ${round} · ${done}/33 문장 완료` : `라운드 ${round} · 생성 대기 중…`;
+    syncRounds(d.rounds || [1]);
+    if (JSON.stringify(d.items.map(i => Object.keys(i.renders))) !== before && !playing) render();
+  } catch (e) { $("#progress").textContent = "불러오기 실패: " + e.message; }
+}
+setInterval(load, 10000);
+
+try { order = JSON.parse(recall("order") || "{}"); } catch { order = {}; }
+function conditionOrder(item) {
+  const keys = data.conditions.map(c => c.key);
+  if (!$("#blind").checked) return keys;
+  const okey = round + ":" + item.id;  // independent shuffle per round
+  const saved = order[okey];
+  if (!saved || saved.length !== keys.length || !keys.every(k => saved.includes(k))) {
+    // Shuffle once per item and keep it across reloads, so a vote always refers to what was shown.
+    const a = keys.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    order[okey] = a; store("order", JSON.stringify(order));
+  }
+  return order[okey];
+}
+
+// ---------- votes
+let myVotes = {};
+const rater = () => ($("#rater").value.trim() || "me");
+if (recall("rater")) $("#rater").value = recall("rater");
+$("#rater").onchange = () => { store("rater", rater()); loadVotes().then(render); };
+
+async function loadVotes() {
+  try { const s = await api("/api/gallery/votes?rater=" + encodeURIComponent(rater()) + "&round=" + round); myVotes = s.mine || {}; updateVoteProgress(); return s; }
+  catch { return null; }
+}
+function updateVoteProgress() {
+  const n = data ? data.items.filter(i => myVotes[i.id]).length : Object.keys(myVotes).length;
+  $("#voteProgress").textContent = `라운드 ${round} 투표 ${n}/33 · ${rater()}`;
+}
+async function vote(item, choice) {
+  try {
+    const s = await api("/api/gallery/vote", { method: "POST", body: JSON.stringify({
+      item: item.id, choice, order: conditionOrder(item), blind: $("#blind").checked, rater: rater(), round }) });
+    myVotes = s.mine || {}; updateVoteProgress(); render();
+    if (!$("#results").hidden) showResults();
+  } catch (e) { toast("투표 저장 실패: " + e.message); }
+}
+
+async function showResults() {
+  const s = await loadVotes(); if (!s) return;
+  const labels = Object.fromEntries(data.conditions.map(c => [c.key, c.label]));
+  const rows = [...data.conditions.map(c => c.key), "tie"];
+  const body = $("#resultsBody"); body.innerHTML = "";
+  for (const k of rows) {
+    const n = s.tally[k] || 0, pct = s.n_blind ? n / s.n_blind : 0;
+    const tr = mk("tr"); tr.appendChild(mk("td", null, k === "tie" ? "비슷함 / 모르겠음" : labels[k]));
+    tr.appendChild(mk("td", null, String(n)));
+    const td = mk("td"); const bar = mk("span", "bar"); bar.style.width = Math.round(pct * 160) + "px";
+    td.appendChild(bar); td.appendChild(document.createTextNode(Math.round(pct * 100) + "%")); tr.appendChild(td);
+    body.appendChild(tr);
+  }
+  $("#resultsSub").textContent = `라운드 ${round} (${$("#round").selectedOptions[0]?.textContent || ""}) · 평가자 ${rater()} · 블라인드 투표 ${s.n_blind}개`;
+  const pos = Object.entries(s.chosen_position).map(([p, n]) => `${String.fromCharCode(65 + +p)} 자리 ${n}회`).join(" · ");
+  $("#resultsPos").textContent = pos ? `뽑힌 자리 분포 (위치 편향 확인용): ${pos}` : "";
+  $("#results").hidden = false; $("#results").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+$("#resultsBtn").onclick = showResults;
+$("#resultsClose").onclick = () => { $("#results").hidden = true; };
+
+function render() {
+  const list = $("#list"); list.innerHTML = "";
+  if (!data || !data.items.length) { list.appendChild(mk("p", "note", "아직 생성된 문장이 없습니다. 잠시 후 자동으로 나타납니다.")); return; }
+  const labels = Object.fromEntries(data.conditions.map(c => [c.key, c.label]));
+  for (const it of data.items) {
+    const card = mk("section", "item"); card.dataset.id = it.id;
+    const head = mk("div", "head");
+    head.appendChild(mk("div", "id", it.id));
+    const text = mk("div", "text"); text.appendChild(mk("div", "en", it.prompt)); text.appendChild(mk("div", "ko", it.ko));
+    head.appendChild(text);
+    const seqBtn = mk("button", null, "▶ 이 문장 연속 재생"); seqBtn.onclick = () => playSequence([it]);
+    head.appendChild(seqBtn);
+    if ($("#blind").checked) {
+      const rv = mk("button", "reveal", revealed.has(it.id) ? "이름 숨기기" : "정답 보기");
+      rv.onclick = () => { revealed.has(it.id) ? revealed.delete(it.id) : revealed.add(it.id); render(); };
+      head.appendChild(rv);
+    }
+    card.appendChild(head);
+    const grid = mk("div", "grid");
+    conditionOrder(it).forEach((key, idx) => {
+      const r = it.renders[key];
+      const name = $("#blind").checked && !revealed.has(it.id) ? `${String.fromCharCode(65 + idx)}` : labels[key];
+      if (!r) { const t = mk("div", "tile pending", `${name} · 생성 중…`); grid.appendChild(t); return; }
+      if (r.error) { const t = mk("div", "tile failed", `${name} · 계획 실패: ${r.error.slice(0, 120)}`); grid.appendChild(t); return; }
+      const t = mk("div", "tile"); t.dataset.name = r.name;
+      const lab = mk("div", "lab"); lab.appendChild(mk("span", "tag", String.fromCharCode(65 + idx)));
+      lab.appendChild(document.createTextNode($("#blind").checked && !revealed.has(it.id) ? "" : labels[key]));
+      t.appendChild(lab);
+      const hidden = $("#blind").checked && !revealed.has(it.id);
+      t.appendChild(mk("div", "meta", hidden ? "파형·길이 숨김 (블라인드)"
+        : `${r.duration.toFixed(1)}s · peak ${r.peak.toFixed(2)}` + (r.regions ? ` · 사건 ${r.regions.length}개` : "")));
+      const cv = mk("canvas"); if (hidden) cv.dataset.hidden = "1";
+      t.appendChild(cv); requestAnimationFrame(() => drawWave(cv, r));
+      cv.onclick = () => playOne(r);
+      const acts = mk("div", "acts");
+      const q = mk("button", "q primary", "▶ Quest"); q.onclick = () => playOne(r);
+      const l = mk("button", null, "🔊"); l.title = "PC 스피커로 미리듣기"; l.onclick = () => listen(r);
+      acts.appendChild(q); acts.appendChild(l); t.appendChild(acts);
+      if (myVotes[it.id] === key) t.classList.add("voted");
+      grid.appendChild(t);
+    });
+    card.appendChild(grid);
+    if ($("#blind").checked) {
+      const keys = conditionOrder(it), mine = myVotes[it.id];
+      const row = mk("div", "vote"); row.appendChild(mk("span", null, "설명과 가장 잘 맞는 것:"));
+      keys.forEach((key, idx) => {
+        if (!it.renders[key] || it.renders[key].error) return;
+        const b = mk("button", mine === key ? "on" : null, String.fromCharCode(65 + idx)); b.onclick = () => vote(it, key); row.appendChild(b);
+      });
+      const tie = mk("button", mine === "tie" ? "on" : null, "비슷함 / 모르겠음"); tie.onclick = () => vote(it, "tie"); row.appendChild(tie);
+      if (mine) row.appendChild(mk("span", "done", "✓ 투표함 (다시 누르면 변경)"));
+      card.appendChild(row);
+    }
+    list.appendChild(card);
+  }
+}
+
+function drawWave(cv, it, progress = null) {
+  const dpr = window.devicePixelRatio || 1, w = cv.clientWidth, h = cv.clientHeight;
+  if (!w) return;
+  cv.width = w * dpr; cv.height = h * dpr;
+  const g = cv.getContext("2d"); g.scale(dpr, dpr);
+  const css = getComputedStyle(document.documentElement);
+  if (cv.dataset.hidden === "1") {
+    // Blind: no regions, envelope or length cues — only a neutral line and playback progress.
+    g.fillStyle = css.getPropertyValue("--line"); g.fillRect(0, h / 2 - 1, w, 2);
+    if (progress !== null) { g.fillStyle = css.getPropertyValue("--playhead"); g.globalAlpha = .25; g.fillRect(0, 0, progress * w, h); g.globalAlpha = 1; }
+    return;
+  }
+  (it.regions || []).forEach((r, i) => {
+    g.fillStyle = COLORS[i % COLORS.length]; g.globalAlpha = .13;
+    g.fillRect(r.start / it.duration * w, 0, r.duration / it.duration * w, h);
+  });
+  g.globalAlpha = 1;
+  const mid = h / 2, n = it.peaks.length, scale = (h / 2 - 3) / Math.max(.05, it.peak);
+  g.fillStyle = css.getPropertyValue("--wave");
+  for (let i = 0; i < n; i++) {
+    const [lo, hi] = it.peaks[i];
+    g.globalAlpha = progress !== null && i / n > progress ? .4 : 1;
+    g.fillRect(i / n * w, mid - hi * scale, Math.max(1, w / n - .3), Math.max(1, (hi - lo) * scale));
+  }
+  g.globalAlpha = 1;
+  if (progress !== null) { g.fillStyle = css.getPropertyValue("--playhead"); g.fillRect(progress * w - 1, 0, 2, h); }
+}
+
+// ---------- playback
+let audioEl = null;
+function listen(r) {
+  if (audioEl) audioEl.pause();
+  audioEl = new Audio(`/audio/${encodeURIComponent(r.name)}?gain=${$("#gain").value}&normalize=${$("#normalize").checked}`);
+  audioEl.play().catch(e => toast("미리듣기 실패: " + e.message));
+}
+
+function tileOf(name) { return document.querySelector(`.tile[data-name="${CSS.escape(name)}"]`); }
+function animate(r, t0) {
+  const tile = tileOf(r.name); if (!tile) return;
+  const cv = tile.querySelector("canvas"), dur = r.duration * 1000;
+  tile.classList.add("playing");
+  const step = () => {
+    if (playing !== r) { tile.classList.remove("playing"); drawWave(cv, r); return; }
+    const p = (performance.now() - t0) / dur;
+    if (p >= 1) { tile.classList.remove("playing"); drawWave(cv, r); return; }
+    drawWave(cv, r, p); requestAnimationFrame(step);
+  };
+  step();
+}
+
+async function playOne(r) {
+  if (!questReady) { toast("Quest가 준비되지 않았습니다 – Link를 켜고 컨트롤러를 깨우세요"); return false; }
+  try {
+    await api("/api/play", { method: "POST", body: JSON.stringify({ name: r.name, hand, gain: +$("#gain").value, loop: 1, normalize: $("#normalize").checked }) });
+    playing = r; animate(r, performance.now());
+    return true;
+  } catch (e) { toast("재생 실패: " + e.message); return false; }
+}
+
+function playSequence(items) {
+  stopAll(false);
+  const queue = [];
+  for (const it of items)
+    for (const key of conditionOrder(it)) { const r = it.renders[key]; if (r && !r.error) queue.push({ it, r }); }
+  if (!queue.length) { toast("재생할 진동이 없습니다"); return; }
+  let i = 0;
+  const next = async () => {
+    if (i >= queue.length) { document.querySelectorAll(".item.current").forEach(e => e.classList.remove("current")); playing = null; return; }
+    const { it, r } = queue[i++];
+    document.querySelectorAll(".item.current").forEach(e => e.classList.remove("current"));
+    const card = document.querySelector(`.item[data-id="${it.id}"]`);
+    if (card) { card.classList.add("current"); card.scrollIntoView({ behavior: "smooth", block: "center" }); }
+    if (!(await playOne(r))) { playing = null; return; }
+    const lastOfItem = i >= queue.length || queue[i].it !== it;
+    seqTimer = setTimeout(next, (r.duration + +$("#gap").value * (lastOfItem ? 2 : 1)) * 1000);
+  };
+  next();
+}
+
+async function stopAll(callApi = true) {
+  clearTimeout(seqTimer); seqTimer = null; playing = null;
+  document.querySelectorAll(".item.current").forEach(e => e.classList.remove("current"));
+  if (audioEl) audioEl.pause();
+  if (callApi) { try { await api("/api/stop", { method: "POST" }); } catch {} }
+}
+
+$("#playAll").onclick = () => data && playSequence(data.items);
+$("#stopBtn").onclick = () => stopAll();
+document.addEventListener("keydown", e => { if (e.key === "Escape") stopAll(); });
+let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => !playing && render(), 150); });
+loadVotes().then(load);  // after every declaration above
+</script>
+</body>
+</html>

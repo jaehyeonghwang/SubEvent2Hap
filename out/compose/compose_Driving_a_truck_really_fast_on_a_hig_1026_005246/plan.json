@@ -1,0 +1,71 @@
+{
+  "event": "Driving a truck really fast on a highway during a heavy snowfall and then crashing into a huge moose.",
+  "sub_events": [
+    {
+      "prompt": "The highway is being driven on at high speed.",
+      "start": 0.0,
+      "duration": 1.5,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1026_005246/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.202,
+        0.1136
+      ],
+      "offset": 0.001,
+      "shared": false
+    },
+    {
+      "prompt": "Heavy snow is hitting the truck during the snowfall.",
+      "start": 1.5,
+      "duration": 2.0,
+      "intensity": 0.7,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1026_005246/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.1403,
+        0.1231
+      ],
+      "offset": 0.011,
+      "shared": false
+    },
+    {
+      "prompt": "The truck is crashing into a moose.",
+      "start": 3.5,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1026_005246/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.1271,
+        0.0745
+      ],
+      "offset": 0.014,
+      "shared": false
+    }
+  ],
+  "total": 4.5,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Driving_a_truck_really_fast_on_a_hig_1026_005246_composite.wav",
+  "baseline": null,
+  "gen_duration": 3.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.884239196777344,
+  "elapsed": 7.057350397109985
+}

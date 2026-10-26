@@ -1,0 +1,54 @@
+{
+  "event": "riding a bike on a smooth track and then ride on a bumpy road",
+  "sub_events": [
+    {
+      "prompt": "The smooth track allows for continuous riding.",
+      "start": 0.5,
+      "duration": 3.0,
+      "intensity": 0.3,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_001502/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0898,
+        0.1339
+      ],
+      "offset": 0.558,
+      "shared": false
+    },
+    {
+      "prompt": "The bumpy road creates a continuous riding experience.",
+      "start": 3.5,
+      "duration": 4.0,
+      "intensity": 0.7,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_001502/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0214,
+        0.1103
+      ],
+      "offset": 0.928,
+      "shared": false
+    }
+  ],
+  "total": 7.5,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_riding_a_bike_on_a_smooth_track_and__1026_001502_composite.wav",
+  "baseline": null,
+  "gen_duration": 5.0,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.396832466125488,
+  "elapsed": 5.40852952003479
+}

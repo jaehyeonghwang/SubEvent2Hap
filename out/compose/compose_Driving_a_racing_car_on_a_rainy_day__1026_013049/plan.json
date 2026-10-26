@@ -1,0 +1,103 @@
+{
+  "event": "Driving a racing car on a rainy day then suddenly losing control of the car and crash into a tree.",
+  "sub_events": [
+    {
+      "prompt": "the road surface becomes wet and slippery",
+      "start": 0.1,
+      "duration": 0.8,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_013049/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0137,
+        0.006
+      ],
+      "offset": 2.325,
+      "shared": false
+    },
+    {
+      "prompt": "the racing car tires lose grip on the road surface",
+      "start": 1.5,
+      "duration": 0.6,
+      "intensity": 0.4,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_013049/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0214,
+        0.18
+      ],
+      "offset": 1.621,
+      "shared": false
+    },
+    {
+      "prompt": "the racing car steering system fails to maintain directional control",
+      "start": 2.3,
+      "duration": 0.7,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_013049/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.6678,
+        0.7907
+      ],
+      "offset": 1.488,
+      "shared": false
+    },
+    {
+      "prompt": "the racing car body moves laterally off course",
+      "start": 3.1,
+      "duration": 0.9,
+      "intensity": 0.6,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_013049/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.3157,
+        0.6111
+      ],
+      "offset": 3.717,
+      "shared": false
+    },
+    {
+      "prompt": "the racing car front end makes direct contact with tree trunk",
+      "start": 4.2,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_013049/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.1944,
+        0.0329
+      ],
+      "offset": 1.354,
+      "shared": false
+    }
+  ],
+  "total": 4.7,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Driving_a_racing_car_on_a_rainy_day__1026_013049_composite.wav",
+  "baseline": "compose_Driving_a_racing_car_on_a_rainy_day__1026_013049_baseline.wav",
+  "gen_duration": 4.7,
+  "prompts": 12,
+  "analytic_segments": 0,
+  "elapsed_gen": 10.062437772750854,
+  "elapsed": 10.086288928985596
+}

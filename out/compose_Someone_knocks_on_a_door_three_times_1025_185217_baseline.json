@@ -1,0 +1,1 @@
+{"prompt": "[baseline] Someone knocks on a door three times and the door creaks open", "params": {"candidates": 2, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": null, "sub_events": 4}, "created": 1792921937.77332, "kind": "baseline", "event": "Someone knocks on a door three times and the door creaks open", "run": "compose_Someone_knocks_on_a_door_three_times_1025_185217"}

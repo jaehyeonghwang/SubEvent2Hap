@@ -1,0 +1,431 @@
+[
+  {
+    "event": "A ball bounces three times on a wooden floor and then rolls away",
+    "phases": [
+      "ball rests on surface",
+      "first bounce",
+      "second bounce",
+      "third bounce",
+      "ball rolls away"
+    ],
+    "sub_events": [
+      {
+        "source": "ball",
+        "prompt": "A rubber ball gently bouncing on a wooden floor with a soft, smooth impact",
+        "start": 0.15,
+        "duration": 0.2,
+        "intensity": 0.4,
+        "transition": "cut"
+      },
+      {
+        "source": "ball",
+        "prompt": "A rubber ball bouncing on a wooden floor with a soft, smooth impact",
+        "start": 0.6,
+        "duration": 0.2,
+        "intensity": 0.4,
+        "transition": "cut"
+      },
+      {
+        "source": "ball",
+        "prompt": "A rubber ball bouncing on a wooden floor with a soft, smooth impact",
+        "start": 1.15,
+        "duration": 0.2,
+        "intensity": 0.4,
+        "transition": "cut"
+      },
+      {
+        "source": "ball",
+        "prompt": "A rubber ball rolling slowly across a wooden floor with a steady, low vibration",
+        "start": 1.65,
+        "duration": 1.8,
+        "intensity": 0.2,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 2.5031378269195557,
+    "model": "qwen3-4b",
+    "prompt_version": "prompt_only_v2"
+  },
+  {
+    "event": "A sword clashes against a shield, then scrapes off",
+    "phases": [
+      "sword strikes shield",
+      "sword scrapes off shield"
+    ],
+    "sub_events": [
+      {
+        "source": "sword and shield",
+        "prompt": "A sharp metallic clash between a sword and a shield with sudden impact",
+        "start": 0.0,
+        "duration": 0.3,
+        "intensity": 1.0,
+        "transition": "cut"
+      },
+      {
+        "source": "sword and shield",
+        "prompt": "A rough scraping sound as the sword slides off the edge of the shield",
+        "start": 0.4,
+        "duration": 0.6,
+        "intensity": 0.8,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 1.1899926662445068,
+    "model": "qwen3-4b",
+    "prompt_version": "prompt_only_v2"
+  },
+  {
+    "event": "Heavy rain starts, a thunder strikes nearby, then the rain fades",
+    "phases": [
+      "heavy rain begins",
+      "thunder strikes",
+      "rain fades"
+    ],
+    "sub_events": [
+      {
+        "source": "rain",
+        "prompt": "Heavy rain falling on a surface with a steady wet, dull vibration",
+        "start": 0.0,
+        "duration": 4.0,
+        "intensity": 0.5,
+        "transition": "cut"
+      },
+      {
+        "source": "atmosphere",
+        "prompt": "A sudden sharp thunderclap from nearby lightning",
+        "start": 2.5,
+        "duration": 0.3,
+        "intensity": 1.0,
+        "transition": "cut"
+      },
+      {
+        "source": "rain",
+        "prompt": "Rain gradually fading with a soft, dull vibration that diminishes over time",
+        "start": 4.0,
+        "duration": 1.0,
+        "intensity": 0.5,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 1.5977957248687744,
+    "model": "qwen3-4b",
+    "prompt_version": "prompt_only_v2"
+  },
+  {
+    "event": "Opening a soda can and pouring it into a glass",
+    "phases": [
+      "can opened",
+      "liquid poured into glass"
+    ],
+    "sub_events": [
+      {
+        "source": "soda can",
+        "prompt": "A can being twisted open with a sharp metallic click",
+        "start": 0.0,
+        "duration": 0.2,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "liquid",
+        "prompt": "Soda pouring smoothly into a glass with a steady gentle vibration",
+        "start": 0.3,
+        "duration": 1.5,
+        "intensity": 0.4,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 1.1144285202026367,
+    "model": "qwen3-4b",
+    "prompt_version": "prompt_only_v2"
+  },
+  {
+    "event": "Someone knocks on a door three times and the door creaks open",
+    "phases": [
+      "knock on door",
+      "knock on door",
+      "knock on door",
+      "door creaks open"
+    ],
+    "sub_events": [
+      {
+        "source": "door",
+        "prompt": "A sharp, distinct knock on a wooden door with a solid impact",
+        "start": 0.0,
+        "duration": 0.2,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "door",
+        "prompt": "A sharp, distinct knock on a wooden door with a solid impact",
+        "start": 0.3,
+        "duration": 0.2,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "door",
+        "prompt": "A sharp, distinct knock on a wooden door with a solid impact",
+        "start": 0.6,
+        "duration": 0.2,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "door frame",
+        "prompt": "A slow, creaking groan as a heavy door opens on its hinges",
+        "start": 1.0,
+        "duration": 1.5,
+        "intensity": 0.4,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 2.217402696609497,
+    "model": "qwen3-4b",
+    "prompt_version": "prompt_only_v2"
+  },
+  {
+    "event": "A car engine starts, revs twice, and the car drives away",
+    "phases": [
+      "engine starts",
+      "engine revs first time",
+      "engine revs second time",
+      "car moves forward"
+    ],
+    "sub_events": [
+      {
+        "source": "engine",
+        "prompt": "A car engine starting with a low rumble and warm vibration",
+        "start": 0.0,
+        "duration": 0.5,
+        "intensity": 0.4,
+        "transition": "cut"
+      },
+      {
+        "source": "engine",
+        "prompt": "Engine revving sharply with a high-pitched metallic pulse",
+        "start": 0.7,
+        "duration": 0.3,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "engine",
+        "prompt": "Engine revving again with a sharp metallic pulse",
+        "start": 1.0,
+        "duration": 0.3,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "car wheels",
+        "prompt": "Car wheels moving smoothly over pavement with a steady low vibration",
+        "start": 1.6,
+        "duration": 4.5,
+        "intensity": 0.3,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 2.1123502254486084,
+    "model": "qwen3-4b",
+    "prompt_version": "prompt_only_v2"
+  },
+  {
+    "event": "Running footsteps, then a jump and a heavy landing",
+    "phases": [
+      "running footsteps",
+      "jump",
+      "heavy landing"
+    ],
+    "sub_events": [
+      {
+        "source": "foot",
+        "prompt": "A foot striking the ground in quick, rhythmic steps with a steady pulse",
+        "start": 0.0,
+        "duration": 1.5,
+        "intensity": 0.4,
+        "transition": "cut"
+      },
+      {
+        "source": "body",
+        "prompt": "A sudden upward leap with a sharp release from the legs",
+        "start": 1.8,
+        "duration": 0.2,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "foot",
+        "prompt": "A heavy foot landing on the floor with a deep, dull impact",
+        "start": 2.0,
+        "duration": 0.4,
+        "intensity": 1.0,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 1.5979986190795898,
+    "model": "qwen3-4b",
+    "prompt_version": "prompt_only_v2"
+  },
+  {
+    "event": "Typing quickly on a keyboard and slamming the enter key",
+    "phases": [
+      "rapid key presses",
+      "enter key slam"
+    ],
+    "sub_events": [
+      {
+        "source": "keyboard keys",
+        "prompt": "Rapid keystrokes on a mechanical keyboard with sharp, distinct taps",
+        "start": 0.0,
+        "duration": 1.5,
+        "intensity": 0.5,
+        "transition": "cut"
+      },
+      {
+        "source": "enter key",
+        "prompt": "A heavy slam of the enter key with a dull thud and vibration",
+        "start": 1.5,
+        "duration": 0.3,
+        "intensity": 0.8,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 1.115767240524292,
+    "model": "qwen3-4b",
+    "prompt_version": "prompt_only_v2"
+  },
+  {
+    "event": "An archer draws a bow, releases the arrow, and it hits a target",
+    "phases": [
+      "archer draws bow",
+      "arrow released",
+      "arrow strikes target"
+    ],
+    "sub_events": [
+      {
+        "source": "bowstring",
+        "prompt": "A bowstring pulling taut with a smooth, firm resistance",
+        "start": 0.0,
+        "duration": 1.5,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "arrow",
+        "prompt": "An arrow being released with a sharp snap and quick motion",
+        "start": 1.5,
+        "duration": 0.2,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "target",
+        "prompt": "A projectile striking a soft target with a dull thud and slight vibration",
+        "start": 1.7,
+        "duration": 0.4,
+        "intensity": 0.6,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 1.6288955211639404,
+    "model": "qwen3-4b",
+    "prompt_version": "prompt_only_v2"
+  },
+  {
+    "event": "A cat jumps onto your lap and starts purring",
+    "phases": [
+      "cat approaches",
+      "cat lands on lap",
+      "cat begins purring"
+    ],
+    "sub_events": [
+      {
+        "source": "cat",
+        "prompt": "A soft fur-covered body gently landing on fabric with a quiet cushioned thud",
+        "start": 0.0,
+        "duration": 0.3,
+        "intensity": 0.4,
+        "transition": "cut"
+      },
+      {
+        "source": "cat",
+        "prompt": "A warm, steady vibration from a cat's chest as it purrs gently",
+        "start": 0.35,
+        "duration": 6.0,
+        "intensity": 0.5,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 1.2652735710144043,
+    "model": "qwen3-4b",
+    "prompt_version": "prompt_only_v2"
+  },
+  {
+    "event": "A balloon is inflated until it pops",
+    "phases": [
+      "balloon being inflated",
+      "balloon reaches maximum size",
+      "balloon pops"
+    ],
+    "sub_events": [
+      {
+        "source": "balloon",
+        "prompt": "A rubber balloon slowly inflating with a soft, steady stretch vibration",
+        "start": 0.0,
+        "duration": 3.0,
+        "intensity": 0.2,
+        "transition": "cut"
+      },
+      {
+        "source": "balloon",
+        "prompt": "A balloon suddenly popping with a sharp burst and brief high-frequency flutter",
+        "start": 3.0,
+        "duration": 0.4,
+        "intensity": 1.0,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 1.2203142642974854,
+    "model": "qwen3-4b",
+    "prompt_version": "prompt_only_v2"
+  },
+  {
+    "event": "A train approaches, passes by, and fades into the distance",
+    "phases": [
+      "train approaches",
+      "train passes by",
+      "train fades into distance"
+    ],
+    "sub_events": [
+      {
+        "source": "train",
+        "prompt": "A distant train approaching with a steady low rumble",
+        "start": 0.0,
+        "duration": 3.0,
+        "intensity": 0.2,
+        "transition": "cut"
+      },
+      {
+        "source": "train",
+        "prompt": "A train passing by with a sharp, rhythmic vibration and growl",
+        "start": 3.0,
+        "duration": 1.5,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "train",
+        "prompt": "A train fading into the distance with a soft, decaying hum",
+        "start": 4.5,
+        "duration": 2.5,
+        "intensity": 0.3,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 1.630082130432129,
+    "model": "qwen3-4b",
+    "prompt_version": "prompt_only_v2"
+  }
+]

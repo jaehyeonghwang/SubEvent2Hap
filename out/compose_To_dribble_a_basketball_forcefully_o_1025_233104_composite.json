@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] To dribble a basketball forcefully once", "params": {"candidates": 2, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": 3, "gamma": 1.6, "share_repeats": true, "sub_events": 2}, "created": 1792938664.6388247, "kind": "composite", "event": "To dribble a basketball forcefully once", "run": "compose_To_dribble_a_basketball_forcefully_o_1025_233104"}

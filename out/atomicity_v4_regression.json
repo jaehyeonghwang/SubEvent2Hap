@@ -1,0 +1,347 @@
+{
+  "prompt_version": "model_first_v4",
+  "model": "qwen3-4b",
+  "scope": "Hand-specified atomicity regressions only; not routing, waveform quality or a general benchmark.",
+  "passed": 7,
+  "total": 8,
+  "cases": [
+    {
+      "name": "bowl_drop_contact_roll",
+      "event": "A steel marble drops into a metal bowl, strikes the bottom, rolls along the curved surface, and gradually stops.",
+      "expected_indivisible": false,
+      "expected_regime_count": 3,
+      "expected_contact_modes": [
+        "free_flight",
+        "impact",
+        "rolling"
+      ],
+      "judgment": {
+        "driving_modes": [
+          "gravity",
+          "gravity",
+          "gravity",
+          "passive"
+        ],
+        "contact_modes": [
+          "free_flight",
+          "impact",
+          "rolling",
+          "rolling"
+        ],
+        "regime_count": 4,
+        "indivisible": false,
+        "reason": "The motion transitions from free flight to impact, then to sustained rolling contact, and finally gradually slows under unchanged rolling contact — a change in contact mode or driving condition (impact vs. rolling) defines separate regimes."
+      },
+      "passed": false,
+      "stages": [
+        {
+          "stage": "structure_review",
+          "elapsed": 0.998016357421875,
+          "output": {
+            "driving_modes": [
+              "gravity",
+              "gravity",
+              "gravity",
+              "passive"
+            ],
+            "contact_modes": [
+              "free_flight",
+              "impact",
+              "rolling",
+              "rolling"
+            ],
+            "regime_count": 4,
+            "indivisible": false,
+            "reason": "The motion transitions from free flight to impact, then to sustained rolling contact, and finally gradually slows under unchanged rolling contact — a change in contact mode or driving condition (impact vs. rolling) defines separate regimes."
+          },
+          "contract_corrections": []
+        }
+      ]
+    },
+    {
+      "name": "coin_landing_rotation",
+      "event": "A metal coin falls onto a table, spins, wobbles increasingly rapidly, and finally settles flat.",
+      "expected_indivisible": false,
+      "expected_regime_count": null,
+      "expected_contact_modes": null,
+      "judgment": {
+        "driving_modes": [
+          "gravity",
+          "gravity",
+          "gravity",
+          "passive"
+        ],
+        "contact_modes": [
+          "free_flight",
+          "impact",
+          "rolling",
+          "sliding"
+        ],
+        "regime_count": 4,
+        "indivisible": false,
+        "reason": "The motion transitions through distinct physical regimes: free flight, impact, rolling with increasing spin rate, and then sliding as it wobbles and settles. A change in contact mode (from impact to rolling to sliding) and a shift from driven spinning to passive settling constitute separate physical regimes, so the action is not indivisible."
+      },
+      "passed": true,
+      "stages": [
+        {
+          "stage": "structure_review",
+          "elapsed": 1.0161032676696777,
+          "output": {
+            "driving_modes": [
+              "gravity",
+              "gravity",
+              "gravity",
+              "passive"
+            ],
+            "contact_modes": [
+              "free_flight",
+              "impact",
+              "rolling",
+              "sliding"
+            ],
+            "regime_count": 4,
+            "indivisible": false,
+            "reason": "The motion transitions through distinct physical regimes: free flight, impact, rolling with increasing spin rate, and then sliding as it wobbles and settles. A change in contact mode (from impact to rolling to sliding) and a shift from driven spinning to passive settling constitute separate physical regimes, so the action is not indivisible."
+          },
+          "contract_corrections": []
+        }
+      ]
+    },
+    {
+      "name": "slide_wall_collision",
+      "event": "A block slides along a floor and then hits a stationary wall.",
+      "expected_indivisible": false,
+      "expected_regime_count": 2,
+      "expected_contact_modes": null,
+      "judgment": {
+        "driving_modes": [
+          "externally_driven",
+          "passive"
+        ],
+        "contact_modes": [
+          "sliding",
+          "impact"
+        ],
+        "regime_count": 2,
+        "indivisible": false,
+        "reason": "The motion changes from sustained sliding contact to a transient impact with the wall, which constitutes a change in both contact mode and governing conditions."
+      },
+      "passed": true,
+      "stages": [
+        {
+          "stage": "structure_review",
+          "elapsed": 0.66373610496521,
+          "output": {
+            "driving_modes": [
+              "externally_driven",
+              "passive"
+            ],
+            "contact_modes": [
+              "sliding",
+              "impact"
+            ],
+            "regime_count": 2,
+            "indivisible": false,
+            "reason": "The motion changes from sustained sliding contact to a transient impact with the wall, which constitutes a change in both contact mode and governing conditions."
+          },
+          "contract_corrections": []
+        }
+      ]
+    },
+    {
+      "name": "drive_release",
+      "event": "A block is pushed steadily along a floor, then the push is removed and it coasts to rest.",
+      "expected_indivisible": false,
+      "expected_regime_count": 2,
+      "expected_contact_modes": null,
+      "judgment": {
+        "driving_modes": [
+          "externally_driven",
+          "passive"
+        ],
+        "contact_modes": [
+          "rolling",
+          "rolling"
+        ],
+        "regime_count": 2,
+        "indivisible": false,
+        "reason": "The driving mechanism changes from external push to passive coasting, which constitutes a governing condition change even though contact mode remains rolling."
+      },
+      "passed": true,
+      "stages": [
+        {
+          "stage": "structure_review",
+          "elapsed": 0.650503396987915,
+          "output": {
+            "driving_modes": [
+              "externally_driven",
+              "passive"
+            ],
+            "contact_modes": [
+              "rolling",
+              "rolling"
+            ],
+            "regime_count": 2,
+            "indivisible": false,
+            "reason": "The driving mechanism changes from external push to passive coasting, which constitutes a governing condition change even though contact mode remains rolling."
+          },
+          "contract_corrections": []
+        }
+      ]
+    },
+    {
+      "name": "flat_rolling_deceleration",
+      "event": "A ball rolls along a flat surface and gradually slows to rest under unchanged resistance.",
+      "expected_indivisible": true,
+      "expected_regime_count": 1,
+      "expected_contact_modes": [
+        "rolling"
+      ],
+      "judgment": {
+        "driving_modes": [
+          "externally_driven"
+        ],
+        "contact_modes": [
+          "rolling"
+        ],
+        "regime_count": 1,
+        "indivisible": true,
+        "reason": "The ball remains in rolling contact with a flat surface under unchanged resistance, with no change in driving mechanism or contact constraint; gradual slowing does not constitute a regime transition."
+      },
+      "passed": true,
+      "stages": [
+        {
+          "stage": "structure_review",
+          "elapsed": 0.6338317394256592,
+          "output": {
+            "driving_modes": [
+              "externally_driven"
+            ],
+            "contact_modes": [
+              "rolling"
+            ],
+            "regime_count": 1,
+            "indivisible": true,
+            "reason": "The ball remains in rolling contact with a flat surface under unchanged resistance, with no change in driving mechanism or contact constraint; gradual slowing does not constitute a regime transition."
+          },
+          "contract_corrections": []
+        }
+      ]
+    },
+    {
+      "name": "accelerating_flight",
+      "event": "An object falls freely without contact, accelerating under gravity until just before touching the ground.",
+      "expected_indivisible": true,
+      "expected_regime_count": 1,
+      "expected_contact_modes": [
+        "free_flight"
+      ],
+      "judgment": {
+        "driving_modes": [
+          "gravity"
+        ],
+        "contact_modes": [
+          "free_flight"
+        ],
+        "regime_count": 1,
+        "indivisible": true,
+        "reason": "The object moves in a single physical regime: free flight under gravity with no contact, and there is no change in driving mechanism or contact mode throughout the described motion."
+      },
+      "passed": true,
+      "stages": [
+        {
+          "stage": "structure_review",
+          "elapsed": 0.6341526508331299,
+          "output": {
+            "driving_modes": [
+              "gravity"
+            ],
+            "contact_modes": [
+              "free_flight"
+            ],
+            "regime_count": 1,
+            "indivisible": true,
+            "reason": "The object moves in a single physical regime: free flight under gravity with no contact, and there is no change in driving mechanism or contact mode throughout the described motion."
+          },
+          "contract_corrections": []
+        }
+      ]
+    },
+    {
+      "name": "curved_rolling_deceleration",
+      "event": "A marble already rolling along the curved inner surface of a bowl remains in rolling contact as its direction changes and it gradually slows to rest.",
+      "expected_indivisible": true,
+      "expected_regime_count": 1,
+      "expected_contact_modes": [
+        "rolling"
+      ],
+      "judgment": {
+        "driving_modes": [
+          "passive"
+        ],
+        "contact_modes": [
+          "rolling"
+        ],
+        "regime_count": 1,
+        "indivisible": true,
+        "reason": "The marble remains in rolling contact with the bowl's surface throughout, with no change in driving mechanism or contact constraint; gradual slowing and deceleration to rest occur within the same sustained rolling regime."
+      },
+      "passed": true,
+      "stages": [
+        {
+          "stage": "structure_review",
+          "elapsed": 0.680377721786499,
+          "output": {
+            "driving_modes": [
+              "passive"
+            ],
+            "contact_modes": [
+              "rolling"
+            ],
+            "regime_count": 1,
+            "indivisible": true,
+            "reason": "The marble remains in rolling contact with the bowl's surface throughout, with no change in driving mechanism or contact constraint; gradual slowing and deceleration to rest occur within the same sustained rolling regime."
+          },
+          "contract_corrections": []
+        }
+      ]
+    },
+    {
+      "name": "decaying_ringing",
+      "event": "After excitation has ended, a metal plate vibrates with continuously decreasing amplitude under unchanged damping.",
+      "expected_indivisible": true,
+      "expected_regime_count": 1,
+      "expected_contact_modes": null,
+      "judgment": {
+        "driving_modes": [
+          "passive"
+        ],
+        "contact_modes": [
+          "free_flight"
+        ],
+        "regime_count": 1,
+        "indivisible": true,
+        "reason": "The motion remains in a single physical regime with unchanged driving mechanism (passive) and contact mode (free flight), and amplitude decreases continuously without any change in contact constraint or driving force. Gradual decaying vibration under constant damping does not constitute a transition between regimes."
+      },
+      "passed": true,
+      "stages": [
+        {
+          "stage": "structure_review",
+          "elapsed": 0.8321354389190674,
+          "output": {
+            "driving_modes": [
+              "passive"
+            ],
+            "contact_modes": [
+              "free_flight"
+            ],
+            "regime_count": 1,
+            "indivisible": true,
+            "reason": "The motion remains in a single physical regime with unchanged driving mechanism (passive) and contact mode (free flight), and amplitude decreases continuously without any change in contact constraint or driving force. Gradual decaying vibration under constant damping does not constitute a transition between regimes."
+          },
+          "contract_corrections": []
+        }
+      ]
+    }
+  ]
+}

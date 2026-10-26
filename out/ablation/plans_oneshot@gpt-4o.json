@@ -1,0 +1,1015 @@
+{
+ "c01": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Simulate the impact of a basketball hitting the ground with force.",
+    "start": 0.0,
+    "duration": 0.2,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Simulate the vibration of a basketball bouncing back up after impact.",
+    "start": 0.2,
+    "duration": 0.3,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.8837239742279053
+ },
+ "c02": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A subtle vibration as the player sticks the gun to their hand.",
+    "start": 0.0,
+    "duration": 0.5,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A steady vibration as the player aims the gun.",
+    "start": 0.5,
+    "duration": 1.0,
+    "intensity": 0.5,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A sharp, intense vibration as the gun is fired.",
+    "start": 1.5,
+    "duration": 0.2,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.6816213130950928
+ },
+ "c03": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "First tree shake, a short burst of vibration",
+    "start": 0.0,
+    "duration": 0.5,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Pause between shakes",
+    "start": 0.5,
+    "duration": 0.5,
+    "intensity": 0.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Second tree shake, a short burst of vibration",
+    "start": 1.0,
+    "duration": 0.5,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Pause between shakes",
+    "start": 1.5,
+    "duration": 0.5,
+    "intensity": 0.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Third tree shake, a short burst of vibration",
+    "start": 2.0,
+    "duration": 0.5,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Pause before apple falls",
+    "start": 2.5,
+    "duration": 0.5,
+    "intensity": 0.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Apple falls on head, a sudden strong vibration",
+    "start": 3.0,
+    "duration": 1.0,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 2.2566640377044678
+ },
+ "c04": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A single loud clap vibration.",
+    "start": 0.0,
+    "duration": 0.2,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.092660903930664
+ },
+ "c05": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A slight vibration as he bends the stick gently.",
+    "start": 0.0,
+    "duration": 0.5,
+    "intensity": 0.2,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Another slight vibration as he bends the stick again, still gentle.",
+    "start": 0.6,
+    "duration": 0.5,
+    "intensity": 0.2,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A strong vibration as he applies force to break the stick.",
+    "start": 1.2,
+    "duration": 0.8,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A sharp, quick vibration as the stick snaps.",
+    "start": 2.1,
+    "duration": 0.3,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.9352779388427734
+ },
+ "c06": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Crumple paper forcefully",
+    "start": 0.0,
+    "duration": 0.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Crumple paper forcefully",
+    "start": 0.6,
+    "duration": 0.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Crumple paper forcefully",
+    "start": 1.2,
+    "duration": 0.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Slam paper to the ground",
+    "start": 2.0,
+    "duration": 0.3,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.7514374256134033
+ },
+ "c07": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Rapid typing on a keyboard",
+    "start": 0.0,
+    "duration": 4.0,
+    "intensity": 0.7,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Slow single mouse click",
+    "start": 4.5,
+    "duration": 1.5,
+    "intensity": 0.3,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.350264072418213
+ },
+ "c08": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Simulate the sensation of typing on a keyboard",
+    "start": 0.0,
+    "duration": 3.0,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Simulate the sensation of typing on a keyboard",
+    "start": 3.0,
+    "duration": 2.0,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Simulate a single mouse click",
+    "start": 5.0,
+    "duration": 0.2,
+    "intensity": 0.5,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.4716124534606934
+ },
+ "c09": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Initial contact of the soccer ball with the ground, a quick and soft vibration",
+    "start": 0.0,
+    "duration": 0.2,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Steady dribbling of the soccer ball, rhythmic and consistent vibrations",
+    "start": 0.2,
+    "duration": 1.5,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "Final bounce of the soccer ball, a slightly stronger and longer vibration",
+    "start": 1.7,
+    "duration": 0.3,
+    "intensity": 0.6,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.9840350151062012
+ },
+ "c10": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A water bomb pops with a quick burst",
+    "start": 0.0,
+    "duration": 0.3,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Water splashes outward with a gentle ripple",
+    "start": 0.3,
+    "duration": 0.5,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The impact of water hitting the enemy with a forceful thud",
+    "start": 0.8,
+    "duration": 0.4,
+    "intensity": 0.7,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.609464406967163
+ },
+ "c11": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "First mosquito bite on the right hand",
+    "start": 0.0,
+    "duration": 0.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Second mosquito bite on the right hand",
+    "start": 1.0,
+    "duration": 0.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Itchiness from mosquito bites on the right hand",
+    "start": 2.0,
+    "duration": 3.0,
+    "intensity": 0.6,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.4917619228363037
+ },
+ "c12": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Strong, rhythmic chest compressions at 100 beats per minute",
+    "start": 0.0,
+    "duration": 10.0,
+    "intensity": 0.8,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.0383079051971436
+ },
+ "s01": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Simulate the sensation of driving a racing car on a rainy day with subtle vibrations to mimic the road texture and rain impact.",
+    "start": 0.0,
+    "duration": 3.0,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Sudden increase in vibration intensity to simulate loss of control of the car.",
+    "start": 3.0,
+    "duration": 1.0,
+    "intensity": 0.8,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "Sharp, intense vibration to simulate the impact of crashing into a tree.",
+    "start": 4.0,
+    "duration": 1.0,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.7055203914642334
+ },
+ "s02": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Smooth, continuous vibration to simulate riding on a smooth track",
+    "start": 0.0,
+    "duration": 4.0,
+    "intensity": 0.2,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Irregular, bumpy vibration to simulate riding on a gravel field",
+    "start": 4.0,
+    "duration": 6.0,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.3745248317718506
+ },
+ "s03": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Smooth and steady vibration to simulate riding on a smooth track",
+    "start": 0.0,
+    "duration": 4.0,
+    "intensity": 0.2,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Gradual increase in vibration intensity to simulate transition from smooth track to bumpy road",
+    "start": 4.0,
+    "duration": 1.0,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "Irregular and intense vibrations to simulate riding on a bumpy road",
+    "start": 5.0,
+    "duration": 5.0,
+    "intensity": 0.8,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.9394192695617676
+ },
+ "s04": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A distant ambulance siren gradually getting louder as it approaches.",
+    "start": 0.0,
+    "duration": 3.0,
+    "intensity": 0.4,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The ambulance siren is at its loudest as it passes by the window.",
+    "start": 3.0,
+    "duration": 2.0,
+    "intensity": 0.8,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The ambulance siren gradually getting quieter as it moves away.",
+    "start": 5.0,
+    "duration": 3.0,
+    "intensity": 0.4,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.537679672241211
+ },
+ "s05": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Initial attempt to open a jar, slight vibration as the hand grips and twists.",
+    "start": 0.0,
+    "duration": 1.0,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Increased effort to open the jar, stronger vibration as the struggle continues.",
+    "start": 1.0,
+    "duration": 2.0,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "Maximum effort, intense vibration as the jar is about to open.",
+    "start": 3.0,
+    "duration": 1.0,
+    "intensity": 0.8,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "Sudden release and pop, quick intense vibration followed by silence.",
+    "start": 4.0,
+    "duration": 0.5,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 2.134303569793701
+ },
+ "s06": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Simulate the impact of an arrow hitting a hard surface",
+    "start": 0.0,
+    "duration": 0.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Simulate the arrow smoothly penetrating a soft surface",
+    "start": 0.5,
+    "duration": 1.5,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "Simulate the arrow exiting through a hard surface",
+    "start": 2.0,
+    "duration": 0.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.528785228729248
+ },
+ "s07": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Simulate rapid typing on a keyboard",
+    "start": 0.0,
+    "duration": 2.5,
+    "intensity": 0.7,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Simulate hitting the enter key",
+    "start": 2.5,
+    "duration": 0.2,
+    "intensity": 0.9,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Simulate rapid typing on a keyboard",
+    "start": 2.7,
+    "duration": 2.5,
+    "intensity": 0.7,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Simulate hitting the enter key",
+    "start": 5.2,
+    "duration": 0.2,
+    "intensity": 0.9,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Simulate rapid typing on a keyboard",
+    "start": 5.4,
+    "duration": 2.5,
+    "intensity": 0.7,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Simulate hitting the enter key",
+    "start": 7.9,
+    "duration": 0.2,
+    "intensity": 0.9,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Simulate a pause after typing",
+    "start": 8.1,
+    "duration": 1.9,
+    "intensity": 0.2,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 2.0946366786956787
+ },
+ "s08": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Initial strong push as swimmer starts butterfly stroke",
+    "start": 0.0,
+    "duration": 0.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Arms emerge from the water with force",
+    "start": 0.5,
+    "duration": 0.7,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Arms re-enter the water smoothly",
+    "start": 1.2,
+    "duration": 0.5,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Repeat the strong push for the next stroke",
+    "start": 1.7,
+    "duration": 0.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Arms emerge from the water again",
+    "start": 2.2,
+    "duration": 0.7,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Arms re-enter the water smoothly again",
+    "start": 2.9,
+    "duration": 0.5,
+    "intensity": 0.6,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 2.216280221939087
+ },
+ "s09": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Simulate the feeling of dribbling a basketball, with regular rhythmic vibrations",
+    "start": 0.0,
+    "duration": 3.0,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Sudden intense vibration to simulate the ball being slapped out of hand",
+    "start": 3.0,
+    "duration": 0.5,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.6837942600250244
+ },
+ "s10": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Start dribbling a basketball with a steady rhythm",
+    "start": 0.0,
+    "duration": 2.0,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Continue dribbling the basketball with a steady rhythm",
+    "start": 2.0,
+    "duration": 3.0,
+    "intensity": 0.3,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "Opponent slaps the basketball out of your hand with a sudden impact",
+    "start": 5.0,
+    "duration": 0.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.467782735824585
+ },
+ "s11": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The truck accelerates rapidly on a highway, creating a low, steady rumble.",
+    "start": 0.0,
+    "duration": 2.0,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Heavy snowfall begins, creating a soft, irregular vibration pattern.",
+    "start": 2.0,
+    "duration": 3.0,
+    "intensity": 0.3,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The truck speeds through the snow, causing a continuous, intense vibration.",
+    "start": 3.0,
+    "duration": 3.0,
+    "intensity": 0.8,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The truck crashes into a moose, resulting in a sudden, sharp jolt.",
+    "start": 6.0,
+    "duration": 1.0,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 2.187609910964966
+ },
+ "s12": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A soft, gentle rumble to simulate a stomach's initial hunger signal.",
+    "start": 0.0,
+    "duration": 2.0,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A more intense, louder growl to simulate a stronger hunger contraction.",
+    "start": 2.0,
+    "duration": 3.0,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "A deep, resonant vibration to simulate a burp-like sensation.",
+    "start": 5.0,
+    "duration": 2.5,
+    "intensity": 0.5,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.9462544918060303
+ },
+ "s13": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Vibration of unzipping a pencil case",
+    "start": 0.0,
+    "duration": 0.5,
+    "intensity": 0.7,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Vibration of opening a pencil case",
+    "start": 0.5,
+    "duration": 0.3,
+    "intensity": 0.5,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Vibration of stirring inside a pencil case",
+    "start": 0.8,
+    "duration": 2.0,
+    "intensity": 0.6,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "Vibration of finding an object inside a pencil case",
+    "start": 2.8,
+    "duration": 0.5,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Vibration of zipping a pencil case closed",
+    "start": 3.3,
+    "duration": 0.5,
+    "intensity": 0.7,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 2.9891650676727295
+ },
+ "s14": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Simulate a sudden, intense crash impact with vibrations",
+    "start": 0.0,
+    "duration": 0.5,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Simulate silence with no vibrations",
+    "start": 0.5,
+    "duration": 9.5,
+    "intensity": 0.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.5446264743804932
+ },
+ "s15": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Simulate the tension of pulling back a bowstring with increasing resistance",
+    "start": 0.0,
+    "duration": 2.0,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Sudden release of tension as the bowstring is let go",
+    "start": 2.0,
+    "duration": 0.5,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Simulate the vibration of the arrow flying through the air",
+    "start": 2.5,
+    "duration": 1.0,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.9430315494537354
+ },
+ "s16": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Simulate the increasing tension as the bowstring is pulled back with all strength.",
+    "start": 0.0,
+    "duration": 2.0,
+    "intensity": 0.8,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "Maintain a high tension as the bowstring is held at full draw.",
+    "start": 2.0,
+    "duration": 1.0,
+    "intensity": 1.0,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "Simulate the sudden release and snap of the bowstring.",
+    "start": 3.0,
+    "duration": 0.5,
+    "intensity": 0.9,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.7890973091125488
+ },
+ "s17": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Fast-paced rally begins, mimicking quick movements of a badminton rally.",
+    "start": 0.0,
+    "duration": 3.0,
+    "intensity": 0.6,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Steady rhythm of the rally, maintaining a consistent pace.",
+    "start": 3.0,
+    "duration": 4.0,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "Powerful smash to end the game, with a strong and sudden vibration.",
+    "start": 7.0,
+    "duration": 1.0,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.8594207763671875
+ },
+ "s18": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Initial attempt to open a crinkly vinyl snack package, gentle vibrations as fingers touch the package.",
+    "start": 0.0,
+    "duration": 1.0,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Struggling with the package, vibrations become more intense and erratic as the user tries to open it.",
+    "start": 1.0,
+    "duration": 2.0,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "The package is finally torn open with a sharp, crisp rip, a sudden and strong vibration.",
+    "start": 3.0,
+    "duration": 0.5,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 2.0607802867889404
+ },
+ "s19": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "User attempts to open a vinyl snack package with gentle pressure.",
+    "start": 0.0,
+    "duration": 1.5,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "User struggles with the package, applying more force but still unable to open it.",
+    "start": 1.5,
+    "duration": 2.5,
+    "intensity": 0.5,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "User finally tears the package open with a sharp, sudden motion.",
+    "start": 4.0,
+    "duration": 0.5,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.7707469463348389
+ },
+ "s20": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Strong vibration to simulate the force applied to open a tightly sealed jar",
+    "start": 0.0,
+    "duration": 2.0,
+    "intensity": 0.8,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Sudden, short burst of vibration to simulate the jar lid popping open with a cheerful puff",
+    "start": 2.1,
+    "duration": 0.5,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.2986807823181152
+ },
+ "s21": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "Anticipation before the bungee jump",
+    "start": 0.0,
+    "duration": 1.0,
+    "intensity": 0.3,
+    "transition": "cut"
+   },
+   {
+    "prompt": "Initial drop of the bungee jump",
+    "start": 1.0,
+    "duration": 0.5,
+    "intensity": 0.8,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "Slicing through the wind during fall",
+    "start": 1.5,
+    "duration": 6.0,
+    "intensity": 1.0,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "End of the jump, no more wind",
+    "start": 7.5,
+    "duration": 2.5,
+    "intensity": 0.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 1,
+  "leaf_models": [],
+  "seconds": 1.7418785095214844
+ }
+}

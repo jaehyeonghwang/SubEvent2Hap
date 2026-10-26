@@ -1,0 +1,55 @@
+{
+  "event": "To dribble a basketball forcefully once",
+  "sub_events": [
+    {
+      "prompt": "The basketball impacts the ground.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_To_dribble_a_basketball_forcefully_o_1026_011450/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0565,
+        0.2584
+      ],
+      "offset": 0.167,
+      "shared": false
+    },
+    {
+      "prompt": "The basketball rebounds off the ground.",
+      "start": 0.8,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_To_dribble_a_basketball_forcefully_o_1026_011450/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0865,
+        0.0533
+      ],
+      "offset": 0.334,
+      "shared": false
+    }
+  ],
+  "total": 1.1,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_To_dribble_a_basketball_forcefully_o_1026_011450_composite.wav",
+  "baseline": "compose_To_dribble_a_basketball_forcefully_o_1026_011450_baseline.wav",
+  "gen_duration": 1.5,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.5865228176116943,
+  "elapsed": 2.6002659797668457
+}

@@ -1,0 +1,601 @@
+{
+ "c01": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "basketball dribble forcefully once",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 5.111257314682007
+ },
+ "c02": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "gun shoots at the enemy once",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 4.067934513092041
+ },
+ "c03": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A single sharp impact of tree against unspecified surface",
+    "start": 0.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of tree against unspecified surface",
+    "start": 0.35,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of tree against unspecified surface",
+    "start": 0.7,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 2,
+  "leaf_models": [
+   "rhythmic_action"
+  ],
+  "seconds": 2.146934986114502
+ },
+ "c04": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "clap loudly once",
+    "start": 0.0,
+    "duration": 0.5,
+    "intensity": 1.0,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 4.737313985824585
+ },
+ "c05": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...inct physical regimes.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 22.539571046829224
+ },
+ "c06": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A single sharp impact of paper against ground",
+    "start": 0.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of paper against ground",
+    "start": 0.35,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of paper against ground",
+    "start": 0.7,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 2,
+  "leaf_models": [
+   "rhythmic_action"
+  ],
+  "seconds": 2.595149517059326
+ },
+ "c07": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "keys rolling over keyboard surface",
+    "start": 0.0,
+    "duration": 2.7192432346078093,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "mouse tip striking surface with a single impact",
+    "start": 2.7192432346078093,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 12,
+  "leaf_models": [
+   "single_impact",
+   "rolling"
+  ],
+  "seconds": 14.266664266586304
+ },
+ "c08": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...tinct physical regime.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 4.081653118133545
+ },
+ "c09": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A single sharp impact of soccer ball against unspecified surface",
+    "start": 0.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of soccer ball against unspecified surface",
+    "start": 0.35,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of soccer ball against unspecified surface",
+    "start": 0.7,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 2,
+  "leaf_models": [
+   "rhythmic_action"
+  ],
+  "seconds": 2.416285991668701
+ },
+ "c10": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "water bomb pops and splashes once as I hit the enemy",
+    "start": 0.0,
+    "duration": 0.3,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 5.413583517074585
+ },
+ "c11": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "right hand itching from mosquito bites",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 3.9078831672668457
+ },
+ "c12": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "I have to do CPR heavily and strongly pressing his chest constantly with the speed of pressing 100 times in a minute",
+    "start": 0.0,
+    "duration": 9.9,
+    "intensity": 1.0,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 6.070717811584473
+ },
+ "s01": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...e and physical regime.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 17.15576148033142
+ },
+ "s02": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...in contact constraint.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 3.3183860778808594
+ },
+ "s03": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...e continuous movement.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 3.9987645149230957
+ },
+ "s04": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "ambulance sliding against outside window",
+    "start": 0.0,
+    "duration": 0.2719243234607809,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 2,
+  "leaf_models": [
+   "sliding"
+  ],
+  "seconds": 2.225444793701172
+ },
+ "s05": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "pickle jar attempting to open",
+    "start": 0.0,
+    "duration": 0.3,
+    "intensity": 0.1,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "jar opens due to sudden impact between the lid and the jar's sealing surface",
+    "start": 0.3,
+    "duration": 1.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 14,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 16.375399351119995
+ },
+ "s06": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...arate physical regime.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 4.964078187942505
+ },
+ "s07": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "graduate student rigorously typing computer keyboard and hitting enter key after each paragraph, then pause",
+    "start": 0.0,
+    "duration": 2.5,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 5.240013360977173
+ },
+ "s08": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "swimmer swims in butterfly stroke, strongly comes out of water with both arms, then goes back into water",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 5.0855019092559814
+ },
+ "s09": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 0.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 0.35,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 0.7,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 1.0499999999999998,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "opponent forcefully slaps the ball out of hand, resulting in a large splat as the ball undergoes a sudden impact and loss of contact with the hand",
+    "start": 1.1999999999999997,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 11,
+  "leaf_models": [
+   "lm_atomic",
+   "rhythmic_action"
+  ],
+  "seconds": 14.690219163894653
+ },
+ "s10": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 0.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 0.35,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 0.7,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 1.0499999999999998,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "opponent slaps the ball out of your hand",
+    "start": 1.1999999999999997,
+    "duration": 0.3,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 11,
+  "leaf_models": [
+   "lm_atomic",
+   "rhythmic_action"
+  ],
+  "seconds": 13.817625045776367
+ },
+ "s11": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...tion and contact mode.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 3.1151881217956543
+ },
+ "s12": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "stomach rumbles softly, then contracts with a louder growl, almost like a burp",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 5.4462103843688965
+ },
+ "s13": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "pencil case zipping and opening",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "pencil zipped the pencil case back to close it",
+    "start": 0.8,
+    "duration": 0.8,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "pencil case stirring looking for the pencil",
+    "start": 1.6,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 17,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 23.948547840118408
+ },
+ "s14": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...inct physical regimes.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 4.101886510848999
+ },
+ "s15": {
+  "ok": false,
+  "error": "ValueError: split_review stage returned invalid output: 1 validation error for CountedSplitDecision\nchildren.0\n  Value error, State links require direct sequential continuity without an unmodeled pause [type=value_error, input_value={'description': 'I pulled...te_link': 'same_object'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 12.537137746810913
+ },
+ "s16": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...rate physical regimes.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 4.633162260055542
+ },
+ "s17": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The badminton rally continued at a fast and steady pace until the game ended with a powerful smash. continued at a fast and steady pace until the game ended with a powerful smash",
+    "start": 0.0,
+    "duration": 3.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 5.485440492630005
+ },
+ "s18": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "crinkled vinyl snack package passively unfolding",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.35,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "vinyl snack package tearing open with a sharp, crisp rip involving sustained sliding contact and external force application",
+    "start": 0.8,
+    "duration": 0.8,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 12,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 15.590273141860962
+ },
+ "s19": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "vinyl snack package tearing open with a sharp sound",
+    "start": 0.0,
+    "duration": 2.1,
+    "intensity": 0.9,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 3.32981014251709
+ },
+ "s20": {
+  "ok": false,
+  "error": "ValueError: model_selection stage returned invalid output: 1 validation error for Decision\n  Value error, split requires no model and at least two children [type=value_error, input_value={'kind': 'split', 'model'... 'state_link': 'none'}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 2.506627082824707
+ },
+ "s21": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "You fall through the air, slicing through the wind which makes a very large noise",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "cut"
+   },
+   {
+    "prompt": "you sliding against ground",
+    "start": 0.8,
+    "duration": 0.2719243234607809,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 12,
+  "leaf_models": [
+   "sliding",
+   "lm_atomic"
+  ],
+  "seconds": 13.897757291793823
+ }
+}

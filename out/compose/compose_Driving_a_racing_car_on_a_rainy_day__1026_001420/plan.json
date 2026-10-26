@@ -1,0 +1,70 @@
+{
+  "event": "Driving a racing car on a rainy day then suddenly losing control of the car and crash into a tree.",
+  "sub_events": [
+    {
+      "prompt": "Simulate the sensation of driving a racing car on a rainy day with subtle vibrations to mimic the road texture and rain impact.",
+      "start": 0.0,
+      "duration": 3.0,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_001420/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.1805,
+        0.1581
+      ],
+      "offset": 0.294,
+      "shared": false
+    },
+    {
+      "prompt": "Sudden increase in vibration intensity to simulate loss of control of the car.",
+      "start": 3.0,
+      "duration": 1.0,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_001420/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.7354,
+        0.3392
+      ],
+      "offset": 0.002,
+      "shared": false
+    },
+    {
+      "prompt": "Sharp, intense vibration to simulate the impact of crashing into a tree.",
+      "start": 4.0,
+      "duration": 1.0,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_racing_car_on_a_rainy_day__1026_001420/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.3676,
+        0.2892
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 5.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Driving_a_racing_car_on_a_rainy_day__1026_001420_composite.wav",
+  "baseline": null,
+  "gen_duration": 4.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.3666815757751465,
+  "elapsed": 4.381423473358154
+}

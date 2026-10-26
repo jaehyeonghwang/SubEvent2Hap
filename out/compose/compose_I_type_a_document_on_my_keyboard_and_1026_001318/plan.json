@@ -1,0 +1,70 @@
+{
+  "event": "I type a document on my keyboard and click my mouse once",
+  "sub_events": [
+    {
+      "prompt": "Simulate the sensation of typing on a keyboard",
+      "start": 0.0,
+      "duration": 3.0,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_001318/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0115,
+        0.0057
+      ],
+      "offset": 0.495,
+      "shared": true
+    },
+    {
+      "prompt": "Simulate the sensation of typing on a keyboard",
+      "start": 3.0,
+      "duration": 2.0,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_001318/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0115,
+        0.0057
+      ],
+      "offset": 1.285,
+      "shared": true
+    },
+    {
+      "prompt": "Simulate a single mouse click",
+      "start": 5.0,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_001318/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0143,
+        0.0024
+      ],
+      "offset": 0.06,
+      "shared": false
+    }
+  ],
+  "total": 5.2,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_type_a_document_on_my_keyboard_and_1026_001318_composite.wav",
+  "baseline": null,
+  "gen_duration": 4.0,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.315417289733887,
+  "elapsed": 4.3261189460754395
+}

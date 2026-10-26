@@ -1,0 +1,87 @@
+{
+  "event": "He was feeling so upset that he crumpled the paper forcefully three times and slammed it to the ground.",
+  "sub_events": [
+    {
+      "prompt": "The paper is crumpling.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_was_feeling_so_upset_that_he_crum_1026_010902/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0042,
+        0.0118
+      ],
+      "offset": 0.803,
+      "shared": true
+    },
+    {
+      "prompt": "The paper is crumpling.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_was_feeling_so_upset_that_he_crum_1026_010902/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0042,
+        0.0118
+      ],
+      "offset": 0.803,
+      "shared": true
+    },
+    {
+      "prompt": "The paper is crumpling.",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_was_feeling_so_upset_that_he_crum_1026_010902/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0042,
+        0.0118
+      ],
+      "offset": 0.803,
+      "shared": true
+    },
+    {
+      "prompt": "The paper is slamming to the ground.",
+      "start": 2.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_He_was_feeling_so_upset_that_he_crum_1026_010902/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.1433,
+        0.1117
+      ],
+      "offset": 0.183,
+      "shared": false
+    }
+  ],
+  "total": 2.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_was_feeling_so_upset_that_he_crum_1026_010902_composite.wav",
+  "baseline": "compose_He_was_feeling_so_upset_that_he_crum_1026_010902_baseline.wav",
+  "gen_duration": 2.5,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.3116743564605713,
+  "elapsed": 2.33250093460083
+}

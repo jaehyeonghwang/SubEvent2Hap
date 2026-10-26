@@ -1,0 +1,600 @@
+{
+  "event": "A steel ball is dropped onto a hard floor.",
+  "sub_events": [
+    {
+      "prompt": "steel ball striking hard floor with a single impact",
+      "start": 0.45160075575178754,
+      "duration": 0.15,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "steel ball / hard floor",
+      "file": "compose/compose_A_steel_ball_is_dropped_onto_a_hard__1025_221816/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.483,
+        0.0818
+      ],
+      "offset": 0.104,
+      "shared": true
+    },
+    {
+      "prompt": "steel ball striking hard floor with a single impact",
+      "start": 1.1741619649546475,
+      "duration": 0.15,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "steel ball / hard floor",
+      "file": "compose/compose_A_steel_ball_is_dropped_onto_a_hard__1025_221816/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.483,
+        0.0818
+      ],
+      "offset": 0.104,
+      "shared": true
+    },
+    {
+      "prompt": "steel ball striking hard floor with a single impact",
+      "start": 1.7522109323169355,
+      "duration": 0.15,
+      "intensity": 0.6400000000000001,
+      "transition": "cut",
+      "source": "steel ball / hard floor",
+      "file": "compose/compose_A_steel_ball_is_dropped_onto_a_hard__1025_221816/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.483,
+        0.0818
+      ],
+      "offset": 0.104,
+      "shared": true
+    },
+    {
+      "prompt": "steel ball striking hard floor with a single impact",
+      "start": 2.214650106206766,
+      "duration": 0.15,
+      "intensity": 0.5120000000000001,
+      "transition": "cut",
+      "source": "steel ball / hard floor",
+      "file": "compose/compose_A_steel_ball_is_dropped_onto_a_hard__1025_221816/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.483,
+        0.0818
+      ],
+      "offset": 0.104,
+      "shared": true
+    },
+    {
+      "prompt": "steel ball striking hard floor with a single impact",
+      "start": 2.58460144531863,
+      "duration": 0.15,
+      "intensity": 0.4096000000000001,
+      "transition": "cut",
+      "source": "steel ball / hard floor",
+      "file": "compose/compose_A_steel_ball_is_dropped_onto_a_hard__1025_221816/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.483,
+        0.0818
+      ],
+      "offset": 0.104,
+      "shared": true
+    },
+    {
+      "prompt": "steel ball striking hard floor with a single impact",
+      "start": 2.880562516608122,
+      "duration": 0.15,
+      "intensity": 0.3276800000000001,
+      "transition": "cut",
+      "source": "steel ball / hard floor",
+      "file": "compose/compose_A_steel_ball_is_dropped_onto_a_hard__1025_221816/sub_06.wav",
+      "candidate": 0,
+      "scores": [
+        0.483,
+        0.0818
+      ],
+      "offset": 0.104,
+      "shared": true
+    },
+    {
+      "prompt": "steel ball striking hard floor with a single impact",
+      "start": 3.1173313736397152,
+      "duration": 0.15,
+      "intensity": 0.2621440000000001,
+      "transition": "cut",
+      "source": "steel ball / hard floor",
+      "file": "compose/compose_A_steel_ball_is_dropped_onto_a_hard__1025_221816/sub_07.wav",
+      "candidate": 0,
+      "scores": [
+        0.483,
+        0.0818
+      ],
+      "offset": 0.104,
+      "shared": true
+    },
+    {
+      "prompt": "steel ball striking hard floor with a single impact",
+      "start": 3.30674645926499,
+      "duration": 0.15,
+      "intensity": 0.20971520000000007,
+      "transition": "cut",
+      "source": "steel ball / hard floor",
+      "file": "compose/compose_A_steel_ball_is_dropped_onto_a_hard__1025_221816/sub_08.wav",
+      "candidate": 0,
+      "scores": [
+        0.483,
+        0.0818
+      ],
+      "offset": 0.104,
+      "shared": true
+    }
+  ],
+  "total": 3.45674645926499,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 42,
+    "gamma": 1.0,
+    "share_repeats": true
+  },
+  "composite": "compose_A_steel_ball_is_dropped_onto_a_hard__1025_221816_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.3791441917419434,
+  "elapsed": 1.3975329399108887,
+  "hierarchy": {
+    "version": "model_first_v4",
+    "original_event": "A steel ball is dropped onto a hard floor.",
+    "regime_criterion": "Define action boundaries by CONTACT MODE and GOVERNING CONDITIONS,\nnot by whether an object's movement is continuous. One atomic physical regime has\nthe same kind of contact constraint and driving mechanism throughout. Separate\nflight without contact, a transient impact, and sustained surface contact when the\ndescription includes those transitions. Also separate a change of contact mode or\nan explicitly changed driving mechanism. A continuous trajectory can cross several\nregimes, and using the same object does not make them one action.\nAn external force/drive being applied or removed IS a governing-condition change,\neven if contact mode stays the same. Driven motion and passive coasting are separate.\nWithin unchanged contact/driving conditions, gradual changes of speed, frequency,\namplitude, orientation or direction do not alone require another action. Deceleration\nto rest under unchanged conditions MUST remain in that same action, not a separate\nslowing/stopping child. Rest does not add vibration.\nPreserve coupled simultaneous behavior within one regime. Do not invent transitions\nor split into microscopic mechanics. Model availability does not determine atomicity.\nA scenario model that explicitly covers all regime transitions may still handle the\nwhole action as one MODEL-COVERED leaf; this does not claim the action is atomic.\n",
+    "catalog": [
+      {
+        "name": "vertical_bounce",
+        "family": "collision",
+        "scope": "scenario",
+        "applicability": "Passive vertical drop/rebound process on a fixed flat surface, with one or more contacts. Point-body approximation without spin. Not active dribbling or later rolling.",
+        "parameters": [
+          "height_m",
+          "restitution",
+          "mass_kg",
+          "start_s",
+          "count"
+        ]
+      },
+      {
+        "name": "free_fall",
+        "family": "flight",
+        "scope": "basic",
+        "applicability": "Free vertical flight ending at first surface contact. No impact vibration is generated by this model; split off a subsequent impact when needed.",
+        "parameters": [
+          "height_m",
+          "vertical_velocity_m_s",
+          "mass_kg",
+          "start_s"
+        ]
+      },
+      {
+        "name": "single_impact",
+        "family": "collision",
+        "scope": "basic",
+        "applicability": "One isolated normal impact against a fixed surface. Does not include repeated action or a separately described ringing tail.",
+        "parameters": [
+          "normal_speed_m_s",
+          "restitution",
+          "mass_kg",
+          "start_s"
+        ]
+      },
+      {
+        "name": "sliding",
+        "family": "friction",
+        "scope": "basic",
+        "applicability": "Sliding/dragging on a flat horizontal surface with Coulomb friction, either unpowered coasting or externally maintained constant speed. Not rolling, curved/inclined surfaces or arbitrary varying force.",
+        "parameters": [
+          "speed_m_s",
+          "friction_coefficient",
+          "mass_kg",
+          "duration_s",
+          "start_s"
+        ]
+      },
+      {
+        "name": "rolling",
+        "family": "friction",
+        "scope": "basic",
+        "applicability": "Rolling on a flat horizontal surface with effective constant rolling-resistance deceleration. Curved/inclined surfaces are unsupported. No bounce-to-roll conversion is inferred.",
+        "parameters": [
+          "speed_m_s",
+          "rolling_resistance",
+          "mass_kg",
+          "duration_s",
+          "start_s"
+        ]
+      },
+      {
+        "name": "damped_oscillation",
+        "family": "damping",
+        "scope": "basic",
+        "applicability": "One decaying ringing/vibration tail after excitation. The excitation impact itself must be separate if also requested.",
+        "parameters": [
+          "frequency_hz",
+          "damping_ratio",
+          "excitation_energy_J",
+          "duration_s",
+          "start_s"
+        ]
+      },
+      {
+        "name": "periodic",
+        "family": "periodic",
+        "scope": "basic",
+        "applicability": "Continuous steady periodic vibration of a motor/tool. Uses a sinusoidal carrier. Not a small count of distinct knocks.",
+        "parameters": [
+          "frequency_hz",
+          "rpm",
+          "duration_s",
+          "start_s"
+        ]
+      },
+      {
+        "name": "stochastic",
+        "family": "stochastic",
+        "scope": "process",
+        "applicability": "Irregular independent contacts such as sparse raindrops/gravel, represented by a Poisson process or its fixed-count conditional form.",
+        "parameters": [
+          "rate_hz",
+          "duration_s",
+          "count",
+          "seed",
+          "start_s"
+        ]
+      },
+      {
+        "name": "rhythmic_action",
+        "family": "behavior",
+        "scope": "process",
+        "applicability": "Intentional repeated knocks/steps/taps, including active dribbling. Cadence is behavioral, not passive restitution.",
+        "parameters": [
+          "count",
+          "interval_s",
+          "tempo_bpm",
+          "interval_ratio",
+          "strength_ratio",
+          "start_s"
+        ]
+      }
+    ],
+    "selection_owner": "LM",
+    "parameter_estimation": true,
+    "tree": {
+      "id": "node_0",
+      "description": "A steel ball is dropped onto a hard floor.",
+      "entity_key": "root",
+      "depth": 0,
+      "children": [],
+      "incoming_state": {},
+      "decision": {
+        "kind": "apply",
+        "model": "vertical_bounce",
+        "reason": "The scenario describes a passive drop and rebound process on a hard floor, which is fully covered by the vertical_bounce model that handles one or more contacts without spin or rolling.",
+        "children": []
+      },
+      "model_rejections": [],
+      "structure_review": null,
+      "model": "vertical_bounce",
+      "scope": "scenario",
+      "stop_reason": "model_covers_action",
+      "selection_reason": "The scenario describes a passive drop and rebound process on a hard floor, which is fully covered by the vertical_bounce model that handles one or more contacts without spin or rolling.",
+      "physics": {
+        "version": "vertical_bounce_v1",
+        "model_kind": "collision",
+        "setup": {
+          "supported": true,
+          "reason": "The action 'A steel ball is dropped onto a hard floor' fits the scope of the vertical_bounce model as it describes a passive vertical drop and rebound process on a fixed flat surface, involving one or more contacts. The scenario uses a point-body approximation without spin, which aligns with the model's applicability. All stated geometry and contact constraints are within the declared scope.",
+          "object_name": "steel ball",
+          "surface_name": "hard floor",
+          "height_m": null,
+          "restitution": null,
+          "mass_kg": null,
+          "start_s": null,
+          "count": null
+        },
+        "parameters": {
+          "start_s": 0.0,
+          "height_m": 1.0,
+          "restitution": 0.8,
+          "mass_kg": 0.1,
+          "count": 8,
+          "physical_contact_count": 11
+        },
+        "provenance": {
+          "start_s": "assumed_default",
+          "height_m": "estimated_by_lm",
+          "restitution": "estimated_by_lm",
+          "mass_kg": "estimated_by_lm",
+          "count": "derived_until_threshold",
+          "physical_contact_count": "derived_until_threshold"
+        },
+        "equations": [
+          "t1=start+sqrt(2h/g)",
+          "v_k=sqrt(2gh)*e^(k-1)",
+          "dt_k=2e*v_k/g",
+          "count = number of contacts with e^(k-1) >= 0.1"
+        ],
+        "estimates": {
+          "height_m": {
+            "value": 1.0,
+            "low": 0.5,
+            "high": 2.0,
+            "basis": "typical drop height for a steel ball from hand level in everyday scenarios"
+          },
+          "restitution": {
+            "value": 0.8,
+            "low": 0.6,
+            "high": 0.95,
+            "basis": "steel-on-hard-floor collision efficiency; depends on material properties and surface hardness"
+          },
+          "mass_kg": {
+            "value": 0.1,
+            "low": 0.05,
+            "high": 0.2,
+            "basis": "typical mass of a small steel ball used in bounce experiments"
+          }
+        },
+        "omitted": {
+          "count": 3,
+          "reason": "render limit of 8 events",
+          "first_omitted_time_s": 3.4582785277652097
+        },
+        "incoming_state": {},
+        "terminal_state": {
+          "mass_kg": 0.1,
+          "height_m": 0.0,
+          "vertical_velocity_m_s": 0.7430109797788397,
+          "normal_speed_m_s": 0.0,
+          "rebound_speed_m_s": 0.7430109797788397,
+          "energy_J": 0.027603265803595563
+        },
+        "samples": [
+          {
+            "index": 1,
+            "time_s": 0.45160075575178754,
+            "incoming_speed_m_s": 4.428690551393267,
+            "rebound_height_m": 0.6399999999999999,
+            "impulse_N_s": 0.7971642992507881,
+            "relative_impulse": 1.0
+          },
+          {
+            "index": 2,
+            "time_s": 1.1741619649546475,
+            "incoming_speed_m_s": 3.5429524411146134,
+            "rebound_height_m": 0.40959999999999996,
+            "impulse_N_s": 0.6377314394006305,
+            "relative_impulse": 0.8
+          },
+          {
+            "index": 3,
+            "time_s": 1.7522109323169355,
+            "incoming_speed_m_s": 2.8343619528916912,
+            "rebound_height_m": 0.26214400000000004,
+            "impulse_N_s": 0.5101851515205045,
+            "relative_impulse": 0.6400000000000001
+          },
+          {
+            "index": 4,
+            "time_s": 2.214650106206766,
+            "incoming_speed_m_s": 2.267489562313353,
+            "rebound_height_m": 0.1677721600000001,
+            "impulse_N_s": 0.4081481212164036,
+            "relative_impulse": 0.5120000000000001
+          },
+          {
+            "index": 5,
+            "time_s": 2.58460144531863,
+            "incoming_speed_m_s": 1.8139916498506823,
+            "rebound_height_m": 0.10737418240000005,
+            "impulse_N_s": 0.32651849697312285,
+            "relative_impulse": 0.4096000000000001
+          },
+          {
+            "index": 6,
+            "time_s": 2.880562516608122,
+            "incoming_speed_m_s": 1.451193319880546,
+            "rebound_height_m": 0.06871947673600003,
+            "impulse_N_s": 0.2612147975784983,
+            "relative_impulse": 0.3276800000000001
+          },
+          {
+            "index": 7,
+            "time_s": 3.1173313736397152,
+            "incoming_speed_m_s": 1.160954655904437,
+            "rebound_height_m": 0.043980465111040035,
+            "impulse_N_s": 0.20897183806279868,
+            "relative_impulse": 0.2621440000000001
+          },
+          {
+            "index": 8,
+            "time_s": 3.30674645926499,
+            "incoming_speed_m_s": 0.9287637247235495,
+            "rebound_height_m": 0.028147497671065624,
+            "impulse_N_s": 0.16717747045023892,
+            "relative_impulse": 0.20971520000000007
+          }
+        ],
+        "notes": [
+          "Assumed constant restitution, a rigid stationary floor, no drag and instantaneous contact.",
+          "Material names describe the impact caption; they do not determine a calibrated restitution coefficient.",
+          "Pulse duration is a rendering choice, not predicted physical contact time.",
+          "Intensity is normalized impulse, not measured acceleration or perceived strength.",
+          "The requested/rendered contact count is not a prediction of when the ball stops.",
+          "Contact count derived from restitution: contacts below 10% of the first impulse are treated as stopped.",
+          "Omitted contacts not rendered (render limit of 8 events): 3.",
+          "Source/parameter extraction is an LM judgment. Defaults are unmeasured assumptions.",
+          "LM estimates (if any) are plausibility judgments with stated ranges, not measurements.",
+          "Normalized amplitude is not calibrated perceived strength or cross-model force."
+        ]
+      },
+      "sub_events": [
+        {
+          "source": "steel ball / hard floor",
+          "prompt": "steel ball striking hard floor with a single impact",
+          "start": 0.45160075575178754,
+          "duration": 0.15,
+          "intensity": 1.0,
+          "transition": "cut"
+        },
+        {
+          "source": "steel ball / hard floor",
+          "prompt": "steel ball striking hard floor with a single impact",
+          "start": 1.1741619649546475,
+          "duration": 0.15,
+          "intensity": 0.8,
+          "transition": "cut"
+        },
+        {
+          "source": "steel ball / hard floor",
+          "prompt": "steel ball striking hard floor with a single impact",
+          "start": 1.7522109323169355,
+          "duration": 0.15,
+          "intensity": 0.6400000000000001,
+          "transition": "cut"
+        },
+        {
+          "source": "steel ball / hard floor",
+          "prompt": "steel ball striking hard floor with a single impact",
+          "start": 2.214650106206766,
+          "duration": 0.15,
+          "intensity": 0.5120000000000001,
+          "transition": "cut"
+        },
+        {
+          "source": "steel ball / hard floor",
+          "prompt": "steel ball striking hard floor with a single impact",
+          "start": 2.58460144531863,
+          "duration": 0.15,
+          "intensity": 0.4096000000000001,
+          "transition": "cut"
+        },
+        {
+          "source": "steel ball / hard floor",
+          "prompt": "steel ball striking hard floor with a single impact",
+          "start": 2.880562516608122,
+          "duration": 0.15,
+          "intensity": 0.3276800000000001,
+          "transition": "cut"
+        },
+        {
+          "source": "steel ball / hard floor",
+          "prompt": "steel ball striking hard floor with a single impact",
+          "start": 3.1173313736397152,
+          "duration": 0.15,
+          "intensity": 0.2621440000000001,
+          "transition": "cut"
+        },
+        {
+          "source": "steel ball / hard floor",
+          "prompt": "steel ball striking hard floor with a single impact",
+          "start": 3.30674645926499,
+          "duration": 0.15,
+          "intensity": 0.20971520000000007,
+          "transition": "cut"
+        }
+      ],
+      "process_duration_s": 3.30674645926499,
+      "duration_s": 3.45674645926499,
+      "terminal_state": {
+        "mass_kg": 0.1,
+        "height_m": 0.0,
+        "vertical_velocity_m_s": 0.7430109797788397,
+        "normal_speed_m_s": 0.0,
+        "rebound_speed_m_s": 0.7430109797788397,
+        "energy_J": 0.027603265803595563,
+        "entity_key": "root"
+      }
+    },
+    "connections": [],
+    "reference_sub_events": [
+      {
+        "source": "steel ball / hard floor",
+        "prompt": "steel ball striking hard floor with a single impact",
+        "start": 0.45160075575178754,
+        "duration": 0.15,
+        "intensity": 1.0,
+        "transition": "cut"
+      },
+      {
+        "source": "steel ball / hard floor",
+        "prompt": "steel ball striking hard floor with a single impact",
+        "start": 1.1741619649546475,
+        "duration": 0.15,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "steel ball / hard floor",
+        "prompt": "steel ball striking hard floor with a single impact",
+        "start": 1.7522109323169355,
+        "duration": 0.15,
+        "intensity": 0.6400000000000001,
+        "transition": "cut"
+      },
+      {
+        "source": "steel ball / hard floor",
+        "prompt": "steel ball striking hard floor with a single impact",
+        "start": 2.214650106206766,
+        "duration": 0.15,
+        "intensity": 0.5120000000000001,
+        "transition": "cut"
+      },
+      {
+        "source": "steel ball / hard floor",
+        "prompt": "steel ball striking hard floor with a single impact",
+        "start": 2.58460144531863,
+        "duration": 0.15,
+        "intensity": 0.4096000000000001,
+        "transition": "cut"
+      },
+      {
+        "source": "steel ball / hard floor",
+        "prompt": "steel ball striking hard floor with a single impact",
+        "start": 2.880562516608122,
+        "duration": 0.15,
+        "intensity": 0.3276800000000001,
+        "transition": "cut"
+      },
+      {
+        "source": "steel ball / hard floor",
+        "prompt": "steel ball striking hard floor with a single impact",
+        "start": 3.1173313736397152,
+        "duration": 0.15,
+        "intensity": 0.2621440000000001,
+        "transition": "cut"
+      },
+      {
+        "source": "steel ball / hard floor",
+        "prompt": "steel ball striking hard floor with a single impact",
+        "start": 3.30674645926499,
+        "duration": 0.15,
+        "intensity": 0.20971520000000007,
+        "transition": "cut"
+      }
+    ],
+    "limits": {
+      "max_depth": 3,
+      "max_nodes": 15
+    },
+    "notes": [
+      "LM selects the model, splitting and entity/state links; semantic correctness remains unverified.",
+      "Parameter defaults and modeling assumptions are recorded per leaf.",
+      "Only named state components transfer; horizontal speed is not derived from vertical bouncing.",
+      "Rendering support may extend beyond a physical boundary; it does not delay the next physical event.",
+      "Rhythm/stochastic models are behavioral/probabilistic, not physical laws.",
+      "Amplitudes remain normalized and are not calibrated across models or users."
+    ]
+  },
+  "hierarchy_plan_edited": false
+}

@@ -1,0 +1,617 @@
+{
+ "c03": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A single sharp impact of tree against unspecified surface",
+    "start": 0.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of tree against unspecified surface",
+    "start": 1.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of tree against unspecified surface",
+    "start": 2.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [
+   "rhythmic_action"
+  ],
+  "seconds": 7.122098922729492
+ },
+ "c04": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "clap loudly once",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 9.73008394241333
+ },
+ "c06": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "paper crumpled and slammed forcefully three times",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 12.658967018127441
+ },
+ "c07": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "keyboard typing quickly with external drive applied via hand movement",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "mouse striking surface with a single impact",
+    "start": 1.2,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 12,
+  "leaf_models": [
+   "single_impact",
+   "lm_atomic"
+  ],
+  "seconds": 36.65115737915039
+ },
+ "c08": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "keyboard type and click",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 12.127457857131958
+ },
+ "c09": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "dribbling a soccer ball the sound of dribbling a soccer ball in three steps",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 12.41537857055664
+ },
+ "c10": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "water bomb pops and splashes once as I hit the enemy",
+    "start": 0.0,
+    "duration": 0.3,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 9.475673198699951
+ },
+ "c11": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "right hand itching from mosquito bites",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.7,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 7.735888242721558
+ },
+ "c12": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "I have to do CPR heavily and strongly pressing his chest constantly with the speed of pressing 100 times in a minute",
+    "start": 0.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 14.19867992401123
+ },
+ "s01": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...nd driving constraint.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 27.365710496902466
+ },
+ "s02": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...tinct physical regime.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 7.52685022354126
+ },
+ "s03": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...tinct physical regime.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 5.774528503417969
+ },
+ "s04": {
+  "ok": false,
+  "error": "ValueError: Model exceeds the 10-second renderer window; parameters are not automatically compressed",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 9.865102767944336
+ },
+ "s05": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "pickle jar applying steady external pressure until it opens with a loud pop due to internal pressure release",
+    "start": 0.0,
+    "duration": 2.5,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "jar opens with a loud pop due to sustained external force and direct contact, involving sudden impact from internal pressure release",
+    "start": 2.5,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 12,
+  "leaf_models": [
+   "lm_atomic",
+   "lm_atomic"
+  ],
+  "seconds": 30.9513738155365
+ },
+ "s06": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter... action is not atomic.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 7.386641263961792
+ },
+ "s07": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "graduate student rigorously typing computer keyboard and hitting enter key after each paragraph, then pause",
+    "start": 0.0,
+    "duration": 1.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 13.951643943786621
+ },
+ "s08": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "swimmer swims in butterfly stroke, strongly comes out of water with both arms, then goes back into water",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 8.01200008392334
+ },
+ "c01": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "basketball dribble forcefully once",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 5.037233829498291
+ },
+ "c02": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "gun shoots at the enemy once",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 4.948654413223267
+ },
+ "c05": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "wooden stick sliding against unspecified surface",
+    "start": 0.0,
+    "duration": 2.0,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "he applies a strong impact to the stick, causing it to snap under transient contact conditions",
+    "start": 2.0,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "wooden stick striking fixed surface with a single impact",
+    "start": 2.8,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 17,
+  "leaf_models": [
+   "single_impact",
+   "lm_atomic",
+   "sliding"
+  ],
+  "seconds": 21.001577377319336
+ },
+ "s09": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 0.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 0.5,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 1.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 1.5,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "opponent forcefully slaps the ball out of your hand, resulting in a large splat as the ball undergoes a sudden impact and loss of contact with the hand",
+    "start": 1.65,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 12,
+  "leaf_models": [
+   "lm_atomic",
+   "rhythmic_action"
+  ],
+  "seconds": 14.98425841331482
+ },
+ "s10": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 0.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 0.8,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 1.6,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "A single sharp impact of basketball against ground",
+    "start": 2.4000000000000004,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "ball striking unspecified surface with a single impact",
+    "start": 2.5500000000000003,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 11,
+  "leaf_models": [
+   "single_impact",
+   "rhythmic_action"
+  ],
+  "seconds": 13.011292219161987
+ },
+ "s11": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...tion and contact mode.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 2.95483136177063
+ },
+ "s12": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "stomach rumbles softly, then contracts with a louder growl, almost like a burp",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.85,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 4.730886697769165
+ },
+ "s13": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "pencil case sliding against flat horizontal surface",
+    "start": 0.0,
+    "duration": 2.0,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "pencil case sliding against flat horizontal surface",
+    "start": 2.0,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "pencil case rolling over flat horizontal surface",
+    "start": 2.0339905404325975,
+    "duration": 2.0,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 15,
+  "leaf_models": [
+   "rolling",
+   "sliding",
+   "sliding"
+  ],
+  "seconds": 18.55442476272583
+ },
+ "s14": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...inct physical regimes.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 3.620894432067871
+ },
+ "s15": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...or contact constraint.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 4.908368110656738
+ },
+ "s16": {
+  "ok": false,
+  "error": "ValueError: structure_review stage returned invalid output: 1 validation error for Atomicity\n  Value error, regime_count must equal the number of contact_modes and driving_modes [type=value_error, input_value={'driving_modes': ['exter...rate physical regimes.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error",
+  "sub_events": [],
+  "lm_calls": null,
+  "seconds": 4.488772869110107
+ },
+ "s17": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "The badminton rally continued at a fast and steady pace until the game ended with a powerful smash. continued at a fast and steady pace until the game ended with a powerful smash",
+    "start": 0.0,
+    "duration": 3.2,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 5,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 5.163700342178345
+ },
+ "s18": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "a crinkly vinyl snack package tearing it open with a sharp, crisp rip",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 3.848158359527588
+ },
+ "s19": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "vinyl snack package tearing open with a sharp sound",
+    "start": 0.0,
+    "duration": 0.8,
+    "intensity": 0.9,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 3.4028666019439697
+ },
+ "s20": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "pickle container turns and opens with a cheerful puff",
+    "start": 0.0,
+    "duration": 1.2,
+    "intensity": 0.9,
+    "transition": "crossfade"
+   }
+  ],
+  "lm_calls": 3,
+  "leaf_models": [
+   "lm_atomic"
+  ],
+  "seconds": 5.440243244171143
+ },
+ "s21": {
+  "ok": true,
+  "sub_events": [
+   {
+    "prompt": "fall slicing through the wind which makes a very large noise, until you impact the ground",
+    "start": 0.0,
+    "duration": 1.8,
+    "intensity": 0.95,
+    "transition": "cut"
+   },
+   {
+    "prompt": "you striking ground with a single impact",
+    "start": 1.8,
+    "duration": 0.15,
+    "intensity": 1.0,
+    "transition": "cut"
+   },
+   {
+    "prompt": "landing come to rest on the ground; the wind stops as the fall ends",
+    "start": 1.8,
+    "duration": 0.8,
+    "intensity": 0.95,
+    "transition": "crossfade"
+   },
+   {
+    "prompt": "unspecified surface sliding against ground",
+    "start": 2.6,
+    "duration": 0.3399054043259761,
+    "intensity": 1.0,
+    "transition": "cut"
+   }
+  ],
+  "lm_calls": 27,
+  "leaf_models": [
+   "sliding",
+   "lm_atomic",
+   "single_impact",
+   "lm_atomic"
+  ],
+  "seconds": 32.77519655227661
+ }
+}

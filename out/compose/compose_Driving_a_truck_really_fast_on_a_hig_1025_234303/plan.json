@@ -1,0 +1,86 @@
+{
+  "event": "Driving a truck really fast on a highway during a heavy snowfall and then crashing into a huge moose.",
+  "sub_events": [
+    {
+      "prompt": "The truck accelerates rapidly on a highway, creating a low, steady rumble.",
+      "start": 0.0,
+      "duration": 2.0,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1025_234303/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.3427,
+        0.2126
+      ],
+      "offset": 2.0,
+      "shared": false
+    },
+    {
+      "prompt": "Heavy snowfall begins, creating a soft, irregular vibration pattern.",
+      "start": 2.0,
+      "duration": 3.0,
+      "intensity": 0.3,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1025_234303/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.1373,
+        0.0268
+      ],
+      "offset": 0.169,
+      "shared": false
+    },
+    {
+      "prompt": "The truck speeds through the snow, causing a continuous, intense vibration.",
+      "start": 3.0,
+      "duration": 3.0,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1025_234303/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.1318,
+        0.0887
+      ],
+      "offset": 0.0,
+      "shared": false
+    },
+    {
+      "prompt": "The truck crashes into a moose, resulting in a sudden, sharp jolt.",
+      "start": 6.0,
+      "duration": 1.0,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Driving_a_truck_really_fast_on_a_hig_1025_234303/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.2089,
+        0.2068
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 7.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Driving_a_truck_really_fast_on_a_hig_1025_234303_composite.wav",
+  "baseline": null,
+  "gen_duration": 4.0,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 7.571648120880127,
+  "elapsed": 7.586341381072998
+}

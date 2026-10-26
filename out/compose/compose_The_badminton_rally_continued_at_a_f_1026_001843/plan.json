@@ -1,0 +1,70 @@
+{
+  "event": "The badminton rally continued at a fast and steady pace until the game ended with a powerful smash.",
+  "sub_events": [
+    {
+      "prompt": "Fast-paced rally begins, mimicking quick movements of a badminton rally.",
+      "start": 0.0,
+      "duration": 3.0,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_001843/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.027,
+        0.0012
+      ],
+      "offset": 0.0,
+      "shared": false
+    },
+    {
+      "prompt": "Steady rhythm of the rally, maintaining a consistent pace.",
+      "start": 3.0,
+      "duration": 4.0,
+      "intensity": 0.5,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_001843/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0242,
+        0.1845
+      ],
+      "offset": 0.926,
+      "shared": false
+    },
+    {
+      "prompt": "Powerful smash to end the game, with a strong and sudden vibration.",
+      "start": 7.0,
+      "duration": 1.0,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_001843/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.1725,
+        0.1824
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 8.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_badminton_rally_continued_at_a_f_1026_001843_composite.wav",
+  "baseline": null,
+  "gen_duration": 5.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.8751749992370605,
+  "elapsed": 5.890443325042725
+}

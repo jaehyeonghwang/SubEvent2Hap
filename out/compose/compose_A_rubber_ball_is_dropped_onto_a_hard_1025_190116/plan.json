@@ -1,0 +1,124 @@
+{
+  "event": "A rubber ball is dropped onto a hard floor, bouncing four times with decreasing height before coming to rest.",
+  "sub_events": [
+    {
+      "prompt": "A rubber ball falling gently from a height",
+      "start": 0.0,
+      "duration": 0.3,
+      "intensity": 0.2,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190116/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.1323,
+        0.2064
+      ],
+      "offset": 0.899
+    },
+    {
+      "prompt": "A rubber ball hitting hard floor with a sharp, dull thud",
+      "start": 0.3,
+      "duration": 0.4,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190116/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0791,
+        0.1913
+      ],
+      "offset": 0.441
+    },
+    {
+      "prompt": "A rubber ball bouncing with a crisp, light rumble",
+      "start": 0.7,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190116/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.7282,
+        0.3612
+      ],
+      "offset": 0.003
+    },
+    {
+      "prompt": "A rubber ball bouncing with a dull, gritty thump",
+      "start": 1.2,
+      "duration": 0.4,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190116/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.1336,
+        0.1978
+      ],
+      "offset": 0.201
+    },
+    {
+      "prompt": "A rubber ball bouncing with a soft, fading crack",
+      "start": 1.6,
+      "duration": 0.35,
+      "intensity": 0.4,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190116/sub_05.wav",
+      "candidate": 1,
+      "scores": [
+        0.21,
+        0.3245
+      ],
+      "offset": 0.0
+    },
+    {
+      "prompt": "A rubber ball bouncing with a weak, dull tap",
+      "start": 1.95,
+      "duration": 0.25,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190116/sub_06.wav",
+      "candidate": 0,
+      "scores": [
+        0.1839,
+        0.1806
+      ],
+      "offset": 0.542
+    },
+    {
+      "prompt": "The rubber ball resting gently on the floor with no vibration",
+      "start": 2.2,
+      "duration": 0.8,
+      "intensity": 0.05,
+      "transition": "cut",
+      "source": "rubber ball",
+      "file": "compose/compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190116/sub_07.wav",
+      "candidate": 0,
+      "scores": [
+        0.0015,
+        0.001
+      ],
+      "offset": 0.614
+    }
+  ],
+  "total": 3.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null
+  },
+  "composite": "compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190116_composite.wav",
+  "baseline": "compose_A_rubber_ball_is_dropped_onto_a_hard_1025_190116_baseline.wav",
+  "gen_duration": 3.0,
+  "prompts": 16,
+  "elapsed_gen": 10.764524936676025,
+  "elapsed": 10.789528369903564
+}

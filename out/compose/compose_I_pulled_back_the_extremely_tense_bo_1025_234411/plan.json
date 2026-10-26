@@ -1,0 +1,70 @@
+{
+  "event": "I pulled back the extremely tense bowstring with all my strength to the fullest and then released it.",
+  "sub_events": [
+    {
+      "prompt": "Simulate the increasing tension as the bowstring is pulled back with all strength.",
+      "start": 0.0,
+      "duration": 2.0,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_I_pulled_back_the_extremely_tense_bo_1025_234411/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0391,
+        0.0017
+      ],
+      "offset": 1.0,
+      "shared": false
+    },
+    {
+      "prompt": "Maintain a high tension as the bowstring is held at full draw.",
+      "start": 2.0,
+      "duration": 1.0,
+      "intensity": 1.0,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_I_pulled_back_the_extremely_tense_bo_1025_234411/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0247,
+        0.0025
+      ],
+      "offset": 0.475,
+      "shared": false
+    },
+    {
+      "prompt": "Simulate the sudden release and snap of the bowstring.",
+      "start": 3.0,
+      "duration": 0.5,
+      "intensity": 0.9,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_pulled_back_the_extremely_tense_bo_1025_234411/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0116,
+        0.0006
+      ],
+      "offset": 0.072,
+      "shared": false
+    }
+  ],
+  "total": 3.5,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_pulled_back_the_extremely_tense_bo_1025_234411_composite.wav",
+  "baseline": null,
+  "gen_duration": 3.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.2485735416412354,
+  "elapsed": 3.2592313289642334
+}

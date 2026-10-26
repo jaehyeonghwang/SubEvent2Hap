@@ -1,0 +1,55 @@
+{
+  "event": "I'm typing a document quickly on my keyboard, and then I slowly click my mouse once",
+  "sub_events": [
+    {
+      "prompt": "a keystroke occurs on the keyboard",
+      "start": 0.5,
+      "duration": 2.0,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_013330/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0356,
+        0.0112
+      ],
+      "offset": 0.0,
+      "shared": false
+    },
+    {
+      "prompt": "a click occurs on the mouse",
+      "start": 7.0,
+      "duration": 0.3,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_m_typing_a_document_quickly_on_my__1026_013330/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0194,
+        0.1202
+      ],
+      "offset": 7.189,
+      "shared": false
+    }
+  ],
+  "total": 7.3,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_m_typing_a_document_quickly_on_my__1026_013330_composite.wav",
+  "baseline": "compose_I_m_typing_a_document_quickly_on_my__1026_013330_baseline.wav",
+  "gen_duration": 7.3,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 7.937837600708008,
+  "elapsed": 7.955351829528809
+}

@@ -1,0 +1,134 @@
+{
+  "event": "A situation where I shake a tree 3 times and an apple falls on my head",
+  "sub_events": [
+    {
+      "prompt": "First tree shake, a short burst of vibration",
+      "start": 0.0,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_001237/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0075,
+        0.0336
+      ],
+      "offset": 1.115,
+      "shared": false
+    },
+    {
+      "prompt": "Pause between shakes",
+      "start": 0.5,
+      "duration": 0.5,
+      "intensity": 0.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_001237/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0264,
+        0.0009
+      ],
+      "offset": 0.094,
+      "shared": true
+    },
+    {
+      "prompt": "Second tree shake, a short burst of vibration",
+      "start": 1.0,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_001237/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.6003,
+        0.9165
+      ],
+      "offset": 0.016,
+      "shared": false
+    },
+    {
+      "prompt": "Pause between shakes",
+      "start": 1.5,
+      "duration": 0.5,
+      "intensity": 0.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_001237/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0264,
+        0.0009
+      ],
+      "offset": 0.094,
+      "shared": true
+    },
+    {
+      "prompt": "Third tree shake, a short burst of vibration",
+      "start": 2.0,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_001237/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.5209,
+        0.0042
+      ],
+      "offset": 0.004,
+      "shared": false
+    },
+    {
+      "prompt": "Pause before apple falls",
+      "start": 2.5,
+      "duration": 0.5,
+      "intensity": 0.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_001237/sub_06.wav",
+      "candidate": 0,
+      "scores": [
+        0.4315,
+        0.2366
+      ],
+      "offset": 0.362,
+      "shared": false
+    },
+    {
+      "prompt": "Apple falls on head, a sudden strong vibration",
+      "start": 3.0,
+      "duration": 1.0,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_001237/sub_07.wav",
+      "candidate": 1,
+      "scores": [
+        0.0497,
+        0.3717
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 4.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_situation_where_I_shake_a_tree_3_t_1026_001237_composite.wav",
+  "baseline": null,
+  "gen_duration": 2.0,
+  "prompts": 12,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.81809663772583,
+  "elapsed": 3.8353664875030518
+}

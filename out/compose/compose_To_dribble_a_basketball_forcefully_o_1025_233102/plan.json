@@ -1,0 +1,38 @@
+{
+  "event": "To dribble a basketball forcefully once",
+  "sub_events": [
+    {
+      "prompt": "basketball is bounced against the floor",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_To_dribble_a_basketball_forcefully_o_1025_233102/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.002,
+        0.0409
+      ],
+      "offset": 0.188,
+      "shared": false
+    }
+  ],
+  "total": 1.3,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 3,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_To_dribble_a_basketball_forcefully_o_1025_233102_composite.wav",
+  "baseline": "compose_To_dribble_a_basketball_forcefully_o_1025_233102_baseline.wav",
+  "gen_duration": 1.8,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.2022759914398193,
+  "elapsed": 2.211047649383545
+}

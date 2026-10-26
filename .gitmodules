@@ -1,0 +1,6 @@
+[submodule "HapticGen"]
+	path = HapticGen
+	url = https://github.com/HapticGen/HapticGen
+[submodule "data/hapticgen-dataset"]
+	path = data/hapticgen-dataset
+	url = https://github.com/HapticGen/hapticgen-dataset

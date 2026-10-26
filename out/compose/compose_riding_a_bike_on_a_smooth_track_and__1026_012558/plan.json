@@ -1,0 +1,119 @@
+{
+  "event": "riding a bike on a smooth track and then ride on a bumpy road",
+  "sub_events": [
+    {
+      "prompt": "bike tires contact with smooth track surface",
+      "start": 0.1,
+      "duration": 0.3,
+      "intensity": 0.2,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_012558/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0156,
+        0.0893
+      ],
+      "offset": 2.741,
+      "shared": false
+    },
+    {
+      "prompt": "bike frame vibrate due to consistent motion on smooth track",
+      "start": 0.4,
+      "duration": 0.5,
+      "intensity": 0.3,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_012558/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0755,
+        0.0324
+      ],
+      "offset": 1.368,
+      "shared": false
+    },
+    {
+      "prompt": "bike wheels make contact with road surface",
+      "start": 0.6,
+      "duration": 0.2,
+      "intensity": 0.2,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_012558/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0272,
+        0.0358
+      ],
+      "offset": 0.042,
+      "shared": false
+    },
+    {
+      "prompt": "bike tires contact with bumpy road surface",
+      "start": 1.8,
+      "duration": 0.4,
+      "intensity": 0.35,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_012558/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0799,
+        0.0473
+      ],
+      "offset": 0.612,
+      "shared": false
+    },
+    {
+      "prompt": "bike frame vibrate due to irregular impacts from bumps",
+      "start": 2.2,
+      "duration": 0.6,
+      "intensity": 0.4,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_012558/sub_05.wav",
+      "candidate": 1,
+      "scores": [
+        0.0192,
+        0.0435
+      ],
+      "offset": 1.68,
+      "shared": false
+    },
+    {
+      "prompt": "bike wheels make repeated contact with uneven road surface",
+      "start": 2.8,
+      "duration": 0.7,
+      "intensity": 0.35,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_012558/sub_06.wav",
+      "candidate": 0,
+      "scores": [
+        0.0627,
+        0.0184
+      ],
+      "offset": 0.058,
+      "shared": false
+    }
+  ],
+  "total": 3.5,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_riding_a_bike_on_a_smooth_track_and__1026_012558_composite.wav",
+  "baseline": "compose_riding_a_bike_on_a_smooth_track_and__1026_012558_baseline.wav",
+  "gen_duration": 3.5,
+  "prompts": 14,
+  "analytic_segments": 0,
+  "elapsed_gen": 22.739041090011597,
+  "elapsed": 22.766112565994263
+}

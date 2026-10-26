@@ -1,0 +1,38 @@
+{
+  "event": "You are about to bunjee jump. Once you fall, you slice through the wind which makes a very large noise. The jump ends, and there is no more wind.",
+  "sub_events": [
+    {
+      "prompt": "The wind is slicing through the air.",
+      "start": 2.5,
+      "duration": 3.5,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_You_are_about_to_bunjee_jump_Once_yo_1025_234506/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0918,
+        0.1534
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 6.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_You_are_about_to_bunjee_jump_Once_yo_1025_234506_composite.wav",
+  "baseline": null,
+  "gen_duration": 4.5,
+  "prompts": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.337974309921265,
+  "elapsed": 4.344027042388916
+}

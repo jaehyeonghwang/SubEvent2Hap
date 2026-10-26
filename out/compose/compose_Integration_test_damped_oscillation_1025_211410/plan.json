@@ -1,0 +1,46 @@
+{
+  "event": "Integration test: damped_oscillation",
+  "sub_events": [
+    {
+      "prompt": "block ringing with a fading vibration",
+      "start": 0.0,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "block / floor",
+      "envelope": {
+        "kind": "exponential",
+        "tau_s": 0.15915494309189532
+      },
+      "synthesis": {
+        "kind": "sine",
+        "frequency_hz": 99.99499987499375,
+        "phase_rad": 0.0
+      },
+      "file": "compose/compose_Integration_test_damped_oscillation_1025_211410/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 0.5,
+  "params": {
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 42,
+    "gamma": 1.0,
+    "share_repeats": true
+  },
+  "composite": "compose_Integration_test_damped_oscillation_1025_211410_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 0,
+  "analytic_segments": 1,
+  "elapsed_gen": 0.0009965896606445312,
+  "elapsed": 0.005999088287353516
+}

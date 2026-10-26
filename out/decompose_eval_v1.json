@@ -1,0 +1,541 @@
+[
+  {
+    "event": "A ball bounces three times on a wooden floor and then rolls away",
+    "sub_events": [
+      {
+        "label": "A soft rubber ball hitting wood with a slight bounce",
+        "prompt": "A soft rubber ball hitting wood with a slight bounce",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "label": "A quick vibration as the ball rebounds upward",
+        "prompt": "A quick vibration as the ball rebounds upward",
+        "start": 0.4,
+        "duration": 0.2,
+        "intensity": 0.7,
+        "transition": "crossfade"
+      },
+      {
+        "label": "A dull thud as the ball hits the floor again",
+        "prompt": "A dull thud as the ball hits the floor again",
+        "start": 0.6,
+        "duration": 0.3,
+        "intensity": 0.5,
+        "transition": "cut"
+      },
+      {
+        "label": "A rolling texture of a rubber ball moving slowly on wood",
+        "prompt": "A rolling texture of a rubber ball moving slowly on wood",
+        "start": 0.9,
+        "duration": 0.8,
+        "intensity": 0.4,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 1.8809523582458496,
+    "model": "qwen3-4b",
+    "usage": {
+      "prompt_tokens": 310,
+      "completion_tokens": 263,
+      "total_tokens": 573,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "issues": [
+      "#3 refers to other sub-events ('again'): A dull thud as the ball hits the floor again"
+    ]
+  },
+  {
+    "event": "A sword clashes against a shield, then scrapes off",
+    "sub_events": [
+      {
+        "label": "Sword impact against shield",
+        "prompt": "A sharp metallic clang as two blades meet with force",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.9,
+        "transition": "cut"
+      },
+      {
+        "label": "Sword scraping across shield surface",
+        "prompt": "A rough, continuous scrape of steel on metal with a grinding texture",
+        "start": 0.35,
+        "duration": 1.8,
+        "intensity": 0.7,
+        "transition": "crossfade"
+      },
+      {
+        "label": "Sudden stop and hand recoil",
+        "prompt": "A brief jolt of resistance as the sword halts abruptly against the shield",
+        "start": 2.15,
+        "duration": 0.2,
+        "intensity": 0.8,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 1.5873379707336426,
+    "model": "qwen3-4b",
+    "usage": {
+      "prompt_tokens": 307,
+      "completion_tokens": 222,
+      "total_tokens": 529,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "issues": [
+      "#1 not grounded in the event (no shared object/action words): A sharp metallic clang as two blades meet with force",
+      "#2 refers to other sub-events ('continuous'): A rough, continuous scrape of steel on metal with a grinding texture"
+    ]
+  },
+  {
+    "event": "Heavy rain starts, a thunder strikes nearby, then the rain fades",
+    "sub_events": [
+      {
+        "label": "A sharp, booming crack splits the air",
+        "prompt": "A sharp, booming crack splits the air",
+        "start": 0.15,
+        "duration": 0.3,
+        "intensity": 0.9,
+        "transition": "cut"
+      },
+      {
+        "label": "Damp, steady pressure builds in the palm",
+        "prompt": "Damp, steady pressure builds in the palm",
+        "start": 0.45,
+        "duration": 2.5,
+        "intensity": 0.6,
+        "transition": "crossfade"
+      },
+      {
+        "label": "A deep, resonant rumble pulses through the hand",
+        "prompt": "A deep, resonant rumble pulses through the hand",
+        "start": 1.0,
+        "duration": 3.0,
+        "intensity": 0.7,
+        "transition": "crossfade"
+      },
+      {
+        "label": "The pressure softens and fades slowly",
+        "prompt": "The pressure softens and fades slowly",
+        "start": 4.5,
+        "duration": 1.8,
+        "intensity": 0.3,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 1.7850112915039062,
+    "model": "qwen3-4b",
+    "usage": {
+      "prompt_tokens": 309,
+      "completion_tokens": 256,
+      "total_tokens": 565,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "issues": [
+      "#1 not grounded in the event (no shared object/action words): A sharp, booming crack splits the air",
+      "#2 describes the hand instead of the event: Damp, steady pressure builds in the palm",
+      "#2 not grounded in the event (no shared object/action words): Damp, steady pressure builds in the palm",
+      "#3 describes the hand instead of the event: A deep, resonant rumble pulses through the hand",
+      "#3 not grounded in the event (no shared object/action words): A deep, resonant rumble pulses through the hand",
+      "'A deep, resonant rumble pulses…' overlaps more than half of the previous sub-event"
+    ]
+  },
+  {
+    "event": "Opening a soda can and pouring it into a glass",
+    "sub_events": [
+      {
+        "label": "Can lid popping open with a sharp metallic snap",
+        "prompt": "A sharp metallic snap as a soda can lid pops open",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "label": "Smooth cool plastic slide as the can is tilted and moved",
+        "prompt": "A smooth cool plastic slide as the can is tilted gently",
+        "start": 0.4,
+        "duration": 1.2,
+        "intensity": 0.6,
+        "transition": "crossfade"
+      },
+      {
+        "label": "Liquid pouring with a steady gentle flow",
+        "prompt": "A steady gentle flow of cold liquid pouring into a glass",
+        "start": 1.5,
+        "duration": 3.0,
+        "intensity": 0.4,
+        "transition": "crossfade"
+      },
+      {
+        "label": "Slight vibration from the glass as it fills",
+        "prompt": "A slight vibration from the glass as liquid settles into it",
+        "start": 4.5,
+        "duration": 0.8,
+        "intensity": 0.3,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 1.842576503753662,
+    "model": "qwen3-4b",
+    "usage": {
+      "prompt_tokens": 306,
+      "completion_tokens": 264,
+      "total_tokens": 570,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "issues": []
+  },
+  {
+    "event": "Someone knocks on a door three times and the door creaks open",
+    "sub_events": [
+      {
+        "label": "A sharp knock on wood",
+        "prompt": "A sharp knock on wood",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "label": "A soft creak of the door hinge",
+        "prompt": "A soft creak of the door hinge",
+        "start": 0.4,
+        "duration": 1.2,
+        "intensity": 0.6,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 0.9213213920593262,
+    "model": "qwen3-4b",
+    "usage": {
+      "prompt_tokens": 310,
+      "completion_tokens": 122,
+      "total_tokens": 432,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "issues": []
+  },
+  {
+    "event": "A car engine starts, revs twice, and the car drives away",
+    "sub_events": [
+      {
+        "label": "A sharp metallic click as the engine turns over",
+        "prompt": "A sharp metallic click as the engine turns over",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "label": "A low rumble building in the hand like a deep growl under pressure",
+        "prompt": "A low rumble building in the hand like a deep growl under pressure",
+        "start": 0.4,
+        "duration": 1.5,
+        "intensity": 0.7,
+        "transition": "crossfade"
+      },
+      {
+        "label": "A steady pulse of vibration increasing slightly with each rev",
+        "prompt": "A steady pulse of vibration increasing slightly with each rev",
+        "start": 1.2,
+        "duration": 0.8,
+        "intensity": 0.9,
+        "transition": "crossfade"
+      },
+      {
+        "label": "The vibration fades into a smooth, rolling hum like the car moving forward",
+        "prompt": "The vibration fades into a smooth, rolling hum like the car moving forward",
+        "start": 2.0,
+        "duration": 3.0,
+        "intensity": 0.4,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 1.9846882820129395,
+    "model": "qwen3-4b",
+    "usage": {
+      "prompt_tokens": 310,
+      "completion_tokens": 280,
+      "total_tokens": 590,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "issues": [
+      "#2 describes the hand instead of the event: A low rumble building in the hand like a deep growl under pressure",
+      "#2 not grounded in the event (no shared object/action words): A low rumble building in the hand like a deep growl under pressure"
+    ]
+  },
+  {
+    "event": "Running footsteps, then a jump and a heavy landing",
+    "sub_events": [
+      {
+        "label": "Footsteps hitting the ground",
+        "prompt": "A steady rhythm of feet pounding on pavement with each step",
+        "start": 0.15,
+        "duration": 0.8,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "label": "Mid-air stretch and jump",
+        "prompt": "A sudden lift in the hand as if caught mid-leap",
+        "start": 0.95,
+        "duration": 0.3,
+        "intensity": 0.4,
+        "transition": "crossfade"
+      },
+      {
+        "label": "Heavy landing impact",
+        "prompt": "A sharp, heavy thud as a foot crashes into the ground",
+        "start": 1.25,
+        "duration": 0.6,
+        "intensity": 0.9,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 1.434626579284668,
+    "model": "qwen3-4b",
+    "usage": {
+      "prompt_tokens": 306,
+      "completion_tokens": 191,
+      "total_tokens": 497,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "issues": [
+      "#1 not grounded in the event (no shared object/action words): A steady rhythm of feet pounding on pavement with each step",
+      "#2 describes the hand instead of the event: A sudden lift in the hand as if caught mid-leap",
+      "#2 not grounded in the event (no shared object/action words): A sudden lift in the hand as if caught mid-leap"
+    ]
+  },
+  {
+    "event": "Typing quickly on a keyboard and slamming the enter key",
+    "sub_events": [
+      {
+        "label": "Rapid keystrokes hitting keys",
+        "prompt": "A quick series of sharp taps on cold metal keys",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "label": "A heavy enter key being pressed down",
+        "prompt": "A solid thud as a large key is pushed fully down",
+        "start": 0.4,
+        "duration": 0.5,
+        "intensity": 0.9,
+        "transition": "cut"
+      },
+      {
+        "label": "The keyboard vibrating slightly after the press",
+        "prompt": "A low, steady vibration from the keys after impact",
+        "start": 0.8,
+        "duration": 0.6,
+        "intensity": 0.4,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 1.377577543258667,
+    "model": "qwen3-4b",
+    "usage": {
+      "prompt_tokens": 307,
+      "completion_tokens": 191,
+      "total_tokens": 498,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "issues": [
+      "#3 refers to other sub-events ('after'): A low, steady vibration from the keys after impact"
+    ]
+  },
+  {
+    "event": "An archer draws a bow, releases the arrow, and it hits a target",
+    "sub_events": [
+      {
+        "label": "Bowstring pulling taut",
+        "prompt": "A sharp, firm pull of a thick string against the hand",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "label": "Arrow leaving the bow",
+        "prompt": "A sudden release with a light snap and vibration through the fingers",
+        "start": 0.4,
+        "duration": 0.2,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "label": "Arrow striking target",
+        "prompt": "A sharp, dull impact like wood splintering under pressure",
+        "start": 0.6,
+        "duration": 0.15,
+        "intensity": 0.9,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 1.344533920288086,
+    "model": "qwen3-4b",
+    "usage": {
+      "prompt_tokens": 312,
+      "completion_tokens": 185,
+      "total_tokens": 497,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "issues": [
+      "#1 describes the hand instead of the event: A sharp, firm pull of a thick string against the hand",
+      "#1 not grounded in the event (no shared object/action words): A sharp, firm pull of a thick string against the hand",
+      "#2 describes the hand instead of the event: A sudden release with a light snap and vibration through the fingers",
+      "#3 not grounded in the event (no shared object/action words): A sharp, dull impact like wood splintering under pressure"
+    ]
+  },
+  {
+    "event": "A cat jumps onto your lap and starts purring",
+    "sub_events": [
+      {
+        "label": "A soft landing of a light body on fabric",
+        "prompt": "A soft landing of a light body on fabric",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.4,
+        "transition": "cut"
+      },
+      {
+        "label": "A gentle vibration from a warm, steady purr",
+        "prompt": "A gentle vibration from a warm, steady purr",
+        "start": 0.3,
+        "duration": 2.5,
+        "intensity": 0.7,
+        "transition": "crossfade"
+      },
+      {
+        "label": "A subtle rise in warmth and soft pulse beneath the skin",
+        "prompt": "A subtle rise in warmth and soft pulse beneath the skin",
+        "start": 2.8,
+        "duration": 1.0,
+        "intensity": 0.6,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 1.4177970886230469,
+    "model": "qwen3-4b",
+    "usage": {
+      "prompt_tokens": 306,
+      "completion_tokens": 200,
+      "total_tokens": 506,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "issues": [
+      "#1 not grounded in the event (no shared object/action words): A soft landing of a light body on fabric",
+      "#2 not grounded in the event (no shared object/action words): A gentle vibration from a warm, steady purr",
+      "#3 describes the hand instead of the event: A subtle rise in warmth and soft pulse beneath the skin",
+      "#3 not grounded in the event (no shared object/action words): A subtle rise in warmth and soft pulse beneath the skin"
+    ]
+  },
+  {
+    "event": "A balloon is inflated until it pops",
+    "sub_events": [
+      {
+        "label": "Air filling the balloon gently",
+        "prompt": "A soft, rising pressure as air fills a flexible balloon",
+        "start": 0.15,
+        "duration": 0.8,
+        "intensity": 0.3,
+        "transition": "cut"
+      },
+      {
+        "label": "Balloon stretches tightly",
+        "prompt": "A firm, taut stretch as the balloon walls grow thin and tight",
+        "start": 0.95,
+        "duration": 1.2,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "label": "Sudden pop burst",
+        "prompt": "A sharp, explosive snap as the balloon bursts with a rush of air",
+        "start": 2.15,
+        "duration": 0.3,
+        "intensity": 0.9,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 1.4221558570861816,
+    "model": "qwen3-4b",
+    "usage": {
+      "prompt_tokens": 303,
+      "completion_tokens": 194,
+      "total_tokens": 497,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "issues": []
+  },
+  {
+    "event": "A train approaches, passes by, and fades into the distance",
+    "sub_events": [
+      {
+        "label": "A low rumble builds in the hand as the train nears",
+        "prompt": "A low rumble builds in the hand as the train nears",
+        "start": 0.15,
+        "duration": 2.0,
+        "intensity": 0.4,
+        "transition": "cut"
+      },
+      {
+        "label": "The vibration grows steady and deep, like a pulse beneath the skin",
+        "prompt": "The vibration grows steady and deep, like a pulse beneath the skin",
+        "start": 1.5,
+        "duration": 3.0,
+        "intensity": 0.7,
+        "transition": "crossfade"
+      },
+      {
+        "label": "A soft, fading hum lingers as the train recedes",
+        "prompt": "A soft, fading hum lingers as the train recedes",
+        "start": 4.5,
+        "duration": 2.5,
+        "intensity": 0.3,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 1.5722966194152832,
+    "model": "qwen3-4b",
+    "usage": {
+      "prompt_tokens": 308,
+      "completion_tokens": 218,
+      "total_tokens": 526,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "issues": [
+      "#1 describes the hand instead of the event: A low rumble builds in the hand as the train nears",
+      "#2 describes the hand instead of the event: The vibration grows steady and deep, like a pulse beneath the skin",
+      "#2 not grounded in the event (no shared object/action words): The vibration grows steady and deep, like a pulse beneath the skin"
+    ]
+  }
+]

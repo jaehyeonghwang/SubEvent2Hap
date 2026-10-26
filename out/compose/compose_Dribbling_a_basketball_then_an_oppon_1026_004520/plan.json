@@ -1,0 +1,87 @@
+{
+  "event": "Dribbling a basketball then an opponent forcefully slaps the ball out of your hand with a large splat",
+  "sub_events": [
+    {
+      "prompt": "The basketball is bouncing on the ground.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_004520/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0878,
+        0.0852
+      ],
+      "offset": 1.937,
+      "shared": true
+    },
+    {
+      "prompt": "The basketball is bouncing on the ground.",
+      "start": 1.0,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_004520/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0878,
+        0.0852
+      ],
+      "offset": 1.937,
+      "shared": true
+    },
+    {
+      "prompt": "The basketball is bouncing on the ground.",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_004520/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0878,
+        0.0852
+      ],
+      "offset": 1.937,
+      "shared": true
+    },
+    {
+      "prompt": "The opponent's hand is slapping the basketball.",
+      "start": 2.0,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Dribbling_a_basketball_then_an_oppon_1026_004520/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.1053,
+        0.0104
+      ],
+      "offset": 0.36,
+      "shared": false
+    }
+  ],
+  "total": 2.3,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Dribbling_a_basketball_then_an_oppon_1026_004520_composite.wav",
+  "baseline": "compose_Dribbling_a_basketball_then_an_oppon_1026_004520_baseline.wav",
+  "gen_duration": 2.3,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.931093692779541,
+  "elapsed": 1.9431490898132324
+}

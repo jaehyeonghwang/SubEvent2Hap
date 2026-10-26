@@ -1,0 +1,74 @@
+[
+ {
+  "object": "rubber ball",
+  "surface": "hard floor",
+  "rebound_height_cm": 75.0,
+  "bounciness": "very_well",
+  "visible_bounces": 4,
+  "basis": "Rubber is elastic and the hard floor provides a rigid, flat surface that allows efficient energy transfer, resulting in high rebound and multiple visible bounces.",
+  "e_from_height": 0.8660254037844386
+ },
+ {
+  "object": "steel ball",
+  "surface": "hard floor",
+  "rebound_height_cm": 75.0,
+  "bounciness": "very_well",
+  "visible_bounces": 4,
+  "basis": "Steel is a rigid, dense material and the hard floor provides a stiff, non-compressible surface, resulting in efficient energy transfer and high rebound.",
+  "e_from_height": 0.8660254037844386
+ },
+ {
+  "object": "steel ball",
+  "surface": "wooden floor",
+  "rebound_height_cm": 60.0,
+  "bounciness": "very_well",
+  "visible_bounces": 4,
+  "basis": "Steel is a hard, elastic material and wood provides a relatively soft yet stable surface; their combination allows for significant energy return on impact, resulting in multiple visible bounces.",
+  "e_from_height": 0.7745966692414834
+ },
+ {
+  "object": "steel ball",
+  "surface": "thick steel plate",
+  "rebound_height_cm": 90.0,
+  "bounciness": "very_well",
+  "visible_bounces": 3,
+  "basis": "Steel balls and thick steel plates maintain high elasticity; the collision results in a strong rebound due to minimal energy loss, typical of hard, rigid materials.",
+  "e_from_height": 0.9486832980505138
+ },
+ {
+  "object": "tennis ball",
+  "surface": "concrete",
+  "rebound_height_cm": 60.0,
+  "bounciness": "very_well",
+  "visible_bounces": 5,
+  "basis": "Tennis balls have a rubber core and are designed to bounce well on hard surfaces like concrete, which provides a firm and flat surface that transfers energy efficiently.",
+  "e_from_height": 0.7745966692414834
+ },
+ {
+  "object": "glass marble",
+  "surface": "tile floor",
+  "rebound_height_cm": 60.0,
+  "bounciness": "very_well",
+  "visible_bounces": 4,
+  "basis": "Glass marbles are hard and smooth, and tile floors are rigid and flat, creating an efficient energy transfer that allows a high rebound with minimal energy loss.",
+  "e_from_height": 0.7745966692414834
+ },
+ {
+  "object": "soft clay ball",
+  "surface": "floor",
+  "rebound_height_cm": 0.0,
+  "bounciness": "very_well",
+  "visible_bounces": 0,
+  "basis": "Soft clay does not rebound well upon impact with a hard floor; it deforms and sticks, absorbing energy rather than bouncing.",
+  "e_from_height": 0.0
+ },
+ {
+  "object": "ping-pong ball",
+  "surface": "table",
+  "rebound_height_cm": 70.0,
+  "bounciness": "very_well",
+  "visible_bounces": 5,
+  "basis": "Ping-pong balls are made of lightweight, elastic material that deforms and rebounds efficiently when hitting a hard surface like a table, resulting in high bounciness and multiple visible bounces before coming to rest.",
+  "e_from_height": 0.8366600265340756
+ }
+]

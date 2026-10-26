@@ -1,0 +1,85 @@
+{
+  "event": "A small wheel rolls steadily over a tiled floor, producing three distinct bumps as it crosses tile gaps.",
+  "sub_events": [
+    {
+      "prompt": "A small wheel rolling smoothly over a tiled floor",
+      "start": 0.0,
+      "duration": 1.2,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "wheel",
+      "file": "compose/compose_A_small_wheel_rolls_steadily_over_a__1025_191046/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0251,
+        0.0053
+      ],
+      "offset": 1.474,
+      "shared": false
+    },
+    {
+      "prompt": "A small wheel hitting a tile gap with a sharp, distinct bump",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "wheel",
+      "file": "compose/compose_A_small_wheel_rolls_steadily_over_a__1025_191046/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.1821,
+        0.0632
+      ],
+      "offset": 0.342,
+      "shared": false
+    },
+    {
+      "prompt": "A small wheel hitting a tile gap with a sharper, tighter bump",
+      "start": 2.0,
+      "duration": 0.3,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "wheel",
+      "file": "compose/compose_A_small_wheel_rolls_steadily_over_a__1025_191046/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0613,
+        0.0175
+      ],
+      "offset": 0.098,
+      "shared": false
+    },
+    {
+      "prompt": "A small wheel hitting a tile gap with a faint, dull bump",
+      "start": 2.4,
+      "duration": 0.3,
+      "intensity": 0.35,
+      "transition": "cut",
+      "source": "wheel",
+      "file": "compose/compose_A_small_wheel_rolls_steadily_over_a__1025_191046/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0075,
+        0.0036
+      ],
+      "offset": 0.033,
+      "shared": false
+    }
+  ],
+  "total": 2.6999999999999997,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_small_wheel_rolls_steadily_over_a__1025_191046_composite.wav",
+  "baseline": "compose_A_small_wheel_rolls_steadily_over_a__1025_191046_baseline.wav",
+  "gen_duration": 2.6999999999999997,
+  "prompts": 10,
+  "elapsed_gen": 6.262039661407471,
+  "elapsed": 6.279867887496948
+}

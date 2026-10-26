@@ -1,0 +1,71 @@
+{
+  "event": "The ambulance passing outside the window approaches and then moves away.",
+  "sub_events": [
+    {
+      "prompt": "The ambulance front surface passes outside the window.",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_ambulance_passing_outside_the_wi_1026_013117/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0308,
+        0.1706
+      ],
+      "offset": 2.932,
+      "shared": false
+    },
+    {
+      "prompt": "The ambulance body moves toward the observer's position.",
+      "start": 1.3,
+      "duration": 1.4,
+      "intensity": 0.7,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_The_ambulance_passing_outside_the_wi_1026_013117/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0038,
+        0.018
+      ],
+      "offset": 0.591,
+      "shared": false
+    },
+    {
+      "prompt": "The ambulance body moves away from the observer's position.",
+      "start": 2.7,
+      "duration": 1.8,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_ambulance_passing_outside_the_wi_1026_013117/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0029,
+        0.0031
+      ],
+      "offset": 2.401,
+      "shared": false
+    }
+  ],
+  "total": 4.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_ambulance_passing_outside_the_wi_1026_013117_composite.wav",
+  "baseline": "compose_The_ambulance_passing_outside_the_wi_1026_013117_baseline.wav",
+  "gen_duration": 4.5,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 9.846029281616211,
+  "elapsed": 9.863574743270874
+}

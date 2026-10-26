@@ -1,0 +1,70 @@
+{
+  "event": "A graduate student rigorously typing their computer keyboard to write a research draft and then hitting the enter key after each paragraph, then pause..",
+  "sub_events": [
+    {
+      "prompt": "The computer keyboard is typing.",
+      "start": 0.5,
+      "duration": 2.0,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_graduate_student_rigorously_typing_1026_001610/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0092,
+        0.0062
+      ],
+      "offset": 2.48,
+      "shared": false
+    },
+    {
+      "prompt": "The computer keyboard is hitting the enter key.",
+      "start": 2.6,
+      "duration": 0.3,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_graduate_student_rigorously_typing_1026_001610/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0436,
+        0.0092
+      ],
+      "offset": 0.18,
+      "shared": false
+    },
+    {
+      "prompt": "The computer keyboard is pausing.",
+      "start": 3.0,
+      "duration": 1.5,
+      "intensity": 0.0,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_A_graduate_student_rigorously_typing_1026_001610/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0092,
+        0.0154
+      ],
+      "offset": 0.535,
+      "shared": false
+    }
+  ],
+  "total": 4.5,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_graduate_student_rigorously_typing_1026_001610_composite.wav",
+  "baseline": "compose_A_graduate_student_rigorously_typing_1026_001610_baseline.wav",
+  "gen_duration": 4.5,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 10.655708312988281,
+  "elapsed": 10.675666332244873
+}

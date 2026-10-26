@@ -1,0 +1,194 @@
+[
+ {
+  "case": "rubber ball / hard floor",
+  "restitution": {
+   "value": 0.6,
+   "low": 0.5,
+   "high": 0.7,
+   "basis": "Rubber balls typically have moderate restitution on hard surfaces."
+  },
+  "observed": {
+   "rebound_height_cm": 80.0,
+   "bounciness": "very_well",
+   "visible_bounces": 5,
+   "basis": "Rubber balls are elastic and hard floors provide a rigid surface for effective energy transfer."
+  },
+  "e_from_height": 0.8944271909999159,
+  "seconds": [
+   0.6708841323852539,
+   0.6665661334991455
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "steel ball / hard floor",
+  "restitution": {
+   "value": 0.6,
+   "low": 0.5,
+   "high": 0.7,
+   "basis": "Steel on hard surface; restitution depends on material properties and surface hardness."
+  },
+  "observed": {
+   "rebound_height_cm": 85.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Steel is dense and hard, while a hard floor provides a rigid surface. The collision transfers energy efficiently with minimal loss."
+  },
+  "e_from_height": 0.9219544457292888,
+  "seconds": [
+   0.6481013298034668,
+   0.7554919719696045
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "steel ball / wooden floor",
+  "restitution": {
+   "value": 0.6,
+   "low": 0.5,
+   "high": 0.7,
+   "basis": "Material properties of steel and wood; restitution depends on material stiffness and surface roughness."
+  },
+  "observed": {
+   "rebound_height_cm": 85.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Steel is a dense and rigid material that transfers energy efficiently to the wooden floor, which is also rigid but less elastic. The ball's high mass and rigidity allow for multiple bounces with significant height."
+  },
+  "e_from_height": 0.9219544457292888,
+  "seconds": [
+   0.7108125686645508,
+   0.9230332374572754
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "steel ball / thick steel plate",
+  "restitution": {
+   "value": 0.6,
+   "low": 0.5,
+   "high": 0.7,
+   "basis": "Steel on steel restitution is typically around 0.6-0.7."
+  },
+  "observed": {
+   "rebound_height_cm": 95.0,
+   "bounciness": "very_well",
+   "visible_bounces": 1,
+   "basis": "Both the object and surface are made of steel, which is a hard material. The collision between two rigid objects results in minimal energy loss, allowing the ball to rebound to nearly its original height."
+  },
+  "e_from_height": 0.9746794344808963,
+  "seconds": [
+   0.6798892021179199,
+   0.9064819812774658
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "tennis ball / concrete",
+  "restitution": {
+   "value": 0.5,
+   "low": 0.4,
+   "high": 0.6,
+   "basis": "Typical restitution for a tennis ball on concrete; depends on material properties and surface roughness."
+  },
+  "observed": {
+   "rebound_height_cm": 50.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Tennis balls are elastic and concrete is rigid, allowing for a significant rebound."
+  },
+  "e_from_height": 0.7071067811865476,
+  "seconds": [
+   0.7074739933013916,
+   0.6962871551513672
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "glass marble / tile floor",
+  "restitution": {
+   "value": 0.8,
+   "low": 0.6,
+   "high": 0.95,
+   "basis": "Glass is relatively hard and tile floors are rigid; restitution depends on material properties and surface condition."
+  },
+  "observed": {
+   "rebound_height_cm": 85.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Glass marbles are dense and hard, tile floors are rigid and smooth, creating a highly elastic collision."
+  },
+  "e_from_height": 0.9219544457292888,
+  "seconds": [
+   0.6800034046173096,
+   0.7260563373565674
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "soft clay ball / floor",
+  "restitution": {
+   "value": 0.1,
+   "low": 0.05,
+   "high": 0.2,
+   "basis": "Soft clay has low elasticity; restitution depends on material and impact speed."
+  },
+  "observed": {
+   "rebound_height_cm": 0.0,
+   "bounciness": "very_well",
+   "visible_bounces": 0,
+   "basis": "Soft clay is a non-elastic material that deforms upon impact without rebounding."
+  },
+  "e_from_height": 0.0,
+  "seconds": [
+   0.651958703994751,
+   0.7418882846832275
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "ping-pong ball / table",
+  "restitution": {
+   "value": 0.9,
+   "low": 0.85,
+   "high": 0.95,
+   "basis": "Standard ping-pong balls have high restitution due to their hollow plastic construction and air-filled interior."
+  },
+  "observed": {
+   "rebound_height_cm": 85.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Ping-pong balls are hollow and light, making them bounce well on a flat surface like a table."
+  },
+  "e_from_height": 0.9219544457292888,
+  "seconds": [
+   0.7103569507598877,
+   0.7566132545471191
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ }
+]

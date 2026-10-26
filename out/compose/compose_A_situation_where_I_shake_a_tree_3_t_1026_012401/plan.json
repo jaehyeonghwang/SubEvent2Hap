@@ -1,0 +1,103 @@
+{
+  "event": "A situation where I shake a tree 3 times and an apple falls on my head",
+  "sub_events": [
+    {
+      "prompt": "The tree is shaken.",
+      "start": 0.1,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_012401/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0045,
+        0.0006
+      ],
+      "offset": 0.249,
+      "shared": true
+    },
+    {
+      "prompt": "The tree is shaken.",
+      "start": 0.4,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_012401/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0045,
+        0.0006
+      ],
+      "offset": 0.249,
+      "shared": true
+    },
+    {
+      "prompt": "The tree is shaken.",
+      "start": 0.7,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_012401/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0045,
+        0.0006
+      ],
+      "offset": 0.249,
+      "shared": true
+    },
+    {
+      "prompt": "The apple falls.",
+      "start": 1.0,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_012401/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0537,
+        0.0291
+      ],
+      "offset": 0.256,
+      "shared": false
+    },
+    {
+      "prompt": "The apple lands on the head.",
+      "start": 1.2,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_A_situation_where_I_shake_a_tree_3_t_1026_012401/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.1508,
+        0.0155
+      ],
+      "offset": 0.74,
+      "shared": false
+    }
+  ],
+  "total": 1.5,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_situation_where_I_shake_a_tree_3_t_1026_012401_composite.wav",
+  "baseline": "compose_A_situation_where_I_shake_a_tree_3_t_1026_012401_baseline.wav",
+  "gen_duration": 1.5,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.969557523727417,
+  "elapsed": 6.985496997833252
+}

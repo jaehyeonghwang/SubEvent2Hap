@@ -1,0 +1,118 @@
+{
+  "event": "A swimmer swims in butterfly stroke. The swimmer repeats the process of strongly coming out of the water with both of his arms, then going back into the water.",
+  "sub_events": [
+    {
+      "prompt": "Initial strong push as swimmer starts butterfly stroke",
+      "start": 0.0,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_001626/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.052,
+        0.0354
+      ],
+      "offset": 0.4,
+      "shared": false
+    },
+    {
+      "prompt": "Arms emerge from the water with force",
+      "start": 0.5,
+      "duration": 0.7,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_001626/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0574,
+        0.15
+      ],
+      "offset": 0.98,
+      "shared": false
+    },
+    {
+      "prompt": "Arms re-enter the water smoothly",
+      "start": 1.2,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_001626/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0007,
+        0.138
+      ],
+      "offset": 0.3,
+      "shared": false
+    },
+    {
+      "prompt": "Repeat the strong push for the next stroke",
+      "start": 1.7,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_001626/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0474,
+        0.6538
+      ],
+      "offset": 0.962,
+      "shared": false
+    },
+    {
+      "prompt": "Arms emerge from the water again",
+      "start": 2.2,
+      "duration": 0.7,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_001626/sub_05.wav",
+      "candidate": 1,
+      "scores": [
+        0.0059,
+        0.0211
+      ],
+      "offset": 0.619,
+      "shared": false
+    },
+    {
+      "prompt": "Arms re-enter the water smoothly again",
+      "start": 2.9,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_A_swimmer_swims_in_butterfly_stroke__1026_001626/sub_06.wav",
+      "candidate": 1,
+      "scores": [
+        0.0075,
+        0.0799
+      ],
+      "offset": 0.14,
+      "shared": false
+    }
+  ],
+  "total": 3.4,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_swimmer_swims_in_butterfly_stroke__1026_001626_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.7,
+  "prompts": 12,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.363095283508301,
+  "elapsed": 4.384079217910767
+}

@@ -1,0 +1,85 @@
+{
+  "event": "A metal coin falls onto a table, spins, wobbles increasingly rapidly, and finally settles flat.",
+  "sub_events": [
+    {
+      "prompt": "A metal coin striking a wooden table with a sharp crisp impact",
+      "start": 0.0,
+      "duration": 0.2,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "coin",
+      "file": "compose/compose_A_metal_coin_falls_onto_a_table_spin_1025_190926/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0188,
+        0.194
+      ],
+      "offset": 0.241,
+      "shared": false
+    },
+    {
+      "prompt": "A metal coin spinning slowly on a smooth surface with a steady hum",
+      "start": 0.3,
+      "duration": 0.6,
+      "intensity": 0.5,
+      "transition": "crossfade",
+      "source": "coin",
+      "file": "compose/compose_A_metal_coin_falls_onto_a_table_spin_1025_190926/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0287,
+        0.041
+      ],
+      "offset": 2.82,
+      "shared": false
+    },
+    {
+      "prompt": "A metal coin wobbling rapidly with increasing vibration and jitter",
+      "start": 1.2,
+      "duration": 0.8,
+      "intensity": 0.9,
+      "transition": "crossfade",
+      "source": "coin",
+      "file": "compose/compose_A_metal_coin_falls_onto_a_table_spin_1025_190926/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0036,
+        0.0313
+      ],
+      "offset": 0.0,
+      "shared": false
+    },
+    {
+      "prompt": "A metal coin settling slowly to a flat rest with fading vibrations",
+      "start": 2.0,
+      "duration": 1.5,
+      "intensity": 0.2,
+      "transition": "crossfade",
+      "source": "coin",
+      "file": "compose/compose_A_metal_coin_falls_onto_a_table_spin_1025_190926/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0004,
+        0.0546
+      ],
+      "offset": 1.198,
+      "shared": false
+    }
+  ],
+  "total": 3.5,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_metal_coin_falls_onto_a_table_spin_1025_190926_composite.wav",
+  "baseline": "compose_A_metal_coin_falls_onto_a_table_spin_1025_190926_baseline.wav",
+  "gen_duration": 3.5,
+  "prompts": 10,
+  "elapsed_gen": 8.21026611328125,
+  "elapsed": 8.230706930160522
+}

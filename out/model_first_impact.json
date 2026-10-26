@@ -1,0 +1,166 @@
+{
+  "phases": [
+    "A hammer strikes a metal plate once at 1 second."
+  ],
+  "sub_events": [
+    {
+      "source": "hammer / metal plate",
+      "prompt": "hammer striking metal plate with a single impact",
+      "start": 1.0,
+      "duration": 0.15,
+      "intensity": 1.0,
+      "transition": "cut"
+    }
+  ],
+  "hierarchy": {
+    "version": "model_first_v1",
+    "original_event": "A hammer strikes a metal plate once at 1 second.",
+    "catalog": [
+      {
+        "name": "vertical_bounce",
+        "priority": 100,
+        "scope": "scenario",
+        "applicability": "A passive vertical drop and repeated ball-floor contacts ONLY. Resting at the end is OK; active dribbling, rolling, slopes, prescribed contact timestamps and other actions are not covered."
+      },
+      {
+        "name": "single_impact",
+        "priority": 50,
+        "scope": "basic",
+        "applicability": "Exactly one isolated strike/contact against a stationary surface. No repetitions, continuous scraping, rolling, ringing sequence, or other subsequent action. Normal impulse only; material deformation and contact duration are not predicted."
+      }
+    ],
+    "tree": {
+      "id": "node_0",
+      "description": "A hammer strikes a metal plate once at 1 second.",
+      "depth": 0,
+      "children": [],
+      "decision": {
+        "coverage": {
+          "vertical_bounce": {
+            "applicable": false,
+            "reason": "The action involves a hammer striking a metal plate, which is not a passive vertical drop or ball-floor contact. It does not match the scope of vertical bounce."
+          },
+          "single_impact": {
+            "applicable": true,
+            "reason": "The action describes exactly one isolated strike (a hammer hitting a metal plate) against a stationary surface, with no repetitions or subsequent actions. This matches the definition of single impact: one contact, no rolling, scraping, or sequence."
+          }
+        },
+        "atomic": true,
+        "reason": "The current action is a single, isolated strike with no follow-up motion or sequence, fitting perfectly within the scope of 'single_impact'.",
+        "children": []
+      },
+      "model_rejections": [],
+      "model": "single_impact",
+      "scope": "basic",
+      "stop_reason": "model_covers_action",
+      "selection_reason": "The action describes exactly one isolated strike (a hammer hitting a metal plate) against a stationary surface, with no repetitions or subsequent actions. This matches the definition of single impact: one contact, no rolling, scraping, or sequence.",
+      "physics": {
+        "version": "normal_impulse_v1",
+        "parameters": {
+          "mass_kg": 0.05,
+          "normal_speed_m_s": 1.0,
+          "restitution": 0.2,
+          "impact_time_s": 1.0
+        },
+        "provenance": {
+          "mass_kg": "assumed_default",
+          "normal_speed_m_s": "assumed_default",
+          "restitution": "assumed_default",
+          "impact_time_s": "text_extracted_by_lm"
+        },
+        "impulse_N_s": 0.06,
+        "equation": "J=m*(1+e)*v_normal",
+        "notes": [
+          "Rigid stationary surface; isolated normal impulse approximation.",
+          "The 0.15s pulse is a rendering window, not a solved contact duration.",
+          "One-event intensity is normalized to 1; absolute actuator acceleration is uncalibrated."
+        ]
+      },
+      "sub_events": [
+        {
+          "source": "hammer / metal plate",
+          "prompt": "hammer striking metal plate with a single impact",
+          "start": 1.0,
+          "duration": 0.15,
+          "intensity": 1.0,
+          "transition": "cut"
+        }
+      ],
+      "duration_s": 1.15
+    },
+    "connections": [],
+    "reference_sub_events": [
+      {
+        "source": "hammer / metal plate",
+        "prompt": "hammer striking metal plate with a single impact",
+        "start": 1.0,
+        "duration": 0.15,
+        "intensity": 1.0,
+        "transition": "cut"
+      }
+    ],
+    "limits": {
+      "max_depth": 3,
+      "max_nodes": 15
+    },
+    "notes": [
+      "Model applicability and semantic coverage are LM judgments, not verified ground truth.",
+      "Physical parameters may use labeled defaults; inspect each leaf's provenance.",
+      "Strength is normalized within each physical leaf; strengths across different models are uncalibrated.",
+      "Composite placement does not solve transitions between physical regimes or transfer state.",
+      "Atomic LM fallback emits exactly one segment and is not a physical prediction."
+    ]
+  },
+  "model": "qwen3-4b",
+  "elapsed": 3.59366774559021,
+  "prompt_version": "model_first_v1",
+  "stages": [
+    {
+      "stage": "model_selection",
+      "elapsed": 1.709787130355835,
+      "output": {
+        "coverage": {
+          "vertical_bounce": {
+            "applicable": false,
+            "reason": "The action involves a hammer striking a metal plate, which is not a passive vertical drop or ball-floor contact. It does not match the scope of vertical bounce."
+          },
+          "single_impact": {
+            "applicable": true,
+            "reason": "The action describes exactly one isolated strike (a hammer hitting a metal plate) against a stationary surface, with no repetitions or subsequent actions. This matches the definition of single impact: one contact, no rolling, scraping, or sequence."
+          }
+        },
+        "atomic": true,
+        "reason": "The current action is a single, isolated strike with no follow-up motion or sequence, fitting perfectly within the scope of 'single_impact'.",
+        "children": []
+      },
+      "contract_corrections": []
+    },
+    {
+      "stage": "impact_setup",
+      "elapsed": 1.5529966354370117,
+      "output": {
+        "mass_kg": null,
+        "normal_speed_m_s": null,
+        "restitution": null,
+        "impact_time_s": null,
+        "supported": true,
+        "reason": "The current action describes a single, isolated normal impact ('a hammer strikes a metal plate once') on a stationary surface (metal plate), with no indication of sliding, rolling, repetition, or additional actions. The phrase 'at 1 second' likely refers to the time of impact, not the duration of contact or speed. Since no explicit values for mass, speed, restitution, or impact time are stated in the action description, these parameters cannot be extracted from the given text. Therefore, all numeric values are null. The action is isolated and normal, satisfying the condition for supported=true.",
+        "object_name": "hammer",
+        "surface_name": "metal plate"
+      },
+      "contract_corrections": []
+    },
+    {
+      "stage": "impact_numbers",
+      "elapsed": 0.3308839797973633,
+      "output": {
+        "mass_kg": null,
+        "normal_speed_m_s": null,
+        "restitution": null,
+        "impact_time_s": 1.0
+      },
+      "contract_corrections": []
+    }
+  ],
+  "review_changes": []
+}

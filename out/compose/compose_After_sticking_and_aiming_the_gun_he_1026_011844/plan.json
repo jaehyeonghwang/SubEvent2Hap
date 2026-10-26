@@ -1,0 +1,39 @@
+{
+  "event": "After sticking and aiming the gun, he shoots at the enemy once.",
+  "sub_events": [
+    {
+      "prompt": "gun shoots at the enemy",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_After_sticking_and_aiming_the_gun_he_1026_011844/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0865,
+        0.6692
+      ],
+      "offset": 0.163,
+      "shared": false
+    }
+  ],
+  "total": 1.3,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_After_sticking_and_aiming_the_gun_he_1026_011844_composite.wav",
+  "baseline": "compose_After_sticking_and_aiming_the_gun_he_1026_011844_baseline.wav",
+  "gen_duration": 1.8,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.1973025798797607,
+  "elapsed": 3.204303503036499
+}

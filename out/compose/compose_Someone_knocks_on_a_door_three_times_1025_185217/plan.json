@@ -1,0 +1,79 @@
+{
+  "event": "Someone knocks on a door three times and the door creaks open",
+  "sub_events": [
+    {
+      "prompt": "A sharp knock on a wooden door with firm pressure",
+      "start": 0.0,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "hand",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_185217/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.5445,
+        0.7785
+      ],
+      "offset": 0.023
+    },
+    {
+      "prompt": "A sharp knock on a wooden door with firm pressure",
+      "start": 0.35,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "hand",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_185217/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.3162,
+        1.0064
+      ],
+      "offset": 0.622
+    },
+    {
+      "prompt": "A sharp knock on a wooden door with firm pressure",
+      "start": 0.7,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "hand",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_185217/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.5973,
+        0.6503
+      ],
+      "offset": 0.246
+    },
+    {
+      "prompt": "A heavy door creaking open slowly with wood groaning",
+      "start": 1.0,
+      "duration": 2.5,
+      "intensity": 0.6,
+      "transition": "crossfade",
+      "source": "door",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_185217/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0922,
+        0.0705
+      ],
+      "offset": 0.0
+    }
+  ],
+  "total": 3.5,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null
+  },
+  "composite": "compose_Someone_knocks_on_a_door_three_times_1025_185217_composite.wav",
+  "baseline": "compose_Someone_knocks_on_a_door_three_times_1025_185217_baseline.wav",
+  "gen_duration": 3.5,
+  "prompts": 10,
+  "elapsed_gen": 6.7170703411102295,
+  "elapsed": 6.740072011947632
+}

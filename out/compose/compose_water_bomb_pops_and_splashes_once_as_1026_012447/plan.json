@@ -1,0 +1,55 @@
+{
+  "event": "water bomb pops and splashes once as I hit the enemy",
+  "sub_events": [
+    {
+      "prompt": "The water bomb pops.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_water_bomb_pops_and_splashes_once_as_1026_012447/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0353,
+        0.1685
+      ],
+      "offset": 0.415,
+      "shared": false
+    },
+    {
+      "prompt": "The water bomb splashes.",
+      "start": 0.85,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_water_bomb_pops_and_splashes_once_as_1026_012447/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.1246,
+        0.0772
+      ],
+      "offset": 0.343,
+      "shared": false
+    }
+  ],
+  "total": 1.25,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_water_bomb_pops_and_splashes_once_as_1026_012447_composite.wav",
+  "baseline": "compose_water_bomb_pops_and_splashes_once_as_1026_012447_baseline.wav",
+  "gen_duration": 1.5,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.7152562141418457,
+  "elapsed": 3.7257978916168213
+}

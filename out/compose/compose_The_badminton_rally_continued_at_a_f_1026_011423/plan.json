@@ -1,0 +1,151 @@
+{
+  "event": "The badminton rally continued at a fast and steady pace until the game ended with a powerful smash.",
+  "sub_events": [
+    {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_011423/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.1061,
+        0.1408
+      ],
+      "offset": 0.962,
+      "shared": true
+    },
+    {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 0.8,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_011423/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.1061,
+        0.1408
+      ],
+      "offset": 0.962,
+      "shared": true
+    },
+    {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 1.1,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_011423/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.1061,
+        0.1408
+      ],
+      "offset": 0.962,
+      "shared": true
+    },
+    {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 1.4,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_011423/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.1061,
+        0.1408
+      ],
+      "offset": 0.962,
+      "shared": true
+    },
+    {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 1.7,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_011423/sub_05.wav",
+      "candidate": 1,
+      "scores": [
+        0.1061,
+        0.1408
+      ],
+      "offset": 0.962,
+      "shared": true
+    },
+    {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 2.0,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_011423/sub_06.wav",
+      "candidate": 1,
+      "scores": [
+        0.1061,
+        0.1408
+      ],
+      "offset": 0.962,
+      "shared": true
+    },
+    {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 2.3,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_011423/sub_07.wav",
+      "candidate": 1,
+      "scores": [
+        0.1061,
+        0.1408
+      ],
+      "offset": 0.962,
+      "shared": true
+    },
+    {
+      "prompt": "The shuttlecock makes fast contact.",
+      "start": 2.6,
+      "duration": 0.3,
+      "intensity": 0.9,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_The_badminton_rally_continued_at_a_f_1026_011423/sub_08.wav",
+      "candidate": 1,
+      "scores": [
+        0.1061,
+        0.1408
+      ],
+      "offset": 0.962,
+      "shared": true
+    }
+  ],
+  "total": 2.9,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_badminton_rally_continued_at_a_f_1026_011423_composite.wav",
+  "baseline": "compose_The_badminton_rally_continued_at_a_f_1026_011423_baseline.wav",
+  "gen_duration": 2.9,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.882397651672363,
+  "elapsed": 4.9125401973724365
+}

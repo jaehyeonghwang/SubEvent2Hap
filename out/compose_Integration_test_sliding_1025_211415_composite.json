@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] Integration test: sliding", "params": {"candidates": 1, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": 42, "gamma": 1.0, "share_repeats": true, "sub_events": 1}, "created": 1792930455.0906875, "kind": "composite", "event": "Integration test: sliding", "run": "compose_Integration_test_sliding_1025_211415"}

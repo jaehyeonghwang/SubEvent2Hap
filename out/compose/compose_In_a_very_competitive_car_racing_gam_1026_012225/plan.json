@@ -1,0 +1,71 @@
+{
+  "event": "In a very competitive car racing game, you crash into another car, making a very large sound. Then, there is only silence.",
+  "sub_events": [
+    {
+      "prompt": "car crashes into another car",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.9,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_In_a_very_competitive_car_racing_gam_1026_012225/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.2296,
+        0.029
+      ],
+      "offset": 1.159,
+      "shared": false
+    },
+    {
+      "prompt": "sound waves in air produce a very large sound",
+      "start": 1.3,
+      "duration": 0.6,
+      "intensity": 0.9,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_In_a_very_competitive_car_racing_gam_1026_012225/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0218,
+        0.0338
+      ],
+      "offset": 0.0,
+      "shared": false
+    },
+    {
+      "prompt": "the environment becomes silent",
+      "start": 2.0,
+      "duration": 0.15,
+      "intensity": 0.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_In_a_very_competitive_car_racing_gam_1026_012225/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0008,
+        0.007
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 2.15,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_In_a_very_competitive_car_racing_gam_1026_012225_composite.wav",
+  "baseline": "compose_In_a_very_competitive_car_racing_gam_1026_012225_baseline.wav",
+  "gen_duration": 2.15,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 8.350939273834229,
+  "elapsed": 8.360939979553223
+}

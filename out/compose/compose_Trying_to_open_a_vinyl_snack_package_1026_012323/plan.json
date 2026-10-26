@@ -1,0 +1,55 @@
+{
+  "event": "Trying to open a vinyl snack package, then finally tearing it open with a sharp sound.",
+  "sub_events": [
+    {
+      "prompt": "The vinyl snack package seal is being pulled taut.",
+      "start": 0.5,
+      "duration": 1.5,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_vinyl_snack_package_1026_012323/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0193,
+        0.0189
+      ],
+      "offset": 0.057,
+      "shared": false
+    },
+    {
+      "prompt": "The vinyl snack package seal breaks under sharp tearing force.",
+      "start": 2.5,
+      "duration": 0.8,
+      "intensity": 0.9,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_vinyl_snack_package_1026_012323/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0186,
+        0.0135
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 3.3,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Trying_to_open_a_vinyl_snack_package_1026_012323_composite.wav",
+  "baseline": "compose_Trying_to_open_a_vinyl_snack_package_1026_012323_baseline.wav",
+  "gen_duration": 3.3,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.66789698600769,
+  "elapsed": 5.676897764205933
+}

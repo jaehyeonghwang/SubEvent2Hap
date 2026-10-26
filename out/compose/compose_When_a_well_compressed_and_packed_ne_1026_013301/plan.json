@@ -1,0 +1,71 @@
+{
+  "event": "When a well-compressed and packed new pickle container is turned, it does not open even with a strong force, but when it opens at once with a cheerful puff",
+  "sub_events": [
+    {
+      "prompt": "the pickle container lid is turned by external force",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_When_a_well_compressed_and_packed_ne_1026_013301/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0175,
+        0.0427
+      ],
+      "offset": 0.144,
+      "shared": false
+    },
+    {
+      "prompt": "the pickle container body resists movement under applied force",
+      "start": 1.3,
+      "duration": 0.7,
+      "intensity": 0.7,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_When_a_well_compressed_and_packed_ne_1026_013301/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0096,
+        0.0135
+      ],
+      "offset": 0.0,
+      "shared": false
+    },
+    {
+      "prompt": "the pickle container seal releases air suddenly upon mechanical failure of compression",
+      "start": 2.0,
+      "duration": 0.4,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_When_a_well_compressed_and_packed_ne_1026_013301/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0551,
+        0.7632
+      ],
+      "offset": 0.025,
+      "shared": false
+    }
+  ],
+  "total": 2.4,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_When_a_well_compressed_and_packed_ne_1026_013301_composite.wav",
+  "baseline": "compose_When_a_well_compressed_and_packed_ne_1026_013301_baseline.wav",
+  "gen_duration": 2.4,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.323504447937012,
+  "elapsed": 5.338033676147461
+}

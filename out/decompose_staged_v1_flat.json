@@ -1,0 +1,1578 @@
+[
+  {
+    "event": "A ball bounces three times on a wooden floor and then rolls away",
+    "phases": [
+      "Initial contact and bounce of the ball with the wooden floor",
+      "Second bounce of the ball against the wooden floor",
+      "Third bounce of the ball against the wooden floor",
+      "Rolling motion of the ball along the wooden-than floor surface"
+    ],
+    "sub_events": [
+      {
+        "source": "ball",
+        "prompt": "ball bounces on wooden floor",
+        "start": 0.5,
+        "duration": 0.3,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "ball",
+        "prompt": "ball bounces on wooden floor",
+        "start": 1.8,
+        "duration": 0.3,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "ball",
+        "prompt": "ball bounces on wooden floor",
+        "start": 3.1,
+        "duration": 0.3,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "source": "ball",
+        "prompt": "ball rolls along wooden floor",
+        "start": 4.4,
+        "duration": 1.5,
+        "intensity": 0.5,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 4.167912244796753,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 1.1830766201019287,
+        "output": {
+          "phases": [
+            "Initial contact and bounce of the ball with the wooden floor",
+            "Second bounce of the ball against the wooden floor",
+            "Third bounce of the ball against the wooden floor",
+            "Rolling motion of the ball along the wooden floor surface"
+          ],
+          "events": [
+            {
+              "source": "ball",
+              "action": "bounces on wooden floor"
+            },
+            {
+              "source": "ball",
+              "action": "bounces on wooden floor"
+            },
+            {
+              "source": "ball",
+              "action": "bounces on wooden floor"
+            },
+            {
+              "source": "ball",
+              "action": "rolls along wooden floor"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.2952325344085693,
+        "output": {
+          "outline": {
+            "phases": [
+              "Initial contact and bounce of the ball with the wooden floor",
+              "Second bounce of the ball against the wooden floor",
+              "Third bounce of the ball against the wooden floor",
+              "Rolling motion of the ball along the wooden-than floor surface"
+            ],
+            "events": [
+              {
+                "source": "ball",
+                "action": "bounces on wooden floor"
+              },
+              {
+                "source": "ball",
+                "action": "bounces on wooden floor"
+              },
+              {
+                "source": "ball",
+                "action": "bounces on wooden floor"
+              },
+              {
+                "source": "ball",
+                "action": "rolls along wooden floor"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.4010300636291504,
+        "output": {
+          "event_1": {
+            "start": 0.5,
+            "duration": 0.3,
+            "intensity": 0.8,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 1.8,
+            "duration": 0.3,
+            "intensity": 0.7,
+            "transition": "cut"
+          },
+          "event_3": {
+            "start": 3.1,
+            "duration": 0.3,
+            "intensity": 0.6,
+            "transition": "cut"
+          },
+          "event_4": {
+            "start": 4.4,
+            "duration": 1.5,
+            "intensity": 0.5,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.2855710983276367,
+        "output": {
+          "action_1": "ball bounces on wooden floor",
+          "action_2": "ball rolls along wooden floor"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "A sword clashes against a shield, then scrapes off",
+    "phases": [
+      "Initial contact phase: The sword makes direct physical impact with the shield surface.",
+      "Sliding friction phase: The sword slides across the shield's outer edge, causing continuous scraping motion"
+    ],
+    "sub_events": [
+      {
+        "source": "sword",
+        "prompt": "sword clashes against shield",
+        "start": 0.5,
+        "duration": 0.3,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "sword",
+        "prompt": "sword scrapes off shield",
+        "start": 0.85,
+        "duration": 0.45,
+        "intensity": 0.7,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 2.669311285018921,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 0.7396032810211182,
+        "output": {
+          "phases": [
+            "Initial contact phase: The sword makes direct physical impact with the shield surface.",
+            "Sliding friction phase: The sword slides across the shield's outer edge, causing continuous scraping motion"
+          ],
+          "events": [
+            {
+              "source": "sword",
+              "action": "clashes against shield"
+            },
+            {
+              "source": "sword",
+              "action": "scrapes off shield"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 0.8892872333526611,
+        "output": {
+          "outline": {
+            "phases": [
+              "Initial contact phase: The sword makes direct physical impact with the shield surface.",
+              "Sliding friction phase: The sword slides across the shield's outer edge, causing continuous scraping motion"
+            ],
+            "events": [
+              {
+                "source": "sword",
+                "action": "clashes against shield"
+              },
+              {
+                "source": "sword",
+                "action": "scrapes off shield"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 0.7833938598632812,
+        "output": {
+          "event_1": {
+            "start": 0.5,
+            "duration": 0.3,
+            "intensity": 0.8,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 0.85,
+            "duration": 0.45,
+            "intensity": 0.7,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.25502610206604004,
+        "output": {
+          "action_1": "sword clashes against shield",
+          "action_2": "sword scrapes off shield"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "Heavy rain starts, a thunder strikes nearby, then the rain fades",
+    "phases": [
+      "Rain begins to fall heavily",
+      "Thunder erupts near the observer",
+      "Rain intensity gradually decreases"
+    ],
+    "sub_events": [
+      {
+        "source": "raindrops",
+        "prompt": "raindrops impact against ground surface",
+        "start": 0.5,
+        "duration": 2.0,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "source": "thundercloud",
+        "prompt": "thundercloud release of electrical energy into atmosphere",
+        "start": 3.0,
+        "duration": 0.5,
+        "intensity": 1.0,
+        "transition": "cut"
+      },
+      {
+        "source": "raindrops",
+        "prompt": "raindrops reduce impact frequency on ground surface",
+        "start": 4.0,
+        "duration": 3.0,
+        "intensity": 0.6,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 3.3621280193328857,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 0.8601775169372559,
+        "output": {
+          "phases": [
+            "Rain begins to fall heavily",
+            "Thunder erupts near the observer",
+            "Rain intensity gradually decreases"
+          ],
+          "events": [
+            {
+              "source": "raindrops",
+              "action": "impact against ground surface"
+            },
+            {
+              "source": "thundercloud",
+              "action": "release of electrical energy into atmosphere"
+            },
+            {
+              "source": "raindrops",
+              "action": "reduce impact frequency on ground surface"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.0102407932281494,
+        "output": {
+          "outline": {
+            "phases": [
+              "Rain begins to fall heavily",
+              "Thunder erupts near the observer",
+              "Rain intensity gradually decreases"
+            ],
+            "events": [
+              {
+                "source": "raindrops",
+                "action": "impact against ground surface"
+              },
+              {
+                "source": "thundercloud",
+                "action": "release of electrical energy into atmosphere"
+              },
+              {
+                "source": "raindrops",
+                "action": "reduce impact frequency on ground surface"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.0688271522521973,
+        "output": {
+          "event_1": {
+            "start": 0.5,
+            "duration": 2.0,
+            "intensity": 0.6,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 3.0,
+            "duration": 0.5,
+            "intensity": 1.0,
+            "transition": "cut"
+          },
+          "event_3": {
+            "start": 4.0,
+            "duration": 3.0,
+            "intensity": 0.6,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.42087817192077637,
+        "output": {
+          "action_1": "raindrops impact against ground surface",
+          "action_2": "thundercloud release of electrical energy into atmosphere",
+          "action_3": "raindrops reduce impact frequency on ground surface"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "Opening a soda can and pouring it into a glass",
+    "phases": [
+      "Initiation: The can is grasped and the top is manipulated to initiate opening.",
+      "Opening: The can's lid is rotated and pressed down, causing metal-to-metal contact and deformation of the seal.",
+      "Pouring initiation: The glass is positioned beneath the open can, with the lip of the glass making initial contact with the liquid surface.",
+      "Pouring: Liquid flows from the can into the glass through gravity, creating a continuous stream as the can empties."
+    ],
+    "sub_events": [
+      {
+        "source": "can lid",
+        "prompt": "can lid rotated and pressed down against the can body",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "can body",
+        "prompt": "can body deforms under pressure from the lid",
+        "start": 0.4,
+        "duration": 0.5,
+        "intensity": 0.7,
+        "transition": "crossfade"
+      },
+      {
+        "source": "glass lip",
+        "prompt": "glass lip makes contact with liquid surface as pouring begins",
+        "start": 1.8,
+        "duration": 0.2,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "source": "liquid in can",
+        "prompt": "liquid in can flows through a gap between can and glass into the glass",
+        "start": 2.0,
+        "duration": 7.5,
+        "intensity": 0.9,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 5.576841354370117,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 1.5972075462341309,
+        "output": {
+          "phases": [
+            "Initiation: The can is grasped and the top is manipulated to initiate opening.",
+            "Opening: The can's lid is rotated and pressed down, causing metal-to-metal contact and deformation of the seal.",
+            "Pouring initiation: The glass is positioned beneath the open can, with the lip of the glass making initial contact with the liquid surface.",
+            "Pouring: Liquid flows from the can into the glass through gravity, creating a continuous stream as the can empties."
+          ],
+          "events": [
+            {
+              "source": "can lid",
+              "action": "rotated and pressed down against the can body"
+            },
+            {
+              "source": "can body",
+              "action": "deforms under pressure from the lid"
+            },
+            {
+              "source": "glass lip",
+              "action": "makes contact with liquid surface as pouring begins"
+            },
+            {
+              "source": "liquid in can",
+              "action": "flows through a gap between can and glass into the glass"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.86899995803833,
+        "output": {
+          "outline": {
+            "phases": [
+              "Initiation: The can is grasped and the top is manipulated to initiate opening.",
+              "Opening: The can's lid is rotated and pressed down, causing metal-to-metal contact and deformation of the seal.",
+              "Pouring initiation: The glass is positioned beneath the open can, with the lip of the glass making initial contact with the liquid surface.",
+              "Pouring: Liquid flows from the can into the glass through gravity, creating a continuous stream as the can empties."
+            ],
+            "events": [
+              {
+                "source": "can lid",
+                "action": "rotated and pressed down against the can body"
+              },
+              {
+                "source": "can body",
+                "action": "deforms under pressure from the lid"
+              },
+              {
+                "source": "glass lip",
+                "action": "makes contact with liquid surface as pouring begins"
+              },
+              {
+                "source": "liquid in can",
+                "action": "flows through a gap between can and glass into the glass"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.4612069129943848,
+        "output": {
+          "event_1": {
+            "start": 0.1,
+            "duration": 0.3,
+            "intensity": 0.8,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 0.4,
+            "duration": 0.5,
+            "intensity": 0.7,
+            "transition": "crossfade"
+          },
+          "event_3": {
+            "start": 1.8,
+            "duration": 0.2,
+            "intensity": 0.6,
+            "transition": "cut"
+          },
+          "event_4": {
+            "start": 2.0,
+            "duration": 7.5,
+            "intensity": 0.9,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.6474161148071289,
+        "output": {
+          "action_1": "can lid rotated and pressed down against the can body",
+          "action_2": "can body deforms under pressure from the lid",
+          "action_3": "glass lip makes contact with liquid surface as pouring begins",
+          "action_4": "liquid in can flows through a gap between can and glass into the glass"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "Someone knocks on a door three times and the door creaks open",
+    "phases": [
+      "Approach and contact: The person moves toward the door, making physical contact with the doorknob once.",
+      "Action sequence: The person strikes the door surface three times in succession, each strike producing a knock sound.",
+      "Physical interaction: The door frame experiences a mechanical deformation as it creaks open due to external force applied at the hinge."
+    ],
+    "sub_events": [
+      {
+        "source": "doorknob",
+        "prompt": "doorknob is touched once by the person",
+        "start": 0.1,
+        "duration": 0.2,
+        "intensity": 0.3,
+        "transition": "cut"
+      },
+      {
+        "source": "door surface",
+        "prompt": "door surface is struck three times in succession by the person",
+        "start": 0.5,
+        "duration": 0.6,
+        "intensity": 0.4,
+        "transition": "crossfade"
+      },
+      {
+        "source": "door frame",
+        "prompt": "door frame experiences mechanical deformation as it creaks open",
+        "start": 1.8,
+        "duration": 0.7,
+        "intensity": 0.5,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 4.312117338180542,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 1.3115544319152832,
+        "output": {
+          "phases": [
+            "Approach and contact: The person moves toward the door, making physical contact with the doorknob once.",
+            "Action sequence: The person strikes the door surface three times in succession, each strike producing a knock sound.",
+            "Physical interaction: The door frame experiences a mechanical deformation as it creaks open due to external force applied at the hinge."
+          ],
+          "events": [
+            {
+              "source": "doorknob",
+              "action": "is touched once by the person"
+            },
+            {
+              "source": "door surface",
+              "action": "is struck three times in succession by the person"
+            },
+            {
+              "source": "door frame",
+              "action": "experiences mechanical deformation as it creaks open"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.4322047233581543,
+        "output": {
+          "outline": {
+            "phases": [
+              "Approach and contact: The person moves toward the door, making physical contact with the doorknob once.",
+              "Action sequence: The person strikes the door surface three times in succession, each strike producing a knock sound.",
+              "Physical interaction: The door frame experiences a mechanical deformation as it creaks open due to external force applied at the hinge."
+            ],
+            "events": [
+              {
+                "source": "doorknob",
+                "action": "is touched once by the person"
+              },
+              {
+                "source": "door surface",
+                "action": "is struck three times in succession by the person"
+              },
+              {
+                "source": "door frame",
+                "action": "experiences mechanical deformation as it creaks open"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.0697119235992432,
+        "output": {
+          "event_1": {
+            "start": 0.1,
+            "duration": 0.2,
+            "intensity": 0.3,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 0.5,
+            "duration": 0.6,
+            "intensity": 0.4,
+            "transition": "crossfade"
+          },
+          "event_3": {
+            "start": 1.8,
+            "duration": 0.7,
+            "intensity": 0.5,
+            "transition": "cut"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.4966456890106201,
+        "output": {
+          "action_1": "doorknob is touched once by the person",
+          "action_2": "door surface is struck three times in succession by the person",
+          "action_3": "door frame experiences mechanical deformation as it creaks open"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "A car engine starts, revs twice, and the car drives away",
+    "phases": [
+      "Engine ignition and initial startup",
+      "Engine acceleration and RPM increase",
+      "Vehicle movement initiation"
+    ],
+    "sub_events": [
+      {
+        "source": "engine piston assembly",
+        "prompt": "engine piston assembly compresses fuel-air mixture in cylinders",
+        "start": 0.1,
+        "duration": 0.3,
+        "intensity": 0.2,
+        "transition": "cut"
+      },
+      {
+        "source": "engine crankshaft",
+        "prompt": "engine crankshaft rotates due to combustion pressure",
+        "start": 0.4,
+        "duration": 0.5,
+        "intensity": 0.4,
+        "transition": "crossfade"
+      },
+      {
+        "source": "exhaust valve system",
+        "prompt": "exhaust valve system opens and releases exhaust gases",
+        "start": 0.6,
+        "duration": 0.4,
+        "intensity": 0.3,
+        "transition": "cut"
+      },
+      {
+        "source": "intake manifold",
+        "prompt": "intake manifold draws in air and fuel mixture",
+        "start": 0.7,
+        "duration": 0.5,
+        "intensity": 0.35,
+        "transition": "crossfade"
+      },
+      {
+        "source": "engine transmission linkage",
+        "prompt": "engine transmission linkage transmits rotational force to drive shaft",
+        "start": 1.2,
+        "duration": 0.6,
+        "intensity": 0.45,
+        "transition": "cut"
+      },
+      {
+        "source": "drive wheels",
+        "prompt": "drive wheels begin rotating under torque transfer",
+        "start": 1.8,
+        "duration": 0.7,
+        "intensity": 0.5,
+        "transition": "crossfade"
+      },
+      {
+        "source": "road surface",
+        "prompt": "road surface experiences contact and resistance as wheels push forward",
+        "start": 2.5,
+        "duration": 0.8,
+        "intensity": 0.6,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 6.704880714416504,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 1.6135261058807373,
+        "output": {
+          "phases": [
+            "Engine ignition and initial startup",
+            "Engine acceleration and RPM increase",
+            "Vehicle movement initiation"
+          ],
+          "events": [
+            {
+              "source": "engine piston assembly",
+              "action": "compresses fuel-air mixture in cylinders"
+            },
+            {
+              "source": "engine crankshaft",
+              "action": "rotates due to combustion pressure"
+            },
+            {
+              "source": "exhaust valve system",
+              "action": "opens and releases exhaust gases"
+            },
+            {
+              "source": "intake manifold",
+              "action": "draws in air and fuel mixture"
+            },
+            {
+              "source": "engine transmission linkage",
+              "action": "transmits rotational force to drive shaft"
+            },
+            {
+              "source": "drive wheels",
+              "action": "begin rotating under torque transfer"
+            },
+            {
+              "source": "road surface",
+              "action": "experiences contact and resistance as wheels push forward"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.7461185455322266,
+        "output": {
+          "outline": {
+            "phases": [
+              "Engine ignition and initial startup",
+              "Engine acceleration and RPM increase",
+              "Vehicle movement initiation"
+            ],
+            "events": [
+              {
+                "source": "engine piston assembly",
+                "action": "compresses fuel-air mixture in cylinders"
+              },
+              {
+                "source": "engine crankshaft",
+                "action": "rotates due to combustion pressure"
+              },
+              {
+                "source": "exhaust valve system",
+                "action": "opens and releases exhaust gases"
+              },
+              {
+                "source": "intake manifold",
+                "action": "draws in air and fuel mixture"
+              },
+              {
+                "source": "engine transmission linkage",
+                "action": "transmits rotational force to drive shaft"
+              },
+              {
+                "source": "drive wheels",
+                "action": "begin rotating under torque transfer"
+              },
+              {
+                "source": "road surface",
+                "action": "experiences contact and resistance as wheels push forward"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 2.3508660793304443,
+        "output": {
+          "event_1": {
+            "start": 0.1,
+            "duration": 0.3,
+            "intensity": 0.2,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 0.4,
+            "duration": 0.5,
+            "intensity": 0.4,
+            "transition": "crossfade"
+          },
+          "event_3": {
+            "start": 0.6,
+            "duration": 0.4,
+            "intensity": 0.3,
+            "transition": "cut"
+          },
+          "event_4": {
+            "start": 0.7,
+            "duration": 0.5,
+            "intensity": 0.35,
+            "transition": "crossfade"
+          },
+          "event_5": {
+            "start": 1.2,
+            "duration": 0.6,
+            "intensity": 0.45,
+            "transition": "cut"
+          },
+          "event_6": {
+            "start": 1.8,
+            "duration": 0.7,
+            "intensity": 0.5,
+            "transition": "crossfade"
+          },
+          "event_7": {
+            "start": 2.5,
+            "duration": 0.8,
+            "intensity": 0.6,
+            "transition": "cut"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.9933700561523438,
+        "output": {
+          "action_1": "engine piston assembly compresses fuel-air mixture in cylinders",
+          "action_2": "engine crankshaft rotates due to combustion pressure",
+          "action_3": "exhaust valve system opens and releases exhaust gases",
+          "action_4": "intake manifold draws in air and fuel mixture",
+          "action_5": "engine transmission linkage transmits rotational force to drive shaft",
+          "action_6": "drive wheels begin rotating under torque transfer",
+          "action_7": "road surface experiences contact and resistance as wheels push forward"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "Running footsteps, then a jump and a heavy landing",
+    "phases": [
+      "Initial movement phase: Footsteps are produced as the body moves forward on the ground.",
+      "Transition phase: The body lifts off the ground in a jump, breaking contact with the surface.",
+      "Impact phase: The body lands heavily on the ground, generating significant force through foot-to-ground contact."
+    ],
+    "sub_events": [
+      {
+        "source": "foot",
+        "prompt": "the foot makes contact with the ground during each step",
+        "start": 0.5,
+        "duration": 0.8,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "source": "body",
+        "prompt": "the body lifts off the ground in a jump",
+        "start": 3.0,
+        "duration": 0.4,
+        "intensity": 1.0,
+        "transition": "cut"
+      },
+      {
+        "source": "foot",
+        "prompt": "the foot makes heavy contact with the ground upon landing",
+        "start": 3.5,
+        "duration": 0.6,
+        "intensity": 0.8,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 4.008826732635498,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 1.1602802276611328,
+        "output": {
+          "phases": [
+            "Initial movement phase: Footsteps are produced as the body moves forward on the ground.",
+            "Transition phase: The body lifts off the ground in a jump, breaking contact with the surface.",
+            "Impact phase: The body lands heavily on the ground, generating significant force through foot-to-ground contact."
+          ],
+          "events": [
+            {
+              "source": "foot",
+              "action": "makes contact with the ground during each step"
+            },
+            {
+              "source": "body",
+              "action": "lifts off the ground in a jump"
+            },
+            {
+              "source": "foot",
+              "action": "makes heavy contact with the ground upon landing"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.2978923320770264,
+        "output": {
+          "outline": {
+            "phases": [
+              "Initial movement phase: Footsteps are produced as the body moves forward on the ground.",
+              "Transition phase: The body lifts off the ground in a jump, breaking contact with the surface.",
+              "Impact phase: The body lands heavily on the ground, generating significant force through foot-to-ground contact."
+            ],
+            "events": [
+              {
+                "source": "foot",
+                "action": "makes contact with the ground during each step"
+              },
+              {
+                "source": "body",
+                "action": "lifts off the ground in a jump"
+              },
+              {
+                "source": "foot",
+                "action": "makes heavy contact with the ground upon landing"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.067474603652954,
+        "output": {
+          "event_1": {
+            "start": 0.5,
+            "duration": 0.8,
+            "intensity": 0.6,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 3.0,
+            "duration": 0.4,
+            "intensity": 1.0,
+            "transition": "cut"
+          },
+          "event_3": {
+            "start": 3.5,
+            "duration": 0.6,
+            "intensity": 0.8,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.48117995262145996,
+        "output": {
+          "action_1": "the foot makes contact with the ground during each step",
+          "action_2": "the body lifts off the ground in a jump",
+          "action_3": "the foot makes heavy contact with the ground upon landing"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "Typing quickly on a keyboard and slamming the enter key",
+    "phases": [
+      "Initial typing motion: fingers rapidly move across keys on the keyboard.",
+      "Repeated key strikes occur as multiple keys are pressed in succession during rapid typing.",
+      "Final action: the right index finger (or designated enter key finger) presses and holds the Enter key with force, causing a sharp mechanical impact."
+    ],
+    "sub_events": [
+      {
+        "source": "keyboard key",
+        "prompt": "keyboard key is struck by a fingertip in rapid succession",
+        "start": 0.5,
+        "duration": 1.0,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "source": "Enter key",
+        "prompt": "Enter key is pressed and impacted forcefully by a finger",
+        "start": 3.0,
+        "duration": 0.8,
+        "intensity": 0.9,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 3.2545418739318848,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 0.9794013500213623,
+        "output": {
+          "phases": [
+            "Initial typing motion: fingers rapidly move across keys on the keyboard.",
+            "Repeated key strikes occur as multiple keys are pressed in succession during rapid typing.",
+            "Final action: the right index finger (or designated enter key finger) presses and holds the Enter key with force, causing a sharp mechanical impact."
+          ],
+          "events": [
+            {
+              "source": "keyboard key",
+              "action": "is struck by a fingertip in rapid succession"
+            },
+            {
+              "source": "Enter key",
+              "action": "is pressed and impacted forcefully by a finger"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.1593313217163086,
+        "output": {
+          "outline": {
+            "phases": [
+              "Initial typing motion: fingers rapidly move across keys on the keyboard.",
+              "Repeated key strikes occur as multiple keys are pressed in succession during rapid typing.",
+              "Final action: the right index finger (or designated enter key finger) presses and holds the Enter key with force, causing a sharp mechanical impact."
+            ],
+            "events": [
+              {
+                "source": "keyboard key",
+                "action": "is struck by a fingertip in rapid succession"
+              },
+              {
+                "source": "Enter key",
+                "action": "is pressed and impacted forcefully by a finger"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 0.7682182788848877,
+        "output": {
+          "event_1": {
+            "start": 0.5,
+            "duration": 1.0,
+            "intensity": 0.6,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 3.0,
+            "duration": 0.8,
+            "intensity": 0.9,
+            "transition": "cut"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.3455941677093506,
+        "output": {
+          "action_1": "keyboard key is struck by a fingertip in rapid succession",
+          "action_2": "Enter key is pressed and impacted forcefully by a finger"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "An archer draws a bow, releases the arrow, and it hits a target",
+    "phases": [
+      "Draw: The bowstring is pulled back by the archer's hand, stretching the bow limbs.",
+      "Release: The arrow is released from the bow as the string snaps forward.",
+      "Impact: The arrow strikes the target surface with force."
+    ],
+    "sub_events": [
+      {
+        "source": "bow limbs",
+        "prompt": "bow limbs stretch under tension during draw",
+        "start": 0.5,
+        "duration": 1.2,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "arrow",
+        "prompt": "arrow moves forward as bowstring releases",
+        "start": 1.7,
+        "duration": 0.3,
+        "intensity": 0.9,
+        "transition": "cut"
+      },
+      {
+        "source": "target surface",
+        "prompt": "target surface receives impact from arrow",
+        "start": 2.0,
+        "duration": 0.4,
+        "intensity": 0.8,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 3.6785409450531006,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 1.0102994441986084,
+        "output": {
+          "phases": [
+            "Draw: The bowstring is pulled back by the archer's hand, stretching the bow limbs.",
+            "Release: The arrow is released from the bow as the string snaps forward.",
+            "Impact: The arrow strikes the target surface with force."
+          ],
+          "events": [
+            {
+              "source": "bow limbs",
+              "action": "stretch under tension during draw"
+            },
+            {
+              "source": "arrow",
+              "action": "moves forward as bowstring releases"
+            },
+            {
+              "source": "target surface",
+              "action": "receives impact from arrow"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.1913013458251953,
+        "output": {
+          "outline": {
+            "phases": [
+              "Draw: The bowstring is pulled back by the archer's hand, stretching the bow limbs.",
+              "Release: The arrow is released from the bow as the string snaps forward.",
+              "Impact: The arrow strikes the target surface with force."
+            ],
+            "events": [
+              {
+                "source": "bow limbs",
+                "action": "stretch under tension during draw"
+              },
+              {
+                "source": "arrow",
+                "action": "moves forward as bowstring releases"
+              },
+              {
+                "source": "target surface",
+                "action": "receives impact from arrow"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.084467887878418,
+        "output": {
+          "event_1": {
+            "start": 0.5,
+            "duration": 1.2,
+            "intensity": 0.8,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 1.7,
+            "duration": 0.3,
+            "intensity": 0.9,
+            "transition": "cut"
+          },
+          "event_3": {
+            "start": 2.0,
+            "duration": 0.4,
+            "intensity": 0.8,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.3904578685760498,
+        "output": {
+          "action_1": "bow limbs stretch under tension during draw",
+          "action_2": "arrow moves forward as bowstring releases",
+          "action_3": "target surface receives impact from arrow"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "A cat jumps onto your lap and starts purring",
+    "phases": [
+      "The cat makes contact with the lap surface, initiating physical interaction.",
+      "The cat settles onto the lap, distributing weight across the fabric or skin of the lap."
+    ],
+    "sub_events": [
+      {
+        "source": "cat",
+        "prompt": "The cat jumps onto lap",
+        "start": 0.5,
+        "duration": 0.8,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "cat",
+        "prompt": "The cat starts purring",
+        "start": 1.3,
+        "duration": 1.5,
+        "intensity": 0.6,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 2.6091058254241943,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 0.7379438877105713,
+        "output": {
+          "phases": [
+            "The cat makes contact with the lap surface, initiating physical interaction.",
+            "The cat settles onto the lap, distributing weight across the fabric or skin of the lap."
+          ],
+          "events": [
+            {
+              "source": "cat",
+              "action": "jumps onto lap"
+            },
+            {
+              "source": "cat",
+              "action": "starts purring"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 0.8605136871337891,
+        "output": {
+          "outline": {
+            "phases": [
+              "The cat makes contact with the lap surface, initiating physical interaction.",
+              "The cat settles onto the lap, distributing weight across the fabric or skin of the lap."
+            ],
+            "events": [
+              {
+                "source": "cat",
+                "action": "jumps onto lap"
+              },
+              {
+                "source": "cat",
+                "action": "starts purring"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 0.752760648727417,
+        "output": {
+          "event_1": {
+            "start": 0.5,
+            "duration": 0.8,
+            "intensity": 0.7,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 1.3,
+            "duration": 1.5,
+            "intensity": 0.6,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.25588059425354004,
+        "output": {
+          "action_1": "The cat jumps onto lap",
+          "action_2": "The cat starts purring"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "A balloon is inflated until it pops",
+    "phases": [
+      "Inflation phase: Air is forced into the balloon through a nozzle, stretching the latex surface.",
+      "Popping phase: The stretched latex reaches its elastic limit and ruptures suddenly under internal pressure."
+    ],
+    "sub_events": [
+      {
+        "source": "balloon",
+        "prompt": "balloon is inflated with air",
+        "start": 0.5,
+        "duration": 2.0,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "source": "latex surface of balloon",
+        "prompt": "latex surface of balloon is stretched by increasing internal air pressure",
+        "start": 2.5,
+        "duration": 3.0,
+        "intensity": 0.7,
+        "transition": "crossfade"
+      },
+      {
+        "source": "balloon",
+        "prompt": "balloon ruptures under internal pressure",
+        "start": 5.5,
+        "duration": 1.5,
+        "intensity": 0.8,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 3.587536096572876,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 0.9630148410797119,
+        "output": {
+          "phases": [
+            "Inflation phase: Air is forced into the balloon through a nozzle, stretching the latex surface.",
+            "Popping phase: The stretched latex reaches its elastic limit and ruptures suddenly under internal pressure."
+          ],
+          "events": [
+            {
+              "source": "balloon",
+              "action": "is inflated with air"
+            },
+            {
+              "source": "latex surface of balloon",
+              "action": "is stretched by increasing internal air pressure"
+            },
+            {
+              "source": "balloon",
+              "action": "ruptures under internal pressure"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.1159636974334717,
+        "output": {
+          "outline": {
+            "phases": [
+              "Inflation phase: Air is forced into the balloon through a nozzle, stretching the latex surface.",
+              "Popping phase: The stretched latex reaches its elastic limit and ruptures suddenly under internal pressure."
+            ],
+            "events": [
+              {
+                "source": "balloon",
+                "action": "is inflated with air"
+              },
+              {
+                "source": "latex surface of balloon",
+                "action": "is stretched by increasing internal air pressure"
+              },
+              {
+                "source": "balloon",
+                "action": "ruptures under internal pressure"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.0704245567321777,
+        "output": {
+          "event_1": {
+            "start": 0.5,
+            "duration": 2.0,
+            "intensity": 0.6,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 2.5,
+            "duration": 3.0,
+            "intensity": 0.7,
+            "transition": "crossfade"
+          },
+          "event_3": {
+            "start": 5.5,
+            "duration": 1.5,
+            "intensity": 0.8,
+            "transition": "cut"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.43613576889038086,
+        "output": {
+          "action_1": "balloon is inflated with air",
+          "action_2": "latex surface of balloon is stretched by increasing internal air pressure",
+          "action_3": "balloon ruptures under internal pressure"
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "A train approaches, passes by, and fades into the distance",
+    "phases": [
+      "Approach: The train moves closer to the observer.",
+      "Passing: The train reaches the observer's position and moves past.",
+      "Fading: The train recedes and becomes less visible."
+    ],
+    "sub_events": [
+      {
+        "source": "train",
+        "prompt": "The train approaches the observer",
+        "start": 0.5,
+        "duration": 2.0,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "train",
+        "prompt": "The train passes by the observer",
+        "start": 2.5,
+        "duration": 1.5,
+        "intensity": 0.8,
+        "transition": "cut"
+      },
+      {
+        "source": "train",
+        "prompt": "The train recedes from the observer",
+        "start": 4.0,
+        "duration": 3.5,
+        "intensity": 0.6,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 3.5112099647521973,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 0.9503350257873535,
+        "output": {
+          "phases": [
+            "Approach: The train moves closer to the observer.",
+            "Passing: The train reaches the observer's position and moves past.",
+            "Fading: The train recedes and becomes less visible."
+          ],
+          "events": [
+            {
+              "source": "train",
+              "action": "approaches the observer"
+            },
+            {
+              "source": "train",
+              "action": "passes by the observer"
+            },
+            {
+              "source": "train",
+              "action": "recedes from the observer"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 1.1178569793701172,
+        "output": {
+          "outline": {
+            "phases": [
+              "Approach: The train moves closer to the observer.",
+              "Passing: The train reaches the observer's position and moves past.",
+              "Fading: The train recedes and becomes less visible."
+            ],
+            "events": [
+              {
+                "source": "train",
+                "action": "approaches the observer"
+              },
+              {
+                "source": "train",
+                "action": "passes by the observer"
+              },
+              {
+                "source": "train",
+                "action": "recedes from the observer"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.0646734237670898,
+        "output": {
+          "event_1": {
+            "start": 0.5,
+            "duration": 2.0,
+            "intensity": 0.7,
+            "transition": "cut"
+          },
+          "event_2": {
+            "start": 2.5,
+            "duration": 1.5,
+            "intensity": 0.8,
+            "transition": "cut"
+          },
+          "event_3": {
+            "start": 4.0,
+            "duration": 3.5,
+            "intensity": 0.6,
+            "transition": "crossfade"
+          }
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.3753516674041748,
+        "output": {
+          "action_1": "The train approaches the observer",
+          "action_2": "The train passes by the observer",
+          "action_3": "The train recedes from the observer"
+        }
+      }
+    ],
+    "review_changes": []
+  }
+]

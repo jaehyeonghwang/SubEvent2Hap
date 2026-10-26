@@ -1,0 +1,71 @@
+{
+  "event": "riding a bike on a smooth track and then ride on a gravel field",
+  "sub_events": [
+    {
+      "prompt": "The smooth track allows for continuous rolling.",
+      "start": 0.0,
+      "duration": 3.0,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_011245/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.186,
+        0.1747
+      ],
+      "offset": 1.272,
+      "shared": false
+    },
+    {
+      "prompt": "The gravel field experiences initial contact with gravel.",
+      "start": 3.0,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_011245/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.3064,
+        0.0529
+      ],
+      "offset": 9.026,
+      "shared": false
+    },
+    {
+      "prompt": "The gravel field allows for continuous rolling on gravel.",
+      "start": 3.5,
+      "duration": 6.5,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1026_011245/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.271,
+        0.049
+      ],
+      "offset": 2.156,
+      "shared": false
+    }
+  ],
+  "total": 10.0,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_riding_a_bike_on_a_smooth_track_and__1026_011245_composite.wav",
+  "baseline": "compose_riding_a_bike_on_a_smooth_track_and__1026_011245_baseline.wav",
+  "gen_duration": 10.0,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 37.46214842796326,
+  "elapsed": 37.49278688430786
+}

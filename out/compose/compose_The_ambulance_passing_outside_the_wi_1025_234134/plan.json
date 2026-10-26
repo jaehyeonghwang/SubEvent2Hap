@@ -1,0 +1,70 @@
+{
+  "event": "The ambulance passing outside the window approaches and then moves away.",
+  "sub_events": [
+    {
+      "prompt": "A distant ambulance siren gradually getting louder as it approaches.",
+      "start": 0.0,
+      "duration": 3.0,
+      "intensity": 0.4,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_The_ambulance_passing_outside_the_wi_1025_234134/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.117,
+        0.3135
+      ],
+      "offset": 0.978,
+      "shared": false
+    },
+    {
+      "prompt": "The ambulance siren is at its loudest as it passes by the window.",
+      "start": 3.0,
+      "duration": 2.0,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_The_ambulance_passing_outside_the_wi_1025_234134/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.2266,
+        0.1932
+      ],
+      "offset": 0.076,
+      "shared": false
+    },
+    {
+      "prompt": "The ambulance siren gradually getting quieter as it moves away.",
+      "start": 5.0,
+      "duration": 3.0,
+      "intensity": 0.4,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_The_ambulance_passing_outside_the_wi_1025_234134/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.2552,
+        0.3089
+      ],
+      "offset": 0.03,
+      "shared": false
+    }
+  ],
+  "total": 8.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_ambulance_passing_outside_the_wi_1025_234134_composite.wav",
+  "baseline": null,
+  "gen_duration": 4.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.598611831665039,
+  "elapsed": 4.615047454833984
+}

@@ -1,0 +1,150 @@
+{
+  "event": "I have to do CPR. heavily and strongly pressing his chest constantly with the speed of pressing 100 times in a minute",
+  "sub_events": [
+    {
+      "prompt": "The chest is heavily and strongly pressed.",
+      "start": 0.15,
+      "duration": 0.3,
+      "intensity": 0.9,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1025_231805/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0559,
+        0.6339
+      ],
+      "offset": 1.115,
+      "shared": true
+    },
+    {
+      "prompt": "The chest is heavily and strongly pressed.",
+      "start": 0.45,
+      "duration": 0.3,
+      "intensity": 0.9,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1025_231805/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0559,
+        0.6339
+      ],
+      "offset": 1.115,
+      "shared": true
+    },
+    {
+      "prompt": "The chest is heavily and midnight pressed.",
+      "start": 0.75,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1025_231805/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.4127,
+        0.378
+      ],
+      "offset": 0.087,
+      "shared": false
+    },
+    {
+      "prompt": "The chest is heavily and strongly pressed.",
+      "start": 1.05,
+      "duration": 0.3,
+      "intensity": 0.9,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1025_231805/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0559,
+        0.6339
+      ],
+      "offset": 1.115,
+      "shared": true
+    },
+    {
+      "prompt": "The chest is heavily and strongly pressed.",
+      "start": 1.35,
+      "duration": 0.3,
+      "intensity": 0.9,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1025_231805/sub_05.wav",
+      "candidate": 1,
+      "scores": [
+        0.0559,
+        0.6339
+      ],
+      "offset": 1.115,
+      "shared": true
+    },
+    {
+      "prompt": "The chest is heavily and strongly pressed.",
+      "start": 1.65,
+      "duration": 0.3,
+      "intensity": 0.9,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1025_231805/sub_06.wav",
+      "candidate": 1,
+      "scores": [
+        0.0559,
+        0.6339
+      ],
+      "offset": 1.115,
+      "shared": true
+    },
+    {
+      "prompt": "The chest is heavily and strongly pressed.",
+      "start": 1.95,
+      "duration": 0.3,
+      "intensity": 0.9,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1025_231805/sub_07.wav",
+      "candidate": 1,
+      "scores": [
+        0.0559,
+        0.6339
+      ],
+      "offset": 1.115,
+      "shared": true
+    },
+    {
+      "prompt": "The chest is heavily and strongly pressed.",
+      "start": 2.25,
+      "duration": 0.3,
+      "intensity": 0.9,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_have_to_do_CPR_heavily_and_strongl_1025_231805/sub_08.wav",
+      "candidate": 1,
+      "scores": [
+        0.0559,
+        0.6339
+      ],
+      "offset": 1.115,
+      "shared": true
+    }
+  ],
+  "total": 2.55,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_have_to_do_CPR_heavily_and_strongl_1025_231805_composite.wav",
+  "baseline": "compose_I_have_to_do_CPR_heavily_and_strongl_1025_231805_baseline.wav",
+  "gen_duration": 2.55,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.6513938903808594,
+  "elapsed": 2.675401210784912
+}

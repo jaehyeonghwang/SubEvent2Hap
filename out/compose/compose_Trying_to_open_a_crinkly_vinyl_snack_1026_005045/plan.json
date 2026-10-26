@@ -1,0 +1,87 @@
+{
+  "event": "Trying to open a crinkly vinyl snack package, then finally tearing it open with a sharp, crisp rip.",
+  "sub_events": [
+    {
+      "prompt": "The vinyl snack package is crinkling.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1026_005045/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0009,
+        0.0012
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The vinyl snack package is crinkling.",
+      "start": 1.0,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1026_005045/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0009,
+        0.0012
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The vinyl snack package is crinkling.",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1026_005045/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0009,
+        0.0012
+      ],
+      "offset": 0.0,
+      "shared": true
+    },
+    {
+      "prompt": "The vinyl snack package is tearing.",
+      "start": 2.0,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Trying_to_open_a_crinkly_vinyl_snack_1026_005045/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.038,
+        0.0035
+      ],
+      "offset": 0.38,
+      "shared": false
+    }
+  ],
+  "total": 2.2,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Trying_to_open_a_crinkly_vinyl_snack_1026_005045_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.3363444805145264,
+  "elapsed": 3.3463432788848877
+}

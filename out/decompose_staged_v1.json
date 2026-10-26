@@ -1,0 +1,559 @@
+[
+  {
+    "event": "A ball bounces three times on a wooden floor and then rolls away",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "captions must contain exactly one entry for each action_id"
+  },
+  {
+    "event": "A sword clashes against a shield, then scrapes off",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "timing stage returned invalid output: 2 validation errors for Timeline\ntimings.0.intensity\n  Input should be less than or equal to 1 [type=less_than_equal, input_value=90, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.14/v/less_than_equal\ntimings.1.intensity\n  Input should be less than or equal to 1 [type=less_than_equal, input_value=70, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.14/v/less_than_equal"
+  },
+  {
+    "event": "Heavy rain starts, a thunder strikes nearby, then the rain fades",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "timing must contain exactly one entry for each event_id"
+  },
+  {
+    "event": "Opening a soda can and pouring it into a glass",
+    "phases": [
+      "Initiating the action of opening the soda can",
+      "Pouring the soda from the can into a glass"
+    ],
+    "sub_events": [
+      {
+        "source": "fingers",
+        "prompt": "fingers apply pressure to the can's top to initiate opening",
+        "start": 0.5,
+        "duration": 1.0,
+        "intensity": 0.3,
+        "transition": "cut"
+      },
+      {
+        "source": "hands",
+        "prompt": "hands rotate the can counterclockwise to unscrew the lid",
+        "start": 1.5,
+        "duration": 1.5,
+        "intensity": 0.4,
+        "transition": "cut"
+      },
+      {
+        "source": "fingers and forearm muscles",
+        "prompt": "fingers and forearm muscles pull the lid off the can after it is loosened",
+        "start": 3.0,
+        "duration": 1.0,
+        "intensity": 0.5,
+        "transition": "cut"
+      },
+      {
+        "source": "hand and arm",
+        "prompt": "hand and arm hold the opened can steady while positioning it above the glass",
+        "start": 4.0,
+        "duration": 1.0,
+        "intensity": 0.3,
+        "transition": "crossfade"
+      },
+      {
+        "source": "arm and hand",
+        "prompt": "arm and hand tilt the can slightly to begin pouring soda into the glass",
+        "start": 5.0,
+        "duration": 2.0,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "source": "hand and arm",
+        "prompt": "hand and arm control the flow of liquid by adjusting angle and height during pouring",
+        "start": 7.0,
+        "duration": 1.5,
+        "intensity": 0.4,
+        "transition": "crossfade"
+      }
+    ],
+    "elapsed": 11.470691204071045,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 2.8793704509735107,
+        "output": {
+          "phases": [
+            "Initiating the action of opening the soda can",
+            "Pouring the soda from the can into a glass"
+          ],
+          "actions": [
+            {
+              "action_id": 1,
+              "source": "fingers",
+              "action": "apply pressure to the can's top to initiate opening"
+            },
+            {
+              "action_id": 2,
+              "source": "hands",
+              "action": "rotate the can counterclockwise to unscrew the lid"
+            },
+            {
+              "action_id": 3,
+              "source": "fingers and forearm muscles",
+              "action": "pull the lid off the can after it is loosened"
+            },
+            {
+              "action_id": 4,
+              "source": "hand and arm",
+              "action": "hold the opened can steady while positioning it above the glass"
+            },
+            {
+              "action_id": 5,
+              "source": "arm and hand",
+              "action": "tilt the can slightly to begin pouring soda into the glass"
+            },
+            {
+              "action_id": 6,
+              "source": "hand and arm",
+              "action": "control the flow of liquid by adjusting angle and height during pouring"
+            }
+          ],
+          "events": [
+            {
+              "event_id": 1,
+              "action_id": 1
+            },
+            {
+              "event_id": 2,
+              "action_id": 2
+            },
+            {
+              "event_id": 3,
+              "action_id": 3
+            },
+            {
+              "event_id": 4,
+              "action_id": 4
+            },
+            {
+              "event_id": 5,
+              "action_id": 5
+            },
+            {
+              "event_id": 6,
+              "action_id": 6
+            }
+          ]
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 2.185148000717163,
+        "output": {
+          "timings": [
+            {
+              "event_id": 1,
+              "start": 0.5,
+              "duration": 1.0,
+              "intensity": 0.3,
+              "transition": "cut"
+            },
+            {
+              "event_id": 2,
+              "start": 1.5,
+              "duration": 1.5,
+              "intensity": 0.4,
+              "transition": "cut"
+            },
+            {
+              "event_id": 3,
+              "start": 3.0,
+              "duration": 1.0,
+              "intensity": 0.5,
+              "transition": "cut"
+            },
+            {
+              "event_id": 4,
+              "start": 4.0,
+              "duration": 1.0,
+              "intensity": 0.3,
+              "transition": "crossfade"
+            },
+            {
+              "event_id": 5,
+              "start": 5.0,
+              "duration": 2.0,
+              "intensity": 0.6,
+              "transition": "cut"
+            },
+            {
+              "event_id": 6,
+              "start": 7.0,
+              "duration": 1.5,
+              "intensity": 0.4,
+              "transition": "crossfade"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 5.017689228057861,
+        "output": {
+          "outline": {
+            "phases": [
+              "Initiating the action of opening the soda can",
+              "Pouring the soda from the can into a glass"
+            ],
+            "actions": [
+              {
+                "action_id": 1,
+                "source": "fingers",
+                "action": "apply pressure to the can's top to initiate opening"
+              },
+              {
+                "action_id": 2,
+                "source": "hands",
+                "action": "rotate the can counterclockwise to unscrew the lid"
+              },
+              {
+                "action_id": 3,
+                "source": "fingers and forearm muscles",
+                "action": "pull the lid off the can after it is loosened"
+              },
+              {
+                "action_id": 4,
+                "source": "hand and arm",
+                "action": "hold the opened can steady while positioning it above the glass"
+              },
+              {
+                "action_id": 5,
+                "source": "arm and hand",
+                "action": "tilt the can slightly to begin pouring soda into the glass"
+              },
+              {
+                "action_id": 6,
+                "source": "hand and arm",
+                "action": "control the flow of liquid by adjusting angle and height during pouring"
+              }
+            ],
+            "events": [
+              {
+                "event_id": 1,
+                "action_id": 1
+              },
+              {
+                "event_id": 2,
+                "action_id": 2
+              },
+              {
+                "event_id": 3,
+                "action_id": 3
+              },
+              {
+                "event_id": 4,
+                "action_id": 4
+              },
+              {
+                "event_id": 5,
+                "action_id": 5
+              },
+              {
+                "event_id": 6,
+                "action_id": 6
+              }
+            ]
+          },
+          "timeline": {
+            "timings": [
+              {
+                "event_id": 1,
+                "start": 0.5,
+                "duration": 1.0,
+                "intensity": 0.3,
+                "transition": "cut"
+              },
+              {
+                "event_id": 2,
+                "start": 1.5,
+                "duration": 1.5,
+                "intensity": 0.4,
+                "transition": "cut"
+              },
+              {
+                "event_id": 3,
+                "start": 3.0,
+                "duration": 1.0,
+                "intensity": 0.5,
+                "transition": "cut"
+              },
+              {
+                "event_id": 4,
+                "start": 4.0,
+                "duration": 1.0,
+                "intensity": 0.3,
+                "transition": "crossfade"
+              },
+              {
+                "event_id": 5,
+                "start": 5.0,
+                "duration": 2.0,
+                "intensity": 0.6,
+                "transition": "cut"
+              },
+              {
+                "event_id": 6,
+                "start": 7.0,
+                "duration": 1.5,
+                "intensity": 0.4,
+                "transition": "crossfade"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 1.3875699043273926,
+        "output": {
+          "captions": [
+            {
+              "action_id": 1,
+              "prompt": "fingers apply pressure to the can's top to initiate opening"
+            },
+            {
+              "action_id": 2,
+              "prompt": "hands rotate the can counterclockwise to unscrew the lid"
+            },
+            {
+              "action_id": 3,
+              "prompt": "fingers and forearm muscles pull the lid off the can after it is loosened"
+            },
+            {
+              "action_id": 4,
+              "prompt": "hand and arm hold the opened can steady while positioning it above the glass"
+            },
+            {
+              "action_id": 5,
+              "prompt": "arm and hand tilt the can slightly to begin pouring soda into the glass"
+            },
+            {
+              "action_id": 6,
+              "prompt": "hand and arm control the flow of liquid by adjusting angle and height during pouring"
+            }
+          ]
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "Someone knocks on a door three times and the door creaks open",
+    "phases": [
+      "Initial contact: A person's hand makes physical contact with the door surface, producing a knock."
+    ],
+    "sub_events": [
+      {
+        "source": "hand",
+        "prompt": "A hand knocks on the door",
+        "start": 0.5,
+        "duration": 0.8,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "hand",
+        "prompt": "A hand knocks on the door",
+        "start": 1.3,
+        "duration": 0.8,
+        "intensity": 0.6,
+        "transition": "cut"
+      },
+      {
+        "source": "hand",
+        "prompt": "A hand knocks on the door",
+        "start": 2.1,
+        "duration": 0.8,
+        "intensity": 0.5,
+        "transition": "cut"
+      }
+    ],
+    "elapsed": 4.838508605957031,
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "stages": [
+      {
+        "stage": "events",
+        "elapsed": 1.1141324043273926,
+        "output": {
+          "phases": [
+            "Initial contact: A person's hand makes physical contact with the door surface, producing a knock."
+          ],
+          "actions": [
+            {
+              "action_id": 1,
+              "source": "hand",
+              "action": "knock on the door"
+            }
+          ],
+          "events": [
+            {
+              "event_id": 1,
+              "action_id": 1
+            },
+            {
+              "event_id": 2,
+              "action_id": 1
+            },
+            {
+              "event_id": 3,
+              "action_id": 1
+            }
+          ]
+        }
+      },
+      {
+        "stage": "timing",
+        "elapsed": 1.1614477634429932,
+        "output": {
+          "timings": [
+            {
+              "event_id": 1,
+              "start": 0.5,
+              "duration": 0.8,
+              "intensity": 0.7,
+              "transition": "cut"
+            },
+            {
+              "event_id": 2,
+              "start": 1.3,
+              "duration": 0.8,
+              "intensity": 0.6,
+              "transition": "cut"
+            },
+            {
+              "event_id": 3,
+              "start": 2.1,
+              "duration": 0.8,
+              "intensity": 0.5,
+              "transition": "cut"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "review",
+        "elapsed": 2.2153382301330566,
+        "output": {
+          "outline": {
+            "phases": [
+              "Initial contact: A person's hand makes physical contact with the door surface, producing a knock."
+            ],
+            "actions": [
+              {
+                "action_id": 1,
+                "source": "hand",
+                "action": "knock on the door"
+              }
+            ],
+            "events": [
+              {
+                "event_id": 1,
+                "action_id": 1
+              },
+              {
+                "event_id": 2,
+                "action_id": 1
+              },
+              {
+                "event_id": 3,
+                "action_id": 1
+              }
+            ]
+          },
+          "timeline": {
+            "timings": [
+              {
+                "event_id": 1,
+                "start": 0.5,
+                "duration": 0.8,
+                "intensity": 0.7,
+                "transition": "cut"
+              },
+              {
+                "event_id": 2,
+                "start": 1.3,
+                "duration": 0.8,
+                "intensity": 0.6,
+                "transition": "cut"
+              },
+              {
+                "event_id": 3,
+                "start": 2.1,
+                "duration": 0.8,
+                "intensity": 0.5,
+                "transition": "cut"
+              }
+            ]
+          },
+          "changes": []
+        }
+      },
+      {
+        "stage": "captions",
+        "elapsed": 0.34759020805358887,
+        "output": {
+          "captions": [
+            {
+              "action_id": 1,
+              "prompt": "A hand knocks on the door"
+            }
+          ]
+        }
+      }
+    ],
+    "review_changes": []
+  },
+  {
+    "event": "A car engine starts, revs twice, and the car drives away",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "captions must contain exactly one entry for each action_id"
+  },
+  {
+    "event": "Running footsteps, then a jump and a heavy landing",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "timing must contain exactly one entry for each event_id"
+  },
+  {
+    "event": "Typing quickly on a keyboard and slamming the enter key",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "review stage returned invalid output: 1 validation error for Review\noutline\n  Value error, event IDs and action IDs must be unique [type=value_error, input_value={'phases': ['Initial typi...': -1, 'action_id': 2}]}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error"
+  },
+  {
+    "event": "An archer draws a bow, releases the arrow, and it hits a target",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "timing stage returned invalid output: 3 validation errors for Timeline\ntimings.0.intensity\n  Input should be less than or equal to 1 [type=less_than_equal, input_value=80, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.14/v/less_than_equal\ntimings.1.intensity\n  Input should be less than or equal to 1 [type=less_than_equal, input_value=90, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.14/v/less_than_equal\ntimings.2.intensity\n  Input should be less than or equal to 1 [type=less_than_equal, input_value=75, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.14/v/less_than_equal"
+  },
+  {
+    "event": "A cat jumps onto your lap and starts purring",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "captions must contain exactly one entry for each action_id"
+  },
+  {
+    "event": "A balloon is inflated until it pops",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "timing stage returned invalid output: 1 validation error for Timeline\ntimings.4.intensity\n  Input should be less than or equal to 1 [type=less_than_equal, input_value=1.2, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.14/v/less_than_equal"
+  },
+  {
+    "event": "A train approaches, passes by, and fades into the distance",
+    "model": "qwen3-4b",
+    "prompt_version": "staged_v1",
+    "error": "timing must contain exactly one entry for each event_id"
+  }
+]

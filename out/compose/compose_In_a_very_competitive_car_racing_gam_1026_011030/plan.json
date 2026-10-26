@@ -1,0 +1,55 @@
+{
+  "event": "In a very competitive car racing game, you crash into another car, making a very large sound. Then, there is only silence.",
+  "sub_events": [
+    {
+      "prompt": "The car crashes into another car.",
+      "start": 0.0,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_In_a_very_competitive_car_racing_gam_1026_011030/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0335,
+        0.1586
+      ],
+      "offset": 0.911,
+      "shared": false
+    },
+    {
+      "prompt": "The crash makes a very large sound.",
+      "start": 0.5,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_In_a_very_competitive_car_racing_gam_1026_011030/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.5638,
+        0.172
+      ],
+      "offset": 0.107,
+      "shared": false
+    }
+  ],
+  "total": 1.0,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_In_a_very_competitive_car_racing_gam_1026_011030_composite.wav",
+  "baseline": "compose_In_a_very_competitive_car_racing_gam_1026_011030_baseline.wav",
+  "gen_duration": 1.5,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.46109938621521,
+  "elapsed": 1.474806785583496
+}

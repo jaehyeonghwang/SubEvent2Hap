@@ -1,0 +1,1 @@
+{"prompt": "[baseline] clap loudly once.", "params": {"candidates": 2, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": 1, "gamma": 1.6, "share_repeats": true, "sub_events": 1}, "created": 1792938678.500174, "kind": "baseline", "event": "clap loudly once.", "run": "compose_clap_loudly_once_1025_233118"}

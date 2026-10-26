@@ -1,0 +1,54 @@
+{
+  "event": "riding a bike on a smooth track and then ride on a gravel field",
+  "sub_events": [
+    {
+      "prompt": "Smooth, continuous vibration to simulate riding on a smooth track",
+      "start": 0.0,
+      "duration": 4.0,
+      "intensity": 0.2,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1025_234051/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0627,
+        0.1636
+      ],
+      "offset": 0.013,
+      "shared": false
+    },
+    {
+      "prompt": "Irregular, bumpy vibration to simulate riding on a gravel field",
+      "start": 4.0,
+      "duration": 6.0,
+      "intensity": 0.7,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_riding_a_bike_on_a_smooth_track_and__1025_234051/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0264,
+        0.0735
+      ],
+      "offset": 0.94,
+      "shared": false
+    }
+  ],
+  "total": 10.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_riding_a_bike_on_a_smooth_track_and__1025_234051_composite.wav",
+  "baseline": null,
+  "gen_duration": 7.0,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 7.864940166473389,
+  "elapsed": 7.881747484207153
+}

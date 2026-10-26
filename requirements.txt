@@ -1,0 +1,43 @@
+# Install PyTorch with CUDA first (RTX 50xx needs cu128):
+#   pip install torch==2.11.0 torchaudio==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+# Then HapticGen (an AudioCraft fork) without its pinned deps:
+#   pip install -e HapticGen --no-deps
+# Then this file:
+#   pip install -r requirements.txt
+
+# AudioCraft / HapticGen runtime (xformers is NOT needed: scripts/hapticgen_generate.py stubs it)
+av==17.1.0
+demucs==4.1.0
+einops==0.8.2
+encodec==0.1.1
+flashy==0.0.2
+huggingface_hub==0.36.2
+hydra-colorlog==1.2.0
+hydra-core==1.3.7
+julius==0.2.8
+librosa==0.11.0
+num2words==0.5.14
+numpy==2.2.6
+omegaconf==2.3.1
+protobuf==7.36.2
+sentencepiece==0.2.2
+spacy==3.8.16
+torchmetrics==1.9.0
+tqdm==4.70.1
+transformers==4.57.6
+scipy==1.15.3
+soundfile==0.14.0
+
+# Web UI / LM clients
+fastapi==0.162.0
+uvicorn==0.54.0
+pydantic==2.14.1
+python-multipart==0.0.32
+requests==2.34.2
+websockets==16.1.1
+
+# Quest 3 PCM haptics over OpenXR (Windows + Meta Link)
+pyopenxr==1.1.6302
+
+# Paper/PDF reading utilities
+pypdf==6.21.2

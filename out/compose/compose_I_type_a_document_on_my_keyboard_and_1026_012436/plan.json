@@ -1,0 +1,55 @@
+{
+  "event": "I type a document on my keyboard and click my mouse once",
+  "sub_events": [
+    {
+      "prompt": "keyboard key pressed",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_012436/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0084,
+        0.0325
+      ],
+      "offset": 0.424,
+      "shared": false
+    },
+    {
+      "prompt": "mouse clicked once",
+      "start": 1.8,
+      "duration": 0.2,
+      "intensity": 0.6,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_I_type_a_document_on_my_keyboard_and_1026_012436/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0027,
+        0.0221
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 2.0,
+  "params": {
+    "generator": "audiogen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_type_a_document_on_my_keyboard_and_1026_012436_composite.wav",
+  "baseline": "compose_I_type_a_document_on_my_keyboard_and_1026_012436_baseline.wav",
+  "gen_duration": 2.0,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.371866941452026,
+  "elapsed": 4.382395267486572
+}

@@ -1,0 +1,461 @@
+[
+ {
+  "id": "c01",
+  "model": "HapticGen-Initial",
+  "vote": -1,
+  "expected": 1,
+  "detected": 4,
+  "match": false,
+  "set": "expertvoted"
+ },
+ {
+  "id": "c01",
+  "model": "HapticGen-Initial",
+  "vote": 1,
+  "expected": 1,
+  "detected": 13,
+  "match": false,
+  "set": "expertvoted"
+ },
+ {
+  "id": "c01",
+  "model": "HapticGen-Initial",
+  "vote": -1,
+  "expected": 1,
+  "detected": 8,
+  "match": false,
+  "set": "expertvoted"
+ },
+ {
+  "id": "c02",
+  "model": "Baseline-AudioGen",
+  "vote": -1,
+  "expected": 1,
+  "detected": 49,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c02",
+  "model": "Baseline-AudioGen",
+  "vote": -1,
+  "expected": 1,
+  "detected": 73,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c02",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 19,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c02",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 59,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c02",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 37,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c02",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 2,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c02",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 2,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c02",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 6,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c02",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 1,
+  "match": true,
+  "set": "uservoted"
+ },
+ {
+  "id": "c02",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 1,
+  "match": true,
+  "set": "uservoted"
+ },
+ {
+  "id": "c04",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 28,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c04",
+  "model": "Baseline-AudioGen",
+  "vote": -1,
+  "expected": 1,
+  "detected": 72,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c04",
+  "model": "Baseline-AudioGen",
+  "vote": -1,
+  "expected": 1,
+  "detected": 40,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c04",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 17,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c04",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 53,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c04",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 3,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c04",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 1,
+  "match": true,
+  "set": "uservoted"
+ },
+ {
+  "id": "c04",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 1,
+  "match": true,
+  "set": "uservoted"
+ },
+ {
+  "id": "c04",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 12,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c04",
+  "model": "HapticGen",
+  "vote": -1,
+  "expected": 1,
+  "detected": 2,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c11",
+  "model": "Baseline-AudioGen",
+  "vote": -1,
+  "expected": 2,
+  "detected": 1,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c11",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 2,
+  "detected": 8,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c11",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 2,
+  "detected": 5,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c11",
+  "model": "Baseline-AudioGen",
+  "vote": -1,
+  "expected": 2,
+  "detected": 3,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c11",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 2,
+  "detected": 5,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c11",
+  "model": "HapticGen",
+  "vote": -1,
+  "expected": 2,
+  "detected": 7,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c11",
+  "model": "HapticGen",
+  "vote": -1,
+  "expected": 2,
+  "detected": 4,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c11",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 2,
+  "detected": 5,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c11",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 2,
+  "detected": 29,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c11",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 2,
+  "detected": 71,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c09",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 3,
+  "detected": 8,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c09",
+  "model": "HapticGen",
+  "vote": -1,
+  "expected": 3,
+  "detected": 1,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c09",
+  "model": "HapticGen",
+  "vote": -1,
+  "expected": 3,
+  "detected": 4,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c09",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 3,
+  "detected": 7,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c09",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 3,
+  "detected": 33,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c09",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 3,
+  "detected": 7,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c09",
+  "model": "Baseline-AudioGen",
+  "vote": -1,
+  "expected": 3,
+  "detected": 68,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c09",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 3,
+  "detected": 10,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c10",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 1,
+  "match": true,
+  "set": "uservoted"
+ },
+ {
+  "id": "c10",
+  "model": "HapticGen",
+  "vote": -1,
+  "expected": 1,
+  "detected": 3,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c10",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 1,
+  "match": true,
+  "set": "uservoted"
+ },
+ {
+  "id": "c10",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 6,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c10",
+  "model": "HapticGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 2,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c10",
+  "model": "Baseline-AudioGen",
+  "vote": 1,
+  "expected": 1,
+  "detected": 45,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c10",
+  "model": "Baseline-AudioGen",
+  "vote": -1,
+  "expected": 1,
+  "detected": 37,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c10",
+  "model": "Baseline-AudioGen",
+  "vote": -1,
+  "expected": 1,
+  "detected": 7,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c10",
+  "model": "Baseline-AudioGen",
+  "vote": -1,
+  "expected": 1,
+  "detected": 25,
+  "match": false,
+  "set": "uservoted"
+ },
+ {
+  "id": "c10",
+  "model": "Baseline-AudioGen",
+  "vote": -1,
+  "expected": 1,
+  "detected": 19,
+  "match": false,
+  "set": "uservoted"
+ }
+]

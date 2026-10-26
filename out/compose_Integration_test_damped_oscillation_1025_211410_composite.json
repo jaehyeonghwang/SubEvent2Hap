@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] Integration test: damped_oscillation", "params": {"candidates": 1, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": 42, "gamma": 1.0, "share_repeats": true, "sub_events": 1}, "created": 1792930450.6175535, "kind": "composite", "event": "Integration test: damped_oscillation", "run": "compose_Integration_test_damped_oscillation_1025_211410"}

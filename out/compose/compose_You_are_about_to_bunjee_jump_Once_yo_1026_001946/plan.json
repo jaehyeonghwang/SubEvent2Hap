@@ -1,0 +1,86 @@
+{
+  "event": "You are about to bunjee jump. Once you fall, you slice through the wind which makes a very large noise. The jump ends, and there is no more wind.",
+  "sub_events": [
+    {
+      "prompt": "Anticipation before the bungee jump",
+      "start": 0.0,
+      "duration": 1.0,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_You_are_about_to_bunjee_jump_Once_yo_1026_001946/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0269,
+        0.047
+      ],
+      "offset": 1.967,
+      "shared": false
+    },
+    {
+      "prompt": "Initial drop of the bungee jump",
+      "start": 1.0,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_You_are_about_to_bunjee_jump_Once_yo_1026_001946/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.325,
+        0.1361
+      ],
+      "offset": 0.126,
+      "shared": false
+    },
+    {
+      "prompt": "Slicing through the wind during fall",
+      "start": 1.5,
+      "duration": 6.0,
+      "intensity": 1.0,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_You_are_about_to_bunjee_jump_Once_yo_1026_001946/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0078,
+        0.0101
+      ],
+      "offset": 0.939,
+      "shared": false
+    },
+    {
+      "prompt": "End of the jump, no more wind",
+      "start": 7.5,
+      "duration": 2.5,
+      "intensity": 0.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_You_are_about_to_bunjee_jump_Once_yo_1026_001946/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.08,
+        0.0325
+      ],
+      "offset": 0.015,
+      "shared": false
+    }
+  ],
+  "total": 10.0,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_You_are_about_to_bunjee_jump_Once_yo_1026_001946_composite.wav",
+  "baseline": null,
+  "gen_duration": 7.0,
+  "prompts": 8,
+  "analytic_segments": 0,
+  "elapsed_gen": 15.73701786994934,
+  "elapsed": 15.760826587677002
+}

@@ -1,0 +1,39 @@
+{
+  "event": "clap loudly once.",
+  "sub_events": [
+    {
+      "prompt": "Hands clap loudly.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_clap_loudly_once_1026_004609/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0368,
+        0.0738
+      ],
+      "offset": 0.457,
+      "shared": false
+    }
+  ],
+  "total": 0.7,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 2,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_clap_loudly_once_1026_004609_composite.wav",
+  "baseline": "compose_clap_loudly_once_1026_004609_baseline.wav",
+  "gen_duration": 1.5,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.3080039024353027,
+  "elapsed": 1.3160045146942139
+}

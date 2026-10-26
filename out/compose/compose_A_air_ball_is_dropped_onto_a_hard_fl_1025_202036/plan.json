@@ -1,0 +1,204 @@
+{
+  "event": "A air ball is dropped onto a hard floor, bouncing four times with decreasing height before coming to rest.",
+  "sub_events": [
+    {
+      "prompt": "A ball striking a hard surface with a single impact",
+      "start": 0.45160075575178754,
+      "duration": 0.15,
+      "intensity": 1.0,
+      "transition": "cut",
+      "source": "ball / hard surface",
+      "file": "compose/compose_A_air_ball_is_dropped_onto_a_hard_fl_1025_202036/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0334,
+        0.1264
+      ],
+      "offset": 0.73,
+      "shared": true
+    },
+    {
+      "prompt": "A ball striking a hard surface with a single impact",
+      "start": 1.08384181380429,
+      "duration": 0.15,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "ball / hard surface",
+      "file": "compose/compose_A_air_ball_is_dropped_onto_a_hard_fl_1025_202036/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0334,
+        0.1264
+      ],
+      "offset": 0.73,
+      "shared": true
+    },
+    {
+      "prompt": "A ball striking a hard surface with a single impact",
+      "start": 1.5264105544410418,
+      "duration": 0.15,
+      "intensity": 0.49,
+      "transition": "cut",
+      "source": "ball / hard surface",
+      "file": "compose/compose_A_air_ball_is_dropped_onto_a_hard_fl_1025_202036/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0334,
+        0.1264
+      ],
+      "offset": 0.73,
+      "shared": true
+    },
+    {
+      "prompt": "A ball striking a hard surface with a single impact",
+      "start": 1.836208672886768,
+      "duration": 0.15,
+      "intensity": 0.3429999999999999,
+      "transition": "cut",
+      "source": "ball / hard surface",
+      "file": "compose/compose_A_air_ball_is_dropped_onto_a_hard_fl_1025_202036/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0334,
+        0.1264
+      ],
+      "offset": 0.73,
+      "shared": true
+    }
+  ],
+  "total": 1.9862086728867678,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.0,
+    "share_repeats": true
+  },
+  "composite": "compose_A_air_ball_is_dropped_onto_a_hard_fl_1025_202036_composite.wav",
+  "baseline": "compose_A_air_ball_is_dropped_onto_a_hard_fl_1025_202036_baseline.wav",
+  "gen_duration": 1.9862086728867678,
+  "prompts": 4,
+  "elapsed_gen": 2.3617680072784424,
+  "elapsed": 2.3797008991241455,
+  "physics": {
+    "version": "vertical_bounce_v1",
+    "setup": {
+      "supported": true,
+      "reason": "The scenario describes a passive vertical drop of an air ball onto a hard floor, followed by four bounces with decreasing heights. This matches the supported physical setup of a vertical ball drop onto a stationary flat floor. The material of the ball is specified as 'air', which implies it has no solid structure and does not possess mass or rebound properties in a conventional sense. However, since air is used to describe the ball, its material is considered unspecified in terms of physical properties like elasticity or mass. The surface is described as 'hard floor,' indicating a rigid, solid surface with high stiffness. No initial speed, height, mass, time, or restitution value is explicitly stated. Therefore, all numeric fields are null except for impact_count, which counts the total number of floor contacts (four bounces).",
+      "ball_material": "unspecified",
+      "surface_material": "hard",
+      "drop_height_m": null,
+      "restitution": null,
+      "mass_kg": null,
+      "release_time_s": null,
+      "impact_count": 4
+    },
+    "parameters": {
+      "drop_height_m": 1,
+      "restitution": 0.7,
+      "mass_kg": 0.05,
+      "release_time_s": 0,
+      "impact_count": 4
+    },
+    "provenance": {
+      "drop_height_m": "assumed_default",
+      "restitution": "assumed_default",
+      "mass_kg": "assumed_default",
+      "release_time_s": "assumed_default",
+      "impact_count": "text_extracted_by_lm"
+    },
+    "gravity_m_s2": 9.80665,
+    "pulse_duration_s": 0.15,
+    "impacts": [
+      {
+        "index": 1,
+        "time_s": 0.45160075575178754,
+        "incoming_speed_m_s": 4.428690551393267,
+        "rebound_height_m": 0.48999999999999994,
+        "impulse_N_s": 0.3764386968684277,
+        "relative_impulse": 1
+      },
+      {
+        "index": 2,
+        "time_s": 1.08384181380429,
+        "incoming_speed_m_s": 3.1000833859752865,
+        "rebound_height_m": 0.24009999999999995,
+        "impulse_N_s": 0.2635070878078994,
+        "relative_impulse": 0.7
+      },
+      {
+        "index": 3,
+        "time_s": 1.5264105544410418,
+        "incoming_speed_m_s": 2.1700583701827005,
+        "rebound_height_m": 0.11764899999999996,
+        "impulse_N_s": 0.18445496146552956,
+        "relative_impulse": 0.49
+      },
+      {
+        "index": 4,
+        "time_s": 1.836208672886768,
+        "incoming_speed_m_s": 1.51904085912789,
+        "rebound_height_m": 0.057648009999999944,
+        "impulse_N_s": 0.12911847302587068,
+        "relative_impulse": 0.3429999999999999
+      }
+    ],
+    "inter_impact_intervals_s": [
+      0.6322410580525024,
+      0.4425687406367518,
+      0.30979811844572613
+    ],
+    "notes": [
+      "Assumed constant restitution, a rigid stationary floor, no drag and instantaneous contact.",
+      "Material names describe the impact caption; they do not determine a calibrated restitution coefficient.",
+      "Pulse duration is a rendering choice, not predicted physical contact time.",
+      "Intensity is normalized impulse, not measured acceleration or perceived strength.",
+      "The requested/rendered contact count is not a prediction of when the ball stops."
+    ],
+    "reference_sub_events": [
+      {
+        "source": "ball / hard surface",
+        "prompt": "A ball striking a hard surface with a single impact",
+        "start": 0.45160075575178754,
+        "duration": 0.15,
+        "intensity": 1,
+        "transition": "cut"
+      },
+      {
+        "source": "ball / hard surface",
+        "prompt": "A ball striking a hard surface with a single impact",
+        "start": 1.08384181380429,
+        "duration": 0.15,
+        "intensity": 0.7,
+        "transition": "cut"
+      },
+      {
+        "source": "ball / hard surface",
+        "prompt": "A ball striking a hard surface with a single impact",
+        "start": 1.5264105544410418,
+        "duration": 0.15,
+        "intensity": 0.49,
+        "transition": "cut"
+      },
+      {
+        "source": "ball / hard surface",
+        "prompt": "A ball striking a hard surface with a single impact",
+        "start": 1.836208672886768,
+        "duration": 0.15,
+        "intensity": 0.3429999999999999,
+        "transition": "cut"
+      }
+    ],
+    "equations": {
+      "first_impact": "release_time + sqrt(2*h/g)",
+      "impact_speed_k": "sqrt(2*g*h) * e**(k-1)",
+      "next_interval": "2*e*impact_speed/g",
+      "impulse": "m*(1+e)*impact_speed"
+    },
+    "source": "https://mechanics.ju.se/Kinetics/ImpulseMomentum.html",
+    "original_event": "A air ball is dropped onto a hard floor, bouncing four times with decreasing height before coming to rest."
+  },
+  "physics_plan_edited": false
+}

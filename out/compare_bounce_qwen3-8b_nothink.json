@@ -1,0 +1,194 @@
+[
+ {
+  "case": "rubber ball / hard floor",
+  "restitution": {
+   "value": 0.6,
+   "low": 0.5,
+   "high": 0.7,
+   "basis": "Rubber balls typically have moderate restitution on hard surfaces."
+  },
+  "observed": {
+   "rebound_height_cm": 80.0,
+   "bounciness": "very_well",
+   "visible_bounces": 5,
+   "basis": "Rubber balls are elastic and hard floors provide a rigid surface for effective energy transfer."
+  },
+  "e_from_height": 0.8944271909999159,
+  "seconds": [
+   0.8893098831176758,
+   0.7244279384613037
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "steel ball / hard floor",
+  "restitution": {
+   "value": 0.6,
+   "low": 0.5,
+   "high": 0.7,
+   "basis": "Steel on hard surface; restitution depends on material properties and surface condition."
+  },
+  "observed": {
+   "rebound_height_cm": 85.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Steel is a dense and rigid material that efficiently transfers energy upon impact with a hard surface like a floor."
+  },
+  "e_from_height": 0.9219544457292888,
+  "seconds": [
+   0.633674144744873,
+   0.7414131164550781
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "steel ball / wooden floor",
+  "restitution": {
+   "value": 0.6,
+   "low": 0.5,
+   "high": 0.7,
+   "basis": "Material properties of steel and wood; typical restitution values for such materials."
+  },
+  "observed": {
+   "rebound_height_cm": 80.0,
+   "bounciness": "very_well",
+   "visible_bounces": 5,
+   "basis": "Steel is a hard material and wooden floors are rigid, allowing for efficient energy transfer during impact."
+  },
+  "e_from_height": 0.8944271909999159,
+  "seconds": [
+   0.6945095062255859,
+   0.7422738075256348
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "steel ball / thick steel plate",
+  "restitution": {
+   "value": 0.6,
+   "low": 0.5,
+   "high": 0.7,
+   "basis": "Steel on steel has moderate restitution; exact value depends on surface finish and temperature."
+  },
+  "observed": {
+   "rebound_height_cm": 95.0,
+   "bounciness": "very_well",
+   "visible_bounces": 1,
+   "basis": "Both the object and surface are rigid and dense, minimizing energy loss during collision."
+  },
+  "e_from_height": 0.9746794344808963,
+  "seconds": [
+   0.6503524780273438,
+   0.7231605052947998
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "tennis ball / concrete",
+  "restitution": {
+   "value": 0.6,
+   "low": 0.5,
+   "high": 0.7,
+   "basis": "Material properties of tennis ball and concrete; typical restitution for such impact."
+  },
+  "observed": {
+   "rebound_height_cm": 50.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Tennis balls are elastic and concrete is rigid, allowing for a significant rebound."
+  },
+  "e_from_height": 0.7071067811865476,
+  "seconds": [
+   0.7402677536010742,
+   0.7017288208007812
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "glass marble / tile floor",
+  "restitution": {
+   "value": 0.8,
+   "low": 0.6,
+   "high": 0.95,
+   "basis": "Glass is relatively hard and tile floors are rigid; restitution depends on material properties and surface condition."
+  },
+  "observed": {
+   "rebound_height_cm": 85.0,
+   "bounciness": "very_well",
+   "visible_bounces": 4,
+   "basis": "Glass marbles are dense and hard, tile floors are rigid and smooth, creating a highly elastic collision."
+  },
+  "e_from_height": 0.9219544457292888,
+  "seconds": [
+   0.7061460018157959,
+   0.7542541027069092
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "soft clay ball / floor",
+  "restitution": {
+   "value": 0.1,
+   "low": 0.05,
+   "high": 0.2,
+   "basis": "Soft clay has low elasticity; restitution depends on material and impact speed."
+  },
+  "observed": {
+   "rebound_height_cm": 0.0,
+   "bounciness": "very_well",
+   "visible_bounces": 0,
+   "basis": "Soft clay is a malleable material that deforms upon impact rather than rebounding."
+  },
+  "e_from_height": 0.0,
+  "seconds": [
+   0.6489155292510986,
+   0.7420518398284912
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ },
+ {
+  "case": "ping-pong ball / table",
+  "restitution": {
+   "value": 0.9,
+   "low": 0.85,
+   "high": 0.95,
+   "basis": "Standard ping-pong balls have high restitution due to their hollow plastic construction and air-filled interior."
+  },
+  "observed": {
+   "rebound_height_cm": 80.0,
+   "bounciness": "very_well",
+   "visible_bounces": 5,
+   "basis": "Ping-pong balls are hollow and elastic, while tables are rigid and smooth, allowing for a high rebound with multiple bounces."
+  },
+  "e_from_height": 0.8944271909999159,
+  "seconds": [
+   0.7221801280975342,
+   0.8151082992553711
+  ],
+  "reasoning_chars": [
+   0,
+   0
+  ]
+ }
+]

@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SubEvent2Hap Studio</title>
+<style>
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --line: #e3e6eb; --text: #1b1f24; --muted: #667080;
+  --accent: #4f46e5; --accent-soft: #eef0ff; --ok: #138a4b; --warn: #b26a00; --err: #c62a2a;
+  --wave: #4f46e5; --wave-bg: #f1f2f6; --playhead: #e5484d;
+  --radius: 12px; --shadow: 0 1px 2px rgba(0,0,0,.04), 0 2px 8px rgba(0,0,0,.04);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111317; --panel: #191c21; --line: #2a2f37; --text: #e8eaee; --muted: #9099a8;
+    --accent: #8b85ff; --accent-soft: #24234a; --ok: #3ccf7e; --warn: #f0a63a; --err: #ff6b6b;
+    --wave: #8b85ff; --wave-bg: #20242b; --playhead: #ff6b6b;
+    --shadow: none;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 14px/1.5 "Pretendard", "Malgun Gothic", system-ui, -apple-system, "Segoe UI", sans-serif; }
+header { display: flex; align-items: center; gap: 16px; padding: 14px 24px; border-bottom: 1px solid var(--line);
+  background: var(--panel); position: sticky; top: 0; z-index: 5; flex-wrap: wrap; }
+header h1 { font-size: 17px; margin: 0; letter-spacing: -.01em; }
+header h1 span { color: var(--muted); font-weight: 400; }
+.pills { display: flex; gap: 8px; margin-left: auto; flex-wrap: wrap; }
+.pill { display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px; border: 1px solid var(--line);
+  border-radius: 999px; font-size: 12.5px; color: var(--muted); background: var(--bg); max-width: 520px; }
+.pill b { color: var(--text); font-weight: 600; }
+.pill .txt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
+.dot.ok { background: var(--ok); } .dot.warn { background: var(--warn); } .dot.err { background: var(--err); }
+.dot.pulse { animation: pulse 1s infinite; }
+@keyframes pulse { 50% { opacity: .35; } }
+
+main { display: grid; grid-template-columns: 360px 1fr; gap: 20px; padding: 20px 24px; max-width: 1400px; margin: 0 auto; }
+@media (max-width: 900px) { main { grid-template-columns: 1fr; padding: 16px; } header { padding: 12px 16px; } }
+.side { display: flex; flex-direction: column; gap: 16px; }
+@media (min-width: 901px) { .side { position: sticky; top: 76px; align-self: start; } }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px; }
+.card h2 { font-size: 13px; margin: 0 0 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+label { display: block; font-size: 12.5px; color: var(--muted); margin: 12px 0 5px; }
+label .val { float: right; color: var(--text); font-variant-numeric: tabular-nums; }
+textarea, input[type=number], input[type=text] { width: 100%; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg); color: var(--text); font: inherit; }
+textarea { resize: vertical; min-height: 70px; }
+textarea:focus, input:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+input[type=range] { width: 100%; accent-color: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.chip { border: 1px solid var(--line); background: var(--bg); color: var(--muted); border-radius: 999px; padding: 3px 10px;
+  font-size: 12px; cursor: pointer; }
+.chip:hover { color: var(--text); border-color: var(--accent); }
+details { margin-top: 12px; } summary { cursor: pointer; color: var(--muted); font-size: 12.5px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 10px; }
+button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--text);
+  padding: 8px 12px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; width: 100%; padding: 11px; margin-top: 16px; }
+button.primary:hover:not(:disabled) { filter: brightness(1.08); }
+button.danger { color: var(--err); }
+button.stop { width: 100%; margin-top: 14px; font-weight: 600; color: var(--err); border-color: var(--err); }
+.seg { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; border-radius: 0; background: var(--bg); color: var(--muted); }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button.on { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.hint { font-size: 12px; color: var(--muted); margin-top: 10px; }
+kbd { font: 11px ui-monospace, monospace; border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; background: var(--bg); }
+.spinner { width: 14px; height: 14px; border: 2px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.listhead { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+.listhead h2 { margin: 0; font-size: 15px; }
+.listhead .count { color: var(--muted); font-size: 12.5px; }
+.listhead input { margin-left: auto; max-width: 260px; padding: 7px 10px; }
+.items { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+.item { padding: 14px; display: flex; flex-direction: column; gap: 10px; transition: border-color .3s; }
+.item.new { border-color: var(--accent); }
+.item.playing { border-color: var(--playhead); }
+.item .top { display: flex; gap: 8px; align-items: flex-start; }
+.item .prompt { font-weight: 600; flex: 1; word-break: break-word; }
+.badge { font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); flex: none; }
+.badge.weak { background: transparent; color: var(--warn); border: 1px solid var(--warn); }
+.meta { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; display: flex; gap: 12px; flex-wrap: wrap; }
+canvas.wave { width: 100%; height: 72px; display: block; background: var(--wave-bg); border-radius: 8px; cursor: pointer; }
+.actions { display: flex; gap: 8px; }
+.actions .play { flex: 1; background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600; }
+.empty { color: var(--muted); text-align: center; padding: 48px 16px; border: 1px dashed var(--line); border-radius: var(--radius); }
+.tabs { display: flex; gap: 4px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 3px; }
+.tabs button { border: 0; background: transparent; color: var(--muted); padding: 6px 14px; border-radius: 7px; }
+.tabs button.on { background: var(--panel); color: var(--text); font-weight: 600; box-shadow: var(--shadow); }
+[hidden] { display: none !important; }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.row .grow { flex: 1; }
+.btn-accent { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+.btn-accent:hover:not(:disabled) { filter: brightness(1.08); }
+.phases { font-size: 12.5px; color: var(--muted); margin-top: 10px; }
+.phases ol { margin: 4px 0 0; padding-left: 20px; }
+.warn-list { font-size: 12.5px; color: var(--warn); margin-top: 8px; white-space: pre-line; }
+canvas.timeline { width: 100%; height: 64px; display: block; background: var(--wave-bg); border-radius: 8px; margin-bottom: 6px; touch-action: none; user-select: none; }
+canvas.timeline:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tl-hint { font-size: 12px; color: var(--muted); margin: 0 0 10px; }
+.subs tr.sel td { background: var(--accent-soft); }
+.subs { width: 100%; border-collapse: collapse; font-size: 13px; }
+.subs th { text-align: left; font-weight: 500; color: var(--muted); font-size: 12px; padding: 4px 6px; border-bottom: 1px solid var(--line); }
+.subs td { padding: 5px 6px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.subs input, .subs select { width: 100%; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--text); font: inherit; }
+.subs input[type=number] { width: 64px; }
+.subs td:nth-child(2) { width: 100%; min-width: 260px; }
+.subs select { width: 108px; }
+.subs .idx { width: 28px; text-align: center; font-weight: 600; border-radius: 6px; color: #fff; }
+.subs button { padding: 5px 9px; }
+.tablewrap { overflow-x: auto; }
+.opts { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0 14px; margin-top: 6px; }
+.compare3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 1200px) { .compare3 { grid-template-columns: 1fr; } }
+.plans3 { display: grid; gap: 10px; margin-top: 8px; font-size: 12.5px; }
+.plans3 ol { margin: 4px 0 0; padding-left: 20px; color: var(--muted); }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 1100px) { .compare { grid-template-columns: 1fr; } }
+.tagline { font-size: 12px; color: var(--muted); }
+.seglist { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.seglist button { font-size: 12px; padding: 4px 9px; }
+.seglist .sw { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+#toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0; transition: .25s;
+  background: var(--text); color: var(--bg); padding: 9px 16px; border-radius: 8px; font-size: 13px; pointer-events: none; max-width: 90vw; z-index: 10; }
+#toast.show { opacity: 1; transform: translateX(-50%); }
+</style>
+</head>
+<body>
+<header>
+  <h1>SubEvent2Hap Studio <span>· text → vibration → Quest</span></h1>
+  <nav class="tabs" id="tabs"><button data-tab="single" class="on">단일 생성</button><button data-tab="compose">Sub-event 작곡</button></nav>
+  <a href="/architecture" style="color:var(--accent);text-decoration:none;font-size:13px">구조 보기 →</a> <a href="/gallery" style="color:var(--accent);text-decoration:none;font-size:13px">전체 재생 →</a>
+  <div class="pills">
+    <div class="pill" title="로컬 LLM (LM Studio)"><span class="dot" id="ldot"></span><b>LLM</b><span class="txt" id="ltxt">확인 중…</span></div>
+    <div class="pill" title="HapticGen 모델"><span class="dot" id="mdot"></span><b>모델</b><span class="txt" id="mtxt">확인 중…</span></div>
+    <div class="pill" title="Quest 컨트롤러 (OpenXR / Link)"><span class="dot" id="qdot"></span><b>Quest</b><span class="txt" id="qtxt">확인 중…</span></div>
+  </div>
+</header>
+
+<main>
+  <div class="side">
+    <section class="card" id="genCard">
+      <h2>생성</h2>
+      <textarea id="prompt" placeholder="어떤 진동을 만들까요? (영어 권장) 예: heartbeat thumping steadily"></textarea>
+      <div class="chips" id="examples"></div>
+      <label>길이 <span class="val" id="durV"></span></label>
+      <input type="range" id="duration" min="1" max="10" step="0.5" value="5">
+      <label>후보 개수 <span class="val" id="numV"></span></label>
+      <input type="range" id="num" min="1" max="6" step="1" value="3">
+      <details>
+        <summary>고급 설정</summary>
+        <div class="grid2">
+          <div><label>CFG <span class="val" id="cfgV"></span></label><input type="range" id="cfg" min="0" max="10" step="0.5" value="3"></div>
+          <div><label>Temperature <span class="val" id="tempV"></span></label><input type="range" id="temperature" min="0.1" max="2" step="0.05" value="1"></div>
+          <div><label>Top-k</label><input type="number" id="top_k" min="1" max="2048" value="250"></div>
+          <div><label>Seed (비우면 랜덤)</label><input type="number" id="seed" placeholder="random"></div>
+        </div>
+      </details>
+      <button class="primary" id="genBtn">생성하기</button>
+      <div class="hint"><kbd>Ctrl</kbd>+<kbd>Enter</kbd> 생성 · <kbd>Esc</kbd> 진동 정지</div>
+    </section>
+
+    <section class="card">
+      <h2>Quest 재생 설정</h2>
+      <label>컨트롤러</label>
+      <div class="seg" id="hand">
+        <button data-v="left">왼손</button><button data-v="both" class="on">양손</button><button data-v="right">오른손</button>
+      </div>
+      <label>세기 (gain) <span class="val" id="gainV"></span></label>
+      <input type="range" id="gain" min="0" max="3" step="0.05" value="1">
+      <label>반복 횟수 <span class="val" id="loopV"></span></label>
+      <input type="range" id="loop" min="1" max="10" step="1" value="1">
+      <label><input type="checkbox" id="normalize" checked> 피크 정규화 (약한 진동을 최대 세기로)</label>
+      <label><input type="checkbox" id="autoplay" checked> 생성 후 첫 결과 자동 재생</label>
+      <button class="stop" id="stopBtn">■ 진동 정지</button>
+      <div class="hint">Quest에서 <b>Link / Air Link</b>를 켜고 헤드셋을 착용해야 재생됩니다. 파형을 클릭하면 바로 재생합니다.</div>
+    </section>
+  </div>
+
+  <section id="tab-single">
+    <div class="listhead">
+      <h2>라이브러리</h2><span class="count" id="count"></span>
+      <input type="text" id="filter" placeholder="프롬프트 검색">
+    </div>
+    <div class="items" id="items"></div>
+  </section>
+
+  <section id="tab-compose" class="stack" hidden>
+    <div class="card">
+      <h2>① 이벤트 → LM 분해</h2>
+      <textarea id="cEvent" placeholder="이벤트를 영어로 설명하세요. 예: Someone knocks on a door three times and the door creaks open"></textarea>
+      <div class="chips" id="cExamples"></div>
+      <div class="row" style="margin-top:12px">
+        <label>시간 계획 <select id="cPlanner"><option value="staged" selected>LM 사건 분해 (기본)</option><option value="model_first">실험: 모델 우선 계층 플래너</option><option value="ball_physics">실험: 공 튀기기 물리 모델</option></select></label>
+        <label id="cEstimateWrap" hidden title="문장에 없는 물리량(반발계수·질량·마찰 등)을 별도 LM 호출로 추정합니다. 비교 실험에서 효과가 확인되지 않아 기본은 꺼짐입니다. 추정값은 측정값이 아닙니다."><input type="checkbox" id="cEstimate"> 미지정 물리량 LM 추정</label>
+        <label title="GPT-4o를 고르면 이벤트 문장이 OpenAI로 전송됩니다">LM <select id="cLlm"><option value="local" selected>로컬 Qwen3-4B</option><option value="gpt-4o">GPT-4o (OpenAI · 외부 전송)</option></select></label>
+      </div>
+      <div id="cBounceOptions" hidden>
+        <p class="tagline">정지 상태에서 떨어뜨리는 수직 반발 모델입니다. 빈 값은 문장에서 추출하고, 없으면 표시된 가정을 사용합니다. 입력한 값은 문장보다 우선합니다.</p>
+        <div class="opts">
+          <div><label>낙하 높이 (m)</label><input id="bHeight" type="number" min="0.001" step="0.1" placeholder="미지정: 1 m 가정"></div>
+          <div><label>반발계수 e</label><input id="bRestitution" type="number" min="0" max="1" step="0.05" placeholder="미지정: 0.7 가정"></div>
+          <div><label>질량 (kg)</label><input id="bMass" type="number" min="0.001" step="0.01" placeholder="미지정: 0.05 kg 가정"></div>
+          <div><label>충돌 횟수</label><input id="bCount" type="number" min="1" max="8" step="1" placeholder="미지정: 4회 재생"></div>
+          <div><label>진동 재생 길이 (s)</label><input id="bPulse" type="number" min="0.15" max="0.6" step="0.01" value="0.15"></div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <button class="btn-accent" id="decBtn">분해</button>
+        <button id="cmp3Btn" title="같은 문장·같은 seed로 로컬 LM 분해, GPT-4o 분해, HapticGen 단일 생성을 한 번에 만듭니다 (GPT-4o 단계는 문장을 OpenAI로 전송)">3-way 비교: 로컬 LM · GPT-4o · HapticGen</button>
+        <span class="tagline" id="decInfo"></span>
+      </div>
+      <div class="phases" id="cPhases" hidden></div>
+      <div class="warn-list" id="cIssues"></div>
+      <details id="cPhysics" hidden><summary>물리 계산 및 가정 (편집 전 계획 기준)</summary><pre id="cPhysicsInfo" style="white-space:pre-wrap;overflow-wrap:anywhere"></pre></details>
+      <details id="cHierarchy" hidden open><summary>선택한 모델과 분해 구조 (편집 전 계획 기준)</summary><pre id="cHierarchyInfo" style="white-space:pre-wrap;overflow-wrap:anywhere"></pre></details>
+    </div>
+
+    <div class="card">
+      <h2>② Sub-event 편집</h2>
+      <canvas class="timeline" id="cTimeline"></canvas>
+      <p class="tl-hint">블록 클릭: 선택 · 가운데 끌기: 시간 이동 · 양 끝 끌기: 길이 조절 (0.05초 단위, <kbd>Shift</kbd> 0.01초) · 선택 후 <kbd>←</kbd><kbd>→</kbd> 이동, <kbd>Alt</kbd>+<kbd>←</kbd><kbd>→</kbd> 길이, <kbd>Delete</kbd> 삭제 · 더블클릭: 설명 편집</p>
+      <div class="tablewrap">
+        <table class="subs">
+          <thead><tr><th></th><th>사건 설명 (생성 또는 해석적 합성)</th><th>시작(s)</th><th>길이(s)</th><th>세기</th><th>전환</th><th></th></tr></thead>
+          <tbody id="cRows"></tbody>
+        </table>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <button id="addSub">+ sub-event 추가</button>
+        <button id="autoTime" title="순서대로 빈틈 없이 시작 시간을 다시 계산">시간 자동 정렬</button>
+        <span class="tagline grow" id="cTotal"></span>
+      </div>
+      <div class="opts">
+        <div><label>후보 수 / sub-event <span class="val" id="cCandV"></span></label><input type="range" id="cCand" min="1" max="4" step="1" value="2"></div>
+        <div><label>CFG <span class="val" id="cCfgV"></span></label><input type="range" id="cCfg" min="0" max="10" step="0.5" value="3"></div>
+        <div><label>Temperature <span class="val" id="cTempV"></span></label><input type="range" id="cTemp" min="0.1" max="2" step="0.05" value="1"></div>
+        <div><label>Seed</label><input type="number" id="cSeed" placeholder="random"></div>
+        <div title="진폭 = 세기^γ. 진동 체감 세기는 진폭에 비해 완만하게 커지므로 γ>1이면 세기 차이가 더 또렷해집니다">
+          <label>지각 보정 γ <span class="val" id="cGammaV"></span></label><input type="range" id="cGamma" min="0.5" max="3" step="0.1" value="1.6"></div>
+      </div>
+      <label><input type="checkbox" id="cShare" checked> 같은 프롬프트의 반복(바운스·노크 등)은 같은 샘플 재사용 → 세기·타이밍만 다르게</label>
+      <label><input type="checkbox" id="cBaseline" checked> Baseline도 생성 (이벤트 문장 하나로 한 번에 생성 → 비교용)</label>
+      <button class="primary" id="compBtn">③ 생성 &amp; 합성</button>
+    </div>
+
+    <div class="card" id="c3Result" hidden>
+      <div class="row" style="margin-bottom:12px">
+        <h2 style="margin:0" class="grow">3-way 비교</h2>
+        <span class="tagline" id="c3Info"></span>
+        <button class="btn-accent" id="abcBtn" title="A → 1초 → B → 1초 → C 순서로 Quest 재생">A → B → C 연속 재생</button>
+      </div>
+      <div class="compare3" id="c3Compare"></div>
+      <div class="warn-list" id="c3Errors"></div>
+      <details style="margin-top:12px"><summary>각 LM이 만든 계획</summary><div class="plans3" id="c3Plans"></div></details>
+    </div>
+
+    <div class="card" id="cResult" hidden>
+      <div class="row" style="margin-bottom:12px">
+        <h2 style="margin:0" class="grow">결과 비교</h2>
+        <span class="tagline" id="cResInfo"></span>
+        <button class="btn-accent" id="abBtn" title="합성 → 1초 쉬고 → baseline 순서로 Quest 재생">A/B 연속 재생</button>
+      </div>
+      <div class="compare" id="cCompare"></div>
+      <div class="tagline" style="margin-top:12px">개별 sub-event 재생 (선택된 후보, 정규화·페이드 적용 후)</div>
+      <div class="seglist" id="cSegs"></div>
+    </div>
+  </section>
+</main>
+<div id="toast"></div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const SUB_COLORS = ["#4f46e5", "#0ea5e9", "#10b981", "#f59e0b", "#ef4444", "#a855f7", "#14b8a6", "#f97316"];
+const EXAMPLES = ["heartbeat thumping steadily", "rain drops tapping on a window", "cat purring softly",
+  "car engine revving", "footsteps on gravel", "notification buzz, two short pulses", "electric shock zap", "ocean waves rolling"];
+let library = [], newNames = new Set(), questReady = false, generating = false;
+let playState = null; // {name, start, dur}
+
+// ---------- controls
+for (const [id, outId, fmt] of [["duration", "durV", v => v + "초"], ["num", "numV", v => v + "개"], ["cfg", "cfgV", v => v],
+                                ["temperature", "tempV", v => v], ["gain", "gainV", v => "×" + Number(v).toFixed(2)],
+                                ["loop", "loopV", v => v + "회"]]) {
+  const el = $("#" + id), out = $("#" + outId);
+  const upd = () => out.textContent = fmt(el.value);
+  el.addEventListener("input", upd); upd();
+  try { const s = localStorage.getItem("hg_" + id); if (s !== null) { el.value = s; upd(); } } catch {}
+  el.addEventListener("change", () => { try { localStorage.setItem("hg_" + id, el.value); } catch {} });
+}
+let hand = "both";
+try { hand = localStorage.getItem("hg_hand") || "both"; } catch {}
+const setHand = (v) => { hand = v; document.querySelectorAll("#hand button").forEach(b => b.classList.toggle("on", b.dataset.v === v));
+  try { localStorage.setItem("hg_hand", v); } catch {} };
+document.querySelectorAll("#hand button").forEach(b => b.onclick = () => setHand(b.dataset.v));
+setHand(hand);
+EXAMPLES.forEach(t => { const c = document.createElement("button"); c.className = "chip"; c.textContent = t;
+  c.onclick = () => { $("#prompt").value = t; $("#prompt").focus(); }; $("#examples").appendChild(c); });
+
+function toast(msg, ms = 2600) { const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), ms); }
+
+async function api(path, opts = {}) {
+  const r = await fetch(path, { headers: { "Content-Type": "application/json" }, ...opts });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(typeof j.detail === "string" ? j.detail : JSON.stringify(j.detail || r.statusText));
+  return j;
+}
+
+// ---------- status
+async function pollStatus() {
+  try {
+    const s = await api("/api/status");
+    const md = $("#mdot"), mt = $("#mtxt");
+    md.className = "dot " + (s.model === "ready" ? "ok" : s.model === "error" ? "err" : "warn pulse");
+    mt.textContent = s.model === "ready" ? (s.generating ? "생성 중…" : "준비됨") : s.model === "error" ? "오류: " + s.model_error : "로딩 중…";
+    const q = s.quest; questReady = q.ready;
+    $("#qdot").className = "dot " + (q.playing ? "ok pulse" : q.ready ? "ok" : q.connected ? "warn" : "err");
+    $("#qtxt").textContent = q.status;
+    $("#genBtn").disabled = generating || s.model !== "ready";
+  } catch { $("#mdot").className = "dot err"; $("#mtxt").textContent = "서버 연결 끊김"; }
+}
+setInterval(pollStatus, 1000); pollStatus();
+
+// ---------- library
+async function loadLibrary() { library = await api("/api/library"); render(); }
+
+function render() {
+  const f = $("#filter").value.trim().toLowerCase();
+  const list = library.filter(it => !f || it.prompt.toLowerCase().includes(f));
+  $("#count").textContent = `${list.length}개`;
+  const box = $("#items"); box.innerHTML = "";
+  if (!list.length) { box.innerHTML = `<div class="empty">${library.length ? "검색 결과가 없습니다." : "아직 생성된 진동이 없습니다. 왼쪽에서 프롬프트를 입력해 생성해 보세요."}</div>`; return; }
+  for (const it of list) box.appendChild(card(it));
+}
+
+function card(it) {
+  const el = document.createElement("div");
+  el.className = "card item" + (newNames.has(it.name) ? " new" : "");
+  el.dataset.name = it.name;
+  const when = new Date(it.created * 1000).toLocaleString("ko-KR", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" });
+  el.innerHTML = `
+    <div class="top"><div class="prompt"></div>${newNames.has(it.name) ? '<span class="badge">NEW</span>' : ""}${it.ok ? "" : '<span class="badge weak" title="진폭이 너무 작아 잘 안 느껴질 수 있음">약함</span>'}</div>
+    <div class="meta"><span>${it.duration.toFixed(1)}s</span><span>peak ${it.peak.toFixed(2)}</span><span>rms ${it.rms.toFixed(3)}</span><span>${when}</span></div>
+    <canvas class="wave"></canvas>
+    <div class="actions">
+      <button class="play" title="Quest 컨트롤러에서 재생">▶ Quest 재생</button>
+      <button class="listen" title="PC 스피커로 미리듣기">🔊</button>
+      <button class="regen" title="같은 프롬프트로 프롬프트 칸 채우기">↻</button>
+      <button class="danger del" title="삭제">🗑</button>
+    </div>`;
+  el.querySelector(".prompt").textContent = it.prompt;
+  const cv = el.querySelector("canvas");
+  requestAnimationFrame(() => drawWave(cv, it));
+  cv.onclick = () => playQuest(it);
+  el.querySelector(".play").onclick = () => playQuest(it);
+  el.querySelector(".listen").onclick = () => listen(it);
+  el.querySelector(".regen").onclick = () => { $("#prompt").value = it.prompt; $("#prompt").focus(); };
+  el.querySelector(".del").onclick = async () => {
+    if (!confirm(`삭제할까요?\n${it.prompt} (${it.name})`)) return;
+    await api("/api/library/" + encodeURIComponent(it.name), { method: "DELETE" }); loadLibrary(); };
+  return el;
+}
+
+function drawWave(cv, it, progress = null) {
+  const dpr = window.devicePixelRatio || 1, w = cv.clientWidth, h = cv.clientHeight;
+  if (!w) return;
+  cv.width = w * dpr; cv.height = h * dpr;
+  const g = cv.getContext("2d"); g.scale(dpr, dpr);
+  const css = getComputedStyle(document.documentElement);
+  const mid = h / 2, n = it.peaks.length, scale = (h / 2 - 4) / Math.max(0.05, it.peak);
+  if (it.regions) {
+    it.regions.forEach((r, i) => {
+      const x0 = r.start / it.duration * w, x1 = (r.start + r.duration) / it.duration * w;
+      g.fillStyle = SUB_COLORS[i % SUB_COLORS.length]; g.globalAlpha = .14; g.fillRect(x0, 0, x1 - x0, h);
+      g.globalAlpha = .9; g.font = "600 10px system-ui"; g.fillText(String(i + 1), x0 + 3, 11);
+    });
+    g.globalAlpha = 1;
+  }
+  g.strokeStyle = css.getPropertyValue("--line"); g.beginPath(); g.moveTo(0, mid); g.lineTo(w, mid); g.stroke();
+  g.fillStyle = css.getPropertyValue("--wave");
+  for (let i = 0; i < n; i++) {
+    const [lo, hi] = it.peaks[i], x = i / n * w;
+    g.globalAlpha = progress !== null && i / n > progress ? .45 : 1;
+    g.fillRect(x, mid - hi * scale, Math.max(1, w / n - .3), Math.max(1, (hi - lo) * scale));
+  }
+  g.globalAlpha = 1;
+  if (progress !== null) { g.fillStyle = css.getPropertyValue("--playhead"); g.fillRect(progress * w - 1, 0, 2, h); }
+}
+
+// ---------- actions
+let audioEl = null;
+function listen(it) {
+  if (audioEl) audioEl.pause();
+  audioEl = new Audio(`/audio/${encodeURIComponent(it.name)}?gain=${$("#gain").value}&normalize=${$("#normalize").checked}`);
+  audioEl.play().catch(e => toast("미리듣기 실패: " + e.message));
+}
+
+async function playQuest(it) {
+  if (!questReady) { toast("Quest가 준비되지 않았습니다 – Link를 켜고 헤드셋을 착용하세요"); return; }
+  try {
+    const loop = +$("#loop").value;
+    await api("/api/play", { method: "POST", body: JSON.stringify({ name: it.name, hand, gain: +$("#gain").value, loop,
+      normalize: $("#normalize").checked }) });
+    playState = { name: it.name, it, start: performance.now(), dur: it.duration * 1000, loop };
+    animatePlayhead();
+  } catch (e) { toast("재생 실패: " + e.message); }
+}
+
+async function stopQuest() {
+  clearTimeout(window._abT);
+  try { await api("/api/stop", { method: "POST" }); } catch {}
+  if (audioEl) audioEl.pause();
+  endPlayhead();
+}
+
+// the same file can have a hidden library card and a visible compare card; animate the visible one
+const visibleCard = (name) => [...document.querySelectorAll(`.item[data-name="${CSS.escape(name)}"]`)].find(e => e.offsetParent !== null);
+
+function endPlayhead() {
+  if (!playState) return;
+  const el = visibleCard(playState.name);
+  if (el) { el.classList.remove("playing"); drawWave(el.querySelector("canvas"), playState.it); }
+  playState = null;
+}
+function animatePlayhead() {
+  if (!playState) return;
+  const ps = playState, t = performance.now() - ps.start;
+  const el = visibleCard(ps.name);
+  if (t >= ps.dur * ps.loop) { endPlayhead(); return; }
+  if (el) { el.classList.add("playing"); drawWave(el.querySelector("canvas"), ps.it, (t % ps.dur) / ps.dur); }
+  requestAnimationFrame(() => { if (playState === ps) animatePlayhead(); });
+}
+
+async function doGenerate() {
+  const prompt = $("#prompt").value.trim();
+  if (!prompt) { $("#prompt").focus(); return; }
+  if (generating) return;
+  generating = true;
+  const btn = $("#genBtn"), t0 = performance.now();
+  btn.disabled = true;
+  const tick = setInterval(() => btn.innerHTML = `<span class="spinner"></span> 생성 중… ${((performance.now() - t0) / 1000).toFixed(0)}s`, 250);
+  try {
+    const seed = $("#seed").value.trim();
+    const res = await api("/api/generate", { method: "POST", body: JSON.stringify({
+      prompt, duration: +$("#duration").value, num: +$("#num").value, cfg: +$("#cfg").value,
+      temperature: +$("#temperature").value, top_k: +$("#top_k").value, seed: seed === "" ? null : +seed }) });
+    newNames = new Set(res.items.map(i => i.name));
+    $("#filter").value = "";
+    await loadLibrary();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    toast(`${res.items.length}개 생성 완료 (${res.elapsed.toFixed(1)}s)`);
+    const first = res.items.find(i => i.ok) || res.items[0];
+    if ($("#autoplay").checked && first && questReady) playQuest(first);
+  } catch (e) { toast("생성 실패: " + e.message, 4000); }
+  finally { clearInterval(tick); generating = false; btn.textContent = "생성하기"; pollStatus(); }
+}
+
+// ---------- tabs
+let tab = "single";
+function setTab(t) {
+  tab = t;
+  document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === t));
+  $("#tab-single").hidden = t !== "single"; $("#genCard").hidden = t !== "single";
+  $("#tab-compose").hidden = t !== "compose";
+  try { localStorage.setItem("hg_tab", t); } catch {}
+  if (t === "compose") requestAnimationFrame(() => { drawTimeline(); redrawCompare(); }); else render();
+}
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => setTab(b.dataset.tab));
+
+// ---------- LLM status
+let llmOk = false;
+async function pollLlm() {
+  try {
+    const s = await api("/api/llm/status"); llmOk = s.available;
+    $("#ldot").className = "dot " + (s.available ? (s.loaded ? "ok" : "warn") : "err");
+    $("#ltxt").textContent = s.status;
+  } catch { $("#ldot").className = "dot err"; $("#ltxt").textContent = "확인 실패"; }
+}
+setInterval(pollLlm, 5000); pollLlm();
+
+// ---------- compose: state & editor
+const C_EXAMPLES = ["Someone knocks on a door three times and the door creaks open",
+  "A rubber ball is dropped from 1 metre onto a wooden floor and bounces four times. Restitution is 0.6.",
+  "A ball bounces three times on a wooden floor and then rolls away", "A sword clashes against a shield, then scrapes off",
+  "Heavy rain starts, a thunder strikes nearby, then the rain fades", "A balloon is inflated until it pops",
+  "An archer draws a bow, releases the arrow, and it hits a target", "A car engine starts, revs twice, and the car drives away"];
+let cSubs = [], cPlan = null, cBusy = false;
+let cPhysics = null, cHierarchy = null;
+try { const s = JSON.parse(localStorage.getItem("hg_compose") || "null"); if (s) { cSubs = s.subs || []; cPhysics = s.physics || null; cHierarchy = s.hierarchy || null; $("#cEvent").value = s.event || ""; } } catch {}
+const saveCompose = () => { try { localStorage.setItem("hg_compose", JSON.stringify({ event: $("#cEvent").value, subs: cSubs, physics: cPhysics, hierarchy: cHierarchy })); } catch {} };
+$("#cPlanner").onchange = () => {
+  $("#cBounceOptions").hidden = $("#cPlanner").value !== "ball_physics";
+  $("#cEstimateWrap").hidden = $("#cPlanner").value !== "model_first";
+};
+function showPhysics() {
+  $("#cPhysics").hidden = !cPhysics;
+  if (!cPhysics) return;
+  const p = cPhysics.parameters, origins = {user_override: "직접 입력", text_extracted_by_lm: "문장에서 LM 추출", assumed_default: "가정값"};
+  const names = {drop_height_m: "낙하 높이(m)", restitution: "반발계수", mass_kg: "질량(kg)", release_time_s: "놓는 시각(s)", impact_count: "충돌 수"};
+  $("#cPhysicsInfo").textContent = Object.entries(p).map(([k,v]) => `${names[k] || k}: ${v} (${origins[cPhysics.provenance[k]]})`).join("\n")
+    + "\n\n충돌 시각(s): " + cPhysics.impacts.map(i => i.time_s.toFixed(3)).join(", ")
+    + "\n충돌 간격(s): " + cPhysics.inter_impact_intervals_s.map(t => t.toFixed(3)).join(", ")
+    + "\n\n진동 길이는 접촉시간 예측이 아닌 재생 설정입니다. 강도는 정규화 충격량이며 실제 가속도·체감 강도가 아닙니다."
+    + "\n재질 이름만으로 반발계수를 추정하지 않습니다.\n" + cPhysics.notes.join("\n");
+}
+showPhysics();
+function showHierarchy() {
+  $("#cHierarchy").hidden = !cHierarchy;
+  if (!cHierarchy) return;
+  const labels = {vertical_bounce: "공의 반발", free_fall: "낙하·비행", single_impact: "단발 충돌",
+    sliding: "미끄러짐·마찰", rolling: "굴림 저항", damped_oscillation: "감쇠 진동", periodic: "주기 진동",
+    stochastic: "불규칙 발생", rhythmic_action: "의도적 반복", composition: "복합 사건", lm_atomic: "LM 추정"};
+  const stops = {model_covers_action: "모델이 전체 동작을 처리하여 분해 중단", atomic_action: "LM이 더 나누지 않기로 판단한 추정 (물리 모델 없음)", depth_limit: "깊이 한도로 중단", no_progress: "동일 사건 재분해 방지", no_valid_split: "추가 분해 근거 없음"};
+  const lines = [];
+  if (cHierarchy.regime_criterion) lines.push("원자 동작 기준: 접촉 상태·구속 조건·구동 방식이 같으면 한 동작으로 유지합니다. 같은 조건에서 감속해 정지하는 과정은 나누지 않습니다.\n");
+  function visit(node, depth) {
+    const pad = "  ".repeat(depth);
+    lines.push(`${pad}${labels[node.model] || node.model}: ${node.description}`);
+    if (node.stop_reason) lines.push(`${pad}  ${stops[node.stop_reason] || node.stop_reason}`);
+    if (node.structure_review) lines.push(`${pad}  구조 검토: ${node.structure_review.reason}`);
+    if (node.selection_reason) lines.push(`${pad}  근거: ${node.selection_reason}`);
+    (node.model_rejections || []).forEach(r => lines.push(`${pad}  적용 거절: ${r.model} · ${r.reason}`));
+    if (node.placement) lines.push(`${pad}  상위 시간축 위치: ${node.placement.offset_s.toFixed(3)}s (${node.placement.connection})`);
+    if (node.process_duration_s !== undefined) lines.push(`${pad}  물리/과정 종료: ${node.process_duration_s.toFixed(3)}s · 재생 포함: ${node.duration_s.toFixed(3)}s`);
+    if (node.state_transfer && node.state_transfer.kind !== "none") lines.push(`${pad}  상태 연결: ${node.state_transfer.kind}\n${pad}  ${JSON.stringify(node.incoming_state)}`);
+    if (node.terminal_state && Object.keys(node.terminal_state).length) lines.push(`${pad}  종료 상태: ${JSON.stringify(node.terminal_state)}`);
+    if (node.physics) lines.push(`${pad}  조건: ${JSON.stringify(node.physics.parameters)}\n${pad}  출처: ${JSON.stringify(node.physics.provenance)}`);
+    Object.entries((node.physics && node.physics.estimates) || {}).forEach(([k, e]) => lines.push(e.value === null
+      ? `${pad}  LM 추정 ${k}: 근거 없음 → 기본값 (${e.basis})`
+      : `${pad}  LM 추정 ${k}: ${e.value} (범위 ${e.low}–${e.high}) · ${e.basis}`));
+    (node.children || []).forEach(child => visit(child, depth + 1));
+  }
+  visit(cHierarchy.tree, 0);
+  if (cHierarchy.connections.length) lines.push("\nLM이 지정한 동일 물체의 연속 동작에서 계산된 상태만 전달합니다. 좌표 방향 전환·미지 파라미터는 가정으로 남습니다.");
+  lines.push("\n행동 리듬·확률 모델은 물리 법칙이 아니며, 감각 강도와 모델 간 진폭은 보정되지 않았습니다.");
+  lines.push("주기·감쇠 모델은 정현파와 포락선을 해석적으로 합성합니다. 마찰 포락선은 생성된 질감 파형에 적용됩니다.");
+  $("#cHierarchyInfo").textContent = lines.join("\n");
+}
+showHierarchy();
+$("#cEvent").addEventListener("input", saveCompose);
+C_EXAMPLES.forEach(t => { const c = document.createElement("button"); c.className = "chip"; c.textContent = t;
+  c.onclick = () => { $("#cEvent").value = t; saveCompose(); }; $("#cExamples").appendChild(c); });
+for (const [id, outId, fmt] of [["cCand", "cCandV", v => v + "개"], ["cCfg", "cCfgV", v => v], ["cTemp", "cTempV", v => v],
+                                ["cGamma", "cGammaV", v => Number(v).toFixed(1)]]) {
+  const el = $("#" + id), upd = () => $("#" + outId).textContent = fmt(el.value); el.addEventListener("input", upd); upd();
+}
+
+const total = () => cSubs.reduce((m, s) => Math.max(m, s.start + s.duration), 0);
+
+function renderRows() {
+  const tb = $("#cRows"); tb.innerHTML = "";
+  cSubs.forEach((s, i) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><div class="idx" style="background:${SUB_COLORS[i % SUB_COLORS.length]}">${i + 1}</div></td>
+      <td><input type="text" data-k="prompt"></td>
+      <td><input type="number" data-k="start" step="0.05" min="0" max="10"></td>
+      <td><input type="number" data-k="duration" step="0.05" min="0.15" max="10"></td>
+      <td><input type="number" data-k="intensity" step="0.05" min="0" max="1"></td>
+      <td><select data-k="transition"><option value="cut">cut (급격)</option><option value="crossfade">crossfade</option></select></td>
+      <td style="white-space:nowrap"><button data-a="up" title="위로">↑</button> <button data-a="del" class="danger" title="삭제">✕</button></td>`;
+    tr.querySelectorAll("[data-k]").forEach(inp => {
+      inp.value = s[inp.dataset.k];
+      inp.addEventListener(inp.tagName === "SELECT" ? "change" : "input", () => {
+        const k = inp.dataset.k;
+        s[k] = (k === "prompt" || k === "transition") ? inp.value : (parseFloat(inp.value) || 0);
+        drawTimeline(); saveCompose();
+      });
+    });
+    tr.classList.toggle("sel", i === selIdx);
+    tr.addEventListener("focusin", () => { if (selIdx !== i) selectSub(i); });
+    tr.addEventListener("click", () => { if (selIdx !== i) selectSub(i); });
+    tr.querySelector('[data-a="del"]').onclick = (ev) => { ev.stopPropagation(); cSubs.splice(i, 1); selIdx = null; renderRows(); saveCompose(); };
+    tr.querySelector('[data-a="up"]').onclick = () => { if (i > 0) { [cSubs[i - 1], cSubs[i]] = [cSubs[i], cSubs[i - 1]]; autoTime(); } };
+    tb.appendChild(tr);
+  });
+  drawTimeline();
+}
+
+function autoTime() {
+  let t = 0; for (const s of cSubs) { s.start = Math.round(t * 100) / 100; t += s.duration; }
+  renderRows(); saveCompose();
+}
+
+// ---------- timeline editor: click to select, drag body to move, drag edges to resize
+const TL = { lane: 30, axis: 18, pad: 4, edge: 7, minDur: 0.15, maxEnd: 10 };
+let selIdx = null, tlDrag = null, tlHover = null;
+
+function timelineScale() {
+  // Visible length; frozen while dragging so blocks don't jump when the total changes.
+  if (tlDrag) return tlDrag.T;
+  return Math.min(TL.maxEnd, Math.max(3, Math.ceil(total() + 0.5)));
+}
+
+function laneLayout() {
+  // Greedy interval colouring: overlapping events go to separate lanes.
+  const order = cSubs.map((s, i) => i).sort((a, b) => cSubs[a].start - cSubs[b].start);
+  const ends = [], lane = new Array(cSubs.length).fill(0);
+  for (const i of order) {
+    const s = cSubs[i];
+    let l = ends.findIndex(e => e <= s.start + 1e-6);
+    if (l < 0) { l = ends.length; ends.push(0); }
+    ends[l] = s.start + s.duration; lane[i] = l;
+  }
+  return { lane, n: Math.max(1, ends.length) };
+}
+
+function blockRects(w) {
+  const T = timelineScale(), { lane, n } = laneLayout();
+  return { T, n, rects: cSubs.map((s, i) => ({ i, x: s.start / T * w, w: Math.max(4, s.duration / T * w),
+    y: TL.pad + lane[i] * TL.lane, h: TL.lane - 6 })) };
+}
+
+function drawTimeline() {
+  const cv = $("#cTimeline"), dpr = window.devicePixelRatio || 1, w = cv.clientWidth;
+  if (!w) return;
+  const { T, n, rects } = blockRects(w);
+  const h = TL.pad * 2 + n * TL.lane + TL.axis;
+  cv.style.height = h + "px";
+  cv.width = w * dpr; cv.height = h * dpr;
+  const g = cv.getContext("2d"); g.scale(dpr, dpr);
+  const css = getComputedStyle(document.documentElement);
+  const line = css.getPropertyValue("--line"), muted = css.getPropertyValue("--muted"), text = css.getPropertyValue("--text");
+  for (let t = 0; t <= T + 1e-9; t += 0.5) {   // grid: 0.5 s minor, 1 s major with labels
+    const x = t / T * w, major = Math.abs(t - Math.round(t)) < 1e-9;
+    g.strokeStyle = line; g.globalAlpha = major ? 1 : .45;
+    g.beginPath(); g.moveTo(x, 0); g.lineTo(x, h - TL.axis + 4); g.stroke();
+    if (major && t < T) { g.globalAlpha = 1; g.fillStyle = muted; g.font = "10px system-ui"; g.fillText(t + "s", x + 3, h - 5); }
+  }
+  g.globalAlpha = 1;
+  for (const r of rects) {
+    const s = cSubs[r.i], sel = r.i === selIdx, hov = tlHover === r.i;
+    g.fillStyle = SUB_COLORS[r.i % SUB_COLORS.length]; g.globalAlpha = .3 + .6 * s.intensity;
+    g.beginPath(); g.roundRect(r.x, r.y, r.w, r.h, 5); g.fill();
+    g.globalAlpha = 1;
+    if (sel || hov) { g.lineWidth = sel ? 2.5 : 1.5; g.strokeStyle = text; g.stroke(); g.lineWidth = 1; }
+    if (sel) {  // resize handles
+      g.fillStyle = text;
+      g.fillRect(r.x + 2, r.y + r.h / 2 - 6, 2, 12); g.fillRect(r.x + r.w - 4, r.y + r.h / 2 - 6, 2, 12);
+    }
+    if (r.w > 16) {
+      g.save(); g.beginPath(); g.rect(r.x + 4, r.y, r.w - 10, r.h); g.clip();
+      g.fillStyle = "#fff"; g.font = "600 11px system-ui";
+      g.fillText(`${r.i + 1}${r.w > 60 && s.prompt ? " · " + s.prompt : ""}`, r.x + 6, r.y + r.h / 2 + 4);
+      g.restore();
+    }
+  }
+  const tt = total();
+  let msg = cSubs.length ? `${cSubs.length}개 sub-event · 전체 ${tt.toFixed(2)}초` + (tt > TL.maxEnd ? " ⚠ 10초 초과" : "") : "분해하거나 직접 추가하세요";
+  if (selIdx !== null && cSubs[selIdx]) {
+    const s = cSubs[selIdx];
+    msg += ` · 선택 ${selIdx + 1}: ${s.start.toFixed(2)}s → ${(s.start + s.duration).toFixed(2)}s (길이 ${s.duration.toFixed(2)}s)`;
+  }
+  $("#cTotal").textContent = msg;
+}
+
+function hitTest(ev) {
+  const cv = $("#cTimeline"), rect = cv.getBoundingClientRect();
+  const x = ev.clientX - rect.left, y = ev.clientY - rect.top;
+  const { rects } = blockRects(cv.clientWidth);
+  for (let k = rects.length - 1; k >= 0; k--) {
+    const r = rects[k];
+    if (x >= r.x - 2 && x <= r.x + r.w + 2 && y >= r.y && y <= r.y + r.h) {
+      const mode = x - r.x <= TL.edge ? "left" : r.x + r.w - x <= TL.edge ? "right" : "move";
+      return { i: r.i, mode, x };
+    }
+  }
+  return null;
+}
+
+function selectSub(i, focusRow = false) {
+  selIdx = i;
+  document.querySelectorAll("#cRows tr").forEach((tr, k) => tr.classList.toggle("sel", k === i));
+  if (focusRow && i !== null) document.querySelectorAll("#cRows tr")[i]?.scrollIntoView({ block: "nearest" });
+  drawTimeline();
+}
+
+function syncRow(i) {  // update one row's numbers without re-rendering the table (keeps focus)
+  const tr = document.querySelectorAll("#cRows tr")[i]; if (!tr) return;
+  for (const k of ["start", "duration"]) { const inp = tr.querySelector(`[data-k="${k}"]`); if (inp && document.activeElement !== inp) inp.value = +cSubs[i][k].toFixed(2); }
+}
+
+const snapT = (t, fine) => { const q = fine ? 0.01 : 0.05; return Math.round(t / q) * q; };
+
+function applyDrag(dt, fine) {
+  const d = tlDrag, s = cSubs[d.i];
+  if (d.mode === "move") {
+    s.start = Math.min(Math.max(0, snapT(d.start0 + dt, fine)), TL.maxEnd - s.duration);
+  } else if (d.mode === "left") {
+    const end = d.start0 + d.dur0;
+    const start = Math.min(Math.max(0, snapT(d.start0 + dt, fine)), end - TL.minDur);
+    s.start = start; s.duration = +(end - start).toFixed(3);
+  } else {
+    s.duration = Math.min(Math.max(TL.minDur, snapT(d.dur0 + dt, fine)), TL.maxEnd - s.start);
+  }
+  s.start = +s.start.toFixed(3); s.duration = +s.duration.toFixed(3);
+  syncRow(d.i); drawTimeline();
+}
+
+(() => {
+  const cv = $("#cTimeline");
+  cv.tabIndex = 0;
+  cv.addEventListener("pointerdown", ev => {
+    const hit = hitTest(ev);
+    if (!hit) { selectSub(null); return; }
+    selectSub(hit.i, true);
+    const s = cSubs[hit.i];
+    tlDrag = { i: hit.i, mode: hit.mode, x0: ev.clientX, start0: s.start, dur0: s.duration, T: timelineScale(), moved: false };
+    cv.setPointerCapture(ev.pointerId); cv.focus(); ev.preventDefault();
+  });
+  cv.addEventListener("pointermove", ev => {
+    if (tlDrag) {
+      const dt = (ev.clientX - tlDrag.x0) / cv.clientWidth * tlDrag.T;
+      if (Math.abs(ev.clientX - tlDrag.x0) > 2) tlDrag.moved = true;
+      if (tlDrag.moved) applyDrag(dt, ev.shiftKey);
+      return;
+    }
+    const hit = hitTest(ev);
+    cv.style.cursor = !hit ? "default" : hit.mode === "move" ? "grab" : "ew-resize";
+    const hov = hit ? hit.i : null;
+    if (hov !== tlHover) { tlHover = hov; drawTimeline(); }
+  });
+  const end = () => { if (tlDrag) { const moved = tlDrag.moved; tlDrag = null; drawTimeline(); if (moved) saveCompose(); } };
+  cv.addEventListener("pointerup", end);
+  cv.addEventListener("pointercancel", end);
+  cv.addEventListener("pointerleave", () => { if (!tlDrag && tlHover !== null) { tlHover = null; drawTimeline(); } });
+  cv.addEventListener("dblclick", ev => {
+    const hit = hitTest(ev); if (!hit) return;
+    document.querySelectorAll("#cRows tr")[hit.i]?.querySelector('[data-k="prompt"]')?.focus();
+  });
+  cv.addEventListener("keydown", ev => {
+    if (selIdx === null || !cSubs[selIdx]) return;
+    const s = cSubs[selIdx], step = ev.shiftKey ? 0.01 : 0.05;
+    if (ev.key === "ArrowLeft" || ev.key === "ArrowRight") {
+      const dir = ev.key === "ArrowRight" ? 1 : -1;
+      if (ev.altKey) s.duration = +Math.min(Math.max(TL.minDur, s.duration + dir * step), TL.maxEnd - s.start).toFixed(3);
+      else s.start = +Math.min(Math.max(0, s.start + dir * step), TL.maxEnd - s.duration).toFixed(3);
+      syncRow(selIdx); drawTimeline(); saveCompose(); ev.preventDefault();
+    } else if (ev.key === "Delete" || ev.key === "Backspace") {
+      cSubs.splice(selIdx, 1); selIdx = null; renderRows(); saveCompose(); ev.preventDefault();
+    }
+  });
+})();
+
+$("#addSub").onclick = () => {
+  const t = total();
+  cSubs.push({ prompt: "", start: Math.round(t * 100) / 100, duration: 0.5, intensity: 0.7, transition: cSubs.length ? "crossfade" : "cut", source: "" });
+  renderRows(); saveCompose();
+  const inputs = document.querySelectorAll('#cRows input[data-k="prompt"]'); inputs[inputs.length - 1]?.focus();
+};
+$("#autoTime").onclick = autoTime;
+
+$("#decBtn").onclick = async () => {
+  const event = $("#cEvent").value.trim();
+  if (!event) { $("#cEvent").focus(); return; }
+  if (!llmOk && $("#cLlm").value === "local") { toast("로컬 LLM을 찾을 수 없습니다 – LM Studio 서버를 켜세요"); return; }
+  const btn = $("#decBtn"); btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> 분해 중…';
+  try {
+    const planner = $("#cPlanner").value;
+    const optionalNumber = id => $(id).value === "" ? null : Number($(id).value);
+    const bounce_parameters = planner === "ball_physics" ? {
+      drop_height_m: optionalNumber("#bHeight"), restitution: optionalNumber("#bRestitution"),
+      mass_kg: optionalNumber("#bMass"), impact_count: optionalNumber("#bCount"), pulse_duration_s: Number($("#bPulse").value) } : null;
+    const r = await api("/api/decompose", { method: "POST", body: JSON.stringify({ event, planner, bounce_parameters,
+      estimate_parameters: $("#cEstimate").checked, llm: $("#cLlm").value }) });
+    cPhysics = r.physics || null; showPhysics();
+    cHierarchy = r.hierarchy || null; showHierarchy();
+    if (cPhysics || cHierarchy) {
+      $("#cGamma").value = "1"; $("#cGamma").dispatchEvent(new Event("input"));
+      $("#cShare").checked = true;
+    }
+    cSubs = r.sub_events.map(s => ({ ...s })); renderRows(); saveCompose();
+    $("#decInfo").textContent = `${r.llm === "gpt-4o" ? "GPT-4o" : r.model} · ${r.elapsed.toFixed(1)}s`;
+    const ph = $("#cPhases"); ph.hidden = !r.phases.length;
+    ph.innerHTML = "LLM이 파악한 진행 순서:<ol></ol>";
+    r.phases.forEach(p => { const li = document.createElement("li"); li.textContent = p; ph.querySelector("ol").appendChild(li); });
+    const REASON = { "render limit of 8 events": "재생 이벤트 8개 한도", "10-second window": "10초 창",
+      "restitution 1 never decays below the threshold": "반발계수 1이라 세기가 줄지 않음" };
+    $("#cIssues").textContent = (r.warnings || []).map(w => {
+      const why = w.reason.split(", ").map(x => REASON[x] || x).join(", ");
+      const n = w.count === null ? "끝없이 이어지는" : `${w.count}개의`;
+      const at = w.first_omitted_time_s != null ? ` (${w.first_omitted_time_s.toFixed(2)}s 이후)` : "";
+      return `⚠ 물리적으로는 이어지는 ${n} 충돌을 출력하지 않았습니다${at} · 이유: ${why}`;
+    }).join("\n");
+  } catch (e) { toast("분해 실패: " + e.message, 4000); }
+  finally { btn.disabled = false; btn.textContent = "분해"; }
+};
+
+$("#compBtn").onclick = async () => {
+  const event = $("#cEvent").value.trim();
+  const subs = cSubs.filter(s => s.prompt.trim());
+  if (!event || !subs.length) { toast(cHierarchy ? "현재 계획에는 재생할 진동이 없습니다. 무음 낙하나 빈 확률 실현일 수 있습니다." : "이벤트와 sub-event를 먼저 준비하세요"); return; }
+  if (total() > 10) { toast("전체 길이가 10초를 넘습니다"); return; }
+  if (cBusy) return; cBusy = true;
+  const btn = $("#compBtn"), t0 = performance.now(); btn.disabled = true;
+  const tick = setInterval(() => btn.innerHTML = `<span class="spinner"></span> 생성 & 합성 중… ${((performance.now() - t0) / 1000).toFixed(0)}s`, 250);
+  try {
+    const seed = $("#cSeed").value.trim();
+    cPlan = await api("/api/compose", { method: "POST", body: JSON.stringify({
+      event, sub_events: subs, candidates: +$("#cCand").value, baseline: $("#cBaseline").checked,
+      cfg: +$("#cCfg").value, temperature: +$("#cTemp").value, seed: seed === "" ? null : +seed,
+      gamma: +$("#cGamma").value, share_repeats: $("#cShare").checked, physics: cPhysics, hierarchy: cHierarchy }) });
+    cPlan.composite_item.regions = cPlan.sub_events;
+    newNames = new Set([cPlan.composite, cPlan.baseline].filter(Boolean));
+    $("#cResult").hidden = false; redrawCompare();
+    $("#cResInfo").textContent = `HapticGen ${cPlan.prompts}개 프롬프트` + (cPlan.analytic_segments ? ` · 해석적 합성 ${cPlan.analytic_segments}구간` : "") + ` · ${cPlan.elapsed.toFixed(1)}s`;
+    loadLibrary();
+    $("#cResult").scrollIntoView({ behavior: "smooth", block: "start" });
+    if ($("#autoplay").checked && questReady) playQuest(cPlan.composite_item);
+  } catch (e) { toast("합성 실패: " + e.message, 4000); }
+  finally { clearInterval(tick); cBusy = false; btn.disabled = false; btn.textContent = "③ 생성 & 합성"; }
+};
+
+function redrawCompare() {
+  if (!cPlan) return;
+  const box = $("#cCompare"); box.innerHTML = "";
+  const a = card(cPlan.composite_item); a.querySelector(".prompt").textContent = "A · Sub-event 합성";
+  box.appendChild(a);
+  if (cPlan.baseline_item) { const b = card(cPlan.baseline_item); b.querySelector(".prompt").textContent = "B · Baseline (이벤트 문장 한 번에)"; box.appendChild(b); }
+  const segs = $("#cSegs"); segs.innerHTML = "";
+  cPlan.sub_events.forEach((s, i) => {
+    const b = document.createElement("button");
+    b.innerHTML = `<span class="sw" style="background:${SUB_COLORS[i % SUB_COLORS.length]}"></span> ${i + 1}`;
+    b.title = `${s.prompt}\n후보 ${s.candidate + 1}/${s.scores.length} 선택 (점수 ${s.scores.join(", ")})`;
+    b.onclick = async () => { try { playQuest(await api("/api/wave/" + s.file.split("/").map(encodeURIComponent).join("/"))); } catch (e) { toast(e.message); } };
+    segs.appendChild(b);
+  });
+}
+
+// ---------- 3-way comparison: local LM plan vs GPT-4o plan vs single-prompt HapticGen
+let c3 = null;
+const mk = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; };
+const C3_LABELS = { local: "A · 로컬 LM 분해", "gpt-4o": "B · GPT-4o 분해", baseline: "C · HapticGen 단일 생성" };
+
+function redrawCompare3() {
+  if (!c3) return;
+  const box = $("#c3Compare"); box.innerHTML = "";
+  for (const key of ["local", "gpt-4o", "baseline"]) {
+    const it = c3.items[key];
+    if (!it) { const miss = mk("div", "card item"); miss.textContent = `${C3_LABELS[key]}: 실패 (${c3.errors[key] || "없음"})`; box.appendChild(miss); continue; }
+    const c = card(it); c.querySelector(".prompt").textContent = C3_LABELS[key]; box.appendChild(c);
+  }
+  const plans = $("#c3Plans"); plans.innerHTML = "";
+  for (const [key, p] of Object.entries(c3.plans)) {
+    const d = mk("div", "plan3"); d.appendChild(mk("b", null, `${C3_LABELS[key]} (${p.elapsed.toFixed(1)}s)`));
+    const ol = mk("ol");
+    p.sub_events.forEach(s => ol.appendChild(mk("li", null, `${s.start.toFixed(2)}s +${s.duration.toFixed(2)} · 세기 ${s.intensity.toFixed(2)} · ${s.transition} · ${s.prompt}`)));
+    d.appendChild(ol); plans.appendChild(d);
+  }
+  $("#c3Errors").textContent = Object.entries(c3.errors).map(([k, e]) => `⚠ ${C3_LABELS[k]} 분해 실패: ${e}`).join("\n");
+}
+
+$("#cmp3Btn").onclick = async () => {
+  const event = $("#cEvent").value.trim();
+  if (!event) { $("#cEvent").focus(); return; }
+  if (cBusy) return; cBusy = true;
+  const btn = $("#cmp3Btn"), label = btn.textContent, t0 = performance.now(); btn.disabled = true;
+  const tick = setInterval(() => btn.innerHTML = `<span class="spinner"></span> 3-way 비교 중… ${((performance.now() - t0) / 1000).toFixed(0)}s`, 250);
+  try {
+    const seed = $("#cSeed").value.trim();
+    c3 = await api("/api/compare3", { method: "POST", body: JSON.stringify({ event, candidates: +$("#cCand").value,
+      gamma: +$("#cGamma").value, share_repeats: $("#cShare").checked, seed: seed === "" ? null : +seed }) });
+    newNames = new Set(Object.values(c3.items).map(i => i.name));
+    $("#c3Result").hidden = false; redrawCompare3();
+    $("#c3Info").textContent = `seed ${c3.seed} · ${((performance.now() - t0) / 1000).toFixed(0)}s`;
+    loadLibrary();
+    $("#c3Result").scrollIntoView({ behavior: "smooth", block: "start" });
+  } catch (e) { toast("3-way 비교 실패: " + e.message, 5000); }
+  finally { clearInterval(tick); cBusy = false; btn.disabled = false; btn.textContent = label; }
+};
+
+$("#abcBtn").onclick = () => {
+  if (!c3) return;
+  clearTimeout(window._abT);
+  const seq = ["local", "gpt-4o", "baseline"].map(k => c3.items[k]).filter(Boolean);
+  const step = (i) => {  // one pending timer at a time, so Stop/Esc cancels the rest
+    if (i >= seq.length) return;
+    playQuest(seq[i]);
+    window._abT = setTimeout(() => step(i + 1), (seq[i].duration * +$("#loop").value + 1.0) * 1000);
+  };
+  step(0);
+};
+
+$("#abBtn").onclick = () => {
+  if (!cPlan) return;
+  playQuest(cPlan.composite_item);
+  if (cPlan.baseline_item) {
+    const wait = (cPlan.composite_item.duration * +$("#loop").value + 1.0) * 1000;
+    clearTimeout(window._abT); window._abT = setTimeout(() => playQuest(cPlan.baseline_item), wait);
+  }
+};
+
+renderRows();
+{
+  let t = location.hash === "#compose" ? "compose" : location.hash === "#single" ? "single" : null;
+  try { t = t || localStorage.getItem("hg_tab"); } catch {}
+  setTab(t === "compose" ? "compose" : "single");
+}
+
+$("#genBtn").onclick = doGenerate;
+$("#stopBtn").onclick = stopQuest;
+$("#filter").oninput = render;
+try { $("#autoplay").checked = localStorage.getItem("hg_autoplay") !== "0"; } catch {}
+$("#autoplay").onchange = () => { try { localStorage.setItem("hg_autoplay", $("#autoplay").checked ? "1" : "0"); } catch {} };
+try { $("#normalize").checked = localStorage.getItem("hg_normalize") !== "0"; } catch {}
+$("#normalize").onchange = () => { try { localStorage.setItem("hg_normalize", $("#normalize").checked ? "1" : "0"); } catch {} };
+document.addEventListener("keydown", e => {
+  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); tab === "compose" ? $("#compBtn").click() : doGenerate(); }
+  if (e.key === "Escape") stopQuest();
+});
+let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => tab === "compose" ? (drawTimeline(), redrawCompare(), redrawCompare3()) : render(), 150); });
+loadLibrary();
+</script>
+</body>
+</html>

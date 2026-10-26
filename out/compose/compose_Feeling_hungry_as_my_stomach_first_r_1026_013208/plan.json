@@ -1,0 +1,55 @@
+{
+  "event": "Feeling hungry as my stomach first rumbles softly, then contracts with a louder growl, almost like a burp.",
+  "sub_events": [
+    {
+      "prompt": "The stomach rumbles softly.",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.3,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Feeling_hungry_as_my_stomach_first_r_1026_013208/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0098,
+        0.0608
+      ],
+      "offset": 0.0,
+      "shared": false
+    },
+    {
+      "prompt": "The stomach contracts with a louder growl.",
+      "start": 1.3,
+      "duration": 0.9,
+      "intensity": 0.7,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Feeling_hungry_as_my_stomach_first_r_1026_013208/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.1194,
+        0.0937
+      ],
+      "offset": 0.0,
+      "shared": false
+    }
+  ],
+  "total": 2.2,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Feeling_hungry_as_my_stomach_first_r_1026_013208_composite.wav",
+  "baseline": "compose_Feeling_hungry_as_my_stomach_first_r_1026_013208_baseline.wav",
+  "gen_duration": 2.2,
+  "prompts": 6,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.528329849243164,
+  "elapsed": 2.5384607315063477
+}

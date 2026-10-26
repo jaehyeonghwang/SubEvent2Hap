@@ -1,0 +1,86 @@
+{
+  "event": "Someone knocks on a door three times and the door creaks open",
+  "sub_events": [
+    {
+      "prompt": "The door is knocked.",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_232947/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.9109,
+        0.0005
+      ],
+      "offset": 0.749,
+      "shared": true
+    },
+    {
+      "prompt": "The door is knocked.",
+      "start": 0.9,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_232947/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.9109,
+        0.0005
+      ],
+      "offset": 0.749,
+      "shared": true
+    },
+    {
+      "prompt": "The door is knocked.",
+      "start": 1.3,
+      "duration": 0.2,
+      "intensity": 0.7,
+      "transition": "cut",
+      "source": "",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_232947/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.9109,
+        0.0005
+      ],
+      "offset": 0.749,
+      "shared": true
+    },
+    {
+      "prompt": "The door creaks open.",
+      "start": 1.7,
+      "duration": 1.5,
+      "intensity": 0.5,
+      "transition": "crossfade",
+      "source": "",
+      "file": "compose/compose_Someone_knocks_on_a_door_three_times_1025_232947/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.1268,
+        0.1079
+      ],
+      "offset": 0.873,
+      "shared": false
+    }
+  ],
+  "total": 3.2,
+  "params": {
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 7,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Someone_knocks_on_a_door_three_times_1025_232947_composite.wav",
+  "baseline": null,
+  "gen_duration": 2.5,
+  "prompts": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.7964015007019043,
+  "elapsed": 3.809542179107666
+}
