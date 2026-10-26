@@ -228,7 +228,7 @@ canvas.timeline:focus-visible { outline: 2px solid var(--accent); outline-offset
       <p class="tl-hint">블록 클릭: 선택 · 가운데 끌기: 시간 이동 · 양 끝 끌기: 길이 조절 (0.05초 단위, <kbd>Shift</kbd> 0.01초) · 선택 후 <kbd>←</kbd><kbd>→</kbd> 이동, <kbd>Alt</kbd>+<kbd>←</kbd><kbd>→</kbd> 길이, <kbd>Delete</kbd> 삭제 · 더블클릭: 설명 편집</p>
       <div class="tablewrap">
         <table class="subs">
-          <thead><tr><th></th><th>사건 설명 (생성 또는 해석적 합성)</th><th>시작(s)</th><th>길이(s)</th><th>세기</th><th>전환</th><th></th></tr></thead>
+          <thead><tr><th></th><th>사건 설명 (생성 또는 해석적 합성)</th><th>시작(s)</th><th>길이(s)</th><th>세기</th><th></th></tr></thead>
           <tbody id="cRows"></tbody>
         </table>
       </div>
@@ -563,13 +563,12 @@ function renderRows() {
       <td><input type="number" data-k="start" step="0.05" min="0" max="10"></td>
       <td><input type="number" data-k="duration" step="0.05" min="0.15" max="10"></td>
       <td><input type="number" data-k="intensity" step="0.05" min="0" max="1"></td>
-      <td><select data-k="transition"><option value="cut">cut (급격)</option><option value="crossfade">crossfade</option></select></td>
       <td style="white-space:nowrap"><button data-a="up" title="위로">↑</button> <button data-a="del" class="danger" title="삭제">✕</button></td>`;
     tr.querySelectorAll("[data-k]").forEach(inp => {
       inp.value = s[inp.dataset.k];
       inp.addEventListener(inp.tagName === "SELECT" ? "change" : "input", () => {
         const k = inp.dataset.k;
-        s[k] = (k === "prompt" || k === "transition") ? inp.value : (parseFloat(inp.value) || 0);
+        s[k] = k === "prompt" ? inp.value : (parseFloat(inp.value) || 0);
         drawTimeline(); saveCompose();
       });
     });
@@ -750,7 +749,7 @@ function applyDrag(dt, fine) {
 
 $("#addSub").onclick = () => {
   const t = total();
-  cSubs.push({ prompt: "", start: Math.round(t * 100) / 100, duration: 0.5, intensity: 0.7, transition: cSubs.length ? "crossfade" : "cut", source: "" });
+  cSubs.push({ prompt: "", start: Math.round(t * 100) / 100, duration: 0.5, intensity: 0.7, source: "" });
   renderRows(); saveCompose();
   const inputs = document.querySelectorAll('#cRows input[data-k="prompt"]'); inputs[inputs.length - 1]?.focus();
 };
@@ -850,7 +849,7 @@ function redrawCompare3() {
   for (const [key, p] of Object.entries(c3.plans)) {
     const d = mk("div", "plan3"); d.appendChild(mk("b", null, `${C3_LABELS[key]} (${p.elapsed.toFixed(1)}s)`));
     const ol = mk("ol");
-    p.sub_events.forEach(s => ol.appendChild(mk("li", null, `${s.start.toFixed(2)}s +${s.duration.toFixed(2)} · 세기 ${s.intensity.toFixed(2)} · ${s.transition} · ${s.prompt}`)));
+    p.sub_events.forEach(s => ol.appendChild(mk("li", null, `${s.start.toFixed(2)}s +${s.duration.toFixed(2)} · 세기 ${s.intensity.toFixed(2)} · ${s.prompt}`)));
     d.appendChild(ol); plans.appendChild(d);
   }
   $("#c3Errors").textContent = Object.entries(c3.errors).map(([k, e]) => `⚠ ${C3_LABELS[k]} 분해 실패: ${e}`).join("\n");

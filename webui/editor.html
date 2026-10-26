@@ -90,7 +90,7 @@ canvas { width: 100%; display: block; background: var(--track); border-radius: 1
 
 /* sub-event list (always visible) */
 .list { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-.lrow { display: grid; grid-template-columns: 34px minmax(200px, 1fr) 92px 92px 150px 170px 40px; gap: 10px; align-items: center;
+.lrow { display: grid; grid-template-columns: 34px minmax(220px, 1fr) 96px 96px 190px 40px; gap: 10px; align-items: center;
   padding: 8px 12px; border-top: 1px solid var(--line); }
 .lrow.head { border-top: 0; background: var(--bg); font-size: 12.5px; color: var(--muted); font-weight: 600; padding: 9px 12px; }
 .lrow.sel { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
@@ -102,7 +102,8 @@ canvas { width: 100%; display: block; background: var(--track); border-radius: 1
 .lrow button { padding: 6px 0; width: 36px; }
 .list .empty { padding: 20px; text-align: center; color: var(--muted); font-size: 14px; }
 .listwrap { overflow-x: auto; }
-.listwrap .list { min-width: 760px; }
+.listwrap .list { min-width: 660px; }
+
 
 /* generate */
 .genrow { display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; }
@@ -114,9 +115,14 @@ canvas { width: 100%; display: block; background: var(--track); border-radius: 1
 .seg button + button { border-left: 1px solid var(--line); }
 .seg button.on { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
 .inline { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--muted); }
-.parts { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
-.parts .lbl { font-size: 13px; color: var(--muted); margin-right: 2px; }
-.parts .sw { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.samples { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin-top: 8px; }
+.srow { display: grid; grid-template-columns: 34px minmax(0, 1fr) 96px auto auto; gap: 10px; align-items: center; padding: 8px 12px; border-top: 1px solid var(--line); }
+.srow:first-child { border-top: 0; }
+.srow .num { width: 28px; height: 28px; border-radius: 8px; color: #fff; font-weight: 700; display: grid; place-items: center; font-size: 13px; }
+.srow .txt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--muted); font-size: 13.5px; }
+.srow button { padding: 6px 11px; font-size: 13px; }
+.tag { font-size: 12.5px; font-weight: 600; } .tag.keep { color: var(--ok); } .tag.new { color: var(--warn); }
+.samples .empty { padding: 16px; text-align: center; color: var(--muted); font-size: 13.5px; }
 details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); font-size: 13.5px; }
 .adv { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px 22px; margin-top: 10px; }
 .adv label { font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; }
@@ -172,7 +178,7 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
       <div class="how"><b>빈 곳 클릭</b>새 sub-event 만들기 (끌면 길이 지정)</div>
       <div class="how"><b>블록 가운데 끌기</b>시간 이동</div>
       <div class="how"><b>블록 양 끝 끌기</b>길이 조절</div>
-      <div class="how"><b>블록 더블클릭</b>목록에서 설명 바로 편집</div>
+      <div class="how"><b>색이 찬 높이</b>체감 세기 (선택 후 <kbd>↑</kbd> <kbd>↓</kbd>)</div>
     </div>
 
     <div class="track-title">Sub-event</div>
@@ -185,14 +191,15 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
 
   <!-- 3. generate -->
   <section class="card">
-    <div class="step"><span class="n">3</span><h2>생성하고 느껴보기</h2><p>sub-event마다 진동을 만들어 한 파형으로 합칩니다. 결과는 위 타임라인과 같은 시간축에 그려집니다.</p></div>
+    <div class="step"><span class="n">3</span><h2>생성하고 느껴보기</h2><p>새 sub-event와 설명이 바뀐 것만 생성하고, 나머지는 샘플을 그대로 다시 씁니다. 시간이나 세기만 바꿨다면 생성 없이 바로 다시 합칩니다. 타임라인을 고치면 이전 결과는 지워집니다.</p></div>
     <div class="genrow">
-      <button id="genBtn" class="accent big" title="Ctrl+Enter">생성 & 합성</button>
+      <button id="genBtn" class="accent big" title="Ctrl+Enter. 샘플이 있는 sub-event는 그대로 두고, 새것이나 설명이 바뀐 것만 생성합니다">생성 & 합성</button>
+      <button id="allBtn" title="모든 sub-event를 새로 생성">전체 새로 생성</button>
       <div class="field"><label for="generator">생성 모델</label><select id="generator"><option value="hapticgen">HapticGen</option><option value="audiogen">AudioGen (진동 변환)</option></select></div>
       <div class="field"><label for="seed">Seed</label><input type="number" id="seed" placeholder="랜덤"></div>
     </div>
 
-    <div class="track-title" style="margin-top:18px">결과 파형 <span class="badge" id="stale" hidden>타임라인이 바뀌었습니다. 다시 생성하세요</span></div>
+    <div class="track-title" style="margin-top:18px">결과 파형</div>
     <canvas id="wave" title="클릭하면 Quest에서 재생"></canvas>
 
     <div class="playbar">
@@ -202,9 +209,10 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
       <span class="grow"></span>
       <span class="inline">컨트롤러</span>
       <div class="seg" id="hand"><button data-v="left">왼손</button><button data-v="both">양손</button><button data-v="right">오른손</button></div>
-      <span class="inline">세기 <input type="range" id="gain" min="0.2" max="3" step="0.05" value="1"> <b id="gainV"></b></span>
+      <span class="inline" title="재생할 때만 곱하는 배율입니다. 생성 결과와 sub-event 세기는 바뀌지 않습니다.">재생 배율 <input type="range" id="gain" min="0.2" max="3" step="0.05" value="1"> <b id="gainV"></b></span>
     </div>
-    <div class="parts" id="parts" hidden><span class="lbl">하나씩 재생</span></div>
+    <div class="track-title" style="margin-top:20px">Sub-event별 샘플 <span style="font-weight:400">마음에 들지 않는 것만 다시 생성하세요</span></div>
+    <div class="samples" id="samples"></div>
 
     <details>
       <summary>고급 생성 설정</summary>
@@ -223,6 +231,8 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
         <div><kbd>←</kbd> <kbd>→</kbd> 선택 블록 이동 (0.05초)</div>
         <div><kbd>Alt</kbd> + <kbd>←</kbd> <kbd>→</kbd> 길이 조절</div>
         <div><kbd>Shift</kbd> 누른 채 끌기/이동: 0.01초 단위</div>
+        <div><kbd>↑</kbd> <kbd>↓</kbd> 체감 세기 5%씩</div>
+        <div><kbd>R</kbd> 선택한 sub-event만 다시 생성</div>
         <div><kbd>Delete</kbd> 선택 삭제</div>
         <div><kbd>Ctrl</kbd> + <kbd>D</kbd> 복제</div>
         <div><kbd>Ctrl</kbd> + <kbd>Z</kbd> 되돌리기, <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> 다시 하기</div>
@@ -236,7 +246,7 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
 <script>
 const $ = (s) => document.querySelector(s);
 const COLORS = ["#4f46e5", "#0ea5e9", "#10b981", "#f59e0b", "#ef4444", "#a855f7", "#14b8a6", "#f97316"];
-const TL = { lane: 46, axis: 22, pad: 6, edge: 9, minDur: 0.15, maxEnd: 10, newDur: 0.5 };
+const TL = { lane: 54, axis: 22, pad: 6, edge: 9, minDur: 0.15, maxEnd: 10, newDur: 0.5 };
 const KEY = "s2h_editor";
 
 let subs = [], sel = null, drag = null, hover = null, ghost = null;
@@ -256,15 +266,30 @@ async function api(path, opts = {}) {
 
 // ---------- state, persistence, undo
 const snap = () => JSON.stringify(subs);
-function save() { try { localStorage.setItem(KEY, JSON.stringify({ event: $("#event").value, subs, result })); } catch {} }
+let planEvent = null;   // event text the current timeline belongs to
+function save() {
+  if (!subs.length) planEvent = null;
+  else if (planEvent === null) planEvent = $("#event").value.trim();
+  if (result && JSON.stringify(result.subs) !== JSON.stringify(subs.filter(s => s.prompt.trim()).map(core))) clearResult();
+  parts();
+  try { localStorage.setItem(KEY, JSON.stringify({ event: $("#event").value, subs, result, planEvent })); } catch {}
+}
+function clearResult() {
+  result = null; play = null;
+  if (audioEl) audioEl.pause();
+  drawWave(); updatePlay();
+}
 function load() {
   try {
     const s = JSON.parse(localStorage.getItem(KEY) || "null") || JSON.parse(localStorage.getItem("hg_compose") || "null");
-    if (s) { $("#event").value = s.event || ""; subs = (s.subs || []).map(clean); result = s.result || null; }
+    if (s) { $("#event").value = s.event || ""; subs = (s.subs || []).map(clean); result = s.result || null; planEvent = s.planEvent ?? null; }
   } catch {}
 }
-const clean = (s) => ({ prompt: s.prompt || "", start: +s.start || 0, duration: Math.max(TL.minDur, +s.duration || TL.newDur),
-  intensity: s.intensity ?? 0.7, transition: s.transition === "crossfade" ? "crossfade" : "cut" });
+const newUid = () => Math.random().toString(36).slice(2, 10);
+// sample kept from the last generation: reusable while the description and generator are unchanged
+const hasSample = (s) => !!s.src && s.srcPrompt === s.prompt && s.srcGen === $("#generator").value;
+const clean = (s) => ({ uid: s.uid || newUid(), src: s.src || null, srcPrompt: s.srcPrompt ?? null, srcGen: s.srcGen ?? null, prompt: s.prompt || "", start: +s.start || 0, duration: Math.max(TL.minDur, +s.duration || TL.newDur),
+  intensity: s.intensity ?? 0.7 });
 function checkpoint(before = snap()) { undo.push(before); if (undo.length > 200) undo.shift(); redo = []; updateUndo(); }
 function restore(stack, other) {
   if (!stack.length) return;
@@ -333,24 +358,22 @@ function drawTimeline() {
   }
   for (const r of rs) {
     const s = subs[r.i], on = r.i === sel, color = COLORS[r.i % COLORS.length];
-    g.fillStyle = color; g.globalAlpha = .35 + .6 * s.intensity;
-    g.beginPath(); g.roundRect(r.x, r.y, r.w, r.h, 7); g.fill(); g.globalAlpha = 1;
-    if (on || hover === r.i) { g.lineWidth = on ? 3 : 1.5; g.strokeStyle = css("--text"); g.stroke(); g.lineWidth = 1; }
+    // pale block = time span; solid fill from the bottom = perceived strength (full height = 100%)
+    g.save(); g.beginPath(); g.roundRect(r.x, r.y, r.w, r.h, 7); g.clip();
+    g.fillStyle = color; g.globalAlpha = .18; g.fillRect(r.x, r.y, r.w, r.h);
+    const fh = r.h * s.intensity;
+    g.globalAlpha = .9; g.fillRect(r.x, r.y + r.h - fh, r.w, fh);
+    g.restore(); g.globalAlpha = 1;
+    g.beginPath(); g.roundRect(r.x, r.y, r.w, r.h, 7);
+    g.lineWidth = on ? 3 : hover === r.i ? 2 : 1.2; g.strokeStyle = on || hover === r.i ? css("--text") : color; g.stroke(); g.lineWidth = 1;
     if (on) {   // resize grips
-      g.fillStyle = "#fff";
+      g.fillStyle = css("--text");
       for (const gx of [r.x + 3, r.x + r.w - 6]) { g.beginPath(); g.roundRect(gx, r.y + r.h / 2 - 9, 3, 18, 2); g.fill(); }
     }
-    if (s.transition === "crossfade" && r.w > 16) {
-      g.strokeStyle = "rgba(255,255,255,.9)"; g.lineWidth = 1.5; g.beginPath(); g.moveTo(r.x + 8, r.y + r.h - 5); g.lineTo(r.x + 16, r.y + 5); g.stroke(); g.lineWidth = 1;
-    }
-    if (r.w > 22) {
-      g.save(); g.beginPath(); g.rect(r.x + 6, r.y, r.w - 14, r.h); g.clip();
-      let x = r.x + (s.transition === "crossfade" ? 22 : 10);
-      g.fillStyle = "rgba(255,255,255,.25)"; g.beginPath(); g.roundRect(x - 3, r.y + r.h / 2 - 10, 22, 20, 5); g.fill();
-      g.fillStyle = "#fff"; g.font = "700 13px system-ui"; g.textAlign = "center"; g.fillText(String(r.i + 1), x + 8, r.y + r.h / 2 + 5);
-      g.textAlign = "left"; g.font = "600 13px system-ui";
-      g.fillText(s.prompt || "설명을 입력하세요", x + 26, r.y + r.h / 2 + 5);
-      g.restore();
+    if (r.w > 14) {   // letter chip
+      const cx = r.x + Math.min(r.w / 2, 18), cy = r.y + 15;
+      g.fillStyle = css("--panel"); g.globalAlpha = .95; g.beginPath(); g.arc(cx, cy, 10, 0, Math.PI * 2); g.fill(); g.globalAlpha = 1;
+      g.fillStyle = css("--text"); g.font = "700 12.5px system-ui"; g.textAlign = "center"; g.fillText(letter(r.i), cx, cy + 4.5); g.textAlign = "left";
     }
   }
   facts();
@@ -360,12 +383,10 @@ function drawWave() {
   const cv = $("#wave"); if (!cv.clientWidth) return;
   const h = 76, { g, w } = setupCanvas(cv, h), T = scale();
   grid(g, w, h, T, false);
-  const stale = !!result && JSON.stringify(result.subs) !== JSON.stringify(subs.filter(s => s.prompt.trim()));
-  $("#stale").hidden = !stale;
   if (!result) { g.fillStyle = css("--muted"); g.font = "14px system-ui"; g.textAlign = "center"; g.fillText("아직 생성하지 않았습니다", w / 2, h / 2 + 5); g.textAlign = "left"; return; }
   const it = result.item, mid = h / 2, n = it.peaks.length, k = (h / 2 - 5) / Math.max(0.05, it.peak);
   const prog = play && play.name === it.name ? ((performance.now() - play.t0) % play.dur) / play.dur : null;
-  g.globalAlpha = stale ? .4 : 1; g.fillStyle = css("--wave");
+  g.fillStyle = css("--wave");
   for (let i = 0; i < n; i++) {
     const [lo, hi] = it.peaks[i], t = i / n * it.duration;
     g.fillRect(t / T * w, mid - hi * k, Math.max(1, it.duration / n / T * w - .3), Math.max(1, (hi - lo) * k));
@@ -382,35 +403,34 @@ function facts() {
   if (tt > TL.maxEnd) add("10초를 넘으면 생성할 수 없습니다", "warn");
   const empty = subs.filter(s => !s.prompt.trim()).length;
   if (empty) add(`설명 없는 블록 ${empty}개는 생성에서 빠집니다`, "warn");
-  const i = drag ? drag.i : sel;
-  if (i !== null && subs[i]) { const s = subs[i]; add(`${i + 1}번 <b>${s.start.toFixed(2)}초 ~ ${(s.start + s.duration).toFixed(2)}초</b> (길이 ${s.duration.toFixed(2)}초)`); }
+  const i = drag ? drag.i : hover ?? sel;
+  if (i !== null && subs[i]) { const s = subs[i]; add(`<b>${letter(i)}</b> ${esc(s.prompt) || "(설명 없음)"} <b>${s.start.toFixed(2)}초 ~ ${(s.start + s.duration).toFixed(2)}초</b> (길이 ${s.duration.toFixed(2)}초, 체감 세기 ${pct(s.intensity)})`); }
 }
 
 function refresh() { drawTimeline(); drawWave(); syncList(); parts(); }
 
 // ---------- sub-event list (always visible, edited in place)
-const LIST_HEAD = `<div class="lrow head"><span>#</span><span>진동 설명 (이 문장으로 생성)</span><span>시작 (초)</span><span>길이 (초)</span><span>세기</span><span>시작 방식</span><span></span></div>`;
+const LIST_HEAD = `<div class="lrow head"><span>#</span><span>진동 설명 (이 문장으로 생성)</span><span>시작 (초)</span><span>길이 (초)</span><span title="1.0(100%) = 컨트롤러 최대 세기. 50%는 절반 정도로 느껴지는 세기입니다.">체감 세기</span><span></span></div>`;
 function listRow(i) {
   const r = document.createElement("div"); r.className = "lrow"; r.dataset.i = i;
-  r.innerHTML = `<span class="num" style="background:${COLORS[i % COLORS.length]}">${i + 1}</span>
+  r.innerHTML = `<span class="num" style="background:${COLORS[i % COLORS.length]}">${letter(i)}</span>
     <input type="text" data-k="prompt" placeholder="설명을 입력하세요">
     <input type="number" data-k="start" step="0.05" min="0" max="10">
     <input type="number" data-k="duration" step="0.05" min="0.15" max="10">
     <div class="range"><input type="range" data-k="intensity" min="0" max="1" step="0.05"><span></span></div>
-    <select data-k="transition"><option value="cut">바로 시작 (cut)</option><option value="crossfade">서서히 (crossfade)</option></select>
-    <button class="danger" title="삭제">✕</button>`;
+    <button class="danger del" title="삭제">✕</button>`;
   r.addEventListener("pointerdown", () => { if (sel !== i) { sel = i; drawTimeline(); markSel(); } });
-  r.querySelector("button").onclick = (ev) => { ev.stopPropagation(); sel = i; remove(); };
+  r.querySelector(".del").onclick = (ev) => { ev.stopPropagation(); sel = i; remove(); };
   for (const el of r.querySelectorAll("[data-k]")) {
     el.addEventListener("focus", () => { editBase = snap(); if (sel !== i) { sel = i; drawTimeline(); markSel(); } });
     el.addEventListener("input", () => {
       const s = subs[i]; if (!s) return;
       if (editBase === null) editBase = snap();
       const k = el.dataset.k;
-      if (k === "prompt" || k === "transition") s[k] = el.value;
+      if (k === "prompt") s[k] = el.value;
       else { const v = parseFloat(el.value); if (isNaN(v)) return;
         s[k] = k === "intensity" ? v : k === "duration" ? Math.min(Math.max(TL.minDur, v), TL.maxEnd - s.start) : Math.min(Math.max(0, v), TL.maxEnd - s.duration); }
-      r.querySelector(".range span").textContent = (+s.intensity).toFixed(2);
+      r.querySelector(".range span").textContent = pct(s.intensity);
       drawTimeline(); drawWave(); save();
     });
     el.addEventListener("change", () => { if (editBase !== null && editBase !== snap()) checkpoint(editBase); editBase = el === document.activeElement ? snap() : null; syncList(); });
@@ -431,7 +451,7 @@ function syncList() {
       if (document.activeElement === el) continue;
       const v = s[el.dataset.k]; el.value = typeof v === "number" ? +v.toFixed(2) : v;
     }
-    r.querySelector(".range span").textContent = (+s.intensity).toFixed(2);
+    r.querySelector(".range span").textContent = pct(s.intensity);
   });
   markSel();
 }
@@ -440,6 +460,9 @@ function markSel() {
   $("#dupBtn").disabled = $("#delBtn").disabled = sel === null;
   facts();
 }
+const letter = (i) => String.fromCharCode(65 + i % 26) + (i >= 26 ? Math.floor(i / 26) + 1 : "");
+const esc = (t) => t.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const pct = (v) => Math.round(v * 100) + "%";
 const focusPrompt = (i) => { const el = $(`#list .lrow[data-i="${i}"] [data-k="prompt"]`); if (el) { el.scrollIntoView({ block: "nearest" }); el.focus(); el.select(); } };
 let editBase = null;
 
@@ -488,7 +511,7 @@ function applyDrag(dt, fine) {
     } else {
       const spot = emptySpot(ev); if (!spot) { select(null); return; }
       // click on empty track: create a block there; dragging right sets its length
-      subs.push({ prompt: "", start: +spot.t.toFixed(3), duration: +Math.min(TL.newDur, TL.maxEnd - spot.t).toFixed(3), intensity: 0.7, transition: "cut" });
+      subs.push({ prompt: "", start: +spot.t.toFixed(3), duration: +Math.min(TL.newDur, TL.maxEnd - spot.t).toFixed(3), intensity: 0.7, uid: newUid() });
       sel = subs.length - 1; ghost = null;
       drag = { i: sel, mode: "create", x0: ev.clientX - 0, start0: spot.t, dur0: TL.newDur, T, moved: false, before };
     }
@@ -525,7 +548,12 @@ function applyDrag(dt, fine) {
       if (ev.altKey) s.duration = +Math.min(Math.max(TL.minDur, s.duration + dir * step), TL.maxEnd - s.start).toFixed(3);
       else s.start = +Math.min(Math.max(0, s.start + dir * step), TL.maxEnd - s.duration).toFixed(3);
       refresh(); save(); ev.preventDefault();
+    } else if (ev.key === "ArrowUp" || ev.key === "ArrowDown") {
+      checkpoint();
+      s.intensity = +Math.min(1, Math.max(0, s.intensity + (ev.key === "ArrowUp" ? 0.05 : -0.05))).toFixed(2);
+      refresh(); save(); ev.preventDefault();
     } else if (ev.key === "Delete" || ev.key === "Backspace") { remove(); ev.preventDefault(); }
+    else if (ev.key.toLowerCase() === "r" && !ev.ctrlKey && !ev.metaKey) { regenerate([s.uid]); ev.preventDefault(); }
   });
 })();
 
@@ -533,12 +561,12 @@ function applyDrag(dt, fine) {
 function add() {
   const t = Math.min(total(), TL.maxEnd - TL.minDur);
   checkpoint();
-  subs.push({ prompt: "", start: +t.toFixed(2), duration: +Math.min(TL.newDur, TL.maxEnd - t).toFixed(2), intensity: 0.7, transition: "cut" });
+  subs.push({ prompt: "", start: +t.toFixed(2), duration: +Math.min(TL.newDur, TL.maxEnd - t).toFixed(2), intensity: 0.7, uid: newUid() });
   sel = subs.length - 1; refresh(); save(); focusPrompt(sel);
 }
 function duplicate() {
   if (sel === null) return; checkpoint();
-  const s = subs[sel], c = { ...s, start: +Math.min(s.start + s.duration, TL.maxEnd - s.duration).toFixed(3) };
+  const s = subs[sel], c = { ...s, uid: newUid(), start: +Math.min(s.start + s.duration, TL.maxEnd - s.duration).toFixed(3) };
   subs.splice(sel + 1, 0, c); sel = sel + 1; refresh(); save();
 }
 function remove() { if (sel === null) return; checkpoint(); subs.splice(sel, 1); sel = null; refresh(); save(); }
@@ -565,61 +593,85 @@ document.addEventListener("keydown", ev => {
 
 // ---------- decompose (local LM, 4-stage planner)
 $("#event").addEventListener("input", save);
+$("#event").addEventListener("change", () => {   // step 1 edited: the timeline no longer matches it
+  if (!subs.length || planEvent === null || $("#event").value.trim() === planEvent) return;
+  checkpoint(); subs = []; sel = null; clearResult(); refresh(); save();
+  $("#decInfo").textContent = "";
+  toast("이벤트가 바뀌어 타임라인과 결과를 비웠습니다. 되돌리기로 복구할 수 있습니다", 4000);
+});
 $("#decBtn").onclick = async () => {
   const event = $("#event").value.trim();
   if (!event) { $("#event").focus(); return; }
   if (!llmOk) { toast("로컬 LM을 찾을 수 없습니다. LM Studio 서버를 켜세요"); return; }
-  if (subs.length && !confirm("지금 타임라인을 새 분해 결과로 바꿀까요? (되돌리기로 복구할 수 있습니다)")) return;
   const btn = $("#decBtn"), t0 = performance.now(); btn.disabled = true;
   const tick = setInterval(() => btn.innerHTML = `<span class="spinner"></span> 분해 중 ${((performance.now() - t0) / 1000).toFixed(0)}초`, 250);
   try {
     const r = await api("/api/decompose", { method: "POST", body: JSON.stringify({ event, planner: "staged", llm: "local" }) });
     checkpoint();
-    subs = r.sub_events.map(clean); sel = null; refresh(); save();
+    subs = r.sub_events.map(clean); sel = null; planEvent = event; clearResult(); refresh(); save();
     $("#decInfo").textContent = `${r.model}가 ${r.elapsed.toFixed(1)}초 만에 sub-event ${subs.length}개로 나눴습니다. 아래 타임라인에서 고칠 수 있습니다.`;
   } catch (e) { toast("분해 실패: " + e.message, 4500); }
   finally { clearInterval(tick); btn.disabled = false; btn.textContent = "분해하기"; }
 };
 
 // ---------- generate & compose
-async function generate() {
+// Sub-events whose sample is kept are re-cut and re-mixed without generating; the rest (new,
+// description changed, or asked to regenerate) are generated. `fresh` = uids to regenerate.
+const core = (s) => ({ prompt: s.prompt, start: s.start, duration: s.duration, intensity: s.intensity });
+async function generate(fresh = null) {
   const ready = subs.filter(s => s.prompt.trim());
   if (!ready.length) { toast("설명이 있는 sub-event가 없습니다"); return; }
   if (ready.length > 8) { toast("sub-event는 최대 8개까지 생성할 수 있습니다"); return; }
   if (total() > TL.maxEnd) { toast("전체 길이가 10초를 넘습니다"); return; }
   if (!modelReady || busy) return;
-  busy = true;
-  const btn = $("#genBtn"), t0 = performance.now(); btn.disabled = true;
+  busy = true; parts();
+  const btn = $("#genBtn"), t0 = performance.now(); btn.disabled = true; $("#allBtn").disabled = true;
   const tick = setInterval(() => btn.innerHTML = `<span class="spinner"></span> 생성 중 ${((performance.now() - t0) / 1000).toFixed(0)}초`, 250);
   try {
     const event = $("#event").value.trim() || ready.map(s => s.prompt).join(", then ");
     const seed = $("#seed").value.trim();
-    const used = JSON.parse(JSON.stringify(ready));
+    const regen = (s) => fresh === "all" || (fresh && fresh.includes(s.uid)) || !hasSample(s);
+    const body = ready.map(s => ({ ...core(s), uid: s.uid, source_wav: regen(s) ? null : s.src }));
     const r = await api("/api/compose", { method: "POST", body: JSON.stringify({
-      event, sub_events: used, baseline: false, generator: $("#generator").value,
+      event, sub_events: body, baseline: false, generator: $("#generator").value,
       candidates: +$("#cand").value, cfg: +$("#cfg").value, temperature: +$("#temp").value, gamma: +$("#gamma").value,
-      seed: seed === "" ? null : +seed }) });
-    result = { item: r.composite_item, subs: used, regions: r.sub_events.map(s => ({ prompt: s.prompt, file: s.file })) };
+      // a fixed seed would redraw the same sample, so partial regeneration always samples anew
+      seed: seed === "" || (fresh && fresh !== "all") ? null : +seed }) });
+    const gen = $("#generator").value;
+    for (const out of r.sub_events) {
+      const s = subs.find(x => x.uid === out.uid);
+      if (s && out.source_wav) { s.src = out.source_wav; s.srcPrompt = out.prompt; s.srcGen = gen; }
+    }
+    result = { item: r.composite_item, subs: ready.map(core), regions: r.sub_events.map(s => ({ uid: s.uid, prompt: s.prompt, file: s.file })) };
     save(); refresh(); updatePlay();
-    toast(`생성 완료 (${r.elapsed.toFixed(1)}초)`);
+    const made = r.sub_events.filter(x => !x.reused).length;
+    toast(made ? `${made}개 새로 생성, ${r.sub_events.length - made}개 샘플 유지 (${r.elapsed.toFixed(1)}초)` : `생성 없이 다시 합성 (${r.elapsed.toFixed(1)}초)`);
     if (questReady) playQuest();
   } catch (e) { toast("생성 실패: " + e.message, 4500); }
-  finally { clearInterval(tick); busy = false; btn.textContent = "생성 & 합성"; poll(); }
+  finally { clearInterval(tick); busy = false; btn.textContent = "생성 & 합성"; $("#allBtn").disabled = false; parts(); poll(); }
 }
-$("#genBtn").onclick = generate;
+const regenerate = (uids) => generate(uids);
+$("#genBtn").onclick = () => generate();
+$("#allBtn").onclick = () => generate("all");
+$("#generator").addEventListener("change", parts);
 
 function parts() {
-  const box = $("#parts");
-  box.querySelectorAll("button").forEach(b => b.remove());
-  box.hidden = !result;
-  if (!result) return;
-  result.regions.forEach((s, i) => {
-    const b = document.createElement("button");
-    b.innerHTML = `<span class="sw" style="background:${COLORS[i % COLORS.length]}"></span>`;
-    b.append(`${i + 1}번`); b.title = s.prompt;
-    b.onclick = () => playQuest(s.file);
-    box.appendChild(b);
-  });
+  const box = $("#samples"); box.innerHTML = "";
+  const ready = subs.map((x, i) => [x, i]).filter(([x]) => x.prompt.trim());
+  if (!ready.length) { box.innerHTML = `<div class="empty">설명이 있는 sub-event가 없습니다.</div>`; return; }
+  for (const [x, i] of ready) {
+    const region = result && result.regions.find(r => r.uid === x.uid), keep = hasSample(x);
+    const row = document.createElement("div"); row.className = "srow";
+    row.innerHTML = `<span class="num" style="background:${COLORS[i % COLORS.length]}">${letter(i)}</span><span class="txt"></span>
+      <span class="tag ${keep ? "keep" : "new"}">${keep ? "샘플 유지" : "생성 필요"}</span>
+      <button class="play" title="이 sub-event만 Quest로 재생"><span class="ic">▶</span>재생</button>
+      <button class="regen" title="이 sub-event만 새로 생성하고 다시 합성 (타임라인에서 선택 후 R)"><span class="ic">↻</span>다시 생성</button>`;
+    row.querySelector(".txt").textContent = x.prompt;
+    const play = row.querySelector(".play"), regen = row.querySelector(".regen");
+    play.disabled = !region; play.onclick = () => playQuest(region.file);
+    regen.disabled = busy || !modelReady; regen.onclick = () => regenerate([x.uid]);
+    box.appendChild(row);
+  }
 }
 
 // ---------- playback
@@ -662,7 +714,9 @@ $("#stopBtn").onclick = async () => { try { await api("/api/stop", { method: "PO
 async function poll() {
   try {
     const s = await api("/api/status");
+    const wasReady = modelReady;
     modelReady = s.model === "ready";
+    if (wasReady !== modelReady) parts();
     $("#mdot").className = "dot " + (modelReady ? "ok" : s.model === "error" ? "err" : "warn pulse");
     $("#mtxt").textContent = modelReady ? (s.generating ? "생성 중" : (s.generator || "준비됨")) : s.model === "error" ? "오류" : "로딩 중";
     const q = s.quest; questReady = q.ready;

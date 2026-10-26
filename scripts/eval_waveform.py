@@ -49,7 +49,7 @@ def evaluate(w, sr, reference, tolerance=.1, threshold=.12):
     coverage = min(len(w), n) / n
     w = np.pad(w[:n], (0, max(0, n - len(w))))
     subs = reference['sub_events']
-    impacts = [s for s in subs if s['transition'] == 'cut' and s['duration'] <= .6 and s['intensity'] > 0]
+    impacts = [s for s in subs if s['duration'] <= .6 and s['intensity'] > 0]
     expected = [s['start'] for s in impacts]
     detected = detect(w, sr, threshold)
     # Restrict scoring to impact regions; continuous textures are not labeled impacts.

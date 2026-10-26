@@ -230,11 +230,11 @@ def solve(name, setup, incoming=None, estimates=None):
     process_end = start
     equations = []
 
-    def seg(at, duration, intensity=1., transition='cut', envelope=None, synthesis=None, caption=None):
+    def seg(at, duration, intensity=1., envelope=None, synthesis=None, caption=None):
         if duration <= 0 or intensity <= 0:
             return
         item = dict(source=source, prompt=caption or prompt, start=at,
-                    duration=max(.15, duration), intensity=intensity, transition=transition)
+                    duration=max(.15, duration), intensity=intensity)
         if duration < .15:
             notes.append('Physical duration <0.15s; rendering support extended to 0.15s without moving the physical boundary.')
         if envelope:

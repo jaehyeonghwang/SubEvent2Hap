@@ -53,7 +53,7 @@ def run(variants):
             t0 = time.time()
             try:
                 r = _with_retry(lambda: VARIANTS[v](it["prompt"]))
-                rec = {"ok": True, "sub_events": [{k: s[k] for k in ("prompt", "start", "duration", "intensity", "transition")}
+                rec = {"ok": True, "sub_events": [{k: s[k] for k in ("prompt", "start", "duration", "intensity")}
                                                   for s in r["sub_events"]],
                        "lm_calls": len(r.get("stages", [])),
                        "leaf_models": [l.get("model") for l in _leaves(r)]}

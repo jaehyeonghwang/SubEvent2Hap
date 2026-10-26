@@ -3,7 +3,7 @@
 Text event → haptic sub-events (local LM) → per-sub-event generation (HapticGen / AudioGen) → stitched vibration → Meta Quest 3 controllers.
 
 - `scripts/decompose.py` — default 4-stage planner (events → review → timing → captions), local Qwen3-4B via LM Studio; GPT-4o optional reference.
-- `scripts/compose.py` — onset-aligned stitching, loudness leveling (intensity^γ), cut/crossfade.
+- `scripts/compose.py` — onset-aligned stitching, loudness leveling (intensity^γ); sub-events ≤0.6 s are aligned as single impacts.
 - `scripts/generators.py` — HapticGen, or AudioGen-medium + HapticGen's audio→haptic conversion.
 - `scripts/quest_haptic_play.py` — OpenXR `XR_FB_haptic_pcm` playback over Link.
 - `webui/` — FastAPI server + pages: `/` (generate, sub-event composer with timeline editor), `/gallery` (blind listening/voting), `/architecture` (pipeline diagram + changelog).

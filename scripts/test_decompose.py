@@ -10,7 +10,7 @@ class DecomposeTests(unittest.TestCase):
     def setUp(self):
         self.outline = {'phases': ['silence', 'contact'],
                         'events': [{'source': 'door', 'action': 'door is knocked once'}]}
-        self.values = {'start': 2., 'duration': .3, 'intensity': .7, 'transition': 'crossfade'}
+        self.values = {'start': 2., 'duration': .3, 'intensity': .7}
         self.timing = {'event_1': self.values}
         self.captions = {'action_1': 'A single knock on a wooden door.'}
 

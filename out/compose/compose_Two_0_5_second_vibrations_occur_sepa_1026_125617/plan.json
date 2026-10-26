@@ -1,0 +1,79 @@
+{
+  "event": "Two 0.5-second vibrations occur, separated by 1 second of silence.",
+  "sub_events": [
+    {
+      "prompt": "The vibration source produces a 0.5-second vibration.",
+      "start": 0.0,
+      "duration": 0.5,
+      "intensity": 0.5,
+      "source": "",
+      "uid": "r17lkaqs",
+      "file": "compose/compose_Two_0_5_second_vibrations_occur_sepa_1026_125617/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.3458,
+        0.8372
+      ],
+      "offset": 1.834,
+      "shared": true,
+      "source_wav": "compose/compose_Two_0_5_second_vibrations_occur_sepa_1026_125617/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "The vibration source remains silent for -1 second.",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.0,
+      "source": "",
+      "uid": "pvyrxl6m",
+      "file": "compose/compose_Two_0_5_second_vibrations_occur_sepa_1026_125617/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.772,
+        0.7893
+      ],
+      "offset": 0.78,
+      "shared": false,
+      "source_wav": "compose/compose_Two_0_5_second_vibrations_occur_sepa_1026_125617/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "The vibration source produces a 0.5-second vibration.",
+      "start": 1.5,
+      "duration": 0.5,
+      "intensity": 0.5,
+      "source": "",
+      "uid": "k9q5aetp",
+      "file": "compose/compose_Two_0_5_second_vibrations_occur_sepa_1026_125617/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.3458,
+        0.8372
+      ],
+      "offset": 1.834,
+      "shared": true,
+      "source_wav": "compose/compose_Two_0_5_second_vibrations_occur_sepa_1026_125617/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 2.0,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Two_0_5_second_vibrations_occur_sepa_1026_125617_composite.wav",
+  "baseline": null,
+  "gen_duration": 2.0,
+  "prompts": 4,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.118462085723877,
+  "elapsed": 3.1318717002868652
+}

@@ -148,7 +148,7 @@ def describe(app, status):
         "precedence": ["text_extracted_by_lm", "inherited_state", "estimated_by_lm", "assumed_default"],
         "estimable": list(pm.ESTIMABLE),
         "composer": {"default_gamma": cp.DEFAULT_GAMMA, "impact_max_duration_s": cp.IMPACT_MAX_DUR,
-                     "attack_window_s": cp.ATTACK_WIN, "crossfade_s": cp.XFADE, "cut_fade_in_s": cp.CUT_FADE_IN,
+                     "attack_window_s": cp.ATTACK_WIN, "fade_in_s": cp.FADE_IN,
                      "fade_out_s": cp.FADE_OUT, "max_batch": cp.MAX_BATCH},
         "status": status,
         "routes": _routes(app),

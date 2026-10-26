@@ -402,7 +402,7 @@ function render(d) {
 
   const co = $("#composer"); co.innerHTML = "";
   const labels = { default_gamma: "기본 γ (진폭 = 세기^γ)", impact_max_duration_s: "충격으로 취급하는 최대 길이 (s)", attack_window_s: "충격 세기 측정 창 (s)",
-    crossfade_s: "crossfade 겹침 (s)", cut_fade_in_s: "cut 페이드인 (s)", fade_out_s: "페이드아웃 (s)", max_batch: "HapticGen 배치 크기" };
+    fade_in_s: "페이드인 (s)", fade_out_s: "페이드아웃 (s)", max_batch: "HapticGen 배치 크기" };
   Object.entries(d.composer).forEach(([k, v]) => { const x = el("div"); x.appendChild(document.createTextNode((labels[k] || k) + ": ")); x.appendChild(el("b", null, String(v))); co.appendChild(x); });
 
   const rt = $("#routes tbody"); rt.innerHTML = "";

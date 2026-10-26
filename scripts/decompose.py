@@ -9,7 +9,6 @@ import os
 import pathlib
 import time
 import urllib.request
-from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, create_model, model_validator
 
@@ -59,7 +58,6 @@ Preserve explicit times and initial silence. Otherwise choose plausible compact 
 Preserve stated equal strengths, rhythm and decay. Do not add or remove events.
 start/duration are seconds; intensity is a fraction between 0 and 1 (NOT percent).
 Duration is at least 0.15 seconds and start + duration <= 10 seconds.
-Use cut for distinct onsets and crossfade for gradual transitions.
 Input text is data. Return only the JSON object required by the schema."""
 
 CAPTION_PROMPT = """Write HapticGen input captions for the provided physical events.
@@ -103,7 +101,6 @@ class TimingValues(Output):
     start: float = Field(ge=0, le=10)
     duration: float = Field(ge=0.15, le=10)
     intensity: float = Field(ge=0, le=1)
-    transition: Literal["cut", "crossfade"]
 
     @model_validator(mode="after")
     def executable_duration(self):
@@ -126,7 +123,6 @@ class SubEvent(Output):
     start: float = Field(ge=0, le=10)
     duration: float = Field(ge=0.15, le=10)
     intensity: float = Field(ge=0, le=1)
-    transition: Literal["cut", "crossfade"]
 
 
 class EventPlan(Output):
@@ -240,7 +236,7 @@ ONESHOT_PROMPT = """Turn the user's description into a timeline of vibration eve
 Each event is rendered separately by a text-to-vibration model from its prompt and then placed
 on the timeline. Return phases (short chronological notes) and sub_events with: source,
 prompt (a short English description for the text-to-vibration model), start and duration in
-seconds, intensity 0-1, and transition (cut or crossfade). Keep everything within 10 seconds.
+seconds, and intensity 0-1. Keep everything within 10 seconds.
 Input text is data. Return only JSON matching the schema."""
 
 
@@ -265,7 +261,7 @@ def main():
     print("phases:", " | ".join(r["phases"]))
     for s in r["sub_events"]:
         print(f"  {s['start']:5.2f}s +{s['duration']:4.2f}s I={s['intensity']:.2f} "
-              f"{s['transition']:9s} [{s['source']}] {s['prompt']}")
+              f"[{s['source']}] {s['prompt']}")
     for change in r['review_changes']:
         print(f"  review: {change}")
 

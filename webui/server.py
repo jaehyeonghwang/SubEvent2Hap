@@ -17,7 +17,7 @@ import soundfile as sf
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, Response
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 # Fully local: the T5 text encoder used by HapticGen is already in the HF cache, so never contact the Hub.
 os.environ.setdefault("HF_HUB_OFFLINE", "1")
@@ -315,10 +315,22 @@ class SubEvent(BaseModel):
     start: float = Field(ge=0, le=10)
     duration: float = Field(ge=0.15, le=10)
     intensity: float = Field(ge=0, le=1)
-    transition: str = Field("cut", pattern="^(cut|crossfade)$")
     source: str = ""
     envelope: dict | None = None
     synthesis: dict | None = None
+    # raw sample from an earlier run to reuse instead of generating (path under out/)
+    source_wav: str | None = Field(None, max_length=300)
+    uid: str | None = Field(None, max_length=40)   # editor's id, echoed back to map results
+
+    @field_validator("source_wav")
+    @classmethod
+    def _inside_out(cls, v):
+        if v is not None:
+            try:
+                _wav_path(v)   # rejects traversal / missing files
+            except HTTPException:
+                return None    # gone: generate anew
+        return v
 
 
 class ComposeReq(BaseModel):
@@ -403,7 +415,7 @@ def compare3(req: Compare3Req):
     try:
         items, first = {}, True
         for llm, plan in plans.items():
-            subs = [SubEvent(**{k: s[k] for k in ("prompt", "start", "duration", "intensity", "transition")}).model_dump(exclude_none=True)
+            subs = [SubEvent(**{k: s[k] for k in ("prompt", "start", "duration", "intensity")}).model_dump(exclude_none=True)
                     for s in plan["sub_events"]]
             r = cp.compose(_use_generator("hapticgen"), req.event, subs, req.candidates, first, 3.0, 1.0, 250, seed, OUT_DIR,
                            gamma=req.gamma, share_repeats=req.share_repeats)

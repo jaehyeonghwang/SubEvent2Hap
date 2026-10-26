@@ -53,7 +53,7 @@ def main():
         if not args.quiet:
             print(f"\n== {ev}  ({r['elapsed']:.1f}s, {r['prompt_version']})")
             for s in r["sub_events"]:
-                print(f"  {s['start']:5.2f}s +{s['duration']:4.2f}s I={s['intensity']:.2f} {s['transition']:9s} {s['prompt']}")
+                print(f"  {s['start']:5.2f}s +{s['duration']:4.2f}s I={s['intensity']:.2f} {s['prompt']}")
     n_ok = len(EVENTS) - n_failed
     avg = f"{total_t / n_ok:.1f}s" if n_ok else "n/a"
     print(f"\nSUMMARY model={args.model}: executable plans {n_ok}/{len(EVENTS)}, "

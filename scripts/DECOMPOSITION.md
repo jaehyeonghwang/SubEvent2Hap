@@ -8,7 +8,7 @@ Prompt version: `staged_v2`.
    repetitions and silent phases. There are no LM-authored reference IDs.
 2. **Review**: check the outline against the original input and return a corrected
    outline with a short change list. This stage handles meaning, not numerical planning.
-3. **Timing**: assign start, duration, relative intensity and transition to each event.
+3. **Timing**: assign start, duration and relative intensity to each event.
    Output keys are fixed from list positions (`event_1`, etc.). The LM chooses values.
 4. **Captions**: write standalone English captions from the reviewed source/action
    descriptions. This writer sees only the actions, avoiding whole-event counts and

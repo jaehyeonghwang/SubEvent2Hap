@@ -19,7 +19,7 @@ def child(description, entity='ball', link='none', **kw):
 
 
 def atom():
-    return mp.AtomicEstimate(source='chair', action='sliding on the floor', start=0., duration=.5, intensity=.5, transition='cut')
+    return mp.AtomicEstimate(source='chair', action='sliding on the floor', start=0., duration=.5, intensity=.5)
 
 
 def indivisible(value=True):

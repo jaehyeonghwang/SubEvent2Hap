@@ -96,7 +96,7 @@ def simulate(setup: BounceSetup, overrides: BounceOverrides | None = None):
                         "rebound_height_m": rebound_speed ** 2 / (2 * GRAVITY),
                         "impulse_N_s": impulse, "relative_impulse": speed / v0})
         subs.append({"source": f"{ball} / {surface}", "prompt": prompt,
-                     "start": t, "duration": pulse, "intensity": speed / v0, "transition": "cut"})
+                     "start": t, "duration": pulse, "intensity": speed / v0})
         t += 2 * rebound_speed / GRAVITY
     dc.EventPlan(phases=["Drop from rest", "Repeated floor contacts"], sub_events=subs)
     gaps = [b["time_s"] - a["time_s"] for a, b in zip(impacts, impacts[1:])]

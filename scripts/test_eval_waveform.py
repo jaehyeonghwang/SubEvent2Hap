@@ -10,7 +10,7 @@ class WaveformEvaluationTests(unittest.TestCase):
     def setUp(self):
         self.sr = 8000
         self.reference = dict(total=1.2, sub_events=[dict(start=t, duration=.15,
-                              intensity=a, transition='cut') for t, a in [(0., 1.), (.4, .7), (.8, .4)]])
+                              intensity=a) for t, a in [(0., 1.), (.4, .7), (.8, .4)]])
         self.wave = np.zeros(9600)
         for s in self.reference['sub_events']:
             t = np.arange(640) / self.sr
