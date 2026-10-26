@@ -135,7 +135,7 @@ canvas.timeline:focus-visible { outline: 2px solid var(--accent); outline-offset
 <header>
   <h1>SubEvent2Hap Studio <span>· text → vibration → Quest</span></h1>
   <nav class="tabs" id="tabs"><button data-tab="single" class="on">단일 생성</button><button data-tab="compose">Sub-event 작곡</button></nav>
-  <a href="/architecture" style="color:var(--accent);text-decoration:none;font-size:13px">구조 보기 →</a> <a href="/gallery" style="color:var(--accent);text-decoration:none;font-size:13px">전체 재생 →</a>
+  <a href="/editor" style="color:var(--accent);text-decoration:none;font-size:13px">에디터 →</a> <a href="/architecture" style="color:var(--accent);text-decoration:none;font-size:13px">구조 보기 →</a> <a href="/gallery" style="color:var(--accent);text-decoration:none;font-size:13px">전체 재생 →</a>
   <div class="pills">
     <div class="pill" title="로컬 LLM (LM Studio)"><span class="dot" id="ldot"></span><b>LLM</b><span class="txt" id="ltxt">확인 중…</span></div>
     <div class="pill" title="HapticGen 모델"><span class="dot" id="mdot"></span><b>모델</b><span class="txt" id="mtxt">확인 중…</span></div>
@@ -828,7 +828,7 @@ function redrawCompare() {
     const b = document.createElement("button");
     b.innerHTML = `<span class="sw" style="background:${SUB_COLORS[i % SUB_COLORS.length]}"></span> ${i + 1}`;
     b.title = `${s.prompt}\n후보 ${s.candidate + 1}/${s.scores.length} 선택 (점수 ${s.scores.join(", ")})`;
-    b.onclick = async () => { try { playQuest(await api("/api/wave/" + s.file.split("/").map(encodeURIComponent).join("/"))); } catch (e) { toast(e.message); } };
+    b.onclick = async () => { try { playQuest({ ...await api("/api/wave/" + s.file.split("/").map(encodeURIComponent).join("/")), name: s.file }); } catch (e) { toast(e.message); } };
     segs.appendChild(b);
   });
 }

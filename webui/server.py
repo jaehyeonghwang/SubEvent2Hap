@@ -424,6 +424,12 @@ def compare3(req: Compare3Req):
         _gen_lock.release()
 
 
+@app.get("/editor")
+def editor_page():
+    """Authoring editor: decompose -> edit sub-events on a timeline -> compose -> play."""
+    return FileResponse(pathlib.Path(__file__).with_name("editor.html"))
+
+
 @app.get("/gallery")
 def gallery_page():
     """Listening page: every eval sentence under each condition."""
