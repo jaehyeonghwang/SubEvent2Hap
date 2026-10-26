@@ -246,7 +246,7 @@ def status():
         "quest": ({"status": f"{remote.name}: {remote.state.get('status', '연결됨')}", "remote": remote.name,
                    "connected": bool(remote.state.get("connected")), "ready": bool(remote.state.get("ready")),
                    "playing": bool(remote.state.get("playing"))} if remote.connected else
-                  {"status": player.status, "connected": player.connected,
+                  {"status": f"서버 PC (노트북 재생기 미연결): {player.status}", "connected": player.connected,
                    "ready": player.status.startswith("준비됨") or player.status == "재생 중",
                    "playing": player.is_playing}),
     }
