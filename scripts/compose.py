@@ -37,8 +37,9 @@ def _generate_batched(model, prompts, duration, cfg, temperature, top_k):
     model.set_generation_params(duration=duration, use_sampling=True, top_k=top_k, top_p=0.0,
                                 temperature=temperature, cfg_coef=cfg)
     out = []
-    for i in range(0, len(prompts), MAX_BATCH):
-        out += _generate_chunk(model, prompts[i:i + MAX_BATCH])
+    batch = getattr(model, "max_batch", MAX_BATCH)
+    for i in range(0, len(prompts), batch):
+        out += _generate_chunk(model, prompts[i:i + batch])
     return out
 
 

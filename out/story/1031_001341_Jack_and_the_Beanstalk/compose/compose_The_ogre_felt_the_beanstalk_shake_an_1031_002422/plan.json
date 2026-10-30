@@ -1,0 +1,57 @@
+{
+  "event": "The ogre felt the beanstalk shake and quiver so he stopped to see what was the matter.",
+  "sub_events": [
+    {
+      "prompt": "The beanstalk shakes.",
+      "start": 1.9,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s123e0",
+      "origin": "explicit",
+      "voice_key": "beanstalk_sway",
+      "source_wav": "compose/compose_So_one_fine_morning_he_got_up_early__1031_002141/src_01.wav",
+      "file": "compose/compose_The_ogre_felt_the_beanstalk_shake_an_1031_002422/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.182,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "The beanstalk quivers.",
+      "start": 2.84,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "eid": "s123e1",
+      "origin": "explicit",
+      "voice_key": "beanstalk_sway",
+      "source_wav": "compose/compose_So_one_fine_morning_he_got_up_early__1031_002141/src_01.wav",
+      "file": "compose/compose_The_ogre_felt_the_beanstalk_shake_an_1031_002422/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.182,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.34,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_ogre_felt_the_beanstalk_shake_an_1031_002422_composite.wav",
+  "baseline": "compose_The_ogre_felt_the_beanstalk_shake_an_1031_002422_baseline.wav",
+  "gen_duration": 3.34,
+  "prompts": 2,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.7613213062286377,
+  "elapsed": 2.7707884311676025
+}

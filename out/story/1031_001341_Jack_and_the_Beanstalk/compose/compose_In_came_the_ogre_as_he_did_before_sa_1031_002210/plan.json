@@ -1,0 +1,57 @@
+{
+  "event": "In came the ogre as he did before, said: “Fee-fi-fo-fum,” and had his breakfast off three broiled oxen.",
+  "sub_events": [
+    {
+      "prompt": "A giant ogre enters the house.",
+      "start": 0.46,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "eid": "s85e0",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_You_d_better_be_moving_on_or_he_ll_s_1031_002046/src_01.wav",
+      "file": "compose/compose_In_came_the_ogre_as_he_did_before_sa_1031_002210/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.952,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Loud booming voice of the ogre",
+      "start": 5.0,
+      "duration": 1.0,
+      "intensity": 0.8,
+      "eid": "s85i1",
+      "origin": "inferred",
+      "voice_key": "big_tall_woman_voice",
+      "source_wav": "compose/compose_It_s_breakfast_you_want_is_it_says_t_1031_002042/src_01.wav",
+      "file": "compose/compose_In_came_the_ogre_as_he_did_before_sa_1031_002210/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 6.0,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_In_came_the_ogre_as_he_did_before_sa_1031_002210_composite.wav",
+  "baseline": "compose_In_came_the_ogre_as_he_did_before_sa_1031_002210_baseline.wav",
+  "gen_duration": 6.0,
+  "prompts": 2,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.061538219451904,
+  "elapsed": 5.069901466369629
+}

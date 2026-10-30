@@ -239,6 +239,16 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
             "traces": {}}
     numbered = [{"id": i, "text": s} for i, s in enumerate(sentences)]
 
+    # Narration does not depend on the agents, so TTS + word alignment run alongside them.
+    def narrate(s):
+        path = out_dir / f"narr_{s['id']:02d}.wav"
+        dur = tts(s["text"], voice, path)
+        return dur, word_times(path, s["words"])
+
+    tts_pool = ThreadPoolExecutor(8)
+    narrations = [tts_pool.submit(narrate, s) for s in plan["sentences"]]
+    progress("narration", f"낭독 음성 생성 ({voice}) 시작 (에이전트와 동시 진행)")
+
     progress("state", f"문장 {len(sentences)}개의 이야기 상태 추적")
     trace, entities, by_id = [], {}, {}
     for c0 in range(0, len(numbered), CHUNK):   # chunks keep the outputs small; entities carry over
@@ -268,7 +278,7 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
         out = _agent("explicit", EVENT_PROMPT, context(s), ExplicitEvents, model, tr)
         return [{"id": f"s{s['id']}e{k}", "origin": "explicit", **e.model_dump()} for k, e in enumerate(out.events)], tr
 
-    with ThreadPoolExecutor(6) as ex:
+    with ThreadPoolExecutor(12) as ex:
         for s, (evs, tr) in zip(plan["sentences"], ex.map(explicit, plan["sentences"])):
             s["explicit"] = evs
             plan["traces"][f"explicit_{s['id']}"] = tr
@@ -281,7 +291,7 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
         out = _agent("inference", INFERENCE_PROMPT, ctx, InferredEvents, model, tr)
         return [{"id": f"s{s['id']}i{k}", "origin": "inferred", **e.model_dump()} for k, e in enumerate(out.events)], tr
 
-    with ThreadPoolExecutor(6) as ex:
+    with ThreadPoolExecutor(12) as ex:
         for s, (evs, tr) in zip(plan["sentences"], ex.map(inferred, plan["sentences"])):
             s["inferred"] = evs
             plan["traces"][f"inference_{s['id']}"] = tr
@@ -322,17 +332,12 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
         for e in kept[MAX_EVENTS:]:   # hard cap even if the director kept more
             e["decision"] = {**e["decision"], "keep": False, "reason": "문장당 최대 개수 초과"}
 
-    progress("narration", f"낭독 음성 생성 ({voice}) 및 단어 시각 정렬")
-
-    def narrate(s):
-        path = out_dir / f"narr_{s['id']:02d}.wav"
-        dur = tts(s["text"], voice, path)
-        return dur, word_times(path, s["words"])
-
-    with ThreadPoolExecutor(4) as ex:
-        for s, (dur, times) in zip(plan["sentences"], ex.map(narrate, plan["sentences"])):
-            s["narration"] = {"file": f"story/{out_dir.name}/narr_{s['id']:02d}.wav", "duration": round(dur, 3)}
-            s["word_times"] = times
+    progress("narration", "낭독 음성과 단어 시각 정렬 마무리")
+    for s, fut in zip(plan["sentences"], narrations):
+        dur, times = fut.result()
+        s["narration"] = {"file": f"story/{out_dir.name}/narr_{s['id']:02d}.wav", "duration": round(dur, 3)}
+        s["word_times"] = times
+    tts_pool.shutdown()
     for s in plan["sentences"]:
         s["sub_events"] = schedule(s)
     save(plan, out_dir)

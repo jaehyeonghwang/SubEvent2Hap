@@ -1,0 +1,41 @@
+{
+  "event": "So first she tasted the porridge of the Great, Huge Bear, and that was too hot for her; and she said a bad word about that.",
+  "sub_events": [
+    {
+      "prompt": "The old Woman tastes the hot porridge from the great pot.",
+      "start": 1.56,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s12e0",
+      "origin": "explicit",
+      "voice_key": "porridge_taste_hot",
+      "source_wav": "compose/compose_So_first_she_tasted_the_porridge_of__1031_004504/src_01.wav",
+      "file": "compose/compose_So_first_she_tasted_the_porridge_of__1031_004504_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.132,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 2.06,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_So_first_she_tasted_the_porridge_of__1031_004504_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0031273365020751953,
+  "elapsed": 0.009205341339111328
+}

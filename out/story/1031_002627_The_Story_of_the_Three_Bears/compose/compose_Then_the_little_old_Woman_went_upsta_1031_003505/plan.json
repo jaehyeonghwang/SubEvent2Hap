@@ -1,0 +1,44 @@
+{
+  "event": "Then the little old Woman went upstairs into the bed-chamber in which the three Bears slept.",
+  "sub_events": [
+    {
+      "prompt": "The old Woman's footsteps on the wooden stairs.",
+      "start": 0.0,
+      "duration": 6.6,
+      "intensity": 0.3,
+      "eid": "s20e0",
+      "origin": "explicit",
+      "voice_key": "old_woman_stairs",
+      "source_wav": "compose/compose_Then_the_little_old_Woman_went_upsta_1031_003505/src_01.wav",
+      "file": "compose/compose_Then_the_little_old_Woman_went_upsta_1031_003505/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0203,
+        0.0203
+      ],
+      "offset": 0.401,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 6.6,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Then_the_little_old_Woman_went_upsta_1031_003505_composite.wav",
+  "baseline": "compose_Then_the_little_old_Woman_went_upsta_1031_003505_baseline.wav",
+  "gen_duration": 7.6,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 24.138716220855713,
+  "elapsed": 24.153447151184082
+}

@@ -1,0 +1,44 @@
+{
+  "event": "“Go away, my boy,” said the big, tall woman, “or else my man will eat you up for breakfast.",
+  "sub_events": [
+    {
+      "prompt": "Woman's voice resonates in the house",
+      "start": 1.58,
+      "duration": 0.5,
+      "intensity": 0.3,
+      "eid": "s78i0",
+      "origin": "inferred",
+      "voice_key": "big_tall_woman_voice",
+      "source_wav": "compose/compose_Go_away_my_boy_said_the_big_tall_wom_1031_002718/src_01.wav",
+      "file": "compose/compose_Go_away_my_boy_said_the_big_tall_wom_1031_002718/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0088,
+        0.0776
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 2.08,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Go_away_my_boy_said_the_big_tall_wom_1031_002718_composite.wav",
+  "baseline": "compose_Go_away_my_boy_said_the_big_tall_wom_1031_002718_baseline.wav",
+  "gen_duration": 2.08,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.4175078868865967,
+  "elapsed": 2.4296975135803223
+}

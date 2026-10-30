@@ -1,0 +1,44 @@
+{
+  "event": "It's my old man,” said the ogre's wife, “what on earth shall I do?",
+  "sub_events": [
+    {
+      "prompt": "Ogre's heavy footsteps",
+      "start": 0.0,
+      "duration": 5.05,
+      "intensity": 0.7,
+      "eid": "s59i0",
+      "origin": "inferred",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_It_s_my_old_man_said_the_ogre_s_wife_1031_002628/src_01.wav",
+      "file": "compose/compose_It_s_my_old_man_said_the_ogre_s_wife_1031_002628/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0204,
+        0.0296
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 5.05,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_It_s_my_old_man_said_the_ogre_s_wife_1031_002628_composite.wav",
+  "baseline": "compose_It_s_my_old_man_said_the_ogre_s_wife_1031_002628_baseline.wav",
+  "gen_duration": 6.05,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.929510116577148,
+  "elapsed": 4.940311670303345
+}

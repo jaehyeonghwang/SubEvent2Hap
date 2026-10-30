@@ -1,0 +1,44 @@
+{
+  "event": "So he took the cow's halter in his hand, and off he starts.",
+  "sub_events": [
+    {
+      "prompt": "Jack takes hold of the cow's halter.",
+      "start": 0.84,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s7e0",
+      "origin": "explicit",
+      "voice_key": "halter_grab",
+      "source_wav": "compose/compose_So_he_took_the_cow_s_halter_in_his_h_1031_001925/src_01.wav",
+      "file": "compose/compose_So_he_took_the_cow_s_halter_in_his_h_1031_001925/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.3276,
+        0.0112
+      ],
+      "offset": 0.093,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 1.14,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_So_he_took_the_cow_s_halter_in_his_h_1031_001925_composite.wav",
+  "baseline": "compose_So_he_took_the_cow_s_halter_in_his_h_1031_001925_baseline.wav",
+  "gen_duration": 1.5,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.3143739700317383,
+  "elapsed": 1.322296142578125
+}

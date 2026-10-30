@@ -1,0 +1,41 @@
+{
+  "event": "“Somebody has been sitting in my chair and has sate the bottom out of it!” said the Little, Small, Wee Bear, in his little, small, wee voice.",
+  "sub_events": [
+    {
+      "prompt": "The wooden chair bottom broke under pressure.",
+      "start": 3.5,
+      "duration": 0.4,
+      "intensity": 0.8,
+      "eid": "s39e1",
+      "origin": "explicit",
+      "voice_key": "chair_break",
+      "source_wav": "compose/compose_So_she_seated_herself_in_it_and_ther_1031_003440/src_01.wav",
+      "file": "compose/compose_Somebody_has_been_sitting_in_my_chai_1031_003753_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.11,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.9,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Somebody_has_been_sitting_in_my_chai_1031_003753_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.006045818328857422
+}

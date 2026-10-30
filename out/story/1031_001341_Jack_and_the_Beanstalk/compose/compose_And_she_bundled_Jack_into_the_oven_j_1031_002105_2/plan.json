@@ -1,0 +1,57 @@
+{
+  "event": "And she bundled Jack into the oven just as the ogre came in.",
+  "sub_events": [
+    {
+      "prompt": "Jack is pushed into a metal oven.",
+      "start": 1.06,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "eid": "s61e0",
+      "origin": "explicit",
+      "voice_key": "jack_bundled",
+      "source_wav": "compose/compose_And_she_bundled_Jack_into_the_oven_j_1031_002105/src_01.wav",
+      "file": "compose/compose_And_she_bundled_Jack_into_the_oven_j_1031_002105_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.051,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "The ogre steps into the room.",
+      "start": 3.78,
+      "duration": 0.3,
+      "intensity": 0.6,
+      "eid": "s61e1",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_You_d_better_be_moving_on_or_he_ll_s_1031_002046/src_01.wav",
+      "file": "compose/compose_And_she_bundled_Jack_into_the_oven_j_1031_002105_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.952,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.08,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_she_bundled_Jack_into_the_oven_j_1031_002105_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0046308040618896484,
+  "elapsed": 0.009678125381469727
+}

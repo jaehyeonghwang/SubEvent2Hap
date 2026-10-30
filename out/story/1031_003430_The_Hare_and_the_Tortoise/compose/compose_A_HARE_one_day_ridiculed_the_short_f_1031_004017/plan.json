@@ -1,0 +1,73 @@
+{
+  "event": "A HARE one day ridiculed the short feet and slow pace of the Tortoise, who replied, laughing: “Though you be swift as the wind, I will beat you in a race.",
+  "sub_events": [
+    {
+      "prompt": "Hare ridicules with a mocking gesture.",
+      "start": 1.38,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s0e0",
+      "origin": "explicit",
+      "voice_key": "hare_ridicule",
+      "source_wav": "compose/compose_A_HARE_one_day_ridiculed_the_short_f_1031_004016/src_01.wav",
+      "file": "compose/compose_A_HARE_one_day_ridiculed_the_short_f_1031_004017/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.221,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Tortoise laughs with a soft chuckle.",
+      "start": 6.52,
+      "duration": 0.4,
+      "intensity": 0.3,
+      "eid": "s0e1",
+      "origin": "explicit",
+      "voice_key": "tortoise_laugh",
+      "source_wav": "compose/compose_A_HARE_one_day_ridiculed_the_short_f_1031_004016/src_02.wav",
+      "file": "compose/compose_A_HARE_one_day_ridiculed_the_short_f_1031_004017/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.07,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Wind blows swiftly through the air.",
+      "start": 9.06,
+      "duration": 0.44,
+      "intensity": 0.4,
+      "eid": "s0e2",
+      "origin": "explicit",
+      "voice_key": "wind_blow",
+      "source_wav": "compose/compose_A_HARE_one_day_ridiculed_the_short_f_1031_004016/src_03.wav",
+      "file": "compose/compose_A_HARE_one_day_ridiculed_the_short_f_1031_004017/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 2.518,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_HARE_one_day_ridiculed_the_short_f_1031_004017_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.014271259307861328,
+  "elapsed": 0.026514530181884766
+}

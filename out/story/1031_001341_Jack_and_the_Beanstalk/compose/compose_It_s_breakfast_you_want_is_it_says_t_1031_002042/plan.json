@@ -1,0 +1,44 @@
+{
+  "event": "“It's breakfast you want, is it?” says the great big tall woman, “it's breakfast you'll be if you don't move off from here.",
+  "sub_events": [
+    {
+      "prompt": "The big tall woman speaks with a booming voice.",
+      "start": 2.66,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "eid": "s49i0",
+      "origin": "inferred",
+      "voice_key": "big_tall_woman_voice",
+      "source_wav": "compose/compose_It_s_breakfast_you_want_is_it_says_t_1031_002042/src_01.wav",
+      "file": "compose/compose_It_s_breakfast_you_want_is_it_says_t_1031_002042/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.2322,
+        0.2382
+      ],
+      "offset": 0.123,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 3.16,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_It_s_breakfast_you_want_is_it_says_t_1031_002042_composite.wav",
+  "baseline": "compose_It_s_breakfast_you_want_is_it_says_t_1031_002042_baseline.wav",
+  "gen_duration": 3.16,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.641584634780884,
+  "elapsed": 2.650984048843384
+}

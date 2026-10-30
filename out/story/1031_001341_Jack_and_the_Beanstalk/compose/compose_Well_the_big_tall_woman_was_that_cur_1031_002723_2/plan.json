@@ -1,0 +1,41 @@
+{
+  "event": "Well the big tall woman was that curious that she took him in and gave him something to eat.",
+  "sub_events": [
+    {
+      "prompt": "The woman takes Jack by the hand.",
+      "start": 3.4,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s82e0",
+      "origin": "explicit",
+      "voice_key": "jack_bundled",
+      "source_wav": "compose/compose_Well_the_big_tall_woman_was_that_cur_1031_002723/src_01.wav",
+      "file": "compose/compose_Well_the_big_tall_woman_was_that_cur_1031_002723_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.318,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.6999999999999997,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Well_the_big_tall_woman_was_that_cur_1031_002723_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0061893463134765625,
+  "elapsed": 0.010744094848632812
+}

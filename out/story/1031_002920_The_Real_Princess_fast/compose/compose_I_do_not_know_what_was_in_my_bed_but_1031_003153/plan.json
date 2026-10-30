@@ -1,0 +1,41 @@
+{
+  "event": "I do not know what was in my bed, but I had something hard under me, and am all over black and blue.",
+  "sub_events": [
+    {
+      "prompt": "The Princess felt a hard object under her in bed.",
+      "start": 3.24,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s15e0",
+      "origin": "explicit",
+      "voice_key": "princess_felt_hard",
+      "source_wav": "samples/princess_felt_hard.wav",
+      "file": "compose/compose_I_do_not_know_what_was_in_my_bed_but_1031_003153/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.309,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.74,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_do_not_know_what_was_in_my_bed_but_1031_003153_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.011653900146484375,
+  "elapsed": 0.01619863510131836
+}

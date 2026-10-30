@@ -1,0 +1,44 @@
+{
+  "event": "And they had each a chair to sit in; a little chair for the Little, Small, Wee Bear; and a middle-sized chair for the Middle Bear; and a great chair for the Great, Huge Bear.",
+  "sub_events": [
+    {
+      "prompt": "Great, Huge Bear sits on a wooden chair.",
+      "start": 2.76,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s3e2",
+      "origin": "explicit",
+      "voice_key": "huge_chair_sit",
+      "source_wav": "compose/compose_And_they_had_each_a_chair_to_sit_in__1031_003124/src_01.wav",
+      "file": "compose/compose_And_they_had_each_a_chair_to_sit_in__1031_003124/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0242,
+        0.0866
+      ],
+      "offset": 0.478,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 3.0599999999999996,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_they_had_each_a_chair_to_sit_in__1031_003124_composite.wav",
+  "baseline": "compose_And_they_had_each_a_chair_to_sit_in__1031_003124_baseline.wav",
+  "gen_duration": 3.0599999999999996,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 9.929715156555176,
+  "elapsed": 9.942867994308472
+}

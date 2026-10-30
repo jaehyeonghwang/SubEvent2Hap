@@ -1,0 +1,44 @@
+{
+  "event": "And while they were walking, a little old Woman came to the house.",
+  "sub_events": [
+    {
+      "prompt": "The old Woman's footsteps on the ground.",
+      "start": 3.04,
+      "duration": 1.0,
+      "intensity": 0.2,
+      "eid": "s6i0",
+      "origin": "inferred",
+      "voice_key": "old_woman_footsteps",
+      "source_wav": "compose/compose_And_while_they_were_walking_a_little_1031_003215/src_01.wav",
+      "file": "compose/compose_And_while_they_were_walking_a_little_1031_003215/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0083,
+        0.0543
+      ],
+      "offset": 2.538,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 4.04,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_while_they_were_walking_a_little_1031_003215_composite.wav",
+  "baseline": "compose_And_while_they_were_walking_a_little_1031_003215_baseline.wav",
+  "gen_duration": 4.04,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 13.635810852050781,
+  "elapsed": 13.646478414535522
+}

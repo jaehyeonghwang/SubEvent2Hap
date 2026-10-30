@@ -1,0 +1,41 @@
+{
+  "event": "The little old Woman had heard in her sleep the great, rough, gruff voice of the Great, Huge Bear; but she was so fast asleep that it was no more to her than the roaring of wind, or the rumbling of thunder.",
+  "sub_events": [
+    {
+      "prompt": "The vibration of the Great, Huge Bear's voice.",
+      "start": 4.7,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "eid": "s47i0",
+      "origin": "inferred",
+      "voice_key": "great_bear_speak",
+      "source_wav": "compose/compose_Somebody_has_been_at_my_porridge_sai_1031_003610/src_01.wav",
+      "file": "compose/compose_The_little_old_Woman_had_heard_in_he_1031_003844/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.026,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 5.7,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_little_old_Woman_had_heard_in_he_1031_003844_composite.wav",
+  "baseline": "compose_The_little_old_Woman_had_heard_in_he_1031_003844_baseline.wav",
+  "gen_duration": 5.7,
+  "prompts": 2,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 14.127916097640991,
+  "elapsed": 14.137089490890503
+}

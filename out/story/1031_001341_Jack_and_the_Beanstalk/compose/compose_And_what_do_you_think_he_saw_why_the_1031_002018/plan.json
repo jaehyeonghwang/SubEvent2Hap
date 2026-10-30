@@ -1,0 +1,44 @@
+{
+  "event": "And what do you think he saw? why, the beans his mother had thrown out of the window into the garden, had sprung up into a big beanstalk which went up and up and up till it reached the sky.",
+  "sub_events": [
+    {
+      "prompt": "The beanstalk grows rapidly upwards.",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.7,
+      "eid": "s40e0",
+      "origin": "explicit",
+      "voice_key": "beanstalk_grow",
+      "source_wav": "compose/compose_And_what_do_you_think_he_saw_why_the_1031_002018/src_01.wav",
+      "file": "compose/compose_And_what_do_you_think_he_saw_why_the_1031_002018/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0039,
+        0.0007
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_what_do_you_think_he_saw_why_the_1031_002018_composite.wav",
+  "baseline": "compose_And_what_do_you_think_he_saw_why_the_1031_002018_baseline.wav",
+  "gen_duration": 10.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 8.142446041107178,
+  "elapsed": 8.15628457069397
+}

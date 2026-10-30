@@ -1,0 +1,63 @@
+{
+  "event": "So she seated herself in it, and there she sate till the bottom of the chair came out, and down she came, plump upon the ground.",
+  "sub_events": [
+    {
+      "prompt": "The bottom of the wooden chair breaks.",
+      "start": 5.28,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s18e0",
+      "origin": "explicit",
+      "voice_key": "chair_break",
+      "source_wav": "compose/compose_So_she_seated_herself_in_it_and_ther_1031_003440/src_01.wav",
+      "file": "compose/compose_So_she_seated_herself_in_it_and_ther_1031_003440/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.003,
+        0.1338
+      ],
+      "offset": 0.11,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The old woman falls onto the ground.",
+      "start": 7.8,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "eid": "s18e1",
+      "origin": "explicit",
+      "voice_key": "old_woman_fall",
+      "source_wav": "compose/compose_So_she_seated_herself_in_it_and_ther_1031_003440/src_02.wav",
+      "file": "compose/compose_So_she_seated_herself_in_it_and_ther_1031_003440/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0789,
+        0.2509
+      ],
+      "offset": 0.286,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 8.3,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_So_she_seated_herself_in_it_and_ther_1031_003440_composite.wav",
+  "baseline": "compose_So_she_seated_herself_in_it_and_ther_1031_003440_baseline.wav",
+  "gen_duration": 8.3,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 32.4017858505249,
+  "elapsed": 32.4222571849823
+}

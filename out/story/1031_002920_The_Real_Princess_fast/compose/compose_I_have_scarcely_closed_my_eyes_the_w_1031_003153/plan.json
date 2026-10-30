@@ -1,0 +1,41 @@
+{
+  "event": "“I have scarcely closed my eyes the whole night through.",
+  "sub_events": [
+    {
+      "prompt": "Tossing and turning in bed",
+      "start": 2.44,
+      "duration": 2.0,
+      "intensity": 0.3,
+      "eid": "s14i0",
+      "origin": "inferred",
+      "voice_key": "princess_toss_turn",
+      "source_wav": "samples/princess_toss_turn.wav",
+      "file": "compose/compose_I_have_scarcely_closed_my_eyes_the_w_1031_003153/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.069,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.4399999999999995,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_have_scarcely_closed_my_eyes_the_w_1031_003153_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.011098384857177734,
+  "elapsed": 0.01563119888305664
+}

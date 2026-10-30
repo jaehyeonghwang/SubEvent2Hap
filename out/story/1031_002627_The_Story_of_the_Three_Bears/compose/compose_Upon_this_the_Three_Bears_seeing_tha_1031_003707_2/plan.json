@@ -1,0 +1,41 @@
+{
+  "event": "Upon this the Three Bears, seeing that some one had entered their house, and eaten up the Little, Small, Wee Bear's breakfast, began to look about them.",
+  "sub_events": [
+    {
+      "prompt": "The Three Bears look around the room.",
+      "start": 9.1,
+      "duration": 0.4,
+      "intensity": 0.3,
+      "eid": "s33e0",
+      "origin": "explicit",
+      "voice_key": "bear_look",
+      "source_wav": "compose/compose_Upon_this_the_Three_Bears_seeing_tha_1031_003707/src_01.wav",
+      "file": "compose/compose_Upon_this_the_Three_Bears_seeing_tha_1031_003707_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.505,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Upon_this_the_Three_Bears_seeing_tha_1031_003707_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.004710197448730469,
+  "elapsed": 0.012361288070678711
+}

@@ -1,0 +1,41 @@
+{
+  "event": "But just then the harp cried out: “Master! master!” and the ogre swung himself down on to the beanstalk which shook with his weight.",
+  "sub_events": [
+    {
+      "prompt": "The beanstalk shakes with the ogre's weight.",
+      "start": 0.0,
+      "duration": 0.96,
+      "intensity": 1.0,
+      "eid": "s117e1",
+      "origin": "explicit",
+      "voice_key": "beanstalk_sway",
+      "source_wav": "compose/compose_So_one_fine_morning_he_got_up_early__1031_002141/src_01.wav",
+      "file": "compose/compose_But_just_then_the_harp_cried_out_Mas_1031_002409/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 2.533,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 0.96,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_But_just_then_the_harp_cried_out_Mas_1031_002409_composite.wav",
+  "baseline": "compose_But_just_then_the_harp_cried_out_Mas_1031_002409_baseline.wav",
+  "gen_duration": 0.96,
+  "prompts": 2,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.021479606628418,
+  "elapsed": 1.0290615558624268
+}

@@ -1,0 +1,57 @@
+{
+  "event": "“Ah! we shall soon see that!” thought the old Queen-mother; however, she said not a word of what she was going to do; but went quietly into the bedroom, took all the bed-clothes off the bed, and put three little peas on the bedstead.",
+  "sub_events": [
+    {
+      "prompt": "The Old Queen-mother removes bed-clothes from the bed.",
+      "start": 0.0,
+      "duration": 0.46,
+      "intensity": 0.7,
+      "eid": "s9e0",
+      "origin": "explicit",
+      "voice_key": "bed_clothes_remove",
+      "source_wav": "samples/bed_clothes_remove.wav",
+      "file": "compose/compose_Ah_we_shall_soon_see_that_thought_th_1031_003626/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.186,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Peas are placed on the wooden bedstead.",
+      "start": 2.4,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s9e1",
+      "origin": "explicit",
+      "voice_key": "peas_place",
+      "source_wav": "samples/peas_place.wav",
+      "file": "compose/compose_Ah_we_shall_soon_see_that_thought_th_1031_003626/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.515,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 2.6999999999999997,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Ah_we_shall_soon_see_that_thought_th_1031_003626_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.010807275772094727,
+  "elapsed": 0.01585221290588379
+}

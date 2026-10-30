@@ -1,0 +1,44 @@
+{
+  "event": "“We've tried that before, and nobody would take you,” said his mother; “we must sell Milky-white and with the money do something, start shop, or something.",
+  "sub_events": [
+    {
+      "prompt": "Milky-white being led away",
+      "start": 5.34,
+      "duration": 0.5,
+      "intensity": 0.3,
+      "eid": "s5i0",
+      "origin": "inferred",
+      "voice_key": "cow_movement",
+      "source_wav": "compose/compose_We_ve_tried_that_before_and_nobody_w_1031_001923/src_01.wav",
+      "file": "compose/compose_We_ve_tried_that_before_and_nobody_w_1031_001923/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0379,
+        0.0198
+      ],
+      "offset": 0.741,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 5.84,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_We_ve_tried_that_before_and_nobody_w_1031_001923_composite.wav",
+  "baseline": "compose_We_ve_tried_that_before_and_nobody_w_1031_001923_baseline.wav",
+  "gen_duration": 5.84,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.802289962768555,
+  "elapsed": 4.812411785125732
+}

@@ -1,0 +1,41 @@
+{
+  "event": "“Somebody has been sitting in my chair!” said the Middle Bear, in his middle voice.",
+  "sub_events": [
+    {
+      "prompt": "Someone sat on the wooden chair.",
+      "start": 1.62,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "eid": "s37e0",
+      "origin": "explicit",
+      "voice_key": "middle_chair_sit",
+      "source_wav": "compose/compose_And_then_she_sate_down_in_the_chair__1031_003401/src_01.wav",
+      "file": "compose/compose_Somebody_has_been_sitting_in_my_chai_1031_003735/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.094,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 2.02,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Somebody_has_been_sitting_in_my_chai_1031_003735_composite.wav",
+  "baseline": "compose_Somebody_has_been_sitting_in_my_chai_1031_003735_baseline.wav",
+  "gen_duration": 2.02,
+  "prompts": 2,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.49563193321228,
+  "elapsed": 5.504299640655518
+}

@@ -1,0 +1,57 @@
+{
+  "event": "Well, the ogre had his breakfast, and after that he goes to a big chest and takes out of it a couple of bags of gold and sits down counting them till at last his head began to nod and he began to snore till the whole house shook again.",
+  "sub_events": [
+    {
+      "prompt": "The ogre snores loudly, causing vibrations.",
+      "start": 5.94,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "eid": "s71e0",
+      "origin": "explicit",
+      "voice_key": "ogre_snore",
+      "source_wav": "compose/compose_Well_the_ogre_had_his_breakfast_and__1031_002642/src_01.wav",
+      "file": "compose/compose_Well_the_ogre_had_his_breakfast_and__1031_002642_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 5.607,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "The house shakes from the ogre's snores.",
+      "start": 7.52,
+      "duration": 1.0,
+      "intensity": 0.9,
+      "eid": "s71e1",
+      "origin": "explicit",
+      "voice_key": "house_shake",
+      "source_wav": "compose/compose_Well_the_ogre_had_his_breakfast_and__1031_002642/src_02.wav",
+      "file": "compose/compose_Well_the_ogre_had_his_breakfast_and__1031_002642_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 7.52,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 8.52,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Well_the_ogre_had_his_breakfast_and__1031_002642_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.008707284927368164,
+  "elapsed": 0.016284704208374023
+}

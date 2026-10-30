@@ -1,0 +1,73 @@
+{
+  "event": "Then the ogre fell down and broke his crown, and the beanstalk came toppling after.",
+  "sub_events": [
+    {
+      "prompt": "A giant ogre falls to the ground.",
+      "start": 1.22,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "eid": "s125e0",
+      "origin": "explicit",
+      "voice_key": "ogre_fall",
+      "source_wav": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018/src_02.wav",
+      "file": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.051,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "The ogre's crown breaks with a crack.",
+      "start": 2.66,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s125e1",
+      "origin": "explicit",
+      "voice_key": "ogre_crown_break",
+      "source_wav": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018/src_03.wav",
+      "file": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.274,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "The beanstalk collapses to the ground.",
+      "start": 5.12,
+      "duration": 1.28,
+      "intensity": 0.9,
+      "eid": "s125e2",
+      "origin": "explicit",
+      "voice_key": "beanstalk_collapse",
+      "source_wav": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018/src_04.wav",
+      "file": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018_2/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.381,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 6.4,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.016968727111816406,
+  "elapsed": 0.03298830986022949
+}

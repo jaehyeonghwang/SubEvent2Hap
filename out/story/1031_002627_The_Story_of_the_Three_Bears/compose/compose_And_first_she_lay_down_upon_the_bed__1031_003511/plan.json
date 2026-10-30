@@ -1,0 +1,44 @@
+{
+  "event": "And first she lay down upon the bed of the Great, Huge Bear; but that was too high at the head for her.",
+  "sub_events": [
+    {
+      "prompt": "The old Woman lies on the bed of the Great, Huge Bear.",
+      "start": 1.5,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "eid": "s21e0",
+      "origin": "explicit",
+      "voice_key": "old_woman_bed",
+      "source_wav": "compose/compose_And_first_she_lay_down_upon_the_bed__1031_003511/src_01.wav",
+      "file": "compose/compose_And_first_she_lay_down_upon_the_bed__1031_003511/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0851,
+        0.0359
+      ],
+      "offset": 0.392,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 2.0,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_first_she_lay_down_upon_the_bed__1031_003511_composite.wav",
+  "baseline": "compose_And_first_she_lay_down_upon_the_bed__1031_003511_baseline.wav",
+  "gen_duration": 2.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.663742542266846,
+  "elapsed": 6.6738975048065186
+}

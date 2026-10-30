@@ -1,0 +1,41 @@
+{
+  "event": "Then the Three Bears thought it necessary that they should make farther search; so they went upstairs into their bedchamber.",
+  "sub_events": [
+    {
+      "prompt": "Three Bears walking upstairs.",
+      "start": 5.28,
+      "duration": 1.0,
+      "intensity": 0.5,
+      "eid": "s40e0",
+      "origin": "explicit",
+      "voice_key": "bear_steps",
+      "source_wav": "compose/compose_One_of_them_was_a_Little_Small_Wee_B_1031_003114/src_01.wav",
+      "file": "compose/compose_Then_the_Three_Bears_thought_it_nece_1031_003808/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.165,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 6.28,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Then_the_Three_Bears_thought_it_nece_1031_003808_composite.wav",
+  "baseline": "compose_Then_the_Three_Bears_thought_it_nece_1031_003808_baseline.wav",
+  "gen_duration": 6.28,
+  "prompts": 2,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 15.396955013275146,
+  "elapsed": 15.406036615371704
+}

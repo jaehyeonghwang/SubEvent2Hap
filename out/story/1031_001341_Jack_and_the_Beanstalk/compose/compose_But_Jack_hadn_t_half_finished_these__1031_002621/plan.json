@@ -1,0 +1,101 @@
+{
+  "event": "But Jack hadn't half finished these when thump! thump! thump! the whole house began to tremble with the noise of someone coming.",
+  "sub_events": [
+    {
+      "prompt": "The house trembles with approaching footsteps.",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.7,
+      "eid": "s57e3",
+      "origin": "explicit",
+      "voice_key": "house_tremble",
+      "source_wav": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002621/src_01.wav",
+      "file": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002621/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0099,
+        0.0144
+      ],
+      "offset": 0.431,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "A heavy footstep on a wooden floor.",
+      "start": 2.7,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s57e0",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002621/src_02.wav",
+      "file": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002621/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.3416,
+        0.2515
+      ],
+      "offset": 0.011,
+      "shared": true,
+      "reused": false
+    },
+    {
+      "prompt": "A heavy footstep on a wooden floor.",
+      "start": 3.88,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s57e1",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002621/src_02.wav",
+      "file": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002621/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.3416,
+        0.2515
+      ],
+      "offset": 0.011,
+      "shared": true,
+      "reused": false
+    },
+    {
+      "prompt": "A heavy footstep on a wooden floor.",
+      "start": 4.56,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s57e2",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002621/src_02.wav",
+      "file": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002621/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.3416,
+        0.2515
+      ],
+      "offset": 0.011,
+      "shared": true,
+      "reused": false
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_But_Jack_hadn_t_half_finished_these__1031_002621_composite.wav",
+  "baseline": "compose_But_Jack_hadn_t_half_finished_these__1031_002621_baseline.wav",
+  "gen_duration": 10.0,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 8.144078016281128,
+  "elapsed": 8.166543006896973
+}

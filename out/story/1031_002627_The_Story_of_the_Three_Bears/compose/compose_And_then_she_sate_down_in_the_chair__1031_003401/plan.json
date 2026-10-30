@@ -1,0 +1,44 @@
+{
+  "event": "And then she sate down in the chair of the Middle Bear, and that was too soft for her.",
+  "sub_events": [
+    {
+      "prompt": "Old Woman sits on the middle-sized chair.",
+      "start": 1.54,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s16e0",
+      "origin": "explicit",
+      "voice_key": "middle_chair_sit",
+      "source_wav": "compose/compose_And_then_she_sate_down_in_the_chair__1031_003401/src_01.wav",
+      "file": "compose/compose_And_then_she_sate_down_in_the_chair__1031_003401/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0003,
+        0.0613
+      ],
+      "offset": 1.094,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 1.84,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_then_she_sate_down_in_the_chair__1031_003401_composite.wav",
+  "baseline": "compose_And_then_she_sate_down_in_the_chair__1031_003401_baseline.wav",
+  "gen_duration": 1.84,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.1625025272369385,
+  "elapsed": 6.173417091369629
+}

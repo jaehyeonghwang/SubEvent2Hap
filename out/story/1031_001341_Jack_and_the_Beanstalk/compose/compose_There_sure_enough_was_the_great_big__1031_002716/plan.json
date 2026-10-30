@@ -1,0 +1,44 @@
+{
+  "event": "There, sure enough, was the great big tall woman a-standing on the door-step.",
+  "sub_events": [
+    {
+      "prompt": "The door-step creaks under the woman's weight.",
+      "start": 3.74,
+      "duration": 0.5,
+      "intensity": 0.2,
+      "eid": "s76i0",
+      "origin": "inferred",
+      "voice_key": "floor_creak",
+      "source_wav": "compose/compose_There_sure_enough_was_the_great_big__1031_002716/src_01.wav",
+      "file": "compose/compose_There_sure_enough_was_the_great_big__1031_002716/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.1936,
+        0.0066
+      ],
+      "offset": 0.749,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 4.24,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_There_sure_enough_was_the_great_big__1031_002716_composite.wav",
+  "baseline": "compose_There_sure_enough_was_the_great_big__1031_002716_baseline.wav",
+  "gen_duration": 4.24,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.896837472915649,
+  "elapsed": 4.907576084136963
+}

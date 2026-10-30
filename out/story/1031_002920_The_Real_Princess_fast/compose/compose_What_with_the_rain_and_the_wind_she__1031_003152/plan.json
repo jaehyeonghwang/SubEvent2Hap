@@ -1,0 +1,57 @@
+{
+  "event": "What with the rain and the wind, she was in a sad condition; the water trickled down from her hair, and her clothes clung to her body.",
+  "sub_events": [
+    {
+      "prompt": "Water trickling down hair.",
+      "start": 4.2,
+      "duration": 0.6,
+      "intensity": 0.3,
+      "eid": "s7e2",
+      "origin": "explicit",
+      "voice_key": "water_trickle",
+      "source_wav": "samples/water_trickle.wav",
+      "file": "compose/compose_What_with_the_rain_and_the_wind_she__1031_003152/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.549,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Wet clothes clinging to skin.",
+      "start": 6.72,
+      "duration": 1.0,
+      "intensity": 0.5,
+      "eid": "s7e3",
+      "origin": "explicit",
+      "voice_key": "clothes_cling",
+      "source_wav": "samples/clothes_cling.wav",
+      "file": "compose/compose_What_with_the_rain_and_the_wind_she__1031_003152/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.812,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 7.72,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_What_with_the_rain_and_the_wind_she__1031_003152_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.01378488540649414,
+  "elapsed": 0.0205380916595459
+}

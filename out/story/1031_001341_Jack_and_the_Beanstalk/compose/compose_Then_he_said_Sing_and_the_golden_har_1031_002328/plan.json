@@ -1,0 +1,44 @@
+{
+  "event": "Then he said: “Sing!” and the golden harp sang most beautifully.",
+  "sub_events": [
+    {
+      "prompt": "The golden harp sings beautifully.",
+      "start": 0.0,
+      "duration": 5.75,
+      "intensity": 0.7,
+      "eid": "s109e0",
+      "origin": "explicit",
+      "voice_key": "golden_harp",
+      "source_wav": "compose/compose_Then_he_said_Sing_and_the_golden_har_1031_002328/src_01.wav",
+      "file": "compose/compose_Then_he_said_Sing_and_the_golden_har_1031_002328/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0962,
+        0.2448
+      ],
+      "offset": 0.968,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 5.75,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Then_he_said_Sing_and_the_golden_har_1031_002328_composite.wav",
+  "baseline": "compose_Then_he_said_Sing_and_the_golden_har_1031_002328_baseline.wav",
+  "gen_duration": 6.75,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.4609901905059814,
+  "elapsed": 5.470154762268066
+}

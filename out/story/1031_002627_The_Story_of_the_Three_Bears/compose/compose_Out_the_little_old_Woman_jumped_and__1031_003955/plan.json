@@ -1,0 +1,79 @@
+{
+  "event": "Out the little old Woman jumped; and whether she broke her neck in the fall; or ran into the wood and was lost there; or found her way out of the wood, and was taken up by the constable and sent to the House of Correction for a vagrant as she was, I cannot tell.",
+  "sub_events": [
+    {
+      "prompt": "The little old Woman jumps out of the window.",
+      "start": 1.7,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s52e0",
+      "origin": "explicit",
+      "voice_key": "old_woman_jump",
+      "source_wav": "compose/compose_Out_the_little_old_Woman_jumped_and__1031_003955/src_01.wav",
+      "file": "compose/compose_Out_the_little_old_Woman_jumped_and__1031_003955/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.2865,
+        0.416
+      ],
+      "offset": 0.472,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The little old Woman falls to the ground.",
+      "start": 5.1,
+      "duration": 0.4,
+      "intensity": 0.8,
+      "eid": "s52e1",
+      "origin": "explicit",
+      "voice_key": "old_woman_fall",
+      "source_wav": "compose/compose_So_she_seated_herself_in_it_and_ther_1031_003440/src_02.wav",
+      "file": "compose/compose_Out_the_little_old_Woman_jumped_and__1031_003955/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.286,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "The ground impacts as the little old Woman falls.",
+      "start": 5.1,
+      "duration": 0.15,
+      "intensity": 0.7,
+      "eid": "s52i0",
+      "origin": "inferred",
+      "voice_key": "ground_impact",
+      "source_wav": "compose/compose_Out_the_little_old_Woman_jumped_and__1031_003955/src_02.wav",
+      "file": "compose/compose_Out_the_little_old_Woman_jumped_and__1031_003955/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0386,
+        0.3984
+      ],
+      "offset": 1.013,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 5.5,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Out_the_little_old_Woman_jumped_and__1031_003955_composite.wav",
+  "baseline": "compose_Out_the_little_old_Woman_jumped_and__1031_003955_baseline.wav",
+  "gen_duration": 5.5,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 21.76928997039795,
+  "elapsed": 21.791588306427002
+}

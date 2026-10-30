@@ -1,0 +1,57 @@
+{
+  "event": "And they both rushed to the oven.",
+  "sub_events": [
+    {
+      "prompt": "A giant footstep on the floor.",
+      "start": 1.56,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s102e0",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_You_d_better_be_moving_on_or_he_ll_s_1031_002046/src_01.wav",
+      "file": "compose/compose_And_they_both_rushed_to_the_oven_1031_002312/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.952,
+      "shared": true,
+      "reused": true
+    },
+    {
+      "prompt": "A giant footstep on the floor.",
+      "start": 1.86,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s102e1",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_You_d_better_be_moving_on_or_he_ll_s_1031_002046/src_01.wav",
+      "file": "compose/compose_And_they_both_rushed_to_the_oven_1031_002312/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.952,
+      "shared": true,
+      "reused": true
+    }
+  ],
+  "total": 2.16,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_they_both_rushed_to_the_oven_1031_002312_composite.wav",
+  "baseline": "compose_And_they_both_rushed_to_the_oven_1031_002312_baseline.wav",
+  "gen_duration": 2.16,
+  "prompts": 2,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.8246424198150635,
+  "elapsed": 1.833216667175293
+}

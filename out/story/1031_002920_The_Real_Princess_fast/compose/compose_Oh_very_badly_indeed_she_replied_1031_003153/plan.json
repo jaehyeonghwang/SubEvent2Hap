@@ -1,0 +1,41 @@
+{
+  "event": "“Oh, very badly indeed!” she replied.",
+  "sub_events": [
+    {
+      "prompt": "Princess shifting uncomfortably in bed",
+      "start": 2.94,
+      "duration": 0.5,
+      "intensity": 0.3,
+      "eid": "s13i0",
+      "origin": "inferred",
+      "voice_key": "princess_shift",
+      "source_wav": "samples/princess_shift.wav",
+      "file": "compose/compose_Oh_very_badly_indeed_she_replied_1031_003153/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.104,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.44,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Oh_very_badly_indeed_she_replied_1031_003153_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0076274871826171875,
+  "elapsed": 0.010975837707519531
+}

@@ -1,0 +1,57 @@
+{
+  "event": "So one fine morning he got up early, and got on to the beanstalk, and he climbed and he climbed and he climbed and he climbed and he climbed and he climbed till at last he got on the road again and came to the great big tall house he had been to before.",
+  "sub_events": [
+    {
+      "prompt": "Jack climbing the beanstalk",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.5,
+      "eid": "s75e1",
+      "origin": "explicit",
+      "voice_key": "jack_climb",
+      "source_wav": "compose/compose_So_one_fine_morning_he_got_up_early__1031_002703/src_01.wav",
+      "file": "compose/compose_So_one_fine_morning_he_got_up_early__1031_002703_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Jack stepping onto the beanstalk",
+      "start": 4.86,
+      "duration": 0.3,
+      "intensity": 0.6,
+      "eid": "s75e0",
+      "origin": "explicit",
+      "voice_key": "jack_jump_beanstalk",
+      "source_wav": "compose/compose_So_one_fine_morning_he_got_up_early__1031_002703/src_03.wav",
+      "file": "compose/compose_So_one_fine_morning_he_got_up_early__1031_002703_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.453,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_So_one_fine_morning_he_got_up_early__1031_002703_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.007591724395751953,
+  "elapsed": 0.015309572219848633
+}

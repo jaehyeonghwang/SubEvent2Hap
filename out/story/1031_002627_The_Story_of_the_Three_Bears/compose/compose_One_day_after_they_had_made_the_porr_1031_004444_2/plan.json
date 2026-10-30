@@ -1,0 +1,41 @@
+{
+  "event": "One day, after they had made the porridge for their breakfast, and poured it into their porridge-pots, they walked out into the wood while the porridge was cooling, that they might not burn their mouths, by beginning too soon to eat it.",
+  "sub_events": [
+    {
+      "prompt": "Bears walking on forest ground.",
+      "start": 5.7,
+      "duration": 1.5,
+      "intensity": 0.3,
+      "eid": "s5e0",
+      "origin": "explicit",
+      "voice_key": "bear_walk",
+      "source_wav": "compose/compose_One_day_after_they_had_made_the_porr_1031_004444/src_01.wav",
+      "file": "compose/compose_One_day_after_they_had_made_the_porr_1031_004444_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 5.7,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 7.2,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_One_day_after_they_had_made_the_porr_1031_004444_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.006073951721191406,
+  "elapsed": 0.011721611022949219
+}

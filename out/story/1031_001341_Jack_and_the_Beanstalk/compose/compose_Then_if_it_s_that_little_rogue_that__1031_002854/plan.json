@@ -1,0 +1,44 @@
+{
+  "event": "“Then if it's that little rogue that stole your gold and the hen that laid the golden eggs he's sure to have got into the oven.",
+  "sub_events": [
+    {
+      "prompt": "Oven heating",
+      "start": 0.0,
+      "duration": 8.0,
+      "intensity": 0.3,
+      "eid": "s101i0",
+      "origin": "inferred",
+      "voice_key": "oven_heating",
+      "source_wav": "compose/compose_Then_if_it_s_that_little_rogue_that__1031_002854/src_01.wav",
+      "file": "compose/compose_Then_if_it_s_that_little_rogue_that__1031_002854/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0573,
+        0.0269
+      ],
+      "offset": 1.0,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 8.0,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Then_if_it_s_that_little_rogue_that__1031_002854_composite.wav",
+  "baseline": "compose_Then_if_it_s_that_little_rogue_that__1031_002854_baseline.wav",
+  "gen_duration": 9.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 9.456455945968628,
+  "elapsed": 9.47114634513855
+}

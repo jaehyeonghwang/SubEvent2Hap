@@ -1,0 +1,41 @@
+{
+  "event": "The Tortoise never for a moment stopped, but went on with a slow but steady pace straight to the end of the course.",
+  "sub_events": [
+    {
+      "prompt": "The Tortoise moves slowly with a steady pace on the ground.",
+      "start": 0.0,
+      "duration": 8.55,
+      "intensity": 0.3,
+      "eid": "s3e0",
+      "origin": "explicit",
+      "voice_key": "tortoise_move",
+      "source_wav": "compose/compose_The_Tortoise_never_for_a_moment_stop_1031_004031/src_01.wav",
+      "file": "compose/compose_The_Tortoise_never_for_a_moment_stop_1031_004031_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.97,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 8.55,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_Tortoise_never_for_a_moment_stop_1031_004031_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.00461888313293457,
+  "elapsed": 0.012261152267456055
+}

@@ -1,0 +1,57 @@
+{
+  "event": "On the day appointed for the race the two started together.",
+  "sub_events": [
+    {
+      "prompt": "Hare's feet push off the ground at the start.",
+      "start": 3.14,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s2e0",
+      "origin": "explicit",
+      "voice_key": "hare_start",
+      "source_wav": "compose/compose_On_the_day_appointed_for_the_race_th_1031_004200/src_01.wav",
+      "file": "compose/compose_On_the_day_appointed_for_the_race_th_1031_004201/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 2.119,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Tortoise's feet push off the ground at the start.",
+      "start": 3.34,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s2e1",
+      "origin": "explicit",
+      "voice_key": "tortoise_start",
+      "source_wav": "compose/compose_On_the_day_appointed_for_the_race_th_1031_004200/src_02.wav",
+      "file": "compose/compose_On_the_day_appointed_for_the_race_th_1031_004201/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.068,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.6399999999999997,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_On_the_day_appointed_for_the_race_th_1031_004201_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.012163639068603516,
+  "elapsed": 0.01902937889099121
+}

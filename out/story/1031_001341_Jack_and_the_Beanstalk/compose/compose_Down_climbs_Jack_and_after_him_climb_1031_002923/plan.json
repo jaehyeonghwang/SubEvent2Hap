@@ -1,0 +1,44 @@
+{
+  "event": "Down climbs Jack, and after him climbed the ogre.",
+  "sub_events": [
+    {
+      "prompt": "The ogre climbs down the beanstalk.",
+      "start": 3.2,
+      "duration": 1.5,
+      "intensity": 0.7,
+      "eid": "s118e1",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_Down_climbs_Jack_and_after_him_climb_1031_002923/src_01.wav",
+      "file": "compose/compose_Down_climbs_Jack_and_after_him_climb_1031_002923/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.2613,
+        0.2189
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 4.7,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Down_climbs_Jack_and_after_him_climb_1031_002923_composite.wav",
+  "baseline": "compose_Down_climbs_Jack_and_after_him_climb_1031_002923_baseline.wav",
+  "gen_duration": 4.7,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.2600579261779785,
+  "elapsed": 5.270834445953369
+}

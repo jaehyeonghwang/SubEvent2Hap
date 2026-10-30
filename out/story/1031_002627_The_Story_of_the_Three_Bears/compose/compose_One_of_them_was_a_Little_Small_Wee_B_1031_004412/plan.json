@@ -1,0 +1,44 @@
+{
+  "event": "One of them was a Little, Small Wee Bear; and one was a Middle-sized Bear, and the other was a Great, Huge Bear.",
+  "sub_events": [
+    {
+      "prompt": "Heavy steps of the Great, Huge Bear",
+      "start": 7.06,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s1i0",
+      "origin": "inferred",
+      "voice_key": "bear_steps",
+      "source_wav": "compose/compose_One_of_them_was_a_Little_Small_Wee_B_1031_004412/src_01.wav",
+      "file": "compose/compose_One_of_them_was_a_Little_Small_Wee_B_1031_004412/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.1437,
+        0.1384
+      ],
+      "offset": 0.628,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 7.56,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_One_of_them_was_a_Little_Small_Wee_B_1031_004412_composite.wav",
+  "baseline": "compose_One_of_them_was_a_Little_Small_Wee_B_1031_004412_baseline.wav",
+  "gen_duration": 7.56,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 23.7160964012146,
+  "elapsed": 23.731520891189575
+}

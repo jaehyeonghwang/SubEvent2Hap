@@ -1,0 +1,44 @@
+{
+  "event": "“Somebody has been lying in my bed,--and here she is!” said the Little, Small, Wee Bear, in his little, small, wee voice.",
+  "sub_events": [
+    {
+      "prompt": "Bed sagging under weight",
+      "start": 1.02,
+      "duration": 0.5,
+      "intensity": 0.3,
+      "eid": "s46i0",
+      "origin": "inferred",
+      "voice_key": "bed_sag",
+      "source_wav": "compose/compose_Somebody_has_been_lying_in_my_bed_an_1031_003830/src_01.wav",
+      "file": "compose/compose_Somebody_has_been_lying_in_my_bed_an_1031_003830/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0023,
+        0.0004
+      ],
+      "offset": 0.113,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 1.52,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Somebody_has_been_lying_in_my_bed_an_1031_003830_composite.wav",
+  "baseline": "compose_Somebody_has_been_lying_in_my_bed_an_1031_003830_baseline.wav",
+  "gen_duration": 1.52,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.241883993148804,
+  "elapsed": 5.2520599365234375
+}

@@ -1,0 +1,120 @@
+{
+  "event": "Then Jack gave another chop with the axe, and the beanstalk was cut in two and began to topple over.",
+  "sub_events": [
+    {
+      "prompt": "A metal axe chops into the beanstalk.",
+      "start": 1.82,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s124e0",
+      "origin": "explicit",
+      "voice_key": "axe_chop",
+      "source_wav": "compose/compose_Then_Jack_gave_another_chop_with_the_1031_003000/src_01.wav",
+      "file": "compose/compose_Then_Jack_gave_another_chop_with_the_1031_003000/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0328,
+        0.2568
+      ],
+      "offset": 0.341,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The beanstalk is cut in two.",
+      "start": 5.14,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "eid": "s124e1",
+      "origin": "explicit",
+      "voice_key": "beanstalk_sway",
+      "source_wav": "compose/compose_Then_Jack_gave_another_chop_with_the_1031_003000/src_02.wav",
+      "file": "compose/compose_Then_Jack_gave_another_chop_with_the_1031_003000/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0309,
+        0.0009
+      ],
+      "offset": 0.479,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The beanstalk begins to topple over.",
+      "start": 7.1,
+      "duration": 1.15,
+      "intensity": 0.6,
+      "eid": "s124e2",
+      "origin": "explicit",
+      "voice_key": "beanstalk_sway",
+      "source_wav": "compose/compose_Then_Jack_gave_another_chop_with_the_1031_003000/src_03.wav",
+      "file": "compose/compose_Then_Jack_gave_another_chop_with_the_1031_003000/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.039,
+        0.0374
+      ],
+      "offset": 0.28,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The beanstalk falls to the ground.",
+      "start": 7.6,
+      "duration": 0.65,
+      "intensity": 0.8,
+      "eid": "s124i0",
+      "origin": "inferred",
+      "voice_key": "beanstalk_sway",
+      "source_wav": "compose/compose_Then_Jack_gave_another_chop_with_the_1031_003000/src_04.wav",
+      "file": "compose/compose_Then_Jack_gave_another_chop_with_the_1031_003000/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0002,
+        0.0286
+      ],
+      "offset": 2.288,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The ground shakes as the beanstalk falls.",
+      "start": 7.6,
+      "duration": 0.65,
+      "intensity": 0.6,
+      "eid": "s124i1",
+      "origin": "inferred",
+      "voice_key": "ground_shake",
+      "source_wav": "compose/compose_Then_Jack_gave_another_chop_with_the_1031_003000/src_05.wav",
+      "file": "compose/compose_Then_Jack_gave_another_chop_with_the_1031_003000/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.0656,
+        0.0569
+      ],
+      "offset": 0.439,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 8.25,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Then_Jack_gave_another_chop_with_the_1031_003000_composite.wav",
+  "baseline": "compose_Then_Jack_gave_another_chop_with_the_1031_003000_baseline.wav",
+  "gen_duration": 8.25,
+  "prompts": 12,
+  "generated_units": 5,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 27.511613845825195,
+  "elapsed": 27.564738750457764
+}

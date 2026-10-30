@@ -1,0 +1,82 @@
+{
+  "event": "So he walked along and he walked along and he walked along till he came to a great big tall house, and on the doorstep there was a great big tall woman.",
+  "sub_events": [
+    {
+      "prompt": "Human footsteps on a road.",
+      "start": 0.68,
+      "duration": 0.4,
+      "intensity": 0.3,
+      "eid": "s45e0",
+      "origin": "explicit",
+      "voice_key": "jack_footsteps_road",
+      "source_wav": "compose/compose_So_he_walked_along_and_he_walked_alo_1031_002040/src_01.wav",
+      "file": "compose/compose_So_he_walked_along_and_he_walked_alo_1031_002040/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0166,
+        0.0277
+      ],
+      "offset": 0.171,
+      "shared": true,
+      "reused": false
+    },
+    {
+      "prompt": "Human footsteps on a road.",
+      "start": 2.16,
+      "duration": 0.4,
+      "intensity": 0.3,
+      "eid": "s45e1",
+      "origin": "explicit",
+      "voice_key": "jack_footsteps_road",
+      "source_wav": "compose/compose_So_he_walked_along_and_he_walked_alo_1031_002040/src_01.wav",
+      "file": "compose/compose_So_he_walked_along_and_he_walked_alo_1031_002040/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0166,
+        0.0277
+      ],
+      "offset": 0.171,
+      "shared": true,
+      "reused": false
+    },
+    {
+      "prompt": "Human footsteps on a road.",
+      "start": 3.4,
+      "duration": 0.4,
+      "intensity": 0.3,
+      "eid": "s45e2",
+      "origin": "explicit",
+      "voice_key": "jack_footsteps_road",
+      "source_wav": "compose/compose_So_he_walked_along_and_he_walked_alo_1031_002040/src_01.wav",
+      "file": "compose/compose_So_he_walked_along_and_he_walked_alo_1031_002040/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0166,
+        0.0277
+      ],
+      "offset": 0.171,
+      "shared": true,
+      "reused": false
+    }
+  ],
+  "total": 3.8,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_So_he_walked_along_and_he_walked_alo_1031_002040_composite.wav",
+  "baseline": "compose_So_he_walked_along_and_he_walked_alo_1031_002040_baseline.wav",
+  "gen_duration": 3.8,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.1648709774017334,
+  "elapsed": 3.1766610145568848
+}

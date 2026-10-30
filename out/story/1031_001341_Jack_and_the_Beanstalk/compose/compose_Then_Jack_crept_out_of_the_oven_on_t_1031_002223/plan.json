@@ -1,0 +1,44 @@
+{
+  "event": "Then Jack crept out of the oven on tiptoe and caught hold of the golden hen, and was off before you could say “Jack Robinson.",
+  "sub_events": [
+    {
+      "prompt": "Human hand grabbing a feathered animal.",
+      "start": 4.1,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s89e1",
+      "origin": "explicit",
+      "voice_key": "jack_creep",
+      "source_wav": "compose/compose_Then_Jack_crept_out_of_the_oven_on_t_1031_002223/src_01.wav",
+      "file": "compose/compose_Then_Jack_crept_out_of_the_oven_on_t_1031_002223/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0033,
+        0.1567
+      ],
+      "offset": 0.127,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 4.3999999999999995,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Then_Jack_crept_out_of_the_oven_on_t_1031_002223_composite.wav",
+  "baseline": "compose_Then_Jack_crept_out_of_the_oven_on_t_1031_002223_baseline.wav",
+  "gen_duration": 4.3999999999999995,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.595350980758667,
+  "elapsed": 3.603372573852539
+}

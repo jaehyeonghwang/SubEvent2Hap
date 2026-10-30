@@ -1,0 +1,57 @@
+{
+  "event": "And when he got near it he waited behind a bush till he saw the ogre's wife come out with a pail to get some water, and then he crept into the house and got into the copper.",
+  "sub_events": [
+    {
+      "prompt": "Jack sneaks quietly into the house.",
+      "start": 0.0,
+      "duration": 0.4,
+      "intensity": 0.3,
+      "eid": "s97e1",
+      "origin": "explicit",
+      "voice_key": "jack_creep",
+      "source_wav": "compose/compose_And_when_he_got_near_it_he_waited_be_1031_002833/src_01.wav",
+      "file": "compose/compose_And_when_he_got_near_it_he_waited_be_1031_002833_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.346,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Jack climbs into the copper.",
+      "start": 0.8,
+      "duration": 0.4,
+      "intensity": 0.4,
+      "eid": "s97e2",
+      "origin": "explicit",
+      "voice_key": "jack_creep",
+      "source_wav": "compose/compose_And_when_he_got_near_it_he_waited_be_1031_002833/src_02.wav",
+      "file": "compose/compose_And_when_he_got_near_it_he_waited_be_1031_002833_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.381,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.2000000000000002,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_when_he_got_near_it_he_waited_be_1031_002833_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.012731790542602539,
+  "elapsed": 0.02132701873779297
+}

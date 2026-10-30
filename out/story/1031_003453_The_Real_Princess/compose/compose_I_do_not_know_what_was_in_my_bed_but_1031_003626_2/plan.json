@@ -1,0 +1,41 @@
+{
+  "event": "I do not know what was in my bed, but I had something hard under me, and am all over black and blue.",
+  "sub_events": [
+    {
+      "prompt": "Something hard pressed against the Princess's body.",
+      "start": 3.72,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "eid": "s15e0",
+      "origin": "explicit",
+      "voice_key": "hard_pressure",
+      "source_wav": "samples/hard_pressure.wav",
+      "file": "compose/compose_I_do_not_know_what_was_in_my_bed_but_1031_003626_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.305,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.220000000000001,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_do_not_know_what_was_in_my_bed_but_1031_003626_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.004527568817138672
+}

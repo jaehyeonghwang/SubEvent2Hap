@@ -1,0 +1,57 @@
+{
+  "event": "And then the ogre began to nod his head, and to snore till the house shook.",
+  "sub_events": [
+    {
+      "prompt": "A giant snores loudly once.",
+      "start": 4.52,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s88e1",
+      "origin": "explicit",
+      "voice_key": "ogre_snore",
+      "source_wav": "compose/compose_Well_the_ogre_had_his_breakfast_and__1031_002128/src_01.wav",
+      "file": "compose/compose_And_then_the_ogre_began_to_nod_his_h_1031_002220_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.501,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "The house shakes from the snore.",
+      "start": 5.8,
+      "duration": 0.6,
+      "intensity": 0.8,
+      "eid": "s88e2",
+      "origin": "explicit",
+      "voice_key": "house_shake",
+      "source_wav": "compose/compose_Well_the_ogre_had_his_breakfast_and__1031_002128/src_02.wav",
+      "file": "compose/compose_And_then_the_ogre_began_to_nod_his_h_1031_002220_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 5.932,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 6.3999999999999995,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_then_the_ogre_began_to_nod_his_h_1031_002220_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.007332801818847656
+}

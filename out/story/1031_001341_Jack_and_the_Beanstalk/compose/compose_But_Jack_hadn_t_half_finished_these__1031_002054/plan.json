@@ -1,0 +1,92 @@
+{
+  "event": "But Jack hadn't half finished these when thump! thump! thump! the whole house began to tremble with the noise of someone coming.",
+  "sub_events": [
+    {
+      "prompt": "The house trembles with approaching footsteps.",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.7,
+      "eid": "s57e3",
+      "origin": "explicit",
+      "voice_key": "house_tremble",
+      "source_wav": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002054/src_01.wav",
+      "file": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002054/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0,
+        0.001
+      ],
+      "offset": 0.5,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "A heavy footstep on a wooden floor.",
+      "start": 2.7,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s57e0",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_You_d_better_be_moving_on_or_he_ll_s_1031_002046/src_01.wav",
+      "file": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002054/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.952,
+      "shared": true,
+      "reused": true
+    },
+    {
+      "prompt": "A heavy footstep on a wooden floor.",
+      "start": 3.88,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s57e1",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_You_d_better_be_moving_on_or_he_ll_s_1031_002046/src_01.wav",
+      "file": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002054/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.952,
+      "shared": true,
+      "reused": true
+    },
+    {
+      "prompt": "A heavy footstep on a wooden floor.",
+      "start": 4.56,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s57e2",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_You_d_better_be_moving_on_or_he_ll_s_1031_002046/src_01.wav",
+      "file": "compose/compose_But_Jack_hadn_t_half_finished_these__1031_002054/sub_04.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.952,
+      "shared": true,
+      "reused": true
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_But_Jack_hadn_t_half_finished_these__1031_002054_composite.wav",
+  "baseline": "compose_But_Jack_hadn_t_half_finished_these__1031_002054_baseline.wav",
+  "gen_duration": 10.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 8.115154504776001,
+  "elapsed": 8.133430242538452
+}

@@ -1,0 +1,44 @@
+{
+  "event": "“Fee-fi-fo-fum, I smell the blood of an Englishman,” cried out the ogre; “I smell him, wife, I smell him.",
+  "sub_events": [
+    {
+      "prompt": "Ogre's loud voice",
+      "start": 4.38,
+      "duration": 1.5,
+      "intensity": 0.7,
+      "eid": "s99i0",
+      "origin": "inferred",
+      "voice_key": "big_tall_woman_voice",
+      "source_wav": "compose/compose_Fee_fi_fo_fum_I_smell_the_blood_of_a_1031_002845/src_01.wav",
+      "file": "compose/compose_Fee_fi_fo_fum_I_smell_the_blood_of_a_1031_002845/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0697,
+        0.3513
+      ],
+      "offset": 0.779,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 5.88,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Fee_fi_fo_fum_I_smell_the_blood_of_a_1031_002845_composite.wav",
+  "baseline": "compose_Fee_fi_fo_fum_I_smell_the_blood_of_a_1031_002845_baseline.wav",
+  "gen_duration": 5.88,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.176899671554565,
+  "elapsed": 6.189091205596924
+}

@@ -1,0 +1,60 @@
+{
+  "event": "When he got to the beanstalk the ogre was not more than twenty yards away when suddenly he saw Jack disappear like, and when he got up to the end of the road he saw Jack underneath climbing down for dear life.",
+  "sub_events": [
+    {
+      "prompt": "Jack climbing down the beanstalk.",
+      "start": 0.0,
+      "duration": 4.7,
+      "intensity": 0.6,
+      "eid": "s115e0",
+      "origin": "explicit",
+      "voice_key": "jack_climb",
+      "source_wav": "compose/compose_So_Jack_climbed_and_he_climbed_and_h_1031_002035/src_01.wav",
+      "file": "compose/compose_When_he_got_to_the_beanstalk_the_ogr_1031_002401/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.476,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Ogre's heavy footsteps",
+      "start": 0.0,
+      "duration": 4.7,
+      "intensity": 0.8,
+      "eid": "s115i1",
+      "origin": "inferred",
+      "voice_key": "ogre_steps",
+      "file": "compose/compose_When_he_got_to_the_beanstalk_the_ogr_1031_002401/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0326,
+        0.0253
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_When_he_got_to_the_beanstalk_the_ogr_1031_002401/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 4.7,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_When_he_got_to_the_beanstalk_the_ogr_1031_002401_composite.wav",
+  "baseline": "compose_When_he_got_to_the_beanstalk_the_ogr_1031_002401_baseline.wav",
+  "gen_duration": 5.7,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.68468713760376,
+  "elapsed": 4.696939468383789
+}

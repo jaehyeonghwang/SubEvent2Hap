@@ -1,0 +1,41 @@
+{
+  "event": "“What shall we do, what shall we do?” said the widow, wringing her hands.",
+  "sub_events": [
+    {
+      "prompt": "Human hands wringing together.",
+      "start": 0.0,
+      "duration": 5.8,
+      "intensity": 0.3,
+      "eid": "s3e0",
+      "origin": "explicit",
+      "voice_key": "hands_wringing",
+      "source_wav": "compose/compose_What_shall_we_do_what_shall_we_do_sa_1031_001918/src_01.wav",
+      "file": "compose/compose_What_shall_we_do_what_shall_we_do_sa_1031_001918_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 5.8,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_What_shall_we_do_what_shall_we_do_sa_1031_001918_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0030307769775390625,
+  "elapsed": 0.007586956024169922
+}

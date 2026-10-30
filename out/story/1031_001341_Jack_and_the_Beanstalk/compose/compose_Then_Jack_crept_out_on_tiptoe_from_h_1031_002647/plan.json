@@ -1,0 +1,44 @@
+{
+  "event": "Then Jack crept out on tiptoe from his oven, and as he was passing the ogre he took one of the bags of gold under his arm, and off he pelters till he came to the beanstalk, and then he threw down the bag of gold which of course fell in to his mother's garden, and then he climbed down and climbed down till at last he got home and told his mother and showed her the gold and said: “Well, mother, wasn't I right about the beans.",
+  "sub_events": [
+    {
+      "prompt": "A bag of gold fell into the garden.",
+      "start": 5.26,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "eid": "s72e1",
+      "origin": "explicit",
+      "voice_key": "gold_fall",
+      "source_wav": "compose/compose_Then_Jack_crept_out_on_tiptoe_from_h_1031_002647/src_01.wav",
+      "file": "compose/compose_Then_Jack_crept_out_on_tiptoe_from_h_1031_002647/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.2325,
+        0.0145
+      ],
+      "offset": 1.019,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 5.66,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Then_Jack_crept_out_on_tiptoe_from_h_1031_002647_composite.wav",
+  "baseline": "compose_Then_Jack_crept_out_on_tiptoe_from_h_1031_002647_baseline.wav",
+  "gen_duration": 5.66,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.746763467788696,
+  "elapsed": 4.7543604373931885
+}

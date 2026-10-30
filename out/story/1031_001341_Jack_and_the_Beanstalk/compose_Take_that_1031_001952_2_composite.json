@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] Take that!", "params": {"generator": "hapticgen", "candidates": 1, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": null, "gamma": 1.6, "share_repeats": true, "sub_events": 1}, "created": 1793373592.5050058, "kind": "composite", "event": "Take that!", "run": "compose_Take_that_1031_001952_2"}

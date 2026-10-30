@@ -1,0 +1,41 @@
+{
+  "event": "“Somebody has been at my porridge, and has eaten it all up!” said the Little, Small, Wee Bear, in his little, small, wee voice.",
+  "sub_events": [
+    {
+      "prompt": "Porridge being eaten",
+      "start": 3.18,
+      "duration": 0.5,
+      "intensity": 0.3,
+      "eid": "s32i0",
+      "origin": "inferred",
+      "voice_key": "porridge_eat",
+      "source_wav": "compose/compose_And_then_she_went_to_the_porridge_of_1031_003347/src_01.wav",
+      "file": "compose/compose_Somebody_has_been_at_my_porridge_and_1031_003637/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.297,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.68,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Somebody_has_been_at_my_porridge_and_1031_003637_composite.wav",
+  "baseline": "compose_Somebody_has_been_at_my_porridge_and_1031_003637_baseline.wav",
+  "gen_duration": 3.68,
+  "prompts": 2,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 9.287955522537231,
+  "elapsed": 9.296655893325806
+}

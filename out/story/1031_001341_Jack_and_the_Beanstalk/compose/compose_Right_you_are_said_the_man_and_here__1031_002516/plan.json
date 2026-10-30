@@ -1,0 +1,44 @@
+{
+  "event": "“Right you are,” said the man, “and here they are the very beans themselves,” he went on pulling out of his pocket a number of strange-looking beans.",
+  "sub_events": [
+    {
+      "prompt": "A hand pulling beans out of a pocket.",
+      "start": 6.6,
+      "duration": 0.8,
+      "intensity": 0.5,
+      "eid": "s14e0",
+      "origin": "explicit",
+      "voice_key": "beans_pull",
+      "source_wav": "compose/compose_Right_you_are_said_the_man_and_here__1031_002516/src_01.wav",
+      "file": "compose/compose_Right_you_are_said_the_man_and_here__1031_002516/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0148,
+        0.0276
+      ],
+      "offset": 0.18,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 7.3999999999999995,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Right_you_are_said_the_man_and_here__1031_002516_composite.wav",
+  "baseline": "compose_Right_you_are_said_the_man_and_here__1031_002516_baseline.wav",
+  "gen_duration": 7.3999999999999995,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 7.3055126667022705,
+  "elapsed": 7.3147337436676025
+}

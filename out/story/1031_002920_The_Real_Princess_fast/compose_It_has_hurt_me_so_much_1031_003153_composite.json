@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] It has hurt me so much!", "params": {"generator": "hapticgen@colab", "candidates": 2, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": null, "gamma": 1.6, "share_repeats": true, "sub_events": 1}, "created": 1793374313.6708047, "kind": "composite", "event": "It has hurt me so much!", "run": "compose_It_has_hurt_me_so_much_1031_003153"}

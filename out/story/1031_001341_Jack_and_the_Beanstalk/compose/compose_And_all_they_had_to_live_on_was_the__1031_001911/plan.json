@@ -1,0 +1,44 @@
+{
+  "event": "And all they had to live on was the milk the cow gave every morning which they carried to the market and sold.",
+  "sub_events": [
+    {
+      "prompt": "The cow gives milk.",
+      "start": 3.9,
+      "duration": 0.5,
+      "intensity": 0.5,
+      "eid": "s1e0",
+      "origin": "explicit",
+      "voice_key": "cow_milk",
+      "source_wav": "compose/compose_And_all_they_had_to_live_on_was_the__1031_001911/src_01.wav",
+      "file": "compose/compose_And_all_they_had_to_live_on_was_the__1031_001911/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.178,
+        0.526
+      ],
+      "offset": 0.741,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 4.4,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_all_they_had_to_live_on_was_the__1031_001911_composite.wav",
+  "baseline": "compose_And_all_they_had_to_live_on_was_the__1031_001911_baseline.wav",
+  "gen_duration": 4.4,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.678819417953491,
+  "elapsed": 4.68975567817688
+}

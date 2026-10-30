@@ -1,0 +1,57 @@
+{
+  "event": "Up she started; and when she saw the Three Bears on one side of the bed, she tumbled herself out at the other, and ran to the window.",
+  "sub_events": [
+    {
+      "prompt": "The old Woman quickly gets up from the bed.",
+      "start": 0.66,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s50e0",
+      "origin": "explicit",
+      "voice_key": "old_woman_start",
+      "source_wav": "compose/compose_Up_she_started_and_when_she_saw_the__1031_003933/src_01.wav",
+      "file": "compose/compose_Up_she_started_and_when_she_saw_the__1031_003933_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.142,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "The old Woman tumbles out of the bed onto the floor.",
+      "start": 5.58,
+      "duration": 0.4,
+      "intensity": 0.8,
+      "eid": "s50e1",
+      "origin": "explicit",
+      "voice_key": "old_woman_tumble",
+      "source_wav": "compose/compose_Up_she_started_and_when_she_saw_the__1031_003933/src_02.wav",
+      "file": "compose/compose_Up_she_started_and_when_she_saw_the__1031_003933_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.552,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 5.98,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Up_she_started_and_when_she_saw_the__1031_003933_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.010703802108764648,
+  "elapsed": 0.0196683406829834
+}

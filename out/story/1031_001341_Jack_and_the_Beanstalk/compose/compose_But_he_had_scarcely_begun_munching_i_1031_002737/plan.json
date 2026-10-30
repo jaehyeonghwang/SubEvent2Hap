@@ -1,0 +1,44 @@
+{
+  "event": "But he had scarcely begun munching it as slowly as he could when thump! thump! thump! they heard the giant's footstep, and his wife hid Jack away in the oven.",
+  "sub_events": [
+    {
+      "prompt": "Ground shaking from the giant's footsteps.",
+      "start": 0.0,
+      "duration": 1.85,
+      "intensity": 0.7,
+      "eid": "s83i0",
+      "origin": "inferred",
+      "voice_key": "house_tremble",
+      "source_wav": "compose/compose_But_he_had_scarcely_begun_munching_i_1031_002737/src_01.wav",
+      "file": "compose/compose_But_he_had_scarcely_begun_munching_i_1031_002737/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.1351,
+        0.1963
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 1.85,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_But_he_had_scarcely_begun_munching_i_1031_002737_composite.wav",
+  "baseline": "compose_But_he_had_scarcely_begun_munching_i_1031_002737_baseline.wav",
+  "gen_duration": 2.85,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.0614254474639893,
+  "elapsed": 3.072141408920288
+}

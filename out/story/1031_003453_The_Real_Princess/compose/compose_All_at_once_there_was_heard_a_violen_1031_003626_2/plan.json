@@ -1,0 +1,41 @@
+{
+  "event": "All at once there was heard a violent knocking at the door, and the old King, the Prince's father, went out himself to open it.",
+  "sub_events": [
+    {
+      "prompt": "A violent knock on a wooden door.",
+      "start": 2.46,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "eid": "s5e0",
+      "origin": "explicit",
+      "voice_key": "door_knock",
+      "source_wav": "samples/door_knock.wav",
+      "file": "compose/compose_All_at_once_there_was_heard_a_violen_1031_003626_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.195,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 2.96,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_All_at_once_there_was_heard_a_violen_1031_003626_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.0050868988037109375
+}

@@ -94,6 +94,7 @@ class RemoteGenerator:
         self.base = f"{u.scheme}://{u.netloc}{u.path.rstrip('/')}"
         self.headers = {"X-Token": urllib.parse.parse_qs(u.query).get("token", [""])[0]}
         self.model, self.name, self._http = model, f"{model}@colab", requests
+        self.max_batch = 24   # a 40 GB A100 holds far larger batches than a 12 GB laptop GPU; fewer tunnel round trips
         r = requests.get(f"{self.base}/info", params={"model_name": model}, headers=self.headers, timeout=900)
         r.raise_for_status()
         info = r.json()

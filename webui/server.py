@@ -631,54 +631,107 @@ def _windows(subs):
     return out
 
 
-def _story_render(sid, plan, ids, fresh=False):
+GEN_BUCKETS = (2.0, 4.0, 6.0, 10.0)   # generation lengths: similar lengths share a batch
+
+
+def _bucket(sec):
+    return next(b for b in GEN_BUCKETS if sec <= b + 1e-6)
+
+
+def _story_samples(sid, plan, model, ids, fresh):
+    """Generate every sample the sentences need in a few large batches, before any mixing:
+    one raw sample per voice_key (best of 2 candidates) and one single-prompt baseline per window.
+    Returns (voice_key -> sample path for these sentences, (sentence, window) -> baseline wave)."""
+    out_dir, sr = STORY_DIR / sid, model.sample_rate
+    voices = plan.setdefault("voices", {})
+    need, base_items = {}, []
+    for s in plan["sentences"]:
+        if s["id"] not in ids or not s["sub_events"]:
+            continue
+        for k, (w0, part) in enumerate(_windows(s["sub_events"])):
+            for x in part:
+                if fresh or x["voice_key"] not in voices:
+                    cap, longest, rep = need.get(x["voice_key"], (x["prompt"], 0.0, x))
+                    need[x["voice_key"]] = (cap, max(longest, x["duration"]), x if x["duration"] >= longest else rep)
+            base_items.append((s["id"], k, s["text"], max(p["start"] + p["duration"] for p in part)))
+    jobs = [("voice", vk, cap, _bucket(min(10.0, max(1.5, dur + 1.0))), rep) for vk, (cap, dur, rep) in need.items()]
+    jobs += [("base", (sid_, k), text, _bucket(min(10.0, dur)), None) for sid_, k, text, dur in base_items]
+    chosen, baselines = {}, {}
+    (out_dir / "samples").mkdir(parents=True, exist_ok=True)
+    for bucket in GEN_BUCKETS:
+        group = [j for j in jobs if j[3] == bucket]
+        if not group:
+            continue
+        prompts = []
+        for kind, key, cap, _, _ in group:
+            prompts += [cap] * (2 if kind == "voice" else 1)
+        _story_log(sid, "render", f"진동 샘플 {sum(j[0] == 'voice' for j in group)}개 + 베이스라인 {sum(j[0] == 'base' for j in group)}개 일괄 생성 ({bucket:.0f}초 묶음)")
+        wavs, k = cp._generate_batched(model, prompts, bucket, 3.0, 1.0, 250), 0
+        for kind, key, cap, _, rep in group:
+            if kind == "voice":
+                cands, k = wavs[k:k + 2], k + 2
+                best = max(cands, key=lambda w: cp._extract(w, sr, rep)[1])
+                name = re.sub(r"[^A-Za-z0-9_-]+", "_", key)[:40] + ("_fresh" if fresh else "") + ".wav"
+                sf.write(out_dir / "samples" / name, best, sr, subtype="FLOAT")
+                chosen[key] = f"samples/{name}"
+                if not fresh:
+                    voices[key] = chosen[key]
+            else:
+                baselines[key], k = wavs[k], k + 1
+    return {**voices, **chosen}, baselines
+
+
+def _story_render(sid, plan, ids, fresh=False, on_sentence=None):
     """Agent 6: per sentence, the explicit + inferred composite, an explicit-only remix of the same samples,
-    and a single-prompt baseline. voice_key -> raw sample keeps a source's vibration identical across
-    sentences (and across the windows of a long sentence). Waits for the GPU (other requests get 409)."""
+    and a single-prompt baseline. All samples are generated first in large batches (_story_samples); the
+    per-sentence mixing then needs no generation. voice_key -> one raw sample keeps a source's vibration
+    identical across sentences and across the windows of a long sentence. on_sentence(s) runs after each
+    sentence (save, critic). Waits for the GPU (other generation requests get 409 meanwhile)."""
     global _gen_busy
     out_dir = STORY_DIR / sid
-    voices = plan.setdefault("voices", {})
     with _gen_lock:
         _gen_busy = True
         try:
             model = _use_generator(plan.get("generator", "hapticgen"))
             sr = model.sample_rate
+            samples, baselines = _story_samples(sid, plan, model, ids, fresh)
             for s in plan["sentences"]:
                 if s["id"] not in ids:
                     continue
                 subs = s["sub_events"]
                 if not subs:
                     s["render"] = None
+                    if on_sentence:
+                        on_sentence(s)
                     continue
                 wins = _windows(subs)
-                _story_log(sid, "render", f"문장 {s['id'] + 1} 렌더링 ({len(subs)}개 사건" + (f", {len(wins)}구간)" if len(wins) > 1 else ")"))
                 total = max(x["start"] + x["duration"] for x in subs) + 0.1
                 mix = {k: np.zeros(int(total * sr) + 1, dtype=np.float32) for k in ("full", "explicit", "baseline")}
                 used, rendered, t0 = {"full": False, "explicit": False, "baseline": False}, [], time.time()
 
-                def add(kind, name, w0):
-                    w, _ = sf.read(out_dir / name, dtype="float32")
+                def add(kind, w, w0):
                     a = int(w0 * sr)
                     n = min(len(w), len(mix[kind]) - a)
                     mix[kind][a:a + n] += w[:n]
                     used[kind] = True
 
-                for w0, part in wins:
-                    body = [{**x, "source_wav": None if fresh else voices.get(x["voice_key"])} for x in part]
-                    r = cp.compose(model, s["text"], body, 2, True, 3.0, 1.0, 250, None, out_dir,
+                for k, (w0, part) in enumerate(wins):
+                    body = [{**x, "source_wav": samples.get(x["voice_key"])} for x in part]
+                    r = cp.compose(model, s["text"], body, 2, False, 3.0, 1.0, 250, None, out_dir,
                                    gamma=cp.DEFAULT_GAMMA, share_repeats=True)
-                    for o in r["sub_events"]:
-                        if o.get("source_wav") and o["voice_key"] not in voices:
-                            voices[o["voice_key"]] = o["source_wav"]
-                        rendered.append({**o, "start": round(o["start"] + w0, 3)})
-                    add("full", r["composite"], w0)
-                    if r["baseline"]:
-                        add("baseline", r["baseline"], w0)
+                    rendered += [{**o, "start": round(o["start"] + w0, 3)} for o in r["sub_events"]]
+                    full, _ = sf.read(out_dir / r["composite"], dtype="float32")
+                    add("full", full, w0)
+                    b = baselines.get((s["id"], k))
+                    if b is not None:   # level the baseline to the composite's peak, as compose() does
+                        n = int((max(p["start"] + p["duration"] for p in part)) * sr)
+                        b = b[:n] * (float(np.abs(full).max()) / max(1e-4, float(np.abs(b[:n]).max())))
+                        add("baseline", cp._fade(b, sr, cp.FADE_IN, cp.FADE_OUT), w0)
                     exp = [{**o} for o in r["sub_events"] if o["origin"] == "explicit"]
                     if exp:
                         ex = cp.compose(model, s["text"], exp, 1, False, 3.0, 1.0, 250, None, out_dir,
                                         gamma=cp.DEFAULT_GAMMA, share_repeats=True)
-                        add("explicit", ex["composite"], w0)
+                        add("explicit", sf.read(out_dir / ex["composite"], dtype="float32")[0], w0)
                 files = {}
                 for kind, w in mix.items():
                     if used[kind]:
@@ -692,24 +745,51 @@ def _story_render(sid, plan, ids, fresh=False):
                                          for k, f in files.items() if f},
                                "sub_events": [{k: o.get(k) for k in ("eid", "origin", "prompt", "start", "duration", "intensity",
                                                                      "voice_key", "reused", "source_wav")} for o in rendered]}
+                _story_log(sid, "render", f"문장 {s['id'] + 1} 완성")
+                if on_sentence:
+                    on_sentence(s)
         finally:
             _gen_busy = False
 
 
-def _story_critic(sid, plan, ids):
-    """Agent 7: signal check + LM judgement per sentence."""
-    _story_log(sid, "critic", "Critic 평가")
+def _critic_one(plan, s):
+    """Agent 7 for one sentence: signal check + LM judgement."""
+    if not s.get("render"):
+        return {"score": None, "issues": [], "action": "ok", "note": "진동 없음 (연출 결정 또는 사건 없음)"}
+    signal = s2h.signal_check(OUT_DIR / s["render"]["files"]["full"], s["sub_events"])
+    return s2h.critique(s, plan, signal, plan.get("model", s2h.AGENT_MODEL))
 
-    def one(s):
-        if not s.get("render"):
-            return {"score": None, "issues": [], "action": "ok", "note": "진동 없음 (연출 결정 또는 사건 없음)"}
-        signal = s2h.signal_check(OUT_DIR / s["render"]["files"]["full"], s["sub_events"])
-        return s2h.critique(s, plan, signal, plan.get("model", s2h.AGENT_MODEL))
 
-    targets = [s for s in plan["sentences"] if s["id"] in ids]
-    with s2h.ThreadPoolExecutor(6) as ex:
-        for s, c in zip(targets, ex.map(one, targets)):
+def _render_and_critic(sid, plan, ids, fresh=False):
+    """Render; each finished sentence is saved (playable at once) and judged by the critic in parallel."""
+    out_dir, pool, futures = STORY_DIR / sid, s2h.ThreadPoolExecutor(8), []
+    lock = threading.Lock()
+
+    def save():
+        with lock:
+            for _ in range(5):   # the render thread may add a key while we serialise; just try again
+                try:
+                    return s2h.save(plan, out_dir)
+                except RuntimeError:
+                    time.sleep(0.05)
+
+    def judged(s):
+        c = _critic_one(plan, s)
+        with lock:
             s["critic"] = c
+        save()
+
+    def done(s):
+        save()
+        futures.append(pool.submit(judged, s))
+
+    _story_log(sid, "render", "렌더링 시작 (완성된 문장부터 바로 재생할 수 있습니다)")
+    _story_render(sid, plan, ids, fresh, on_sentence=done)
+    _story_log(sid, "critic", "Critic 평가 마무리")
+    for f in futures:
+        f.result()
+    pool.shutdown()
+    save()
 
 
 def _story_job(sid, fn):
@@ -735,15 +815,12 @@ def story_run(req: StoryReq):
         plan.update(title=req.title or s2h.split_sentences(req.text)[0][:60], generator=req.generator)
         s2h.save(plan, out_dir)
         ids = [s["id"] for s in plan["sentences"]]
-        _story_render(sid, plan, ids)
-        s2h.save(plan, out_dir)
-        _story_critic(sid, plan, ids)
+        _render_and_critic(sid, plan, ids)
         # one automatic retry for sentences whose render missed planned impacts
         retry = [s["id"] for s in plan["sentences"] if s.get("critic", {}).get("action") == "rerender"]
         if retry:
             _story_log(sid, "render", f"Critic 요청으로 문장 {', '.join(str(i + 1) for i in retry)} 다시 렌더링")
-            _story_render(sid, plan, retry, fresh=True)
-            _story_critic(sid, plan, retry)
+            _render_and_critic(sid, plan, retry, fresh=True)
             for s in plan["sentences"]:
                 if s["id"] in retry:
                     s["critic"]["retried"] = True
@@ -795,9 +872,7 @@ def story_rerender(sid: str, i: int):
         raise HTTPException(409, "이 이야기는 이미 처리 중입니다")
 
     def work():
-        _story_render(sid, plan, [i], fresh=True)
-        _story_critic(sid, plan, [i])
-        s2h.save(plan, STORY_DIR / sid)
+        _render_and_critic(sid, plan, [i], fresh=True)
 
     _story_job(sid, work)
     return {"ok": True}

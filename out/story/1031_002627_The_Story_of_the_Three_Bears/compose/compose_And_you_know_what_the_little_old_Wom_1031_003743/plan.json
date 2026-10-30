@@ -1,0 +1,41 @@
+{
+  "event": "And you know what the little old Woman had done to the third chair.",
+  "sub_events": [
+    {
+      "prompt": "The chair breaks with a crack.",
+      "start": 2.96,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s38i0",
+      "origin": "inferred",
+      "voice_key": "chair_break",
+      "source_wav": "compose/compose_So_she_seated_herself_in_it_and_ther_1031_003440/src_01.wav",
+      "file": "compose/compose_And_you_know_what_the_little_old_Wom_1031_003743/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.11,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.46,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_you_know_what_the_little_old_Wom_1031_003743_composite.wav",
+  "baseline": "compose_And_you_know_what_the_little_old_Wom_1031_003743_baseline.wav",
+  "gen_duration": 3.46,
+  "prompts": 2,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 8.593522071838379,
+  "elapsed": 8.602133512496948
+}

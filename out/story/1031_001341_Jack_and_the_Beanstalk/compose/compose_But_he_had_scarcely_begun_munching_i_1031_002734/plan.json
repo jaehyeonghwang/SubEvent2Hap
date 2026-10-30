@@ -1,0 +1,101 @@
+{
+  "event": "But he had scarcely begun munching it as slowly as he could when thump! thump! thump! they heard the giant's footstep, and his wife hid Jack away in the oven.",
+  "sub_events": [
+    {
+      "prompt": "Ground shaking from the giant's footsteps.",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.7,
+      "eid": "s83i0",
+      "origin": "inferred",
+      "voice_key": "house_tremble",
+      "source_wav": "compose/compose_But_he_had_scarcely_begun_munching_i_1031_002734/src_01.wav",
+      "file": "compose/compose_But_he_had_scarcely_begun_munching_i_1031_002734/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0169,
+        0.008
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "A giant's footstep on the ground.",
+      "start": 4.34,
+      "duration": 0.4,
+      "intensity": 0.9,
+      "eid": "s83e0",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_But_he_had_scarcely_begun_munching_i_1031_002734/src_02.wav",
+      "file": "compose/compose_But_he_had_scarcely_begun_munching_i_1031_002734/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0461,
+        0.0338
+      ],
+      "offset": 0.081,
+      "shared": true,
+      "reused": false
+    },
+    {
+      "prompt": "A giant's footstep on the ground.",
+      "start": 5.3,
+      "duration": 0.4,
+      "intensity": 0.9,
+      "eid": "s83e1",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_But_he_had_scarcely_begun_munching_i_1031_002734/src_02.wav",
+      "file": "compose/compose_But_he_had_scarcely_begun_munching_i_1031_002734/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0461,
+        0.0338
+      ],
+      "offset": 0.081,
+      "shared": true,
+      "reused": false
+    },
+    {
+      "prompt": "A giant's footstep on the ground.",
+      "start": 5.68,
+      "duration": 0.4,
+      "intensity": 0.9,
+      "eid": "s83e2",
+      "origin": "explicit",
+      "voice_key": "ogre_steps",
+      "source_wav": "compose/compose_But_he_had_scarcely_begun_munching_i_1031_002734/src_02.wav",
+      "file": "compose/compose_But_he_had_scarcely_begun_munching_i_1031_002734/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0461,
+        0.0338
+      ],
+      "offset": 0.081,
+      "shared": true,
+      "reused": false
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_But_he_had_scarcely_begun_munching_i_1031_002734_composite.wav",
+  "baseline": "compose_But_he_had_scarcely_begun_munching_i_1031_002734_baseline.wav",
+  "gen_duration": 10.0,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 10.933960676193237,
+  "elapsed": 10.960087776184082
+}

@@ -1,0 +1,63 @@
+{
+  "event": "So Jack jumped up and dressed himself and went to the window.",
+  "sub_events": [
+    {
+      "prompt": "Jack jumps up from the floor.",
+      "start": 0.74,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s39e0",
+      "origin": "explicit",
+      "voice_key": "jack_jump",
+      "source_wav": "compose/compose_So_Jack_jumped_up_and_dressed_himsel_1031_002010/src_01.wav",
+      "file": "compose/compose_So_Jack_jumped_up_and_dressed_himsel_1031_002010/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0417,
+        0.7081
+      ],
+      "offset": 0.275,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "Jack lands on the floor after jumping.",
+      "start": 1.24,
+      "duration": 0.3,
+      "intensity": 0.6,
+      "eid": "s39i0",
+      "origin": "inferred",
+      "voice_key": "jack_land",
+      "source_wav": "compose/compose_So_Jack_jumped_up_and_dressed_himsel_1031_002010/src_02.wav",
+      "file": "compose/compose_So_Jack_jumped_up_and_dressed_himsel_1031_002010/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.07,
+        0.5141
+      ],
+      "offset": 0.096,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 1.54,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_So_Jack_jumped_up_and_dressed_himsel_1031_002010_composite.wav",
+  "baseline": "compose_So_Jack_jumped_up_and_dressed_himsel_1031_002010_baseline.wav",
+  "gen_duration": 1.54,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.601107120513916,
+  "elapsed": 1.610278606414795
+}

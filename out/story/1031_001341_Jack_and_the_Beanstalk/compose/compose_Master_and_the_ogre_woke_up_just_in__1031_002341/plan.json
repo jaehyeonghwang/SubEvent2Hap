@@ -1,0 +1,41 @@
+{
+  "event": "Master!” and the ogre woke up just in time to see Jack running off with his harp.",
+  "sub_events": [
+    {
+      "prompt": "A giant ogre waking up from sleep.",
+      "start": 2.62,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "eid": "s113e0",
+      "origin": "explicit",
+      "voice_key": "ogre_wake",
+      "source_wav": "compose/compose_But_this_time_the_hen_gave_a_cackle__1031_002230/src_02.wav",
+      "file": "compose/compose_Master_and_the_ogre_woke_up_just_in__1031_002341/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.286,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.12,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Master_and_the_ogre_woke_up_just_in__1031_002341_composite.wav",
+  "baseline": "compose_Master_and_the_ogre_woke_up_just_in__1031_002341_baseline.wav",
+  "gen_duration": 3.12,
+  "prompts": 2,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.592697858810425,
+  "elapsed": 2.598250389099121
+}

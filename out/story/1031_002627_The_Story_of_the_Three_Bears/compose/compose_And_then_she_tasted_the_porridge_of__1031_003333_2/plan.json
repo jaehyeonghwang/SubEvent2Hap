@@ -1,0 +1,41 @@
+{
+  "event": "And then she tasted the porridge of the Middle Bear, and that was too cold for her; and she said a bad word about that too.",
+  "sub_events": [
+    {
+      "prompt": "The old Woman tastes the cold porridge from the middle-sized pot.",
+      "start": 1.28,
+      "duration": 0.4,
+      "intensity": 0.3,
+      "eid": "s13e0",
+      "origin": "explicit",
+      "voice_key": "porridge_taste_cold",
+      "source_wav": "compose/compose_And_then_she_tasted_the_porridge_of__1031_003333/src_01.wav",
+      "file": "compose/compose_And_then_she_tasted_the_porridge_of__1031_003333_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.161,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.6800000000000002,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_then_she_tasted_the_porridge_of__1031_003333_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.00501561164855957,
+  "elapsed": 0.011138677597045898
+}

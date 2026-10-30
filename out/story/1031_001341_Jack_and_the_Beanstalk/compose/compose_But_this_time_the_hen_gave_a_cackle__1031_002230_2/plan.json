@@ -1,0 +1,57 @@
+{
+  "event": "But this time the hen gave a cackle which woke the ogre, and just as Jack got out of the house he heard him calling: “Wife, wife, what have you done with my golden hen?",
+  "sub_events": [
+    {
+      "prompt": "The hen cackles loudly.",
+      "start": 2.38,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "eid": "s90e0",
+      "origin": "explicit",
+      "voice_key": "hen_cackle",
+      "source_wav": "compose/compose_But_this_time_the_hen_gave_a_cackle__1031_002230/src_01.wav",
+      "file": "compose/compose_But_this_time_the_hen_gave_a_cackle__1031_002230_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.738,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "The ogre wakes up suddenly.",
+      "start": 2.98,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s90e1",
+      "origin": "explicit",
+      "voice_key": "ogre_wake",
+      "source_wav": "compose/compose_But_this_time_the_hen_gave_a_cackle__1031_002230/src_02.wav",
+      "file": "compose/compose_But_this_time_the_hen_gave_a_cackle__1031_002230_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.286,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.28,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_But_this_time_the_hen_gave_a_cackle__1031_002230_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.007906436920166016,
+  "elapsed": 0.01398777961730957
+}

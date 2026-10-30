@@ -1,0 +1,73 @@
+{
+  "event": "One evening a fearful tempest arose, it thundered and lightened, and the rain poured down from the sky in torrents: besides, it was as dark as pitch.",
+  "sub_events": [
+    {
+      "prompt": "Strong winds blow fiercely during the tempest.",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.7,
+      "eid": "s4i0",
+      "origin": "inferred",
+      "voice_key": "wind_blow",
+      "source_wav": "samples/wind_blow.wav",
+      "file": "compose/compose_One_evening_a_fearful_tempest_arose__1031_003626/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Thunder rumbles through the sky.",
+      "start": 3.96,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "eid": "s4e0",
+      "origin": "explicit",
+      "voice_key": "thunder_rumble",
+      "source_wav": "samples/thunder_rumble.wav",
+      "file": "compose/compose_One_evening_a_fearful_tempest_arose__1031_003626/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.047,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Heavy rain pours down from the sky.",
+      "start": 6.22,
+      "duration": 1.5,
+      "intensity": 0.9,
+      "eid": "s4e2",
+      "origin": "explicit",
+      "voice_key": "rain_pour",
+      "source_wav": "samples/rain_pour.wav",
+      "file": "compose/compose_One_evening_a_fearful_tempest_arose__1031_003626/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.471,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_One_evening_a_fearful_tempest_arose__1031_003626_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.028981447219848633,
+  "elapsed": 0.038230180740356445
+}

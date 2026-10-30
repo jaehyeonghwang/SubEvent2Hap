@@ -1,0 +1,44 @@
+{
+  "event": "Once upon a time there were Three Bears, who lived together in a house of their own, in a wood.",
+  "sub_events": [
+    {
+      "prompt": "Ambient rustling of leaves in the wood",
+      "start": 0.0,
+      "duration": 7.5,
+      "intensity": 0.1,
+      "eid": "s0i0",
+      "origin": "inferred",
+      "voice_key": "wood_rustling",
+      "source_wav": "compose/compose_Once_upon_a_time_there_were_Three_Be_1031_004348/src_01.wav",
+      "file": "compose/compose_Once_upon_a_time_there_were_Three_Be_1031_004348/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0013,
+        0.0187
+      ],
+      "offset": 0.001,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 7.5,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Once_upon_a_time_there_were_Three_Be_1031_004348_composite.wav",
+  "baseline": "compose_Once_upon_a_time_there_were_Three_Be_1031_004348_baseline.wav",
+  "gen_duration": 8.5,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 26.692960262298584,
+  "elapsed": 26.707885265350342
+}

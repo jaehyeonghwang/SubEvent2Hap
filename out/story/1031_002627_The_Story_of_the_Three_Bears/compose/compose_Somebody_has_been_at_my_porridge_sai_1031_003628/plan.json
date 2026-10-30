@@ -1,0 +1,44 @@
+{
+  "event": "“Somebody has been at my porridge!” said the Middle Bear in his middle voice.",
+  "sub_events": [
+    {
+      "prompt": "Middle Bear's voice resonates",
+      "start": 5.12,
+      "duration": 0.5,
+      "intensity": 0.3,
+      "eid": "s30i0",
+      "origin": "inferred",
+      "voice_key": "middle_bear_speak",
+      "source_wav": "compose/compose_Somebody_has_been_at_my_porridge_sai_1031_003628/src_01.wav",
+      "file": "compose/compose_Somebody_has_been_at_my_porridge_sai_1031_003628/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.326,
+        0.3997
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 5.62,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Somebody_has_been_at_my_porridge_sai_1031_003628_composite.wav",
+  "baseline": "compose_Somebody_has_been_at_my_porridge_sai_1031_003628_baseline.wav",
+  "gen_duration": 5.62,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 17.77390432357788,
+  "elapsed": 17.787587881088257
+}

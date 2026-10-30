@@ -1,0 +1,63 @@
+{
+  "event": "At last waking up, and moving as fast as he could, he saw the Tortoise had reached the goal, and was comfortably dozing after her fatigue.",
+  "sub_events": [
+    {
+      "prompt": "The Hare moves quickly on the ground.",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.7,
+      "eid": "s5e1",
+      "origin": "explicit",
+      "voice_key": "hare_moving",
+      "source_wav": "compose/compose_At_last_waking_up_and_moving_as_fast_1031_004320/src_01.wav",
+      "file": "compose/compose_At_last_waking_up_and_moving_as_fast_1031_004320/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0095,
+        0.0093
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The Hare wakes up on the ground.",
+      "start": 1.2,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s5e0",
+      "origin": "explicit",
+      "voice_key": "hare_waking",
+      "source_wav": "compose/compose_At_last_waking_up_and_moving_as_fast_1031_004320/src_02.wav",
+      "file": "compose/compose_At_last_waking_up_and_moving_as_fast_1031_004320/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0009,
+        0.0493
+      ],
+      "offset": 1.538,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_At_last_waking_up_and_moving_as_fast_1031_004320_composite.wav",
+  "baseline": "compose_At_last_waking_up_and_moving_as_fast_1031_004320_baseline.wav",
+  "gen_duration": 10.0,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 38.51040863990784,
+  "elapsed": 38.534584522247314
+}

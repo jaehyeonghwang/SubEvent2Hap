@@ -1,0 +1,63 @@
+{
+  "event": "At his belt he had three calves strung up by the heels, and he unhooked them and threw them down on the table and said: “Here, wife, broil me a couple of these for breakfast.",
+  "sub_events": [
+    {
+      "prompt": "Calves are unhooked from a belt.",
+      "start": 4.94,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s63e0",
+      "origin": "explicit",
+      "voice_key": "calves_unhook",
+      "source_wav": "compose/compose_At_his_belt_he_had_three_calves_stru_1031_002110/src_01.wav",
+      "file": "compose/compose_At_his_belt_he_had_three_calves_stru_1031_002110/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.063,
+        0.0109
+      ],
+      "offset": 0.843,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "Calves are thrown onto a wooden table.",
+      "start": 6.04,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "eid": "s63e1",
+      "origin": "explicit",
+      "voice_key": "calves_throw",
+      "source_wav": "compose/compose_At_his_belt_he_had_three_calves_stru_1031_002110/src_02.wav",
+      "file": "compose/compose_At_his_belt_he_had_three_calves_stru_1031_002110/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.671,
+        0.602
+      ],
+      "offset": 0.839,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 6.54,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_At_his_belt_he_had_three_calves_stru_1031_002110_composite.wav",
+  "baseline": "compose_At_his_belt_he_had_three_calves_stru_1031_002110_baseline.wav",
+  "gen_duration": 6.54,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.464411973953247,
+  "elapsed": 5.4801344871521
+}

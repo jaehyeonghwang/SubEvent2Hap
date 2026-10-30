@@ -1,0 +1,44 @@
+{
+  "event": "The Hare, lying down by the wayside, fell fast asleep.",
+  "sub_events": [
+    {
+      "prompt": "Hare falling asleep on the ground.",
+      "start": 3.78,
+      "duration": 0.6,
+      "intensity": 0.4,
+      "eid": "s4e1",
+      "origin": "explicit",
+      "voice_key": "hare_fell_asleep",
+      "source_wav": "compose/compose_The_Hare_lying_down_by_the_wayside_f_1031_004241/src_01.wav",
+      "file": "compose/compose_The_Hare_lying_down_by_the_wayside_f_1031_004241/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.1923,
+        0.0112
+      ],
+      "offset": 0.558,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 4.38,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_Hare_lying_down_by_the_wayside_f_1031_004241_composite.wav",
+  "baseline": "compose_The_Hare_lying_down_by_the_wayside_f_1031_004241_baseline.wav",
+  "gen_duration": 4.38,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 13.998019456863403,
+  "elapsed": 14.009051084518433
+}

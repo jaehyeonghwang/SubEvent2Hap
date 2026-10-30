@@ -1,0 +1,44 @@
+{
+  "event": "But the harp called out quite loud: “Master!",
+  "sub_events": [
+    {
+      "prompt": "Harp vibrating loudly",
+      "start": 1.76,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "eid": "s112i0",
+      "origin": "inferred",
+      "voice_key": "golden_harp",
+      "source_wav": "compose/compose_But_the_harp_called_out_quite_loud_M_1031_002857/src_01.wav",
+      "file": "compose/compose_But_the_harp_called_out_quite_loud_M_1031_002857/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.1216,
+        0.2615
+      ],
+      "offset": 1.355,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 2.76,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_But_the_harp_called_out_quite_loud_M_1031_002857_composite.wav",
+  "baseline": "compose_But_the_harp_called_out_quite_loud_M_1031_002857_baseline.wav",
+  "gen_duration": 2.76,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.0250027179718018,
+  "elapsed": 3.035715103149414
+}

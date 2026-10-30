@@ -1,0 +1,44 @@
+{
+  "event": "“I told you you couldn't guess, what do you say to these beans; they're magical, plant them over-night and----” “What!” says Jack's mother, “have you been such a fool, such a dolt, such an idiot, as to give away my Milky-white, the best milker in the parish, and prime beef to boot, for a set of paltry beans.",
+  "sub_events": [
+    {
+      "prompt": "Jack's mother shouting in anger",
+      "start": 0.2,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "eid": "s28i0",
+      "origin": "inferred",
+      "voice_key": "widow_voice",
+      "source_wav": "compose/compose_I_told_you_you_couldn_t_guess_what_d_1031_001950/src_01.wav",
+      "file": "compose/compose_I_told_you_you_couldn_t_guess_what_d_1031_001950/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.37,
+        0.1017
+      ],
+      "offset": 0.018,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 1.2,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_told_you_you_couldn_t_guess_what_d_1031_001950_composite.wav",
+  "baseline": "compose_I_told_you_you_couldn_t_guess_what_d_1031_001950_baseline.wav",
+  "gen_duration": 2.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.7606863975524902,
+  "elapsed": 1.7697415351867676
+}

@@ -1,0 +1,57 @@
+{
+  "event": "She then laid twenty mattresses one upon another over the three peas, and put twenty feather beds over the mattresses.",
+  "sub_events": [
+    {
+      "prompt": "A mattress is laid on top of another.",
+      "start": 2.02,
+      "duration": 0.4,
+      "intensity": 0.5,
+      "eid": "s10e0",
+      "origin": "explicit",
+      "voice_key": "mattress_laid",
+      "source_wav": "samples/mattress_laid.wav",
+      "file": "compose/compose_She_then_laid_twenty_mattresses_one__1031_003626/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.47,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "A feather bed is placed on top of the mattresses.",
+      "start": 6.66,
+      "duration": 0.4,
+      "intensity": 0.5,
+      "eid": "s10e1",
+      "origin": "explicit",
+      "voice_key": "feather_bed_put",
+      "source_wav": "samples/feather_bed_put.wav",
+      "file": "compose/compose_She_then_laid_twenty_mattresses_one__1031_003626/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.737,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 7.0600000000000005,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_She_then_laid_twenty_mattresses_one__1031_003626_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.01936793327331543,
+  "elapsed": 0.02543497085571289
+}

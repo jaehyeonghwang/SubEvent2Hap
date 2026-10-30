@@ -1,0 +1,44 @@
+{
+  "event": "And then she sate down in the chair of the Little, Small, Wee Bear, and that was neither too hard, nor too soft, but just right.",
+  "sub_events": [
+    {
+      "prompt": "The old Woman sits down on the wooden chair.",
+      "start": 1.52,
+      "duration": 0.4,
+      "intensity": 0.5,
+      "eid": "s17e0",
+      "origin": "explicit",
+      "voice_key": "wee_chair_sit",
+      "source_wav": "compose/compose_And_then_she_sate_down_in_the_chair__1031_003408/src_01.wav",
+      "file": "compose/compose_And_then_she_sate_down_in_the_chair__1031_003408/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0659,
+        0.057
+      ],
+      "offset": 1.591,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 1.92,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_And_then_she_sate_down_in_the_chair__1031_003408_composite.wav",
+  "baseline": "compose_And_then_she_sate_down_in_the_chair__1031_003408_baseline.wav",
+  "gen_duration": 1.92,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.775209188461304,
+  "elapsed": 6.7857959270477295
+}

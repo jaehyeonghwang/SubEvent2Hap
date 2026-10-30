@@ -1,0 +1,44 @@
+{
+  "event": "But she was an impudent, bad old Woman, and set about helping herself.",
+  "sub_events": [
+    {
+      "prompt": "The old Woman starts helping herself to the porridge.",
+      "start": 4.12,
+      "duration": 0.5,
+      "intensity": 0.5,
+      "eid": "s11e0",
+      "origin": "explicit",
+      "voice_key": "old_woman_helping",
+      "source_wav": "compose/compose_But_she_was_an_impudent_bad_old_Woma_1031_003313/src_01.wav",
+      "file": "compose/compose_But_she_was_an_impudent_bad_old_Woma_1031_003313/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0046,
+        0.1093
+      ],
+      "offset": 1.112,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 4.62,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_But_she_was_an_impudent_bad_old_Woma_1031_003313_composite.wav",
+  "baseline": "compose_But_she_was_an_impudent_bad_old_Woma_1031_003313_baseline.wav",
+  "gen_duration": 4.62,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 17.40466856956482,
+  "elapsed": 17.416930437088013
+}

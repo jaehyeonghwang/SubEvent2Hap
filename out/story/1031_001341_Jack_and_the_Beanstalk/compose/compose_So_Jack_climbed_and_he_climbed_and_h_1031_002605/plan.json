@@ -1,0 +1,44 @@
+{
+  "event": "So Jack climbed and he climbed and he climbed and he climbed and he climbed and he climbed and he climbed till at last he reached the sky.",
+  "sub_events": [
+    {
+      "prompt": "Jack climbs the plant beanstalk.",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.5,
+      "eid": "s43e0",
+      "origin": "explicit",
+      "voice_key": "jack_climb",
+      "source_wav": "compose/compose_So_Jack_climbed_and_he_climbed_and_h_1031_002605/src_01.wav",
+      "file": "compose/compose_So_Jack_climbed_and_he_climbed_and_h_1031_002605/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0244,
+        0.0115
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_So_Jack_climbed_and_he_climbed_and_h_1031_002605_composite.wav",
+  "baseline": "compose_So_Jack_climbed_and_he_climbed_and_h_1031_002605_baseline.wav",
+  "gen_duration": 10.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 9.35149073600769,
+  "elapsed": 9.362224817276001
+}

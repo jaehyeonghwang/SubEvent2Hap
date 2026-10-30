@@ -1,0 +1,41 @@
+{
+  "event": "But the harp called out quite loud: “Master!",
+  "sub_events": [
+    {
+      "prompt": "Harp vibrating loudly",
+      "start": 1.76,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "eid": "s112i0",
+      "origin": "inferred",
+      "voice_key": "golden_harp",
+      "source_wav": "compose/compose_Then_he_said_Sing_and_the_golden_har_1031_002328/src_01.wav",
+      "file": "compose/compose_But_the_harp_called_out_quite_loud_M_1031_002338/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 2.373,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 2.76,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_But_the_harp_called_out_quite_loud_M_1031_002338_composite.wav",
+  "baseline": "compose_But_the_harp_called_out_quite_loud_M_1031_002338_baseline.wav",
+  "gen_duration": 2.76,
+  "prompts": 2,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.2804036140441895,
+  "elapsed": 2.28714919090271
+}

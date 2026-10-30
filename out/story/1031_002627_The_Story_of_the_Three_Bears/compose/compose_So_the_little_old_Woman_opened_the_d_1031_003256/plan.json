@@ -1,0 +1,63 @@
+{
+  "event": "So the little old Woman opened the door, and went in; and well pleased she was when she saw the porridge on the table.",
+  "sub_events": [
+    {
+      "prompt": "A wooden door opened.",
+      "start": 1.6,
+      "duration": 0.4,
+      "intensity": 0.6,
+      "eid": "s9e0",
+      "origin": "explicit",
+      "voice_key": "door_open",
+      "source_wav": "compose/compose_So_the_little_old_Woman_opened_the_d_1031_003256/src_01.wav",
+      "file": "compose/compose_So_the_little_old_Woman_opened_the_d_1031_003256/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0726,
+        0.5623
+      ],
+      "offset": 0.702,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The floor creaked as she walked in.",
+      "start": 4.56,
+      "duration": 1.0,
+      "intensity": 0.2,
+      "eid": "s9i2",
+      "origin": "inferred",
+      "voice_key": "floor_creak",
+      "source_wav": "compose/compose_So_the_little_old_Woman_opened_the_d_1031_003256/src_02.wav",
+      "file": "compose/compose_So_the_little_old_Woman_opened_the_d_1031_003256/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0067,
+        0.0316
+      ],
+      "offset": 0.296,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 5.56,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_So_the_little_old_Woman_opened_the_d_1031_003256_composite.wav",
+  "baseline": "compose_So_the_little_old_Woman_opened_the_d_1031_003256_baseline.wav",
+  "gen_duration": 5.56,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 33.662936210632324,
+  "elapsed": 33.6814398765564
+}

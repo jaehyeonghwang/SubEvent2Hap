@@ -1,0 +1,82 @@
+{
+  "event": "But this time the hen gave a cackle which woke the ogre, and just as Jack got out of the house he heard him calling: “Wife, wife, what have you done with my golden hen?",
+  "sub_events": [
+    {
+      "prompt": "The hen cackles loudly.",
+      "start": 2.38,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "eid": "s90e0",
+      "origin": "explicit",
+      "voice_key": "hen_cackle",
+      "source_wav": "compose/compose_But_this_time_the_hen_gave_a_cackle__1031_002805/src_01.wav",
+      "file": "compose/compose_But_this_time_the_hen_gave_a_cackle__1031_002805/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0326,
+        0.2226
+      ],
+      "offset": 0.465,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The ogre wakes up suddenly.",
+      "start": 2.98,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s90e1",
+      "origin": "explicit",
+      "voice_key": "ogre_wake",
+      "source_wav": "compose/compose_But_this_time_the_hen_gave_a_cackle__1031_002805/src_02.wav",
+      "file": "compose/compose_But_this_time_the_hen_gave_a_cackle__1031_002805/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.1134,
+        0.2913
+      ],
+      "offset": 0.142,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The ogre's voice booms as he calls.",
+      "start": 6.98,
+      "duration": 1.0,
+      "intensity": 0.6,
+      "eid": "s90i1",
+      "origin": "inferred",
+      "voice_key": "big_tall_woman_voice",
+      "source_wav": "compose/compose_But_this_time_the_hen_gave_a_cackle__1031_002805/src_03.wav",
+      "file": "compose/compose_But_this_time_the_hen_gave_a_cackle__1031_002805/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.2141,
+        0.1373
+      ],
+      "offset": 1.564,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 7.98,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_But_this_time_the_hen_gave_a_cackle__1031_002805_composite.wav",
+  "baseline": "compose_But_this_time_the_hen_gave_a_cackle__1031_002805_baseline.wav",
+  "gen_duration": 7.98,
+  "prompts": 8,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 16.58004665374756,
+  "elapsed": 16.60809850692749
+}

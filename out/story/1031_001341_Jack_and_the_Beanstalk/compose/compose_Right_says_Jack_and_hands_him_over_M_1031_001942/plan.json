@@ -1,0 +1,44 @@
+{
+  "event": "“Right,” says Jack, and hands him over Milky-white's halter and pockets the beans.",
+  "sub_events": [
+    {
+      "prompt": "Jack hands over Milky-white's halter.",
+      "start": 4.1,
+      "duration": 0.4,
+      "intensity": 0.4,
+      "eid": "s20e0",
+      "origin": "explicit",
+      "voice_key": "halter_hand_over",
+      "source_wav": "compose/compose_Right_says_Jack_and_hands_him_over_M_1031_001942/src_01.wav",
+      "file": "compose/compose_Right_says_Jack_and_hands_him_over_M_1031_001942/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0325,
+        0.2288
+      ],
+      "offset": 0.606,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 4.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Right_says_Jack_and_hands_him_over_M_1031_001942_composite.wav",
+  "baseline": "compose_Right_says_Jack_and_hands_him_over_M_1031_001942_baseline.wav",
+  "gen_duration": 4.5,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.699007749557495,
+  "elapsed": 3.706693649291992
+}

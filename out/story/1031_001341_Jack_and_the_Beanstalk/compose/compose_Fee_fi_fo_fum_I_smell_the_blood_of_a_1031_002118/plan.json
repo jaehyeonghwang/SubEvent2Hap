@@ -1,0 +1,44 @@
+{
+  "event": "Fee-fi-fo-fum, I smell the blood of an Englishman, Be he alive, or be he dead I'll have his bones to grind my bread.",
+  "sub_events": [
+    {
+      "prompt": "The ogre grinds bones to make bread.",
+      "start": 8.54,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "eid": "s65e0",
+      "origin": "explicit",
+      "voice_key": "ogre_grind",
+      "source_wav": "compose/compose_Fee_fi_fo_fum_I_smell_the_blood_of_a_1031_002118/src_01.wav",
+      "file": "compose/compose_Fee_fi_fo_fum_I_smell_the_blood_of_a_1031_002118/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0068,
+        0.2025
+      ],
+      "offset": 1.495,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 9.04,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Fee_fi_fo_fum_I_smell_the_blood_of_a_1031_002118_composite.wav",
+  "baseline": "compose_Fee_fi_fo_fum_I_smell_the_blood_of_a_1031_002118_baseline.wav",
+  "gen_duration": 9.04,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 7.328629016876221,
+  "elapsed": 7.341876268386841
+}

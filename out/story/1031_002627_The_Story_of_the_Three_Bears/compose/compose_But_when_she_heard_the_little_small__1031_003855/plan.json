@@ -1,0 +1,44 @@
+{
+  "event": "But when she heard the little, small, wee voice of the Little, Small, Wee Bear, it was so sharp, and so shrill, that it awakened her at once.",
+  "sub_events": [
+    {
+      "prompt": "Sharp and shrill voice vibrates",
+      "start": 2.72,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s49i0",
+      "origin": "inferred",
+      "voice_key": "wee_bear_speak",
+      "source_wav": "compose/compose_But_when_she_heard_the_little_small__1031_003855/src_01.wav",
+      "file": "compose/compose_But_when_she_heard_the_little_small__1031_003855/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.7373,
+        0.8388
+      ],
+      "offset": 1.54,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 3.22,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_But_when_she_heard_the_little_small__1031_003855_composite.wav",
+  "baseline": "compose_But_when_she_heard_the_little_small__1031_003855_baseline.wav",
+  "gen_duration": 3.22,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 10.69998288154602,
+  "elapsed": 10.71265721321106
+}

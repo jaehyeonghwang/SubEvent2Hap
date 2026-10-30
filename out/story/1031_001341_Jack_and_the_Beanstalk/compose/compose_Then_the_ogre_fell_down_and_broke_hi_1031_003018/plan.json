@@ -1,0 +1,101 @@
+{
+  "event": "Then the ogre fell down and broke his crown, and the beanstalk came toppling after.",
+  "sub_events": [
+    {
+      "prompt": "The ground shakes as the ogre falls.",
+      "start": 1.12,
+      "duration": 1.0,
+      "intensity": 0.8,
+      "eid": "s125i0",
+      "origin": "inferred",
+      "voice_key": "ground_shake",
+      "source_wav": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018/src_01.wav",
+      "file": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.1972,
+        0.286
+      ],
+      "offset": 0.438,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "A giant ogre falls to the ground.",
+      "start": 1.22,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "eid": "s125e0",
+      "origin": "explicit",
+      "voice_key": "ogre_fall",
+      "source_wav": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018/src_02.wav",
+      "file": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.2572,
+        0.2447
+      ],
+      "offset": 0.051,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The ogre's crown breaks with a crack.",
+      "start": 2.66,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "eid": "s125e1",
+      "origin": "explicit",
+      "voice_key": "ogre_crown_break",
+      "source_wav": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018/src_03.wav",
+      "file": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.2566,
+        0.1149
+      ],
+      "offset": 0.274,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The beanstalk collapses to the ground.",
+      "start": 5.12,
+      "duration": 1.28,
+      "intensity": 0.9,
+      "eid": "s125e2",
+      "origin": "explicit",
+      "voice_key": "beanstalk_collapse",
+      "source_wav": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018/src_04.wav",
+      "file": "compose/compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0263,
+        0.0103
+      ],
+      "offset": 0.381,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 6.4,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018_composite.wav",
+  "baseline": "compose_Then_the_ogre_fell_down_and_broke_hi_1031_003018_baseline.wav",
+  "gen_duration": 6.4,
+  "prompts": 10,
+  "generated_units": 4,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 17.28631281852722,
+  "elapsed": 17.322410345077515
+}

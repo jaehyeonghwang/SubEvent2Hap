@@ -1,0 +1,57 @@
+{
+  "event": "Then Jack lifted up the copper-lid very quietly and got down like a mouse and crept on hands and knees till he got to the table when he got up and caught hold of the golden harp and dashed with it towards the door.",
+  "sub_events": [
+    {
+      "prompt": "Jack catching hold of the golden harp.",
+      "start": 0.82,
+      "duration": 0.2,
+      "intensity": 0.4,
+      "eid": "s111e3",
+      "origin": "explicit",
+      "voice_key": "jack_creep",
+      "source_wav": "compose/compose_Then_Jack_crept_out_of_the_oven_on_t_1031_002223/src_01.wav",
+      "file": "compose/compose_Then_Jack_lifted_up_the_copper_lid_v_1031_002336_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.127,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Jack dashing towards the door with the harp.",
+      "start": 2.82,
+      "duration": 0.6,
+      "intensity": 0.5,
+      "eid": "s111e4",
+      "origin": "explicit",
+      "voice_key": "jack_run",
+      "source_wav": "compose/compose_But_that_was_all_Jack_heard_for_he_r_1031_002235/src_01.wav",
+      "file": "compose/compose_Then_Jack_lifted_up_the_copper_lid_v_1031_002336_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.159,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.42,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Then_Jack_lifted_up_the_copper_lid_v_1031_002336_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.00606846809387207
+}

@@ -1,0 +1,63 @@
+{
+  "event": "The beanstalk grew up quite close past Jack's window, so all he had to do was to open it and give a jump on to the beanstalk which was made like a big plaited ladder.",
+  "sub_events": [
+    {
+      "prompt": "Jack opens the window.",
+      "start": 5.52,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s42e0",
+      "origin": "explicit",
+      "voice_key": "window_open",
+      "source_wav": "compose/compose_The_beanstalk_grew_up_quite_close_pa_1031_002027/src_01.wav",
+      "file": "compose/compose_The_beanstalk_grew_up_quite_close_pa_1031_002027/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0554,
+        0.261
+      ],
+      "offset": 0.703,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "Jack jumps onto the beanstalk.",
+      "start": 6.94,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "eid": "s42e1",
+      "origin": "explicit",
+      "voice_key": "jack_jump_beanstalk",
+      "source_wav": "compose/compose_The_beanstalk_grew_up_quite_close_pa_1031_002027/src_02.wav",
+      "file": "compose/compose_The_beanstalk_grew_up_quite_close_pa_1031_002027/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0619,
+        0.0123
+      ],
+      "offset": 0.044,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 7.340000000000001,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_beanstalk_grew_up_quite_close_pa_1031_002027_composite.wav",
+  "baseline": "compose_The_beanstalk_grew_up_quite_close_pa_1031_002027_baseline.wav",
+  "gen_duration": 7.340000000000001,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.974323272705078,
+  "elapsed": 5.991060733795166
+}
