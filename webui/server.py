@@ -885,6 +885,46 @@ def _story_plan(sid):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _schema_fields(model):
+    """Flatten a pydantic output model into (path, type, constraints) rows for display."""
+    rows = []
+
+    def walk(sch, prefix, defs):
+        for name, f in sch.get("properties", {}).items():
+            f = defs.get(f["$ref"].split("/")[-1], f) if "$ref" in f else f
+            t = f.get("type") or ("enum" if "enum" in f else "object")
+            if t == "array" and "$ref" in f.get("items", {}):
+                sub = defs[f["items"]["$ref"].split("/")[-1]]
+                rows.append((prefix + name + "[]", "list", ""))
+                walk(sub, prefix + name + "[].", defs)
+                continue
+            if "properties" in f:
+                rows.append((prefix + name, "object", ""))
+                walk(f, prefix + name + ".", defs)
+                continue
+            c = []
+            for k, label in (("enum", "값"), ("minimum", "최소"), ("maximum", "최대"), ("maxLength", "최대 글자"), ("maxItems", "최대 개수")):
+                if k in f:
+                    c.append(f"{label} {f[k]}")
+            if t == "array":
+                t = f"list of {f.get('items', {}).get('type', '?')}"
+            rows.append((prefix + name, t, ", ".join(c)))
+
+    full = model.model_json_schema()
+    walk(full, "", full.get("$defs", {}))
+    return [{"field": a, "type": b, "rule": c} for a, b, c in rows]
+
+
+@app.get("/api/story/prompts")
+def story_prompts():
+    """The Story2Hap agents exactly as the code runs them: prompt text, inputs and output schema."""
+    return {"model": s2h.AGENT_MODEL, "tts": {"model": s2h.TTS_MODEL, "instructions": s2h.TTS_INSTRUCTIONS},
+            "stt": s2h.STT_MODEL,
+            "agents": [{"key": a["key"], "calls": a["calls"], "inputs": a["inputs"], "prompt": getattr(s2h, a["prompt"]),
+                        "prompt_name": a["prompt"], "output_name": a["output"].__name__, "output": _schema_fields(a["output"])}
+                       for a in s2h.AGENTS]}
+
+
 @app.get("/api/story")
 def story_list():
     out = []

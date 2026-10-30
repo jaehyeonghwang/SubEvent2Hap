@@ -44,6 +44,8 @@ CLIP_MAX = 10.0          # HapticGen / composer limit per sentence
 TAIL = 0.4               # vibration may ring this long after the narration of a sentence ends
 
 # ---------------------------------------------------------------- prompts
+TTS_INSTRUCTIONS = "Read like a warm, expressive storyteller reading a picture book aloud. Natural pace."
+
 STATE_PROMPT = """You are the haptic storyboard designer of a narrated story (vibration felt in the hands
 while listening). Read the numbered sentences as a whole before deciding anything.
 1. Entities that can make or feel physical contact (characters, objects, places, weather) with a short
@@ -229,6 +231,25 @@ class Critique(dc.Output):
     action: Literal["ok", "rerender"]
 
 
+# What each agent is given and returns (shown on the /system page; the prompts above are the source).
+AGENTS = [
+    {"key": "story_state", "prompt": "STATE_PROMPT", "output": StoryState, "calls": f"이야기 전체, {CHUNK}문장씩 묶어서",
+     "inputs": ["sentences: 번호 붙은 문장들", "known_entities: 앞 묶음에서 찾은 인물과 물체", "story_so_far: 바로 앞 3문장"]},
+    {"key": "explicit", "prompt": "EVENT_PROMPT", "output": ExplicitEvents, "calls": "문장마다 1번 (12개 병렬)",
+     "inputs": ["sentence, words: 문장과 번호 붙은 단어 목록", f"before, after: 앞뒤 {CONTEXT}문장", "scene: 장면의 배경, 세기, 테마, 핵심 순간 여부",
+                "state: 문장별 상황", "entities: 인물과 물체, 재질"]},
+    {"key": "inference", "prompt": "INFERENCE_PROMPT", "output": InferredEvents, "calls": "문장마다 1번 (12개 병렬)",
+     "inputs": ["명시 사건 에이전트와 같은 문맥", "explicit_events: 이 문장에서 찾은 명시 사건 (겹치지 않게)"]},
+    {"key": "captions", "prompt": "CAPTION_PROMPT", "output": Captions, "calls": "사건 40개씩 묶어서 (8개 병렬)",
+     "inputs": ["items: 사건마다 id, 문장, 물체 이름과 재질, 동작, 초안 캡션"]},
+    {"key": "director", "prompt": "DIRECTOR_PROMPT", "output": Direction, "calls": f"이야기 전체, {CHUNK}문장씩 묶어서",
+     "inputs": ["scenes: 해당 묶음의 장면 설계", "sentences: 문장과 긴장도", "candidates: 확신도 임계값을 넘은 후보 사건",
+                f"max_events_per_sentence: {MAX_EVENTS}", "voice_keys_already_used: 앞 묶음에서 쓴 소리 이름"]},
+    {"key": "critic", "prompt": "CRITIC_PROMPT", "output": Critique, "calls": "렌더링이 끝난 문장마다 1번",
+     "inputs": ["sentence, context: 문장과 상황", "kept_events, dropped_events: 연출 결과", "signal: 계획한 충격과 파형에서 검출된 충격 비교"]},
+]
+
+
 # ---------------------------------------------------------------- helpers
 def split_sentences(text):
     text = re.sub(r"\s+", " ", text.strip())
@@ -255,7 +276,7 @@ def _openai_headers():
 def tts(sentence, voice, path):
     r = requests.post(f"{dc.OPENAI_URL}/audio/speech", headers=_openai_headers(), timeout=120, json={
         "model": TTS_MODEL, "voice": voice, "input": sentence, "response_format": "wav",
-        "instructions": "Read like a warm, expressive storyteller reading a picture book aloud. Natural pace."})
+        "instructions": TTS_INSTRUCTIONS})
     r.raise_for_status()
     pathlib.Path(path).write_bytes(r.content)
     info = sf.info(str(path))
