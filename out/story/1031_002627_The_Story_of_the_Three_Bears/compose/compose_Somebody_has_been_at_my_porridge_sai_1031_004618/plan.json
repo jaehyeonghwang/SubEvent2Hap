@@ -1,0 +1,44 @@
+{
+  "event": "“Somebody has been at my porridge!” said the Great, Huge Bear, in his great, rough, gruff voice.",
+  "sub_events": [
+    {
+      "prompt": "Great, Huge Bear's voice reverberates",
+      "start": 6.86,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s27i0",
+      "origin": "inferred",
+      "voice_key": "great_bear_speak",
+      "source_wav": "compose/compose_Somebody_has_been_at_my_porridge_sai_1031_004618/src_01.wav",
+      "file": "compose/compose_Somebody_has_been_at_my_porridge_sai_1031_004618/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0641,
+        0.0719
+      ],
+      "offset": 0.092,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 7.36,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Somebody_has_been_at_my_porridge_sai_1031_004618_composite.wav",
+  "baseline": "compose_Somebody_has_been_at_my_porridge_sai_1031_004618_baseline.wav",
+  "gen_duration": 7.36,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 23.799719095230103,
+  "elapsed": 23.812270641326904
+}

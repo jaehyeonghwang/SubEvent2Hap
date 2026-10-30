@@ -260,7 +260,8 @@ function fillDevices() {
   if (document.activeElement !== $("#vibDev"))
     $("#vibDev").innerHTML = opt("quest", "Quest 컨트롤러", cfg.vib === "quest") + devs.map(d => opt(d.id, d.name, cfg.vib === d.id)).join("");
   $("#voiceDev").disabled = $("#vibDev").disabled = !p.connected;
-  $("#devNote").textContent = p.connected ? `재생기: ${p.name} (${p.status || ""})` : "노트북에서 start_player.bat을 실행하면 장치 목록이 나타납니다.";
+  $("#devNote").textContent = p.connected ? `재생기: ${p.name} (${p.status || ""})` + (p.error ? ` (재생 오류: ${p.error})` : "") : "노트북에서 start_player.bat을 실행하면 장치 목록이 나타납니다.";
+  $("#devNote").style.color = p.error ? "var(--err)" : "";
 }
 async function playerPoll() { try { playerInfo = await api("/api/player"); } catch { playerInfo = { connected: false }; } fillDevices(); }
 async function setDevices() {

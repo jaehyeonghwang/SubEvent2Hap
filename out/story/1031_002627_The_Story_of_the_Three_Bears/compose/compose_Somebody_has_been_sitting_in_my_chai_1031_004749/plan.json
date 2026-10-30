@@ -1,0 +1,44 @@
+{
+  "event": "“Somebody has been sitting in my chair!” said the Great, Huge Bear, in his great, rough, gruff voice.",
+  "sub_events": [
+    {
+      "prompt": "Great, Huge Bear speaks in a gruff voice",
+      "start": 7.62,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "eid": "s35i0",
+      "origin": "inferred",
+      "voice_key": "great_bear_speak",
+      "source_wav": "compose/compose_Somebody_has_been_sitting_in_my_chai_1031_004749/src_01.wav",
+      "file": "compose/compose_Somebody_has_been_sitting_in_my_chai_1031_004749/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0737,
+        0.0406
+      ],
+      "offset": 0.352,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 8.120000000000001,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Somebody_has_been_sitting_in_my_chai_1031_004749_composite.wav",
+  "baseline": "compose_Somebody_has_been_sitting_in_my_chai_1031_004749_baseline.wav",
+  "gen_duration": 8.120000000000001,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 25.515642404556274,
+  "elapsed": 25.528836011886597
+}

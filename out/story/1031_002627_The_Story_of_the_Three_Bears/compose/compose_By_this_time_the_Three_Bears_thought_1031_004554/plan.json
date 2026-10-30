@@ -1,0 +1,44 @@
+{
+  "event": "By this time the Three Bears thought their porridge would be cool enough; so they came home to breakfast.",
+  "sub_events": [
+    {
+      "prompt": "The Three Bears walk on the wooden floor.",
+      "start": 0.0,
+      "duration": 7.1,
+      "intensity": 0.3,
+      "eid": "s25e0",
+      "origin": "explicit",
+      "voice_key": "bear_return",
+      "source_wav": "compose/compose_By_this_time_the_Three_Bears_thought_1031_004554/src_01.wav",
+      "file": "compose/compose_By_this_time_the_Three_Bears_thought_1031_004554/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0445,
+        0.0279
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 7.1,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_By_this_time_the_Three_Bears_thought_1031_004554_composite.wav",
+  "baseline": "compose_By_this_time_the_Three_Bears_thought_1031_004554_baseline.wav",
+  "gen_duration": 8.1,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 25.35615587234497,
+  "elapsed": 25.37062382698059
+}

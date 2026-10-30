@@ -1032,7 +1032,7 @@ def player_info():
     if not remote.connected:
         return {"connected": False}
     st = remote.state
-    return {"connected": True, "name": remote.name, "status": st.get("status"), "ready": st.get("ready"),
+    return {"connected": True, "name": remote.name, "status": st.get("status"), "ready": st.get("ready"), "error": st.get("error"),
             "devices": st.get("devices", []), "config": st.get("config", {})}
 
 

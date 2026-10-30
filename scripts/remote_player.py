@@ -43,10 +43,11 @@ def ipv4_base(url):
 
 # ---------------------------------------------------------------- sound outputs
 def output_devices():
-    """Output devices of one host API (DirectSound if present: full names, shared mode, any rate)."""
+    """Output devices of one host API. WASAPI first: its names come from wide strings, so non-English
+    device names (e.g. Korean) are not garbled the way DirectSound/MME names can be on some systems."""
     import sounddevice as sd
     apis = [a["name"] for a in sd.query_hostapis()]
-    api = next((i for i, n in enumerate(apis) if "DirectSound" in n), None)
+    api = next((i for pref in ("WASAPI", "DirectSound", "MME") for i, n in enumerate(apis) if pref in n), None)
     default_out = sd.default.device[1]
     default_name = sd.query_devices(default_out)["name"] if default_out is not None and default_out >= 0 else ""
     out = []
@@ -82,7 +83,7 @@ class DeviceOut:
         info = sd.query_devices(self.device)
         self.name, self.rate = info["name"], int(info["default_samplerate"])
         self.channels = min(2, int(info["max_output_channels"]))
-        self._run_id, self._end = 0, 0.0
+        self._run_id, self._end, self.error = 0, 0.0, None
 
     @property
     def is_playing(self):
@@ -105,11 +106,17 @@ class DeviceOut:
             time.sleep(delay)
         if rid != self._run_id:
             return
-        with self.sd.OutputStream(device=self.device, samplerate=self.rate, channels=self.channels, dtype="float32") as st:
-            for k in range(0, len(out), 1024):
-                if rid != self._run_id:   # stopped or replaced
-                    break
-                st.write(out[k:k + 1024])
+        try:
+            with self.sd.OutputStream(device=self.device, samplerate=self.rate, channels=self.channels, dtype="float32") as st:
+                for k in range(0, len(out), 1024):
+                    if rid != self._run_id:   # stopped or replaced
+                        break
+                    st.write(out[k:k + 1024])
+            self.error = None
+        except Exception as exc:  # noqa: BLE001  reported to the web page through the status message
+            self.error = f"{self.name}: {type(exc).__name__}: {exc}"
+            self._end = 0.0
+            print(f"[player] playback error on {self.error}")
 
     def stop(self):
         self._run_id += 1
@@ -127,6 +134,11 @@ class Agent:
         self.quest = None
         self.vib_target = vib if vib is not None else cfg.get("vib", "quest")   # "quest" | device id
         self.voice_target = cfg.get("voice")                                     # device id | None (= default)
+        listed = {d["id"] for d in output_devices()}   # ids saved under another host API are not valid any more
+        if self.vib_target != "quest" and self.vib_target not in listed:
+            self.vib_target = "quest"
+        if self.voice_target is not None and self.voice_target not in listed:
+            self.voice_target = None
         self.outs = {}
         self.apply()
 
@@ -157,7 +169,9 @@ class Agent:
                 st, ready, playing = f"준비됨 (진동: {o.name})", True, o.is_playing
             except Exception as exc:  # noqa: BLE001
                 st, ready, playing = f"진동 장치 오류: {exc}", False, False
+        errors = [o.error for o in self.outs.values() if o.error]
         return {"type": "status", "status": st, "connected": ready, "ready": ready, "playing": playing,
+                "error": "; ".join(errors) or None,
                 "devices": output_devices(), "config": {"vib": self.vib_target, "voice": self.voice_target}}
 
     def vibrate(self, w, sr, gain, hand, loop=1):
