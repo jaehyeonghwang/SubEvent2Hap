@@ -1,0 +1,73 @@
+{
+  "event": "That was what the big billy-goat said; and so he flew at the Troll and poked his eyes out with his horns, and crushed him to bits, body and bones, and tossed him out into the burn, and after that he went up to the hill-side.",
+  "sub_events": [
+    {
+      "prompt": "Billy-goat Gruff tosses Troll into burn",
+      "start": 1.06,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "eid": "s29e3",
+      "origin": "explicit",
+      "voice_key": "billy_goat_toss",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.8,
+        "hardness": 0.3
+      },
+      "salience": 2,
+      "source_wav": "samples/synth_s29e3_1.wav",
+      "file": "compose/compose_That_was_what_the_big_billy_goat_sai_1031_015909_4/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.072,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Billy-goat Gruff climbs up hill-side",
+      "start": 4.76,
+      "duration": 1.14,
+      "intensity": 0.6,
+      "eid": "s29e4",
+      "origin": "explicit",
+      "voice_key": "s29e4",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 1.2,
+        "weight": 0.8,
+        "hardness": 0.6
+      },
+      "salience": null,
+      "source_wav": "samples/synth_s29e4_1.wav",
+      "file": "compose/compose_That_was_what_the_big_billy_goat_sai_1031_015909_4/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 5.8999999999999995,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_That_was_what_the_big_billy_goat_sai_1031_015909_4_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.0046117305755615234
+}

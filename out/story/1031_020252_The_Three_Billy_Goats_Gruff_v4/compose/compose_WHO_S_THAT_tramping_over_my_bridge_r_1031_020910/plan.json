@@ -1,0 +1,49 @@
+{
+  "event": "“WHO’S THAT tramping over my bridge?” roared the Troll.",
+  "sub_events": [
+    {
+      "prompt": "A troll's loud roar reverberates under the bridge.",
+      "start": 3.36,
+      "duration": 0.6,
+      "intensity": 1.0,
+      "eid": "s23e1",
+      "origin": "explicit",
+      "voice_key": "troll_roar",
+      "layer": "fg",
+      "family": "rumble",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.9,
+        "hardness": 0.5
+      },
+      "salience": 3,
+      "source_wav": "samples/synth_s23e1_0_fresh.wav",
+      "file": "compose/compose_WHO_S_THAT_tramping_over_my_bridge_r_1031_020910/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.96,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_WHO_S_THAT_tramping_over_my_bridge_r_1031_020910_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.004549503326416016,
+  "elapsed": 0.00958871841430664
+}

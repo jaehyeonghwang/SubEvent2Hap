@@ -1,0 +1,49 @@
+{
+  "event": "THE BIG BILLY-GOAT GRUFF”, said the billy-goat, who had an ugly hoarse voice of his own.",
+  "sub_events": [
+    {
+      "prompt": "The billy-goat Gruff's hoarse voice causes the bridge to vibrate slightly.",
+      "start": 5.2,
+      "duration": 0.58,
+      "intensity": 0.45,
+      "eid": "s25i0",
+      "origin": "inferred",
+      "voice_key": "bridge_vibration",
+      "layer": "fg",
+      "family": "shake",
+      "params": {
+        "rate": 6.0,
+        "weight": 0.5,
+        "hardness": 0.5
+      },
+      "salience": 1,
+      "source_wav": "samples/synth_s25i0_0.wav",
+      "file": "compose/compose_THE_BIG_BILLY_GOAT_GRUFF_said_the_bi_1031_020649/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 5.78,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_THE_BIG_BILLY_GOAT_GRUFF_said_the_bi_1031_020649_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.06096839904785156,
+  "elapsed": 0.07174086570739746
+}

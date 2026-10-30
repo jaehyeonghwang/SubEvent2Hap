@@ -1,0 +1,97 @@
+{
+  "event": "TRIP, TRAP!” went the bridge, for the billy-goat was so heavy that the bridge creaked and groaned under him.",
+  "sub_events": [
+    {
+      "prompt": "Wooden bridge creaking under weight",
+      "start": 0.0,
+      "duration": 7.1,
+      "intensity": 0.6,
+      "eid": "s22e2",
+      "origin": "explicit",
+      "voice_key": "s22e2",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.6
+      },
+      "salience": null,
+      "source_wav": "samples/s22e2.wav",
+      "file": "compose/compose_TRIP_TRAP_went_the_bridge_for_the_bi_1031_015907_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.092,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Wooden bridge groaning under pressure",
+      "start": 0.0,
+      "duration": 7.1,
+      "intensity": 0.5,
+      "eid": "s22e3",
+      "origin": "explicit",
+      "voice_key": "s22e3",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.6
+      },
+      "salience": null,
+      "source_wav": "samples/s22e3.wav",
+      "file": "compose/compose_TRIP_TRAP_went_the_bridge_for_the_bi_1031_015907_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 2.126,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Flowing water over rocks",
+      "start": 0.0,
+      "duration": 7.1,
+      "intensity": 0.3,
+      "eid": "s22b",
+      "origin": "explicit",
+      "voice_key": "bed_scene3",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.3,
+        "hardness": 0.2
+      },
+      "salience": null,
+      "source_wav": "samples/bed_scene3.wav",
+      "file": "compose/compose_TRIP_TRAP_went_the_bridge_for_the_bi_1031_015907_2/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 7.1,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_TRIP_TRAP_went_the_bridge_for_the_bi_1031_015907_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.011608362197875977,
+  "elapsed": 0.02499079704284668
+}

@@ -1,0 +1,121 @@
+{
+  "event": "She then laid twenty mattresses one upon another over the three peas, and put twenty feather beds over the mattresses.",
+  "sub_events": [
+    {
+      "prompt": "Mattress thuds onto a stack.",
+      "start": 0.92,
+      "duration": 0.4,
+      "intensity": 0.6,
+      "eid": "s10e0",
+      "origin": "explicit",
+      "voice_key": "mattress_thud",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.7,
+        "hardness": 0.5
+      },
+      "salience": 2,
+      "source_wav": "samples/synth_s10e0_0.wav",
+      "file": "compose/compose_She_then_laid_twenty_mattresses_one__1031_015616/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.002,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Mattresses compress under their own weight.",
+      "start": 1.76,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "eid": "s10i0",
+      "origin": "inferred",
+      "voice_key": "s10i0",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.7,
+        "hardness": 0.5
+      },
+      "salience": null,
+      "source_wav": "samples/s10i0.wav",
+      "file": "compose/compose_She_then_laid_twenty_mattresses_one__1031_015616/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.469,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Feather bed settles onto a stack.",
+      "start": 6.0,
+      "duration": 1.12,
+      "intensity": 0.6,
+      "eid": "s10e1",
+      "origin": "explicit",
+      "voice_key": "feather_bed_settle",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.3
+      },
+      "salience": 2,
+      "source_wav": "samples/feather_bed_settle.wav",
+      "file": "compose/compose_She_then_laid_twenty_mattresses_one__1031_015616/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.423,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Feather beds compress under their own weight.",
+      "start": 7.3,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "eid": "s10i1",
+      "origin": "inferred",
+      "voice_key": "s10i1",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.3
+      },
+      "salience": null,
+      "source_wav": "samples/s10i1.wav",
+      "file": "compose/compose_She_then_laid_twenty_mattresses_one__1031_015616/sub_04.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.077,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 7.8,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_She_then_laid_twenty_mattresses_one__1031_015616_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.025068283081054688,
+  "elapsed": 0.03405022621154785
+}

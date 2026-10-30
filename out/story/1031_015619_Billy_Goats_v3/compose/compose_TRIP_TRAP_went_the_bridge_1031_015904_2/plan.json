@@ -1,0 +1,73 @@
+{
+  "event": "TRIP, TRAP!” went the bridge.",
+  "sub_events": [
+    {
+      "prompt": "Water flowing under the bridge.",
+      "start": 0.0,
+      "duration": 3.3,
+      "intensity": 0.3,
+      "eid": "s13b",
+      "origin": "explicit",
+      "voice_key": "bed_scene2",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.2,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "source_wav": "samples/bed_scene2.wav",
+      "file": "compose/compose_TRIP_TRAP_went_the_bridge_1031_015904_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Bridge vibrating from footsteps.",
+      "start": 0.0,
+      "duration": 3.3,
+      "intensity": 0.4,
+      "eid": "s13i0",
+      "origin": "inferred",
+      "voice_key": "s13i0",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.7,
+        "hardness": 0.6
+      },
+      "salience": null,
+      "source_wav": "samples/s13i0.wav",
+      "file": "compose/compose_TRIP_TRAP_went_the_bridge_1031_015904_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 2.698,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.3,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_TRIP_TRAP_went_the_bridge_1031_015904_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.006239652633666992,
+  "elapsed": 0.018575668334960938
+}

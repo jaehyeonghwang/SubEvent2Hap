@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] “IT’S I!", "params": {"generator": "hapticgen@colab", "candidates": 1, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": null, "gamma": 1.6, "share_repeats": true, "sub_events": 1}, "created": 1793380150.8053882, "kind": "composite", "event": "“IT’S I!", "run": "compose_IT_S_I_1031_020910_4"}

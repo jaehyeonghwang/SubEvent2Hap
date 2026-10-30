@@ -1,0 +1,49 @@
+{
+  "event": "“WHO’S THAT tripping over my bridge?” roared the Troll.",
+  "sub_events": [
+    {
+      "prompt": "A billy-goat's hooves trip lightly",
+      "start": 0.0,
+      "duration": 5.45,
+      "intensity": 0.5,
+      "eid": "s14e0",
+      "origin": "explicit",
+      "voice_key": "billy_goat_trip",
+      "layer": "bed",
+      "family": "steps",
+      "params": {
+        "rate": 2.0,
+        "weight": 0.2,
+        "hardness": 0.5
+      },
+      "salience": 1,
+      "source_wav": "samples/synth_s14e0_0_fresh.wav",
+      "file": "compose/compose_WHO_S_THAT_tripping_over_my_bridge_r_1031_020908_4/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.002,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 5.45,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_WHO_S_THAT_tripping_over_my_bridge_r_1031_020908_4_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.0060536861419677734
+}

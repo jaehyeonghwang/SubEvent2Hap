@@ -1,0 +1,97 @@
+{
+  "event": "One evening a fearful tempest arose, it thundered and lightened, and the rain poured down from the sky in torrents: besides, it was as dark as pitch.",
+  "sub_events": [
+    {
+      "prompt": "Thunder rumbles across the sky.",
+      "start": 4.2,
+      "duration": 0.6,
+      "intensity": 0.8,
+      "eid": "s4e0",
+      "origin": "explicit",
+      "voice_key": "thunder_rumble",
+      "layer": "fg",
+      "family": "rumble",
+      "params": {
+        "rate": 0.0,
+        "weight": 1.0,
+        "hardness": 0.9
+      },
+      "salience": 2,
+      "source_wav": "samples/synth_s4e0_0.wav",
+      "file": "compose/compose_One_evening_a_fearful_tempest_arose__1031_015615/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Ground vibrates slightly from thunder.",
+      "start": 4.2,
+      "duration": 1.0,
+      "intensity": 0.4,
+      "eid": "s4i1",
+      "origin": "inferred",
+      "voice_key": "ground_rumble",
+      "layer": "fg",
+      "family": "rumble",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.5
+      },
+      "salience": 1,
+      "source_wav": "samples/synth_s4i1_0.wav",
+      "file": "compose/compose_One_evening_a_fearful_tempest_arose__1031_015615/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.046,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Rain splashes on the ground.",
+      "start": 6.18,
+      "duration": 2.84,
+      "intensity": 0.5,
+      "eid": "s4i0",
+      "origin": "inferred",
+      "voice_key": "rain_splash",
+      "layer": "fg",
+      "family": "rain",
+      "params": {
+        "rate": 25.0,
+        "weight": 0.5,
+        "hardness": 0.2
+      },
+      "salience": 1,
+      "source_wav": "samples/synth_s4i0_0.wav",
+      "file": "compose/compose_One_evening_a_fearful_tempest_arose__1031_015615/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.049,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.02,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_One_evening_a_fearful_tempest_arose__1031_015615_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.021357297897338867,
+  "elapsed": 0.02849435806274414
+}

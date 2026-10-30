@@ -1,0 +1,97 @@
+{
+  "event": "“Trip, trap; trip, trap!” went the bridge.",
+  "sub_events": [
+    {
+      "prompt": "Wooden bridge making a trip-trap sound.",
+      "start": 0.0,
+      "duration": 4.85,
+      "intensity": 0.9,
+      "eid": "s3e0",
+      "origin": "explicit",
+      "voice_key": "bridge_trip_trap",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.7,
+        "hardness": 0.6
+      },
+      "salience": 3,
+      "source_wav": "samples/bridge_trip_trap.wav",
+      "file": "compose/compose_Trip_trap_trip_trap_went_the_bridge_1031_015903/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Water flowing under the bridge.",
+      "start": 0.0,
+      "duration": 4.85,
+      "intensity": 0.3,
+      "eid": "s3b",
+      "origin": "explicit",
+      "voice_key": "bed_scene1",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.2,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "source_wav": "samples/bed_scene1.wav",
+      "file": "compose/compose_Trip_trap_trip_trap_went_the_bridge_1031_015903/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 2.975,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Bridge vibrating slightly as the goat crosses.",
+      "start": 0.0,
+      "duration": 4.85,
+      "intensity": 0.2,
+      "eid": "s3i0",
+      "origin": "inferred",
+      "voice_key": "s3i0",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.6
+      },
+      "salience": null,
+      "source_wav": "samples/s3i0.wav",
+      "file": "compose/compose_Trip_trap_trip_trap_went_the_bridge_1031_015903/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.85,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Trip_trap_trip_trap_went_the_bridge_1031_015903_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.020928382873535156,
+  "elapsed": 0.032523393630981445
+}

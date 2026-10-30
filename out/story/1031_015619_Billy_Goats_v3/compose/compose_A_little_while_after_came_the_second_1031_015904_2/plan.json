@@ -1,0 +1,73 @@
+{
+  "event": "A little while after came the second billy-goat Gruff to cross the bridge.",
+  "sub_events": [
+    {
+      "prompt": "A billy-goat stepping onto a wooden bridge.",
+      "start": 0.0,
+      "duration": 5.95,
+      "intensity": 0.7,
+      "eid": "s10e0",
+      "origin": "explicit",
+      "voice_key": "billy_goat_step_wood",
+      "layer": "bed",
+      "family": "steps",
+      "params": {
+        "rate": 2.0,
+        "weight": 0.5,
+        "hardness": 0.3
+      },
+      "salience": 2,
+      "source_wav": "samples/synth_s10e0_0.wav",
+      "file": "compose/compose_A_little_while_after_came_the_second_1031_015904_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.003,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Water flowing under the bridge.",
+      "start": 0.0,
+      "duration": 5.95,
+      "intensity": 0.3,
+      "eid": "s10b",
+      "origin": "explicit",
+      "voice_key": "bed_scene2",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.2,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "source_wav": "samples/bed_scene2.wav",
+      "file": "compose/compose_A_little_while_after_came_the_second_1031_015904_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 5.95,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_little_while_after_came_the_second_1031_015904_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.010605573654174805,
+  "elapsed": 0.01992654800415039
+}

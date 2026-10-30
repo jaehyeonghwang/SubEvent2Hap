@@ -1,0 +1,49 @@
+{
+  "event": "I’ve got two spears, And I’ll poke your eyeballs out at your ears; I’ve got besides two curling-stones, And I’ll crush you to bits, body and bones.",
+  "sub_events": [
+    {
+      "prompt": "Curling-stones crush with heavy pressure.",
+      "start": 0.0,
+      "duration": 1.3,
+      "intensity": 0.7,
+      "eid": "s28e1",
+      "origin": "explicit",
+      "voice_key": "billy_goat_crush",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.9,
+        "hardness": 0.9
+      },
+      "salience": 3,
+      "source_wav": "samples/billy_goat_crush_fresh.wav",
+      "file": "compose/compose_I_ve_got_two_spears_And_I_ll_poke_yo_1031_020911_5/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.32,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.3,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_ve_got_two_spears_And_I_ll_poke_yo_1031_020911_5_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0015101432800292969,
+  "elapsed": 0.007649421691894531
+}

@@ -1,0 +1,49 @@
+{
+  "event": "“Oh! it’s the second billy-goat Gruff, and I’m going up to the hill-side to make myself fat”, said the billy-goat, who hadn’t such a small voice.",
+  "sub_events": [
+    {
+      "prompt": "A goat steps on the wooden bridge",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.55,
+      "eid": "s15e0",
+      "origin": "explicit",
+      "voice_key": "billy_goat_step",
+      "layer": "bed",
+      "family": "steps",
+      "params": {
+        "rate": 2.0,
+        "weight": 0.5,
+        "hardness": 0.6
+      },
+      "salience": 1,
+      "source_wav": "samples/synth_s15e0_0.wav",
+      "file": "compose/compose_Oh_it_s_the_second_billy_goat_Gruff__1031_020647/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Oh_it_s_the_second_billy_goat_Gruff__1031_020647_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.006062030792236328,
+  "elapsed": 0.011597633361816406
+}

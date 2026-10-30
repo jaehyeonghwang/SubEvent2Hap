@@ -1,0 +1,73 @@
+{
+  "event": "Now it was plain that the lady must be a real Princess, since she had been able to feel the three little peas through the twenty mattresses and twenty feather beds.",
+  "sub_events": [
+    {
+      "prompt": "Body shifts slightly on the bed.",
+      "start": 5.18,
+      "duration": 1.66,
+      "intensity": 0.6,
+      "eid": "s17i0",
+      "origin": "inferred",
+      "voice_key": "s17i0",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.4
+      },
+      "salience": null,
+      "source_wav": "samples/s17i0.wav",
+      "file": "compose/compose_Now_it_was_plain_that_the_lady_must__1031_015616/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.689,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Pressure from peas felt through the bedding.",
+      "start": 5.68,
+      "duration": 0.6,
+      "intensity": 0.7,
+      "eid": "s17e0",
+      "origin": "explicit",
+      "voice_key": "peas_pressure",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.2,
+        "hardness": 0.9
+      },
+      "salience": 2,
+      "source_wav": "samples/peas_pressure.wav",
+      "file": "compose/compose_Now_it_was_plain_that_the_lady_must__1031_015616/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 6.84,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Now_it_was_plain_that_the_lady_must__1031_015616_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.010768651962280273,
+  "elapsed": 0.016875267028808594
+}

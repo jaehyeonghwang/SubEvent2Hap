@@ -147,7 +147,7 @@ details { margin-top: 10px; } summary { cursor: pointer; color: var(--muted); fo
     <div class="row" style="margin-top:12px; align-items:flex-end">
       <div class="field"><label for="voice">낭독 목소리</label><select id="voice"></select></div>
       <div class="field"><label for="threshold">추론 확신도 임계값 <b id="thV"></b></label><input type="range" id="threshold" min="0" max="1" step="0.05" value="0.5" style="width:180px"></div>
-      <div class="field"><label for="generator">진동 생성 모델</label><select id="generator"><option value="hapticgen">HapticGen</option><option value="audiogen">AudioGen (진동 변환)</option><option value="hapticgen@colab">HapticGen (Colab GPU)</option><option value="audiogen@colab">AudioGen (Colab GPU)</option></select></div>
+      <div class="field"><label for="generator">진동 생성 모델</label><select id="generator"><option value="auto" selected>자동 (Colab 우선, 없으면 로컬)</option><option value="hapticgen">HapticGen (로컬)</option><option value="audiogen">AudioGen (진동 변환)</option><option value="hapticgen@colab">HapticGen (Colab GPU)</option><option value="audiogen@colab">AudioGen (Colab GPU)</option></select></div>
       <span class="grow"></span>
       <button id="runBtn" class="accent big">Story2Hap 실행</button>
     </div>
@@ -346,7 +346,7 @@ function summary() {
   const scores = story.sentences.map(s => s.critic && s.critic.score).filter(x => typeof x === "number");
   add(`문장 <b>${story.sentences.length}</b>`); add(`명시 사건 <b>${ke}</b>`); add(`추론 사건 <b>${ki}</b> (제외 ${di})`);
   if (scores.length) add(`평균 Critic 점수 <b>${Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)}</b>`);
-  add(`목소리 <b>${esc(story.voice)}</b>, 임계값 <b>${story.threshold}</b>, 생성 <b>${esc(story.generator || "hapticgen")}</b>`);
+  add(`목소리 <b>${esc(story.voice)}</b>, 임계값 <b>${story.threshold}</b>, 생성 <b>${esc(story.generator_used || story.generator || "hapticgen")}</b>`);
 }
 
 function sentenceCard(s, i) {

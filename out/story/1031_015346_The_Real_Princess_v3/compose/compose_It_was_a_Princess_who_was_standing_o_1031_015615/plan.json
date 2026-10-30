@@ -1,0 +1,73 @@
+{
+  "event": "It was a Princess who was standing outside the door.",
+  "sub_events": [
+    {
+      "prompt": "Feet firmly planted on wet ground.",
+      "start": 0.0,
+      "duration": 4.6,
+      "intensity": 0.4,
+      "eid": "s6e0",
+      "origin": "explicit",
+      "voice_key": "feet_on_ground",
+      "layer": "bed",
+      "family": "steps",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.6,
+        "hardness": 0.5
+      },
+      "salience": 1,
+      "source_wav": "samples/synth_s6e0_0.wav",
+      "file": "compose/compose_It_was_a_Princess_who_was_standing_o_1031_015615/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.002,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Heavy rain and thunder shake the air.",
+      "start": 0.0,
+      "duration": 4.6,
+      "intensity": 0.7,
+      "eid": "s6b",
+      "origin": "explicit",
+      "voice_key": "bed_scene1",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 8.0,
+        "weight": 0.8,
+        "hardness": 0.5
+      },
+      "salience": null,
+      "source_wav": "samples/bed_scene1.wav",
+      "file": "compose/compose_It_was_a_Princess_who_was_standing_o_1031_015615/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 5.261,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.6,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_It_was_a_Princess_who_was_standing_o_1031_015615_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.010857105255126953,
+  "elapsed": 0.018459320068359375
+}

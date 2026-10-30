@@ -217,7 +217,7 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
     <div class="genrow">
       <button id="genBtn" class="accent big" title="Ctrl+Enter. 샘플이 있는 sub-event는 그대로 두고, 새것이나 설명이 바뀐 것만 생성합니다">생성 & 합성</button>
       <button id="allBtn" title="모든 sub-event를 새로 생성">전체 새로 생성</button>
-      <div class="field"><label for="generator">생성 모델</label><select id="generator"><option value="hapticgen">HapticGen</option><option value="audiogen">AudioGen (진동 변환)</option><option value="hapticgen@colab">HapticGen (Colab GPU)</option><option value="audiogen@colab">AudioGen (Colab GPU)</option></select></div>
+      <div class="field"><label for="generator">생성 모델</label><select id="generator"><option value="auto" selected>자동 (Colab 우선, 없으면 로컬)</option><option value="hapticgen">HapticGen (로컬)</option><option value="audiogen">AudioGen (진동 변환)</option><option value="hapticgen@colab">HapticGen (Colab GPU)</option><option value="audiogen@colab">AudioGen (Colab GPU)</option></select></div>
       <div class="field"><label for="seed">Seed</label><input type="number" id="seed" placeholder="랜덤"></div>
     </div>
 

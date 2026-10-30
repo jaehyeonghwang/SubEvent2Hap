@@ -1,0 +1,49 @@
+{
+  "event": "I’ve got two spears, And I’ll poke your eyeballs out at your ears; I’ve got besides two curling-stones, And I’ll crush you to bits, body and bones.",
+  "sub_events": [
+    {
+      "prompt": "A spear pokes with force.",
+      "start": 2.54,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s28e0",
+      "origin": "explicit",
+      "voice_key": "billy_goat_poke",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.7,
+        "hardness": 0.8
+      },
+      "salience": 2,
+      "source_wav": "samples/synth_s28e0_0.wav",
+      "file": "compose/compose_I_ve_got_two_spears_And_I_ll_poke_yo_1031_020650_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.035,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 2.84,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_ve_got_two_spears_And_I_ll_poke_yo_1031_020650_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.006041288375854492
+}

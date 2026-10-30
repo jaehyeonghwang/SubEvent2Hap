@@ -13,6 +13,7 @@ import os
 import pathlib
 import sys
 import threading
+import zlib
 import time
 import urllib.parse
 import urllib.request
@@ -38,6 +39,7 @@ import decompose as dc  # noqa: E402
 import bounce as bp  # noqa: E402
 import model_planner as mp  # noqa: E402
 import event_t2m as et  # noqa: E402
+import haptic_patterns as hp  # noqa: E402
 import story2hap as s2h  # noqa: E402
 from quest_haptic_play import QuestHapticPlayer  # noqa: E402
 
@@ -202,8 +204,16 @@ def colab_set(req: ColabReq):
 
 def _use_generator(name):
     """Return the requested generator, swapping it onto the GPU if another one is loaded (~30 s).
-    "<generator>@colab" runs on the remote worker instead and leaves the local GPU alone."""
+    "<generator>@colab" runs on the remote worker instead and leaves the local GPU alone.
+    "auto" (the default) uses HapticGen on Colab when the worker answers, otherwise the local GPU."""
     global _model, _model_name, _model_status
+    if name == "auto":
+        if _colab["url"] and colab_status().get("ok"):
+            try:
+                return _colab_generator("hapticgen")
+            except HTTPException:
+                pass
+        name = "hapticgen"
     if name.endswith("@colab"):
         return _colab_generator(name.removesuffix("@colab"))
     if name not in gens.GENERATORS:
@@ -492,7 +502,7 @@ class ComposeReq(BaseModel):
     seed: int | None = None
     gamma: float = Field(cp.DEFAULT_GAMMA, ge=0.5, le=3.0)
     share_repeats: bool = True
-    generator: str = Field("hapticgen", pattern="^(hapticgen|audiogen)(@colab)?$")
+    generator: str = Field("auto", pattern="^(auto|(hapticgen|audiogen)(@colab)?)$")
     physics: dict | None = None
     hierarchy: dict | None = None
 
@@ -500,7 +510,7 @@ class ComposeReq(BaseModel):
 @app.post("/api/compose")
 def compose(req: ComposeReq):
     global _gen_busy
-    if _model is None and not req.generator.endswith("@colab"):
+    if _model is None and not req.generator.endswith("@colab") and not (req.generator == "auto" and _colab["url"]):
         raise HTTPException(503, f"model {_model_status}")
     if max(s.start + s.duration for s in req.sub_events) > 10.0:
         raise HTTPException(422, "전체 길이가 10초를 넘습니다")
@@ -613,7 +623,7 @@ class StoryReq(BaseModel):
     title: str = Field("", max_length=80)
     voice: str = Field("fable", pattern="^(" + "|".join(s2h.VOICES) + ")$")
     threshold: float = Field(0.5, ge=0, le=1)
-    generator: str = Field("hapticgen", pattern="^(hapticgen|audiogen)(@colab)?$")
+    generator: str = Field("auto", pattern="^(auto|(hapticgen|audiogen)(@colab)?)$")
 
 
 def _story_log(sid, stage, msg):
@@ -660,6 +670,30 @@ def _duck(bg, fg, sr, depth=DUCK_DEPTH):
     return (bg * g).astype(np.float32)
 
 
+CANDIDATES = 4          # generated candidates per sample; the most vibration-like one is kept
+QC_LOW, QC_FLAT = 0.75, 0.65   # pass: >= 75% of energy below 300 Hz and spectral flatness <= 0.65
+
+
+def _haptic_quality(w, sr):
+    """(share of energy below 300 Hz, spectral flatness). Actuators render little above ~300 Hz, and a flat
+    spectrum is noise rather than a vibration (Scene2Hap keeps the least flat candidate for the same reason)."""
+    w = np.asarray(w, dtype=np.float64)
+    if len(w) < 64 or np.abs(w).max() < 1e-5:
+        return 0.0, 1.0
+    spec = np.abs(np.fft.rfft(w * np.hanning(len(w))))
+    fr = np.fft.rfftfreq(len(w), 1 / sr)
+    p = spec ** 2
+    low = float(p[fr < 300].sum() / (p.sum() + 1e-12))
+    flat = float(np.exp(np.mean(np.log(spec + 1e-9))) / (np.mean(spec) + 1e-9))
+    return low, flat
+
+
+def _band(w, sr, lo=40.0, hi=400.0):
+    """Keep the vibrotactile band (zero-phase Butterworth band-pass)."""
+    from scipy.signal import butter, sosfiltfilt
+    return sosfiltfilt(butter(4, [lo, hi], btype="band", fs=sr, output="sos"), w).astype(np.float32)
+
+
 GEN_BUCKETS = (2.0, 4.0, 6.0, 10.0)   # generation lengths: similar lengths share a batch
 
 
@@ -679,10 +713,13 @@ def _story_samples(sid, plan, model, ids, fresh):
             continue
         for k, (w0, part) in enumerate(_windows(s["sub_events"])):
             for x in part:
+                if x.get("family", "texture") != "texture":   # rhythmic families are synthesised, not generated
+                    continue
                 if fresh or x["voice_key"] not in voices:
                     cap, longest, rep = need.get(x["voice_key"], (x["prompt"], 0.0, x))
                     need[x["voice_key"]] = (cap, max(longest, x["duration"]), x if x["duration"] >= longest else rep)
-            base_items.append((s["id"], k, s["text"], max(p["start"] + p["duration"] for p in part)))
+            if not fresh:   # a re-render keeps the sentence's existing single-prompt baseline
+                base_items.append((s["id"], k, s["text"], max(p["start"] + p["duration"] for p in part)))
     jobs = [("voice", vk, cap, _bucket(min(10.0, max(1.5, dur + 1.0))), rep) for vk, (cap, dur, rep) in need.items()]
     jobs += [("base", (sid_, k), text, _bucket(min(10.0, dur)), None) for sid_, k, text, dur in base_items]
     chosen, baselines = {}, {}
@@ -693,20 +730,27 @@ def _story_samples(sid, plan, model, ids, fresh):
             continue
         prompts = []
         for kind, key, cap, _, _ in group:
-            prompts += [cap] * (2 if kind == "voice" else 1)
+            prompts += [cap] * (CANDIDATES if kind == "voice" else 1)
         _story_log(sid, "render", f"진동 샘플 {sum(j[0] == 'voice' for j in group)}개 + 베이스라인 {sum(j[0] == 'base' for j in group)}개 일괄 생성 ({bucket:.0f}초 묶음)")
         wavs, k = cp._generate_batched(model, prompts, bucket, 3.0, 1.0, 250), 0
         for kind, key, cap, _, rep in group:
             if kind == "voice":
-                cands, k = wavs[k:k + 2], k + 2
-                best = max(cands, key=lambda w: cp._extract(w, sr, rep)[1])
+                cands, k = wavs[k:k + CANDIDATES], k + CANDIDATES
+                q = [_haptic_quality(w, sr) for w in cands]
+                ok = [i for i, (low, flat) in enumerate(q) if low >= QC_LOW and flat <= QC_FLAT]
+                # among vibration-like candidates the best-fitting one; if none passes, the least noise-like
+                pick = max(ok, key=lambda i: cp._extract(cands[i], sr, rep)[1]) if ok else \
+                    max(range(len(cands)), key=lambda i: q[i][0] * (1 - q[i][1]))
+                best = _band(cands[pick], sr)
+                plan.setdefault("sample_qc", {})[key] = {"caption": cap, "passed": len(ok), "of": len(cands),
+                                                         "low": round(q[pick][0], 3), "flatness": round(q[pick][1], 3)}
                 name = re.sub(r"[^A-Za-z0-9_-]+", "_", key)[:40] + ("_fresh" if fresh else "") + ".wav"
                 sf.write(out_dir / "samples" / name, best, sr, subtype="FLOAT")
                 chosen[key] = f"samples/{name}"
                 if not fresh:
                     voices[key] = chosen[key]
-            else:
-                baselines[key], k = wavs[k], k + 1
+            else:   # the single-prompt baseline goes through the same output band as everything else
+                baselines[key], k = _band(wavs[k], sr), k + 1
     return {**voices, **chosen}, baselines
 
 
@@ -721,9 +765,17 @@ def _story_render(sid, plan, ids, fresh=False, on_sentence=None):
     with _gen_lock:
         _gen_busy = True
         try:
-            model = _use_generator(plan.get("generator", "hapticgen"))
+            model = _use_generator(plan.get("generator", "auto"))
+            try:
+                samples, baselines = _story_samples(sid, plan, model, ids, fresh)
+            except Exception as exc:  # noqa: BLE001  Colab tunnel gone mid-run: finish on the local GPU
+                if not (plan.get("generator", "auto") == "auto" and getattr(model, "name", "").endswith("@colab")):
+                    raise
+                _story_log(sid, "render", f"Colab 생성 실패 ({type(exc).__name__}), 로컬 GPU로 계속합니다")
+                model = _use_generator("hapticgen")
+                samples, baselines = _story_samples(sid, plan, model, ids, fresh)
+            plan["generator_used"] = getattr(model, "name", "hapticgen")
             sr = model.sample_rate
-            samples, baselines = _story_samples(sid, plan, model, ids, fresh)
             for s in plan["sentences"]:
                 if s["id"] not in ids:
                     continue
@@ -767,7 +819,17 @@ def _story_render(sid, plan, ids, fresh=False, on_sentence=None):
                     return out, fg_ev + bg_ev
 
                 for k, (w0, part) in enumerate(wins):
-                    full, evs = mixed([{**x, "source_wav": samples.get(x["voice_key"])} for x in part])
+                    def source(x, k=k):
+                        if x.get("family", "texture") == "texture":
+                            return samples.get(x["voice_key"])
+                        p_ = x.get("params") or {}   # rhythmic pattern for exactly this event and length
+                        w = hp.synth(x["family"], x["duration"] + 0.05, p_.get("rate") or None, p_.get("weight", .5),
+                                     p_.get("hardness", .5), sr=sr, seed=zlib.crc32(x["eid"].encode()))
+                        name = f"synth_{re.sub(r'[^A-Za-z0-9_-]+', '_', x['eid'])}_{k}{'_fresh' if fresh else ''}.wav"
+                        sf.write(out_dir / "samples" / name, w, sr, subtype="FLOAT")
+                        return f"samples/{name}"
+
+                    full, evs = mixed([{**x, "source_wav": source(x)} for x in part])
                     rendered += [{**o, "start": round(o["start"] + w0, 3)} for o in evs]
                     add("full", full, w0)
                     b = baselines.get((s["id"], k))
@@ -779,7 +841,11 @@ def _story_render(sid, plan, ids, fresh=False, on_sentence=None):
                     if exp is not None:
                         add("explicit", exp, w0)
                 files = {}
+                old = s.get("render") or {}
                 for kind, w in mix.items():
+                    if kind == "baseline" and fresh and (old.get("files") or {}).get("baseline"):
+                        files[kind] = old["files"]["baseline"]
+                        continue
                     if used[kind]:
                         name = f"s{s['id']:03d}_{kind}{'_fresh' if fresh else ''}.wav"
                         sf.write(out_dir / name, np.clip(w, -1, 1), sr, subtype="FLOAT")
@@ -790,7 +856,8 @@ def _story_render(sid, plan, ids, fresh=False, on_sentence=None):
                                "waves": {k: {key: v for key, v in _describe(OUT_DIR / f).items() if key in ("name", "duration", "peak", "peaks")}
                                          for k, f in files.items() if f},
                                "sub_events": [{k: o.get(k) for k in ("eid", "origin", "prompt", "start", "duration", "intensity",
-                                                                     "voice_key", "reused", "source_wav", "layer")} for o in rendered]}
+                                                                     "voice_key", "reused", "source_wav", "layer", "family", "salience")}
+                                              for o in rendered]}
                 _story_log(sid, "render", f"문장 {s['id'] + 1} 완성")
                 if on_sentence:
                     on_sentence(s)
@@ -862,8 +929,12 @@ def story_run(req: StoryReq):
         s2h.save(plan, out_dir)
         ids = [s["id"] for s in plan["sentences"]]
         _render_and_critic(sid, plan, ids)
-        # one automatic retry for sentences whose render missed planned impacts
-        retry = [s["id"] for s in plan["sentences"] if s.get("critic", {}).get("action") == "rerender"]
+        # One automatic retry only where the signal missed planned impacts: new samples can fix that, while
+        # the critic's remarks on intensity or timing stay as advice (a re-render would not change them).
+        def missed(s):
+            sig = (s.get("critic") or {}).get("signal") or {}
+            return (sig.get("expected_impacts") or 0) > (sig.get("matched_impacts") or 0)
+        retry = [s["id"] for s in plan["sentences"] if missed(s)]
         if retry:
             _story_log(sid, "render", f"Critic 요청으로 문장 {', '.join(str(i + 1) for i in retry)} 다시 렌더링")
             _render_and_critic(sid, plan, retry, fresh=True)

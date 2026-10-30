@@ -1,0 +1,49 @@
+{
+  "event": "Now it was plain that the lady must be a real Princess, since she had been able to feel the three little peas through the twenty mattresses and twenty feather beds.",
+  "sub_events": [
+    {
+      "prompt": "Pressure from peas felt through the bedding.",
+      "start": 5.68,
+      "duration": 0.6,
+      "intensity": 0.7,
+      "eid": "s17e0",
+      "origin": "explicit",
+      "voice_key": "peas_pressure",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.2,
+        "hardness": 0.9
+      },
+      "salience": 2,
+      "source_wav": "samples/peas_pressure.wav",
+      "file": "compose/compose_Now_it_was_plain_that_the_lady_must__1031_015616_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 6.279999999999999,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Now_it_was_plain_that_the_lady_must__1031_015616_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.0031380653381347656
+}

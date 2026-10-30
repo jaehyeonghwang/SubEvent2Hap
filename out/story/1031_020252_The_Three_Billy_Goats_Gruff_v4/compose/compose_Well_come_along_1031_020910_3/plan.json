@@ -1,0 +1,49 @@
+{
+  "event": "Well, come along!",
+  "sub_events": [
+    {
+      "prompt": "The billy-goat Gruff steps forward on a wooden bridge.",
+      "start": 0.0,
+      "duration": 2.3,
+      "intensity": 0.65,
+      "eid": "s27e0",
+      "origin": "explicit",
+      "voice_key": "big_goat_steps",
+      "layer": "bed",
+      "family": "steps",
+      "params": {
+        "rate": 1.2,
+        "weight": 0.8,
+        "hardness": 0.6
+      },
+      "salience": 2,
+      "source_wav": "samples/synth_s27e0_0_fresh.wav",
+      "file": "compose/compose_Well_come_along_1031_020910_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 2.3,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Well_come_along_1031_020910_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0015082359313964844,
+  "elapsed": 0.007223606109619141
+}

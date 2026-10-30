@@ -1,0 +1,73 @@
+{
+  "event": "“Oh! it’s the second billy-goat Gruff, and I’m going up to the hill-side to make myself fat”, said the billy-goat, who hadn’t such a small voice.",
+  "sub_events": [
+    {
+      "prompt": "A billy-goat moving up a wooden bridge.",
+      "start": 0.0,
+      "duration": 0.4,
+      "intensity": 0.5,
+      "eid": "s15e0",
+      "origin": "explicit",
+      "voice_key": "s15e0",
+      "layer": "bed",
+      "family": "steps",
+      "params": {
+        "rate": 2.0,
+        "weight": 0.5,
+        "hardness": 0.3
+      },
+      "salience": null,
+      "source_wav": "samples/synth_s15e0_1.wav",
+      "file": "compose/compose_Oh_it_s_the_second_billy_goat_Gruff__1031_015905_5/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.069,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Water flowing under the bridge.",
+      "start": 0.0,
+      "duration": 0.4,
+      "intensity": 0.3,
+      "eid": "s15b",
+      "origin": "explicit",
+      "voice_key": "bed_scene2",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.2,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "source_wav": "samples/bed_scene2.wav",
+      "file": "compose/compose_Oh_it_s_the_second_billy_goat_Gruff__1031_015905_5/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.163,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 0.4,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Oh_it_s_the_second_billy_goat_Gruff__1031_015905_5_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.009080171585083008
+}

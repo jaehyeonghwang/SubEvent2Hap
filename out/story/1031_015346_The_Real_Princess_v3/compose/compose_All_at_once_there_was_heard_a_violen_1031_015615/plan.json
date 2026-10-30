@@ -1,0 +1,97 @@
+{
+  "event": "All at once there was heard a violent knocking at the door, and the old King, the Prince's father, went out himself to open it.",
+  "sub_events": [
+    {
+      "prompt": "Door vibrates from violent knocking.",
+      "start": 2.34,
+      "duration": 1.28,
+      "intensity": 0.7,
+      "eid": "s5i0",
+      "origin": "inferred",
+      "voice_key": "door_vibrate",
+      "layer": "fg",
+      "family": "shake",
+      "params": {
+        "rate": 8.0,
+        "weight": 0.7,
+        "hardness": 0.8
+      },
+      "salience": 2,
+      "source_wav": "samples/synth_s5i0_0.wav",
+      "file": "compose/compose_All_at_once_there_was_heard_a_violen_1031_015615/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.017,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Violent knocking on a wooden door.",
+      "start": 2.44,
+      "duration": 0.5,
+      "intensity": 0.9,
+      "eid": "s5e0",
+      "origin": "explicit",
+      "voice_key": "door_knock",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.7,
+        "hardness": 0.8
+      },
+      "salience": 3,
+      "source_wav": "samples/synth_s5e0_0.wav",
+      "file": "compose/compose_All_at_once_there_was_heard_a_violen_1031_015615/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.035,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Door handle turns with a metallic click.",
+      "start": 7.56,
+      "duration": 0.39,
+      "intensity": 0.5,
+      "eid": "s5i1",
+      "origin": "inferred",
+      "voice_key": "handle_turn",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.3,
+        "hardness": 0.9
+      },
+      "salience": 1,
+      "source_wav": "samples/handle_turn.wav",
+      "file": "compose/compose_All_at_once_there_was_heard_a_violen_1031_015615/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.672,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 7.949999999999999,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_All_at_once_there_was_heard_a_violen_1031_015615_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.015554428100585938,
+  "elapsed": 0.02176523208618164
+}

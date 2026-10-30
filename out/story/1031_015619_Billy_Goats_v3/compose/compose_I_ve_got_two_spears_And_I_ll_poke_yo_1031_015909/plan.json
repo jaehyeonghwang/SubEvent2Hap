@@ -1,0 +1,97 @@
+{
+  "event": "I’ve got two spears, And I’ll poke your eyeballs out at your ears; I’ve got besides two curling-stones, And I’ll crush you to bits, body and bones.",
+  "sub_events": [
+    {
+      "prompt": "A spear poking into something soft",
+      "start": 2.24,
+      "duration": 0.3,
+      "intensity": 0.75,
+      "eid": "s28e0",
+      "origin": "explicit",
+      "voice_key": "spear_poke",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.4,
+        "hardness": 0.2
+      },
+      "salience": 2,
+      "source_wav": "samples/synth_s28e0_0.wav",
+      "file": "compose/compose_I_ve_got_two_spears_And_I_ll_poke_yo_1031_015909/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.081,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Curling-stones hitting ground with thud",
+      "start": 6.48,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s28i0",
+      "origin": "inferred",
+      "voice_key": "s28i0",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.8,
+        "hardness": 0.9
+      },
+      "salience": null,
+      "source_wav": "samples/synth_s28i0_0.wav",
+      "file": "compose/compose_I_ve_got_two_spears_And_I_ll_poke_yo_1031_015909/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.039,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Curling-stones crushing something hard",
+      "start": 7.82,
+      "duration": 0.5,
+      "intensity": 1.0,
+      "eid": "s28e1",
+      "origin": "explicit",
+      "voice_key": "stone_crush",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.8,
+        "hardness": 0.9
+      },
+      "salience": 3,
+      "source_wav": "samples/synth_s28e1_0.wav",
+      "file": "compose/compose_I_ve_got_two_spears_And_I_ll_poke_yo_1031_015909/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.039,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 8.32,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_ve_got_two_spears_And_I_ll_poke_yo_1031_015909_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.07963275909423828,
+  "elapsed": 0.09204816818237305
+}

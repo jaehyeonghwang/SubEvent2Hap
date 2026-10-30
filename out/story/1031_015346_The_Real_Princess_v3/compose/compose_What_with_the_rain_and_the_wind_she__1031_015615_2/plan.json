@@ -1,0 +1,97 @@
+{
+  "event": "What with the rain and the wind, she was in a sad condition; the water trickled down from her hair, and her clothes clung to her body.",
+  "sub_events": [
+    {
+      "prompt": "Heavy rain and thunder shake the air.",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.7,
+      "eid": "s7b",
+      "origin": "explicit",
+      "voice_key": "bed_scene1",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 8.0,
+        "weight": 0.8,
+        "hardness": 0.5
+      },
+      "salience": null,
+      "source_wav": "samples/bed_scene1.wav",
+      "file": "compose/compose_What_with_the_rain_and_the_wind_she__1031_015615_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.5,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Rain splatters on the ground.",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.3,
+      "eid": "s7i0",
+      "origin": "inferred",
+      "voice_key": "s7i0",
+      "layer": "bed",
+      "family": "rain",
+      "params": {
+        "rate": 25.0,
+        "weight": 0.5,
+        "hardness": 0.2
+      },
+      "salience": null,
+      "source_wav": "samples/synth_s7i0_0.wav",
+      "file": "compose/compose_What_with_the_rain_and_the_wind_she__1031_015615_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.05,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Wind rustles against the body.",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.4,
+      "eid": "s7i1",
+      "origin": "inferred",
+      "voice_key": "s7i1",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.3,
+        "hardness": 0.2
+      },
+      "salience": null,
+      "source_wav": "samples/s7i1.wav",
+      "file": "compose/compose_What_with_the_rain_and_the_wind_she__1031_015615_2/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.498,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_What_with_the_rain_and_the_wind_she__1031_015615_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.009319782257080078,
+  "elapsed": 0.021702289581298828
+}

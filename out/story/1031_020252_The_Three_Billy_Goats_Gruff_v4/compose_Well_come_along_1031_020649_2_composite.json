@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] Well, come along!", "params": {"generator": "hapticgen@colab", "candidates": 1, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": null, "gamma": 1.6, "share_repeats": true, "sub_events": 1}, "created": 1793380009.8125074, "kind": "composite", "event": "Well, come along!", "run": "compose_Well_come_along_1031_020649_2"}

@@ -1,0 +1,121 @@
+{
+  "event": "That was what the big billy-goat said; and so he flew at the Troll and poked his eyes out with his horns, and crushed him to bits, body and bones, and tossed him out into the burn, and after that he went up to the hill-side.",
+  "sub_events": [
+    {
+      "prompt": "Billy-goat Gruff charges at the Troll.",
+      "start": 3.44,
+      "duration": 0.4,
+      "intensity": 0.85,
+      "eid": "s29e0",
+      "origin": "explicit",
+      "voice_key": "billy_goat_charge",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 1.5,
+        "weight": 0.8,
+        "hardness": 0.6
+      },
+      "salience": 3,
+      "source_wav": "samples/synth_s29e0_0.wav",
+      "file": "compose/compose_That_was_what_the_big_billy_goat_sai_1031_020650/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Billy-goat Gruff pokes the Troll's eyes with his horns.",
+      "start": 4.84,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s29e1",
+      "origin": "explicit",
+      "voice_key": "billy_goat_poke",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.8,
+        "hardness": 0.8
+      },
+      "salience": 2,
+      "source_wav": "samples/synth_s29e1_0.wav",
+      "file": "compose/compose_That_was_what_the_big_billy_goat_sai_1031_020650/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.044,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "The Troll collapses to the ground after being crushed.",
+      "start": 6.78,
+      "duration": 2.56,
+      "intensity": 0.55,
+      "eid": "s29i0",
+      "origin": "inferred",
+      "voice_key": "troll_collapse",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.9,
+        "hardness": 0.6
+      },
+      "salience": 1,
+      "source_wav": "samples/troll_collapse.wav",
+      "file": "compose/compose_That_was_what_the_big_billy_goat_sai_1031_020650/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.084,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Billy-goat Gruff crushes the Troll's body and bones.",
+      "start": 6.88,
+      "duration": 2.46,
+      "intensity": 1.0,
+      "eid": "s29e2",
+      "origin": "explicit",
+      "voice_key": "billy_goat_crush",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.9,
+        "hardness": 0.9
+      },
+      "salience": 3,
+      "source_wav": "samples/billy_goat_crush.wav",
+      "file": "compose/compose_That_was_what_the_big_billy_goat_sai_1031_020650/sub_04.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.34,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_That_was_what_the_big_billy_goat_sai_1031_020650_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 4,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.02589869499206543,
+  "elapsed": 0.04130291938781738
+}

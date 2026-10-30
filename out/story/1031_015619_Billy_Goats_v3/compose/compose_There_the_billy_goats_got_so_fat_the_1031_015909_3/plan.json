@@ -1,0 +1,73 @@
+{
+  "event": "There the billy-goats got so fat they were scarce able to walk home again; and if the fat hasn’t fallen off them, why they’re still fat; and so: Snip, snap, snout, This tale’s told out.",
+  "sub_events": [
+    {
+      "prompt": "A sharp snip sound in the air",
+      "start": 0.92,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s30e0",
+      "origin": "explicit",
+      "voice_key": "snip_snap",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.2,
+        "hardness": 0.5
+      },
+      "salience": 1,
+      "source_wav": "samples/synth_s30e0_1.wav",
+      "file": "compose/compose_There_the_billy_goats_got_so_fat_the_1031_015909_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.055,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "A crisp snap sound follows the snip",
+      "start": 1.16,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s30e1",
+      "origin": "explicit",
+      "voice_key": "snip_snap",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.2,
+        "hardness": 0.5
+      },
+      "salience": 1,
+      "source_wav": "samples/synth_s30e1_1.wav",
+      "file": "compose/compose_There_the_billy_goats_got_so_fat_the_1031_015909_3/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.055,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.46,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_There_the_billy_goats_got_so_fat_the_1031_015909_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.00766444206237793
+}

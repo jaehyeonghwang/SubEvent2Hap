@@ -105,9 +105,9 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 13.5px; mar
       <text x="456" y="246" font-size="12.5" class="muted">story2hap.py</text>
       <text x="456" y="265" font-size="12.5" class="muted">(GPT-4o 호출)</text>
       <rect x="590" y="198" width="140" height="78" rx="10" style="fill: var(--panel); stroke: var(--line)"/>
-      <text x="606" y="224" font-size="14" font-weight="600">진동 생성</text>
-      <text x="606" y="246" font-size="12.5" class="muted">HapticGen</text>
-      <text x="606" y="265" font-size="12.5" class="muted">AudioGen (GPU)</text>
+      <text x="606" y="224" font-size="14" font-weight="600">진동 생성 (예비)</text>
+      <text x="606" y="246" font-size="12.5" class="muted">HapticGen 로컬</text>
+      <text x="606" y="265" font-size="12.5" class="muted">Colab 없을 때</text>
       <rect x="440" y="288" width="290" height="60" rx="10" style="fill: var(--panel); stroke: var(--line)"/>
       <text x="456" y="314" font-size="14" font-weight="600">합성기 compose.py</text>
       <text x="456" y="335" font-size="12.5" class="muted">충격 정렬, 세기 보정, 배경 덕킹</text>
@@ -124,13 +124,13 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 13.5px; mar
       <text x="870" y="186" font-size="12" class="muted">이야기 문장이 전송됨</text>
 
       <!-- colab -->
-      <rect x="850" y="250" width="230" height="180" rx="14" style="fill: var(--colab-soft); stroke: var(--colab)" stroke-dasharray="6 4" stroke-width="1.5"/>
-      <text x="870" y="282" font-size="17" font-weight="700" style="fill: var(--colab)">Colab (선택)</text>
+      <rect x="850" y="250" width="230" height="180" rx="14" style="fill: var(--colab-soft); stroke: var(--colab)" stroke-width="2"/>
+      <text x="870" y="282" font-size="17" font-weight="700" style="fill: var(--colab)">Colab (기본 생성)</text>
       <text x="870" y="310" font-size="13.5">A100 생성 서버</text>
       <text x="870" y="334" font-size="13.5" class="muted">colab_worker.py</text>
-      <text x="870" y="360" font-size="12.5" class="muted">"(Colab GPU)" 모델 선택 시</text>
-      <text x="870" y="382" font-size="12.5" class="muted">cloudflared 임시 주소 + 토큰</text>
-      <text x="870" y="410" font-size="12" class="faint">지금은 로컬보다 느려 예비용</text>
+      <text x="870" y="360" font-size="12.5" class="muted">"자동": 연결되면 먼저 사용</text>
+      <text x="870" y="382" font-size="12.5" class="muted">끊기면 로컬 GPU로 전환</text>
+      <text x="870" y="408" font-size="12" class="faint">cloudflared 임시 주소 + 토큰</text>
 
       <!-- links -->
       <line x1="320" y1="125" x2="440" y2="125" style="stroke: var(--lap)" stroke-width="2" marker-end="url(#arr)" marker-start="url(#arr)"/>
@@ -145,29 +145,28 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 13.5px; mar
       <line x1="580" y1="237" x2="590" y2="237" style="stroke: var(--muted)"/>
       <line x1="730" y1="237" x2="850" y2="125" style="stroke: var(--cloud)" stroke-width="2" marker-end="url(#arr)"/>
       <text x="790" y="165" font-size="12" text-anchor="middle" style="fill: var(--cloud)">HTTPS</text>
-      <line x1="730" y1="260" x2="850" y2="330" style="stroke: var(--colab)" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr)"/>
-      <text x="790" y="312" font-size="12" text-anchor="middle" style="fill: var(--colab)">원격 생성</text>
+      <line x1="730" y1="260" x2="850" y2="330" style="stroke: var(--colab)" stroke-width="2.5" marker-end="url(#arr)"/>
+      <text x="790" y="312" font-size="12" text-anchor="middle" style="fill: var(--colab)">원격 생성 (우선)</text>
     </svg>
     </div>
-    <div class="legend"><span><i style="background: var(--lap)"></i>사용자 장치</span><span><i style="background: var(--pc)"></i>생성 PC</span><span><i style="background: var(--cloud)"></i>OpenAI 클라우드</span><span><i style="background: var(--colab)"></i>Colab (선택)</span></div>
+    <div class="legend"><span><i style="background: var(--lap)"></i>사용자 장치</span><span><i style="background: var(--pc)"></i>생성 PC</span><span><i style="background: var(--cloud)"></i>OpenAI 클라우드</span><span><i style="background: var(--colab)"></i>Colab (기본 생성)</span></div>
   </section>
 
   <!-- 2. pipeline -->
   <section class="card">
     <h2>2. Story2Hap 처리 흐름</h2>
-    <p class="lead">이야기 하나를 넣으면 아래 순서로 진행됩니다. 파란 상자는 GPT-4o 에이전트, 분홍 상자는 GPU 작업입니다. 낭독은 에이전트들과 동시에 진행됩니다.</p>
+    <p class="lead">이야기 하나를 넣으면 아래 순서로 진행됩니다. 파란 상자는 GPT-4o 에이전트, 분홍 상자는 진동을 만드는 단계입니다. 낭독은 에이전트들과 동시에 진행됩니다. 4~6단계의 방식은 선행 연구(Feel Effects, CineHaptic, Scene2Hap)를 참고했습니다.</p>
     <div class="scroll">
-    <svg viewBox="0 0 1100 760" role="img" aria-label="Story2Hap 처리 흐름">
+    <svg viewBox="0 0 1100 840" role="img" aria-label="Story2Hap 처리 흐름">
       <defs>
         <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" style="fill: var(--muted)"/></marker>
       </defs>
-      <!-- input -->
       <rect x="380" y="10" width="340" height="52" rx="10" style="fill: var(--panel); stroke: var(--line)"/>
       <text x="550" y="34" font-size="15" font-weight="700" text-anchor="middle">동화 원문 입력</text>
       <text x="550" y="53" font-size="12" text-anchor="middle" class="muted">문장 단위로 나눔 (최대 200문장)</text>
 
       <!-- narration branch -->
-      <rect x="820" y="100" width="260" height="420" rx="12" style="fill: var(--cloud-soft); stroke: var(--cloud)" stroke-dasharray="6 4"/>
+      <rect x="820" y="100" width="260" height="480" rx="12" style="fill: var(--cloud-soft); stroke: var(--cloud)" stroke-dasharray="6 4"/>
       <text x="950" y="128" font-size="15" font-weight="700" text-anchor="middle" style="fill: var(--cloud)">낭독 (동시 진행)</text>
       <rect x="840" y="150" width="220" height="70" rx="10" style="fill: var(--panel); stroke: var(--line)"/>
       <text x="950" y="178" font-size="14" font-weight="600" text-anchor="middle">TTS 음성 생성</text>
@@ -176,78 +175,76 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 13.5px; mar
       <text x="950" y="278" font-size="14" font-weight="600" text-anchor="middle">Whisper 단어 시각</text>
       <text x="950" y="299" font-size="12" text-anchor="middle" class="muted">각 단어가 언제 읽히는지</text>
       <line x1="950" y1="220" x2="950" y2="250" style="stroke: var(--muted)" marker-end="url(#a2)"/>
-      <text x="950" y="370" font-size="12.5" text-anchor="middle" class="muted">사건은 단어에 고정되어</text>
-      <text x="950" y="390" font-size="12.5" text-anchor="middle" class="muted">낭독 시각에 맞춰 배치됩니다</text>
+      <text x="950" y="380" font-size="12.5" text-anchor="middle" class="muted">사건은 단어에 고정되어</text>
+      <text x="950" y="400" font-size="12.5" text-anchor="middle" class="muted">낭독 시각에 맞춰 배치됩니다</text>
       <line x1="720" y1="40" x2="950" y2="40" style="stroke: var(--muted)"/>
       <line x1="950" y1="40" x2="950" y2="100" style="stroke: var(--muted)" marker-end="url(#a2)"/>
 
       <!-- agents -->
-      <g>
-        <rect x="200" y="100" width="560" height="74" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
-        <text x="220" y="128" font-size="15" font-weight="700" style="fill: var(--agent)">1. 장면 설계 (이야기 상태)</text>
-        <text x="220" y="151" font-size="12.5" class="muted">전체를 먼저 읽고 장면 구분, 장면별 배경(폭풍, 불)과 그 세기와 이유, 핵심 순간, 인물과 물체 재질,</text>
-        <text x="220" y="167" font-size="12.5" class="muted">문장별 상황과 한글 번역. 25문장씩 나눠 처리하고 인물과 물체는 다음 묶음으로 넘김</text>
-      </g>
+      <rect x="200" y="100" width="560" height="74" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
+      <text x="220" y="128" font-size="15" font-weight="700" style="fill: var(--agent)">1. 장면 설계 (이야기 상태)</text>
+      <text x="220" y="151" font-size="12.5" class="muted">전체를 먼저 읽고 장면 구분, 장면별 배경(폭풍, 불)과 그 세기와 이유, 핵심 순간, 인물과 물체 재질,</text>
+      <text x="220" y="167" font-size="12.5" class="muted">문장별 상황과 한글 번역. 25문장씩 나눠 처리하고 인물과 물체는 다음 묶음으로 넘김</text>
       <line x1="550" y1="62" x2="550" y2="100" style="stroke: var(--muted)" marker-end="url(#a2)"/>
-      <g>
-        <rect x="200" y="208" width="270" height="92" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
-        <text x="216" y="235" font-size="15" font-weight="700" style="fill: var(--agent)">2. 명시 사건</text>
-        <text x="216" y="257" font-size="12.5" class="muted">단어마다 진동 기회를 찾음: 동작, 접촉,</text>
-        <text x="216" y="274" font-size="12.5" class="muted">소리, 의성어, 몸의 감각 (눌림, 통증)</text>
-        <text x="216" y="291" font-size="12" class="faint">문장별 병렬, 앞뒤 2문장 + 장면 참고</text>
-        <rect x="490" y="208" width="270" height="92" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
-        <text x="506" y="235" font-size="15" font-weight="700" style="fill: var(--agent)">3. 암시 사건 추론</text>
-        <text x="506" y="257" font-size="12.5" class="muted">결과, 전제, 감각 등 적히지 않은 진동</text>
-        <text x="506" y="274" font-size="12.5" class="muted">근거 구절과 확신도, 임계값 미만 제외</text>
-        <text x="506" y="291" font-size="12" class="faint">명시 사건을 보고 겹치지 않게</text>
-      </g>
+
+      <rect x="200" y="208" width="270" height="92" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
+      <text x="216" y="235" font-size="15" font-weight="700" style="fill: var(--agent)">2. 명시 사건</text>
+      <text x="216" y="257" font-size="12.5" class="muted">단어마다 진동 기회를 찾음: 동작, 접촉,</text>
+      <text x="216" y="274" font-size="12.5" class="muted">소리, 의성어, 몸의 감각, 구절 끝 단어까지</text>
+      <text x="216" y="291" font-size="12" class="faint">문장별 병렬, 앞뒤 2문장 + 장면 참고</text>
+      <rect x="490" y="208" width="270" height="92" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
+      <text x="506" y="235" font-size="15" font-weight="700" style="fill: var(--agent)">3. 암시 사건 추론</text>
+      <text x="506" y="257" font-size="12.5" class="muted">결과, 전제, 감각 등 적히지 않은 진동</text>
+      <text x="506" y="274" font-size="12.5" class="muted">근거 구절과 확신도, 임계값 미만 제외</text>
+      <text x="506" y="291" font-size="12" class="faint">명시 사건과 장면 배경은 겹치지 않게</text>
       <line x1="335" y1="174" x2="335" y2="208" style="stroke: var(--muted)" marker-end="url(#a2)"/>
       <line x1="470" y1="254" x2="490" y2="254" style="stroke: var(--muted)" marker-end="url(#a2)"/>
-      <g>
-        <rect x="200" y="334" width="560" height="62" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
-        <text x="220" y="360" font-size="15" font-weight="700" style="fill: var(--agent)">4. 캡션 다듬기</text>
-        <text x="380" y="360" font-size="12.5" class="muted">모든 사건을 "물체와 재질 + 동작 한 번" 진동 문장으로 다시 씀</text>
-        <text x="380" y="380" font-size="12.5" class="muted">감각은 물리 진동으로 번역, 순수한 말과 생각만 제외</text>
-      </g>
-      <line x1="480" y1="300" x2="480" y2="334" style="stroke: var(--muted)" marker-end="url(#a2)"/>
-      <g>
-        <rect x="200" y="430" width="560" height="62" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
-        <text x="220" y="456" font-size="15" font-weight="700" style="fill: var(--agent)">5. 연출</text>
-        <text x="220" y="478" font-size="12.5" class="muted">유지가 기본, 중복만 제외. 장면과 긴장도에 맞춘 세기, 같은 소리는 같은 샘플(voice key). 세기 범위 보정</text>
-      </g>
-      <line x1="480" y1="396" x2="480" y2="430" style="stroke: var(--muted)" marker-end="url(#a2)"/>
 
-      <!-- schedule join -->
-      <rect x="200" y="530" width="560" height="50" rx="12" style="fill: var(--panel); stroke: var(--line)"/>
-      <text x="480" y="560" font-size="14.5" font-weight="700" text-anchor="middle">사건 배치: 단어 시각 + 오프셋, 장면 배경은 문장 전체를 덮는 바닥 레이어</text>
-      <line x1="480" y1="492" x2="480" y2="530" style="stroke: var(--muted)" marker-end="url(#a2)"/>
-      <path d="M950,520 L950,555 L760,555" style="fill: none; stroke: var(--muted)" marker-end="url(#a2)"/>
+      <rect x="200" y="334" width="560" height="84" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
+      <text x="220" y="360" font-size="15" font-weight="700" style="fill: var(--agent)">4. 캡션 다듬기와 진동 종류</text>
+      <text x="220" y="382" font-size="12.5" class="muted">모든 사건을 "물체와 재질 + 동작 한 번" 문장으로 다시 쓰고, 감각은 물리 진동으로 번역</text>
+      <text x="220" y="402" font-size="12.5" class="muted">진동 종류 선택: 두드림, 걸음, 빗방울, 심장 박동, 떨림, 우르릉, 질감 + 빠르기, 무게, 단단함</text>
+      <line x1="480" y1="300" x2="480" y2="334" style="stroke: var(--muted)" marker-end="url(#a2)"/>
+
+      <rect x="200" y="452" width="560" height="84" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
+      <text x="220" y="478" font-size="15" font-weight="700" style="fill: var(--agent)">5. 연출 (중요도 4단계)</text>
+      <text x="220" y="500" font-size="12.5" class="muted">0 제외, 1 은은한 분위기 0.40~0.55, 2 분명한 동작 0.60~0.80, 3 핵심 순간 0.85~1.0</text>
+      <text x="220" y="520" font-size="12.5" class="muted">유지가 기본, 같은 순간의 중복과 배경과 겹치는 질감만 제외. 같은 소리는 같은 샘플</text>
+      <line x1="480" y1="418" x2="480" y2="452" style="stroke: var(--muted)" marker-end="url(#a2)"/>
+
+      <rect x="200" y="570" width="560" height="50" rx="12" style="fill: var(--panel); stroke: var(--line)"/>
+      <text x="480" y="600" font-size="14" font-weight="700" text-anchor="middle">사건 배치: 단어 시각 + 오프셋, 지속형은 구절 끝까지, 장면 배경은 바닥 레이어</text>
+      <line x1="480" y1="536" x2="480" y2="570" style="stroke: var(--muted)" marker-end="url(#a2)"/>
+      <path d="M950,580 L950,595 L760,595" style="fill: none; stroke: var(--muted)" marker-end="url(#a2)"/>
 
       <!-- gpu -->
-      <rect x="40" y="614" width="330" height="128" rx="12" style="fill: var(--gen-soft); stroke: var(--gen)"/>
-      <text x="56" y="642" font-size="15" font-weight="700" style="fill: var(--gen)">6. 진동 생성 (GPU)</text>
-      <text x="56" y="665" font-size="12.5" class="muted">이야기 전체에 필요한 샘플을 모아</text>
-      <text x="56" y="683" font-size="12.5" class="muted">길이별 묶음(2/4/6/10초)으로 한꺼번에 생성</text>
-      <text x="56" y="701" font-size="12.5" class="muted">소리 종류마다 후보 2개 중 최선 1개</text>
-      <text x="56" y="719" font-size="12.5" class="muted">+ 문장 그대로 베이스라인</text>
-      <rect x="390" y="614" width="330" height="128" rx="12" style="fill: var(--gen-soft); stroke: var(--gen)"/>
-      <text x="406" y="642" font-size="15" font-weight="700" style="fill: var(--gen)">7. 문장별 합성</text>
-      <text x="406" y="665" font-size="12.5" class="muted">전경(충격, 동작) + 배경 레이어</text>
-      <text x="406" y="683" font-size="12.5" class="muted">충격이 나오면 배경을 최대 65% 낮춤</text>
-      <text x="406" y="701" font-size="12.5" class="muted">10초 넘는 문장은 9.5초 구간으로 나눠 이음</text>
-      <text x="406" y="719" font-size="12.5" class="muted">명시+추론 / 명시만 / 문장 그대로 3종</text>
-      <rect x="740" y="614" width="340" height="128" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
-      <text x="756" y="642" font-size="15" font-weight="700" style="fill: var(--agent)">8. Critic (렌더와 동시)</text>
-      <text x="756" y="665" font-size="12.5" class="muted">신호 검사: 계획한 충격이 파형에 나왔나</text>
-      <text x="756" y="683" font-size="12.5" class="muted">LM 판정: 포괄성, 추론, 세기, 타이밍</text>
-      <text x="756" y="701" font-size="12.5" class="muted">0~100점, 문제 있으면 그 문장만</text>
-      <text x="756" y="719" font-size="12.5" class="muted">새 샘플로 1회 자동 재렌더</text>
-      <line x1="370" y1="678" x2="390" y2="678" style="stroke: var(--muted)" marker-end="url(#a2)"/>
-      <line x1="720" y1="678" x2="740" y2="678" style="stroke: var(--muted)" marker-end="url(#a2)"/>
-      <path d="M480,580 L480,598 L205,598 L205,614" style="fill: none; stroke: var(--muted)" marker-end="url(#a2)"/>
+      <rect x="20" y="654" width="350" height="170" rx="12" style="fill: var(--gen-soft); stroke: var(--gen)"/>
+      <text x="36" y="682" font-size="15" font-weight="700" style="fill: var(--gen)">6. 진동 만들기 (Colab 우선)</text>
+      <text x="36" y="706" font-size="12.5" class="muted">리듬형(두드림, 걸음, 빗방울, 심장, 떨림, 우르릉):</text>
+      <text x="36" y="724" font-size="12.5" class="muted">  패턴으로 직접 합성 (Feel Effects 방식)</text>
+      <text x="36" y="746" font-size="12.5" class="muted">질감형: HapticGen 후보 4개를 일괄 생성 후</text>
+      <text x="36" y="764" font-size="12.5" class="muted">  잡음도와 저주파 비율로 선별 (Scene2Hap 방식)</text>
+      <text x="36" y="786" font-size="12.5" class="muted">모든 진동은 40~400 Hz 대역 필터</text>
+      <text x="36" y="808" font-size="12" class="faint">+ 문장 그대로 베이스라인 (비교용)</text>
+      <rect x="390" y="654" width="330" height="170" rx="12" style="fill: var(--gen-soft); stroke: var(--gen)"/>
+      <text x="406" y="682" font-size="15" font-weight="700" style="fill: var(--gen)">7. 문장별 합성</text>
+      <text x="406" y="706" font-size="12.5" class="muted">전경(충격, 동작) + 배경 레이어</text>
+      <text x="406" y="728" font-size="12.5" class="muted">충격이 나오면 배경을 최대 65% 낮춤</text>
+      <text x="406" y="750" font-size="12.5" class="muted">배경은 최대 0.7로 제한</text>
+      <text x="406" y="772" font-size="12.5" class="muted">10초 넘는 문장은 9.5초 구간으로 나눠 이음</text>
+      <text x="406" y="794" font-size="12.5" class="muted">명시+추론 / 명시만 / 문장 그대로 3종</text>
+      <rect x="740" y="654" width="340" height="170" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
+      <text x="756" y="682" font-size="15" font-weight="700" style="fill: var(--agent)">8. Critic (렌더와 동시)</text>
+      <text x="756" y="706" font-size="12.5" class="muted">신호 검사: 계획한 충격이 파형에 나왔나</text>
+      <text x="756" y="728" font-size="12.5" class="muted">LM 판정: 포괄성, 추론, 세기, 타이밍</text>
+      <text x="756" y="750" font-size="12.5" class="muted">0~100점과 개선 의견</text>
+      <text x="756" y="772" font-size="12.5" class="muted">충격이 빠진 문장만 1회 재렌더</text>
+      <line x1="370" y1="738" x2="390" y2="738" style="stroke: var(--muted)" marker-end="url(#a2)"/>
+      <line x1="720" y1="738" x2="740" y2="738" style="stroke: var(--muted)" marker-end="url(#a2)"/>
+      <path d="M480,620 L480,638 L195,638 L195,654" style="fill: none; stroke: var(--muted)" marker-end="url(#a2)"/>
     </svg>
     </div>
-    <div class="legend"><span><i style="background: var(--agent)"></i>GPT-4o 에이전트</span><span><i style="background: var(--gen)"></i>GPU 작업 (생성 PC 또는 Colab)</span><span><i style="background: var(--cloud)"></i>OpenAI 음성</span></div>
+    <div class="legend"><span><i style="background: var(--agent)"></i>GPT-4o 에이전트</span><span><i style="background: var(--gen)"></i>진동 만들기 (Colab 우선, 없으면 생성 PC)</span><span><i style="background: var(--cloud)"></i>OpenAI 음성</span></div>
   </section>
 
   <!-- 3. playback -->
@@ -324,9 +321,9 @@ const ROLE = {
   story_state: ["1. 장면 설계 (이야기 상태)", "이야기 전체를 먼저 읽고 인물과 물체의 재질, 장면 구분, 장면별 배경과 그 세기와 이유, 핵심 순간, 문장별 상황과 한글 번역을 만듭니다. 다른 에이전트가 모두 이 결과를 문맥으로 씁니다."],
   explicit: ["2. 명시 사건", "문장의 단어를 하나씩 보며 진동으로 살릴 순간(동작, 접촉, 소리, 의성어, 몸의 감각)을 찾고, 각 사건을 단어에 고정합니다. 적힌 횟수는 그 수만큼 따로 만듭니다."],
   inference: ["3. 암시 사건 추론", "문장에 적히지 않았지만 독자가 떠올릴 물리적 사건(결과, 전제, 배경, 감각)을 근거 구절과 확신도와 함께 추론합니다. 명시 사건이나 장면 배경과 겹치지 않게 합니다."],
-  captions: ["4. 캡션 다듬기", "모든 사건을 HapticGen이 학습한 형식(물체와 재질 + 동작 한 번, 이름 없음)의 짧은 진동 문장으로 다시 씁니다. 몸의 감각은 그것을 일으키는 물리 진동으로 번역하고, 순수한 말과 생각만 제외합니다."],
-  director: ["5. 연출", "후보 사건을 기본적으로 유지하되 같은 순간의 중복만 빼고, 장면과 긴장도에 맞춰 세기를 정합니다. 같은 소리에는 같은 voice key를 붙여 이야기 전체에서 같은 샘플을 쓰게 합니다."],
-  critic: ["8. Critic", "렌더링된 문장마다 계획과 신호 측정치를 보고 포괄성, 추론, 세기, 타이밍을 5점 척도로 평가하고, 문제가 있으면 다시 렌더링을 요청합니다. 진동을 직접 느낄 수는 없으므로 신호 검사 결과를 함께 받습니다."],
+  captions: ["4. 캡션 다듬기와 진동 종류", "모든 사건을 HapticGen이 학습한 형식(물체와 재질 + 동작 한 번, 이름 없음)의 짧은 진동 문장으로 다시 씁니다. 몸의 감각은 그것을 일으키는 물리 진동으로 번역하고, 순수한 말과 생각만 제외합니다. 사건마다 진동 종류(두드림, 걸음, 빗방울, 심장 박동, 떨림, 우르릉, 질감)와 빠르기, 무게, 단단함도 정합니다. 질감이 아닌 종류는 리듬 패턴으로 직접 합성됩니다."],
+  director: ["5. 연출 (중요도 4단계)", "후보 사건마다 중요도 0~3을 매깁니다(0 제외, 1 분위기, 2 분명한 동작, 3 핵심 순간). 세기는 단계별 범위 안에서만 정해져 핵심 순간이 항상 더 세게 느껴집니다. 같은 순간의 중복과 장면 배경과 겹치는 질감만 빼고, 같은 소리에는 같은 voice key를 붙여 같은 샘플을 쓰게 합니다."],
+  critic: ["8. Critic", "렌더링된 문장마다 계획과 신호 측정치를 보고 포괄성, 추론, 세기, 타이밍을 5점 척도로 평가하고 개선 의견을 남깁니다. 자동 재렌더는 계획한 충격이 파형에서 빠진 문장에만 1회 합니다. 진동을 직접 느낄 수는 없으므로 신호 검사 결과를 함께 받습니다."],
 };
 const esc = (t) => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 fetch("/api/story/prompts").then(r => r.json()).then(d => {

@@ -1,0 +1,49 @@
+{
+  "event": "“Very well! be off with you”, said the Troll.",
+  "sub_events": [
+    {
+      "prompt": "Water flowing under the bridge.",
+      "start": 0.0,
+      "duration": 4.25,
+      "intensity": 0.3,
+      "eid": "s18b",
+      "origin": "explicit",
+      "voice_key": "bed_scene2",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.2,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "source_wav": "samples/bed_scene2.wav",
+      "file": "compose/compose_Very_well_be_off_with_you_said_the_T_1031_015905_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.25,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Very_well_be_off_with_you_said_the_T_1031_015905_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0015134811401367188,
+  "elapsed": 0.009198188781738281
+}

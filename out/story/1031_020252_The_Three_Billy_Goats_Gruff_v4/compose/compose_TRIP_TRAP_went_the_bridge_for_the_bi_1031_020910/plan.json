@@ -1,0 +1,73 @@
+{
+  "event": "TRIP, TRAP!” went the bridge, for the billy-goat was so heavy that the bridge creaked and groaned under him.",
+  "sub_events": [
+    {
+      "prompt": "Wooden bridge making a trip-trap sound.",
+      "start": 0.0,
+      "duration": 1.38,
+      "intensity": 0.8,
+      "eid": "s22e0",
+      "origin": "explicit",
+      "voice_key": "bridge_trip_trap",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.7
+      },
+      "salience": 2,
+      "source_wav": "samples/bridge_trip_trap_fresh.wav",
+      "file": "compose/compose_TRIP_TRAP_went_the_bridge_for_the_bi_1031_020910/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.576,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Heavy step of a billy-goat on a wooden bridge.",
+      "start": 3.74,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "eid": "s22e1",
+      "origin": "explicit",
+      "voice_key": "billy_goat_heavy_step",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 1.2,
+        "weight": 0.8,
+        "hardness": 0.6
+      },
+      "salience": 2,
+      "source_wav": "samples/synth_s22e1_0_fresh.wav",
+      "file": "compose/compose_TRIP_TRAP_went_the_bridge_for_the_bi_1031_020910/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.140000000000001,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_TRIP_TRAP_went_the_bridge_for_the_bi_1031_020910_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.006165027618408203,
+  "elapsed": 0.014570951461791992
+}

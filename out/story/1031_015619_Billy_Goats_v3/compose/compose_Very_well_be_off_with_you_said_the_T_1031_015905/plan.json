@@ -1,0 +1,73 @@
+{
+  "event": "“Very well! be off with you”, said the Troll.",
+  "sub_events": [
+    {
+      "prompt": "Troll's voice creating a low rumble.",
+      "start": 2.86,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "eid": "s18e0",
+      "origin": "explicit",
+      "voice_key": "s18e0",
+      "layer": "fg",
+      "family": "rumble",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.9,
+        "hardness": 0.5
+      },
+      "salience": null,
+      "source_wav": "samples/synth_s18e0_0.wav",
+      "file": "compose/compose_Very_well_be_off_with_you_said_the_T_1031_015905/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Troll steps causing the bridge to vibrate.",
+      "start": 3.1,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "eid": "s18i0",
+      "origin": "inferred",
+      "voice_key": "s18i0",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 1.2,
+        "weight": 0.9,
+        "hardness": 0.5
+      },
+      "salience": null,
+      "source_wav": "samples/synth_s18i0_0.wav",
+      "file": "compose/compose_Very_well_be_off_with_you_said_the_T_1031_015905/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.052,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.6,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Very_well_be_off_with_you_said_the_T_1031_015905_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.013285636901855469,
+  "elapsed": 0.020481109619140625
+}

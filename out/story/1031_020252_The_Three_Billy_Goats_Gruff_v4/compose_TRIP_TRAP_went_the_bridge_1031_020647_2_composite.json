@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] TRIP, TRAP!” went the bridge.", "params": {"generator": "hapticgen@colab", "candidates": 1, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": null, "gamma": 1.6, "share_repeats": true, "sub_events": 1}, "created": 1793380007.170997, "kind": "composite", "event": "TRIP, TRAP!” went the bridge.", "run": "compose_TRIP_TRAP_went_the_bridge_1031_020647_2"}

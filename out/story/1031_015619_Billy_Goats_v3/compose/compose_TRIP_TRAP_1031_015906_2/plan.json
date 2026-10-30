@@ -1,0 +1,73 @@
+{
+  "event": "“TRIP, TRAP!",
+  "sub_events": [
+    {
+      "prompt": "Flowing water over rocks",
+      "start": 0.0,
+      "duration": 3.85,
+      "intensity": 0.3,
+      "eid": "s20b",
+      "origin": "explicit",
+      "voice_key": "bed_scene3",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.3,
+        "hardness": 0.2
+      },
+      "salience": null,
+      "source_wav": "samples/bed_scene3.wav",
+      "file": "compose/compose_TRIP_TRAP_1031_015906_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Bridge creaking under weight",
+      "start": 0.0,
+      "duration": 3.85,
+      "intensity": 0.4,
+      "eid": "s20i0",
+      "origin": "inferred",
+      "voice_key": "s20i0",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.6
+      },
+      "salience": null,
+      "source_wav": "samples/s20i0.wav",
+      "file": "compose/compose_TRIP_TRAP_1031_015906_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.145,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.85,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_TRIP_TRAP_1031_015906_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.007642269134521484,
+  "elapsed": 0.018468618392944336
+}
