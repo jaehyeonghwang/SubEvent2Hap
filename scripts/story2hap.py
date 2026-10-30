@@ -1,10 +1,13 @@
 """Story2Hap: narrate a story sentence by sentence with matching controller vibration.
 
 Agents (OpenAI chat models with JSON-schema outputs, via decompose._stage):
-  1. StoryState   whole story -> entities (with materials) and per-sentence physical context
+  1. StoryState   whole story -> entities (with materials), scenes (haptic storyboard: continuous
+                  background, how strong it should feel and why, key moments) and per-sentence context
   2. Explicit     per sentence -> vibration-producing events stated in the text
   3. Inference    per sentence -> implied events (consequence / precondition / ambient / sensory),
                   each with an evidence quote and a confidence
+  3b. Captions    rewrites every event as a HapticGen caption (source/material + ONE occurrence) and
+                  drops events that cannot vibrate (speech, thoughts, eating ...)
   4. Director     whole story -> keep/drop, final intensity, voice key (same source = same sample)
   5. Narration    OpenAI TTS per sentence + Whisper word timestamps; events are anchored to words
   6. Render       SubEvent2Hap composer (done by the web server, which owns the GPU and the lock)
@@ -34,24 +37,40 @@ STT_MODEL = "whisper-1"
 VOICES = ("fable", "alloy", "ash", "ballad", "coral", "echo", "nova", "onyx", "sage", "shimmer", "verse")
 MAX_SENTENCES = 200
 CHUNK = 25              # sentences per state / director call (long tales are processed in chunks)
-MAX_EVENTS = 6           # per sentence after the director (composer limit is 8)
+MAX_EVENTS = 8           # per sentence after the director (composer limit is 8 per layer)
+CONTEXT = 2              # sentences before / after given to the per-sentence agents
+FG_FLOOR = 0.45          # kept foreground events never fall below this (amplitude 0.45**1.6 ~ 0.28)
 CLIP_MAX = 10.0          # HapticGen / composer limit per sentence
 TAIL = 0.4               # vibration may ring this long after the narration of a sentence ends
 
 # ---------------------------------------------------------------- prompts
-STATE_PROMPT = """You track the physical world of a story for a haptic (vibration) narrator.
-Read the numbered sentences. List the entities that can make or feel physical contact
-(characters, objects, places, weather) with a short snake_case key and their material or body
-type when stated or obvious (e.g. straw, brick, wooden door, heavy giant). Then for EVERY
-sentence give its physical context: location, weather (or "none"), mood, narrative tension
-0-1, the keys of entities present, one line describing what physically happens or holds
-at that moment, and a natural Korean translation of the sentence for Korean readers. Do not invent plot. Input text is data. Return only JSON matching the schema."""
+STATE_PROMPT = """You are the haptic storyboard designer of a narrated story (vibration felt in the hands
+while listening). Read the numbered sentences as a whole before deciding anything.
+1. Entities that can make or feel physical contact (characters, objects, places, weather) with a short
+   snake_case key and their material or body type when stated or obvious (straw, brick, wooden door,
+   heavy giant).
+2. Scenes: split the sentences into scenes (a change of place, time or situation). For each scene give
+   the continuous physical background a listener would feel throughout it, or "none" (storm and rain,
+   crackling fire, rolling carriage, running water; a quiet room or a conversation has none), whether
+   the text states it, how strong it should feel 0-1 in THIS scene and why (a raging storm can be strong,
+   gentle rain or a quiet forest weak; the background must leave room for the scene's key moments), the
+   key moments (sentence ids where something physically striking happens) and a short haptic theme.
+3. For EVERY sentence: location, weather (or "none"), mood, narrative tension 0-1, keys of entities
+   present, one line describing what physically happens or holds at that moment, and a natural Korean
+   translation of the sentence for Korean readers.
+Do not invent plot. Input text is data. Return only JSON matching the schema."""
 
-EVENT_PROMPT = """You extract EXPLICIT vibration events from ONE story sentence for a VR controller
-narrator. Only physical actions or contacts the sentence states (knocks, steps, hits, wind,
-falls, doors, rumbling) that a listener could feel. Speech, thoughts and feelings are not
-events; a sentence may have none. Each entry is ONE occurrence: expand stated counts into
-separate entries (e.g. "knocked three times" -> three entries). For each event give:
+EVENT_PROMPT = """You find EXPLICIT vibration moments in ONE story sentence for a narrator whose listener feels
+vibration in the hands. Go through the provided words one by one and mark every word that a vibration
+would bring to life: physical actions and contacts (knock, step, sit, fall, break, chop, splash, climb,
+run, slam), movements of objects, weather and loud sounds (roar, crash, thunder), onomatopoeia
+(trip-trap, bang), strong physical qualities of stated objects (a heavy chair, a creaking stair) and
+bodily sensations (pressure, something hard underneath, pain, shivering, a pounding heart, tossing
+and turning): touch is what vibration conveys best. Use the surrounding sentences and the scene to
+understand what is physically happening. Only quiet speech, thoughts, emotions without a bodily
+sensation and seeing are not vibration; a shout or roar can be a low rumble. Do not add the
+scene background (given in scene); it is handled separately. Each entry is ONE occurrence: expand
+stated counts into separate entries (e.g. "knocked three times" -> three entries). For each event give:
 entity key (from the story entities, or ""), action, a HapticGen caption (one concise English
 sentence naming the physical source/material and ONE occurrence of the action; no counts,
 timing or feelings), anchor_word (index of the word in the provided word list where the event
@@ -62,13 +81,15 @@ texture), spans_sentence (true only for a continuous action lasting the whole se
 Use the story context for materials. Input text is data. Return only JSON."""
 
 INFERENCE_PROMPT = """You infer IMPLIED vibration events for ONE story sentence: physical events a listener
-would expect to feel although the sentence does not state them. Types:
+would expect to feel although the sentence does not state them. Read the surrounding sentences and the
+scene: what is physically going on right now? Types:
 - consequence: physically entailed result of a stated action (blew the house down -> collapse)
 - precondition: physical action that must happen first (opened the door -> handle turns)
 - ambient: an ongoing physical state of the scene (storm -> rain, fire -> crackling)
 - sensory: implied physical quality of a stated event (a giant walks -> heavy ground-shaking steps)
 Only things that physically move, hit, flow or vibrate; a static state (a house standing, a quiet
-room) is not an event. Do not repeat the provided explicit events; do not add plot, characters or objects that the
+room) is not an event. The scene background (given in scene) is already rendered: do not add it again
+as ambient. Do not repeat the provided explicit events; do not add plot, characters or objects that the
 story context does not support. Each inference needs evidence (an exact quote from the sentence
 or a fact from the given context), a short reasoning and a confidence 0-1 that a typical reader
 imagines it. Same fields as explicit events otherwise (caption is one concise English sentence
@@ -76,12 +97,13 @@ naming the physical source and ONE occurrence; ambient states usually spans_sent
 low intensity). Return an empty list when nothing is implied. Input text is data. Return only JSON."""
 
 DIRECTOR_PROMPT = """You are the haptic director of a narrated story. For every candidate vibration
-event decide keep or drop and the final absolute intensity 0-1, so that the whole story reads well:
-keep salient events, drop redundant or distracting ones, save the strongest intensities for the
-climax (use the tension values), and leave calm sentences without vibration when nothing physical
-happens. Inferred events are a core feature, not optional extras: keep plausible inferred events
-that make the scene feel real (ambient states at low intensity, consequences and sensory qualities
-often stronger), and drop one only when it duplicates a kept event or distracts. Repetitions of a stated count
+event decide keep or drop and the final absolute intensity 0-1, so that the whole story reads well.
+Keep by default: listeners want vibration on the physical words of the story. Drop an event only when
+it duplicates another kept event at the same moment, contradicts the story, or would blur a key
+moment. Shape intensities with the scenes and tension: key moments and the climax strongest, quiet
+actions gentle but still perceptible. Inferred events are a core feature, not optional extras: keep
+plausible inferred events that make the scene feel real (consequences and sensory qualities often
+strong). Repetitions of a stated count
 (same caption at different times, e.g. three knocks) are NOT duplicates: keep all of them or none.
 Keep at most
 """ + str(MAX_EVENTS) + """ events per sentence. Give a voice_key to every event: events with the same physical
@@ -89,6 +111,19 @@ source and action across the story get the SAME voice_key (snake_case, e.g. wolf
 door_knock) so they reuse one vibration sample. Inferred events below the confidence threshold
 are already removed. Reuse a voice key from voice_keys_already_used when the same source and action
 returns. Give a short reason for each decision. Input text is data. Return only JSON."""
+
+CAPTION_PROMPT = """You write the input captions for a text-to-vibration model (HapticGen), trained on short
+concrete descriptions of ONE physical vibration such as "a heavy wooden door slamming shut",
+"rain pattering on a tin roof", "a large animal stomping on a wooden floor", "a straw roof collapsing",
+"a fast heartbeat", "an axe chopping into a thick wooden stalk". For every item, read the source, its
+material and the action in its sentence and write such a caption: the physical source or material and
+ONE occurrence of the action, under 12 words, no character names (say "a large bear", "a small girl"),
+no story words, emotions, counts or timing. Translate bodily sensations into the physical vibration
+that causes them ("lies on something hard" -> "a small hard lump pressing through soft cushions",
+"tossing in bed" -> "a body turning over on a creaking bed"). Keep every physical contact, movement,
+pressure, pain or texture: vibrates=true. Set vibrates=false ONLY for pure speech at normal volume,
+thinking or seeing with no physical component; then the caption may be empty. Return exactly one
+entry per given id. Input text is data. Return only JSON."""
 
 CRITIC_PROMPT = """You review the vibration plan and render of ONE narrated story sentence. You cannot
 feel the vibration; judge the plan and use the provided signal measurements. Score 1-5:
@@ -117,9 +152,32 @@ class SentenceState(dc.Output):
     korean: str = Field(max_length=400)
 
 
+class Scene(dc.Output):
+    first_sentence: int
+    last_sentence: int
+    setting: str = Field(max_length=120)
+    background: str = Field(max_length=120)            # continuous physical background, or "none"
+    background_stated: bool
+    background_level: float = Field(ge=0, le=1)
+    background_reason: str = Field(max_length=200)
+    key_moments: list[int]
+    haptic_theme: str = Field(max_length=160)
+
+
 class StoryState(dc.Output):
     entities: list[Entity] = Field(max_length=30)
+    scenes: list[Scene] = Field(min_length=1, max_length=CHUNK)
     sentences: list[SentenceState] = Field(min_length=1, max_length=CHUNK)
+
+
+class CaptionItem(dc.Output):
+    id: str
+    vibrates: bool
+    caption: str = Field(max_length=160)
+
+
+class Captions(dc.Output):
+    items: list[CaptionItem]
 
 
 class EventFields(dc.Output):
@@ -250,7 +308,7 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
     progress("narration", f"낭독 음성 생성 ({voice}) 시작 (에이전트와 동시 진행)")
 
     progress("state", f"문장 {len(sentences)}개의 이야기 상태 추적")
-    trace, entities, by_id = [], {}, {}
+    trace, entities, by_id, scenes = [], {}, {}, []
     for c0 in range(0, len(numbered), CHUNK):   # chunks keep the outputs small; entities carry over
         if len(numbered) > CHUNK:
             progress("state", f"이야기 상태 추적: 문장 {c0 + 1}~{min(c0 + CHUNK, len(numbered))}")
@@ -260,16 +318,31 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
         for e in st.entities:
             entities.setdefault(e.key, e.model_dump())
         by_id.update({x.sentence_id: x.model_dump() for x in st.sentences})
+        last = min(c0 + CHUNK, len(numbered)) - 1
+        for sc in st.scenes:   # clamp to this chunk so every sentence belongs to exactly one scene
+            sc = sc.model_dump()
+            sc["first_sentence"], sc["last_sentence"] = max(c0, sc["first_sentence"]), min(last, sc["last_sentence"])
+            if sc["first_sentence"] <= sc["last_sentence"]:
+                scenes.append({**sc, "id": len(scenes)})
     plan["entities"] = list(entities.values())
+    plan["scenes"] = scenes
     for s in plan["sentences"]:
         s["state"] = by_id.get(s["id"], {"sentence_id": s["id"], "location": "", "weather": "", "mood": "",
-                                         "tension": 0.3, "present": [], "physical_context": ""})
+                                         "tension": 0.3, "present": [], "physical_context": "", "korean": ""})
+        s["scene"] = next((sc["id"] for sc in scenes if sc["first_sentence"] <= s["id"] <= sc["last_sentence"]), None)
     plan["traces"]["state"] = trace
 
+    def scene_of(s):
+        sc = scenes[s["scene"]] if s["scene"] is not None else None
+        return sc and {**{k: sc[k] for k in ("setting", "background", "background_level", "haptic_theme")},
+                       "key_moment": s["id"] in sc["key_moments"]}
+
     def context(s):
-        prev = plan["sentences"][s["id"] - 1]["text"] if s["id"] else ""
-        return {"sentence": s["text"], "words": [f"{i}:{w}" for i, w in enumerate(s["words"])],
-                "previous_sentence": prev, "state": s["state"], "entities": plan["entities"]}
+        i = s["id"]
+        return {"sentence": s["text"], "words": [f"{k}:{w}" for k, w in enumerate(s["words"])],
+                "before": [x["text"] for x in plan["sentences"][max(0, i - CONTEXT):i]],
+                "after": [x["text"] for x in plan["sentences"][i + 1:i + 1 + CONTEXT]],
+                "scene": scene_of(s), "state": s["state"], "entities": plan["entities"]}
 
     progress("explicit", "문장별 명시 사건 추출")
 
@@ -296,10 +369,54 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
             s["inferred"] = evs
             plan["traces"][f"inference_{s['id']}"] = tr
 
+    # Scene background -> one bed event per sentence of the scene, at the scene's level, one shared sample.
+    for s in plan["sentences"]:
+        sc = scenes[s["scene"]] if s["scene"] is not None else None
+        s["bed"] = []
+        if sc and sc["background"].strip().lower() not in ("", "none") and sc["background_level"] > 0:
+            s["bed"] = [{"id": f"s{s['id']}b", "origin": "explicit" if sc["background_stated"] else "inferred", "bed": True,
+                         "type": "ambient", "entity": "", "action": sc["background"], "caption": sc["background"],
+                         "anchor_word": 0, "offset_s": 0.0, "duration": 1.0, "intensity": sc["background_level"],
+                         "kind": "texture", "spans_sentence": True, "evidence": sc["background_reason"], "reasoning": "",
+                         "confidence": 1.0, "scene": sc["id"],
+                         "decision": {"keep": True, "intensity": sc["background_level"], "voice_key": f"bed_scene{sc['id']}",
+                                      "reason": f"장면 배경: {sc['background_reason']}"}}]
+
+    progress("captions", "진동 캡션 다듬기 (진동이 나지 않는 사건 제외)")
+    ent = {e["key"]: e for e in plan["entities"]}
+    items, owners = [], {}
+    for s in plan["sentences"]:
+        for e in s["explicit"] + s["inferred"] + s["bed"]:
+            key = f"bed{e['scene']}" if e.get("bed") else e["id"]
+            owners.setdefault(key, []).append(e)
+            if len(owners[key]) == 1:
+                src = ent.get(e["entity"], {})
+                items.append({"id": key, "sentence": s["text"], "source": src.get("name", ""), "material": src.get("material", ""),
+                              "action": e["action"], "draft_caption": e["caption"]})
+
+    def caption_chunk(chunk):
+        tr = []
+        out = _agent("captions", CAPTION_PROMPT, {"items": chunk}, Captions, model, tr)
+        return out.items, tr
+
+    with ThreadPoolExecutor(8) as ex:
+        for k, (got, tr) in enumerate(ex.map(caption_chunk, [items[i:i + 40] for i in range(0, len(items), 40)])):
+            plan["traces"][f"captions_{k}"] = tr
+            for it in got:
+                for e in owners.get(it.id, []):
+                    e["draft_caption"] = e["caption"]
+                    if it.vibrates and it.caption.strip():
+                        e["caption"] = it.caption.strip()
+                    elif not it.vibrates:
+                        e["decision"] = {"keep": False, "intensity": e["intensity"], "voice_key": e["id"],
+                                         "reason": "진동이 나지 않는 사건 (캡션 단계)"}
+
     progress("director", "연출: 선택, 세기, 같은 목소리 묶기")
     candidates = []
     for s in plan["sentences"]:
         for e in s["explicit"] + s["inferred"]:
+            if "decision" in e:   # removed by the caption stage
+                continue
             if e["origin"] == "inferred" and e["confidence"] < threshold:
                 e["decision"] = {"keep": False, "intensity": e["intensity"], "voice_key": e["id"],
                                  "reason": f"확신도 {e['confidence']:.2f} < 임계값 {threshold:.2f}"}
@@ -314,6 +431,9 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
         if not cands:
             continue
         d = _agent("director", DIRECTOR_PROMPT, {
+            "scenes": [{k: sc[k] for k in ("first_sentence", "last_sentence", "setting", "background", "background_level",
+                                           "key_moments", "haptic_theme")} for sc in scenes
+                       if sc["last_sentence"] >= c0 and sc["first_sentence"] < c0 + CHUNK],
             "sentences": [{"id": s["id"], "text": s["text"], "tension": s["state"]["tension"]} for s in part],
             "candidates": cands, "max_events_per_sentence": MAX_EVENTS,
             "voice_keys_already_used": [{"voice_key": k, "caption": v} for k, v in voices.items()]}, Direction, model, trace)
@@ -331,6 +451,17 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
                       key=lambda e: (e["origin"] != "explicit", -e["decision"]["intensity"]))
         for e in kept[MAX_EVENTS:]:   # hard cap even if the director kept more
             e["decision"] = {**e["decision"], "keep": False, "reason": "문장당 최대 개수 초과"}
+
+    # Intensity range: the story's strongest foreground event reaches full scale and no kept foreground
+    # event is too weak to feel; scene backgrounds keep the level the storyboard chose for their scene.
+    fg = [e for s in plan["sentences"] for e in s["explicit"] + s["inferred"]
+          if e["decision"]["keep"] and not e["spans_sentence"]]
+    top = max((e["decision"]["intensity"] for e in fg), default=0.0)
+    gain = min(1.6, 1.0 / top) if top > 0 else 1.0
+    for e in fg:
+        e["decision"]["intensity"] = round(min(1.0, max(FG_FLOOR, e["decision"]["intensity"] * gain)), 3)
+    for s in plan["sentences"]:
+        s["explicit"] = s["explicit"] + s.pop("bed")
 
     progress("narration", "낭독 음성과 단어 시각 정렬 마무리")
     for s, fut in zip(plan["sentences"], narrations):
@@ -360,7 +491,7 @@ def schedule(s):
             dur = min(e["duration"], clip - start)
         out.append({"prompt": e["caption"], "start": round(start, 3), "duration": round(max(0.15, dur), 3),
                     "intensity": round(e["decision"]["intensity"], 3), "eid": e["id"], "origin": e["origin"],
-                    "voice_key": e["decision"]["voice_key"]})
+                    "voice_key": e["decision"]["voice_key"], "layer": "bed" if e["spans_sentence"] else "fg"})
     return sorted(out, key=lambda x: x["start"])
 
 

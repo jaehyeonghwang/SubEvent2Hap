@@ -1,0 +1,42 @@
+{
+  "event": "At last he returned to his palace quite cast down, because he wished so much to have a real Princess for his wife.",
+  "sub_events": [
+    {
+      "prompt": "Footsteps echoing on a stone floor.",
+      "start": 1.34,
+      "duration": 0.5,
+      "intensity": 0.778,
+      "eid": "s3e0",
+      "origin": "explicit",
+      "voice_key": "footsteps_echo",
+      "layer": "fg",
+      "source_wav": "samples/footsteps_echo.wav",
+      "file": "compose/compose_At_last_he_returned_to_his_palace_qu_1031_012931_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.306,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.84,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_At_last_he_returned_to_his_palace_qu_1031_012931_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.004642009735107422
+}

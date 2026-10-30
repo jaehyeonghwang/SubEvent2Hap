@@ -1,0 +1,41 @@
+{
+  "event": "The Traveler no sooner felt his genial rays than he took off one garment after another, and at last, fairly overcome with heat, undressed and bathed in a stream that lay in his path.",
+  "sub_events": [
+    {
+      "prompt": "Water is felt during bathing in a stream.",
+      "start": 0.28,
+      "duration": 1.5,
+      "intensity": 0.7,
+      "eid": "s3e3",
+      "origin": "explicit",
+      "voice_key": "water_bathe",
+      "source_wav": "samples/water_bathe.wav",
+      "file": "compose/compose_The_Traveler_no_sooner_felt_his_geni_1031_011117_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.067,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.78,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_Traveler_no_sooner_felt_his_geni_1031_011117_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0026247501373291016,
+  "elapsed": 0.008676290512084961
+}

@@ -1,0 +1,59 @@
+{
+  "event": "At last he returned to his palace quite cast down, because he wished so much to have a real Princess for his wife.",
+  "sub_events": [
+    {
+      "prompt": "A heavy wooden door opening.",
+      "start": 1.14,
+      "duration": 1.0,
+      "intensity": 0.45,
+      "eid": "s3i0",
+      "origin": "inferred",
+      "voice_key": "door_open",
+      "layer": "fg",
+      "source_wav": "samples/door_open.wav",
+      "file": "compose/compose_At_last_he_returned_to_his_palace_qu_1031_012931/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.166,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Footsteps echoing on a stone floor.",
+      "start": 1.34,
+      "duration": 0.5,
+      "intensity": 0.778,
+      "eid": "s3e0",
+      "origin": "explicit",
+      "voice_key": "footsteps_echo",
+      "layer": "fg",
+      "source_wav": "samples/footsteps_echo.wav",
+      "file": "compose/compose_At_last_he_returned_to_his_palace_qu_1031_012931/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.306,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 2.1399999999999997,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_At_last_he_returned_to_his_palace_qu_1031_012931_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.011665105819702148,
+  "elapsed": 0.01822972297668457
+}

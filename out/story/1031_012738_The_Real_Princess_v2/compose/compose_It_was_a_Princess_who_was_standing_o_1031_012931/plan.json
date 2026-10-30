@@ -1,0 +1,59 @@
+{
+  "event": "It was a Princess who was standing outside the door.",
+  "sub_events": [
+    {
+      "prompt": "A storm with thunder and rain.",
+      "start": 0.0,
+      "duration": 4.9,
+      "intensity": 0.8,
+      "eid": "s6b",
+      "origin": "explicit",
+      "voice_key": "bed_scene1",
+      "layer": "bed",
+      "source_wav": "samples/bed_scene1.wav",
+      "file": "compose/compose_It_was_a_Princess_who_was_standing_o_1031_012931/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Wind blowing around.",
+      "start": 0.0,
+      "duration": 4.9,
+      "intensity": 0.4,
+      "eid": "s6i1",
+      "origin": "inferred",
+      "voice_key": "wind_blow",
+      "layer": "bed",
+      "source_wav": "samples/wind_blow.wav",
+      "file": "compose/compose_It_was_a_Princess_who_was_standing_o_1031_012931/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.583,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.9,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_It_was_a_Princess_who_was_standing_o_1031_012931_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.012163639068603516,
+  "elapsed": 0.019189119338989258
+}

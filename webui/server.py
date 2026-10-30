@@ -635,6 +635,25 @@ def _windows(subs):
     return out
 
 
+DUCK_DEPTH = 0.65   # how far the scene background dips while a foreground event plays
+
+
+def _duck(bg, fg, sr, depth=DUCK_DEPTH):
+    """Lower the background under foreground events (side-chain ducking), so a strong background can stay
+    strong in its scene without masking knocks and crashes. Gain follows the foreground envelope with a
+    short attack and a slower release."""
+    n = len(bg)
+    f = np.zeros(n, dtype=np.float32)
+    f[:min(n, len(fg))] = fg[:n]
+    env = np.sqrt(np.convolve(f * f, np.ones(int(0.03 * sr)) / int(0.03 * sr), mode="same"))
+    if env.max() < 1e-5:
+        return bg
+    g = 1.0 - depth * np.clip(env / (0.25 * env.max()), 0, 1)
+    release = int(0.12 * sr)   # hold the dip a little after each hit, then recover smoothly
+    g = np.minimum(g, np.convolve(g, np.ones(release) / release, mode="same"))
+    return (bg * g).astype(np.float32)
+
+
 GEN_BUCKETS = (2.0, 4.0, 6.0, 10.0)   # generation lengths: similar lengths share a batch
 
 
@@ -719,23 +738,40 @@ def _story_render(sid, plan, ids, fresh=False, on_sentence=None):
                     mix[kind][a:a + n] += w[:n]
                     used[kind] = True
 
-                for k, (w0, part) in enumerate(wins):
-                    body = [{**x, "source_wav": samples.get(x["voice_key"])} for x in part]
-                    r = cp.compose(model, s["text"], body, 2, False, 3.0, 1.0, 250, None, out_dir,
+                def layer(subs_):
+                    """Mix of the given sub-events (samples already generated) -> (wave, rendered sub-events)."""
+                    if not subs_:
+                        return None, []
+                    r = cp.compose(model, s["text"], subs_, 1, False, 3.0, 1.0, 250, None, out_dir,
                                    gamma=cp.DEFAULT_GAMMA, share_repeats=True)
-                    rendered += [{**o, "start": round(o["start"] + w0, 3)} for o in r["sub_events"]]
-                    full, _ = sf.read(out_dir / r["composite"], dtype="float32")
+                    return sf.read(out_dir / r["composite"], dtype="float32")[0], r["sub_events"]
+
+                def mixed(subs_):
+                    """Foreground events over the scene background, which ducks under them."""
+                    fg, fg_ev = layer([x for x in subs_ if x.get("layer") != "bed"])
+                    bg, bg_ev = layer([x for x in subs_ if x.get("layer") == "bed"])
+                    if bg is not None and fg is not None:
+                        bg = _duck(bg, fg, sr)
+                    parts_ = [w for w in (fg, bg) if w is not None]
+                    if not parts_:
+                        return None, []
+                    out = np.zeros(max(len(w) for w in parts_), dtype=np.float32)
+                    for w in parts_:
+                        out[:len(w)] += w
+                    return out, fg_ev + bg_ev
+
+                for k, (w0, part) in enumerate(wins):
+                    full, evs = mixed([{**x, "source_wav": samples.get(x["voice_key"])} for x in part])
+                    rendered += [{**o, "start": round(o["start"] + w0, 3)} for o in evs]
                     add("full", full, w0)
                     b = baselines.get((s["id"], k))
                     if b is not None:   # level the baseline to the composite's peak, as compose() does
                         n = int((max(p["start"] + p["duration"] for p in part)) * sr)
                         b = b[:n] * (float(np.abs(full).max()) / max(1e-4, float(np.abs(b[:n]).max())))
                         add("baseline", cp._fade(b, sr, cp.FADE_IN, cp.FADE_OUT), w0)
-                    exp = [{**o} for o in r["sub_events"] if o["origin"] == "explicit"]
-                    if exp:
-                        ex = cp.compose(model, s["text"], exp, 1, False, 3.0, 1.0, 250, None, out_dir,
-                                        gamma=cp.DEFAULT_GAMMA, share_repeats=True)
-                        add("explicit", sf.read(out_dir / ex["composite"], dtype="float32")[0], w0)
+                    exp, _ = mixed([{**o} for o in evs if o["origin"] == "explicit"])
+                    if exp is not None:
+                        add("explicit", exp, w0)
                 files = {}
                 for kind, w in mix.items():
                     if used[kind]:
@@ -748,7 +784,7 @@ def _story_render(sid, plan, ids, fresh=False, on_sentence=None):
                                "waves": {k: {key: v for key, v in _describe(OUT_DIR / f).items() if key in ("name", "duration", "peak", "peaks")}
                                          for k, f in files.items() if f},
                                "sub_events": [{k: o.get(k) for k in ("eid", "origin", "prompt", "start", "duration", "intensity",
-                                                                     "voice_key", "reused", "source_wav")} for o in rendered]}
+                                                                     "voice_key", "reused", "source_wav", "layer")} for o in rendered]}
                 _story_log(sid, "render", f"문장 {s['id'] + 1} 완성")
                 if on_sentence:
                     on_sentence(s)

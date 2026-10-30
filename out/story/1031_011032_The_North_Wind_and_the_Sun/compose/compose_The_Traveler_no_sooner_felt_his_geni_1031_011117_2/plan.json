@@ -1,0 +1,73 @@
+{
+  "event": "The Traveler no sooner felt his genial rays than he took off one garment after another, and at last, fairly overcome with heat, undressed and bathed in a stream that lay in his path.",
+  "sub_events": [
+    {
+      "prompt": "A garment made of fabric is taken off.",
+      "start": 3.56,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s3e0",
+      "origin": "explicit",
+      "voice_key": "garment_remove",
+      "source_wav": "samples/garment_remove.wav",
+      "file": "compose/compose_The_Traveler_no_sooner_felt_his_geni_1031_011117_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.998,
+      "shared": true,
+      "reused": true
+    },
+    {
+      "prompt": "A garment made of fabric is taken off.",
+      "start": 4.78,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "eid": "s3e1",
+      "origin": "explicit",
+      "voice_key": "garment_remove",
+      "source_wav": "samples/garment_remove.wav",
+      "file": "compose/compose_The_Traveler_no_sooner_felt_his_geni_1031_011117_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.998,
+      "shared": true,
+      "reused": true
+    },
+    {
+      "prompt": "Clothes made of fabric are removed.",
+      "start": 8.78,
+      "duration": 0.6,
+      "intensity": 0.6,
+      "eid": "s3e2",
+      "origin": "explicit",
+      "voice_key": "undress",
+      "source_wav": "samples/undress.wav",
+      "file": "compose/compose_The_Traveler_no_sooner_felt_his_geni_1031_011117_2/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.019,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.379999999999999,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_Traveler_no_sooner_felt_his_geni_1031_011117_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.00689387321472168
+}

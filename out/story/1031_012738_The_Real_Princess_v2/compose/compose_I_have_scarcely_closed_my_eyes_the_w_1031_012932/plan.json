@@ -1,0 +1,42 @@
+{
+  "event": "“I have scarcely closed my eyes the whole night through.",
+  "sub_events": [
+    {
+      "prompt": "A bed exerting pressure on a body.",
+      "start": 0.0,
+      "duration": 5.2,
+      "intensity": 0.5,
+      "eid": "s14i0",
+      "origin": "inferred",
+      "voice_key": "bed_pressure",
+      "layer": "bed",
+      "source_wav": "samples/bed_pressure.wav",
+      "file": "compose/compose_I_have_scarcely_closed_my_eyes_the_w_1031_012932/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.256,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 5.2,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_have_scarcely_closed_my_eyes_the_w_1031_012932_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.006616353988647461,
+  "elapsed": 0.01268315315246582
+}

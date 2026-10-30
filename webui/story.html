@@ -111,6 +111,7 @@ canvas.tl { width: 100%; display: block; background: var(--track); border-radius
 .tag { font-size: 11.5px; font-weight: 600; padding: 1px 7px; border-radius: 6px; white-space: nowrap; }
 .tag.exp { background: color-mix(in srgb, var(--explicit) 15%, transparent); color: var(--explicit); }
 .tag.inf { background: color-mix(in srgb, var(--inferred) 18%, transparent); color: var(--inferred); }
+.tag.bed { background: color-mix(in srgb, var(--muted) 18%, transparent); color: var(--muted); }
 .tblwrap { overflow-x: auto; }
 details { margin-top: 10px; } summary { cursor: pointer; color: var(--muted); font-size: 13px; }
 .kv { font-size: 13px; color: var(--muted); margin-top: 6px; line-height: 1.7; }
@@ -366,7 +367,8 @@ function sentenceCard(s, i) {
   const sub = Object.fromEntries((s.sub_events || []).map(x => [x.eid, x]));
   evs.forEach(e => {
     const tr = document.createElement("tr"); if (!e.decision.keep) tr.className = "drop";
-    const tag = e.origin === "explicit" ? `<span class="tag exp">명시</span>` : `<span class="tag inf">추론 · ${TYPE_KO[e.type] || e.type}</span>`;
+    const tag = e.bed ? `<span class="tag bed">장면 배경 (${e.origin === "explicit" ? "명시" : "추론"})</span>`
+      : e.origin === "explicit" ? `<span class="tag exp">명시</span>` : `<span class="tag inf">추론, ${TYPE_KO[e.type] || e.type}</span>`;
     const x = sub[e.id];
     tr.innerHTML = `<td>${tag}</td><td>${esc(e.caption)}</td><td>${esc(e.spans_sentence ? "(문장 전체)" : s.words[Math.min(e.anchor_word, s.words.length - 1)] || "")}</td>
       <td>${x ? x.start.toFixed(2) + "초" : ""}</td><td>${Math.round(e.decision.intensity * 100)}%</td>
@@ -380,7 +382,9 @@ function sentenceCard(s, i) {
     `<div>Critic: 포괄성 ${c.coverage}, 추론 ${c.inference}, 세기 ${c.intensity}, 타이밍 ${c.timing}, 종합 ${c.overall} (5점 만점)${c.retried ? ", 자동 재렌더 1회" : ""}</div>
      <div>신호: 계획한 충격 ${c.signal?.expected_impacts ?? "-"}개 중 ${c.signal?.matched_impacts ?? "-"}개 검출${c.signal?.onset_mae_ms != null ? `, 평균 오차 ${c.signal.onset_mae_ms.toFixed(0)} ms` : ""}</div>
      ${(c.issues || []).map(x => `<div>• ${esc(x)}</div>`).join("")}`) : "<div>Critic 평가 전</div>";
-  $(".kv", card).innerHTML = `<div><b>상태</b> 장소 ${esc(st.location || "-")}, 날씨 ${esc(st.weather || "-")}, 분위기 ${esc(st.mood || "-")}, 긴장도 ${st.tension ?? "-"}</div>
+  const sc = story.scenes && s.scene != null ? story.scenes[s.scene] : null;
+  const scLine = sc ? `<div><b>장면 ${sc.id + 1}</b> ${esc(sc.setting)}. 배경: ${esc(sc.background)}${sc.background !== "none" ? ` (세기 ${Math.round(sc.background_level * 100)}%, ${esc(sc.background_reason)})` : ""}. ${esc(sc.haptic_theme)}${(sc.key_moments || []).includes(s.id) ? " <b>핵심 순간</b>" : ""}</div>` : "";
+  $(".kv", card).innerHTML = scLine + `<div><b>상태</b> 장소 ${esc(st.location || "-")}, 날씨 ${esc(st.weather || "-")}, 분위기 ${esc(st.mood || "-")}, 긴장도 ${st.tension ?? "-"}</div>
     <div><b>물리적 상황</b> ${esc(st.physical_context || "-")}</div>${inf ? `<div style="margin-top:6px"><b>추론 사건</b></div>${inf}` : ""}<div style="margin-top:6px">${cr}</div>`;
   $(".p", card).onclick = () => { stop(); playSentence(i, false); };
   $(".r", card).onclick = async () => {

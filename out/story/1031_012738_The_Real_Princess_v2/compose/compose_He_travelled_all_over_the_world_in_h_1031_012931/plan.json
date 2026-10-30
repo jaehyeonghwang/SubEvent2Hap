@@ -1,0 +1,42 @@
+{
+  "event": "He travelled all over the world in hopes of finding such a lady; but there was always something wrong.",
+  "sub_events": [
+    {
+      "prompt": "Footsteps echoing on various surfaces.",
+      "start": 0.0,
+      "duration": 6.6,
+      "intensity": 0.2,
+      "eid": "s1i0",
+      "origin": "inferred",
+      "voice_key": "footsteps_echo",
+      "layer": "bed",
+      "source_wav": "samples/footsteps_echo.wav",
+      "file": "compose/compose_He_travelled_all_over_the_world_in_h_1031_012931/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.31,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 6.6,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_travelled_all_over_the_world_in_h_1031_012931_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.010281562805175781,
+  "elapsed": 0.017898082733154297
+}

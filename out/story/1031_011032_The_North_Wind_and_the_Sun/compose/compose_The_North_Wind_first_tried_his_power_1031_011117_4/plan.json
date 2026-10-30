@@ -1,0 +1,41 @@
+{
+  "event": "The North Wind first tried his power and blew with all his might, but the keener his blasts, the closer the Traveler wrapped his cloak around him, until at last, resigning all hope of victory, the Wind called upon the Sun to see what he could do.",
+  "sub_events": [
+    {
+      "prompt": "Air blowing with force.",
+      "start": 0.0,
+      "duration": 6.65,
+      "intensity": 0.7,
+      "eid": "s1e0",
+      "origin": "explicit",
+      "voice_key": "north_wind_blow",
+      "source_wav": "samples/north_wind_blow.wav",
+      "file": "compose/compose_The_North_Wind_first_tried_his_power_1031_011117_4/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.713,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 6.65,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_North_Wind_first_tried_his_power_1031_011117_4_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.001537322998046875,
+  "elapsed": 0.006177186965942383
+}

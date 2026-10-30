@@ -1,0 +1,57 @@
+{
+  "event": "THE NORTH WIND and the Sun disputed as to which was the most powerful, and agreed that he should be declared the victor who could first strip a wayfaring man of his clothes.",
+  "sub_events": [
+    {
+      "prompt": "Wind blowing",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.3,
+      "eid": "s0i0",
+      "origin": "inferred",
+      "voice_key": "north_wind_blow",
+      "source_wav": "samples/north_wind_blow.wav",
+      "file": "compose/compose_THE_NORTH_WIND_and_the_Sun_disputed__1031_011117/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.48,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Sun shining",
+      "start": 0.0,
+      "duration": 9.5,
+      "intensity": 0.3,
+      "eid": "s0i1",
+      "origin": "inferred",
+      "voice_key": "sun_shine",
+      "source_wav": "samples/sun_shine.wav",
+      "file": "compose/compose_THE_NORTH_WIND_and_the_Sun_disputed__1031_011117/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_THE_NORTH_WIND_and_the_Sun_disputed__1031_011117_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.014313220977783203,
+  "elapsed": 0.024613142013549805
+}

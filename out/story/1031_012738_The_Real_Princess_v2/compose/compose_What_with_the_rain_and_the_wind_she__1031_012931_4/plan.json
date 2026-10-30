@@ -1,0 +1,42 @@
+{
+  "event": "What with the rain and the wind, she was in a sad condition; the water trickled down from her hair, and her clothes clung to her body.",
+  "sub_events": [
+    {
+      "prompt": "A storm with thunder and rain.",
+      "start": 0.0,
+      "duration": 9.25,
+      "intensity": 0.8,
+      "eid": "s7b",
+      "origin": "explicit",
+      "voice_key": "bed_scene1",
+      "layer": "bed",
+      "source_wav": "samples/bed_scene1.wav",
+      "file": "compose/compose_What_with_the_rain_and_the_wind_she__1031_012931_4/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.25,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_What_with_the_rain_and_the_wind_she__1031_012931_4_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.004866838455200195
+}
