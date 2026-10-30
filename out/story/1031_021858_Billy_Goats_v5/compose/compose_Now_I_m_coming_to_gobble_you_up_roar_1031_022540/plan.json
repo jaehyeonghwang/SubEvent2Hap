@@ -1,0 +1,75 @@
+{
+  "event": "“Now, I’m coming to gobble you up”, roared the Troll.",
+  "sub_events": [
+    {
+      "prompt": "The Troll's heavy steps shake the ground.",
+      "start": 0.84,
+      "intensity": 0.7,
+      "eid": "s26i0",
+      "origin": "inferred",
+      "voice_key": "troll_steps",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 1.2,
+        "weight": 0.9,
+        "hardness": 0.6
+      },
+      "salience": 2,
+      "treatment": "phrase",
+      "duration": 1.0,
+      "source_wav": "samples/synth_s26i0_0.wav",
+      "file": "compose/compose_Now_I_m_coming_to_gobble_you_up_roar_1031_022540/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.001,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "The Troll's roar vibrates through the air.",
+      "start": 3.3,
+      "intensity": 0.9,
+      "eid": "s26e0",
+      "origin": "explicit",
+      "voice_key": "troll_roar",
+      "layer": "fg",
+      "family": "rumble",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.9,
+        "hardness": 0.6
+      },
+      "salience": 3,
+      "treatment": "accent",
+      "duration": 0.5,
+      "source_wav": "samples/synth_s26e0_0.wav",
+      "file": "compose/compose_Now_I_m_coming_to_gobble_you_up_roar_1031_022540/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.8,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Now_I_m_coming_to_gobble_you_up_roar_1031_022540_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.009261131286621094,
+  "elapsed": 0.013843297958374023
+}

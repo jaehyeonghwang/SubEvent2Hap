@@ -1,0 +1,50 @@
+{
+  "event": "A little while after came the second billy-goat Gruff to cross the bridge.",
+  "sub_events": [
+    {
+      "prompt": "Flowing water under the bridge.",
+      "start": 0.0,
+      "intensity": 0.3,
+      "eid": "s10b",
+      "origin": "explicit",
+      "voice_key": "bed_scene2",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.2,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "treatment": "bed",
+      "duration": 6.15,
+      "source_wav": "samples/bed_scene2.wav",
+      "file": "compose/compose_A_little_while_after_came_the_second_1031_023332_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.797,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 6.15,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_little_while_after_came_the_second_1031_023332_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.005005359649658203,
+  "elapsed": 0.011006593704223633
+}

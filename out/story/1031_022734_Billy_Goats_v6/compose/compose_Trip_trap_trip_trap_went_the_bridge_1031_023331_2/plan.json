@@ -1,0 +1,50 @@
+{
+  "event": "“Trip, trap; trip, trap!” went the bridge.",
+  "sub_events": [
+    {
+      "prompt": "Flowing water under the bridge.",
+      "start": 0.0,
+      "intensity": 0.3,
+      "eid": "s3b",
+      "origin": "explicit",
+      "voice_key": "bed_scene1",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.2,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "treatment": "bed",
+      "duration": 4.7,
+      "source_wav": "samples/bed_scene1.wav",
+      "file": "compose/compose_Trip_trap_trip_trap_went_the_bridge_1031_023331_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 4.528,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.7,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Trip_trap_trip_trap_went_the_bridge_1031_023331_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0010004043579101562,
+  "elapsed": 0.006001472473144531
+}

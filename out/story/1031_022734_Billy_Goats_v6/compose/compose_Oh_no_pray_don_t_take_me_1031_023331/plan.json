@@ -1,0 +1,50 @@
+{
+  "event": "“Oh, no! pray don’t take me.",
+  "sub_events": [
+    {
+      "prompt": "The billy-goat Gruff trembles in fear.",
+      "start": 0.0,
+      "intensity": 0.4,
+      "eid": "s7i0",
+      "origin": "inferred",
+      "voice_key": "s7i0",
+      "layer": "fg",
+      "family": "shake",
+      "params": {
+        "rate": 6.0,
+        "weight": 0.3,
+        "hardness": 0.3
+      },
+      "salience": 1,
+      "treatment": "phrase",
+      "duration": 3.25,
+      "source_wav": "samples/synth_s7i0_0.wav",
+      "file": "compose/compose_Oh_no_pray_don_t_take_me_1031_023331/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.003,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.25,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Oh_no_pray_don_t_take_me_1031_023331_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.006001710891723633,
+  "elapsed": 0.011000394821166992
+}

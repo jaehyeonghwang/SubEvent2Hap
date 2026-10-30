@@ -1,0 +1,75 @@
+{
+  "event": "“Now, I’m coming to gobble you up”, said the Troll.",
+  "sub_events": [
+    {
+      "prompt": "A Troll's voice rumbling threateningly.",
+      "start": 0.0,
+      "intensity": 0.7,
+      "eid": "s6e0",
+      "origin": "explicit",
+      "voice_key": "troll_roar",
+      "layer": "bed",
+      "family": "rumble",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.8,
+        "hardness": 0.5
+      },
+      "salience": 2,
+      "treatment": "bed",
+      "duration": 4.1,
+      "source_wav": "samples/synth_s6e0_0.wav",
+      "file": "compose/compose_Now_I_m_coming_to_gobble_you_up_said_1031_022536_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.009,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Water flowing under a bridge.",
+      "start": 0.0,
+      "intensity": 0.3,
+      "eid": "s6b",
+      "origin": "explicit",
+      "voice_key": "bed_scene1",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.3,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "treatment": "bed",
+      "duration": 4.1,
+      "source_wav": "samples/bed_scene1.wav",
+      "file": "compose/compose_Now_I_m_coming_to_gobble_you_up_said_1031_022536_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.001,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.1,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Now_I_m_coming_to_gobble_you_up_said_1031_022536_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0035238265991210938,
+  "elapsed": 0.012267589569091797
+}

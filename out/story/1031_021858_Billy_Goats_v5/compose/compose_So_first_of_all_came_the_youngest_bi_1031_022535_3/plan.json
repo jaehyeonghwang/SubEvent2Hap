@@ -1,0 +1,50 @@
+{
+  "event": "So first of all came the youngest billy-goat Gruff to cross the bridge.",
+  "sub_events": [
+    {
+      "prompt": "A small goat stepping onto a wooden bridge.",
+      "start": 2.04,
+      "intensity": 0.6,
+      "eid": "s2e0",
+      "origin": "explicit",
+      "voice_key": "goat_step",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 2.0,
+        "weight": 0.3,
+        "hardness": 0.3
+      },
+      "salience": 2,
+      "treatment": "accent",
+      "duration": 0.4,
+      "source_wav": "samples/synth_s2e0_0.wav",
+      "file": "compose/compose_So_first_of_all_came_the_youngest_bi_1031_022535_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 2.44,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_So_first_of_all_came_the_youngest_bi_1031_022535_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.003025054931640625
+}

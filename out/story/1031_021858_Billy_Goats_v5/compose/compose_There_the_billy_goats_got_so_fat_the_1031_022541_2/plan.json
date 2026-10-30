@@ -1,0 +1,50 @@
+{
+  "event": "There the billy-goats got so fat they were scarce able to walk home again; and if the fat hasn’t fallen off them, why they’re still fat; and so: Snip, snap, snout, This tale’s told out.",
+  "sub_events": [
+    {
+      "prompt": "The billy-goats' heavy steps on the ground.",
+      "start": 4.14,
+      "intensity": 0.4,
+      "eid": "s30e0",
+      "origin": "explicit",
+      "voice_key": "steps_hill",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 1.2,
+        "weight": 0.8,
+        "hardness": 0.5
+      },
+      "salience": 1,
+      "treatment": "phrase",
+      "duration": 1.5,
+      "source_wav": "samples/synth_s30e0_0.wav",
+      "file": "compose/compose_There_the_billy_goats_got_so_fat_the_1031_022541_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 5.64,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_There_the_billy_goats_got_so_fat_the_1031_022541_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.004541873931884766
+}

@@ -1,0 +1,50 @@
+{
+  "event": "TRIP, TRAP!” went the bridge.",
+  "sub_events": [
+    {
+      "prompt": "Wooden bridge making a trip-trap sound.",
+      "start": 0.0,
+      "intensity": 0.78,
+      "eid": "s13e0",
+      "origin": "explicit",
+      "voice_key": "s13e0",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.7
+      },
+      "salience": 2,
+      "treatment": "accent",
+      "duration": 0.5,
+      "source_wav": "samples/s13e0.wav",
+      "file": "compose/compose_TRIP_TRAP_went_the_bridge_1031_023332_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.118,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 0.5,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_TRIP_TRAP_went_the_bridge_1031_023332_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.005000591278076172
+}

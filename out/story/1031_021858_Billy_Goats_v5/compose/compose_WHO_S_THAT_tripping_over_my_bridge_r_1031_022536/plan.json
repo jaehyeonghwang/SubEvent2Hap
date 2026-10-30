@@ -1,0 +1,75 @@
+{
+  "event": "“WHO’S THAT tripping over my bridge?” roared the Troll.",
+  "sub_events": [
+    {
+      "prompt": "A Troll's roar rumbling through the air.",
+      "start": 3.42,
+      "intensity": 0.85,
+      "eid": "s4e1",
+      "origin": "explicit",
+      "voice_key": "troll_roar",
+      "layer": "fg",
+      "family": "rumble",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.8,
+        "hardness": 0.5
+      },
+      "salience": 3,
+      "treatment": "accent",
+      "duration": 0.5,
+      "source_wav": "samples/synth_s4e1_0.wav",
+      "file": "compose/compose_WHO_S_THAT_tripping_over_my_bridge_r_1031_022536/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "A Troll stomping on a wooden bridge.",
+      "start": 3.42,
+      "intensity": 0.5,
+      "eid": "s4i0",
+      "origin": "inferred",
+      "voice_key": "s4i0",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 1.2,
+        "weight": 0.9,
+        "hardness": 0.5
+      },
+      "salience": 1,
+      "treatment": "accent",
+      "duration": 0.5,
+      "source_wav": "samples/synth_s4i0_0.wav",
+      "file": "compose/compose_WHO_S_THAT_tripping_over_my_bridge_r_1031_022536/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.052,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.92,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_WHO_S_THAT_tripping_over_my_bridge_r_1031_022536_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.008678913116455078,
+  "elapsed": 0.013332366943359375
+}

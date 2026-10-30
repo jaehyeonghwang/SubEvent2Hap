@@ -1,0 +1,50 @@
+{
+  "event": "“Oh, no! don’t take me, wait a little till the big billy-goat Gruff comes, he’s much bigger.",
+  "sub_events": [
+    {
+      "prompt": "Water flowing under a bridge.",
+      "start": 0.0,
+      "intensity": 0.3,
+      "eid": "s17b",
+      "origin": "explicit",
+      "voice_key": "bed_scene2",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.3,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "treatment": "bed",
+      "duration": 7.1,
+      "source_wav": "samples/bed_scene2.wav",
+      "file": "compose/compose_Oh_no_don_t_take_me_wait_a_little_ti_1031_022538_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.017,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 7.1,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Oh_no_don_t_take_me_wait_a_little_ti_1031_022538_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0015158653259277344,
+  "elapsed": 0.006127357482910156
+}

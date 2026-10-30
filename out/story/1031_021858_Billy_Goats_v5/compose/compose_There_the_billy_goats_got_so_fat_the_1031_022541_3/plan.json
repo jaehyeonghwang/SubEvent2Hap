@@ -1,0 +1,103 @@
+{
+  "event": "There the billy-goats got so fat they were scarce able to walk home again; and if the fat hasn’t fallen off them, why they’re still fat; and so: Snip, snap, snout, This tale’s told out.",
+  "sub_events": [
+    {
+      "prompt": "A snapping sound like breaking twigs or a sharp crack.",
+      "start": 0.04,
+      "intensity": 0.55,
+      "eid": "s30e1_h0",
+      "origin": "explicit",
+      "voice_key": "snap_sound",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.7
+      },
+      "salience": 1,
+      "treatment": "hits",
+      "seed_key": "s30e1",
+      "duration": 0.18,
+      "source_wav": "samples/synth_s30e1_h0_1.wav",
+      "file": "compose/compose_There_the_billy_goats_got_so_fat_the_1031_022541_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.038,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "A snapping sound like breaking twigs or a sharp crack.",
+      "start": 0.82,
+      "intensity": 0.55,
+      "eid": "s30e1_h1",
+      "origin": "explicit",
+      "voice_key": "snap_sound",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.7
+      },
+      "salience": 1,
+      "treatment": "hits",
+      "seed_key": "s30e1",
+      "duration": 0.18,
+      "source_wav": "samples/synth_s30e1_h1_1.wav",
+      "file": "compose/compose_There_the_billy_goats_got_so_fat_the_1031_022541_3/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.038,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "A snapping sound like breaking twigs or a sharp crack.",
+      "start": 1.36,
+      "intensity": 0.55,
+      "eid": "s30e1_h2",
+      "origin": "explicit",
+      "voice_key": "snap_sound",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.7
+      },
+      "salience": 1,
+      "treatment": "hits",
+      "seed_key": "s30e1",
+      "duration": 0.18,
+      "source_wav": "samples/synth_s30e1_h2_1.wav",
+      "file": "compose/compose_There_the_billy_goats_got_so_fat_the_1031_022541_3/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.038,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.54,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_There_the_billy_goats_got_so_fat_the_1031_022541_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.007346153259277344,
+  "elapsed": 0.01347804069519043
+}

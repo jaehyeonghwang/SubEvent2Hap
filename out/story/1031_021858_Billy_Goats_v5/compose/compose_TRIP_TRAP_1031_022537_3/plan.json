@@ -1,0 +1,100 @@
+{
+  "event": "TRIP, TRAP!",
+  "sub_events": [
+    {
+      "prompt": "A wooden bridge making a trip-trap sound.",
+      "start": 0.0,
+      "intensity": 0.7,
+      "eid": "s12e0",
+      "origin": "explicit",
+      "voice_key": "s12e0",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.7,
+        "hardness": 0.8
+      },
+      "salience": 2,
+      "treatment": "bed",
+      "duration": 2.8,
+      "source_wav": "samples/s12e0.wav",
+      "file": "compose/compose_TRIP_TRAP_1031_022537_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.023,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Water flowing under a bridge.",
+      "start": 0.0,
+      "intensity": 0.3,
+      "eid": "s12b",
+      "origin": "explicit",
+      "voice_key": "bed_scene2",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.3,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "treatment": "bed",
+      "duration": 2.8,
+      "source_wav": "samples/bed_scene2.wav",
+      "file": "compose/compose_TRIP_TRAP_1031_022537_3/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 5.417,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "A bridge vibrating as a goat crosses.",
+      "start": 0.0,
+      "intensity": 0.5,
+      "eid": "s12i0",
+      "origin": "inferred",
+      "voice_key": "s12i0",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.7,
+        "hardness": 0.8
+      },
+      "salience": 1,
+      "treatment": "bed",
+      "duration": 2.8,
+      "source_wav": "samples/s12i0.wav",
+      "file": "compose/compose_TRIP_TRAP_1031_022537_3/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.134,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 2.8,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_TRIP_TRAP_1031_022537_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.034001827239990234,
+  "elapsed": 0.0416109561920166
+}

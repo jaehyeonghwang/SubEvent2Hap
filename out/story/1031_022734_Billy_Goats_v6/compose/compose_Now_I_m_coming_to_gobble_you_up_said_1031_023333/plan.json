@@ -1,0 +1,75 @@
+{
+  "event": "“Now, I’m coming to gobble you up”, said the Troll.",
+  "sub_events": [
+    {
+      "prompt": "The Troll moves with heavy footsteps.",
+      "start": 1.0,
+      "intensity": 0.78,
+      "eid": "s16e0",
+      "origin": "explicit",
+      "voice_key": "troll_steps",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 1.2,
+        "weight": 0.8,
+        "hardness": 0.7
+      },
+      "salience": 2,
+      "treatment": "accent",
+      "duration": 0.5,
+      "source_wav": "samples/synth_s16e0_0.wav",
+      "file": "compose/compose_Now_I_m_coming_to_gobble_you_up_said_1031_023333/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "The Troll's footsteps cause the bridge to vibrate.",
+      "start": 1.0,
+      "intensity": 0.5,
+      "eid": "s16i0",
+      "origin": "inferred",
+      "voice_key": "s16i0",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.8,
+        "hardness": 0.7
+      },
+      "salience": 1,
+      "treatment": "accent",
+      "duration": 0.5,
+      "source_wav": "samples/s16i0.wav",
+      "file": "compose/compose_Now_I_m_coming_to_gobble_you_up_said_1031_023333/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.122,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.5,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Now_I_m_coming_to_gobble_you_up_said_1031_023333_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.06701922416687012,
+  "elapsed": 0.16258621215820312
+}

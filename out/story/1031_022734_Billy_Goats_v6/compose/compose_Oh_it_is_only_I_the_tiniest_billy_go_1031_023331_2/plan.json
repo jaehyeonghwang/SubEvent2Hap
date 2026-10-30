@@ -1,0 +1,50 @@
+{
+  "event": "“Oh! it is only I, the tiniest billy-goat Gruff; and I’m going up to the hill-side to make myself fat”, said the billy-goat, with such a small voice.",
+  "sub_events": [
+    {
+      "prompt": "Flowing water under the bridge.",
+      "start": 0.0,
+      "intensity": 0.3,
+      "eid": "s5b",
+      "origin": "explicit",
+      "voice_key": "bed_scene1",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.2,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "treatment": "bed",
+      "duration": 9.5,
+      "source_wav": "samples/bed_scene1.wav",
+      "file": "compose/compose_Oh_it_is_only_I_the_tiniest_billy_go_1031_023331_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.473,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Oh_it_is_only_I_the_tiniest_billy_go_1031_023331_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.004790782928466797
+}

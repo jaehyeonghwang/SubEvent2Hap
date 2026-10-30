@@ -155,9 +155,9 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 13.5px; mar
   <!-- 2. pipeline -->
   <section class="card">
     <h2>2. Story2Hap 처리 흐름</h2>
-    <p class="lead">이야기 하나를 넣으면 아래 순서로 진행됩니다. 파란 상자는 GPT-4o 에이전트, 분홍 상자는 진동을 만드는 단계입니다. 낭독은 에이전트들과 동시에 진행됩니다. 4~6단계의 방식은 선행 연구(Feel Effects, CineHaptic, Scene2Hap)를 참고했습니다.</p>
+    <p class="lead">이야기 하나를 넣으면 아래 순서로 진행됩니다. 파란 상자는 GPT-4o 에이전트, 분홍 상자는 진동을 만드는 단계입니다. 낭독은 에이전트들과 동시에 진행됩니다. 핵심은 5단계 편곡입니다. 사건을 찾은 뒤 이야기 전체를 한 곡처럼 편곡하고, 한 구절 안에 시간 구조가 있는 사건만 6단계에서 SubEvent2Hap 분해기로 쪼갭니다. 4, 5, 7단계는 선행 연구(Feel Effects, CineHaptic, Scene2Hap)를 참고했습니다.</p>
     <div class="scroll">
-    <svg viewBox="0 0 1100 840" role="img" aria-label="Story2Hap 처리 흐름">
+    <svg viewBox="0 0 1100 960" role="img" aria-label="Story2Hap 처리 흐름">
       <defs>
         <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" style="fill: var(--muted)"/></marker>
       </defs>
@@ -165,8 +165,13 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 13.5px; mar
       <text x="550" y="34" font-size="15" font-weight="700" text-anchor="middle">동화 원문 입력</text>
       <text x="550" y="53" font-size="12" text-anchor="middle" class="muted">문장 단위로 나눔 (최대 200문장)</text>
 
+      <!-- level labels -->
+      <text x="14" y="140" font-size="12" font-weight="700" class="faint" transform="rotate(-90 14 140)">이야기 이해</text>
+      <text x="14" y="520" font-size="12" font-weight="700" class="faint" transform="rotate(-90 14 520)">편곡</text>
+      <text x="14" y="640" font-size="12" font-weight="700" class="faint" transform="rotate(-90 14 640)">구절 안</text>
+
       <!-- narration branch -->
-      <rect x="820" y="100" width="260" height="480" rx="12" style="fill: var(--cloud-soft); stroke: var(--cloud)" stroke-dasharray="6 4"/>
+      <rect x="820" y="100" width="260" height="590" rx="12" style="fill: var(--cloud-soft); stroke: var(--cloud)" stroke-dasharray="6 4"/>
       <text x="950" y="128" font-size="15" font-weight="700" text-anchor="middle" style="fill: var(--cloud)">낭독 (동시 진행)</text>
       <rect x="840" y="150" width="220" height="70" rx="10" style="fill: var(--panel); stroke: var(--line)"/>
       <text x="950" y="178" font-size="14" font-weight="600" text-anchor="middle">TTS 음성 생성</text>
@@ -175,22 +180,22 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 13.5px; mar
       <text x="950" y="278" font-size="14" font-weight="600" text-anchor="middle">Whisper 단어 시각</text>
       <text x="950" y="299" font-size="12" text-anchor="middle" class="muted">각 단어가 언제 읽히는지</text>
       <line x1="950" y1="220" x2="950" y2="250" style="stroke: var(--muted)" marker-end="url(#a2)"/>
-      <text x="950" y="380" font-size="12.5" text-anchor="middle" class="muted">사건은 단어에 고정되어</text>
-      <text x="950" y="400" font-size="12.5" text-anchor="middle" class="muted">낭독 시각에 맞춰 배치됩니다</text>
+      <text x="950" y="400" font-size="12.5" text-anchor="middle" class="muted">사건과 리듬은 단어에 고정되어</text>
+      <text x="950" y="420" font-size="12.5" text-anchor="middle" class="muted">낭독 시각에 맞춰 배치됩니다</text>
       <line x1="720" y1="40" x2="950" y2="40" style="stroke: var(--muted)"/>
       <line x1="950" y1="40" x2="950" y2="100" style="stroke: var(--muted)" marker-end="url(#a2)"/>
 
-      <!-- agents -->
+      <!-- understanding -->
       <rect x="200" y="100" width="560" height="74" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
       <text x="220" y="128" font-size="15" font-weight="700" style="fill: var(--agent)">1. 장면 설계 (이야기 상태)</text>
-      <text x="220" y="151" font-size="12.5" class="muted">전체를 먼저 읽고 장면 구분, 장면별 배경(폭풍, 불)과 그 세기와 이유, 핵심 순간, 인물과 물체 재질,</text>
-      <text x="220" y="167" font-size="12.5" class="muted">문장별 상황과 한글 번역. 25문장씩 나눠 처리하고 인물과 물체는 다음 묶음으로 넘김</text>
+      <text x="220" y="151" font-size="12.5" class="muted">장면 구분, 장면별 배경과 세기, 핵심 순간, 반복 구조(세 염소, 세 번의 노크)와 점점 커지는지,</text>
+      <text x="220" y="167" font-size="12.5" class="muted">인물과 물체 재질, 문장별 상황과 한글 번역. 25문장씩 나눠 처리</text>
       <line x1="550" y1="62" x2="550" y2="100" style="stroke: var(--muted)" marker-end="url(#a2)"/>
 
       <rect x="200" y="208" width="270" height="92" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
       <text x="216" y="235" font-size="15" font-weight="700" style="fill: var(--agent)">2. 명시 사건</text>
-      <text x="216" y="257" font-size="12.5" class="muted">단어마다 진동 기회를 찾음: 동작, 접촉,</text>
-      <text x="216" y="274" font-size="12.5" class="muted">소리, 의성어, 몸의 감각, 구절 끝 단어까지</text>
+      <text x="216" y="257" font-size="12.5" class="muted">단어마다 진동 기회: 동작, 접촉, 소리,</text>
+      <text x="216" y="274" font-size="12.5" class="muted">의성어, 몸의 감각</text>
       <text x="216" y="291" font-size="12" class="faint">문장별 병렬, 앞뒤 2문장 + 장면 참고</text>
       <rect x="490" y="208" width="270" height="92" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
       <text x="506" y="235" font-size="15" font-weight="700" style="fill: var(--agent)">3. 암시 사건 추론</text>
@@ -206,42 +211,51 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 13.5px; mar
       <text x="220" y="402" font-size="12.5" class="muted">진동 종류 선택: 두드림, 걸음, 빗방울, 심장 박동, 떨림, 우르릉, 질감 + 빠르기, 무게, 단단함</text>
       <line x1="480" y1="300" x2="480" y2="334" style="stroke: var(--muted)" marker-end="url(#a2)"/>
 
-      <rect x="200" y="452" width="560" height="84" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
-      <text x="220" y="478" font-size="15" font-weight="700" style="fill: var(--agent)">5. 연출 (중요도 4단계)</text>
-      <text x="220" y="500" font-size="12.5" class="muted">0 제외, 1 은은한 분위기 0.40~0.55, 2 분명한 동작 0.60~0.80, 3 핵심 순간 0.85~1.0</text>
-      <text x="220" y="520" font-size="12.5" class="muted">유지가 기본, 같은 순간의 중복과 배경과 겹치는 질감만 제외. 같은 소리는 같은 샘플</text>
+      <!-- arrangement -->
+      <rect x="200" y="452" width="560" height="124" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)" stroke-width="2.5"/>
+      <text x="220" y="478" font-size="15" font-weight="700" style="fill: var(--agent)">5. 햅틱 편곡 (이야기 전체)</text>
+      <text x="220" y="500" font-size="12.5" class="muted">표현: 단어 리듬(의성어마다 한 번씩), 짧은 강조, 구절 지속, 장면 배경 중 선택</text>
+      <text x="220" y="519" font-size="12.5" class="muted">강약 곡선: 반복 구조는 반복될수록 세게, 절정은 이야기 전체에서 하나만 최대 세기</text>
+      <text x="220" y="538" font-size="12.5" class="muted">예산: 핵심 순간은 장면당 2개까지, 동시에 울리는 전경 진동은 2개까지</text>
+      <text x="220" y="557" font-size="12.5" class="muted">중요도 0~3과 세기 범위, 같은 소리는 같은 샘플. 시간 구조가 있는 사건은 분해로 넘김</text>
       <line x1="480" y1="418" x2="480" y2="452" style="stroke: var(--muted)" marker-end="url(#a2)"/>
 
-      <rect x="200" y="570" width="560" height="50" rx="12" style="fill: var(--panel); stroke: var(--line)"/>
-      <text x="480" y="600" font-size="14" font-weight="700" text-anchor="middle">사건 배치: 단어 시각 + 오프셋, 지속형은 구절 끝까지, 장면 배경은 바닥 레이어</text>
-      <line x1="480" y1="536" x2="480" y2="570" style="stroke: var(--muted)" marker-end="url(#a2)"/>
-      <path d="M950,580 L950,595 L760,595" style="fill: none; stroke: var(--muted)" marker-end="url(#a2)"/>
+      <!-- decomposition -->
+      <rect x="200" y="604" width="560" height="66" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)" stroke-dasharray="6 4"/>
+      <text x="220" y="630" font-size="15" font-weight="700" style="fill: var(--agent)">6. 사건 분해 (SubEvent2Hap, 필요한 구절만)</text>
+      <text x="220" y="652" font-size="12.5" class="muted">공이 계단을 튀며 굴러감, 나무를 찍어 넘어뜨림처럼 단어가 시간을 주지 않는 연속 접촉을 4단계 분해기로</text>
+      <line x1="480" y1="576" x2="480" y2="604" style="stroke: var(--muted)" marker-end="url(#a2)"/>
 
-      <!-- gpu -->
-      <rect x="20" y="654" width="350" height="170" rx="12" style="fill: var(--gen-soft); stroke: var(--gen)"/>
-      <text x="36" y="682" font-size="15" font-weight="700" style="fill: var(--gen)">6. 진동 만들기 (Colab 우선)</text>
-      <text x="36" y="706" font-size="12.5" class="muted">리듬형(두드림, 걸음, 빗방울, 심장, 떨림, 우르릉):</text>
-      <text x="36" y="724" font-size="12.5" class="muted">  패턴으로 직접 합성 (Feel Effects 방식)</text>
-      <text x="36" y="746" font-size="12.5" class="muted">질감형: HapticGen 후보 4개를 일괄 생성 후</text>
-      <text x="36" y="764" font-size="12.5" class="muted">  잡음도와 저주파 비율로 선별 (Scene2Hap 방식)</text>
-      <text x="36" y="786" font-size="12.5" class="muted">모든 진동은 40~400 Hz 대역 필터</text>
-      <text x="36" y="808" font-size="12" class="faint">+ 문장 그대로 베이스라인 (비교용)</text>
-      <rect x="390" y="654" width="330" height="170" rx="12" style="fill: var(--gen-soft); stroke: var(--gen)"/>
-      <text x="406" y="682" font-size="15" font-weight="700" style="fill: var(--gen)">7. 문장별 합성</text>
-      <text x="406" y="706" font-size="12.5" class="muted">전경(충격, 동작) + 배경 레이어</text>
-      <text x="406" y="728" font-size="12.5" class="muted">충격이 나오면 배경을 최대 65% 낮춤</text>
-      <text x="406" y="750" font-size="12.5" class="muted">배경은 최대 0.7로 제한</text>
-      <text x="406" y="772" font-size="12.5" class="muted">10초 넘는 문장은 9.5초 구간으로 나눠 이음</text>
-      <text x="406" y="794" font-size="12.5" class="muted">명시+추론 / 명시만 / 문장 그대로 3종</text>
-      <rect x="740" y="654" width="340" height="170" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
-      <text x="756" y="682" font-size="15" font-weight="700" style="fill: var(--agent)">8. Critic (렌더와 동시)</text>
-      <text x="756" y="706" font-size="12.5" class="muted">신호 검사: 계획한 충격이 파형에 나왔나</text>
-      <text x="756" y="728" font-size="12.5" class="muted">LM 판정: 포괄성, 추론, 세기, 타이밍</text>
-      <text x="756" y="750" font-size="12.5" class="muted">0~100점과 개선 의견</text>
-      <text x="756" y="772" font-size="12.5" class="muted">충격이 빠진 문장만 1회 재렌더</text>
-      <line x1="370" y1="738" x2="390" y2="738" style="stroke: var(--muted)" marker-end="url(#a2)"/>
-      <line x1="720" y1="738" x2="740" y2="738" style="stroke: var(--muted)" marker-end="url(#a2)"/>
-      <path d="M480,620 L480,638 L195,638 L195,654" style="fill: none; stroke: var(--muted)" marker-end="url(#a2)"/>
+      <rect x="200" y="698" width="560" height="50" rx="12" style="fill: var(--panel); stroke: var(--line)"/>
+      <text x="480" y="728" font-size="14" font-weight="700" text-anchor="middle">사건 배치: 단어 시각 기준, 표현 방식대로 길이 결정, 겹침 2개 제한</text>
+      <line x1="480" y1="670" x2="480" y2="698" style="stroke: var(--muted)" marker-end="url(#a2)"/>
+      <path d="M950,690 L950,723 L760,723" style="fill: none; stroke: var(--muted)" marker-end="url(#a2)"/>
+
+      <!-- making -->
+      <rect x="20" y="782" width="350" height="170" rx="12" style="fill: var(--gen-soft); stroke: var(--gen)"/>
+      <text x="36" y="810" font-size="15" font-weight="700" style="fill: var(--gen)">7. 진동 만들기 (Colab 우선)</text>
+      <text x="36" y="834" font-size="12.5" class="muted">리듬형(두드림, 걸음, 빗방울, 심장, 떨림, 우르릉):</text>
+      <text x="36" y="852" font-size="12.5" class="muted">  패턴으로 직접 합성 (Feel Effects 방식)</text>
+      <text x="36" y="874" font-size="12.5" class="muted">질감형: HapticGen 후보 4개를 일괄 생성 후</text>
+      <text x="36" y="892" font-size="12.5" class="muted">  잡음도와 저주파 비율로 선별 (Scene2Hap 방식)</text>
+      <text x="36" y="914" font-size="12.5" class="muted">모든 진동은 40~400 Hz 대역 필터</text>
+      <text x="36" y="936" font-size="12" class="faint">+ 문장 그대로 베이스라인 (비교용)</text>
+      <rect x="390" y="782" width="330" height="170" rx="12" style="fill: var(--gen-soft); stroke: var(--gen)"/>
+      <text x="406" y="810" font-size="15" font-weight="700" style="fill: var(--gen)">8. 문장별 합성</text>
+      <text x="406" y="834" font-size="12.5" class="muted">전경(충격, 동작) + 배경 레이어</text>
+      <text x="406" y="856" font-size="12.5" class="muted">충격이 나오면 배경을 최대 65% 낮춤</text>
+      <text x="406" y="878" font-size="12.5" class="muted">배경은 최대 0.7로 제한</text>
+      <text x="406" y="900" font-size="12.5" class="muted">10초 넘는 문장은 9.5초 구간으로 나눠 이음</text>
+      <text x="406" y="922" font-size="12.5" class="muted">명시+추론 / 명시만 / 문장 그대로 3종</text>
+      <rect x="740" y="782" width="340" height="170" rx="12" style="fill: var(--agent-soft); stroke: var(--agent)"/>
+      <text x="756" y="810" font-size="15" font-weight="700" style="fill: var(--agent)">9. Critic (렌더와 동시)</text>
+      <text x="756" y="834" font-size="12.5" class="muted">신호 검사: 계획한 충격이 파형에 나왔나</text>
+      <text x="756" y="856" font-size="12.5" class="muted">LM 판정: 포괄성, 추론, 세기, 타이밍</text>
+      <text x="756" y="878" font-size="12.5" class="muted">0~100점과 개선 의견</text>
+      <text x="756" y="900" font-size="12.5" class="muted">충격이 빠진 문장만 1회 재렌더</text>
+      <line x1="370" y1="866" x2="390" y2="866" style="stroke: var(--muted)" marker-end="url(#a2)"/>
+      <line x1="720" y1="866" x2="740" y2="866" style="stroke: var(--muted)" marker-end="url(#a2)"/>
+      <path d="M480,748 L480,766 L195,766 L195,782" style="fill: none; stroke: var(--muted)" marker-end="url(#a2)"/>
     </svg>
     </div>
     <div class="legend"><span><i style="background: var(--agent)"></i>GPT-4o 에이전트</span><span><i style="background: var(--gen)"></i>진동 만들기 (Colab 우선, 없으면 생성 PC)</span><span><i style="background: var(--cloud)"></i>OpenAI 음성</span></div>
@@ -318,12 +332,13 @@ details > summary { cursor: pointer; color: var(--muted); font-size: 13.5px; mar
 
 <script>
 const ROLE = {
-  story_state: ["1. 장면 설계 (이야기 상태)", "이야기 전체를 먼저 읽고 인물과 물체의 재질, 장면 구분, 장면별 배경과 그 세기와 이유, 핵심 순간, 문장별 상황과 한글 번역을 만듭니다. 다른 에이전트가 모두 이 결과를 문맥으로 씁니다."],
+  story_state: ["1. 장면 설계 (이야기 상태)", "이야기 전체를 먼저 읽고 반복 구조(점점 커지는지 포함), 인물과 물체의 재질, 장면 구분, 장면별 배경과 그 세기와 이유, 핵심 순간, 문장별 상황과 한글 번역을 만듭니다. 다른 에이전트가 모두 이 결과를 문맥으로 씁니다."],
   explicit: ["2. 명시 사건", "문장의 단어를 하나씩 보며 진동으로 살릴 순간(동작, 접촉, 소리, 의성어, 몸의 감각)을 찾고, 각 사건을 단어에 고정합니다. 적힌 횟수는 그 수만큼 따로 만듭니다."],
   inference: ["3. 암시 사건 추론", "문장에 적히지 않았지만 독자가 떠올릴 물리적 사건(결과, 전제, 배경, 감각)을 근거 구절과 확신도와 함께 추론합니다. 명시 사건이나 장면 배경과 겹치지 않게 합니다."],
   captions: ["4. 캡션 다듬기와 진동 종류", "모든 사건을 HapticGen이 학습한 형식(물체와 재질 + 동작 한 번, 이름 없음)의 짧은 진동 문장으로 다시 씁니다. 몸의 감각은 그것을 일으키는 물리 진동으로 번역하고, 순수한 말과 생각만 제외합니다. 사건마다 진동 종류(두드림, 걸음, 빗방울, 심장 박동, 떨림, 우르릉, 질감)와 빠르기, 무게, 단단함도 정합니다. 질감이 아닌 종류는 리듬 패턴으로 직접 합성됩니다."],
-  director: ["5. 연출 (중요도 4단계)", "후보 사건마다 중요도 0~3을 매깁니다(0 제외, 1 분위기, 2 분명한 동작, 3 핵심 순간). 세기는 단계별 범위 안에서만 정해져 핵심 순간이 항상 더 세게 느껴집니다. 같은 순간의 중복과 장면 배경과 겹치는 질감만 빼고, 같은 소리에는 같은 voice key를 붙여 같은 샘플을 쓰게 합니다."],
-  critic: ["8. Critic", "렌더링된 문장마다 계획과 신호 측정치를 보고 포괄성, 추론, 세기, 타이밍을 5점 척도로 평가하고 개선 의견을 남깁니다. 자동 재렌더는 계획한 충격이 파형에서 빠진 문장에만 1회 합니다. 진동을 직접 느낄 수는 없으므로 신호 검사 결과를 함께 받습니다."],
+  arranger: ["5. 햅틱 편곡 (이야기 전체)", "이야기 전체를 한 곡처럼 편곡합니다. 사건마다 표현(단어 리듬, 짧은 강조, 구절 지속, 장면 배경), 중요도 0~3, 세기를 정합니다. 반복 구조는 반복될수록 세게, 절정은 하나만 최대 세기로, 핵심 순간은 장면당 2개, 동시 진동은 2개까지로 예산을 지킵니다. 시간 구조가 있는 사건은 분해 단계로 넘깁니다."],
+  decompose: ["6. 사건 분해 (SubEvent2Hap)", "편곡이 '연속 접촉'으로 표시한 사건만, SubEvent2Hap의 4단계 분해기(사건, 검토, 타이밍, 캡션)로 시간이 정해진 하위 사건들로 쪼갭니다. 이야기 전체의 뼈대가 아니라 구절 안의 미세 구조를 담당하는 부품입니다."],
+  critic: ["9. Critic", "렌더링된 문장마다 계획과 신호 측정치를 보고 포괄성, 추론, 세기, 타이밍을 5점 척도로 평가하고 개선 의견을 남깁니다. 자동 재렌더는 계획한 충격이 파형에서 빠진 문장에만 1회 합니다. 진동을 직접 느낄 수는 없으므로 신호 검사 결과를 함께 받습니다."],
 };
 const esc = (t) => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 fetch("/api/story/prompts").then(r => r.json()).then(d => {

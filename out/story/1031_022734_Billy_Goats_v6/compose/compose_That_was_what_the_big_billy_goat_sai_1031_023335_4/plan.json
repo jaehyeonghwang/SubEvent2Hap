@@ -1,0 +1,75 @@
+{
+  "event": "That was what the big billy-goat said; and so he flew at the Troll and poked his eyes out with his horns, and crushed him to bits, body and bones, and tossed him out into the burn, and after that he went up to the hill-side.",
+  "sub_events": [
+    {
+      "prompt": "A billy-goat tossing a body into water.",
+      "start": 0.4,
+      "intensity": 0.55,
+      "eid": "s29e3",
+      "origin": "explicit",
+      "voice_key": "toss",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.8,
+        "hardness": 0.7
+      },
+      "salience": 1,
+      "treatment": "accent",
+      "duration": 0.4,
+      "source_wav": "samples/toss.wav",
+      "file": "compose/compose_That_was_what_the_big_billy_goat_sai_1031_023335_4/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.766,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "A billy-goat moving up a hill-side.",
+      "start": 2.98,
+      "intensity": 0.55,
+      "eid": "s29e4",
+      "origin": "explicit",
+      "voice_key": "s29e4",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 1.2,
+        "weight": 0.8,
+        "hardness": 0.7
+      },
+      "salience": 2,
+      "treatment": "phrase",
+      "duration": 1.32,
+      "source_wav": "samples/synth_s29e4_1.wav",
+      "file": "compose/compose_That_was_what_the_big_billy_goat_sai_1031_023335_4/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.3,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_That_was_what_the_big_billy_goat_sai_1031_023335_4_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0010075569152832031,
+  "elapsed": 0.006001949310302734
+}

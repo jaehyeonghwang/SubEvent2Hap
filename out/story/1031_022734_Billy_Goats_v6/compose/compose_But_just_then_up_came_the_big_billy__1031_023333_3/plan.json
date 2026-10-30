@@ -1,0 +1,50 @@
+{
+  "event": "But just then up came the big billy-goat Gruff.",
+  "sub_events": [
+    {
+      "prompt": "A large goat approaches with heavy steps on the wooden bridge.",
+      "start": 2.44,
+      "intensity": 0.78,
+      "eid": "s19e0",
+      "origin": "explicit",
+      "voice_key": "steps",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 1.2,
+        "weight": 0.7,
+        "hardness": 0.3
+      },
+      "salience": 2,
+      "treatment": "phrase",
+      "duration": 1.61,
+      "source_wav": "samples/synth_s19e0_0.wav",
+      "file": "compose/compose_But_just_then_up_came_the_big_billy__1031_023333_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.05,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_But_just_then_up_came_the_big_billy__1031_023333_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.004373073577880859
+}

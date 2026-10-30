@@ -1,0 +1,50 @@
+{
+  "event": "“TRIP, TRAP!",
+  "sub_events": [
+    {
+      "prompt": "Bridge creaking under weight.",
+      "start": 0.0,
+      "intensity": 0.4,
+      "eid": "s20i0",
+      "origin": "inferred",
+      "voice_key": "s20i0",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.7
+      },
+      "salience": 1,
+      "treatment": "phrase",
+      "duration": 1.95,
+      "source_wav": "samples/s20i0.wav",
+      "file": "compose/compose_TRIP_TRAP_1031_022538/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 2.049,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.95,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_TRIP_TRAP_1031_022538_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0056574344635009766,
+  "elapsed": 0.010208368301391602
+}

@@ -1,0 +1,50 @@
+{
+  "event": "“Now, I’m coming to gobble you up”, said the Troll.",
+  "sub_events": [
+    {
+      "prompt": "A Troll's steps causing a bridge to creak.",
+      "start": 1.0,
+      "intensity": 0.4,
+      "eid": "s6i0",
+      "origin": "inferred",
+      "voice_key": "s6i0",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 1.2,
+        "weight": 0.9,
+        "hardness": 0.5
+      },
+      "salience": 1,
+      "treatment": "accent",
+      "duration": 0.5,
+      "source_wav": "samples/synth_s6i0_0.wav",
+      "file": "compose/compose_Now_I_m_coming_to_gobble_you_up_said_1031_022536/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.052,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.5,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Now_I_m_coming_to_gobble_you_up_said_1031_022536_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.004548311233520508,
+  "elapsed": 0.009205818176269531
+}

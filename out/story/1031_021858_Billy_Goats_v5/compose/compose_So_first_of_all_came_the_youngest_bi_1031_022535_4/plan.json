@@ -1,0 +1,75 @@
+{
+  "event": "So first of all came the youngest billy-goat Gruff to cross the bridge.",
+  "sub_events": [
+    {
+      "prompt": "A small goat walking across a wooden bridge.",
+      "start": 0.0,
+      "intensity": 0.4,
+      "eid": "s2e1",
+      "origin": "explicit",
+      "voice_key": "goat_cross",
+      "layer": "bed",
+      "family": "steps",
+      "params": {
+        "rate": 2.0,
+        "weight": 0.3,
+        "hardness": 0.3
+      },
+      "salience": 1,
+      "treatment": "bed",
+      "duration": 6.2,
+      "source_wav": "samples/synth_s2e1_0.wav",
+      "file": "compose/compose_So_first_of_all_came_the_youngest_bi_1031_022535_4/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Water flowing under a bridge.",
+      "start": 0.0,
+      "intensity": 0.3,
+      "eid": "s2b",
+      "origin": "explicit",
+      "voice_key": "bed_scene1",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.3,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "treatment": "bed",
+      "duration": 6.2,
+      "source_wav": "samples/bed_scene1.wav",
+      "file": "compose/compose_So_first_of_all_came_the_youngest_bi_1031_022535_4/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.001,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 6.2,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_So_first_of_all_came_the_youngest_bi_1031_022535_4_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0005044937133789062,
+  "elapsed": 0.008064031600952148
+}

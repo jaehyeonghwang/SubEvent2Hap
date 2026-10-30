@@ -1,0 +1,77 @@
+{
+  "event": "“TRIP, TRAP!",
+  "sub_events": [
+    {
+      "prompt": "Wooden bridge making a trip-trap sound.",
+      "start": 0.0,
+      "intensity": 0.7,
+      "eid": "s11e0_h0",
+      "origin": "explicit",
+      "voice_key": "trip_trap",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.7
+      },
+      "salience": 2,
+      "treatment": "hits",
+      "seed_key": "s11e0",
+      "duration": 0.18,
+      "source_wav": "samples/synth_s11e0_h0_0.wav",
+      "file": "compose/compose_TRIP_TRAP_1031_023332_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.038,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Wooden bridge making a trip-trap sound.",
+      "start": 1.02,
+      "intensity": 0.7,
+      "eid": "s11e0_h1",
+      "origin": "explicit",
+      "voice_key": "trip_trap",
+      "layer": "fg",
+      "family": "strike",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.7
+      },
+      "salience": 2,
+      "treatment": "hits",
+      "seed_key": "s11e0",
+      "duration": 0.18,
+      "source_wav": "samples/synth_s11e0_h1_0.wav",
+      "file": "compose/compose_TRIP_TRAP_1031_023332_3/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.038,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.2,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_TRIP_TRAP_1031_023332_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0009999275207519531,
+  "elapsed": 0.0057315826416015625
+}

@@ -1,0 +1,50 @@
+{
+  "event": "On the way up was a bridge over a burn they had to cross; and under the bridge lived a great ugly Troll, with eyes as big as saucers, and a nose as long as a poker.",
+  "sub_events": [
+    {
+      "prompt": "Water flowing under a wooden bridge.",
+      "start": 0.0,
+      "intensity": 0.4,
+      "eid": "s1i0",
+      "origin": "inferred",
+      "voice_key": "water_flow",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.3,
+        "hardness": 0.1
+      },
+      "salience": 1,
+      "treatment": "bed",
+      "duration": 9.5,
+      "source_wav": "samples/water_flow.wav",
+      "file": "compose/compose_On_the_way_up_was_a_bridge_over_a_bu_1031_022535/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.124,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_On_the_way_up_was_a_bridge_over_a_bu_1031_022535_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.007668733596801758,
+  "elapsed": 0.015314579010009766
+}

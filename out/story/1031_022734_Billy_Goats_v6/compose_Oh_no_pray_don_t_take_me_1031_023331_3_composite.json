@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] “Oh, no! pray don’t take me.", "params": {"generator": "hapticgen@colab", "candidates": 1, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": null, "gamma": 1.6, "share_repeats": true, "sub_events": 1}, "created": 1793381611.8539243, "kind": "composite", "event": "“Oh, no! pray don’t take me.", "run": "compose_Oh_no_pray_don_t_take_me_1031_023331_3"}

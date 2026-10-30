@@ -1,0 +1,75 @@
+{
+  "event": "“Oh! it’s the second billy-goat Gruff, and I’m going up to the hill-side to make myself fat”, said the billy-goat, who hadn’t such a small voice.",
+  "sub_events": [
+    {
+      "prompt": "A goat moving up the hill-side with steady steps.",
+      "start": 0.0,
+      "intensity": 0.6,
+      "eid": "s15e0",
+      "origin": "explicit",
+      "voice_key": "s15e0",
+      "layer": "bed",
+      "family": "steps",
+      "params": {
+        "rate": 2.0,
+        "weight": 0.5,
+        "hardness": 0.3
+      },
+      "salience": 2,
+      "treatment": "bed",
+      "duration": 9.5,
+      "source_wav": "samples/synth_s15e0_0.wav",
+      "file": "compose/compose_Oh_it_s_the_second_billy_goat_Gruff__1031_022537_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Water flowing under a bridge.",
+      "start": 0.0,
+      "intensity": 0.3,
+      "eid": "s15b",
+      "origin": "explicit",
+      "voice_key": "bed_scene2",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.3,
+        "hardness": 0.1
+      },
+      "salience": null,
+      "treatment": "bed",
+      "duration": 9.5,
+      "source_wav": "samples/bed_scene2.wav",
+      "file": "compose/compose_Oh_it_s_the_second_billy_goat_Gruff__1031_022537_3/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.342,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.5,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Oh_it_s_the_second_billy_goat_Gruff__1031_022537_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.007562875747680664
+}

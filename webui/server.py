@@ -824,7 +824,7 @@ def _story_render(sid, plan, ids, fresh=False, on_sentence=None):
                             return samples.get(x["voice_key"])
                         p_ = x.get("params") or {}   # rhythmic pattern for exactly this event and length
                         w = hp.synth(x["family"], x["duration"] + 0.05, p_.get("rate") or None, p_.get("weight", .5),
-                                     p_.get("hardness", .5), sr=sr, seed=zlib.crc32(x["eid"].encode()))
+                                     p_.get("hardness", .5), sr=sr, seed=zlib.crc32((x.get("seed_key") or x["eid"]).encode()))
                         name = f"synth_{re.sub(r'[^A-Za-z0-9_-]+', '_', x['eid'])}_{k}{'_fresh' if fresh else ''}.wav"
                         sf.write(out_dir / "samples" / name, w, sr, subtype="FLOAT")
                         return f"samples/{name}"

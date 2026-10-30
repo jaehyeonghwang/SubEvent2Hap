@@ -1,0 +1,50 @@
+{
+  "event": "“Now, I’m coming to gobble you up”, roared the Troll.",
+  "sub_events": [
+    {
+      "prompt": "Heavy footsteps causing a bridge to vibrate.",
+      "start": 1.32,
+      "intensity": 0.78,
+      "eid": "s26i0",
+      "origin": "inferred",
+      "voice_key": "heavy_steps",
+      "layer": "fg",
+      "family": "steps",
+      "params": {
+        "rate": 1.2,
+        "weight": 0.9,
+        "hardness": 0.7
+      },
+      "salience": 2,
+      "treatment": "accent",
+      "duration": 0.6,
+      "source_wav": "samples/synth_s26i0_0.wav",
+      "file": "compose/compose_Now_I_m_coming_to_gobble_you_up_roar_1031_023335/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.037,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.92,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Now_I_m_coming_to_gobble_you_up_roar_1031_023335_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0045337677001953125,
+  "elapsed": 0.007650852203369141
+}

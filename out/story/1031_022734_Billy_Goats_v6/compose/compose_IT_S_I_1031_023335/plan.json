@@ -1,0 +1,75 @@
+{
+  "event": "“IT’S I!",
+  "sub_events": [
+    {
+      "prompt": "A wooden bridge creaking under weight.",
+      "start": 0.5,
+      "intensity": 0.7,
+      "eid": "s24e0",
+      "origin": "explicit",
+      "voice_key": "s24e0",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.8,
+        "hardness": 0.7
+      },
+      "salience": 2,
+      "treatment": "phrase",
+      "duration": 1.25,
+      "source_wav": "samples/s24e0.wav",
+      "file": "compose/compose_IT_S_I_1031_023335/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "A wooden bridge groaning under weight.",
+      "start": 0.5,
+      "intensity": 0.6,
+      "eid": "s24e1",
+      "origin": "explicit",
+      "voice_key": "s24e1",
+      "layer": "fg",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.8,
+        "hardness": 0.7
+      },
+      "salience": 2,
+      "treatment": "phrase",
+      "duration": 1.25,
+      "source_wav": "samples/s24e1.wav",
+      "file": "compose/compose_IT_S_I_1031_023335/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 2.458,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.75,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_IT_S_I_1031_023335_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.017000436782836914,
+  "elapsed": 0.02299809455871582
+}

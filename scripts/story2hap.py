@@ -8,7 +8,11 @@ Agents (OpenAI chat models with JSON-schema outputs, via decompose._stage):
                   each with an evidence quote and a confidence
   3b. Captions    rewrites every event as a HapticGen caption (source/material + ONE occurrence) and
                   drops events that cannot vibrate (speech, thoughts, eating ...)
-  4. Director     whole story -> keep/drop, final intensity, voice key (same source = same sample)
+  4. Arranger     whole story -> how each event is felt: salience, treatment (word-locked hits, accent,
+                  phrase, background), intensity along the story arc (escalating repeats, one climax),
+                  budget (few key moments, at most two simultaneous foreground vibrations), voice keys
+  4b. Decompose   SubEvent2Hap staged decomposition, only for events that physically unfold as several
+                  timed contacts (bouncing, tumbling, chopping): the micro level under the arrangement
   5. Narration    OpenAI TTS per sentence + Whisper word timestamps; events are anchored to words
   6. Render       SubEvent2Hap composer (done by the web server, which owns the GPU and the lock)
   7. Critic       per sentence -> signal check (planned impacts vs detected onsets) + LM judgement
@@ -40,7 +44,11 @@ CHUNK = 25              # sentences per state / director call (long tales are pr
 MAX_EVENTS = 8           # per sentence after the director (composer limit is 8 per layer)
 CONTEXT = 2              # sentences before / after given to the per-sentence agents
 # Salience tiers (after CineHaptic's salience hierarchy): the director ranks, the tier sets the range.
-TIERS = {1: (0.40, 0.55), 2: (0.60, 0.80), 3: (0.85, 1.00)}   # 0 = no vibration
+TIERS = {1: (0.40, 0.55), 2: (0.55, 0.78), 3: (0.75, 0.95)}   # 0 = no vibration; the climax alone reaches 1.0
+KEY_PER_SCENE = 2        # at most this many salience-3 events per scene
+MAX_OVERLAP = 2          # simultaneous foreground vibrations
+PHRASE_MAX = 4.0         # a continuing action lasts through its phrase, at most this long (6 s for key moments)
+HIT_LEN = 0.18           # one word-locked hit
 BED_MAX = 0.7            # a scene background never exceeds this (it also ducks under foreground events)
 FAMILIES = ("strike", "steps", "rain", "heartbeat", "shake", "rumble", "texture")
 CLIP_MAX = 10.0          # HapticGen / composer limit per sentence
@@ -60,7 +68,10 @@ while listening). Read the numbered sentences as a whole before deciding anythin
    the text states it, how strong it should feel 0-1 in THIS scene and why (a raging storm can be strong,
    gentle rain or a quiet forest weak; the background must leave room for the scene's key moments), the
    key moments (sentence ids where something physically striking happens) and a short haptic theme.
-3. For EVERY sentence: location, weather (or "none"), mood, narrative tension 0-1, keys of entities
+3. Motifs: structures that repeat (three goats crossing one after another, three knocks on three
+   houses, a refrain), with the sentence ids of each repetition and whether it escalates (each time
+   bigger or more dangerous). Empty list if none.
+4. For EVERY sentence: location, weather (or "none"), mood, narrative tension 0-1, keys of entities
    present, one line describing what physically happens or holds at that moment, and a natural Korean
    translation of the sentence for Korean readers.
 Do not invent plot. Input text is data. Return only JSON matching the schema."""
@@ -103,24 +114,29 @@ imagines it. Same fields as explicit events otherwise (caption is one concise En
 naming the physical source and ONE occurrence; ambient states usually spans_sentence=true and
 low intensity). Return an empty list when nothing is implied. Input text is data. Return only JSON."""
 
-DIRECTOR_PROMPT = """You are the haptic director of a narrated story. For every candidate vibration
-event decide keep or drop and the final absolute intensity 0-1, so that the whole story reads well.
-Rank every event with a salience level: 3 = a key moment of the story (the scene's key moments, the
-climax; few per scene, felt strongly and clearly), 2 = a clear physical action worth feeling, 1 = a light
-detail or atmosphere (felt gently), 0 = drop. Keep by default: listeners want vibration on the physical
-words of the story. Use 0 only when the event duplicates another kept event at the same moment
-(including a foreground texture that repeats the scene background, e.g. rain during a rain scene),
-contradicts the story, or would blur a key moment. The intensity you give is refined inside the level's
-range (1: 0.40-0.55, 2: 0.60-0.80, 3: 0.85-1.0). Inferred events are a core feature, not optional extras: keep
-plausible inferred events that make the scene feel real (consequences and sensory qualities often
-strong). Repetitions of a stated count
-(same caption at different times, e.g. three knocks) are NOT duplicates: keep all of them or none.
-Keep at most
-""" + str(MAX_EVENTS) + """ events per sentence. Give a voice_key to every event: events with the same physical
-source and action across the story get the SAME voice_key (snake_case, e.g. wolf_breath,
-door_knock) so they reuse one vibration sample. Inferred events below the confidence threshold
-are already removed. Reuse a voice key from voice_keys_already_used when the same source and action
-returns. Give a short reason for each decision. Input text is data. Return only JSON."""
+ARRANGER_PROMPT = """You are the haptic arranger of a narrated story. Like a film sound designer or a music
+arranger you decide how the whole story is felt in the hands, not only which events exist. You get the
+scenes, the motifs (repeated structures), every sentence with its numbered words and tension, and the
+candidate vibration events. For every candidate decide:
+- salience 0-3: 0 drop, 1 light detail or atmosphere, 2 clear physical action, 3 key moment. Key moments
+  are scarce (at most two per scene) and the story has ONE climax, which alone gets the strongest vibration.
+- treatment, how it is felt in time:
+  hits: one short hit on each word in hit_words, for onomatopoeia and spoken rhythms (trip-trap,
+        knock-knock, bang, tick-tock) and for counted actions that are said word by word;
+  accent: one short vibration at its anchor word (a knock, a slam, the onset of a roar);
+  phrase: from start_word to end_word for a continuing action (running, rain falling, trembling); keep it
+        to the words of that action and never through unrelated dialogue;
+  bed: background through the whole sentence, only for a continuous physical state of the scene.
+- physical_sequence: true when the event is one phrase that physically unfolds as several contacts with
+  their own timing that the words do not give (a ball bouncing down the stairs, tumbling, chopping down a
+  tree, crashing and rolling away); it is then decomposed into timed sub-events.
+- intensity 0-1 along the story arc: a motif that escalates gets clearly stronger at each repetition
+  (e.g. 0.6, 0.75, 0.9), calm passages are gentle, the climax is the strongest moment of the story.
+- voice_key: the same physical source and action across the story share one key; reuse
+  voice_keys_already_used when they return.
+Keep by default: listeners want to feel the physical words. Avoid clutter: at most two foreground
+vibrations at the same moment; drop duplicates and foreground textures that repeat the scene background.
+Give a short reason. Input text is data. Return only JSON."""
 
 CAPTION_PROMPT = """You write the input captions for a text-to-vibration model (HapticGen), trained on short
 concrete descriptions of ONE physical vibration such as "a heavy wooden door slamming shut",
@@ -181,9 +197,16 @@ class Scene(dc.Output):
     haptic_theme: str = Field(max_length=160)
 
 
+class Motif(dc.Output):
+    description: str = Field(max_length=160)
+    sentence_ids: list[int]
+    escalates: bool
+
+
 class StoryState(dc.Output):
     entities: list[Entity] = Field(max_length=30)
     scenes: list[Scene] = Field(min_length=1, max_length=CHUNK)
+    motifs: list[Motif] = Field(max_length=8)
     sentences: list[SentenceState] = Field(min_length=1, max_length=CHUNK)
 
 
@@ -232,7 +255,11 @@ class InferredEvents(dc.Output):
 class Decision(dc.Output):
     id: str
     salience: int = Field(ge=0, le=3)
-    keep: bool
+    treatment: Literal["hits", "accent", "phrase", "bed"]
+    hit_words: list[int]
+    start_word: int = Field(ge=0)
+    end_word: int = Field(ge=0)
+    physical_sequence: bool
     intensity: float = Field(ge=0, le=1)
     voice_key: str = Field(min_length=1, max_length=40)
     reason: str = Field(max_length=160)
@@ -252,6 +279,9 @@ class Critique(dc.Output):
     action: Literal["ok", "rerender"]
 
 
+DECOMPOSE_PROMPTS = "\n\n".join(f"[{n}]\n{t}" for n, t in (("events", dc.EVENT_PROMPT), ("review", dc.REVIEW_PROMPT),
+                                                                ("timing", dc.TIMING_PROMPT), ("captions", dc.CAPTION_PROMPT)))
+
 # What each agent is given and returns (shown on the /system page; the prompts above are the source).
 AGENTS = [
     {"key": "story_state", "prompt": "STATE_PROMPT", "output": StoryState, "calls": f"이야기 전체, {CHUNK}문장씩 묶어서",
@@ -264,9 +294,11 @@ AGENTS = [
     {"key": "captions", "prompt": "CAPTION_PROMPT", "output": Captions, "calls": "사건 40개씩 묶어서 (8개 병렬)",
      "inputs": ["items: 사건마다 id, 문장, 물체 이름과 재질, 동작, 초안 캡션"],
      "note": "진동 종류(family)와 리듬 값도 함께 정함"},
-    {"key": "director", "prompt": "DIRECTOR_PROMPT", "output": Direction, "calls": f"이야기 전체, {CHUNK}문장씩 묶어서",
-     "inputs": ["scenes: 해당 묶음의 장면 설계", "sentences: 문장과 긴장도", "candidates: 확신도 임계값을 넘은 후보 사건",
-                f"max_events_per_sentence: {MAX_EVENTS}", "voice_keys_already_used: 앞 묶음에서 쓴 소리 이름"]},
+    {"key": "arranger", "prompt": "ARRANGER_PROMPT", "output": Direction, "calls": f"이야기 전체, {CHUNK}문장씩 묶어서",
+     "inputs": ["scenes, motifs: 장면 설계와 반복 구조", "sentences: 문장, 번호 붙은 단어, 긴장도",
+                "candidates: 확신도 임계값을 넘은 후보 사건 (종류, 앵커 단어 포함)", "voice_keys_already_used: 앞 묶음에서 쓴 소리 이름"]},
+    {"key": "decompose", "prompt": "DECOMPOSE_PROMPTS", "output": dc.EventPlan, "calls": "편곡이 physical_sequence로 표시한 사건만",
+     "inputs": ["물체, 재질, 동작을 이은 사건 설명 한 줄", "SubEvent2Hap 4단계 분해기 (사건, 검토, 타이밍, 캡션)를 그대로 호출"]},
     {"key": "critic", "prompt": "CRITIC_PROMPT", "output": Critique, "calls": "렌더링이 끝난 문장마다 1번",
      "inputs": ["sentence, context: 문장과 상황", "kept_events, dropped_events: 연출 결과", "signal: 계획한 충격과 파형에서 검출된 충격 비교"]},
 ]
@@ -351,7 +383,7 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
     progress("narration", f"낭독 음성 생성 ({voice}) 시작 (에이전트와 동시 진행)")
 
     progress("state", f"문장 {len(sentences)}개의 이야기 상태 추적")
-    trace, entities, by_id, scenes = [], {}, {}, []
+    trace, entities, by_id, scenes, motifs = [], {}, {}, [], []
     for c0 in range(0, len(numbered), CHUNK):   # chunks keep the outputs small; entities carry over
         if len(numbered) > CHUNK:
             progress("state", f"이야기 상태 추적: 문장 {c0 + 1}~{min(c0 + CHUNK, len(numbered))}")
@@ -361,6 +393,7 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
         for e in st.entities:
             entities.setdefault(e.key, e.model_dump())
         by_id.update({x.sentence_id: x.model_dump() for x in st.sentences})
+        motifs += [m.model_dump() for m in st.motifs]
         last = min(c0 + CHUNK, len(numbered)) - 1
         for sc in st.scenes:   # clamp to this chunk so every sentence belongs to exactly one scene
             sc = sc.model_dump()
@@ -369,6 +402,7 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
                 scenes.append({**sc, "id": len(scenes)})
     plan["entities"] = list(entities.values())
     plan["scenes"] = scenes
+    plan["motifs"] = motifs
     for s in plan["sentences"]:
         s["state"] = by_id.get(s["id"], {"sentence_id": s["id"], "location": "", "weather": "", "mood": "",
                                          "tension": 0.3, "present": [], "physical_context": "", "korean": ""})
@@ -456,7 +490,7 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
                         e["decision"] = {"keep": False, "intensity": e["intensity"], "voice_key": e["id"],
                                          "reason": "진동이 나지 않는 사건 (캡션 단계)"}
 
-    progress("director", "연출: 선택, 세기, 같은 목소리 묶기")
+    progress("director", "햅틱 편곡: 표현, 강약 곡선, 핵심 순간 예산")
     candidates = []
     for s in plan["sentences"]:
         for e in s["explicit"] + s["inferred"]:
@@ -468,30 +502,40 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
                 continue
             candidates.append({"id": e["id"], "sentence": s["id"], "origin": e["origin"], "type": e.get("type", ""),
                                "confidence": e.get("confidence", 1.0), "caption": e["caption"], "action": e["action"],
-                               "entity": e["entity"], "kind": e["kind"], "intensity": e["intensity"]})
+                               "family": e.get("family", "texture"), "kind": e["kind"], "anchor_word": e["anchor_word"],
+                               "end_word": e.get("end_word", e["anchor_word"]), "whole_sentence_hint": e["spans_sentence"],
+                               "intensity": e["intensity"]})
     decided, trace, voices = {}, [], {}
     for c0 in range(0, len(plan["sentences"]), CHUNK):   # voice keys used so far carry over between chunks
         part = plan["sentences"][c0:c0 + CHUNK]
         cands = [c for c in candidates if c0 <= c["sentence"] < c0 + CHUNK]
         if not cands:
             continue
-        d = _agent("director", DIRECTOR_PROMPT, {
+        d = _agent("arranger", ARRANGER_PROMPT, {
             "scenes": [{k: sc[k] for k in ("first_sentence", "last_sentence", "setting", "background", "background_level",
                                            "key_moments", "haptic_theme")} for sc in scenes
                        if sc["last_sentence"] >= c0 and sc["first_sentence"] < c0 + CHUNK],
-            "sentences": [{"id": s["id"], "text": s["text"], "tension": s["state"]["tension"]} for s in part],
-            "candidates": cands, "max_events_per_sentence": MAX_EVENTS,
-            "voice_keys_already_used": [{"voice_key": k, "caption": v} for k, v in voices.items()]}, Direction, model, trace)
+            "motifs": motifs,
+            "sentences": [{"id": x["id"], "text": x["text"], "words": [f"{k}:{w}" for k, w in enumerate(x["words"])],
+                           "tension": x["state"]["tension"]} for x in part],
+            "candidates": cands, "voice_keys_already_used": [{"voice_key": k, "caption": v} for k, v in voices.items()]},
+            Direction, model, trace)
         for x in d.decisions:
             decided[x.id] = x.model_dump(exclude={"id"})
             cap = next((c["caption"] for c in cands if c["id"] == x.id), "")
             voices.setdefault(x.voice_key, cap)
-    plan["traces"]["director"] = trace
+    plan["traces"]["arranger"] = trace
+
+    def default(e):   # the arranger skipped it: explicit = clear action, inference = detail, treatment from its kind
+        return {"salience": 2 if e["origin"] == "explicit" else 1, "treatment": "accent" if e["kind"] == "impact" else "phrase",
+                "hit_words": [], "start_word": e["anchor_word"], "end_word": e.get("end_word", e["anchor_word"]),
+                "physical_sequence": False, "intensity": e["intensity"], "voice_key": e["id"], "reason": "편곡 결정 없음 (기본 유지)"}
+
     for s in plan["sentences"]:
         for e in s["explicit"] + s["inferred"]:
-            if "decision" not in e:   # the director skipped it: explicit events count as clear actions, inferences as details
-                e["decision"] = decided.get(e["id"], {"keep": True, "intensity": e["intensity"], "salience": 2 if e["origin"] == "explicit" else 1,
-                                                      "voice_key": e["id"], "reason": "연출 결정 없음 (기본 유지)"})
+            if "decision" not in e:
+                d = decided.get(e["id"]) or default(e)
+                e["decision"] = {**d, "keep": d["salience"] > 0, "reason": d["reason"] or ("중요도 0" if d["salience"] == 0 else "")}
         seen = set()   # the same caption twice in one sentence (explicit and inferred) is one event
         for e in s["explicit"] + s["inferred"]:
             if e["decision"]["keep"]:
@@ -499,30 +543,55 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
                 if key in seen:
                     e["decision"] = {**e["decision"], "keep": False, "reason": "같은 문장의 중복 사건"}
                 seen.add(key)
-        kept = sorted((e for e in s["explicit"] + s["inferred"] if e["decision"]["keep"]),
-                      key=lambda e: (e["origin"] != "explicit", -e["decision"]["intensity"]))
-        for e in kept[MAX_EVENTS:]:   # hard cap even if the director kept more
-            e["decision"] = {**e["decision"], "keep": False, "reason": "문장당 최대 개수 초과"}
 
-    # Salience tiers: level 0 drops the event, levels 1-3 confine its intensity to the tier's range, so a
-    # key moment is always clearly stronger than a detail. Scene backgrounds keep the storyboard's level,
-    # capped (they also duck under foreground events when rendered).
+    # Budget and arc, enforced in code: salience-3 events at most KEY_PER_SCENE per scene (the weaker ones
+    # become 2), intensities confined to their tier, and only the story's single strongest key moment (the
+    # climax) above the tier-3 ceiling. Scene backgrounds keep the storyboard's level, capped.
+    kept = lambda s: [e for e in s["explicit"] + s["inferred"] if e["decision"]["keep"]]
+    for sc in scenes:
+        keys = sorted((e for s in plan["sentences"][sc["first_sentence"]:sc["last_sentence"] + 1] for e in kept(s)
+                       if e["decision"].get("salience") == 3), key=lambda e: -e["decision"]["intensity"])
+        for e in keys[KEY_PER_SCENE:]:
+            e["decision"]["salience"] = 2
+            e["decision"]["reason"] = (e["decision"]["reason"] + " (장면 핵심 순간 예산 초과로 2단계)").strip()
     for s in plan["sentences"]:
-        for e in s["explicit"] + s["inferred"]:
+        for e in kept(s):
             d = e["decision"]
-            if not d["keep"]:
-                continue
-            level = d.get("salience", 2)
-            if level <= 0:
-                e["decision"] = {**d, "keep": False, "reason": d["reason"] or "중요도 0"}
-                continue
-            lo, hi = TIERS[min(3, level)]
+            lo, hi = TIERS[max(1, min(3, d.get("salience", 2)))]
             d["intensity"] = round(min(hi, max(lo, d["intensity"])), 3)
-            if e["spans_sentence"]:   # a texture over the whole sentence sits in the background layer
+            # the arranger decides the treatment; the extractor's "whole sentence" flag is only a hint to it
+            if d.get("treatment") == "hits" and not d.get("hit_words"):
+                d["treatment"] = "accent"
+            if d.get("treatment") == "bed":
                 d["intensity"] = min(d["intensity"], BED_MAX)
         for e in s["bed"]:
-            e["decision"]["intensity"] = round(min(BED_MAX, e["decision"]["intensity"]), 3)
+            e["decision"].update(treatment="bed", intensity=round(min(BED_MAX, e["decision"]["intensity"]), 3))
         s["explicit"] = s["explicit"] + s.pop("bed")
+    tops = [e for s in plan["sentences"] for e in kept(s) if e["decision"].get("salience") == 3]
+    if tops:
+        climax = max(tops, key=lambda e: e["decision"]["intensity"])
+        climax["decision"].update(intensity=1.0, climax=True)
+
+    # Micro level: SubEvent2Hap decomposition for the events that unfold as several timed contacts.
+    seqs = [e for s in plan["sentences"] for e in kept(s) if e["decision"].get("physical_sequence")]
+    if seqs:
+        progress("decompose", f"사건 분해 (SubEvent2Hap): {len(seqs)}개 구절")
+        ent_ = {x["key"]: x for x in plan["entities"]}
+
+        def decompose_one(e):
+            src = ent_.get(e["entity"], {})
+            desc = " ".join(x for x in (src.get("material", ""), src.get("name", ""), e["action"]) if x) or e["caption"]
+            try:
+                return dc.decompose(desc, model, dc.OPENAI_URL)["sub_events"]
+            except Exception as exc:  # noqa: BLE001  keep the event as a single vibration
+                return {"error": str(exc)[:200]}
+
+        with ThreadPoolExecutor(6) as ex:
+            for e, got in zip(seqs, ex.map(decompose_one, seqs)):
+                if isinstance(got, list) and len(got) > 1:
+                    e["decomposed"] = got
+                else:
+                    e["decision"]["physical_sequence"] = False
 
     progress("narration", "낭독 음성과 단어 시각 정렬 마무리")
     for s, fut in zip(plan["sentences"], narrations):
@@ -537,31 +606,58 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
 
 
 def schedule(s):
-    """Kept events -> composer sub-events, timed from the narration word timestamps."""
+    """Kept events -> composer sub-events, timed from the narration word timestamps by their treatment:
+    hits (one short hit per listed word), accent (one short vibration), phrase (through the action's
+    words), bed (whole sentence, background layer) or a decomposed sequence of timed sub-events."""
     clip = s["narration"]["duration"] + TAIL   # long sentences are rendered in windows by the server
+    times = s["word_times"] or [0.0]
+    at = lambda k: times[min(max(0, int(k)), len(times) - 1)]
     out = []
+
+    def sub(e, start, dur, **kw):
+        d = e["decision"]
+        x = {"prompt": e["caption"], "start": round(min(max(0.0, start), clip - 0.15), 3), "intensity": round(d["intensity"], 3),
+             "eid": e["id"], "origin": e["origin"], "voice_key": d["voice_key"], "layer": "fg",
+             "family": e.get("family", "texture"), "params": e.get("params", {}), "salience": d.get("salience"),
+             "treatment": d.get("treatment")}
+        x.update(kw)
+        x["duration"] = round(max(0.15, min(dur, clip - x["start"])), 3)
+        out.append(x)
+
     for e in s["explicit"] + s["inferred"]:
-        if not e["decision"]["keep"]:
+        d = e["decision"]
+        if not d["keep"]:
             continue
-        times = s["word_times"]
-        family = e.get("family", "texture")
-        if e["spans_sentence"]:
-            start, dur = 0.0, clip
-        else:
-            t0 = times[min(e["anchor_word"], len(times) - 1)] if times else 0.0
-            start = min(max(0.0, t0 + e["offset_s"]), clip - 0.15)
-            dur = e["duration"]
-            end_word = e.get("end_word", e["anchor_word"])
-            if family != "strike" and end_word > e["anchor_word"]:   # continuing actions last through their phrase
-                k = min(end_word + 1, len(times))
-                phrase_end = times[k] if k < len(times) else clip - TAIL
-                dur = max(dur, phrase_end - start)
-            dur = min(dur, clip - start)
-        out.append({"prompt": e["caption"], "start": round(start, 3), "duration": round(max(0.15, dur), 3),
-                    "intensity": round(e["decision"]["intensity"], 3), "eid": e["id"], "origin": e["origin"],
-                    "voice_key": e["decision"]["voice_key"], "layer": "bed" if e["spans_sentence"] else "fg",
-                    "family": family, "params": e.get("params", {}), "salience": e["decision"].get("salience")})
-    return sorted(out, key=lambda x: x["start"])
+        t = d.get("treatment", "accent")
+        if t == "bed":
+            sub(e, 0.0, clip, layer="bed")
+        elif e.get("decomposed"):   # micro level: SubEvent2Hap's timed sub-events from the anchor word on
+            t0 = at(e["anchor_word"]) + e["offset_s"]
+            top = max(x["intensity"] for x in e["decomposed"]) or 1.0
+            for k, x in enumerate(e["decomposed"]):
+                sub(e, t0 + x["start"], x["duration"], prompt=x["prompt"], eid=f"{e['id']}_d{k}", family="texture",
+                    voice_key=f"{d['voice_key']}_d{k}", intensity=round(d["intensity"] * x["intensity"] / top, 3))
+        elif t == "hits" and d.get("hit_words"):
+            for k, w in enumerate(sorted(set(d["hit_words"]))):   # one identical hit per word (same pattern seed)
+                if w < len(s["word_times"]):
+                    sub(e, at(w), HIT_LEN, eid=f"{e['id']}_h{k}", family="strike", seed_key=e["id"])
+        elif t == "phrase":
+            start = at(d.get("start_word", e["anchor_word"])) + e["offset_s"]
+            k = d.get("end_word", e.get("end_word", e["anchor_word"])) + 1
+            end = times[k] if k < len(times) else clip - TAIL
+            cap = PHRASE_MAX * (1.5 if d.get("salience") == 3 else 1.0)
+            sub(e, start, min(max(e["duration"], end - start), cap))
+        else:   # accent
+            sub(e, at(e["anchor_word"]) + e["offset_s"], min(e["duration"], 0.6 if e["kind"] == "impact" else 1.0))
+
+    # at most MAX_OVERLAP foreground vibrations at once: weaker overlapping ones give way
+    fg = sorted((x for x in out if x["layer"] == "fg"), key=lambda x: (-(x["salience"] or 0), -x["intensity"]))
+    keep_fg = []
+    for x in fg:
+        busy = sum(1 for y in keep_fg if y["start"] < x["start"] + x["duration"] and x["start"] < y["start"] + y["duration"])
+        if busy < MAX_OVERLAP:
+            keep_fg.append(x)
+    return sorted(keep_fg + [x for x in out if x["layer"] == "bed"], key=lambda x: x["start"])
 
 
 def save(plan, out_dir):

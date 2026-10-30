@@ -1,0 +1,50 @@
+{
+  "event": "TRIP, TRAP!",
+  "sub_events": [
+    {
+      "prompt": "Wooden bridge creaking under weight.",
+      "start": 0.0,
+      "intensity": 0.7,
+      "eid": "s21e0",
+      "origin": "explicit",
+      "voice_key": "s21e0",
+      "layer": "bed",
+      "family": "texture",
+      "params": {
+        "rate": 0.0,
+        "weight": 0.5,
+        "hardness": 0.7
+      },
+      "salience": 2,
+      "treatment": "bed",
+      "duration": 2.0,
+      "source_wav": "samples/s21e0.wav",
+      "file": "compose/compose_TRIP_TRAP_1031_022539_3/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.506,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 2.0,
+  "params": {
+    "generator": "hapticgen@colab",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_TRIP_TRAP_1031_022539_3_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0,
+  "elapsed": 0.004530429840087891
+}

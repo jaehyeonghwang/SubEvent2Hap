@@ -202,7 +202,8 @@ details { margin-top: 10px; } summary { cursor: pointer; color: var(--muted); fo
 <script>
 const $ = (s, r = document) => r.querySelector(s);
 const AGENTS = [["state", "이야기 상태", "인물, 물체, 재질, 긴장도"], ["explicit", "명시 사건", "문장에 적힌 진동"], ["inference", "암시 추론", "결과, 전제, 배경, 감각"],
-  ["director", "연출", "선택, 세기, 목소리"], ["narration", "낭독 정렬", "TTS + 단어 시각"], ["render", "렌더링", "HapticGen 합성"], ["critic", "Critic", "신호 + 판정 점수"]];
+  ["director", "햅틱 편곡", "표현, 강약 곡선, 예산"], ["narration", "낭독 정렬", "TTS + 단어 시각"], ["render", "렌더링", "HapticGen 합성"], ["critic", "Critic", "신호 + 판정 점수"]];
+const TREAT_KO = { hits: "단어 리듬", accent: "짧은 강조", phrase: "구절 지속", bed: "배경" };
 const TYPE_KO = { consequence: "결과", precondition: "전제", ambient: "배경", sensory: "감각" };
 const VOICES = ["fable", "alloy", "ash", "ballad", "coral", "echo", "nova", "onyx", "sage", "shimmer", "verse"];
 // Original texts (public domain, Project Gutenberg), unedited except line wrapping.
@@ -372,7 +373,7 @@ function sentenceCard(s, i) {
     const x = sub[e.id];
     tr.innerHTML = `<td>${tag}</td><td>${esc(e.caption)}</td><td>${esc(e.spans_sentence ? "(문장 전체)" : s.words[Math.min(e.anchor_word, s.words.length - 1)] || "")}</td>
       <td>${x ? x.start.toFixed(2) + "초" : ""}</td><td>${Math.round(e.decision.intensity * 100)}%</td>
-      <td>${e.origin === "inferred" ? Math.round(e.confidence * 100) + "%" : ""}</td><td title="${esc(e.decision.reason)}">${e.decision.keep ? "유지" : "제외"}: ${esc(e.decision.reason)}</td>`;
+      <td>${e.origin === "inferred" ? Math.round(e.confidence * 100) + "%" : ""}</td><td title="${esc(e.decision.reason)}">${e.decision.keep ? `${TREAT_KO[e.decision.treatment] || "유지"}${e.decision.salience ? `, ${e.decision.salience}단계` : ""}${e.decision.climax ? ", 절정" : ""}${e.decomposed ? `, 분해 ${e.decomposed.length}개` : ""}` : "제외"}: ${esc(e.decision.reason)}</td>`;
     tb.appendChild(tr);
   });
   if (!evs.length) tb.innerHTML = `<tr><td colspan="7" style="color:var(--muted)">진동 사건이 없는 문장입니다.</td></tr>`;
