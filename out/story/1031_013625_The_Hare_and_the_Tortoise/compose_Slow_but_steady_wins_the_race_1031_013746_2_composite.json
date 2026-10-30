@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] Slow but steady wins the race.", "params": {"generator": "hapticgen", "candidates": 1, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": null, "gamma": 1.6, "share_repeats": true, "sub_events": 1}, "created": 1793378266.3316221, "kind": "composite", "event": "Slow but steady wins the race.", "run": "compose_Slow_but_steady_wins_the_race_1031_013746_2"}

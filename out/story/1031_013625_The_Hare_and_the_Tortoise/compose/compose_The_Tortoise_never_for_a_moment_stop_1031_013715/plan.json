@@ -1,0 +1,42 @@
+{
+  "event": "The Tortoise never for a moment stopped, but went on with a slow but steady pace straight to the end of the course.",
+  "sub_events": [
+    {
+      "prompt": "A hard shell moves steadily on the forest ground.",
+      "start": 0.0,
+      "duration": 8.6,
+      "intensity": 0.4,
+      "eid": "s3e0",
+      "origin": "explicit",
+      "voice_key": "tortoise_steady_move",
+      "layer": "bed",
+      "source_wav": "samples/tortoise_steady_move.wav",
+      "file": "compose/compose_The_Tortoise_never_for_a_moment_stop_1031_013715/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 8.6,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_Tortoise_never_for_a_moment_stop_1031_013715_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.01654052734375,
+  "elapsed": 0.024309873580932617
+}

@@ -1,0 +1,42 @@
+{
+  "event": "At last waking up, and moving as fast as he could, he saw the Tortoise had reached the goal, and was comfortably dozing after her fatigue.",
+  "sub_events": [
+    {
+      "prompt": "A furry body stirs the ground beneath.",
+      "start": 1.46,
+      "duration": 0.3,
+      "intensity": 0.714,
+      "eid": "s5e0",
+      "origin": "explicit",
+      "voice_key": "hare_wake_up",
+      "layer": "fg",
+      "source_wav": "samples/hare_wake_up_fresh.wav",
+      "file": "compose/compose_At_last_waking_up_and_moving_as_fast_1031_013746/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.51,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 1.76,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_At_last_waking_up_and_moving_as_fast_1031_013746_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.015739917755126953,
+  "elapsed": 0.020280122756958008
+}

@@ -1,0 +1,42 @@
+{
+  "event": "A HARE one day ridiculed the short feet and slow pace of the Tortoise, who replied, laughing: “Though you be swift as the wind, I will beat you in a race.",
+  "sub_events": [
+    {
+      "prompt": "A gentle breeze sways the grass.",
+      "start": 8.78,
+      "duration": 0.5,
+      "intensity": 0.45,
+      "eid": "s0e1",
+      "origin": "explicit",
+      "voice_key": "wind_sway",
+      "layer": "fg",
+      "source_wav": "samples/wind_sway.wav",
+      "file": "compose/compose_A_HARE_one_day_ridiculed_the_short_f_1031_013715_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.009,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 9.28,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_HARE_one_day_ridiculed_the_short_f_1031_013715_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0015153884887695312,
+  "elapsed": 0.005033969879150391
+}

@@ -596,6 +596,12 @@ _story_jobs = {}   # id -> {"status", "stage", "log": [...], "error"}
 STORY_ID = r"^[A-Za-z0-9_-]{1,60}$"
 
 
+@app.get("/system")
+def system_page():
+    """Story2Hap system diagram: devices, processing pipeline, playback sync, files."""
+    return FileResponse(pathlib.Path(__file__).with_name("system.html"))
+
+
 @app.get("/story")
 def story_page():
     """Story2Hap: narrated story with per-sentence explicit and inferred vibration."""
