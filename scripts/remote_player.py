@@ -7,7 +7,13 @@ the server and plays it on the local Quest via OpenXR (Quest Link / Air Link).
 
   python scripts/remote_player.py --server http://desktop-nst9a4u:7860 [--name laptop]
 
-Needs only: numpy, soundfile, pyopenxr, websockets (requirements-player.txt).
+With --audio-device the vibration goes to that sound output instead of the Quest (e.g. a speaker or an
+amplifier driving a vibrotactile actuator), so narration can stay on the default output (e.g. AirPods):
+
+  python scripts/remote_player.py --list-audio
+  python scripts/remote_player.py --server http://desktop-nst9a4u:7860 --audio-device "Speakers"
+
+Needs only: numpy, soundfile, pyopenxr, websockets, sounddevice (requirements-player.txt).
 """
 import argparse
 import io
@@ -18,10 +24,69 @@ import time
 import urllib.parse
 import urllib.request
 
+import numpy as np
 import soundfile as sf
 from websockets.sync.client import connect
 
-from quest_haptic_play import QuestHapticPlayer
+
+class AudioDevicePlayer:
+    """Plays the vibration waveform on one sound output device; same interface as QuestHapticPlayer."""
+
+    def __init__(self, device):
+        import sounddevice as sd
+        self.sd = sd
+        self.device = find_device(device)
+        info = sd.query_devices(self.device)
+        self.rate = int(info["default_samplerate"])
+        self.channels = min(2, int(info["max_output_channels"]))
+        self.status = f"준비됨 (오디오 출력: {info['name']})"
+        self.connected, self._end = True, 0.0
+
+    def start(self):
+        return self
+
+    @property
+    def is_playing(self):
+        return time.time() < self._end
+
+    def play(self, wav, sr, hand="both", gain=1.0, loop=1):
+        w = np.clip(np.tile(np.asarray(wav, dtype=np.float32), max(1, int(loop))) * gain, -1, 1)
+        if sr != self.rate:   # linear resampling is enough for vibration-band content
+            w = np.interp(np.arange(int(len(w) * self.rate / sr)) * sr / self.rate, np.arange(len(w)), w).astype(np.float32)
+        out = np.repeat(w[:, None], self.channels, axis=1)
+        if self.channels == 2 and hand in ("left", "right"):
+            out[:, 1 if hand == "left" else 0] = 0
+        self.sd.play(out, self.rate, device=self.device)
+        self._end = time.time() + len(w) / self.rate
+
+    def stop(self):
+        self.sd.stop()
+        self._end = 0.0
+
+    def close(self):
+        self.stop()
+
+
+def find_device(name):
+    """Output device by index or (case-insensitive) name substring."""
+    import sounddevice as sd
+    if str(name).isdigit():
+        return int(name)
+    outs = [(i, d) for i, d in enumerate(sd.query_devices()) if d["max_output_channels"] > 0]
+    hits = [i for i, d in outs if str(name).lower() in d["name"].lower()]
+    if not hits:
+        raise SystemExit(f"output device '{name}' not found; run with --list-audio")
+    return hits[0]
+
+
+def list_audio():
+    import sounddevice as sd
+    default_out = sd.default.device[1]
+    for i, d in enumerate(sd.query_devices()):
+        if d["max_output_channels"] > 0:
+            api = sd.query_hostapis(d["hostapi"])["name"]
+            print(f"{'*' if i == default_out else ' '} {i:3d}  {d['name']}  [{api}, {d['max_output_channels']}ch]")
+    print("(* = Windows default output; narration in the browser goes there)")
 
 
 def ipv4_base(url):
@@ -37,13 +102,24 @@ def ipv4_base(url):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--server", required=True, help="e.g. http://desktop-nst9a4u:7860")
+    ap.add_argument("--server", help="e.g. http://desktop-nst9a4u:7860")
     ap.add_argument("--name", default=socket.gethostname())
+    ap.add_argument("--audio-device", help="play vibration on this sound output (index or name part) instead of the Quest")
+    ap.add_argument("--list-audio", action="store_true", help="list sound outputs and exit")
     a = ap.parse_args()
+    if a.list_audio:
+        list_audio()
+        return
+    if not a.server:
+        ap.error("--server is required")
     base = ipv4_base(a.server.rstrip("/"))
     ws_url = base.replace("http://", "ws://").replace("https://", "wss://") + f"/ws/player?name={a.name}"
-    player = QuestHapticPlayer().start()
-    print(f"[player] Quest: {player.status}")
+    if a.audio_device:
+        player = AudioDevicePlayer(a.audio_device).start()
+    else:
+        from quest_haptic_play import QuestHapticPlayer
+        player = QuestHapticPlayer().start()
+    print(f"[player] {player.status}")
 
     while True:
         try:

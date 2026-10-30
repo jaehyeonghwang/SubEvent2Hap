@@ -94,3 +94,7 @@ start_player.bat          # first run creates .venv-player with requirements-pla
 Then open `http://desktop-nst9a4u:7860/editor` in the laptop browser, start Quest Link, and put on the headset.
 While the agent is connected the Quest pill shows the laptop's name. Every play/stop goes to the laptop's
 Quest, which fetches the wav from the server. Without an agent, playback falls back to a Quest on the GPU PC.
+
+**Vibration on a speaker instead of the Quest** (e.g. narration on AirPods, vibration on the laptop speaker or an
+actuator amplifier): on the laptop run `start_player_audio.bat` (lists sound outputs, then asks which one gets the
+vibration). The browser plays the Story2Hap narration on the Windows default output.

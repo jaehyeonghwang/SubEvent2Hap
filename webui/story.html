@@ -173,7 +173,14 @@ details { margin-top: 10px; } summary { cursor: pointer; color: var(--muted); fo
       <button id="stopBtn"><span>■</span>정지</button>
     </div>
     <div class="row" style="margin-top:12px">
-      <span class="inline">컨트롤러</span>
+      <span class="inline">진동 출력</span>
+      <div class="seg" id="out"><button data-v="quest">노트북 재생기 (Quest 또는 스피커)</button><button data-v="audio">한 오디오 장치에서 채널 분리</button></div>
+      <span class="inline" id="chanWrap">진동 채널
+        <span class="seg" id="chan"><button data-v="R">오른쪽 (낭독은 왼쪽)</button><button data-v="L">왼쪽 (낭독은 오른쪽)</button></span></span>
+    </div>
+    <div class="note" id="outNote"></div>
+    <div class="row" style="margin-top:12px">
+      <span class="inline" id="handWrap">진동 채널/손</span>
       <div class="seg" id="hand"><button data-v="left">왼손</button><button data-v="both">양손</button><button data-v="right">오른손</button></div>
       <span class="inline">재생 배율 <input type="range" id="gain" min="0.2" max="3" step="0.05" value="1"> <b id="gainV"></b></span>
       <span class="inline" title="원격 Quest는 명령이 전달되는 데 시간이 걸립니다. 진동이 늦게 느껴지면 값을 올려 낭독을 늦추세요.">낭독 지연 <input type="range" id="lag" min="0" max="400" step="10" value="60"> <b id="lagV"></b></span>
@@ -216,6 +223,20 @@ const segPick = (sel, v, cb) => { document.querySelectorAll(sel + " button").for
 document.querySelectorAll("#cond button").forEach(b => b.onclick = () => segPick("#cond", b.dataset.v, v => { cond = v; drawAll(); }));
 document.querySelectorAll("#hand button").forEach(b => b.onclick = () => segPick("#hand", b.dataset.v, v => hand = v));
 segPick("#cond", cond); segPick("#hand", hand);
+// Vibration output: Quest controllers (OpenXR, remote) or the audio output itself, with narration and
+// vibration on separate stereo channels of ONE stream (sample-accurate sync; wire the actuator to one channel).
+let outMode = "quest", vibChan = "R";
+try { outMode = localStorage.getItem("s2h_out") || "quest"; vibChan = localStorage.getItem("s2h_chan") || "R"; } catch {}
+function outUI() {
+  const audio = outMode === "audio";
+  $("#chanWrap").hidden = !audio; $("#hand").hidden = $("#handWrap").hidden = audio; $("#lag").parentElement.hidden = audio;
+  $("#outNote").textContent = audio
+    ? `낭독은 ${vibChan === "R" ? "왼쪽" : "오른쪽"} 채널, 진동은 ${vibChan === "R" ? "오른쪽" : "왼쪽"} 채널로만 나갑니다. 진동자(앰프)는 ${vibChan === "R" ? "R" : "L"} 채널에, 스피커나 이어폰은 반대 채널에 연결하세요. 한 스트림이라 지연 보정이 필요 없습니다.`
+    : "낭독은 이 브라우저(Windows 기본 출력, 예: 에어팟)에서, 진동은 노트북 재생기에서 재생됩니다. 재생기를 start_player_audio.bat으로 켜면 진동이 지정한 스피커로만 나갑니다.";
+}
+document.querySelectorAll("#out button").forEach(b => b.onclick = () => segPick("#out", b.dataset.v, v => { outMode = v; try { localStorage.setItem("s2h_out", v); } catch {} outUI(); }));
+document.querySelectorAll("#chan button").forEach(b => b.onclick = () => segPick("#chan", b.dataset.v, v => { vibChan = v; try { localStorage.setItem("s2h_chan", v); } catch {} outUI(); }));
+segPick("#out", outMode); segPick("#chan", vibChan); outUI();
 $("#agents").innerHTML = AGENTS.map(([k, n, d]) => `<div class="agent" data-k="${k}"><b>${n}</b><span>${d}</span></div>`).join("");
 
 // ---------- runs
@@ -371,10 +392,41 @@ function drawSentence(card, progress = null) {
 }
 
 // ---------- playback: narration in this browser, vibration on the Quest
+let actx = null;
+const decoded = {};   // url -> AudioBuffer
+async function buffer(url) {
+  if (!decoded[url]) decoded[url] = fetch(url).then(r => r.arrayBuffer()).then(b => actx.decodeAudioData(b));
+  return decoded[url];
+}
+async function playSentenceAudio(i, all, s, card) {
+  // narration -> one channel, vibration (x gain) -> the other, started together on the audio clock
+  actx ||= new AudioContext();
+  if (actx.state === "suspended") await actx.resume();
+  const f = condFile(s);
+  let narr, vib = null;
+  try { [narr, vib] = await Promise.all([buffer(urlOf(s.narration.file)), f ? buffer(urlOf(f)) : null]); }
+  catch (e) { toast("오디오 불러오기 실패: " + e.message); return; }
+  const merger = actx.createChannelMerger(2), vibIdx = vibChan === "R" ? 1 : 0;
+  merger.connect(actx.destination);
+  const n = actx.createBufferSource(); n.buffer = narr; n.connect(merger, 0, 1 - vibIdx);
+  const srcs = [n];
+  if (vib) {
+    const v = actx.createBufferSource(), g = actx.createGain();
+    v.buffer = vib; g.gain.value = +$("#gain").value; v.connect(g); g.connect(merger, 0, vibIdx); srcs.push(v);
+  }
+  const t0 = actx.currentTime + 0.05;
+  srcs.forEach(x => x.start(t0));
+  const p = { i, all, timer: null, srcs, audio: { pause: () => srcs.forEach(x => { try { x.stop(); } catch {} }) } };
+  playing = p;
+  const tick = () => { if (playing !== p) { drawSentence(card); return; } drawSentence(card, Math.max(0, actx.currentTime - t0)); requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+  n.onended = () => { if (playing !== p) return; p.timer = setTimeout(() => { drawSentence(card); next(i, all); }, 500); };
+}
 async function playSentence(i, all) {
   const s = story && story.sentences[i]; if (!s || !s.narration) { if (all) next(i, all); return; }
   document.querySelectorAll(".sent").forEach(c => c.classList.toggle("playing", +c.dataset.i === i));
   const card = $(`.sent[data-i="${i}"]`); card.scrollIntoView({ behavior: "smooth", block: "center" });
+  if (outMode === "audio") return playSentenceAudio(i, all, s, card);
   const audio = new Audio(urlOf(s.narration.file));
   const p = { i, audio, all, timer: null }; playing = p;
   const f = condFile(s);
@@ -392,7 +444,8 @@ function next(i, all) {
 function stop() {
   if (playing) { clearTimeout(playing.timer); playing.audio.pause(); playing = null; }
   document.querySelectorAll(".sent").forEach(c => c.classList.remove("playing"));
-  api("/api/stop", { method: "POST" }).catch(() => {}); drawAll();
+  if (outMode === "quest") api("/api/stop", { method: "POST" }).catch(() => {});
+  drawAll();
 }
 $("#playAllBtn").onclick = () => { if (!story) return; stop(); playSentence(0, true); };
 $("#stopBtn").onclick = stop;
