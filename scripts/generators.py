@@ -83,6 +83,36 @@ class AudioGenHaptic:
         return torch.from_numpy(np.stack([np.pad(o, (0, n - len(o))) for o in out]))[:, None, :]
 
 
+class RemoteGenerator:
+    """A generator running on another machine (scripts/colab_worker.py behind a tunnel), with the same
+    set_generation_params / generate / sample_rate interface. url = "https://host?token=..."."""
+
+    def __init__(self, url, model="hapticgen"):
+        import requests
+        import urllib.parse
+        u = urllib.parse.urlsplit(url.strip())
+        self.base = f"{u.scheme}://{u.netloc}{u.path.rstrip('/')}"
+        self.headers = {"X-Token": urllib.parse.parse_qs(u.query).get("token", [""])[0]}
+        self.model, self.name, self._http = model, f"{model}@colab", requests
+        r = requests.get(f"{self.base}/info", params={"model_name": model}, headers=self.headers, timeout=900)
+        r.raise_for_status()
+        info = r.json()
+        self.sample_rate, self.device_name = info["sample_rate"], info["device"]
+        self.params = {}
+
+    def set_generation_params(self, duration, use_sampling=True, top_k=250, top_p=0.0, temperature=1.0, cfg_coef=3.0, **_):
+        self.params = {"duration": duration, "top_k": top_k, "temperature": temperature, "cfg": cfg_coef}
+
+    def generate(self, descriptions, progress=False):
+        import base64
+        r = self._http.post(f"{self.base}/generate", headers=self.headers, timeout=900,
+                            json={"model": self.model, "prompts": list(descriptions), **self.params})
+        r.raise_for_status()
+        j = r.json()
+        arr = np.frombuffer(base64.b64decode(j["data"]), dtype=np.float32).reshape(j["shape"])
+        return torch.from_numpy(arr.copy())
+
+
 def load(name):
     if name == "hapticgen":
         m = hg.load_model()

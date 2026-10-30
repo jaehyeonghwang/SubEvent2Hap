@@ -1,0 +1,79 @@
+{
+  "event": "I'm nervous about the exam.",
+  "sub_events": [
+    {
+      "prompt": "The exam schedule is observed",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "6aou1z1v",
+      "file": "compose/compose_I_m_nervous_about_the_exam_1026_174644/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0699,
+        0.0012
+      ],
+      "offset": 1.483,
+      "shared": false,
+      "source_wav": "compose/compose_I_m_nervous_about_the_exam_1026_174644/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "The study notes are held tightly",
+      "start": 2.0,
+      "duration": 1.5,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "d3c5o0ki",
+      "file": "compose/compose_I_m_nervous_about_the_exam_1026_174644/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0021,
+        0.0022
+      ],
+      "offset": 2.589,
+      "shared": false,
+      "source_wav": "compose/compose_I_m_nervous_about_the_exam_1026_174644/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "The pencil is tapped repeatedly",
+      "start": 4.0,
+      "duration": 1.8,
+      "intensity": 0.8,
+      "source": "",
+      "uid": "o3stwe0a",
+      "file": "compose/compose_I_m_nervous_about_the_exam_1026_174644/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0237,
+        0.0101
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_I_m_nervous_about_the_exam_1026_174644/src_03.wav",
+      "reused": false
+    }
+  ],
+  "total": 5.8,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_m_nervous_about_the_exam_1026_174644_composite.wav",
+  "baseline": "compose_I_m_nervous_about_the_exam_1026_174644_baseline.wav",
+  "gen_duration": 5.8,
+  "prompts": 8,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 12.129153966903687,
+  "elapsed": 12.153714895248413
+}

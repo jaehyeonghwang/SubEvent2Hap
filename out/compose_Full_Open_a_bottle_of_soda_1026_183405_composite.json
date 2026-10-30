@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] Full - Open a bottle of soda", "params": {"generator": "hapticgen", "candidates": 3, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": 11, "gamma": 1.6, "share_repeats": true, "sub_events": 4}, "created": 1793007245.5676537, "kind": "composite", "event": "Full - Open a bottle of soda", "run": "compose_Full_Open_a_bottle_of_soda_1026_183405"}

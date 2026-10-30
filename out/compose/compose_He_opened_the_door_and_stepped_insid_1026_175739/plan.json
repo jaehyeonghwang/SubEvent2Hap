@@ -1,0 +1,79 @@
+{
+  "event": "He opened the door and stepped inside.",
+  "sub_events": [
+    {
+      "prompt": "the door opened",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "bfl32lqz",
+      "file": "compose/compose_He_opened_the_door_and_stepped_insid_1026_175739/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0547,
+        0.0119
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_He_opened_the_door_and_stepped_insid_1026_175739/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "his foot stepped",
+      "start": 1.3,
+      "duration": 0.7,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "jiq3gjdp",
+      "file": "compose/compose_He_opened_the_door_and_stepped_insid_1026_175739/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0044,
+        0.0014
+      ],
+      "offset": 0.309,
+      "shared": false,
+      "source_wav": "compose/compose_He_opened_the_door_and_stepped_insid_1026_175739/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "the floor inside contacted",
+      "start": 2.0,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "xsq0byge",
+      "file": "compose/compose_He_opened_the_door_and_stepped_insid_1026_175739/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0019,
+        0.0068
+      ],
+      "offset": 0.546,
+      "shared": false,
+      "source_wav": "compose/compose_He_opened_the_door_and_stepped_insid_1026_175739/src_03.wav",
+      "reused": false
+    }
+  ],
+  "total": 2.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_opened_the_door_and_stepped_insid_1026_175739_composite.wav",
+  "baseline": "compose_He_opened_the_door_and_stepped_insid_1026_175739_baseline.wav",
+  "gen_duration": 2.5,
+  "prompts": 8,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.466748952865601,
+  "elapsed": 4.481749534606934
+}

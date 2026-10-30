@@ -1,0 +1,43 @@
+{
+  "event": "I froze because I was terrified.",
+  "sub_events": [
+    {
+      "prompt": "fear induces a physical freeze",
+      "start": 0.5,
+      "duration": 2.0,
+      "intensity": 0.8,
+      "source": "",
+      "uid": "zexys3p0",
+      "file": "compose/compose_I_froze_because_I_was_terrified_1026_175234/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0754,
+        0.2253
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_I_froze_because_I_was_terrified_1026_175234/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 2.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_froze_because_I_was_terrified_1026_175234_composite.wav",
+  "baseline": "compose_I_froze_because_I_was_terrified_1026_175234_baseline.wav",
+  "gen_duration": 3.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.103226661682129,
+  "elapsed": 3.113792657852173
+}

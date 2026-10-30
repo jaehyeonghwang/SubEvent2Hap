@@ -1,0 +1,79 @@
+{
+  "event": "They're excited about the trip.",
+  "sub_events": [
+    {
+      "prompt": "a group of people exhibit increased physical energy through animated gestures",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "gt4v9luk",
+      "file": "compose/compose_They_re_excited_about_the_trip_1026_175050/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.1504,
+        0.1228
+      ],
+      "offset": 0.127,
+      "shared": false,
+      "source_wav": "compose/compose_They_re_excited_about_the_trip_1026_175050/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a group of people exchange rapid, enthusiastic eye contact",
+      "start": 1.3,
+      "duration": 0.6,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "fvsqdaif",
+      "file": "compose/compose_They_re_excited_about_the_trip_1026_175050/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.2151,
+        0.1245
+      ],
+      "offset": 0.042,
+      "shared": false,
+      "source_wav": "compose/compose_They_re_excited_about_the_trip_1026_175050/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a group of-than clap hands together in unison",
+      "start": 2.0,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "luk69o9l",
+      "file": "compose/compose_They_re_excited_about_the_trip_1026_175050/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0896,
+        0.0287
+      ],
+      "offset": 0.091,
+      "shared": false,
+      "source_wav": "compose/compose_They_re_excited_about_the_trip_1026_175050/src_03.wav",
+      "reused": false
+    }
+  ],
+  "total": 2.4,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_They_re_excited_about_the_trip_1026_175050_composite.wav",
+  "baseline": "compose_They_re_excited_about_the_trip_1026_175050_baseline.wav",
+  "gen_duration": 2.4,
+  "prompts": 8,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.213459014892578,
+  "elapsed": 5.2319769859313965
+}

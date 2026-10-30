@@ -1,0 +1,79 @@
+{
+  "event": "She turned around, waved, and walked away.",
+  "sub_events": [
+    {
+      "prompt": "her body turned around",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "ygmk3tks",
+      "file": "compose/compose_She_turned_around_waved_and_walked_a_1026_180053/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.032,
+        0.0111
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_She_turned_around_waved_and_walked_a_1026_180053/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "her hand waved",
+      "start": 2.0,
+      "duration": 0.7,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "qwlkodig",
+      "file": "compose/compose_She_turned_around_waved_and_walked_a_1026_180053/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.6409,
+        0.1225
+      ],
+      "offset": 1.99,
+      "shared": false,
+      "source_wav": "compose/compose_She_turned_around_waved_and_walked_a_1026_180053/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "her foot moved forward",
+      "start": 3.5,
+      "duration": 1.0,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "20wlwi9f",
+      "file": "compose/compose_She_turned_around_waved_and_walked_a_1026_180053/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0024,
+        0.0039
+      ],
+      "offset": 0.033,
+      "shared": false,
+      "source_wav": "compose/compose_She_turned_around_waved_and_walked_a_1026_180053/src_03.wav",
+      "reused": false
+    }
+  ],
+  "total": 4.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_She_turned_around_waved_and_walked_a_1026_180053_composite.wav",
+  "baseline": "compose_She_turned_around_waved_and_walked_a_1026_180053_baseline.wav",
+  "gen_duration": 4.5,
+  "prompts": 8,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 7.829434633255005,
+  "elapsed": 7.845894813537598
+}

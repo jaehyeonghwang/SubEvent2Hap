@@ -1,0 +1,18 @@
+# Colab generation worker (torch, transformers, numpy, librosa, spacy come with Colab).
+# HapticGen itself: pip install -e HapticGen --no-deps
+av
+einops
+flashy
+hydra-core
+hydra-colorlog
+julius
+num2words
+sentencepiece
+encodec
+demucs
+torchmetrics
+soundfile
+fastapi
+uvicorn
+requests
+huggingface_hub

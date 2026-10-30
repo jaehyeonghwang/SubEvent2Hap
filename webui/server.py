@@ -8,6 +8,7 @@ import asyncio
 import io
 import ipaddress
 import json
+import re
 import os
 import pathlib
 import sys
@@ -35,6 +36,8 @@ import compose as cp  # noqa: E402
 import decompose as dc  # noqa: E402
 import bounce as bp  # noqa: E402
 import model_planner as mp  # noqa: E402
+import event_t2m as et  # noqa: E402
+import story2hap as s2h  # noqa: E402
 from quest_haptic_play import QuestHapticPlayer  # noqa: E402
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -137,9 +140,67 @@ def _load_model(name="hapticgen"):
 threading.Thread(target=_load_model, daemon=True).start()
 
 
+# ---------------------------------------------------------------- remote GPU (Colab worker)
+COLAB_FILE = OUT_DIR / "colab.json"
+_colab = {"url": None, "models": {}, "error": None}
+try:
+    _colab["url"] = json.loads(COLAB_FILE.read_text(encoding="utf-8")).get("url")
+except (OSError, ValueError):
+    pass
+
+
+def _colab_generator(model):
+    """name@colab -> RemoteGenerator (first use loads the model on the worker, can take a minute)."""
+    if not _colab["url"]:
+        raise HTTPException(503, "Colab 주소가 설정되지 않았습니다")
+    key = (_colab["url"], model)
+    if key not in _colab["models"]:
+        try:
+            _colab["models"][key] = gens.RemoteGenerator(_colab["url"], model)
+            _colab["error"] = None
+        except Exception as e:  # noqa: BLE001
+            _colab["error"] = f"{type(e).__name__}: {e}"
+            raise HTTPException(502, f"Colab 연결 실패: {e}")
+    return _colab["models"][key]
+
+
+class ColabReq(BaseModel):
+    url: str = Field(max_length=400)
+
+
+@app.get("/api/colab")
+def colab_status():
+    if not _colab["url"]:
+        return {"set": False, "ok": False, "status": "주소 없음"}
+    import requests
+    from urllib.parse import parse_qs, urlsplit
+    u = urlsplit(_colab["url"])
+    try:
+        r = requests.get(f"{u.scheme}://{u.netloc}/health", timeout=5,
+                         headers={"X-Token": parse_qs(u.query).get("token", [""])[0]})
+        r.raise_for_status()
+        h = r.json()
+        return {"set": True, "ok": True, "device": h["device"], "loaded": h["loaded"], "status": f"연결됨 ({h['device']})"}
+    except Exception as e:  # noqa: BLE001
+        return {"set": True, "ok": False, "status": f"연결 안 됨 ({type(e).__name__})"}
+
+
+@app.post("/api/colab")
+def colab_set(req: ColabReq):
+    url = req.url.strip() or None
+    if url and not re.match(r"^https?://[^\s]+$", url):
+        raise HTTPException(422, "주소 형식이 아닙니다")
+    _colab.update(url=url, models={}, error=None)
+    COLAB_FILE.write_text(json.dumps({"url": url}), encoding="utf-8")
+    return colab_status()
+
+
 def _use_generator(name):
-    """Return the requested generator, swapping it onto the GPU if another one is loaded (~30 s)."""
+    """Return the requested generator, swapping it onto the GPU if another one is loaded (~30 s).
+    "<generator>@colab" runs on the remote worker instead and leaves the local GPU alone."""
     global _model, _model_name, _model_status
+    if name.endswith("@colab"):
+        return _colab_generator(name.removesuffix("@colab"))
     if name not in gens.GENERATORS:
         raise HTTPException(422, f"unknown generator {name}")
     with _swap_lock:
@@ -350,7 +411,7 @@ class DecomposeReq(BaseModel):
     event: str = Field(min_length=1, max_length=400)
     # Default = staged: in the eval_set_v2.1 ablation it rendered every prompt and passed 81% of items
     # vs 67% / 28% for model_first. model_first and ball_physics remain selectable as experiments.
-    planner: str = Field("staged", pattern="^(model_first|staged|ball_physics)$")
+    planner: str = Field("staged", pattern="^(model_first|staged|ball_physics|event_t2m)$")
     bounce_parameters: bp.BounceOverrides | None = None
     estimate_parameters: bool = False
     # "local" = LM Studio on this PC; "gpt-4o" sends the event text to OpenAI.
@@ -371,6 +432,8 @@ def _plan(event, planner="staged", llm="local", estimate_parameters=False, bounc
     model, url = _lm(llm)
     if planner == "model_first":
         r = mp.decompose(event, model, url, estimate_parameters=estimate_parameters)
+    elif planner == "event_t2m":
+        r = et.decompose(event, model, url)
     elif planner == "ball_physics":
         r = bp.decompose(event, model, url, overrides=bounce_parameters)
     else:
@@ -424,7 +487,7 @@ class ComposeReq(BaseModel):
     seed: int | None = None
     gamma: float = Field(cp.DEFAULT_GAMMA, ge=0.5, le=3.0)
     share_repeats: bool = True
-    generator: str = Field("hapticgen", pattern="^(hapticgen|audiogen)$")
+    generator: str = Field("hapticgen", pattern="^(hapticgen|audiogen)(@colab)?$")
     physics: dict | None = None
     hierarchy: dict | None = None
 
@@ -432,7 +495,7 @@ class ComposeReq(BaseModel):
 @app.post("/api/compose")
 def compose(req: ComposeReq):
     global _gen_busy
-    if _model is None:
+    if _model is None and not req.generator.endswith("@colab"):
         raise HTTPException(503, f"model {_model_status}")
     if max(s.start + s.duration for s in req.sub_events) > 10.0:
         raise HTTPException(422, "전체 길이가 10초를 넘습니다")
@@ -520,6 +583,179 @@ def compare3(req: Compare3Req):
 def editor_page():
     """Authoring editor: decompose -> edit sub-events on a timeline -> compose -> play."""
     return FileResponse(pathlib.Path(__file__).with_name("editor.html"))
+
+
+# ---------------------------------------------------------------- Story2Hap
+STORY_DIR = OUT_DIR / "story"
+_story_jobs = {}   # id -> {"status", "stage", "log": [...], "error"}
+STORY_ID = r"^[A-Za-z0-9_-]{1,60}$"
+
+
+@app.get("/story")
+def story_page():
+    """Story2Hap: narrated story with per-sentence explicit and inferred vibration."""
+    return FileResponse(pathlib.Path(__file__).with_name("story.html"))
+
+
+class StoryReq(BaseModel):
+    text: str = Field(min_length=1, max_length=6000)
+    title: str = Field("", max_length=80)
+    voice: str = Field("fable", pattern="^(" + "|".join(s2h.VOICES) + ")$")
+    threshold: float = Field(0.5, ge=0, le=1)
+    generator: str = Field("hapticgen", pattern="^(hapticgen|audiogen)(@colab)?$")
+
+
+def _story_log(sid, stage, msg):
+    job = _story_jobs.setdefault(sid, {"status": "running", "log": []})
+    job["stage"] = stage
+    job["log"].append({"t": time.time(), "stage": stage, "msg": msg})
+
+
+def _story_render(sid, plan, ids, fresh=False):
+    """Agent 6: one composite per sentence (explicit + inferred), an explicit-only remix of the same
+    samples, and a single-prompt baseline. voice_key -> raw sample keeps a source's vibration identical
+    across sentences. Waits for the GPU (other generation requests get 409 meanwhile)."""
+    global _gen_busy
+    out_dir = STORY_DIR / sid
+    voices = plan.setdefault("voices", {})
+    with _gen_lock:
+        _gen_busy = True
+        try:
+            model = _use_generator(plan.get("generator", "hapticgen"))
+            for s in plan["sentences"]:
+                if s["id"] not in ids:
+                    continue
+                subs = s["sub_events"]
+                if not subs:
+                    s["render"] = None
+                    continue
+                _story_log(sid, "render", f"문장 {s['id'] + 1} 렌더링 ({len(subs)}개 사건)")
+                body = [{**x, "source_wav": None if fresh else voices.get(x["voice_key"])} for x in subs]
+                r = cp.compose(model, s["text"], body, 2, True, 3.0, 1.0, 250, None, out_dir,
+                               gamma=cp.DEFAULT_GAMMA, share_repeats=True)
+                for o in r["sub_events"]:
+                    if o.get("source_wav") and o["voice_key"] not in voices:
+                        voices[o["voice_key"]] = o["source_wav"]
+                exp = [{**o} for o in r["sub_events"] if o["origin"] == "explicit"]
+                ex = cp.compose(model, s["text"], exp, 1, False, 3.0, 1.0, 250, None, out_dir,
+                                gamma=cp.DEFAULT_GAMMA, share_repeats=True) if exp else None
+                rel = lambda name: f"story/{sid}/{name}"
+                files = {"full": rel(r["composite"]), "explicit": rel(ex["composite"]) if ex else None,
+                         "baseline": rel(r["baseline"]) if r["baseline"] else None}
+                s["render"] = {"files": files, "elapsed": round(r["elapsed"], 2),
+                               "waves": {k: {key: v for key, v in _describe(OUT_DIR / f).items() if key in ("name", "duration", "peak", "peaks")}
+                                         for k, f in files.items() if f},
+                               "sub_events": [{k: o.get(k) for k in ("eid", "origin", "prompt", "start", "duration", "intensity",
+                                                                     "voice_key", "reused", "source_wav")} for o in r["sub_events"]]}
+        finally:
+            _gen_busy = False
+
+
+def _story_critic(sid, plan, ids):
+    """Agent 7: signal check + LM judgement per sentence."""
+    _story_log(sid, "critic", "Critic 평가")
+
+    def one(s):
+        if not s.get("render"):
+            return {"score": None, "issues": [], "action": "ok", "note": "진동 없음 (연출 결정 또는 사건 없음)"}
+        signal = s2h.signal_check(OUT_DIR / s["render"]["files"]["full"], s["sub_events"])
+        return s2h.critique(s, plan, signal, plan.get("model", s2h.AGENT_MODEL))
+
+    targets = [s for s in plan["sentences"] if s["id"] in ids]
+    with s2h.ThreadPoolExecutor(6) as ex:
+        for s, c in zip(targets, ex.map(one, targets)):
+            s["critic"] = c
+
+
+def _story_job(sid, fn):
+    def run():
+        try:
+            fn()
+            _story_jobs[sid]["status"] = "done"
+            _story_log(sid, "done", "완료")
+        except Exception as e:  # noqa: BLE001
+            _story_jobs[sid].update(status="error", error=f"{type(e).__name__}: {e}")
+            _story_log(sid, "error", str(e)[:300])
+    _story_jobs[sid] = {"status": "running", "stage": "start", "log": []}
+    threading.Thread(target=run, daemon=True).start()
+
+
+@app.post("/api/story/run")
+def story_run(req: StoryReq):
+    sid = time.strftime("%m%d_%H%M%S") + "_" + (re.sub(r"[^A-Za-z0-9]+", "_", req.title or req.text[:30]).strip("_")[:30] or "story")
+    out_dir = STORY_DIR / sid
+
+    def work():
+        plan = s2h.plan_story(req.text, out_dir, req.voice, req.threshold, progress=lambda st, m: _story_log(sid, st, m))
+        plan.update(title=req.title or s2h.split_sentences(req.text)[0][:60], generator=req.generator)
+        s2h.save(plan, out_dir)
+        ids = [s["id"] for s in plan["sentences"]]
+        _story_render(sid, plan, ids)
+        s2h.save(plan, out_dir)
+        _story_critic(sid, plan, ids)
+        # one automatic retry for sentences whose render missed planned impacts
+        retry = [s["id"] for s in plan["sentences"] if s.get("critic", {}).get("action") == "rerender"]
+        if retry:
+            _story_log(sid, "render", f"Critic 요청으로 문장 {', '.join(str(i + 1) for i in retry)} 다시 렌더링")
+            _story_render(sid, plan, retry, fresh=True)
+            _story_critic(sid, plan, retry)
+            for s in plan["sentences"]:
+                if s["id"] in retry:
+                    s["critic"]["retried"] = True
+        s2h.save(plan, out_dir)
+
+    _story_job(sid, work)
+    return {"id": sid}
+
+
+def _story_plan(sid):
+    if not re.match(STORY_ID, sid):
+        raise HTTPException(404, "no story")
+    path = STORY_DIR / sid / "plan.json"
+    if not path.exists():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+@app.get("/api/story")
+def story_list():
+    out = []
+    for path in sorted(STORY_DIR.glob("*/plan.json"), reverse=True):
+        try:
+            p = json.loads(path.read_text(encoding="utf-8"))
+        except ValueError:
+            continue
+        out.append({"id": path.parent.name, "title": p.get("title") or p["sentences"][0]["text"][:60],
+                    "sentences": len(p["sentences"]), "created": p.get("created")})
+    for sid, job in _story_jobs.items():
+        if job["status"] == "running" and not any(x["id"] == sid for x in out):
+            out.insert(0, {"id": sid, "title": "(진행 중)", "sentences": None, "created": None})
+    return out
+
+
+@app.get("/api/story/{sid}")
+def story_get(sid: str):
+    plan = _story_plan(sid)
+    if plan:
+        plan.pop("traces", None)
+    return {"plan": plan, "job": _story_jobs.get(sid)}
+
+
+@app.post("/api/story/{sid}/sentence/{i}/rerender")
+def story_rerender(sid: str, i: int):
+    plan = _story_plan(sid)
+    if not plan or not 0 <= i < len(plan["sentences"]):
+        raise HTTPException(404, "no such sentence")
+    if _story_jobs.get(sid, {}).get("status") == "running":
+        raise HTTPException(409, "이 이야기는 이미 처리 중입니다")
+
+    def work():
+        _story_render(sid, plan, [i], fresh=True)
+        _story_critic(sid, plan, [i])
+        s2h.save(plan, STORY_DIR / sid)
+
+    _story_job(sid, work)
+    return {"ok": True}
 
 
 # ---------------------------------------------------------------- authoring-study logs

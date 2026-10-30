@@ -177,7 +177,12 @@ def compose(model, event: str, subs: list, candidates=2, baseline=True, cfg=3.0,
     run_id = time.strftime("%m%d_%H%M%S")
     name = f"compose_{_slug(event)}_{run_id}"
     run_dir = pathlib.Path(out_dir) / "compose" / name
-    run_dir.mkdir(parents=True, exist_ok=True)
+    k = 1
+    while run_dir.exists():   # two runs of the same event within one second must not overwrite each other
+        k += 1
+        name = f"compose_{_slug(event)}_{run_id}_{k}"
+        run_dir = pathlib.Path(out_dir) / "compose" / name
+    run_dir.mkdir(parents=True)
 
     # pick the best candidate per unit (using the longest/representative sub-event of that unit)
     chosen, source = {}, {}

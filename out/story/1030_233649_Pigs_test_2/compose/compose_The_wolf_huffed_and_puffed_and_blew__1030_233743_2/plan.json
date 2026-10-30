@@ -1,0 +1,73 @@
+{
+  "event": "The wolf huffed and puffed and blew the straw house down.",
+  "sub_events": [
+    {
+      "prompt": "Wolf huffing with forceful breath.",
+      "start": 0.76,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s1e0",
+      "origin": "explicit",
+      "voice_key": "wolf_breath",
+      "source_wav": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_233743/src_01.wav",
+      "file": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_233743_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.143,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Wolf puffing with forceful breath.",
+      "start": 1.94,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s1e1",
+      "origin": "explicit",
+      "voice_key": "wolf_breath",
+      "source_wav": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_233743/src_02.wav",
+      "file": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_233743_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.538,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Straw house collapsing from strong wind.",
+      "start": 3.74,
+      "duration": 0.6,
+      "intensity": 1.0,
+      "eid": "s1e2",
+      "origin": "explicit",
+      "voice_key": "house_collapse",
+      "source_wav": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_233743/src_03.wav",
+      "file": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_233743_2/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 2.289,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 4.34,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_wolf_huffed_and_puffed_and_blew__1030_233743_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.015029430389404297,
+  "elapsed": 0.02203536033630371
+}

@@ -1,0 +1,61 @@
+{
+  "event": "He kicked the ball and scored a goal.",
+  "sub_events": [
+    {
+      "prompt": "foot kicked the ball",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "o6znioj9",
+      "file": "compose/compose_He_kicked_the_ball_and_scored_a_goal_1026_175950/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0957,
+        0.369
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_He_kicked_the_ball_and_scored_a_goal_1026_175950/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "ball entered the goal",
+      "start": 3.0,
+      "duration": 0.9,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "rvcu8fok",
+      "file": "compose/compose_He_kicked_the_ball_and_scored_a_goal_1026_175950/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0454,
+        0.0696
+      ],
+      "offset": 0.784,
+      "shared": false,
+      "source_wav": "compose/compose_He_kicked_the_ball_and_scored_a_goal_1026_175950/src_02.wav",
+      "reused": false
+    }
+  ],
+  "total": 3.9,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_kicked_the_ball_and_scored_a_goal_1026_175950_composite.wav",
+  "baseline": "compose_He_kicked_the_ball_and_scored_a_goal_1026_175950_baseline.wav",
+  "gen_duration": 3.9,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.080063104629517,
+  "elapsed": 4.097065210342407
+}

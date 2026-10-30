@@ -1,0 +1,79 @@
+{
+  "event": "Hammer a nail into a wooden board",
+  "sub_events": [
+    {
+      "prompt": "a hammer strikes a nail into wood with a sharp metallic tap",
+      "start": 0.3,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "source": "hammer",
+      "file": "compose/compose_Hammer_a_nail_into_a_wooden_board_1026_183354/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0929,
+        0.355,
+        0.1162
+      ],
+      "offset": 0.439,
+      "shared": true,
+      "source_wav": "compose/compose_Hammer_a_nail_into_a_wooden_board_1026_183354/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a hammer strikes a nail into wood with a sharp metallic tap",
+      "start": 0.9,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "source": "hammer",
+      "file": "compose/compose_Hammer_a_nail_into_a_wooden_board_1026_183354/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0929,
+        0.355,
+        0.1162
+      ],
+      "offset": 0.439,
+      "shared": true,
+      "source_wav": "compose/compose_Hammer_a_nail_into_a_wooden_board_1026_183354/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a hammer strikes a nail into wood with a sharp metallic tap",
+      "start": 1.5,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "source": "hammer",
+      "file": "compose/compose_Hammer_a_nail_into_a_wooden_board_1026_183354/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0929,
+        0.355,
+        0.1162
+      ],
+      "offset": 0.439,
+      "shared": true,
+      "source_wav": "compose/compose_Hammer_a_nail_into_a_wooden_board_1026_183354/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.7,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 11,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Hammer_a_nail_into_a_wooden_board_1026_183354_composite.wav",
+  "baseline": "compose_Hammer_a_nail_into_a_wooden_board_1026_183354_baseline.wav",
+  "gen_duration": 1.7,
+  "prompts": 6,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.4355762004852295,
+  "elapsed": 1.4470899105072021
+}

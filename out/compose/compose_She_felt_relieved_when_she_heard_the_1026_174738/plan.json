@@ -1,0 +1,43 @@
+{
+  "event": "She felt relieved when she heard the news",
+  "sub_events": [
+    {
+      "prompt": "heard news",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "t99v52h4",
+      "file": "compose/compose_She_felt_relieved_when_she_heard_the_1026_174738/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.268,
+        0.2017
+      ],
+      "offset": 0.325,
+      "shared": false,
+      "source_wav": "compose/compose_She_felt_relieved_when_she_heard_the_1026_174738/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_She_felt_relieved_when_she_heard_the_1026_174738_composite.wav",
+  "baseline": "compose_She_felt_relieved_when_she_heard_the_1026_174738_baseline.wav",
+  "gen_duration": 2.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.33225417137146,
+  "elapsed": 2.346308469772339
+}

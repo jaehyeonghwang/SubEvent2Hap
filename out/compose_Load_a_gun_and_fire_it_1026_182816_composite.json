@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] Load a gun and fire it", "params": {"generator": "hapticgen", "candidates": 3, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": 11, "gamma": 1.6, "share_repeats": true, "sub_events": 2}, "created": 1793006896.9776819, "kind": "composite", "event": "Load a gun and fire it", "run": "compose_Load_a_gun_and_fire_it_1026_182816"}

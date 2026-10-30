@@ -1,0 +1,79 @@
+{
+  "event": "She grabbed her bag, ran downstairs, and jumped into the car",
+  "sub_events": [
+    {
+      "prompt": "her bag grabbed",
+      "start": 0.1,
+      "duration": 0.2,
+      "intensity": 0.4,
+      "source": "",
+      "uid": "2cuc5xq2",
+      "file": "compose/compose_She_grabbed_her_bag_ran_downstairs_a_1026_175802/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.5888,
+        0.8614
+      ],
+      "offset": 0.99,
+      "shared": false,
+      "source_wav": "compose/compose_She_grabbed_her_bag_ran_downstairs_a_1026_175802/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "staircase ran down",
+      "start": 0.3,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "atxlqhqg",
+      "file": "compose/compose_She_grabbed_her_bag_ran_downstairs_a_1026_175802/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.1197,
+        0.2894
+      ],
+      "offset": 0.067,
+      "shared": false,
+      "source_wav": "compose/compose_She_grabbed_her_bag_ran_downstairs_a_1026_175802/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "car door jumped into",
+      "start": 0.8,
+      "duration": 0.3,
+      "intensity": 0.4,
+      "source": "",
+      "uid": "zadv6bkz",
+      "file": "compose/compose_She_grabbed_her_bag_ran_downstairs_a_1026_175802/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.1076,
+        0.3866
+      ],
+      "offset": 0.006,
+      "shared": false,
+      "source_wav": "compose/compose_She_grabbed_her_bag_ran_downstairs_a_1026_175802/src_03.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.1,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_She_grabbed_her_bag_ran_downstairs_a_1026_175802_composite.wav",
+  "baseline": "compose_She_grabbed_her_bag_ran_downstairs_a_1026_175802_baseline.wav",
+  "gen_duration": 1.5,
+  "prompts": 8,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.399688959121704,
+  "elapsed": 3.4153847694396973
+}

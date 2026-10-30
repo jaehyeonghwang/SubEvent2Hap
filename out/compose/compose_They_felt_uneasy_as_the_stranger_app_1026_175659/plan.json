@@ -1,0 +1,43 @@
+{
+  "event": "They felt uneasy as the stranger approached.",
+  "sub_events": [
+    {
+      "prompt": "the stranger approaches",
+      "start": 0.5,
+      "duration": 2.0,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "4ek3rh3j",
+      "file": "compose/compose_They_felt_uneasy_as_the_stranger_app_1026_175659/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.2001,
+        0.0127
+      ],
+      "offset": 1.0,
+      "shared": false,
+      "source_wav": "compose/compose_They_felt_uneasy_as_the_stranger_app_1026_175659/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 2.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_They_felt_uneasy_as_the_stranger_app_1026_175659_composite.wav",
+  "baseline": "compose_They_felt_uneasy_as_the_stranger_app_1026_175659_baseline.wav",
+  "gen_duration": 3.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.216243267059326,
+  "elapsed": 3.2272417545318604
+}

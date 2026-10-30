@@ -1,0 +1,1 @@
+{"prompt": "[baseline] Staple a stack of papers", "params": {"generator": "hapticgen", "candidates": 3, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": 11, "gamma": 1.6, "share_repeats": true, "sub_events": 1}, "created": 1793007254.688617, "kind": "baseline", "event": "Staple a stack of papers", "run": "compose_Staple_a_stack_of_papers_1026_183414"}

@@ -1,0 +1,61 @@
+{
+  "event": "They packed their bags and left the hotel.",
+  "sub_events": [
+    {
+      "prompt": "their bags were packed",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "s2pxmuc9",
+      "file": "compose/compose_They_packed_their_bags_and_left_the__1026_180022/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0074,
+        0.0134
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_They_packed_their_bags_and_left_the__1026_180022/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "the hotel was left",
+      "start": 2.0,
+      "duration": 1.5,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "kllmqxmn",
+      "file": "compose/compose_They_packed_their_bags_and_left_the__1026_180022/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0114,
+        0.0526
+      ],
+      "offset": 0.084,
+      "shared": false,
+      "source_wav": "compose/compose_They_packed_their_bags_and_left_the__1026_180022/src_02.wav",
+      "reused": false
+    }
+  ],
+  "total": 3.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_They_packed_their_bags_and_left_the__1026_180022_composite.wav",
+  "baseline": "compose_They_packed_their_bags_and_left_the__1026_180022_baseline.wav",
+  "gen_duration": 3.5,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.273867130279541,
+  "elapsed": 4.285991191864014
+}

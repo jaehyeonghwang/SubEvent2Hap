@@ -1,0 +1,161 @@
+{
+  "event": "Building a house is such a hassle. Rice straw is easier to handle than heavy materials, so build quickly with that and then rest. If we finish the construction quickly, we can rest more, so it's actually a benefit.",
+  "sub_events": [
+    {
+      "prompt": "a heavy wooden beam is dropped on the ground with a dull thud",
+      "start": 0.0,
+      "duration": 0.6,
+      "intensity": 0.8,
+      "source": "beam",
+      "file": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.7547,
+        0.4714
+      ],
+      "offset": 1.027,
+      "shared": false,
+      "source_wav": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "picking up a light bundle of dry straw, soft rustling",
+      "start": 0.9,
+      "duration": 0.7,
+      "intensity": 0.35,
+      "source": "straw",
+      "file": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0382,
+        0.019
+      ],
+      "offset": 1.263,
+      "shared": false,
+      "source_wav": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a straw bundle is stacked onto a wall with a soft light thump",
+      "start": 1.8,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "source": "straw",
+      "file": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0341,
+        0.0095
+      ],
+      "offset": 1.537,
+      "shared": true,
+      "source_wav": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/src_03.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a straw bundle is stacked onto a wall with a soft light thump",
+      "start": 2.25,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "source": "straw",
+      "file": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0341,
+        0.0095
+      ],
+      "offset": 1.537,
+      "shared": true,
+      "source_wav": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/src_03.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a straw bundle is stacked onto a wall with a soft light thump",
+      "start": 2.7,
+      "duration": 0.3,
+      "intensity": 0.5,
+      "source": "straw",
+      "file": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.0341,
+        0.0095
+      ],
+      "offset": 1.537,
+      "shared": true,
+      "source_wav": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/src_03.wav",
+      "reused": false
+    },
+    {
+      "prompt": "straw is quickly tied with a rope, brisk rustling",
+      "start": 3.2,
+      "duration": 0.8,
+      "intensity": 0.45,
+      "source": "rope",
+      "file": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/sub_06.wav",
+      "candidate": 1,
+      "scores": [
+        0.0114,
+        0.0615
+      ],
+      "offset": 0.348,
+      "shared": false,
+      "source_wav": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/src_04.wav",
+      "reused": false
+    },
+    {
+      "prompt": "patting a finished straw wall twice with a hand",
+      "start": 4.3,
+      "duration": 0.5,
+      "intensity": 0.55,
+      "source": "hand",
+      "file": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/sub_07.wav",
+      "candidate": 1,
+      "scores": [
+        0.0035,
+        0.1033
+      ],
+      "offset": 5.91,
+      "shared": false,
+      "source_wav": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/src_05.wav",
+      "reused": false
+    },
+    {
+      "prompt": "sitting down to rest on a soft pile of straw",
+      "start": 5.2,
+      "duration": 1.2,
+      "intensity": 0.3,
+      "source": "body",
+      "file": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/sub_08.wav",
+      "candidate": 0,
+      "scores": [
+        0.0167,
+        0.0031
+      ],
+      "offset": 0.384,
+      "shared": false,
+      "source_wav": "compose/compose_Building_a_house_is_such_a_hassle_Ri_1026_182136/src_06.wav",
+      "reused": false
+    }
+  ],
+  "total": 6.4,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 7,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Building_a_house_is_such_a_hassle_Ri_1026_182136_composite.wav",
+  "baseline": "compose_Building_a_house_is_such_a_hassle_Ri_1026_182136_baseline.wav",
+  "gen_duration": 6.4,
+  "prompts": 14,
+  "generated_units": 6,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 15.070162057876587,
+  "elapsed": 15.10476303100586
+}

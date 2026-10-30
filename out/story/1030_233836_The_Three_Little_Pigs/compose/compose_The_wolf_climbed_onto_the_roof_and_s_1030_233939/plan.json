@@ -1,0 +1,63 @@
+{
+  "event": "The wolf climbed onto the roof and slid down the chimney.",
+  "sub_events": [
+    {
+      "prompt": "The wolf climbs onto the roof.",
+      "start": 0.82,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "eid": "s6e0",
+      "origin": "explicit",
+      "voice_key": "wolf_climb",
+      "source_wav": "compose/compose_The_wolf_climbed_onto_the_roof_and_s_1030_233939/src_01.wav",
+      "file": "compose/compose_The_wolf_climbed_onto_the_roof_and_s_1030_233939/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.038,
+        0.0307
+      ],
+      "offset": 0.711,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The wolf slides down the chimney.",
+      "start": 2.84,
+      "duration": 0.8,
+      "intensity": 0.7,
+      "eid": "s6e1",
+      "origin": "explicit",
+      "voice_key": "wolf_slide",
+      "source_wav": "compose/compose_The_wolf_climbed_onto_the_roof_and_s_1030_233939/src_02.wav",
+      "file": "compose/compose_The_wolf_climbed_onto_the_roof_and_s_1030_233939/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.2538,
+        0.3795
+      ],
+      "offset": 0.328,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 3.6399999999999997,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_wolf_climbed_onto_the_roof_and_s_1030_233939_composite.wav",
+  "baseline": "compose_The_wolf_climbed_onto_the_roof_and_s_1030_233939_baseline.wav",
+  "gen_duration": 3.6399999999999997,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.2280008792877197,
+  "elapsed": 3.2415075302124023
+}

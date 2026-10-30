@@ -1,0 +1,115 @@
+{
+  "event": "Insert a magazine, rack the pistol slide, aim and fire one shot",
+  "sub_events": [
+    {
+      "prompt": "a magazine is inserted into a pistol with a firm click",
+      "start": 0.0,
+      "duration": 0.25,
+      "intensity": 0.45,
+      "source": "magazine",
+      "file": "compose/compose_Insert_a_magazine_rack_the_pistol_sl_1026_182820/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.4645,
+        0.0058,
+        0.0639
+      ],
+      "offset": 0.684,
+      "shared": false,
+      "source_wav": "compose/compose_Insert_a_magazine_rack_the_pistol_sl_1026_182820/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a pistol slide is pulled back with a metallic scrape",
+      "start": 0.5,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "source": "slide",
+      "file": "compose/compose_Insert_a_magazine_rack_the_pistol_sl_1026_182820/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.8224,
+        0.0296,
+        0.1085
+      ],
+      "offset": 0.384,
+      "shared": false,
+      "source_wav": "compose/compose_Insert_a_magazine_rack_the_pistol_sl_1026_182820/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "the pistol slide snaps forward with a sharp clack",
+      "start": 0.75,
+      "duration": 0.15,
+      "intensity": 0.65,
+      "source": "slide",
+      "file": "compose/compose_Insert_a_magazine_rack_the_pistol_sl_1026_182820/sub_03.wav",
+      "candidate": 2,
+      "scores": [
+        0.92,
+        0.0692,
+        1.0501
+      ],
+      "offset": 0.373,
+      "shared": false,
+      "source_wav": "compose/compose_Insert_a_magazine_rack_the_pistol_sl_1026_182820/src_03.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a pistol fires a single loud gunshot with strong recoil",
+      "start": 1.6,
+      "duration": 0.35,
+      "intensity": 1.0,
+      "source": "gun",
+      "file": "compose/compose_Insert_a_magazine_rack_the_pistol_sl_1026_182820/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        1.045,
+        1.326,
+        0.3784
+      ],
+      "offset": 0.005,
+      "shared": false,
+      "source_wav": "compose/compose_Insert_a_magazine_rack_the_pistol_sl_1026_182820/src_04.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a spent brass shell casing bounces on the floor with a tiny clink",
+      "start": 2.0,
+      "duration": 0.3,
+      "intensity": 0.3,
+      "source": "casing",
+      "file": "compose/compose_Insert_a_magazine_rack_the_pistol_sl_1026_182820/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.1478,
+        0.0879,
+        0.1425
+      ],
+      "offset": 0.39,
+      "shared": false,
+      "source_wav": "compose/compose_Insert_a_magazine_rack_the_pistol_sl_1026_182820/src_05.wav",
+      "reused": false
+    }
+  ],
+  "total": 2.3,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 11,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Insert_a_magazine_rack_the_pistol_sl_1026_182820_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 15,
+  "generated_units": 5,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.763371467590332,
+  "elapsed": 3.782991647720337
+}

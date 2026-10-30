@@ -1,0 +1,43 @@
+{
+  "event": "He was shocked by the sudden noise",
+  "sub_events": [
+    {
+      "prompt": "sudden noise produces acoustic pressure wave",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.9,
+      "source": "",
+      "uid": "mgx3i38z",
+      "file": "compose/compose_He_was_shocked_by_the_sudden_noise_1026_175620/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.239,
+        0.3864
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_He_was_shocked_by_the_sudden_noise_1026_175620/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.3,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_was_shocked_by_the_sudden_noise_1026_175620_composite.wav",
+  "baseline": "compose_He_was_shocked_by_the_sudden_noise_1026_175620_baseline.wav",
+  "gen_duration": 1.8,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.014295816421509,
+  "elapsed": 2.025296926498413
+}

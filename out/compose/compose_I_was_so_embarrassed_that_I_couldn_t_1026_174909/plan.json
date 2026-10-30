@@ -1,0 +1,43 @@
+{
+  "event": "I was so embarrassed that I couldn't look up.",
+  "sub_events": [
+    {
+      "prompt": "eyes look down",
+      "start": 0.5,
+      "duration": 2.0,
+      "intensity": 0.8,
+      "source": "",
+      "uid": "99mbsz9g",
+      "file": "compose/compose_I_was_so_embarrassed_that_I_couldn_t_1026_174909/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0277,
+        0.0001
+      ],
+      "offset": 0.899,
+      "shared": false,
+      "source_wav": "compose/compose_I_was_so_embarrassed_that_I_couldn_t_1026_174909/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 2.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_was_so_embarrassed_that_I_couldn_t_1026_174909_composite.wav",
+  "baseline": "compose_I_was_so_embarrassed_that_I_couldn_t_1026_174909_baseline.wav",
+  "gen_duration": 3.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.344578266143799,
+  "elapsed": 3.3563270568847656
+}

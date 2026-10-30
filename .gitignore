@@ -21,3 +21,4 @@ Thumbs.db
 
 # Authoring-study logs (participant data): keep local, never publish
 out/study/
+out/colab.json

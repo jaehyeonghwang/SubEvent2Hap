@@ -1,0 +1,1 @@
+{"prompt": "[baseline] I'm nervous about the exam.", "params": {"generator": "hapticgen", "candidates": 2, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": null, "gamma": 1.6, "share_repeats": true, "sub_events": 3}, "created": 1793004404.28468, "kind": "baseline", "event": "I'm nervous about the exam.", "run": "compose_I_m_nervous_about_the_exam_1026_174644"}

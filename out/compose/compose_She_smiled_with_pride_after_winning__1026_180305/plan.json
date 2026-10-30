@@ -1,0 +1,43 @@
+{
+  "event": "She smiled with pride after winning the race",
+  "sub_events": [
+    {
+      "prompt": "her face smiles",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.8,
+      "source": "",
+      "uid": "euqf4trq",
+      "file": "compose/compose_She_smiled_with_pride_after_winning__1026_180305/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0176,
+        0.0205
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_She_smiled_with_pride_after_winning__1026_180305/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_She_smiled_with_pride_after_winning__1026_180305_composite.wav",
+  "baseline": "compose_She_smiled_with_pride_after_winning__1026_180305_baseline.wav",
+  "gen_duration": 2.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.698052167892456,
+  "elapsed": 1.706059455871582
+}

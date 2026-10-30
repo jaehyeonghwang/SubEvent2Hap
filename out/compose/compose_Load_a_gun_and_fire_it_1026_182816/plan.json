@@ -1,0 +1,61 @@
+{
+  "event": "Load a gun and fire it",
+  "sub_events": [
+    {
+      "prompt": "a gun is loaded with a metallic click-clack",
+      "start": 0.2,
+      "duration": 0.4,
+      "intensity": 0.5,
+      "source": "gun",
+      "file": "compose/compose_Load_a_gun_and_fire_it_1026_182816/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.2056,
+        0.0154,
+        0.0636
+      ],
+      "offset": 0.101,
+      "shared": false,
+      "source_wav": "compose/compose_Load_a_gun_and_fire_it_1026_182816/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a gun fires a single loud shot",
+      "start": 1.2,
+      "duration": 0.4,
+      "intensity": 1.0,
+      "source": "gun",
+      "file": "compose/compose_Load_a_gun_and_fire_it_1026_182816/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.1542,
+        1.2222,
+        0.3411
+      ],
+      "offset": 0.01,
+      "shared": false,
+      "source_wav": "compose/compose_Load_a_gun_and_fire_it_1026_182816/src_02.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.6,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 11,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Load_a_gun_and_fire_it_1026_182816_composite.wav",
+  "baseline": "compose_Load_a_gun_and_fire_it_1026_182816_baseline.wav",
+  "gen_duration": 1.6,
+  "prompts": 9,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.708392381668091,
+  "elapsed": 2.7195169925689697
+}

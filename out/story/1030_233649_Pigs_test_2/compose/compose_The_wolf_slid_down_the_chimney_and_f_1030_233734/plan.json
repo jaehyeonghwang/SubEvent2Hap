@@ -1,0 +1,82 @@
+{
+  "event": "The wolf slid down the chimney and fell into a pot of boiling water with a great splash.",
+  "sub_events": [
+    {
+      "prompt": "Wolf sliding down a brick chimney.",
+      "start": 0.84,
+      "duration": 1.5,
+      "intensity": 0.7,
+      "eid": "s3e0",
+      "origin": "explicit",
+      "voice_key": "wolf_slide",
+      "source_wav": "compose/compose_The_wolf_slid_down_the_chimney_and_f_1030_233734/src_01.wav",
+      "file": "compose/compose_The_wolf_slid_down_the_chimney_and_f_1030_233734/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.1704,
+        0.1317
+      ],
+      "offset": 0.058,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "Wolf falling into a pot of boiling water.",
+      "start": 3.1,
+      "duration": 0.6,
+      "intensity": 1.0,
+      "eid": "s3e1",
+      "origin": "explicit",
+      "voice_key": "wolf_fall",
+      "source_wav": "compose/compose_The_wolf_slid_down_the_chimney_and_f_1030_233734/src_02.wav",
+      "file": "compose/compose_The_wolf_slid_down_the_chimney_and_f_1030_233734/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.076,
+        0.237
+      ],
+      "offset": 0.05,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "Water splashing from a metal pot.",
+      "start": 6.04,
+      "duration": 0.4,
+      "intensity": 0.8,
+      "eid": "s3e2",
+      "origin": "explicit",
+      "voice_key": "water_splash",
+      "source_wav": "compose/compose_The_wolf_slid_down_the_chimney_and_f_1030_233734/src_03.wav",
+      "file": "compose/compose_The_wolf_slid_down_the_chimney_and_f_1030_233734/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0009,
+        0.006
+      ],
+      "offset": 0.366,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 6.44,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_wolf_slid_down_the_chimney_and_f_1030_233734_composite.wav",
+  "baseline": "compose_The_wolf_slid_down_the_chimney_and_f_1030_233734_baseline.wav",
+  "gen_duration": 6.44,
+  "prompts": 8,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 10.28816032409668,
+  "elapsed": 10.308521032333374
+}

@@ -1,0 +1,61 @@
+{
+  "event": "She smiled with pride after winning the race",
+  "sub_events": [
+    {
+      "prompt": "her face smiled",
+      "start": 0.5,
+      "duration": 0.7,
+      "intensity": 0.8,
+      "source": "",
+      "uid": "aliv5aur",
+      "file": "compose/compose_She_smiled_with_pride_after_winning__1026_180202/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.2322,
+        0.0487
+      ],
+      "offset": 0.967,
+      "shared": false,
+      "source_wav": "compose/compose_She_smiled_with_pride_after_winning__1026_180202/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "the crowd applauded",
+      "start": 1.3,
+      "duration": 0.6,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "092k1lhy",
+      "file": "compose/compose_She_smiled_with_pride_after_winning__1026_180202/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.3279,
+        0.2971
+      ],
+      "offset": 0.034,
+      "shared": false,
+      "source_wav": "compose/compose_She_smiled_with_pride_after_winning__1026_180202/src_02.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.9,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_She_smiled_with_pride_after_winning__1026_180202_composite.wav",
+  "baseline": "compose_She_smiled_with_pride_after_winning__1026_180202_baseline.wav",
+  "gen_duration": 1.9,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.443380355834961,
+  "elapsed": 2.457381248474121
+}

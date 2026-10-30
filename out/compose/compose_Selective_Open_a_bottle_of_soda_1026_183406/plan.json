@@ -1,0 +1,61 @@
+{
+  "event": "Selective - Open a bottle of soda",
+  "sub_events": [
+    {
+      "prompt": "a plastic bottle cap twists with ratcheting clicks",
+      "start": 0.0,
+      "duration": 0.6,
+      "intensity": 0.4,
+      "source": "cap",
+      "file": "compose/compose_Selective_Open_a_bottle_of_soda_1026_183406/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0017,
+        0.0329,
+        0.0173
+      ],
+      "offset": 0.943,
+      "shared": false,
+      "source_wav": "compose/compose_Selective_Open_a_bottle_of_soda_1026_183406/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a soda bottle cap pops open sharply",
+      "start": 0.7,
+      "duration": 0.2,
+      "intensity": 0.9,
+      "source": "bottle",
+      "file": "compose/compose_Selective_Open_a_bottle_of_soda_1026_183406/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.7341,
+        0.0623,
+        0.0029
+      ],
+      "offset": 0.174,
+      "shared": false,
+      "source_wav": "compose/compose_Selective_Open_a_bottle_of_soda_1026_183406/src_02.wav",
+      "reused": false
+    }
+  ],
+  "total": 0.8999999999999999,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 11,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Selective_Open_a_bottle_of_soda_1026_183406_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.6,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.3551621437072754,
+  "elapsed": 1.3631629943847656
+}

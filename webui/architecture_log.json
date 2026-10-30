@@ -178,5 +178,29 @@
   "area": "재생",
   "title": "원격 재생 (Tailscale)",
   "detail": "생성 PC가 서버(--host 0.0.0.0, 127.0.0.1과 Tailscale 100.64.0.0/10만 허용, 그 외 403), 노트북이 scripts/remote_player.py로 /ws/player 웹소켓에 접속. 에이전트가 연결돼 있으면 /api/play·/api/stop을 노트북으로 보내고, 노트북이 서버에서 wav를 받아 자기 Quest(OpenXR)로 재생. 서버 이름은 IPv4로 한 번 해석해 재생 지연 2초 → 15 ms. start_server.bat, start_player.bat, requirements-player.txt."
+ },
+ {
+  "date": "2026-10-26",
+  "area": "저작",
+  "title": "에디터 베이스라인 비교",
+  "detail": "에디터 맨 아래 'B 비교: 분해 없이 생성'. 이벤트 문장을 생성 모델에 그대로 넣은 한 번 생성 결과를 같은 길이·같은 시간축 파형으로 표시하고 Quest/PC 재생. 생성 & 합성 때 함께 만들되(체크박스) 문장, 생성 모델, 전체 길이(±0.1초)가 그대로면 다시 만들지 않음. '다시 생성' 버튼으로 베이스라인만 새로. 재생은 로그에 what=baseline으로 기록."
+ },
+ {
+  "date": "2026-10-26",
+  "area": "분해",
+  "title": "Event-T2M 사건 분할 플래너 (선택)",
+  "detail": "scripts/event_t2m.py. Event-T2M(Hong et al., ICLR 2026, arXiv:2602.04292) 부록 Table 8의 event-aware 분할 프롬프트(동시 동작은 한 사건, 원문 주어로 시작, 수식어 보존, 새 내용 추가 금지, 좋은/나쁜 예시)를 그대로 쓰되 POS 태그 접미사와 그 규칙만 제거하고 출력은 JSON 목록. Event-T2M은 순서만 주므로 시간, 세기는 기존 4단계의 TIMING_PROMPT 단계로 정하고, 나뉜 문장을 캡션 재작성 없이 그대로 생성 프롬프트로 사용. 에디터 1단계 '분해 방식'에서 선택, 로그에 planner 기록. 횟수 표현('three times')은 사건 정의상 한 사건으로 남음."
+ },
+ {
+  "date": "2026-10-30",
+  "area": "Story2Hap",
+  "title": "/story 동화 낭독 + 진동 페이지",
+  "detail": "scripts/story2hap.py: GPT-4o 에이전트(이야기 상태, 명시 사건, 암시 사건 추론[결과/전제/배경/감각, 근거·확신도], 연출[유지·세기·voice_key]), OpenAI TTS(gpt-4o-mini-tts) + Whisper 단어 시각으로 사건을 단어에 고정, 서버가 문장별로 합성(명시+추론, 같은 샘플로 명시만 리믹스, 문장 그대로 베이스라인), Critic(계획 충격 대비 검출 신호 + LM 판정 → 0~100점, rerender 판정 시 1회 자동 재렌더). voice_key별 원본 샘플을 이야기 전체에서 재사용. 페이지에서 조건(명시+추론/명시만/문장 그대로/진동 없음)을 바꿔 낭독과 동기 재생."
+ },
+ {
+  "date": "2026-10-30",
+  "area": "환경",
+  "title": "Colab GPU 생성 서버 연결",
+  "detail": "colab/worker.ipynb를 Colab에서 모두 실행하면 scripts/colab_worker.py(/health, /info, /generate, X-Token 인증)가 뜨고 cloudflared 임시 터널 주소+토큰을 출력. 웹 페이지 상단 Colab 칸에 붙여 넣으면(/api/colab, out/colab.json은 git 제외) 생성 모델 'HapticGen/AudioGen (Colab GPU)'가 generators.RemoteGenerator로 원격 생성. 합성, 샘플 재사용, Story2Hap 렌더링은 그대로 이 PC에서. 로컬 생성은 예비로 유지."
  }
 ]

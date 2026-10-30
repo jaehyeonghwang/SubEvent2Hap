@@ -1,0 +1,61 @@
+{
+  "event": "He loaded the gun and fired at the target.",
+  "sub_events": [
+    {
+      "prompt": "gun loaded with ammunition",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "h7e2i831",
+      "file": "compose/compose_He_loaded_the_gun_and_fired_at_the_t_1026_175829/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.2498,
+        0.1399
+      ],
+      "offset": 1.388,
+      "shared": false,
+      "source_wav": "compose/compose_He_loaded_the_gun_and_fired_at_the_t_1026_175829/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "gun fired at target",
+      "start": 4.0,
+      "duration": 1.5,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "kzf58bdk",
+      "file": "compose/compose_He_loaded_the_gun_and_fired_at_the_t_1026_175829/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.2202,
+        0.1746
+      ],
+      "offset": 0.054,
+      "shared": false,
+      "source_wav": "compose/compose_He_loaded_the_gun_and_fired_at_the_t_1026_175829/src_02.wav",
+      "reused": false
+    }
+  ],
+  "total": 5.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_loaded_the_gun_and_fired_at_the_t_1026_175829_composite.wav",
+  "baseline": "compose_He_loaded_the_gun_and_fired_at_the_t_1026_175829_baseline.wav",
+  "gen_duration": 5.5,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 5.723156690597534,
+  "elapsed": 5.7408177852630615
+}

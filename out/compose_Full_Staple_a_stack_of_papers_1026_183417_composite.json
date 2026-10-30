@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] Full - Staple a stack of papers", "params": {"generator": "hapticgen", "candidates": 3, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": 11, "gamma": 1.6, "share_repeats": true, "sub_events": 4}, "created": 1793007257.248135, "kind": "composite", "event": "Full - Staple a stack of papers", "run": "compose_Full_Staple_a_stack_of_papers_1026_183417"}

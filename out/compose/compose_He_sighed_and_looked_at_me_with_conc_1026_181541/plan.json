@@ -1,0 +1,61 @@
+{
+  "event": "He sighed and looked at me with concern",
+  "sub_events": [
+    {
+      "prompt": "his breath exhaled slowly",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "l909gwr4",
+      "file": "compose/compose_He_sighed_and_looked_at_me_with_conc_1026_181541/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0546,
+        0.0541
+      ],
+      "offset": 0.033,
+      "shared": false,
+      "source_wav": "compose/compose_He_sighed_and_looked_at_me_with_conc_1026_181541/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "his eyes focused on me",
+      "start": 1.4,
+      "duration": 0.7,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "sk75y9qo",
+      "file": "compose/compose_He_sighed_and_looked_at_me_with_conc_1026_181541/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0014,
+        0.0027
+      ],
+      "offset": 0.736,
+      "shared": false,
+      "source_wav": "compose/compose_He_sighed_and_looked_at_me_with_conc_1026_181541/src_02.wav",
+      "reused": false
+    }
+  ],
+  "total": 2.0999999999999996,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_sighed_and_looked_at_me_with_conc_1026_181541_composite.wav",
+  "baseline": "compose_He_sighed_and_looked_at_me_with_conc_1026_181541_baseline.wav",
+  "gen_duration": 2.0999999999999996,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.7766084671020508,
+  "elapsed": 1.7886097431182861
+}

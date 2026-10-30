@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] Full - Bounce a basketball once", "params": {"generator": "hapticgen", "candidates": 3, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": 11, "gamma": 1.6, "share_repeats": true, "sub_events": 4}, "created": 1793007250.8214352, "kind": "composite", "event": "Full - Bounce a basketball once", "run": "compose_Full_Bounce_a_basketball_once_1026_183410"}

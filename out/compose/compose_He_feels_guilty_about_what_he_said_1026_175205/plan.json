@@ -1,0 +1,43 @@
+{
+  "event": "He feels guilty about what he said",
+  "sub_events": [
+    {
+      "prompt": "guilt emerges in consciousness",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "6ojcwcin",
+      "file": "compose/compose_He_feels_guilty_about_what_he_said_1026_175205/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0375,
+        0.0966
+      ],
+      "offset": 1.0,
+      "shared": false,
+      "source_wav": "compose/compose_He_feels_guilty_about_what_he_said_1026_175205/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_feels_guilty_about_what_he_said_1026_175205_composite.wav",
+  "baseline": "compose_He_feels_guilty_about_what_he_said_1026_175205_baseline.wav",
+  "gen_duration": 2.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.2569379806518555,
+  "elapsed": 2.266918420791626
+}

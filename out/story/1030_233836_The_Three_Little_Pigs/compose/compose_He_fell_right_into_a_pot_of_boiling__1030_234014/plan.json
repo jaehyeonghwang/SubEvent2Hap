@@ -1,0 +1,82 @@
+{
+  "event": "He fell right into a pot of boiling water with a great splash.",
+  "sub_events": [
+    {
+      "prompt": "Water boiling in the pot.",
+      "start": 0.0,
+      "duration": 5.2,
+      "intensity": 0.3,
+      "eid": "s7i0",
+      "origin": "inferred",
+      "voice_key": "water_boil",
+      "source_wav": "compose/compose_He_fell_right_into_a_pot_of_boiling__1030_234014/src_01.wav",
+      "file": "compose/compose_He_fell_right_into_a_pot_of_boiling__1030_234014/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0091,
+        0.0157
+      ],
+      "offset": 0.819,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "The wolf falls into the pot.",
+      "start": 0.34,
+      "duration": 0.5,
+      "intensity": 0.8,
+      "eid": "s7e0",
+      "origin": "explicit",
+      "voice_key": "wolf_fall",
+      "source_wav": "compose/compose_He_fell_right_into_a_pot_of_boiling__1030_234014/src_02.wav",
+      "file": "compose/compose_He_fell_right_into_a_pot_of_boiling__1030_234014/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.1213,
+        0.4015
+      ],
+      "offset": 0.424,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "Water splashes from the pot.",
+      "start": 3.76,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s7e1",
+      "origin": "explicit",
+      "voice_key": "water_splash",
+      "source_wav": "compose/compose_He_fell_right_into_a_pot_of_boiling__1030_234014/src_03.wav",
+      "file": "compose/compose_He_fell_right_into_a_pot_of_boiling__1030_234014/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.4843,
+        0.0024
+      ],
+      "offset": 0.275,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 5.2,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_fell_right_into_a_pot_of_boiling__1030_234014_composite.wav",
+  "baseline": "compose_He_fell_right_into_a_pot_of_boiling__1030_234014_baseline.wav",
+  "gen_duration": 6.2,
+  "prompts": 8,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 10.492881298065186,
+  "elapsed": 10.512402057647705
+}

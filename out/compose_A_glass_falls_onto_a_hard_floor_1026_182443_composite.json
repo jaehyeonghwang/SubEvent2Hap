@@ -1,0 +1,1 @@
+{"prompt": "[sub-event] A glass falls onto a hard floor", "params": {"generator": "hapticgen", "candidates": 3, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": 11, "gamma": 1.6, "share_repeats": true, "sub_events": 1}, "created": 1793006683.572719, "kind": "composite", "event": "A glass falls onto a hard floor", "run": "compose_A_glass_falls_onto_a_hard_floor_1026_182443"}

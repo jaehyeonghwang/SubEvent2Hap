@@ -1,0 +1,79 @@
+{
+  "event": "I dropped my keys and picked them up.",
+  "sub_events": [
+    {
+      "prompt": "keys dropped onto the ground",
+      "start": 0.1,
+      "duration": 0.2,
+      "intensity": 0.4,
+      "source": "",
+      "uid": "h9so4k8u",
+      "file": "compose/compose_I_dropped_my_keys_and_picked_them_up_1026_175903/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0749,
+        0.0029
+      ],
+      "offset": 1.203,
+      "shared": false,
+      "source_wav": "compose/compose_I_dropped_my_keys_and_picked_them_up_1026_175903/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "hand reached down to grasp keys",
+      "start": 1.5,
+      "duration": 0.3,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "tx3s8his",
+      "file": "compose/compose_I_dropped_my_keys_and_picked_them_up_1026_175903/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.1277,
+        0.0155
+      ],
+      "offset": 1.688,
+      "shared": false,
+      "source_wav": "compose/compose_I_dropped_my_keys_and_picked_them_up_1026_175903/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "keys grasped by hand",
+      "start": 2.8,
+      "duration": 0.25,
+      "intensity": 0.4,
+      "source": "",
+      "uid": "n4hodcdr",
+      "file": "compose/compose_I_dropped_my_keys_and_picked_them_up_1026_175903/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.1139,
+        0.1056
+      ],
+      "offset": 1.117,
+      "shared": false,
+      "source_wav": "compose/compose_I_dropped_my_keys_and_picked_them_up_1026_175903/src_03.wav",
+      "reused": false
+    }
+  ],
+  "total": 3.05,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_dropped_my_keys_and_picked_them_up_1026_175903_composite.wav",
+  "baseline": "compose_I_dropped_my_keys_and_picked_them_up_1026_175903_baseline.wav",
+  "gen_duration": 3.05,
+  "prompts": 8,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.546766757965088,
+  "elapsed": 6.565274238586426
+}

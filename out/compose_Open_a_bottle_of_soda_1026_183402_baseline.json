@@ -1,0 +1,1 @@
+{"prompt": "[baseline] Open a bottle of soda", "params": {"generator": "hapticgen", "candidates": 3, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": 11, "gamma": 1.6, "share_repeats": true, "sub_events": 1}, "created": 1793007242.2580445, "kind": "baseline", "event": "Open a bottle of soda", "run": "compose_Open_a_bottle_of_soda_1026_183402"}

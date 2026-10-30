@@ -1,0 +1,1 @@
+{"prompt": "[baseline] Load the gun and fire", "params": {"generator": "hapticgen", "candidates": 2, "cfg": 3.0, "temperature": 1.0, "top_k": 250, "seed": null, "gamma": 1.6, "share_repeats": true, "sub_events": 2}, "created": 1793003941.648008, "kind": "baseline", "event": "Load the gun and fire", "run": "compose_Load_the_gun_and_fire_1026_173901"}

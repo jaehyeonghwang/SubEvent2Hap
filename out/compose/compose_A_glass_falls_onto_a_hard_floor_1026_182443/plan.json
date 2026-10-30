@@ -1,0 +1,43 @@
+{
+  "event": "A glass falls onto a hard floor",
+  "sub_events": [
+    {
+      "prompt": "a glass hits a hard floor with a sharp clink",
+      "start": 0.5,
+      "duration": 0.5,
+      "intensity": 0.9,
+      "source": "glass",
+      "file": "compose/compose_A_glass_falls_onto_a_hard_floor_1026_182443/sub_01.wav",
+      "candidate": 2,
+      "scores": [
+        0.0809,
+        0.3593,
+        0.5772
+      ],
+      "offset": 0.751,
+      "shared": false,
+      "source_wav": "compose/compose_A_glass_falls_onto_a_hard_floor_1026_182443/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.0,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 11,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_glass_falls_onto_a_hard_floor_1026_182443_composite.wav",
+  "baseline": "compose_A_glass_falls_onto_a_hard_floor_1026_182443_baseline.wav",
+  "gen_duration": 1.5,
+  "prompts": 6,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.4085829257965088,
+  "elapsed": 1.4155828952789307
+}

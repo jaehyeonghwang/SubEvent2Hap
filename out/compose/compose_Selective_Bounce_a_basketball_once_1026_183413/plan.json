@@ -1,0 +1,79 @@
+{
+  "event": "Selective - Bounce a basketball once",
+  "sub_events": [
+    {
+      "prompt": "a hand pushes a basketball down with a slap",
+      "start": 0.0,
+      "duration": 0.2,
+      "intensity": 0.4,
+      "source": "hand",
+      "file": "compose/compose_Selective_Bounce_a_basketball_once_1026_183413/sub_01.wav",
+      "candidate": 2,
+      "scores": [
+        0.2101,
+        0.2756,
+        0.2799
+      ],
+      "offset": 0.462,
+      "shared": false,
+      "source_wav": "compose/compose_Selective_Bounce_a_basketball_once_1026_183413/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a basketball bounces on a hard court",
+      "start": 0.35,
+      "duration": 0.3,
+      "intensity": 0.85,
+      "source": "ball",
+      "file": "compose/compose_Selective_Bounce_a_basketball_once_1026_183413/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0812,
+        0.1156,
+        0.0327
+      ],
+      "offset": 0.342,
+      "shared": false,
+      "source_wav": "compose/compose_Selective_Bounce_a_basketball_once_1026_183413/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a basketball is caught firmly in both hands",
+      "start": 0.75,
+      "duration": 0.25,
+      "intensity": 0.6,
+      "source": "hand",
+      "file": "compose/compose_Selective_Bounce_a_basketball_once_1026_183413/sub_03.wav",
+      "candidate": 2,
+      "scores": [
+        0.0303,
+        0.0072,
+        0.0343
+      ],
+      "offset": 0.309,
+      "shared": false,
+      "source_wav": "compose/compose_Selective_Bounce_a_basketball_once_1026_183413/src_03.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.0,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 11,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Selective_Bounce_a_basketball_once_1026_183413_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 9,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.480161428451538,
+  "elapsed": 2.4926722049713135
+}

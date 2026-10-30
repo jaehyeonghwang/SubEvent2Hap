@@ -18,7 +18,7 @@ PROMPT_VERSION = "staged_v2"
 
 # Optional cloud backend. Selecting it sends the event text to OpenAI (not local).
 OPENAI_URL = "https://api.openai.com/v1"
-BACKENDS = {"local": (DEFAULT_MODEL, LMSTUDIO_URL), "gpt-4o": ("gpt-4o", OPENAI_URL)}
+BACKENDS = {"local": (DEFAULT_MODEL, LMSTUDIO_URL), "gpt-4o": ("gpt-4o", OPENAI_URL), "gpt-6-luna": ("gpt-6-luna", OPENAI_URL)}
 ENV_FILE = pathlib.Path(__file__).resolve().parent.parent / ".env"
 
 
@@ -173,11 +173,11 @@ def _stage(name, instruction, context, output_type, model, base_url, temperature
                 {"role": "user", "content": json.dumps(context, ensure_ascii=False)}]
     invalid = []
     for attempt in range(2):
-        resp = _post("/chat/completions", {
-            "model": model, "temperature": temperature, "messages": messages,
-            "response_format": {"type": "json_schema", "json_schema": {
-                "name": name, "strict": True, "schema": _schema(output_type)}},
-        }, base_url)
+        body = {"model": model, "messages": messages,
+                "response_format": {"type": "json_schema", "json_schema": {"name": name, "strict": True, "schema": _schema(output_type)}}}
+        if temperature is not None:      # GPT-5/6 models accept only the default temperature
+            body["temperature"] = temperature
+        resp = _post("/chat/completions", body, base_url)
         content = resp["choices"][0]["message"]["content"]
         try:
             result = output_type.model_validate_json(content)

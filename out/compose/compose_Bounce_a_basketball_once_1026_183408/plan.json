@@ -1,0 +1,43 @@
+{
+  "event": "Bounce a basketball once",
+  "sub_events": [
+    {
+      "prompt": "a basketball bounces on a hard court",
+      "start": 0.4,
+      "duration": 0.3,
+      "intensity": 0.85,
+      "source": "ball",
+      "file": "compose/compose_Bounce_a_basketball_once_1026_183408/sub_01.wav",
+      "candidate": 2,
+      "scores": [
+        0.0894,
+        0.2154,
+        0.233
+      ],
+      "offset": 0.762,
+      "shared": false,
+      "source_wav": "compose/compose_Bounce_a_basketball_once_1026_183408/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 0.7,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 11,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Bounce_a_basketball_once_1026_183408_composite.wav",
+  "baseline": "compose_Bounce_a_basketball_once_1026_183408_baseline.wav",
+  "gen_duration": 1.5,
+  "prompts": 6,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.2403056621551514,
+  "elapsed": 1.2483069896697998
+}

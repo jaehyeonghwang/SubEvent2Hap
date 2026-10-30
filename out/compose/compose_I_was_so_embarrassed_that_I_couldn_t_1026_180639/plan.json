@@ -1,0 +1,55 @@
+{
+  "event": "I was so embarrassed that I couldn't look up",
+  "sub_events": [
+    {
+      "prompt": "I was so embarrassed",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "source": "",
+      "source_wav": "compose/compose_I_was_so_embarrassed_that_I_couldn_t_1026_180633/src_01.wav",
+      "uid": "8dpcta5p",
+      "file": "compose/compose_I_was_so_embarrassed_that_I_couldn_t_1026_180639/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.135,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "I couldn't look up",
+      "start": 2.0,
+      "duration": 1.5,
+      "intensity": 0.7,
+      "source": "",
+      "source_wav": "compose/compose_I_was_so_embarrassed_that_I_couldn_t_1026_180633/src_02.wav",
+      "uid": "khxe76bk",
+      "file": "compose/compose_I_was_so_embarrassed_that_I_couldn_t_1026_180639/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_was_so_embarrassed_that_I_couldn_t_1026_180639_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 2,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.010326147079467773,
+  "elapsed": 0.01632547378540039
+}

@@ -1,0 +1,133 @@
+{
+  "event": "Full - A water bottle falls onto the floor (seed 3)",
+  "sub_events": [
+    {
+      "prompt": "a water bottle slips out of a hand",
+      "start": 0.0,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "source": "",
+      "file": "compose/compose_Full_A_water_bottle_falls_onto_the_f_1026_184909/sub_01.wav",
+      "candidate": 2,
+      "scores": [
+        0.0613,
+        0.0015,
+        0.1015
+      ],
+      "offset": 0.269,
+      "shared": false,
+      "source_wav": "compose/compose_Full_A_water_bottle_falls_onto_the_f_1026_184909/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a plastic water bottle hits a hard floor with a hollow thud",
+      "start": 0.65,
+      "duration": 0.3,
+      "intensity": 0.9,
+      "source": "",
+      "file": "compose/compose_Full_A_water_bottle_falls_onto_the_f_1026_184909/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0207,
+        0.2565,
+        0.0137
+      ],
+      "offset": 1.548,
+      "shared": false,
+      "source_wav": "compose/compose_Full_A_water_bottle_falls_onto_the_f_1026_184909/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a plastic water bottle bounces on a hard floor",
+      "start": 1.05,
+      "duration": 0.2,
+      "intensity": 0.6,
+      "source": "",
+      "file": "compose/compose_Full_A_water_bottle_falls_onto_the_f_1026_184909/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.1082,
+        0.1966,
+        0.0403
+      ],
+      "offset": 0.291,
+      "shared": true,
+      "source_wav": "compose/compose_Full_A_water_bottle_falls_onto_the_f_1026_184909/src_03.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a plastic water bottle bounces on a hard floor",
+      "start": 1.4,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "source": "",
+      "file": "compose/compose_Full_A_water_bottle_falls_onto_the_f_1026_184909/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.1082,
+        0.1966,
+        0.0403
+      ],
+      "offset": 0.291,
+      "shared": true,
+      "source_wav": "compose/compose_Full_A_water_bottle_falls_onto_the_f_1026_184909/src_03.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a plastic bottle rolls across a hard floor",
+      "start": 1.75,
+      "duration": 0.8,
+      "intensity": 0.3,
+      "source": "",
+      "file": "compose/compose_Full_A_water_bottle_falls_onto_the_f_1026_184909/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.0203,
+        0.0029,
+        0.0022
+      ],
+      "offset": 0.45,
+      "shared": false,
+      "source_wav": "compose/compose_Full_A_water_bottle_falls_onto_the_f_1026_184909/src_04.wav",
+      "reused": false
+    },
+    {
+      "prompt": "water sloshes inside a plastic bottle",
+      "start": 2.7,
+      "duration": 0.5,
+      "intensity": 0.5,
+      "source": "",
+      "file": "compose/compose_Full_A_water_bottle_falls_onto_the_f_1026_184909/sub_06.wav",
+      "candidate": 1,
+      "scores": [
+        0.004,
+        0.0081,
+        0.0075
+      ],
+      "offset": 0.062,
+      "shared": false,
+      "source_wav": "compose/compose_Full_A_water_bottle_falls_onto_the_f_1026_184909/src_05.wav",
+      "reused": false
+    }
+  ],
+  "total": 3.2,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 3,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Full_A_water_bottle_falls_onto_the_f_1026_184909_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.8,
+  "prompts": 15,
+  "generated_units": 5,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.561154127120972,
+  "elapsed": 4.582497835159302
+}

@@ -1,0 +1,43 @@
+{
+  "event": "Open a bottle of soda",
+  "sub_events": [
+    {
+      "prompt": "a soda bottle cap is twisted open",
+      "start": 0.3,
+      "duration": 0.6,
+      "intensity": 0.7,
+      "source": "bottle",
+      "file": "compose/compose_Open_a_bottle_of_soda_1026_183402/sub_01.wav",
+      "candidate": 2,
+      "scores": [
+        0.013,
+        0.0068,
+        0.0905
+      ],
+      "offset": 1.504,
+      "shared": false,
+      "source_wav": "compose/compose_Open_a_bottle_of_soda_1026_183402/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 0.8999999999999999,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 11,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Open_a_bottle_of_soda_1026_183402_composite.wav",
+  "baseline": "compose_Open_a_bottle_of_soda_1026_183402_baseline.wav",
+  "gen_duration": 1.6,
+  "prompts": 6,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 1.347074270248413,
+  "elapsed": 1.3560774326324463
+}

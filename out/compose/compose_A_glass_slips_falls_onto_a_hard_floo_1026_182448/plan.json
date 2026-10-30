@@ -1,0 +1,115 @@
+{
+  "event": "A glass slips, falls onto a hard floor and shatters",
+  "sub_events": [
+    {
+      "prompt": "a glass slips out of a hand",
+      "start": 0.0,
+      "duration": 0.2,
+      "intensity": 0.25,
+      "source": "hand",
+      "file": "compose/compose_A_glass_slips_falls_onto_a_hard_floo_1026_182448/sub_01.wav",
+      "candidate": 2,
+      "scores": [
+        0.0753,
+        0.0431,
+        0.161
+      ],
+      "offset": 0.749,
+      "shared": false,
+      "source_wav": "compose/compose_A_glass_slips_falls_onto_a_hard_floo_1026_182448/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a glass hits a hard floor with a sharp crack",
+      "start": 0.6,
+      "duration": 0.3,
+      "intensity": 0.95,
+      "source": "glass",
+      "file": "compose/compose_A_glass_slips_falls_onto_a_hard_floo_1026_182448/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.2138,
+        0.7724,
+        0.1716
+      ],
+      "offset": 0.808,
+      "shared": false,
+      "source_wav": "compose/compose_A_glass_slips_falls_onto_a_hard_floo_1026_182448/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a glass shatters into pieces",
+      "start": 0.9,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "source": "glass",
+      "file": "compose/compose_A_glass_slips_falls_onto_a_hard_floo_1026_182448/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.7762,
+        0.0001,
+        0.776
+      ],
+      "offset": 0.068,
+      "shared": false,
+      "source_wav": "compose/compose_A_glass_slips_falls_onto_a_hard_floo_1026_182448/src_03.wav",
+      "reused": false
+    },
+    {
+      "prompt": "small glass shards scatter and tinkle across the floor",
+      "start": 1.5,
+      "duration": 0.8,
+      "intensity": 0.35,
+      "source": "shards",
+      "file": "compose/compose_A_glass_slips_falls_onto_a_hard_floo_1026_182448/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0162,
+        0.043,
+        0.0256
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_A_glass_slips_falls_onto_a_hard_floo_1026_182448/src_04.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a last tiny glass shard settles with a faint click",
+      "start": 2.5,
+      "duration": 0.2,
+      "intensity": 0.2,
+      "source": "shards",
+      "file": "compose/compose_A_glass_slips_falls_onto_a_hard_floo_1026_182448/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        1.0927,
+        0.475,
+        0.1284
+      ],
+      "offset": 1.002,
+      "shared": false,
+      "source_wav": "compose/compose_A_glass_slips_falls_onto_a_hard_floo_1026_182448/src_05.wav",
+      "reused": false
+    }
+  ],
+  "total": 2.7,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 11,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_glass_slips_falls_onto_a_hard_floo_1026_182448_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.8,
+  "prompts": 15,
+  "generated_units": 5,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.450256586074829,
+  "elapsed": 4.467910051345825
+}

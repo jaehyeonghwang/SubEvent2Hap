@@ -77,7 +77,7 @@ kbd { font: 11.5px ui-monospace, monospace; border: 1px solid var(--line); borde
 canvas { width: 100%; display: block; background: var(--track); border-radius: 10px; }
 #tl { touch-action: none; user-select: none; }
 #tl:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-#wave { height: 76px; cursor: pointer; margin-bottom: 4px; }
+#wave, #baseWave { height: 76px; cursor: pointer; margin-bottom: 4px; }
 .facts { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 18px; }
 .fact { font-size: 13px; padding: 3px 11px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line);
   color: var(--muted); font-variant-numeric: tabular-nums; }
@@ -147,6 +147,7 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
   <div class="pills">
     <div class="pill" title="로컬 LM (LM Studio)"><span class="dot" id="ldot"></span><b>LM</b><span class="txt" id="ltxt">확인 중</span></div>
     <div class="pill" title="생성 모델"><span class="dot" id="mdot"></span><b>모델</b><span class="txt" id="mtxt">확인 중</span></div>
+    <div class="pill" id="colabPill" style="cursor:pointer" title="클릭해서 Colab 생성 서버 주소를 설정합니다"><span class="dot" id="cdot"></span><b>Colab</b><span class="txt" id="ctxt">확인 중</span></div>
     <div class="pill" title="Quest 컨트롤러 (OpenXR / Link)"><span class="dot" id="qdot"></span><b>Quest</b><span class="txt" id="qtxt">확인 중</span></div>
   </div>
 </header>
@@ -164,6 +165,14 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
     <div class="row">
       <textarea id="event" class="grow" rows="2" placeholder="예: Someone knocks on a door three times and the door creaks open"></textarea>
       <button id="decBtn" class="accent big">분해하기</button>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <div class="field"><label for="planner">분해 방식</label>
+        <select id="planner">
+          <option value="staged">SubEvent2Hap 4단계 (기본)</option>
+          <option value="event_t2m">Event-T2M 사건 분할 (ICLR 2026)</option>
+        </select></div>
+      <span class="note grow" id="plannerNote" style="margin-top:22px"></span>
     </div>
     <div class="note" id="decInfo"></div>
   </section>
@@ -208,7 +217,7 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
     <div class="genrow">
       <button id="genBtn" class="accent big" title="Ctrl+Enter. 샘플이 있는 sub-event는 그대로 두고, 새것이나 설명이 바뀐 것만 생성합니다">생성 & 합성</button>
       <button id="allBtn" title="모든 sub-event를 새로 생성">전체 새로 생성</button>
-      <div class="field"><label for="generator">생성 모델</label><select id="generator"><option value="hapticgen">HapticGen</option><option value="audiogen">AudioGen (진동 변환)</option></select></div>
+      <div class="field"><label for="generator">생성 모델</label><select id="generator"><option value="hapticgen">HapticGen</option><option value="audiogen">AudioGen (진동 변환)</option><option value="hapticgen@colab">HapticGen (Colab GPU)</option><option value="audiogen@colab">AudioGen (Colab GPU)</option></select></div>
       <div class="field"><label for="seed">Seed</label><input type="number" id="seed" placeholder="랜덤"></div>
     </div>
 
@@ -253,6 +262,21 @@ details { margin-top: 16px; } summary { cursor: pointer; color: var(--muted); fo
       </div>
     </details>
   </section>
+
+  <!-- comparison: the event sentence straight into the generator, no sub-events -->
+  <section class="card">
+    <div class="step"><span class="n" style="background:var(--muted)">B</span><h2>비교: 분해 없이 생성</h2>
+      <p>이벤트 문장을 생성 모델에 그대로 넣어 한 번에 만든 결과입니다. 위 결과와 같은 길이, 같은 시간축입니다.</p></div>
+    <div class="row">
+      <button id="basePlayBtn" class="accent" disabled><span class="ic">▶</span>Quest로 재생</button>
+      <button id="baseListenBtn" disabled><span class="ic">🔊</span>PC로 듣기</button>
+      <button id="baseRegenBtn" title="베이스라인을 새로 생성"><span class="ic">↻</span>다시 생성</button>
+      <span class="grow"></span>
+      <label class="inline"><input type="checkbox" id="baseOn" checked> 생성 & 합성 때 함께 만들기</label>
+    </div>
+    <div class="track-title" style="margin-top:14px">베이스라인 파형 <span style="font-weight:400" id="baseInfo"></span></div>
+    <canvas id="baseWave" title="클릭하면 Quest에서 재생"></canvas>
+  </section>
 </main>
 <div id="toast"></div>
 
@@ -264,7 +288,8 @@ const _qs = new URLSearchParams(location.search);
 const KEY = _qs.get("p") && _qs.get("task") ? `s2h_editor:${_qs.get("p")}:${_qs.get("task")}` : "s2h_editor";
 
 let subs = [], sel = null, drag = null, hover = null, ghost = null;
-let result = null;            // {item, subs (as generated), regions}
+let result = null;
+let baseline = null;          // {item, event, generator} single-prompt render of the event sentence            // {item, subs (as generated), regions}
 let undo = [], redo = [];
 let questReady = false, modelReady = false, llmOk = false, busy = false;
 let play = null, audioEl = null;
@@ -333,7 +358,7 @@ function save() {
   else if (planEvent === null) planEvent = $("#event").value.trim();
   if (result && JSON.stringify(result.subs) !== JSON.stringify(subs.filter(s => s.prompt.trim()).map(core))) clearResult();
   parts();
-  try { localStorage.setItem(KEY, JSON.stringify({ event: $("#event").value, subs, result, planEvent })); } catch {}
+  try { localStorage.setItem(KEY, JSON.stringify({ event: $("#event").value, subs, result, planEvent, baseline })); } catch {}
 }
 function clearResult() {
   result = null; play = null;
@@ -343,7 +368,7 @@ function clearResult() {
 function load() {
   try {
     const s = JSON.parse(localStorage.getItem(KEY) || "null") || (KEY === "s2h_editor" ? JSON.parse(localStorage.getItem("hg_compose") || "null") : null);
-    if (s) { $("#event").value = s.event || ""; subs = (s.subs || []).map(clean); result = s.result || null; planEvent = s.planEvent ?? null; }
+    if (s) { $("#event").value = s.event || ""; subs = (s.subs || []).map(clean); result = s.result || null; planEvent = s.planEvent ?? null; baseline = s.baseline || null; }
   } catch {}
 }
 const newUid = () => Math.random().toString(36).slice(2, 10);
@@ -441,20 +466,24 @@ function drawTimeline() {
   facts();
 }
 
-function drawWave() {
-  const cv = $("#wave"); if (!cv.clientWidth) return;
+function drawWaveOn(cv, it, empty) {
+  if (!cv.clientWidth) return;
   const h = 76, { g, w } = setupCanvas(cv, h), T = scale();
   grid(g, w, h, T, false);
-  if (!result) { g.fillStyle = css("--muted"); g.font = "14px system-ui"; g.textAlign = "center"; g.fillText("아직 생성하지 않았습니다", w / 2, h / 2 + 5); g.textAlign = "left"; return; }
-  const it = result.item, mid = h / 2, n = it.peaks.length, k = (h / 2 - 5) / Math.max(0.05, it.peak);
+  if (!it) { g.fillStyle = css("--muted"); g.font = "14px system-ui"; g.textAlign = "center"; g.fillText(empty, w / 2, h / 2 + 5); g.textAlign = "left"; return; }
+  const mid = h / 2, n = it.peaks.length, k = (h / 2 - 5) / Math.max(0.05, it.peak);
   const prog = play && play.name === it.name ? ((performance.now() - play.t0) % play.dur) / play.dur : null;
   g.fillStyle = css("--wave");
   for (let i = 0; i < n; i++) {
     const [lo, hi] = it.peaks[i], t = i / n * it.duration;
     g.fillRect(t / T * w, mid - hi * k, Math.max(1, it.duration / n / T * w - .3), Math.max(1, (hi - lo) * k));
   }
-  g.globalAlpha = 1;
   if (prog !== null) { g.fillStyle = css("--playhead"); g.fillRect(prog * it.duration / T * w - 1, 0, 2, h); }
+}
+function drawWave() {
+  drawWaveOn($("#wave"), result && result.item, "아직 생성하지 않았습니다");
+  drawWaveOn($("#baseWave"), baseline && baseline.item, $("#event").value.trim() ? "아직 생성하지 않았습니다" : "이벤트 문장이 있어야 만들 수 있습니다");
+  $("#baseInfo").textContent = baseline ? `"${baseline.event}" (${baseline.generator === "audiogen" ? "AudioGen" : "HapticGen"}, ${baseline.item.duration.toFixed(2)}초)` : "";
 }
 
 function facts() {
@@ -673,10 +702,21 @@ $("#event").addEventListener("input", save);
 $("#event").addEventListener("change", () => {   // step 1 edited: the timeline no longer matches it
   if (!subs.length || planEvent === null || $("#event").value.trim() === planEvent) return;
   log("event_reset", { from: planEvent, to: $("#event").value.trim(), cleared: subs.length });
+  baseline = null;
   checkpoint(); subs = []; sel = null; clearResult(); refresh(); save();
   $("#decInfo").textContent = "";
   toast("이벤트가 바뀌어 타임라인과 결과를 비웠습니다. 되돌리기로 복구할 수 있습니다", 4000);
 });
+const PLANNER_NAMES = { staged: "SubEvent2Hap 4단계", event_t2m: "Event-T2M 사건 분할" };
+const PLANNER_NOTES = {
+  staged: "진동을 내는 물리 사건을 뽑고(검토 포함) 시간, 세기를 정한 뒤 HapticGen용 설명을 새로 씁니다.",
+  event_t2m: "동시에 일어나는 동작을 한 사건으로 묶어 문장을 사건별로 나누고(Event-T2M 규칙), 나뉜 문장을 그대로 생성에 씁니다. 시간, 세기는 같은 타이밍 단계로 정합니다.",
+};
+const plannerNote = () => $("#plannerNote").textContent = PLANNER_NOTES[$("#planner").value];
+try { const v = localStorage.getItem("s2h_planner"); if (v && PLANNER_NAMES[v]) $("#planner").value = v; } catch {}
+plannerNote();
+$("#planner").addEventListener("change", () => { plannerNote(); log("setting", { name: "planner", value: $("#planner").value });
+  try { localStorage.setItem("s2h_planner", $("#planner").value); } catch {} });
 $("#decBtn").onclick = async () => {
   const event = $("#event").value.trim();
   if (!event) { $("#event").focus(); return; }
@@ -684,12 +724,13 @@ $("#decBtn").onclick = async () => {
   const btn = $("#decBtn"), t0 = performance.now(); btn.disabled = true;
   const tick = setInterval(() => btn.innerHTML = `<span class="spinner"></span> 분해 중 ${((performance.now() - t0) / 1000).toFixed(0)}초`, 250);
   try {
-    log("decompose_start", { event, replaced: subs.length });
-    const r = await api("/api/decompose", { method: "POST", body: JSON.stringify({ event, planner: "staged", llm: "local" }) });
+    const planner = $("#planner").value;
+    log("decompose_start", { event, planner, replaced: subs.length });
+    const r = await api("/api/decompose", { method: "POST", body: JSON.stringify({ event, planner, llm: "local" }) });
     checkpoint();
     subs = r.sub_events.map(clean); sel = null; planEvent = event; clearResult(); refresh(); save();
-    log("decompose", { event, model: r.model, elapsed_s: r.elapsed, subs: subs.map(coreU) });
-    $("#decInfo").textContent = `${r.model}가 ${r.elapsed.toFixed(1)}초 만에 sub-event ${subs.length}개로 나눴습니다. 아래 타임라인에서 고칠 수 있습니다.`;
+    log("decompose", { event, planner, prompt_version: r.prompt_version, model: r.model, elapsed_s: r.elapsed, subs: subs.map(coreU) });
+    $("#decInfo").textContent = `${PLANNER_NAMES[planner]}: ${r.model}가 ${r.elapsed.toFixed(1)}초 만에 sub-event ${subs.length}개로 나눴습니다. 아래 타임라인에서 고칠 수 있습니다.`;
   } catch (e) { log("decompose_fail", { error: e.message }); toast("분해 실패: " + e.message, 4500); }
   finally { clearInterval(tick); btn.disabled = false; btn.textContent = "분해하기"; }
 };
@@ -698,7 +739,7 @@ $("#decBtn").onclick = async () => {
 // Sub-events whose sample is kept are re-cut and re-mixed without generating; the rest (new,
 // description changed, or asked to regenerate) are generated. `fresh` = uids to regenerate.
 const core = (s) => ({ prompt: s.prompt, start: s.start, duration: s.duration, intensity: s.intensity });
-async function generate(fresh = null) {
+async function generate(fresh = null, opts = {}) {
   const ready = subs.filter(s => s.prompt.trim());
   if (!ready.length) { toast("설명이 있는 sub-event가 없습니다"); return; }
   if (ready.length > 8) { toast("sub-event는 최대 8개까지 생성할 수 있습니다"); return; }
@@ -713,10 +754,13 @@ async function generate(fresh = null) {
     const regen = (s) => fresh === "all" || (fresh && fresh.includes(s.uid)) || !hasSample(s);
     const body = ready.map(s => ({ ...core(s), uid: s.uid, source_wav: regen(s) ? null : s.src }));
     const mode = fresh === "all" ? "all" : fresh ? "regen" : "auto";
+    const gen0 = $("#generator").value, len = Math.max(...ready.map(x => x.start + x.duration));
+    const wantBase = !!$("#event").value.trim() && (opts.forceBaseline || ($("#baseOn").checked && (fresh === "all" || !baseline ||
+      baseline.event !== event || baseline.generator !== gen0 || Math.abs(baseline.item.duration - len) > 0.1)));
     log("generate_start", { mode, regen: fresh && fresh !== "all" ? fresh.map(u => ({ uid: u, letter: L(u) })) : undefined,
       generator: $("#generator").value, n: ready.length, to_generate: body.filter(b => !b.source_wav).map(b => L(b.uid)) });
     const r = await api("/api/compose", { method: "POST", body: JSON.stringify({
-      event, sub_events: body, baseline: false, generator: $("#generator").value,
+      event, sub_events: body, baseline: wantBase, generator: $("#generator").value,
       candidates: +$("#cand").value, cfg: +$("#cfg").value, temperature: +$("#temp").value, gamma: +$("#gamma").value,
       // a fixed seed would redraw the same sample, so partial regeneration always samples anew
       seed: seed === "" || (fresh && fresh !== "all") ? null : +seed }) });
@@ -725,12 +769,13 @@ async function generate(fresh = null) {
       const s = subs.find(x => x.uid === out.uid);
       if (s && out.source_wav) { s.src = out.source_wav; s.srcPrompt = out.prompt; s.srcGen = gen; }
     }
+    if (r.baseline_item) baseline = { item: r.baseline_item, event, generator: gen };
     result = { item: r.composite_item, subs: ready.map(core), regions: r.sub_events.map(s => ({ uid: s.uid, prompt: s.prompt, file: s.file })) };
     save(); refresh(); updatePlay();
     const made = r.sub_events.filter(x => !x.reused).length;
     log("generate", { mode, elapsed_s: r.elapsed, generated: made, reused: r.sub_events.length - made, composite: r.composite,
-      subs: ready.map(coreU), samples: r.sub_events.map(x => ({ uid: x.uid, letter: L(x.uid), reused: x.reused, source_wav: x.source_wav })) });
-    toast(made ? `${made}개 새로 생성, ${r.sub_events.length - made}개 샘플 유지 (${r.elapsed.toFixed(1)}초)` : `생성 없이 다시 합성 (${r.elapsed.toFixed(1)}초)`);
+      baseline: r.baseline || null, subs: ready.map(coreU), samples: r.sub_events.map(x => ({ uid: x.uid, letter: L(x.uid), reused: x.reused, source_wav: x.source_wav })) });
+    toast((made ? `${made}개 새로 생성, ${r.sub_events.length - made}개 샘플 유지` : "생성 없이 다시 합성") + (r.baseline_item ? ", 베이스라인 생성" : "") + ` (${r.elapsed.toFixed(1)}초)`);
     if (questReady) playQuest();
   } catch (e) { log("generate_fail", { error: e.message }); toast("생성 실패: " + e.message, 4500); }
   finally { clearInterval(tick); busy = false; btn.textContent = "생성 & 합성"; $("#allBtn").disabled = false; parts(); poll(); }
@@ -771,7 +816,11 @@ $("#gain").addEventListener("input", gainUpd); gainUpd();
 for (const [id, fmt] of [["cand", v => v + "개"], ["cfg", v => v], ["temp", v => v], ["gamma", v => (+v).toFixed(1)]]) {
   const el = $("#" + id), upd = () => $("#" + id + "V").textContent = fmt(el.value); el.addEventListener("input", upd); upd();
 }
-function updatePlay() { $("#playBtn").disabled = !result || !questReady; $("#listenBtn").disabled = !result; }
+function updatePlay() {
+  $("#playBtn").disabled = !result || !questReady; $("#listenBtn").disabled = !result;
+  $("#basePlayBtn").disabled = !baseline || !questReady; $("#baseListenBtn").disabled = !baseline;
+  $("#baseRegenBtn").disabled = busy || !modelReady || !$("#event").value.trim() || !subs.some(x => x.prompt.trim());
+}
 
 async function playQuest(file) {
   if (!result && !file) return;
@@ -795,6 +844,24 @@ $("#listenBtn").onclick = () => {
   audioEl.play().catch(e => toast("미리듣기 실패: " + e.message));
   play = { name: result.item.name, t0: performance.now(), dur: result.item.duration * 1000 }; animate();
 };
+async function playItem(it) {   // a whole render (composite or baseline) with a moving playhead
+  if (!questReady) { toast("Quest가 준비되지 않았습니다. Link를 켜고 헤드셋을 착용하세요"); return; }
+  try {
+    await api("/api/play", { method: "POST", body: JSON.stringify({ name: it.name, hand, gain: +$("#gain").value }) });
+    play = { name: it.name, t0: performance.now(), dur: it.duration * 1000 }; animate();
+  } catch (e) { toast("재생 실패: " + e.message); }
+}
+function listenItem(it) {
+  if (audioEl) audioEl.pause();
+  audioEl = new Audio(`/audio/${encodeURIComponent(it.name)}?gain=${$("#gain").value}`);
+  audioEl.play().catch(e => toast("미리듣기 실패: " + e.message));
+  play = { name: it.name, t0: performance.now(), dur: it.duration * 1000 }; animate();
+}
+$("#basePlayBtn").onclick = () => { if (!baseline) return; log("play", { what: "baseline", via: "quest", from: "button" }); playItem(baseline.item); };
+$("#baseWave").onclick = () => { if (!baseline) return; log("play", { what: "baseline", via: "quest", from: "waveform" }); playItem(baseline.item); };
+$("#baseListenBtn").onclick = () => { if (!baseline) return; log("play", { what: "baseline", via: "pc" }); listenItem(baseline.item); };
+$("#baseRegenBtn").onclick = () => { log("baseline_regen"); generate(null, { forceBaseline: true }); };
+$("#baseOn").addEventListener("change", () => log("setting", { name: "baseline", value: $("#baseOn").checked }));
 $("#stopBtn").onclick = async () => { log("stop"); try { await api("/api/stop", { method: "POST" }); } catch {} if (audioEl) audioEl.pause(); play = null; drawWave(); };
 
 // ---------- status polling
@@ -822,6 +889,23 @@ setInterval(poll, 1000); setInterval(pollLlm, 5000);
 
 load(); startStudy(); updateUndo(); refresh(); updatePlay(); poll(); pollLlm();
 let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(refresh, 120); });
+
+// ---------- Colab generation worker (address set by clicking the pill)
+async function colabStatus() {
+  try {
+    const c = await (await fetch("/api/colab")).json();
+    $("#cdot").className = "dot " + (c.ok ? "ok" : c.set ? "err" : "");
+    $("#ctxt").textContent = c.status;
+  } catch { $("#ctxt").textContent = "확인 실패"; }
+}
+$("#colabPill").onclick = async () => {
+  const url = prompt("Colab 노트북 마지막에 출력된 주소를 붙여 넣으세요 (비우면 연결 해제)", "");
+  if (url === null) return;
+  $("#ctxt").textContent = "확인 중";
+  await fetch("/api/colab", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url }) });
+  colabStatus();
+};
+setInterval(colabStatus, 15000); colabStatus();
 </script>
 </body>
 </html>

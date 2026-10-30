@@ -1,0 +1,97 @@
+{
+  "event": "The rubber ball bounced off the ground four times",
+  "sub_events": [
+    {
+      "prompt": "rubber ball contacts ground",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "5nw5csoi",
+      "file": "compose/compose_The_rubber_ball_bounced_off_the_grou_1026_181146/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0952,
+        0.0483
+      ],
+      "offset": 0.451,
+      "shared": true,
+      "source_wav": "compose/compose_The_rubber_ball_bounced_off_the_grou_1026_181146/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "rubber ball contacts ground",
+      "start": 1.8,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "4vcpm8yi",
+      "file": "compose/compose_The_rubber_ball_bounced_off_the_grou_1026_181146/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0952,
+        0.0483
+      ],
+      "offset": 0.451,
+      "shared": true,
+      "source_wav": "compose/compose_The_rubber_ball_bounced_off_the_grou_1026_181146/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "rubber contacts ground",
+      "start": 3.1,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "gnvz1c7v",
+      "file": "compose/compose_The_rubber_ball_bounced_off_the_grou_1026_181146/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0548,
+        0.0671
+      ],
+      "offset": 0.423,
+      "shared": false,
+      "source_wav": "compose/compose_The_rubber_ball_bounced_off_the_grou_1026_181146/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "rubber ball contacts ground",
+      "start": 4.4,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "tm8mmcgs",
+      "file": "compose/compose_The_rubber_ball_bounced_off_the_grou_1026_181146/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.0952,
+        0.0483
+      ],
+      "offset": 0.451,
+      "shared": true,
+      "source_wav": "compose/compose_The_rubber_ball_bounced_off_the_grou_1026_181146/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 4.7,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_rubber_ball_bounced_off_the_grou_1026_181146_composite.wav",
+  "baseline": "compose_The_rubber_ball_bounced_off_the_grou_1026_181146_baseline.wav",
+  "gen_duration": 4.7,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.6378870010375977,
+  "elapsed": 3.6539881229400635
+}

@@ -1,0 +1,43 @@
+{
+  "event": "The glass dropped onto a hard surface.",
+  "sub_events": [
+    {
+      "prompt": "The glass dropped onto a hard surface.",
+      "start": 0.5,
+      "duration": 2.0,
+      "intensity": 0.8,
+      "source": "",
+      "uid": "kwebv37w",
+      "file": "compose/compose_The_glass_dropped_onto_a_hard_surfac_1026_180755/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0766,
+        0.0302
+      ],
+      "offset": 1.0,
+      "shared": false,
+      "source_wav": "compose/compose_The_glass_dropped_onto_a_hard_surfac_1026_180755/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 2.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_glass_dropped_onto_a_hard_surfac_1026_180755_composite.wav",
+  "baseline": "compose_The_glass_dropped_onto_a_hard_surfac_1026_180755_baseline.wav",
+  "gen_duration": 3.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.4765214920043945,
+  "elapsed": 2.486651659011841
+}

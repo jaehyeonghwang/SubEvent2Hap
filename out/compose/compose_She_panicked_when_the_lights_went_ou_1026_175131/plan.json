@@ -1,0 +1,43 @@
+{
+  "event": "She panicked when the lights went out.",
+  "sub_events": [
+    {
+      "prompt": "the lights went out",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.8,
+      "source": "",
+      "uid": "g9hwos2n",
+      "file": "compose/compose_She_panicked_when_the_lights_went_ou_1026_175131/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0251,
+        0.0265
+      ],
+      "offset": 1.0,
+      "shared": false,
+      "source_wav": "compose/compose_She_panicked_when_the_lights_went_ou_1026_175131/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_She_panicked_when_the_lights_went_ou_1026_175131_composite.wav",
+  "baseline": "compose_She_panicked_when_the_lights_went_ou_1026_175131_baseline.wav",
+  "gen_duration": 2.0,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.2509355545043945,
+  "elapsed": 2.261941909790039
+}

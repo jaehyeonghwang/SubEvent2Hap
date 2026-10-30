@@ -1,0 +1,151 @@
+{
+  "event": "Full - Hammer a nail into a wooden board",
+  "sub_events": [
+    {
+      "prompt": "a hammer lightly taps a nail to set it",
+      "start": 0.0,
+      "duration": 0.15,
+      "intensity": 0.35,
+      "source": "hammer",
+      "file": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0904,
+        0.013,
+        0.0001
+      ],
+      "offset": 0.692,
+      "shared": false,
+      "source_wav": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a hammer strikes a nail into wood with a sharp metallic tap",
+      "start": 0.6,
+      "duration": 0.2,
+      "intensity": 0.8,
+      "source": "hammer",
+      "file": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.1008,
+        0.0003,
+        0.0009
+      ],
+      "offset": 0.159,
+      "shared": true,
+      "source_wav": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a hammer strikes a nail into wood with a sharp metallic tap",
+      "start": 1.1,
+      "duration": 0.2,
+      "intensity": 0.85,
+      "source": "hammer",
+      "file": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.1008,
+        0.0003,
+        0.0009
+      ],
+      "offset": 0.159,
+      "shared": true,
+      "source_wav": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a hammer strikes a nail into wood with a sharp metallic tap",
+      "start": 1.6,
+      "duration": 0.2,
+      "intensity": 0.9,
+      "source": "hammer",
+      "file": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.1008,
+        0.0003,
+        0.0009
+      ],
+      "offset": 0.159,
+      "shared": true,
+      "source_wav": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a hammer hits a nail flush into wood with a dull thud",
+      "start": 2.2,
+      "duration": 0.25,
+      "intensity": 1.0,
+      "source": "hammer",
+      "file": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.001,
+        0.0001,
+        0.0001
+      ],
+      "offset": 0.656,
+      "shared": false,
+      "source_wav": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/src_03.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a hammer is set down on a wooden table",
+      "start": 3.0,
+      "duration": 0.25,
+      "intensity": 0.4,
+      "source": "hammer",
+      "file": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/sub_06.wav",
+      "candidate": 2,
+      "scores": [
+        0.3218,
+        0.2277,
+        0.4554
+      ],
+      "offset": 0.451,
+      "shared": false,
+      "source_wav": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/src_04.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a wooden board creaks slightly",
+      "start": 3.5,
+      "duration": 0.5,
+      "intensity": 0.25,
+      "source": "board",
+      "file": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/sub_07.wav",
+      "candidate": 1,
+      "scores": [
+        0.0126,
+        0.0466,
+        0.028
+      ],
+      "offset": 0.071,
+      "shared": false,
+      "source_wav": "compose/compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358/src_05.wav",
+      "reused": false
+    }
+  ],
+  "total": 4.0,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 11,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Full_Hammer_a_nail_into_a_wooden_boa_1026_183358_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 15,
+  "generated_units": 5,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 3.732041597366333,
+  "elapsed": 3.753927230834961
+}

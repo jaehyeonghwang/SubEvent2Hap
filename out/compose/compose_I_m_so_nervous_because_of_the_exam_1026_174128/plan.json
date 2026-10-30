@@ -1,0 +1,79 @@
+{
+  "event": "I'm so nervous because of the exam",
+  "sub_events": [
+    {
+      "prompt": "exam paper is held tightly in hand",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "6pczdt7j",
+      "file": "compose/compose_I_m_so_nervous_because_of_the_exam_1026_174128/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0415,
+        0.0077
+      ],
+      "offset": 1.362,
+      "shared": false,
+      "source_wav": "compose/compose_I_m_so_nervous_because_of_the_exam_1026_174128/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "pencil is pressed against the exam paper with force",
+      "start": 2.0,
+      "duration": 0.8,
+      "intensity": 0.8,
+      "source": "",
+      "uid": "8s4ftxwb",
+      "file": "compose/compose_I_m_so_nervous_because_of_the_exam_1026_174128/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0012,
+        0.0018
+      ],
+      "offset": 0.969,
+      "shared": false,
+      "source_wav": "compose/compose_I_m_so_nervous_because_of_the_exam_1026_174128/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "desk surface feels slightly trembling under pressure",
+      "start": 3.5,
+      "duration": 0.6,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "5rrj1c0w",
+      "file": "compose/compose_I_m_so_nervous_because_of_the_exam_1026_174128/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0051,
+        0.0365
+      ],
+      "offset": 0.063,
+      "shared": false,
+      "source_wav": "compose/compose_I_m_so_nervous_because_of_the_exam_1026_174128/src_03.wav",
+      "reused": false
+    }
+  ],
+  "total": 4.1,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_I_m_so_nervous_because_of_the_exam_1026_174128_composite.wav",
+  "baseline": "compose_I_m_so_nervous_because_of_the_exam_1026_174128_baseline.wav",
+  "gen_duration": 4.1,
+  "prompts": 8,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 9.056514978408813,
+  "elapsed": 9.081087112426758
+}

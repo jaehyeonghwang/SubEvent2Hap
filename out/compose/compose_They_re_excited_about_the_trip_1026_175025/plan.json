@@ -1,0 +1,79 @@
+{
+  "event": "They're excited about the trip.",
+  "sub_events": [
+    {
+      "prompt": "the trip itinerary is pointed to and shown",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "qjixxlo7",
+      "file": "compose/compose_They_re_excited_about_the_trip_1026_175025/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0047,
+        0.0005
+      ],
+      "offset": 2.893,
+      "shared": false,
+      "source_wav": "compose/compose_They_re_excited_about_the_trip_1026_175025/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a map of the destination is held up and rotated",
+      "start": 2.3,
+      "duration": 0.7,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "i8fvp2s0",
+      "file": "compose/compose_They_re_excited_about_the_trip_1026_175025/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.2055,
+        0.0033
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_They_re_excited_about_the_trip_1026_175025/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a photo of a scenic location is displayed and touched",
+      "start": 4.1,
+      "duration": 0.8,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "poj1qx7u",
+      "file": "compose/compose_They_re_excited_about_the_trip_1026_175025/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.0448,
+        0.0009
+      ],
+      "offset": 0.059,
+      "shared": false,
+      "source_wav": "compose/compose_They_re_excited_about_the_trip_1026_175025/src_03.wav",
+      "reused": false
+    }
+  ],
+  "total": 4.8999999999999995,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_They_re_excited_about_the_trip_1026_175025_composite.wav",
+  "baseline": "compose_They_re_excited_about_the_trip_1026_175025_baseline.wav",
+  "gen_duration": 4.8999999999999995,
+  "prompts": 8,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 10.479047060012817,
+  "elapsed": 10.50117015838623
+}

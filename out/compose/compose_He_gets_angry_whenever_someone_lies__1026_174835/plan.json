@@ -1,0 +1,61 @@
+{
+  "event": "He gets angry whenever someone lies to him.",
+  "sub_events": [
+    {
+      "prompt": "the lying person's words is heard and processed as false",
+      "start": 0.5,
+      "duration": 0.8,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "q2oj2no3",
+      "file": "compose/compose_He_gets_angry_whenever_someone_lies__1026_174835/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.1366,
+        0.0797
+      ],
+      "offset": 0.082,
+      "shared": false,
+      "source_wav": "compose/compose_He_gets_angry_whenever_someone_lies__1026_174835/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "his own hands tighten against the table",
+      "start": 1.3,
+      "duration": 0.7,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "3k060259",
+      "file": "compose/compose_He_gets_angry_whenever_someone_lies__1026_174835/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.0207,
+        0.0183
+      ],
+      "offset": 0.775,
+      "shared": false,
+      "source_wav": "compose/compose_He_gets_angry_whenever_someone_lies__1026_174835/src_02.wav",
+      "reused": false
+    }
+  ],
+  "total": 2.0,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_gets_angry_whenever_someone_lies__1026_174835_composite.wav",
+  "baseline": "compose_He_gets_angry_whenever_someone_lies__1026_174835_baseline.wav",
+  "gen_duration": 2.0,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.2598845958709717,
+  "elapsed": 2.2736785411834717
+}

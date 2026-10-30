@@ -1,0 +1,61 @@
+{
+  "event": "A game controller gives short vibrations with each enemy hit, followed by a strong rumble during an explosion.",
+  "sub_events": [
+    {
+      "prompt": "The game controller gives short vibration.",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.4,
+      "source": "",
+      "uid": "zoqe76ri",
+      "file": "compose/compose_A_game_controller_gives_short_vibrat_1026_173544/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.339,
+        0.3353
+      ],
+      "offset": 0.072,
+      "shared": false,
+      "source_wav": "compose/compose_A_game_controller_gives_short_vibrat_1026_173544/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "The game controller gives strong rumble.",
+      "start": 3.0,
+      "duration": 1.5,
+      "intensity": 0.8,
+      "source": "",
+      "uid": "yml9d71v",
+      "file": "compose/compose_A_game_controller_gives_short_vibrat_1026_173544/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.7779,
+        0.7705
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_A_game_controller_gives_short_vibrat_1026_173544/src_02.wav",
+      "reused": false
+    }
+  ],
+  "total": 4.5,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_A_game_controller_gives_short_vibrat_1026_173544_composite.wav",
+  "baseline": "compose_A_game_controller_gives_short_vibrat_1026_173544_baseline.wav",
+  "gen_duration": 4.5,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.987756729125977,
+  "elapsed": 5.0039331912994385
+}

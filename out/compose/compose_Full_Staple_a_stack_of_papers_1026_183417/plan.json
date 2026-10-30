@@ -1,0 +1,97 @@
+{
+  "event": "Full - Staple a stack of papers",
+  "sub_events": [
+    {
+      "prompt": "pressing down on a stiff stapler",
+      "start": 0.0,
+      "duration": 0.3,
+      "intensity": 0.35,
+      "source": "stapler",
+      "file": "compose/compose_Full_Staple_a_stack_of_papers_1026_183417/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.3281,
+        0.0693,
+        0.105
+      ],
+      "offset": 0.132,
+      "shared": false,
+      "source_wav": "compose/compose_Full_Staple_a_stack_of_papers_1026_183417/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a stapler punches through paper with a click",
+      "start": 0.35,
+      "duration": 0.15,
+      "intensity": 0.8,
+      "source": "stapler",
+      "file": "compose/compose_Full_Staple_a_stack_of_papers_1026_183417/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.24,
+        0.0247,
+        0.2094
+      ],
+      "offset": 0.177,
+      "shared": false,
+      "source_wav": "compose/compose_Full_Staple_a_stack_of_papers_1026_183417/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "the stapler springs back up",
+      "start": 0.6,
+      "duration": 0.2,
+      "intensity": 0.45,
+      "source": "stapler",
+      "file": "compose/compose_Full_Staple_a_stack_of_papers_1026_183417/sub_03.wav",
+      "candidate": 2,
+      "scores": [
+        0.0011,
+        0.0091,
+        0.839
+      ],
+      "offset": 0.319,
+      "shared": false,
+      "source_wav": "compose/compose_Full_Staple_a_stack_of_papers_1026_183417/src_03.wav",
+      "reused": false
+    },
+    {
+      "prompt": "paper slides across a desk",
+      "start": 1.1,
+      "duration": 0.5,
+      "intensity": 0.2,
+      "source": "paper",
+      "file": "compose/compose_Full_Staple_a_stack_of_papers_1026_183417/sub_04.wav",
+      "candidate": 0,
+      "scores": [
+        0.1042,
+        0.0004,
+        0.0251
+      ],
+      "offset": 0.789,
+      "shared": false,
+      "source_wav": "compose/compose_Full_Staple_a_stack_of_papers_1026_183417/src_04.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.6,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 11,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Full_Staple_a_stack_of_papers_1026_183417_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 12,
+  "generated_units": 4,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.47472882270813,
+  "elapsed": 2.491004467010498
+}

@@ -1,0 +1,169 @@
+{
+  "event": "Nine men are actively playing basketball",
+  "sub_events": [
+    {
+      "prompt": "basketball is dribbled by a player",
+      "start": 0.5,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "mb0egtye",
+      "file": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.3534,
+        0.0887
+      ],
+      "offset": 1.304,
+      "shared": false,
+      "source_wav": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "basketball is passed between two players",
+      "start": 1.8,
+      "duration": 0.4,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "hzl5h6cz",
+      "file": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/sub_02.wav",
+      "candidate": 0,
+      "scores": [
+        0.155,
+        0.0116
+      ],
+      "offset": 2.232,
+      "shared": false,
+      "source_wav": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "basketball is thrown toward the hoop",
+      "start": 3.2,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "gp7hov8z",
+      "file": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.1615,
+        0.1798
+      ],
+      "offset": 4.659,
+      "shared": false,
+      "source_wav": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/src_03.wav",
+      "reused": false
+    },
+    {
+      "prompt": "basketball hits the backboard",
+      "start": 4.1,
+      "duration": 0.3,
+      "intensity": 0.8,
+      "source": "",
+      "uid": "mf4ubxt2",
+      "file": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0148,
+        0.0875
+      ],
+      "offset": 3.375,
+      "shared": false,
+      "source_wav": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/src_04.wav",
+      "reused": false
+    },
+    {
+      "prompt": "basketball passes through the net",
+      "start": 5.9,
+      "duration": 0.2,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "h5p3hrtk",
+      "file": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/sub_05.wav",
+      "candidate": 0,
+      "scores": [
+        0.0491,
+        0.0169
+      ],
+      "offset": 0.438,
+      "shared": false,
+      "source_wav": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/src_05.wav",
+      "reused": false
+    },
+    {
+      "prompt": "player's hand grabs the basketball after a pass",
+      "start": 7.3,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "7g07vfjz",
+      "file": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/sub_06.wav",
+      "candidate": 1,
+      "scores": [
+        0.1584,
+        0.4196
+      ],
+      "offset": 1.293,
+      "shared": false,
+      "source_wav": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/src_06.wav",
+      "reused": false
+    },
+    {
+      "prompt": "player's foot steps to move into position for a shot",
+      "start": 8.1,
+      "duration": 0.5,
+      "intensity": 0.6,
+      "source": "",
+      "uid": "o8hb4o05",
+      "file": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/sub_07.wav",
+      "candidate": 0,
+      "scores": [
+        0.1758,
+        0.0012
+      ],
+      "offset": 0.58,
+      "shared": false,
+      "source_wav": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/src_07.wav",
+      "reused": false
+    },
+    {
+      "prompt": "player's arm extends to shoot",
+      "start": 9.0,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "ttj2zu64",
+      "file": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/sub_08.wav",
+      "candidate": 1,
+      "scores": [
+        0.1147,
+        0.2796
+      ],
+      "offset": 0.991,
+      "shared": false,
+      "source_wav": "compose/compose_Nine_men_are_actively_playing_basket_1026_181002/src_08.wav",
+      "reused": false
+    }
+  ],
+  "total": 9.3,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Nine_men_are_actively_playing_basket_1026_181002_composite.wav",
+  "baseline": "compose_Nine_men_are_actively_playing_basket_1026_181002_baseline.wav",
+  "gen_duration": 9.3,
+  "prompts": 18,
+  "generated_units": 8,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 21.832685947418213,
+  "elapsed": 21.883732557296753
+}

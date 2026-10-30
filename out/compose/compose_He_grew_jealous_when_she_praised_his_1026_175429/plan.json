@@ -1,0 +1,43 @@
+{
+  "event": "He grew jealous when she praised his brother",
+  "sub_events": [
+    {
+      "prompt": "her words praised his brother",
+      "start": 0.5,
+      "duration": 1.2,
+      "intensity": 0.7,
+      "source": "",
+      "uid": "nfeiin9d",
+      "file": "compose/compose_He_grew_jealous_when_she_praised_his_1026_175429/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0899,
+        0.075
+      ],
+      "offset": 0.0,
+      "shared": false,
+      "source_wav": "compose/compose_He_grew_jealous_when_she_praised_his_1026_175429/src_01.wav",
+      "reused": false
+    }
+  ],
+  "total": 1.7,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_He_grew_jealous_when_she_praised_his_1026_175429_composite.wav",
+  "baseline": "compose_He_grew_jealous_when_she_praised_his_1026_175429_baseline.wav",
+  "gen_duration": 2.2,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.3265795707702637,
+  "elapsed": 2.3355941772460938
+}

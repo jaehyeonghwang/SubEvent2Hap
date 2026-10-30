@@ -1,0 +1,133 @@
+{
+  "event": "Full - A glass falls onto a hard floor (seed 1)",
+  "sub_events": [
+    {
+      "prompt": "a glass slips out of a hand",
+      "start": 0.0,
+      "duration": 0.2,
+      "intensity": 0.5,
+      "source": "",
+      "file": "compose/compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006/sub_01.wav",
+      "candidate": 2,
+      "scores": [
+        0.0008,
+        0.0043,
+        0.009
+      ],
+      "offset": 1.038,
+      "shared": false,
+      "source_wav": "compose/compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006/src_01.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a glass hits a hard floor with a sharp crack",
+      "start": 0.65,
+      "duration": 0.3,
+      "intensity": 0.9,
+      "source": "",
+      "file": "compose/compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.1618,
+        0.3866,
+        0.0008
+      ],
+      "offset": 0.351,
+      "shared": false,
+      "source_wav": "compose/compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006/src_02.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a glass shatters into pieces",
+      "start": 1.0,
+      "duration": 0.4,
+      "intensity": 0.7,
+      "source": "",
+      "file": "compose/compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0195,
+        0.3203,
+        0.0666
+      ],
+      "offset": 0.534,
+      "shared": false,
+      "source_wav": "compose/compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006/src_03.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a glass shard bounces on a hard floor with a click",
+      "start": 1.7,
+      "duration": 0.15,
+      "intensity": 0.55,
+      "source": "",
+      "file": "compose/compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006/sub_04.wav",
+      "candidate": 2,
+      "scores": [
+        0.1631,
+        0.0861,
+        0.5838
+      ],
+      "offset": 0.12,
+      "shared": true,
+      "source_wav": "compose/compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006/src_04.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a glass shard bounces on a hard floor with a click",
+      "start": 2.0,
+      "duration": 0.15,
+      "intensity": 0.5,
+      "source": "",
+      "file": "compose/compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006/sub_05.wav",
+      "candidate": 2,
+      "scores": [
+        0.1631,
+        0.0861,
+        0.5838
+      ],
+      "offset": 0.12,
+      "shared": true,
+      "source_wav": "compose/compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006/src_04.wav",
+      "reused": false
+    },
+    {
+      "prompt": "a glass shard bounces on a hard floor with a click",
+      "start": 2.3,
+      "duration": 0.15,
+      "intensity": 0.5,
+      "source": "",
+      "file": "compose/compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006/sub_06.wav",
+      "candidate": 2,
+      "scores": [
+        0.1631,
+        0.0861,
+        0.5838
+      ],
+      "offset": 0.12,
+      "shared": true,
+      "source_wav": "compose/compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006/src_04.wav",
+      "reused": false
+    }
+  ],
+  "total": 2.4499999999999997,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 3,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": 1,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Full_A_glass_falls_onto_a_hard_floor_1026_184006_composite.wav",
+  "baseline": null,
+  "gen_duration": 1.5,
+  "prompts": 12,
+  "generated_units": 4,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.600146532058716,
+  "elapsed": 2.61655592918396
+}

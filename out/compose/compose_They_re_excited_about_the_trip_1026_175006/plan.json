@@ -1,0 +1,70 @@
+{
+  "event": "They're excited about the trip.",
+  "sub_events": [
+    {
+      "prompt": "the trip itinerary is pointed to and discussed",
+      "start": 0.5,
+      "duration": 1.0,
+      "intensity": 0.8,
+      "source": "",
+      "source_wav": "compose/compose_They_re_excited_about_the_trip_1026_174952/src_01.wav",
+      "uid": "6tgwdx1f",
+      "file": "compose/compose_They_re_excited_about_the_trip_1026_175006/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 1.103,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "a map of the destination is touched and examined",
+      "start": 3.0,
+      "duration": 1.5,
+      "intensity": 0.7,
+      "source": "",
+      "source_wav": "compose/compose_They_re_excited_about_the_trip_1026_174952/src_02.wav",
+      "uid": "can83eeg",
+      "file": "compose/compose_They_re_excited_about_the_trip_1026_175006/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.494,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "a photo of a scenic location is held and stared at",
+      "start": 6.0,
+      "duration": 1.0,
+      "intensity": 0.8,
+      "source": "",
+      "source_wav": "compose/compose_They_re_excited_about_the_trip_1026_174952/src_03.wav",
+      "uid": "jcef6rnj",
+      "file": "compose/compose_They_re_excited_about_the_trip_1026_175006/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.341,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 7.0,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_They_re_excited_about_the_trip_1026_175006_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.013022661209106445,
+  "elapsed": 0.025289297103881836
+}
