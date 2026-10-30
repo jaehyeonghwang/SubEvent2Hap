@@ -214,5 +214,11 @@
   "area": "재생",
   "title": "웹에서 음성·진동 장치 선택",
   "detail": "노트북 재생기(remote_player.py)가 사운드 출력 목록(DirectSound)과 현재 설정을 1초마다 서버로 보냄. Story 페이지 '재생기에서 음성 + 진동' 모드에서 음성 장치(기본 출력 또는 지정)와 진동 장치(Quest 또는 사운드 출력)를 드롭다운으로 고르면 /api/player/config로 재생기에 전달(~/.subevent2hap_player.json에 기억). /api/player/play_pair로 재생기가 음성과 진동을 각 장치에서 함께 시작(장치별 독립 스트림). 브라우저 HTTPS 제약과 무관."
+ },
+ {
+  "date": "2026-10-31",
+  "area": "Story2Hap",
+  "title": "원문 동화 예시와 긴 이야기 처리",
+  "detail": "Story 페이지 예시 13편을 Project Gutenberg 공개 원문 그대로 수록(Jacobs, Lang/Perrault, Grimm-Hunt, Andersen, Dasent, Aesop-Townsend; 줄바꿈·삽화 표시만 제거, 출처 표시). 원문은 최대 132문장이라 이야기 상태·연출 에이전트를 25문장 단위로 나눠 호출(인물·물체와 voice_key를 다음 묶음으로 넘김), 문장 상한 200. 10초를 넘는 문장(원문의 약 30%)은 9.5초 구간으로 나눠 합성 후 이어 붙이고, 구간 경계를 넘는 사건은 같은 샘플을 이어서 사용."
  }
 ]

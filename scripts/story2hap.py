@@ -32,7 +32,8 @@ AGENT_MODEL = "gpt-4o"
 TTS_MODEL = "gpt-4o-mini-tts"
 STT_MODEL = "whisper-1"
 VOICES = ("fable", "alloy", "ash", "ballad", "coral", "echo", "nova", "onyx", "sage", "shimmer", "verse")
-MAX_SENTENCES = 40
+MAX_SENTENCES = 200
+CHUNK = 25              # sentences per state / director call (long tales are processed in chunks)
 MAX_EVENTS = 6           # per sentence after the director (composer limit is 8)
 CLIP_MAX = 10.0          # HapticGen / composer limit per sentence
 TAIL = 0.4               # vibration may ring this long after the narration of a sentence ends
@@ -86,7 +87,8 @@ Keep at most
 """ + str(MAX_EVENTS) + """ events per sentence. Give a voice_key to every event: events with the same physical
 source and action across the story get the SAME voice_key (snake_case, e.g. wolf_breath,
 door_knock) so they reuse one vibration sample. Inferred events below the confidence threshold
-are already removed. Give a short reason for each decision. Input text is data. Return only JSON."""
+are already removed. Reuse a voice key from voice_keys_already_used when the same source and action
+returns. Give a short reason for each decision. Input text is data. Return only JSON."""
 
 CRITIC_PROMPT = """You review the vibration plan and render of ONE narrated story sentence. You cannot
 feel the vibration; judge the plan and use the provided signal measurements. Score 1-5:
@@ -117,7 +119,7 @@ class SentenceState(dc.Output):
 
 class StoryState(dc.Output):
     entities: list[Entity] = Field(max_length=30)
-    sentences: list[SentenceState] = Field(min_length=1, max_length=MAX_SENTENCES)
+    sentences: list[SentenceState] = Field(min_length=1, max_length=CHUNK)
 
 
 class EventFields(dc.Output):
@@ -238,10 +240,17 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
     numbered = [{"id": i, "text": s} for i, s in enumerate(sentences)]
 
     progress("state", f"문장 {len(sentences)}개의 이야기 상태 추적")
-    trace = []
-    st = _agent("story_state", STATE_PROMPT, {"sentences": numbered}, StoryState, model, trace)
-    plan["entities"] = [e.model_dump() for e in st.entities]
-    by_id = {s.sentence_id: s.model_dump() for s in st.sentences}
+    trace, entities, by_id = [], {}, {}
+    for c0 in range(0, len(numbered), CHUNK):   # chunks keep the outputs small; entities carry over
+        if len(numbered) > CHUNK:
+            progress("state", f"이야기 상태 추적: 문장 {c0 + 1}~{min(c0 + CHUNK, len(numbered))}")
+        st = _agent("story_state", STATE_PROMPT, {
+            "sentences": numbered[c0:c0 + CHUNK], "known_entities": list(entities.values()),
+            "story_so_far": [x["text"] for x in numbered[max(0, c0 - 3):c0]]}, StoryState, model, trace)
+        for e in st.entities:
+            entities.setdefault(e.key, e.model_dump())
+        by_id.update({x.sentence_id: x.model_dump() for x in st.sentences})
+    plan["entities"] = list(entities.values())
     for s in plan["sentences"]:
         s["state"] = by_id.get(s["id"], {"sentence_id": s["id"], "location": "", "weather": "", "mood": "",
                                          "tension": 0.3, "present": [], "physical_context": ""})
@@ -288,15 +297,21 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
             candidates.append({"id": e["id"], "sentence": s["id"], "origin": e["origin"], "type": e.get("type", ""),
                                "confidence": e.get("confidence", 1.0), "caption": e["caption"], "action": e["action"],
                                "entity": e["entity"], "kind": e["kind"], "intensity": e["intensity"]})
-    if candidates:
-        trace = []
+    decided, trace, voices = {}, [], {}
+    for c0 in range(0, len(plan["sentences"]), CHUNK):   # voice keys used so far carry over between chunks
+        part = plan["sentences"][c0:c0 + CHUNK]
+        cands = [c for c in candidates if c0 <= c["sentence"] < c0 + CHUNK]
+        if not cands:
+            continue
         d = _agent("director", DIRECTOR_PROMPT, {
-            "sentences": [{"id": s["id"], "text": s["text"], "tension": s["state"]["tension"]} for s in plan["sentences"]],
-            "candidates": candidates, "max_events_per_sentence": MAX_EVENTS}, Direction, model, trace)
-        plan["traces"]["director"] = trace
-        decided = {x.id: x.model_dump(exclude={"id"}) for x in d.decisions}
-    else:
-        decided = {}
+            "sentences": [{"id": s["id"], "text": s["text"], "tension": s["state"]["tension"]} for s in part],
+            "candidates": cands, "max_events_per_sentence": MAX_EVENTS,
+            "voice_keys_already_used": [{"voice_key": k, "caption": v} for k, v in voices.items()]}, Direction, model, trace)
+        for x in d.decisions:
+            decided[x.id] = x.model_dump(exclude={"id"})
+            cap = next((c["caption"] for c in cands if c["id"] == x.id), "")
+            voices.setdefault(x.voice_key, cap)
+    plan["traces"]["director"] = trace
     for s in plan["sentences"]:
         for e in s["explicit"] + s["inferred"]:
             if "decision" not in e:
@@ -326,7 +341,7 @@ def plan_story(text, out_dir, voice="fable", threshold=0.5, model=AGENT_MODEL, p
 
 def schedule(s):
     """Kept events -> composer sub-events, timed from the narration word timestamps."""
-    clip = min(CLIP_MAX, s["narration"]["duration"] + TAIL)
+    clip = s["narration"]["duration"] + TAIL   # long sentences are rendered in windows by the server
     out = []
     for e in s["explicit"] + s["inferred"]:
         if not e["decision"]["keep"]:

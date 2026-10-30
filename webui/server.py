@@ -599,7 +599,7 @@ def story_page():
 
 
 class StoryReq(BaseModel):
-    text: str = Field(min_length=1, max_length=6000)
+    text: str = Field(min_length=1, max_length=30000)
     title: str = Field("", max_length=80)
     voice: str = Field("fable", pattern="^(" + "|".join(s2h.VOICES) + ")$")
     threshold: float = Field(0.5, ge=0, le=1)
@@ -612,10 +612,29 @@ def _story_log(sid, stage, msg):
     job["log"].append({"t": time.time(), "stage": stage, "msg": msg})
 
 
+STORY_WINDOW = 9.5   # composer limit is 10 s; longer sentences are rendered window by window and joined
+
+
+def _windows(subs):
+    """Split timed sub-events into <= STORY_WINDOW windows (events crossing a boundary are cut there)."""
+    end = max(x["start"] + x["duration"] for x in subs)
+    out = []
+    for k in range(int(np.ceil(end / STORY_WINDOW))):
+        w0, w1 = k * STORY_WINDOW, (k + 1) * STORY_WINDOW
+        part = []
+        for x in subs:
+            a0, a1 = max(x["start"], w0), min(x["start"] + x["duration"], w1)
+            if a1 - a0 >= 0.15:
+                part.append({**x, "start": round(a0 - w0, 3), "duration": round(a1 - a0, 3)})
+        if part:
+            out.append((w0, part))
+    return out
+
+
 def _story_render(sid, plan, ids, fresh=False):
-    """Agent 6: one composite per sentence (explicit + inferred), an explicit-only remix of the same
-    samples, and a single-prompt baseline. voice_key -> raw sample keeps a source's vibration identical
-    across sentences. Waits for the GPU (other generation requests get 409 meanwhile)."""
+    """Agent 6: per sentence, the explicit + inferred composite, an explicit-only remix of the same samples,
+    and a single-prompt baseline. voice_key -> raw sample keeps a source's vibration identical across
+    sentences (and across the windows of a long sentence). Waits for the GPU (other requests get 409)."""
     global _gen_busy
     out_dir = STORY_DIR / sid
     voices = plan.setdefault("voices", {})
@@ -623,6 +642,7 @@ def _story_render(sid, plan, ids, fresh=False):
         _gen_busy = True
         try:
             model = _use_generator(plan.get("generator", "hapticgen"))
+            sr = model.sample_rate
             for s in plan["sentences"]:
                 if s["id"] not in ids:
                     continue
@@ -630,24 +650,48 @@ def _story_render(sid, plan, ids, fresh=False):
                 if not subs:
                     s["render"] = None
                     continue
-                _story_log(sid, "render", f"문장 {s['id'] + 1} 렌더링 ({len(subs)}개 사건)")
-                body = [{**x, "source_wav": None if fresh else voices.get(x["voice_key"])} for x in subs]
-                r = cp.compose(model, s["text"], body, 2, True, 3.0, 1.0, 250, None, out_dir,
-                               gamma=cp.DEFAULT_GAMMA, share_repeats=True)
-                for o in r["sub_events"]:
-                    if o.get("source_wav") and o["voice_key"] not in voices:
-                        voices[o["voice_key"]] = o["source_wav"]
-                exp = [{**o} for o in r["sub_events"] if o["origin"] == "explicit"]
-                ex = cp.compose(model, s["text"], exp, 1, False, 3.0, 1.0, 250, None, out_dir,
-                                gamma=cp.DEFAULT_GAMMA, share_repeats=True) if exp else None
-                rel = lambda name: f"story/{sid}/{name}"
-                files = {"full": rel(r["composite"]), "explicit": rel(ex["composite"]) if ex else None,
-                         "baseline": rel(r["baseline"]) if r["baseline"] else None}
-                s["render"] = {"files": files, "elapsed": round(r["elapsed"], 2),
+                wins = _windows(subs)
+                _story_log(sid, "render", f"문장 {s['id'] + 1} 렌더링 ({len(subs)}개 사건" + (f", {len(wins)}구간)" if len(wins) > 1 else ")"))
+                total = max(x["start"] + x["duration"] for x in subs) + 0.1
+                mix = {k: np.zeros(int(total * sr) + 1, dtype=np.float32) for k in ("full", "explicit", "baseline")}
+                used, rendered, t0 = {"full": False, "explicit": False, "baseline": False}, [], time.time()
+
+                def add(kind, name, w0):
+                    w, _ = sf.read(out_dir / name, dtype="float32")
+                    a = int(w0 * sr)
+                    n = min(len(w), len(mix[kind]) - a)
+                    mix[kind][a:a + n] += w[:n]
+                    used[kind] = True
+
+                for w0, part in wins:
+                    body = [{**x, "source_wav": None if fresh else voices.get(x["voice_key"])} for x in part]
+                    r = cp.compose(model, s["text"], body, 2, True, 3.0, 1.0, 250, None, out_dir,
+                                   gamma=cp.DEFAULT_GAMMA, share_repeats=True)
+                    for o in r["sub_events"]:
+                        if o.get("source_wav") and o["voice_key"] not in voices:
+                            voices[o["voice_key"]] = o["source_wav"]
+                        rendered.append({**o, "start": round(o["start"] + w0, 3)})
+                    add("full", r["composite"], w0)
+                    if r["baseline"]:
+                        add("baseline", r["baseline"], w0)
+                    exp = [{**o} for o in r["sub_events"] if o["origin"] == "explicit"]
+                    if exp:
+                        ex = cp.compose(model, s["text"], exp, 1, False, 3.0, 1.0, 250, None, out_dir,
+                                        gamma=cp.DEFAULT_GAMMA, share_repeats=True)
+                        add("explicit", ex["composite"], w0)
+                files = {}
+                for kind, w in mix.items():
+                    if used[kind]:
+                        name = f"s{s['id']:03d}_{kind}{'_fresh' if fresh else ''}.wav"
+                        sf.write(out_dir / name, np.clip(w, -1, 1), sr, subtype="FLOAT")
+                        files[kind] = f"story/{sid}/{name}"
+                    else:
+                        files[kind] = None
+                s["render"] = {"files": files, "elapsed": round(time.time() - t0, 2), "windows": len(wins),
                                "waves": {k: {key: v for key, v in _describe(OUT_DIR / f).items() if key in ("name", "duration", "peak", "peaks")}
                                          for k, f in files.items() if f},
                                "sub_events": [{k: o.get(k) for k in ("eid", "origin", "prompt", "start", "duration", "intensity",
-                                                                     "voice_key", "reused", "source_wav")} for o in r["sub_events"]]}
+                                                                     "voice_key", "reused", "source_wav")} for o in rendered]}
         finally:
             _gen_busy = False
 
