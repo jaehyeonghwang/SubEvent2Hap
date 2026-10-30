@@ -208,5 +208,11 @@
   "area": "재생",
   "title": "진동을 오디오 장치로 (낭독과 분리)",
   "detail": "remote_player.py --audio-device: 진동을 Quest 대신 지정한 사운드 출력(스피커, 진동자 앰프)으로만 재생(sounddevice, 장치 샘플레이트로 선형 리샘플, 손 선택은 L/R 채널). 낭독은 브라우저의 Windows 기본 출력(예: 에어팟). start_player_audio.bat이 장치 목록을 보여 주고 선택. Story 페이지에는 한 장치에서 낭독/진동을 스테레오 좌우로 나누는 모드(Web Audio, 샘플 단위 동기)도 추가."
+ },
+ {
+  "date": "2026-10-31",
+  "area": "재생",
+  "title": "웹에서 음성·진동 장치 선택",
+  "detail": "노트북 재생기(remote_player.py)가 사운드 출력 목록(DirectSound)과 현재 설정을 1초마다 서버로 보냄. Story 페이지 '재생기에서 음성 + 진동' 모드에서 음성 장치(기본 출력 또는 지정)와 진동 장치(Quest 또는 사운드 출력)를 드롭다운으로 고르면 /api/player/config로 재생기에 전달(~/.subevent2hap_player.json에 기억). /api/player/play_pair로 재생기가 음성과 진동을 각 장치에서 함께 시작(장치별 독립 스트림). 브라우저 HTTPS 제약과 무관."
  }
 ]

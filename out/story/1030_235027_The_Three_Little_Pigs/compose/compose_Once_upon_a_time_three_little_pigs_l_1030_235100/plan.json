@@ -1,0 +1,44 @@
+{
+  "event": "Once upon a time, three little pigs left home to build their own houses.",
+  "sub_events": [
+    {
+      "prompt": "The pigs step on the ground as they leave home.",
+      "start": 3.08,
+      "duration": 0.4,
+      "intensity": 0.5,
+      "eid": "s0e0",
+      "origin": "explicit",
+      "voice_key": "pig_step",
+      "source_wav": "compose/compose_Once_upon_a_time_three_little_pigs_l_1030_235100/src_01.wav",
+      "file": "compose/compose_Once_upon_a_time_three_little_pigs_l_1030_235100/sub_01.wav",
+      "candidate": 0,
+      "scores": [
+        0.0128,
+        0.0022
+      ],
+      "offset": 0.907,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 3.48,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Once_upon_a_time_three_little_pigs_l_1030_235100_composite.wav",
+  "baseline": "compose_Once_upon_a_time_three_little_pigs_l_1030_235100_baseline.wav",
+  "gen_duration": 3.48,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.897195816040039,
+  "elapsed": 4.909167289733887
+}

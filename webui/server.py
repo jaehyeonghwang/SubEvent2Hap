@@ -14,6 +14,7 @@ import pathlib
 import sys
 import threading
 import time
+import urllib.parse
 import urllib.request
 
 import numpy as np
@@ -899,6 +900,50 @@ def architecture_page():
 def architecture_data():
     """Framework description read from the loaded modules and files."""
     return architecture.describe(app, {**status(), "llm": llm_status()})
+
+
+class PlayerConfig(BaseModel):
+    vib: str | int | None = None      # "quest" or a sound-device id of the remote player
+    voice: int | None = None          # sound-device id for narration (None = the player's default output)
+
+
+@app.get("/api/player")
+def player_info():
+    """The remote playback agent: its sound outputs and where vibration / voice currently go."""
+    if not remote.connected:
+        return {"connected": False}
+    st = remote.state
+    return {"connected": True, "name": remote.name, "status": st.get("status"), "ready": st.get("ready"),
+            "devices": st.get("devices", []), "config": st.get("config", {})}
+
+
+@app.post("/api/player/config")
+def player_config(req: PlayerConfig):
+    msg = {"cmd": "config", "voice": req.voice}
+    if req.vib is not None:
+        msg["vib"] = req.vib
+    remote.send(msg)
+    return {"ok": True}
+
+
+class PairReq(BaseModel):
+    voice: str
+    vib: str | None = None
+    gain: float = Field(1.0, ge=0.0, le=4.0)
+    hand: str = Field("both", pattern="^(both|left|right)$")
+    voice_delay_ms: int = Field(0, ge=0, le=1000)
+
+
+@app.post("/api/player/play_pair")
+def player_play_pair(req: PairReq):
+    """Narration and vibration started together by the remote agent (each on its chosen output)."""
+    for f in (req.voice, req.vib):
+        if f:
+            _wav_path(f)
+    path = lambda f: "/audio/" + "/".join(urllib.parse.quote(x) for x in f.split("/"))
+    remote.send({"cmd": "play_pair", "voice": path(req.voice), "vib": path(req.vib) if req.vib else None,
+                 "gain": req.gain, "hand": req.hand, "voice_delay_ms": req.voice_delay_ms})
+    return {"ok": True}
 
 
 @app.post("/api/stop")

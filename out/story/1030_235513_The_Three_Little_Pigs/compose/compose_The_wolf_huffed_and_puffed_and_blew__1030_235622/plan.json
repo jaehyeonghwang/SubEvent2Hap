@@ -1,0 +1,82 @@
+{
+  "event": "The wolf huffed and puffed and blew the house down.",
+  "sub_events": [
+    {
+      "prompt": "Wolf huffing air forcefully.",
+      "start": 0.64,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s4e0",
+      "origin": "explicit",
+      "voice_key": "wolf_huff",
+      "source_wav": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_235622/src_01.wav",
+      "file": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_235622/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0829,
+        0.1005
+      ],
+      "offset": 0.443,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "Wolf puffing air forcefully.",
+      "start": 1.82,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s4e1",
+      "origin": "explicit",
+      "voice_key": "wolf_puff",
+      "source_wav": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_235622/src_02.wav",
+      "file": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_235622/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0005,
+        0.1501
+      ],
+      "offset": 0.088,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "Straw house collapsing from forceful blow.",
+      "start": 3.28,
+      "duration": 0.6,
+      "intensity": 1.0,
+      "eid": "s4e2",
+      "origin": "explicit",
+      "voice_key": "house_collapse",
+      "source_wav": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_235622/src_03.wav",
+      "file": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_235622/sub_03.wav",
+      "candidate": 0,
+      "scores": [
+        0.8785,
+        0.215
+      ],
+      "offset": 0.431,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 3.88,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_wolf_huffed_and_puffed_and_blew__1030_235622_composite.wav",
+  "baseline": "compose_The_wolf_huffed_and_puffed_and_blew__1030_235622_baseline.wav",
+  "gen_duration": 3.88,
+  "prompts": 8,
+  "generated_units": 3,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.87689208984375,
+  "elapsed": 6.895233154296875
+}

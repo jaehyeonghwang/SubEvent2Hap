@@ -1,0 +1,41 @@
+{
+  "event": "The little pig ran as fast as he could to his brother's house of bricks.",
+  "sub_events": [
+    {
+      "prompt": "Pig running on the ground.",
+      "start": 0.0,
+      "duration": 5.3,
+      "intensity": 0.5,
+      "eid": "s5e0",
+      "origin": "explicit",
+      "voice_key": "pig_run",
+      "source_wav": "compose/compose_The_little_pig_ran_as_fast_as_he_cou_1030_235627/src_01.wav",
+      "file": "compose/compose_The_little_pig_ran_as_fast_as_he_cou_1030_235627_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.0,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 5.3,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_little_pig_ran_as_fast_as_he_cou_1030_235627_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.0045452117919921875,
+  "elapsed": 0.009284496307373047
+}

@@ -1,0 +1,73 @@
+{
+  "event": "One stormy night, a big bad wolf knocked on the door three times.",
+  "sub_events": [
+    {
+      "prompt": "A knock on a wooden door.",
+      "start": 2.98,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s2e0",
+      "origin": "explicit",
+      "voice_key": "door_knock",
+      "source_wav": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553/src_02.wav",
+      "file": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.129,
+      "shared": true,
+      "reused": true
+    },
+    {
+      "prompt": "A knock on a wooden door.",
+      "start": 3.48,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s2e1",
+      "origin": "explicit",
+      "voice_key": "door_knock",
+      "source_wav": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553/src_02.wav",
+      "file": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.129,
+      "shared": true,
+      "reused": true
+    },
+    {
+      "prompt": "A knock on a wooden door.",
+      "start": 3.98,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s2e2",
+      "origin": "explicit",
+      "voice_key": "door_knock",
+      "source_wav": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553/src_02.wav",
+      "file": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553_2/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.129,
+      "shared": true,
+      "reused": true
+    }
+  ],
+  "total": 4.28,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 1,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.006219387054443359,
+  "elapsed": 0.014144182205200195
+}

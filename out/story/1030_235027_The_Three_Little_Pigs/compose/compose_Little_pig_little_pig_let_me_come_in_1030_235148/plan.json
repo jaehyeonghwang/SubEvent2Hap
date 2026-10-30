@@ -1,0 +1,44 @@
+{
+  "event": "\"Little pig, little pig, let me come in!",
+  "sub_events": [
+    {
+      "prompt": "Wolf's voice resonates",
+      "start": 1.78,
+      "duration": 0.5,
+      "intensity": 0.3,
+      "eid": "s3i1",
+      "origin": "inferred",
+      "voice_key": "wolf_speak",
+      "source_wav": "compose/compose_Little_pig_little_pig_let_me_come_in_1030_235148/src_01.wav",
+      "file": "compose/compose_Little_pig_little_pig_let_me_come_in_1030_235148/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0293,
+        0.3348
+      ],
+      "offset": 2.224,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 2.2800000000000002,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_Little_pig_little_pig_let_me_come_in_1030_235148_composite.wav",
+  "baseline": "compose_Little_pig_little_pig_let_me_come_in_1030_235148_baseline.wav",
+  "gen_duration": 2.2800000000000002,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 2.1260809898376465,
+  "elapsed": 2.133702039718628
+}

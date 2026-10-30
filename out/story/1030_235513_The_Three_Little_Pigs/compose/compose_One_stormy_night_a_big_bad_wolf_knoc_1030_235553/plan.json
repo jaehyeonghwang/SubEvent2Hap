@@ -1,0 +1,101 @@
+{
+  "event": "One stormy night, a big bad wolf knocked on the door three times.",
+  "sub_events": [
+    {
+      "prompt": "Rain falling during the storm.",
+      "start": 0.0,
+      "duration": 6.85,
+      "intensity": 0.2,
+      "eid": "s2i0",
+      "origin": "inferred",
+      "voice_key": "rain_storm",
+      "source_wav": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553/src_01.wav",
+      "file": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0295,
+        0.0382
+      ],
+      "offset": 0.963,
+      "shared": false,
+      "reused": false
+    },
+    {
+      "prompt": "A knock on a wooden door.",
+      "start": 2.98,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s2e0",
+      "origin": "explicit",
+      "voice_key": "door_knock",
+      "source_wav": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553/src_02.wav",
+      "file": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553/sub_02.wav",
+      "candidate": 1,
+      "scores": [
+        0.0619,
+        0.3035
+      ],
+      "offset": 0.129,
+      "shared": true,
+      "reused": false
+    },
+    {
+      "prompt": "A knock on a wooden door.",
+      "start": 3.48,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s2e1",
+      "origin": "explicit",
+      "voice_key": "door_knock",
+      "source_wav": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553/src_02.wav",
+      "file": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553/sub_03.wav",
+      "candidate": 1,
+      "scores": [
+        0.0619,
+        0.3035
+      ],
+      "offset": 0.129,
+      "shared": true,
+      "reused": false
+    },
+    {
+      "prompt": "A knock on a wooden door.",
+      "start": 3.98,
+      "duration": 0.3,
+      "intensity": 0.7,
+      "eid": "s2e2",
+      "origin": "explicit",
+      "voice_key": "door_knock",
+      "source_wav": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553/src_02.wav",
+      "file": "compose/compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553/sub_04.wav",
+      "candidate": 1,
+      "scores": [
+        0.0619,
+        0.3035
+      ],
+      "offset": 0.129,
+      "shared": true,
+      "reused": false
+    }
+  ],
+  "total": 6.85,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553_composite.wav",
+  "baseline": "compose_One_stormy_night_a_big_bad_wolf_knoc_1030_235553_baseline.wav",
+  "gen_duration": 7.85,
+  "prompts": 6,
+  "generated_units": 2,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 6.737642526626587,
+  "elapsed": 6.757915496826172
+}

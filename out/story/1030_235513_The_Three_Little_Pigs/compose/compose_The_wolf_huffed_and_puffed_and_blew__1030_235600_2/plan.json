@@ -1,0 +1,73 @@
+{
+  "event": "The wolf huffed and puffed and blew the house down.",
+  "sub_events": [
+    {
+      "prompt": "Wolf huffing air forcefully.",
+      "start": 0.64,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s4e0",
+      "origin": "explicit",
+      "voice_key": "wolf_huff",
+      "source_wav": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_235600/src_01.wav",
+      "file": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_235600_2/sub_01.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.901,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Wolf puffing air forcefully.",
+      "start": 1.82,
+      "duration": 0.5,
+      "intensity": 0.7,
+      "eid": "s4e1",
+      "origin": "explicit",
+      "voice_key": "wolf_puff",
+      "source_wav": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_235600/src_02.wav",
+      "file": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_235600_2/sub_02.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.911,
+      "shared": false,
+      "reused": true
+    },
+    {
+      "prompt": "Straw house collapsing from forceful blow.",
+      "start": 3.28,
+      "duration": 0.6,
+      "intensity": 1.0,
+      "eid": "s4e2",
+      "origin": "explicit",
+      "voice_key": "house_collapse",
+      "source_wav": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_235600/src_03.wav",
+      "file": "compose/compose_The_wolf_huffed_and_puffed_and_blew__1030_235600_2/sub_03.wav",
+      "candidate": null,
+      "scores": [],
+      "offset": 0.471,
+      "shared": false,
+      "reused": true
+    }
+  ],
+  "total": 3.88,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 1,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_wolf_huffed_and_puffed_and_blew__1030_235600_2_composite.wav",
+  "baseline": null,
+  "gen_duration": 0.0,
+  "prompts": 0,
+  "generated_units": 0,
+  "reused_units": 3,
+  "analytic_segments": 0,
+  "elapsed_gen": 0.014869213104248047,
+  "elapsed": 0.022933244705200195
+}

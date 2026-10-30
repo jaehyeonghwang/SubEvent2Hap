@@ -1,0 +1,44 @@
+{
+  "event": "The first little pig built a house of straw.",
+  "sub_events": [
+    {
+      "prompt": "Straw being placed to build a house.",
+      "start": 0.0,
+      "duration": 3.9,
+      "intensity": 0.3,
+      "eid": "s1e0",
+      "origin": "explicit",
+      "voice_key": "straw_rustle",
+      "source_wav": "compose/compose_The_first_little_pig_built_a_house_o_1030_235546/src_01.wav",
+      "file": "compose/compose_The_first_little_pig_built_a_house_o_1030_235546/sub_01.wav",
+      "candidate": 1,
+      "scores": [
+        0.0023,
+        0.0193
+      ],
+      "offset": 0.471,
+      "shared": false,
+      "reused": false
+    }
+  ],
+  "total": 3.9,
+  "params": {
+    "generator": "hapticgen",
+    "candidates": 2,
+    "cfg": 3.0,
+    "temperature": 1.0,
+    "top_k": 250,
+    "seed": null,
+    "gamma": 1.6,
+    "share_repeats": true
+  },
+  "composite": "compose_The_first_little_pig_built_a_house_o_1030_235546_composite.wav",
+  "baseline": "compose_The_first_little_pig_built_a_house_o_1030_235546_baseline.wav",
+  "gen_duration": 4.9,
+  "prompts": 4,
+  "generated_units": 1,
+  "reused_units": 0,
+  "analytic_segments": 0,
+  "elapsed_gen": 4.319258213043213,
+  "elapsed": 4.330446004867554
+}

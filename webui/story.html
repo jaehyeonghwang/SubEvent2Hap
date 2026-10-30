@@ -173,17 +173,22 @@ details { margin-top: 10px; } summary { cursor: pointer; color: var(--muted); fo
       <button id="stopBtn"><span>■</span>정지</button>
     </div>
     <div class="row" style="margin-top:12px">
-      <span class="inline">진동 출력</span>
-      <div class="seg" id="out"><button data-v="quest">노트북 재생기 (Quest 또는 스피커)</button><button data-v="audio">한 오디오 장치에서 채널 분리</button></div>
+      <span class="inline">재생 방식</span>
+      <div class="seg" id="out"><button data-v="player">재생기에서 음성 + 진동</button><button data-v="quest">브라우저 음성 + 재생기 진동</button><button data-v="audio">한 장치에서 좌우 채널 분리</button></div>
       <span class="inline" id="chanWrap">진동 채널
         <span class="seg" id="chan"><button data-v="R">오른쪽 (낭독은 왼쪽)</button><button data-v="L">왼쪽 (낭독은 오른쪽)</button></span></span>
+    </div>
+    <div class="row" id="devRow" style="margin-top:12px">
+      <div class="field"><label for="voiceDev">음성 장치</label><select id="voiceDev"></select></div>
+      <div class="field"><label for="vibDev">진동 장치</label><select id="vibDev"></select></div>
+      <span class="note grow" id="devNote" style="margin-top:22px"></span>
     </div>
     <div class="note" id="outNote"></div>
     <div class="row" style="margin-top:12px">
       <span class="inline" id="handWrap">진동 채널/손</span>
       <div class="seg" id="hand"><button data-v="left">왼손</button><button data-v="both">양손</button><button data-v="right">오른손</button></div>
       <span class="inline">재생 배율 <input type="range" id="gain" min="0.2" max="3" step="0.05" value="1"> <b id="gainV"></b></span>
-      <span class="inline" title="원격 Quest는 명령이 전달되는 데 시간이 걸립니다. 진동이 늦게 느껴지면 값을 올려 낭독을 늦추세요.">낭독 지연 <input type="range" id="lag" min="0" max="400" step="10" value="60"> <b id="lagV"></b></span>
+      <span class="inline" title="진동이 음성보다 늦게 느껴지면 값을 올려 음성을 늦추세요.">음성 지연 <input type="range" id="lag" min="0" max="400" step="10" value="60"> <b id="lagV"></b></span>
     </div>
     <div class="summary" id="summary"></div>
   </section>
@@ -225,18 +230,43 @@ document.querySelectorAll("#hand button").forEach(b => b.onclick = () => segPick
 segPick("#cond", cond); segPick("#hand", hand);
 // Vibration output: Quest controllers (OpenXR, remote) or the audio output itself, with narration and
 // vibration on separate stereo channels of ONE stream (sample-accurate sync; wire the actuator to one channel).
-let outMode = "quest", vibChan = "R";
-try { outMode = localStorage.getItem("s2h_out") || "quest"; vibChan = localStorage.getItem("s2h_chan") || "R"; } catch {}
+let outMode = "player", vibChan = "R";
+try { outMode = localStorage.getItem("s2h_out") || "player"; vibChan = localStorage.getItem("s2h_chan") || "R"; } catch {}
 function outUI() {
   const audio = outMode === "audio";
   $("#chanWrap").hidden = !audio; $("#hand").hidden = $("#handWrap").hidden = audio; $("#lag").parentElement.hidden = audio;
-  $("#outNote").textContent = audio
+  $("#devRow").hidden = audio;
+  $("#voiceDev").parentElement.hidden = outMode !== "player";
+  $("#outNote").textContent = outMode === "player"
+    ? "노트북 재생기(start_player.bat)가 음성과 진동을 위에서 고른 장치로 함께 재생합니다. 브라우저에서는 소리가 나지 않습니다."
+    : audio
     ? `낭독은 ${vibChan === "R" ? "왼쪽" : "오른쪽"} 채널, 진동은 ${vibChan === "R" ? "오른쪽" : "왼쪽"} 채널로만 나갑니다. 진동자(앰프)는 ${vibChan === "R" ? "R" : "L"} 채널에, 스피커나 이어폰은 반대 채널에 연결하세요. 한 스트림이라 지연 보정이 필요 없습니다.`
     : "낭독은 이 브라우저(Windows 기본 출력, 예: 에어팟)에서, 진동은 노트북 재생기에서 재생됩니다. 재생기를 start_player_audio.bat으로 켜면 진동이 지정한 스피커로만 나갑니다.";
 }
 document.querySelectorAll("#out button").forEach(b => b.onclick = () => segPick("#out", b.dataset.v, v => { outMode = v; try { localStorage.setItem("s2h_out", v); } catch {} outUI(); }));
 document.querySelectorAll("#chan button").forEach(b => b.onclick = () => segPick("#chan", b.dataset.v, v => { vibChan = v; try { localStorage.setItem("s2h_chan", v); } catch {} outUI(); }));
 segPick("#out", outMode); segPick("#chan", vibChan); outUI();
+let playerInfo = { connected: false };
+function fillDevices() {
+  const p = playerInfo, cfg = p.config || {}, devs = p.devices || [];
+  const opt = (v, t, sel) => `<option value="${esc(v)}"${sel ? " selected" : ""}>${esc(t)}</option>`;
+  if (document.activeElement !== $("#voiceDev"))
+    $("#voiceDev").innerHTML = opt("", "Windows 기본 출력" + (devs.find(d => d.default) ? ` (${devs.find(d => d.default).name})` : ""), cfg.voice == null)
+      + devs.map(d => opt(d.id, d.name, cfg.voice === d.id)).join("");
+  if (document.activeElement !== $("#vibDev"))
+    $("#vibDev").innerHTML = opt("quest", "Quest 컨트롤러", cfg.vib === "quest") + devs.map(d => opt(d.id, d.name, cfg.vib === d.id)).join("");
+  $("#voiceDev").disabled = $("#vibDev").disabled = !p.connected;
+  $("#devNote").textContent = p.connected ? `재생기: ${p.name} (${p.status || ""})` : "노트북에서 start_player.bat을 실행하면 장치 목록이 나타납니다.";
+}
+async function playerPoll() { try { playerInfo = await api("/api/player"); } catch { playerInfo = { connected: false }; } fillDevices(); }
+async function setDevices() {
+  const v = $("#vibDev").value, voice = $("#voiceDev").value;
+  try { await api("/api/player/config", { method: "POST", body: JSON.stringify({ vib: v === "quest" ? "quest" : +v, voice: voice === "" ? null : +voice }) }); }
+  catch (e) { toast("장치 설정 실패: " + e.message); }
+  setTimeout(playerPoll, 1200);
+}
+$("#voiceDev").addEventListener("change", setDevices); $("#vibDev").addEventListener("change", setDevices);
+setInterval(playerPoll, 3000); playerPoll();
 $("#agents").innerHTML = AGENTS.map(([k, n, d]) => `<div class="agent" data-k="${k}"><b>${n}</b><span>${d}</span></div>`).join("");
 
 // ---------- runs
@@ -422,11 +452,25 @@ async function playSentenceAudio(i, all, s, card) {
   requestAnimationFrame(tick);
   n.onended = () => { if (playing !== p) return; p.timer = setTimeout(() => { drawSentence(card); next(i, all); }, 500); };
 }
+async function playSentencePlayer(i, all, s, card) {
+  if (!playerInfo.connected) { toast("노트북 재생기가 연결되어 있지 않습니다 (start_player.bat)"); return; }
+  const lag = +$("#lag").value;
+  try {
+    await api("/api/player/play_pair", { method: "POST", body: JSON.stringify({ voice: s.narration.file, vib: condFile(s),
+      gain: +$("#gain").value, hand, voice_delay_ms: lag }) });
+  } catch (e) { toast("재생 실패: " + e.message); return; }
+  const t0 = performance.now() + lag, dur = s.narration.duration * 1000;
+  const p = { i, all, timer: null, audio: { pause: () => {} } }; playing = p;
+  const tick = () => { if (playing !== p) { drawSentence(card); return; } drawSentence(card, Math.max(0, (performance.now() - t0) / 1000)); requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+  p.timer = setTimeout(() => { if (playing !== p) return; drawSentence(card); next(i, all); }, dur + lag + 500);
+}
 async function playSentence(i, all) {
   const s = story && story.sentences[i]; if (!s || !s.narration) { if (all) next(i, all); return; }
   document.querySelectorAll(".sent").forEach(c => c.classList.toggle("playing", +c.dataset.i === i));
   const card = $(`.sent[data-i="${i}"]`); card.scrollIntoView({ behavior: "smooth", block: "center" });
   if (outMode === "audio") return playSentenceAudio(i, all, s, card);
+  if (outMode === "player") return playSentencePlayer(i, all, s, card);
   const audio = new Audio(urlOf(s.narration.file));
   const p = { i, audio, all, timer: null }; playing = p;
   const f = condFile(s);
@@ -444,7 +488,7 @@ function next(i, all) {
 function stop() {
   if (playing) { clearTimeout(playing.timer); playing.audio.pause(); playing = null; }
   document.querySelectorAll(".sent").forEach(c => c.classList.remove("playing"));
-  if (outMode === "quest") api("/api/stop", { method: "POST" }).catch(() => {});
+  if (outMode !== "audio") api("/api/stop", { method: "POST" }).catch(() => {});
   drawAll();
 }
 $("#playAllBtn").onclick = () => { if (!story) return; stop(); playSentence(0, true); };
