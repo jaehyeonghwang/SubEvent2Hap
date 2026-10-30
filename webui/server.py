@@ -84,7 +84,7 @@ class RemotePlayer:
     While one is connected, playback goes there instead of to a Quest on this machine."""
 
     def __init__(self):
-        self.ws, self.loop, self.name, self.state = None, None, None, {}
+        self.ws, self.loop, self.name, self.state, self.events = None, None, None, {}, {}
 
     @property
     def connected(self):
@@ -113,6 +113,10 @@ async def player_socket(ws: WebSocket, name: str = "remote"):
             msg = await ws.receive_json()
             if msg.get("type") == "status":
                 remote.state = msg
+            elif msg.get("type") == "event" and msg.get("tag"):   # playback started / ended (server clock)
+                remote.events[msg["tag"]] = {**remote.events.get(msg["tag"], {}), msg["event"]: time.time()}
+                if len(remote.events) > 200:
+                    remote.events.pop(next(iter(remote.events)))
     except WebSocketDisconnect:
         pass
     finally:
@@ -1048,6 +1052,7 @@ def player_config(req: PlayerConfig):
 class PairReq(BaseModel):
     voice: str
     vib: str | None = None
+    tag: str | None = Field(None, max_length=120)
     gain: float = Field(1.0, ge=0.0, le=4.0)
     hand: str = Field("both", pattern="^(both|left|right)$")
     voice_delay_ms: int = Field(0, ge=0, le=1000)
@@ -1061,8 +1066,33 @@ def player_play_pair(req: PairReq):
             _wav_path(f)
     path = lambda f: "/audio/" + "/".join(urllib.parse.quote(x) for x in f.split("/"))
     remote.send({"cmd": "play_pair", "voice": path(req.voice), "vib": path(req.vib) if req.vib else None,
-                 "gain": req.gain, "hand": req.hand, "voice_delay_ms": req.voice_delay_ms})
+                 "gain": req.gain, "hand": req.hand, "voice_delay_ms": req.voice_delay_ms, "tag": req.tag})
     return {"ok": True}
+
+
+class PrefetchReq(BaseModel):
+    files: list[str] = Field(max_length=6)
+
+
+@app.post("/api/player/prefetch")
+def player_prefetch(req: PrefetchReq):
+    """Let the remote agent download upcoming wavs while the current sentence plays."""
+    if remote.connected:
+        paths = []
+        for f in req.files:
+            if f:
+                _wav_path(f)
+                paths.append("/audio/" + "/".join(urllib.parse.quote(x) for x in f.split("/")))
+        remote.send({"cmd": "prefetch", "paths": paths})
+    return {"ok": True}
+
+
+@app.get("/api/player/progress")
+def player_progress(tag: str):
+    """Seconds since the agent actually started (or finished) the tagged playback, on the server clock."""
+    ev, now = remote.events.get(tag, {}), time.time()
+    return {"started": now - ev["started"] if "started" in ev else None,
+            "ended": now - ev["ended"] if "ended" in ev else None}
 
 
 @app.post("/api/stop")

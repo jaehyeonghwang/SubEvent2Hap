@@ -89,7 +89,7 @@ class DeviceOut:
     def is_playing(self):
         return time.time() < self._end
 
-    def play(self, wav, sr, gain=1.0, hand="both", loop=1, delay=0.0):
+    def play(self, wav, sr, gain=1.0, hand="both", loop=1, delay=0.0, on_start=None, on_end=None):
         w = np.clip(np.tile(np.asarray(wav, dtype=np.float32), max(1, int(loop))) * gain, -1, 1)
         if sr != self.rate:   # linear resampling is enough for vibration and speech playback
             w = np.interp(np.arange(int(len(w) * self.rate / sr)) * sr / self.rate, np.arange(len(w)), w).astype(np.float32)
@@ -99,20 +99,25 @@ class DeviceOut:
         self._run_id += 1
         rid = self._run_id
         self._end = time.time() + delay + len(w) / self.rate
-        threading.Thread(target=self._run, args=(out, rid, delay), daemon=True).start()
+        threading.Thread(target=self._run, args=(out, rid, delay, on_start, on_end), daemon=True).start()
 
-    def _run(self, out, rid, delay):
+    def _run(self, out, rid, delay, on_start=None, on_end=None):
         if delay > 0:
             time.sleep(delay)
         if rid != self._run_id:
             return
         try:
             with self.sd.OutputStream(device=self.device, samplerate=self.rate, channels=self.channels, dtype="float32") as st:
+                if on_start:   # the stream is open: sound starts now (the page aligns its playhead to this)
+                    on_start()
                 for k in range(0, len(out), 1024):
                     if rid != self._run_id:   # stopped or replaced
                         break
                     st.write(out[k:k + 1024])
+            # leaving the with-block stops the stream after the queued audio has played
             self.error = None
+            if on_end and rid == self._run_id:
+                on_end()
         except Exception as exc:  # noqa: BLE001  reported to the web page through the status message
             self.error = f"{self.name}: {type(exc).__name__}: {exc}"
             self._end = 0.0
@@ -188,10 +193,22 @@ class Agent:
             o.stop()
 
 
+_cache, _cache_lock = {}, threading.Lock()
+
+
 def fetch(base, path):
+    """Download a wav from the server (cached: the page prefetches the next sentence while one plays)."""
+    with _cache_lock:
+        if path in _cache:
+            return _cache[path]
     data = urllib.request.urlopen(base + path, timeout=30).read()
     w, sr = sf.read(io.BytesIO(data), dtype="float32")
-    return (w.mean(axis=1) if w.ndim > 1 else w), sr
+    item = ((w.mean(axis=1) if w.ndim > 1 else w), sr)
+    with _cache_lock:
+        if len(_cache) > 60:
+            _cache.pop(next(iter(_cache)))
+        _cache[path] = item
+    return item
 
 
 def main():
@@ -217,11 +234,20 @@ def main():
                 print(f"[player] connected to {base} as '{a.name}'. Choose devices on the web page.")
                 alive = threading.Event()
                 alive.set()
+                send_lock = threading.Lock()
+
+                def send(obj):
+                    try:
+                        with send_lock:
+                            ws.send(json.dumps(obj))
+                    except Exception:  # noqa: BLE001  connection closed; the outer loop reconnects
+                        pass
 
                 def report():
                     while alive.is_set():
                         try:
-                            ws.send(json.dumps(agent.status()))
+                            with send_lock:
+                                ws.send(json.dumps(agent.status()))
                         except Exception:  # noqa: BLE001  connection closed; the outer loop reconnects
                             return
                         time.sleep(1)
@@ -239,11 +265,17 @@ def main():
                             voice = fetch(base, msg["voice"])
                             vib = fetch(base, msg["vib"]) if msg.get("vib") else None
                             agent.stop()
-                            agent.out(agent.voice_target).play(voice[0], voice[1], msg.get("voice_gain", 1.0),
-                                                               delay=max(0.0, msg.get("voice_delay_ms", 0) / 1000))
+                            tag = msg.get("tag")
+                            agent.out(agent.voice_target).play(
+                                voice[0], voice[1], msg.get("voice_gain", 1.0), delay=max(0.0, msg.get("voice_delay_ms", 0) / 1000),
+                                on_start=lambda: send({"type": "event", "event": "started", "tag": tag}),
+                                on_end=lambda: send({"type": "event", "event": "ended", "tag": tag}))
                             if vib:
                                 agent.vibrate(vib[0], vib[1], msg.get("gain", 1.0), msg.get("hand", "both"))
                             print(f"[player] voice {len(voice[0]) / voice[1]:.2f}s" + (" + vibration" if vib else ""))
+                        elif cmd == "prefetch":
+                            for path in msg.get("paths", []):
+                                threading.Thread(target=fetch, args=(base, path), daemon=True).start()
                         elif cmd == "config":
                             if "vib" in msg:
                                 agent.vib_target = "quest" if msg["vib"] == "quest" else int(msg["vib"])

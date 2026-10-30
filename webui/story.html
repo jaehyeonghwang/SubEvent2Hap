@@ -458,17 +458,31 @@ async function playSentenceAudio(i, all, s, card) {
   n.onended = () => { if (playing !== p) return; p.timer = setTimeout(() => { drawSentence(card); next(i, all); }, 500); };
 }
 async function playSentencePlayer(i, all, s, card) {
+  // The agent reports when the narration really starts and ends; the playhead and the move to the
+  // next sentence follow those events instead of guessing from the request time.
   if (!playerInfo.connected) { toast("노트북 재생기가 연결되어 있지 않습니다 (start_player.bat)"); return; }
-  const lag = +$("#lag").value;
+  const tag = `${storyId}:${i}:${Date.now()}`;
   try {
-    await api("/api/player/play_pair", { method: "POST", body: JSON.stringify({ voice: s.narration.file, vib: condFile(s),
-      gain: +$("#gain").value, hand, voice_delay_ms: lag }) });
+    await api("/api/player/play_pair", { method: "POST", body: JSON.stringify({ voice: s.narration.file, vib: condFile(s), tag,
+      gain: +$("#gain").value, hand, voice_delay_ms: +$("#lag").value }) });
   } catch (e) { toast("재생 실패: " + e.message); return; }
-  const t0 = performance.now() + lag, dur = s.narration.duration * 1000;
-  const p = { i, all, timer: null, audio: { pause: () => {} } }; playing = p;
-  const tick = () => { if (playing !== p) { drawSentence(card); return; } drawSentence(card, Math.max(0, (performance.now() - t0) / 1000)); requestAnimationFrame(tick); };
+  const nx = story.sentences[i + 1];   // download the next sentence on the laptop while this one plays
+  if (all && nx && nx.narration) api("/api/player/prefetch", { method: "POST", body: JSON.stringify({ files: [nx.narration.file, condFile(nx)].filter(Boolean) }) }).catch(() => {});
+  const p = { i, all, timer: null, t0: null, audio: { pause: () => {} } }; playing = p;
+  const asked = performance.now();
+  const tick = () => { if (playing !== p) { drawSentence(card); return; } drawSentence(card, p.t0 === null ? null : Math.max(0, (performance.now() - p.t0) / 1000)); requestAnimationFrame(tick); };
   requestAnimationFrame(tick);
-  p.timer = setTimeout(() => { if (playing !== p) return; drawSentence(card); next(i, all); }, dur + lag + 500);
+  const follow = async () => {
+    if (playing !== p) return;
+    try {
+      const r = await api("/api/player/progress?tag=" + encodeURIComponent(tag));
+      if (r.started !== null && p.t0 === null) p.t0 = performance.now() - r.started * 1000;
+      if (r.ended !== null) { drawSentence(card); p.timer = setTimeout(() => { if (playing === p) next(i, all); }, 400); return; }
+    } catch {}
+    if (p.t0 === null && performance.now() - asked > 15000) { toast("재생기가 응답하지 않습니다"); stop(); return; }
+    p.timer = setTimeout(follow, 100);
+  };
+  follow();
 }
 async function playSentence(i, all) {
   const s = story && story.sentences[i]; if (!s || !s.narration) { if (all) next(i, all); return; }
